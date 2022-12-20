@@ -6,6 +6,7 @@ book:
   title: "Multilevel Thinking"
   author: "Andrew Grogan-Kaylor"
   date: "today"
+  cover-image: bookcover.png
   chapters:
     - index.qmd
     - intro.qmd
