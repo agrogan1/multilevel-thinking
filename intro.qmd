@@ -1,9 +1,192 @@
 # Introduction
 
-This is a book created from markdown and executable code.
+## Quantitative Methods and Social Justice
 
-See @knuth84 for additional discussion of literate programming.
+There is clearly need for both qualitative and quantitative methods. Central to the argument of this document is the idea that advanced quantitative methods can be core contributors to the agenda of understanding issues of diversity and social justice more fully and thoroughly [@Cokley2013; @GroganKaylor2018]. Quantitative methods, particularly in discussions comparing qualitative and quantitative methodologies, are sometimes labelled as inherently *positivist* methods. My argument regarding this point is twofold. There is nothing within the mathematics of quantitative methods that requires a positivist epistemology. Quantitative methodologies could as easily be conducted using a critical epistemology--that is aware of dynamics of power and privilege--as any other methodology [@Stage2014]. Second, when we have samples of a hundred, several hundred, several thousand, or even hundreds of thousands of study participants, it is difficult to imagine a methodology other than a quantitative methodology that could accomplish the following: 
+
+1. Sift through thousands of responses, and determine the *overall, or average, pattern of relationships* between risk factors, protective factors, and outcomes.
+2. Explore the *variation in these relationships* across social contexts. 
+3. Determine whether there is evidence that the relationships observed within the data are more than *statistical noise*.
+4. Adjudicate the *complex multivariate relationships* of risk factors, protective factors and outcomes.
+
+In @sec-pvalues and @sec-multilevelstructure, I explore the ways that *multilevel* data can contribute substantially to the complexity of this enterprise. I thus argue that quantitative methods can play an important role in contributing to liberatory ideas. I note that one of the pioneers of liberation psychology, Martin-Baró [@Aron1994], used both qualitative and quantitative methods [@Martin-Baro1994], including in the latter case, relatively sophisticated arguments about patterns of missing data across a survey data set [@Aron1994]. 
+
+There is thus an ethical argument that is embedded in this document. Many of us do research with the hope of better understanding the relationship of risk and protective factors with outcomes in diverse, and often disadvantaged or marginalized, populations. Many of us further hope that our work might be part of conversations about appropriate polices, programs, treatments or interventions. Given the frequent vulnerability and marginalization of the people with whom we work, when using quantitative methods, it is incumbent upon us to employ methods that adequately address the complexities of the data, that offer an appreciation of the variability and diversity within the data, that provide the most accurate estimates possible, and that increase the probability of obtaining correct answers to important substantive questions.
+
+> "It is hard to imagine that anyone with a humanitarian worldview would argue against the need for a more quantitatively literate citizenry. Informed political decision-making, retirement planning, active parenting, and the vast majority of choices we make in our personal, occupational, and civic lives can be better served by improved quantitative understanding and reasoning, as well as accompanying action-oriented dispositions." [@Wiest2007]
+
+The idea of this document is that a deeper study of multilevel modeling can result in an advanced "quantitative literacy" [@Wiest2007], or "principled argument" [@Abelson1995], that is appropriate for drawing accurate conclusions from multilevel data. 
+
+## Are Answers from Social Science "Obvious"?
+
+Closely related, I think to the the idea that quantitative research can advance issues of social justice, is the question of whether answers from social science are "obvious". If social science answers are obvious, then social science has limited abilities to make new discoveries, and to build scientific foundations for evidence. 
+
+I have been thinking a lot about the idea that *Everything Is Obvious, Once You Know The Answer*, as detailed in the book with this title by Duncan @Watts2011. 
+
+This seems to me especially true in social research. Arguably, some conclusions of social research may indeed be obvious. For example, it may be obvious that *Adverse Childhood Experiences* (ACEs) are associated with long term decreases in mental health. However, even obvious conclusions may need to be quantitatively documented, in order to legitimate programs and interventions, and to secure funding. I also observe that I think that there is often a *historical* dimension to what is considered "obvious": conclusions that are at first considered to be unlikely to be true, or even counter-intuitive, require the weight of accumulating evidence over time for these connections to become "obvious". It is likely that the "obviousness" of the relationship between ACEs and later physical and mental health problems did not become apparent until research began to document these relationships (e.g. @Felitti1998). As another example, @Proctor2012 documents the way which smoking was first considered to be an *unlikely* cause of lung cancer; only over the course of several decades of research and discussion to become an *obvious* cause of lung cancer. A similar *historical* dynamic seems to be playing out in some research on parenting and child development. Despite decades of evidence indicating that corporal punishment has undesirable conequeqences for children [@Gershoff2016], corporal punishment remains a disciplinary strategy endorsed by the majority of the American population [@Hines2022]. 
+
+In contrast sometimes the conclusions of social research may not always be obvious. For example:
+
+1. There has been an ongoing debate about whether corporal punishment is more or less harmful when used by parents in social contexts, or communities where it is more common, or normative. @Eamon2001 suggested that "when environmental risk is high, parenting practices that are firmer and higher in control result in lower levels of young adolescent antisocial behavior." This echoes similar research by [@Deater-Deckard1996] suggesting that physical punishment was harmful for European-American children, but not for African-American children. Later, larger sample research has found that this appears not to be the case: physical punishment is harmful for children in all groups [@Gershoff2016; @Gershoff2016B; @Pace2019].
+2. Using MICS Data [@UNICEF2021], we conducted a study of the link between gender inequality and physical child abuse [@Ma2022]. We expected to find that higher levels of gender inequality led to higher levels of physical abuse for female children, but not for male children. Instead, we found that higher levels of gender inequality were associated with higher levels of physical abuse for both male and female children. Additionally, there was some slight evidence that male children were at higher risk of being abused than female children. Equally interesting was that we found that gender inequality was predictive of levels of child abuse, while country level GDP was not.
+3. In a study of parenting during Covid-19 [@Lee2022], we expected to find that households with children would experience *higher* levels of anxiety and depression than households without children. Instead, we found the opposite. Being in a household with children was generally *protective* against anxiety and depression. 
+
+In @sec-studyvariation, @sec-pvalues and @sec-multilevelstructure, I provide specific examples of how multilevel data provides even more opportunity to present answers that are *not* obvious.
+
+## Presenting Advanced Statistical Ideas
+
+In presenting advanced, statistical concepts, one is faced with a quandary. One can present statistical concepts in the most general terms, in terms of *x* and *y*. While perhaps the mathematically most general way to present ideas, a highly general (and abstract) presentation risks not being a good way of teaching the ideas, as it is sometimes difficult to apply abstract ideas to one's own specific area of research. 
+
+Alternatively, one can present statistical ideas in terms of specific substantive concepts. The risk of making use of a specific substantive concept is that while concrete examples are always helpful, it may be difficult for the reader to generalize from a specific example to their own area of research.
+
+I ground this presentation in research that we have conducted on parenting and child development in international context [@Grogan-Kaylor2021; @WardA; @WardC; @ward_grogan-kaylor_ma_pace_lee_2021; @Pace2019; @Ma2022]. For the presentation in this document, I use simulated data on these issues.
+
+Using the simulated data, I refer to *predictors* and *outcomes*, and explore the ways that the multilevel model can contribute to understanding how relationships between predictors and outcomes might be similar, or might be different, across *social contexts*. In the examples presented below, I focus on two predictors, parental *warmth*, and parental use of *physical punishment* and focus on the *outcome* of *improved* mental health. I use the social context of different *countries* in our example. 
+
+It is my belief that while I use this specific set of examples, that the idea of studying *families in different countries* is generalizable enough to a multiplicity of diverse contexts, such that the reader can apply these ideas to their own area of interest, whether that be *children in schools*; *residents in neighborhoods*; or *people in different countries*. 
+
+## Research on Parenting and Child Development in International Context
+
+Research on parenting and child development has identified robust associations between parenting behaviors and child developmental outcomes. Broadly speaking, physical punishment is associated with increases in child aggression, child anxiety and child mental health problems [@Gershoff2016], while warm and supportive parenting is associated with decreases in these outcomes [@Rothenberg2022; @Khaleque2002]. However, much of this research is conducted on North American samples [@Henrich2010; @Draper2022]. 
+
+@Barth2020 have argued, that children constitute a class of oppressed persons. If children are oppressed, then it is imperative to empirically determine what factors are promotive of children’s well-being, and what factors constitute risk factors that contribute to decreases in children’s well-being. Equally imperative--given the North American focus of so much research on parenting and child development [@Henrich2010; @Draper2022]--would be efforts to extend the study of parenting and child development to a broader, more global context. As part of such a research agenda, it is necessary to have quantitative tools that are able to determine the consistency of relationships in parenting and child development. That is, are the relationships between certain forms of parenting and child developmental outcomes, largely consistent across countries, largely different across countries, or somewhere in between?
+
+This document will discuss the ways in which a multilevel statistical perspective not only allows one to appropriately analyze cross cultural or international data, but also the ways in which a multilevel perspective affords the opportunity for more precise quantitative thinking about cross cultural phenomena.
+
+This document takes a very pragmatic and very advocacy oriented approach to improving research on families and children, with the aim of improving the well-being of families and children.
+
+> "It shouldn’t be theories that define the problems of our situation, but rather the problems that demand, and so to speak, select, their own theorisation." -- @Martin-Baro1998 in @Burton2005.
+
+Following from this pragmatic and advocacy oriented emphasis, the document is largely oriented to the *doing* of quantitative social research with multilevel (or multi-country) data, and is therefore mostly statistical in nature. 
+
+The document moves quickly into detailed statistical arguments. Some of these statistical discussions may seem very technical, or even overly technical. However, an overarching theme of the document is that multilevel data contains hidden complexities. A lack of awareness of the complexities of multilevel data—e.g. complexities of multi-country data—might lead to statistical analyses that point in the wrong direction: yielding false positives; false negatives; or substantively wrong conclusions. 
+
+## Universalism And Particularity
+
+The specific domain of cross-cultural research on parenting and child development raises more general questions in cross-cultural research of *universalism* and *particularity*. With regard to child development it is universal that all children need some amount of emotional and material care to grow into healthy youth and healthy adults [@Kottak2021]. Further it is broadly understood that children should be protected from violence [@UNICEF2014]. This broad consensus is manifested in such documents as the Convention on the Rights of the Child [@UN1989] and the United Nations Sustainable Development Goals [@UN2022], representing global efforts to ensure the children are cared for, and are protected against violence.
+
+At the same time, broad international efforts to improve children's well-being must engage with important considerations of cultural uniqueness. Put simply, what is considered to be beneficial for children in one country or culture may not be considered to be beneficial in all countries or cultures. Similarly, what is considered to be detrimental in one country or culture may not equally be considered to be detrimental in all. Within the area of parenting and child development, most of the debate has focused around the question of whether physical punishment is equally detrimental in all settings, particularly whether physical punishment is detrimental in countries where it is especially common, or normative [@Gershoff2010]. Much less attention has been focused on the study of positive parenting internationally, and the degree to which the outcomes of positive parenting are consistent across countries remains understudied [@ward_grogan-kaylor_ma_pace_lee_2021].
+
+However, as global initiatives to improve child well-being and family life move forward, it becomes increasingly important to continue to collect internationally relevant data about parenting and child outcomes. If recommendations are to be made for policies, interventions, or treatments, such recommendations must be base on accurate balancing of that which is universal against that which is unique to particular cultural contexts. Thus it is necessary to employ statistical methods that are able to adequately and accurately analyze data across countries.
+
+As I will outline below--and is evident in the literature [@Raudenbush2002; @Singer2003; @RabeHesketh2012; @Luke2004; @Kreft1998]--multilevel models are eminently suited for cross-cultural research in that they are not only able to *control for* the clustering of study participants within countries, but are also able to *explore the variation*--or *consistency*--of patterns of family life across countries.
+
+Long ago, Cesaire, writing about liberatory movements wrote… 
+
+> "My conception of the universal is that of a universal enriched by all that is particular, a universal enriched by every particular: the deepening and coexistence of all particulars." [@Cesaire1956]
+
+It is this sensibility that I hope to echo in my discussion of the multilevel model below.
+
+## Multilevel Models As The Study Of Variation {#sec-studyvariation}
+
+> "Every being cries out silently to be read differently." 
+
+— Simone Weil, *Gravity and Grace* as reported in @Su2017
+
+Multilevel models are sometimes seen as an analytic technique that *controls for* the clustering or nesting of individuals inside larger social units such as schools, neighborhoods, or countries. I will describe below how this ability to *control for* clustering is indeed an important and crucial aspect of multilevel models.
+
+However, my argument here is that multilevel models are better seen as a method to *explore* the variation in inherent within nested or clustered data. Again, while these issues are well understood within the statistical literature [@Raudenbush2002; @Singer2003; @RabeHesketh2012; @Luke2004; @Kreft1998], they are less often noted in applied research.
+
+In the graph below, imagine that physical punishment, or some other risk factor, is associated with detrimental mental health outcomes. Each country in the data has its own *country specific regression line*.
 
 ```{r}
-1 + 1
+#| label: fig-variation1
+#| fig-cap: "Plausible Alternative Patterns of Between Country Variation"
+#| fig-height: 6
+
+tribble(
+  ~panel, ~beta0, ~beta1, ~u0, ~u1, ~label,
+  "A", 9, -1, .5, .1, "average association",
+  "B", 8, -1, 1.5, .5, "average association",
+  "C", 5, 0, .5, .25, "average association") %>% 
+  uncount(weights = 30) %>%
+  group_by(panel) %>%
+  mutate(country = factor(row_number())) %>%
+  ungroup() %>%
+  rowwise() %>%
+  mutate(intercept = beta0 + rnorm(1, 0, u0),
+         slope = beta1 + rnorm(1, 0, u1)) %>%
+  ggplot() +
+  geom_abline(aes(intercept = intercept, 
+                  slope = slope,
+                  color = country)) +
+  geom_labelabline(aes(intercept = beta0,
+                      slope = beta1,
+                      label = label),
+                  color = "red",
+                  size = 2) +
+  facet_wrap(~panel) +
+  labs(title = "Plausible Alternative Patterns of Between Country Variation",
+       subtitle = "In The Relationship of Physical Punishment \nWith Psychological Wellbeing",
+       x = "physical punishment",
+       y = "psychological wellbeing") +
+  xlim(0,10) +
+  ylim(0,10) +
+  scale_color_viridis_d() +
+  theme_minimal() +
+  theme(axis.text.x = element_text(size = rel(.75)))
+
 ```
+
+In Panel A, there is some variation in the *intercept*, which is equivalent to saying that there is some variation in the average level of psychological well-being across countries. When we look at the slope of the country-specific regression lines in Panel A, we notice that there is little variation in these *slopes*. Put another way, there is a great amount of consistency in the slopes of the country-specific regression lines: parental use of physical punishment is consistently associated with decreases in child psychological wellbeing across countries.
+
+In Panel B, the situation is different. There is more variation in the *intercept*, that is, more variation between countries in the initial or average amount of psychological well-being. There is also more variation in the *slopes* of the country-specific regression lines. While the average association between physical punishment and psychological well-being is very similar to that in Panel A, there is more variation across countries, in the relationship of physical punishment and child psychological wellbeing, which would likely merit exploration were one considering developing programs, policies or interventions for different countries. 
+
+Lastly, the pattern of variation in Panel C is considerably different from either Panel A or Panel B. The average association of physical punishment with psychological well-being in the hypothetical scenario represented by Panel C is approximately 0. There is some variation in the *intercepts* of the country-specific regression lines. Additionally, there is considerable variation in the *slopes* of the country-specific regression line, suggesting that the use of physical punishment might be beneficial in some countries, and detrimental in others. 
+
+Empirically, data generally suggest a scenario somewhere between Panel A and Panel B, but these different hypothetical scenarios afford us the opportunity to think about possible patterns of variation.
+
+A second pedagogically helpful example might be obtained if we flip the slopes in the diagram, and consider a different set of independent variables, perhaps some kind of treatment or intervention designed to improve psychological well-being. 
+
+```{r}
+#| label: fig-variation2
+#| fig-cap: "Considering an Intervention or Treatment Across Countries"
+#| fig-height: 6
+
+tribble(
+  ~panel, ~beta0, ~beta1, ~u0, ~u1, ~label,
+  "A", 1, 1, .5, .1, "average association",
+  "B", 1, 1, 1.5, .5, "average association",
+  "C", 5, 0, .5, .25, "average association") %>% 
+  uncount(weights = 30) %>%
+  group_by(panel) %>%
+  mutate(country = factor(row_number())) %>%
+  ungroup() %>%
+  rowwise() %>%
+  mutate(intercept = beta0 + rnorm(1, 0, u0),
+         slope = beta1 + rnorm(1, 0, u1)) %>%
+  ggplot() +
+  geom_abline(aes(intercept = intercept, 
+                  slope = slope,
+                  color = country)) +
+  geom_labelabline(aes(intercept = beta0,
+                       slope = beta1,
+                       label = label),
+                   color = "red",
+                   size = 2) +
+  facet_wrap(~panel) +
+  labs(title = "Considering an Intervention or Treatment Across Countries",
+       x = "hypothetical intervention",
+       y = "psychological wellbeing") +
+  xlim(0,10) +
+  ylim(0,10) +
+  scale_color_viridis_d() +
+  theme_minimal() +
+  theme(axis.text.x = element_text(size = rel(.75)))
+
+
+```
+
+We see a similar pattern as before, but the use of a different substantive example may be illustrative. 
+
+In Panel A, there is relative consistency in the initial levels of psychological well-being across countries, as well as consistency in the degree to which the intervention is associated with improvements in psychological well-being across countries. 
+
+In Panel B, we see more variation in both initial levels of psychological well-being, but also more variation in the association of the intervention with improvements in psychological well-being. 
+
+Lastly, in Panel C, we note an overall association of the intervention with psychological well-being that is close to zero. However associations vary widely by countries. In some countries there appears to be evidence that the intervention is beneficial, while in other countries there appears to be evidence that the intervention is not beneficial, or even possibly harmful. 
+
+Thus, I emphasize an approach to multilevel modeling that sees multilevel modeling as the *study of variation*, not simply *accounting for variation*, or *controlling for variation*. 
+
+>  "...universal theorizing requires adequately sampled (i.e., diverse) data and better appreciation of issues of comparability and the most powerful theories ought to predict and explain variation, not sweep variation under the rug." [@Blasi2022]
+
+Again, sophisticated treatments of all of the ideas are available in one form or another across the excellent textbooks on multilevel modeling [@Raudenbush2002; @Singer2003; @RabeHesketh2012; @Luke2004; @Kreft1998]. However, some of these ideas appear less often in applied research, and my intention here is to make the application of these ideas to applied research more clear. 

@@ -1,9 +1,48 @@
-# Preface {.unnumbered}
-
-This is a Quarto book.
-
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+# The Usefulness of Multilevel Modeling and Multilevel Thinking {.unnumbered}
 
 ```{r}
-1 + 1
+
+library(ggplot2) # beautiful graphs
+
+library(geomtextpath) # path geoms
+
+library(dplyr) # data wrangling
+
+library(tidyr) # data tidying
+
+library(pander) # nice tables
+
+library(gt) # beautiful tables
+
+library(sf) # simple (spatial) features
+
+library(leaflet) # beautiful maps
+
+# library(lme4) # MLM
+
+# library(sjPlot) # nice tables for MLM
+
+library(haven) # read and write Stata
+
+# library(Statamarkdown) # run Stata commands
+
+set.seed(3846) # random seed
+
 ```
+
+For decades now, multilevel models have been an important quantitative tool for social research. While multilevel models have become ubiquitous in social research, there are dimensions of these models that are explored less frequently in published articles. This document arises from my experiences of teaching a course entitled *Multilevel and Longitudinal Modeling* that I have taught for over a decade in the *Joint Doctoral Program in Social Work and Social Science* at the University of Michigan.
+
+My contention is that *multilevel modeling* offers powerful tools for understanding the *multilevel data* that social researchers often confront. For example, researchers are often interested in studying outcomes for diverse groups of children in different schools, residents of diverse and different neighborhoods, or individuals or families living in diverse and different countries. Such inherently multilevel data lead to analytic complexities, some of which appear to me to be well understood, while others seem to be much less often appreciated. 
+
+The point that I wish to make about multilevel data is that when presented with complex multilevel data, failure to use the appropriate multilevel model may lead to conclusions that are demonstrably incorrect. Fortunately, many of these difficulties can be avoided with applications of simple and straightforward multilevel models. 
+
+After presenting some initial ideas about multilevel modeling, I go on to explore some more complex ideas about multilevel models that I see less often in the published empirical literature. I focus especially on the idea of *multilevel models as the exploration of variation across countries and cultures*. 
+
+Certainly, none of the statistical ideas contained in this document are unique to me. There are thorough--and often much more mathematically rigorous--presentations of many of the idea contained in this document in some of the excellent foundational texts on multilevel modeling such as the early book by @Raudenbush2002, the excellent book on longitudinal models by @Singer2003, and @RabeHesketh2012's more recent and extremely comprehensive two volume text. @Luke2004, and @Kreft1998, offer shorter, less mathematical, but still excellent introductions to the topic of multilevel modeling. @Gelman2007 introduced me to the ideas that in this document I describe as "multilevel structure" using an example with voting patterns.
+
+My intent in this document is to offer a kind of accessible tutorial for applied researchers, including especially those who see their research having some advocacy based component. My approach, while offering up some equations, is less mathematical than some of the above mentioned texts, and written with the intent of providing a clear and practically focused guide for the applied researcher who is attempting to carry out better research with diverse populations.
+
+
+
+
+

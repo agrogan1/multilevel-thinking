@@ -15,17 +15,23 @@ book:
   sharing: [twitter, facebook]
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
+    - acknowledgements.qmd
+    - preliminaries.qmd
     - references.qmd
 
-bibliography: references.bib
+bibliography: multilevel-thinking.bib
 
 format:
   html:
     theme: cosmo
+    execute:
+      echo: false
+      warning: false
   pdf:
     documentclass: scrreprt
+    execute:
+      echo: false
+      warning: false
 
 
 
