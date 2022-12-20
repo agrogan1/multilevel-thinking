@@ -1,4 +1,4 @@
-# Some Preliminary Thoughts
+# Some Preliminary Thoughts {.unnumbered}
 
 ::: {.callout-note icon=false}
 

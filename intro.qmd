@@ -1,5 +1,17 @@
 # Introduction
 
+```{r}
+
+library(ggplot2) # beautiful graphs
+
+library(geomtextpath) # path geoms
+
+library(dplyr) # data wrangling
+
+library(tidyr) # data tidying
+
+```
+
 ## Quantitative Methods and Social Justice
 
 There is clearly need for both qualitative and quantitative methods. Central to the argument of this document is the idea that advanced quantitative methods can be core contributors to the agenda of understanding issues of diversity and social justice more fully and thoroughly [@Cokley2013; @GroganKaylor2018]. Quantitative methods, particularly in discussions comparing qualitative and quantitative methodologies, are sometimes labelled as inherently *positivist* methods. My argument regarding this point is twofold. There is nothing within the mathematics of quantitative methods that requires a positivist epistemology. Quantitative methodologies could as easily be conducted using a critical epistemology--that is aware of dynamics of power and privilege--as any other methodology [@Stage2014]. Second, when we have samples of a hundred, several hundred, several thousand, or even hundreds of thousands of study participants, it is difficult to imagine a methodology other than a quantitative methodology that could accomplish the following: 

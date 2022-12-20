@@ -1,4 +1,4 @@
-# The Usefulness of Multilevel Modeling and Multilevel Thinking {.unnumbered}
+# The Usefulness of Multilevel Modeling and Multilevel Thinking 
 
 ```{r}
 

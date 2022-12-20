@@ -17,6 +17,7 @@ book:
     - index.qmd
     - acknowledgements.qmd
     - preliminaries.qmd
+    - intro.qmd
     - references.qmd
 
 bibliography: multilevel-thinking.bib
