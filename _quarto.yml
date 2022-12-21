@@ -11,8 +11,7 @@ book:
   site-url: https://agrogan1.github.io/multilevel-thinking/
   search: true
   repo-url: https://github.com/agrogan1/multilevel-thinking
-  downloads: [pdf]
-  sharing: [twitter, facebook]
+  sharing: [twitter, facebook, linkedin]
   chapters:
     - index.qmd
     - acknowledgements.qmd
@@ -35,12 +34,6 @@ prefer-html: true
 format:
   html:
     theme: cosmo
-    execute:
-      echo: false
-      warning: false
-  pdf:
-    documentclass: scrreprt
-    keep-tex: true
     execute:
       echo: false
       warning: false
