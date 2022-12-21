@@ -193,7 +193,7 @@
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, enhanced, breakable, sharp corners, interior hidden, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, frame hidden, borderline west={3pt}{0pt}{shadecolor}, interior hidden, sharp corners, breakable, boxrule=0pt]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -242,10 +242,10 @@ Certainly, none of the statistical ideas contained in this document are
 unique to me. There are thorough--and often much more mathematically
 rigorous--presentations of many of the idea contained in this document
 in some of the excellent foundational texts on multilevel modeling such
-as the early book by Raudenbush and Bryk (2002), the excellent book on
-longitudinal models by Singer and Willett (2003), and Rabe-Hesketh and
+as the early book by Raudenbush \& Bryk (2002), the excellent book on
+longitudinal models by Singer \& Willett (2003), and Rabe-Hesketh \&
 Skrondal (2012)'s more recent and extremely comprehensive two volume
-text. Luke (2004), and Kreft and de Leeuw (1998), offer shorter, less
+text. Luke (2004), and Kreft \& de Leeuw (1998), offer shorter, less
 mathematical, but still excellent introductions to the topic of
 multilevel modeling. Gelman et al. (2007) introduced me to the ideas
 that in this document I describe as ``multilevel structure'' using an
@@ -297,7 +297,7 @@ are of course my responsibility.
 
 \markboth{Some Preliminary Thoughts}{Some Preliminary Thoughts}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, arc=.35mm, colback=white, leftrule=.75mm, opacityback=0, breakable, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, toptitle=1mm, title={Preliminaries}, left=2mm, opacitybacktitle=0.6, titlerule=0mm, rightrule=.15mm, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, breakable, colback=white, bottomrule=.15mm, title={Preliminaries}, leftrule=.75mm, colframe=quarto-callout-note-color-frame, opacitybacktitle=0.6, coltitle=black, arc=.35mm, titlerule=0mm, toprule=.15mm, left=2mm, opacityback=0, bottomtitle=1mm]
 
 ``Like you I
 
@@ -362,18 +362,18 @@ There is clearly need for both qualitative and quantitative methods.
 Central to the argument of this document is the idea that advanced
 quantitative methods can be core contributors to the agenda of
 understanding issues of diversity and social justice more fully and
-thoroughly (Cokley and Awad 2013; Grogan-Kaylor et al. 2018).
+thoroughly (Cokley \& Awad, 2013; Grogan-Kaylor et al., 2018).
 Quantitative methods, particularly in discussions comparing qualitative
 and quantitative methodologies, are sometimes labelled as inherently
 \emph{positivist} methods. My argument regarding this point is twofold.
 There is nothing within the mathematics of quantitative methods that
 requires a positivist epistemology. Quantitative methodologies could as
 easily be conducted using a critical epistemology--that is aware of
-dynamics of power and privilege--as any other methodology (Stage and
-Wells 2014). Second, when we have samples of a hundred, several hundred,
-several thousand, or even hundreds of thousands of study participants,
-it is difficult to imagine a methodology other than a quantitative
-methodology that could accomplish the following:
+dynamics of power and privilege--as any other methodology (Stage \&
+Wells, 2014). Second, when we have samples of a hundred, several
+hundred, several thousand, or even hundreds of thousands of study
+participants, it is difficult to imagine a methodology other than a
+quantitative methodology that could accomplish the following:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -398,10 +398,10 @@ I explore the ways that \emph{multilevel} data can contribute
 substantially to the complexity of this enterprise. I thus argue that
 quantitative methods can play an important role in contributing to
 liberatory ideas. I note that one of the pioneers of liberation
-psychology, Martin-Baró (Aron and Corne 1994), used both qualitative and
-quantitative methods (Martin-Baro 1994), including in the latter case,
+psychology, Martin-Baró (Aron \& Corne, 1994), used both qualitative and
+quantitative methods (Martin-Baro, 1994), including in the latter case,
 relatively sophisticated arguments about patterns of missing data across
-a survey data set (Aron and Corne 1994).
+a survey data set (Aron \& Corne, 1994).
 
 There is thus an ethical argument that is embedded in this document.
 Many of us do research with the hope of better understanding the
@@ -424,13 +424,13 @@ Informed political decision-making, retirement planning, active
 parenting, and the vast majority of choices we make in our personal,
 occupational, and civic lives can be better served by improved
 quantitative understanding and reasoning, as well as accompanying
-action-oriented dispositions.'' (Wiest, Higgins, and Frost 2007)
+action-oriented dispositions.'' (Wiest et al., 2007)
 \end{quote}
 
 The idea of this document is that a deeper study of multilevel modeling
-can result in an advanced ``quantitative literacy'' (Wiest, Higgins, and
-Frost 2007), or ``principled argument'' (Abelson 1995), that is
-appropriate for drawing accurate conclusions from multilevel data.
+can result in an advanced ``quantitative literacy'' (Wiest et al.,
+2007), or ``principled argument'' (Abelson, 1995), that is appropriate
+for drawing accurate conclusions from multilevel data.
 
 \hypertarget{are-answers-from-social-science-obvious}{%
 \section{Are Answers from Social Science
@@ -466,9 +466,9 @@ decades of research and discussion to become an \emph{obvious} cause of
 lung cancer. A similar \emph{historical} dynamic seems to be playing out
 in some research on parenting and child development. Despite decades of
 evidence indicating that corporal punishment has undesirable
-conequeqences for children (Gershoff and Grogan-Kaylor 2016b), corporal
+conequeqences for children (Gershoff \& Grogan-Kaylor, 2016b), corporal
 punishment remains a disciplinary strategy endorsed by the majority of
-the American population (Hines, Kalil, and Ryan 2022).
+the American population (Hines et al., 2022).
 
 In contrast sometimes the conclusions of social research may not always
 be obvious. For example:
@@ -483,15 +483,14 @@ be obvious. For example:
   suggested that ``when environmental risk is high, parenting practices
   that are firmer and higher in control result in lower levels of young
   adolescent antisocial behavior.'' This echoes similar research by
-  (Deater-Deckard et al. 1996) suggesting that physical punishment was
+  (Deater-Deckard et al., 1996) suggesting that physical punishment was
   harmful for European-American children, but not for African-American
   children. Later, larger sample research has found that this appears
   not to be the case: physical punishment is harmful for children in all
-  groups (Gershoff and Grogan-Kaylor 2016b, 2016a; Pace, Lee, and
-  Grogan-Kaylor 2019).
+  groups (Gershoff \& Grogan-Kaylor, 2016b, 2016a; Pace et al., 2019).
 \item
-  Using MICS Data (UNICEF 2021), we conducted a study of the link
-  between gender inequality and physical child abuse (Ma et al. 2022).
+  Using MICS Data (UNICEF, 2021), we conducted a study of the link
+  between gender inequality and physical child abuse (Ma et al., 2022).
   We expected to find that higher levels of gender inequality led to
   higher levels of physical abuse for female children, but not for male
   children. Instead, we found that higher levels of gender inequality
@@ -502,11 +501,12 @@ be obvious. For example:
   was predictive of levels of child abuse, while country level GDP was
   not.
 \item
-  In a study of parenting during Covid-19 (Lee et al. 2022), we expected
-  to find that households with children would experience \emph{higher}
-  levels of anxiety and depression than households without children.
-  Instead, we found the opposite. Being in a household with children was
-  generally \emph{protective} against anxiety and depression.
+  In a study of parenting during Covid-19 (Lee et al., 2022), we
+  expected to find that households with children would experience
+  \emph{higher} levels of anxiety and depression than households without
+  children. Instead, we found the opposite. Being in a household with
+  children was generally \emph{protective} against anxiety and
+  depression.
 \end{enumerate}
 
 In Section~\ref{sec-studyvariation}, Section~\ref{sec-pvalues} and
@@ -534,10 +534,10 @@ own area of research.
 
 I ground this presentation in research that we have conducted on
 parenting and child development in international context (Grogan-Kaylor
-et al. 2021; Ward, Grogan-Kaylor, Pace, et al. 2021; Ward et al. 2022;
-Ward, Grogan-Kaylor, Ma, et al. 2021; Pace, Lee, and Grogan-Kaylor 2019;
-Ma et al. 2022). For the presentation in this document, I use simulated
-data on these issues.
+et al., 2021; Ma et al., 2022; Pace et al., 2019; Ward, Grogan-Kaylor,
+Ma, et al., 2021; Ward, Grogan-Kaylor, Pace, et al., 2021; Ward et al.,
+2022). For the presentation in this document, I use simulated data on
+these issues.
 
 Using the simulated data, I refer to \emph{predictors} and
 \emph{outcomes}, and explore the ways that the multilevel model can
@@ -563,26 +563,26 @@ Research on parenting and child development has identified robust
 associations between parenting behaviors and child developmental
 outcomes. Broadly speaking, physical punishment is associated with
 increases in child aggression, child anxiety and child mental health
-problems (Gershoff and Grogan-Kaylor 2016b), while warm and supportive
-parenting is associated with decreases in these outcomes (Rothenberg et
-al. 2022; Khaleque and Rohner 2002). However, much of this research is
-conducted on North American samples (Henrich, Heine, and Norenzayan
-2010; Draper et al. 2022).
+problems (Gershoff \& Grogan-Kaylor, 2016b), while warm and supportive
+parenting is associated with decreases in these outcomes (Khaleque \&
+Rohner, 2002; Rothenberg et al., 2022). However, much of this research
+is conducted on North American samples (Draper et al., 2022; Henrich et
+al., 2010).
 
-Barth and Olsen (2020) have argued, that children constitute a class of
+Barth \& Olsen (2020) have argued, that children constitute a class of
 oppressed persons. If children are oppressed, then it is imperative to
 empirically determine what factors are promotive of children's
 well-being, and what factors constitute risk factors that contribute to
 decreases in children's well-being. Equally imperative--given the North
 American focus of so much research on parenting and child development
-(Henrich, Heine, and Norenzayan 2010; Draper et al. 2022)--would be
-efforts to extend the study of parenting and child development to a
-broader, more global context. As part of such a research agenda, it is
-necessary to have quantitative tools that are able to determine the
-consistency of relationships in parenting and child development. That
-is, are the relationships between certain forms of parenting and child
-developmental outcomes, largely consistent across countries, largely
-different across countries, or somewhere in between?
+(Draper et al., 2022; Henrich et al., 2010)--would be efforts to extend
+the study of parenting and child development to a broader, more global
+context. As part of such a research agenda, it is necessary to have
+quantitative tools that are able to determine the consistency of
+relationships in parenting and child development. That is, are the
+relationships between certain forms of parenting and child developmental
+outcomes, largely consistent across countries, largely different across
+countries, or somewhere in between?
 
 This document will discuss the ways in which a multilevel statistical
 perspective not only allows one to appropriately analyze cross cultural
@@ -597,7 +597,7 @@ improving the well-being of families and children.
 \begin{quote}
 ``It shouldn't be theories that define the problems of our situation,
 but rather the problems that demand, and so to speak, select, their own
-theorisation.'' -- Martin-Baro (1998) in Burton and Kagan (2005).
+theorisation.'' -- Martin-Baro (1998) in Burton \& Kagan (2005).
 \end{quote}
 
 Following from this pragmatic and advocacy oriented emphasis, the
@@ -623,13 +623,13 @@ development raises more general questions in cross-cultural research of
 \emph{universalism} and \emph{particularity}. With regard to child
 development it is universal that all children need some amount of
 emotional and material care to grow into healthy youth and healthy
-adults (Kottak 2021). Further it is broadly understood that children
-should be protected from violence (UNICEF 2014). This broad consensus is
-manifested in such documents as the Convention on the Rights of the
-Child (United Nations General Assembly 1989) and the United Nations
-Sustainable Development Goals (United Nations 2022), representing global
-efforts to ensure the children are cared for, and are protected against
-violence.
+adults (Kottak, 2021). Further it is broadly understood that children
+should be protected from violence (UNICEF, 2014). This broad consensus
+is manifested in such documents as the Convention on the Rights of the
+Child (United Nations General Assembly, 1989) and the United Nations
+Sustainable Development Goals (United Nations, 2022), representing
+global efforts to ensure the children are cared for, and are protected
+against violence.
 
 At the same time, broad international efforts to improve children's
 well-being must engage with important considerations of cultural
@@ -641,10 +641,10 @@ detrimental in all. Within the area of parenting and child development,
 most of the debate has focused around the question of whether physical
 punishment is equally detrimental in all settings, particularly whether
 physical punishment is detrimental in countries where it is especially
-common, or normative (Gershoff et al. 2010). Much less attention has
+common, or normative (Gershoff et al., 2010). Much less attention has
 been focused on the study of positive parenting internationally, and the
 degree to which the outcomes of positive parenting are consistent across
-countries remains understudied (Ward, Grogan-Kaylor, Ma, et al. 2021).
+countries remains understudied (Ward, Grogan-Kaylor, Ma, et al., 2021).
 
 However, as global initiatives to improve child well-being and family
 life move forward, it becomes increasingly important to continue to
@@ -656,9 +656,9 @@ cultural contexts. Thus it is necessary to employ statistical methods
 that are able to adequately and accurately analyze data across
 countries.
 
-As I will outline below--and is evident in the literature (Raudenbush
-and Bryk 2002; Singer and Willett 2003; Rabe-Hesketh and Skrondal 2012;
-Luke 2004; Kreft and de Leeuw 1998)--multilevel models are eminently
+As I will outline below--and is evident in the literature (Kreft \& de
+Leeuw, 1998; Luke, 2004; Rabe-Hesketh \& Skrondal, 2012; Raudenbush \&
+Bryk, 2002; Singer \& Willett, 2003)--multilevel models are eminently
 suited for cross-cultural research in that they are not only able to
 \emph{control for} the clustering of study participants within
 countries, but are also able to \emph{explore the variation}--or
@@ -669,7 +669,7 @@ Long ago, Cesaire, writing about liberatory movements wrote\ldots{}
 \begin{quote}
 ``My conception of the universal is that of a universal enriched by all
 that is particular, a universal enriched by every particular: the
-deepening and coexistence of all particulars.'' (Cesaire 1956)
+deepening and coexistence of all particulars.'' (Cesaire, 1956)
 \end{quote}
 
 It is this sensibility that I hope to echo in my discussion of the
@@ -694,9 +694,9 @@ indeed an important and crucial aspect of multilevel models.
 However, my argument here is that multilevel models are better seen as a
 method to \emph{explore} the variation in inherent within nested or
 clustered data. Again, while these issues are well understood within the
-statistical literature (Raudenbush and Bryk 2002; Singer and Willett
-2003; Rabe-Hesketh and Skrondal 2012; Luke 2004; Kreft and de Leeuw
-1998), they are less often noted in applied research.
+statistical literature (Kreft \& de Leeuw, 1998; Luke, 2004;
+Rabe-Hesketh \& Skrondal, 2012; Raudenbush \& Bryk, 2002; Singer \&
+Willett, 2003), they are less often noted in applied research.
 
 In the graph below, imagine that physical punishment, or some other risk
 factor, is associated with detrimental mental health outcomes. Each
@@ -791,13 +791,13 @@ multilevel modeling as the \emph{study of variation}, not simply
 ``\ldots universal theorizing requires adequately sampled (i.e.,
 diverse) data and better appreciation of issues of comparability and the
 most powerful theories ought to predict and explain variation, not sweep
-variation under the rug.'' (Blasi et al. 2022)
+variation under the rug.'' (Blasi et al., 2022)
 \end{quote}
 
 Again, sophisticated treatments of all of the ideas are available in one
 form or another across the excellent textbooks on multilevel modeling
-(Raudenbush and Bryk 2002; Singer and Willett 2003; Rabe-Hesketh and
-Skrondal 2012; Luke 2004; Kreft and de Leeuw 1998). However, some of
+(Kreft \& de Leeuw, 1998; Luke, 2004; Rabe-Hesketh \& Skrondal, 2012;
+Raudenbush \& Bryk, 2002; Singer \& Willett, 2003). However, some of
 these ideas appear less often in applied research, and my intention here
 is to make the application of these ideas to applied research more
 clear.
@@ -884,7 +884,7 @@ outcome
 \hypertarget{sec-software}{%
 \chapter{Software}\label{sec-software}}
 
-In this document, I use Stata (StataCorp 2021b) to analyze data. Stata
+In this document, I use Stata (StataCorp, 2021b) to analyze data. Stata
 is my software of choice in this document because of Stata's overall
 ease of use and intuitiveness. The creators of Stata have created a
 powerful program that is extremely simple to use, but with a wide range
@@ -1141,7 +1141,7 @@ equation can be easily represented in Stata syntax.
 \subsection{Introduction}\label{introduction-1}}
 
 If the data are grouped, nested, or clustered, then this aspect of the
-structure of the data needs to be accounted for. Bland and Altman (1994)
+structure of the data needs to be accounted for. Bland \& Altman (1994)
 describe a simulation in which grouped data are artificially generated
 according to the following procedure.
 
@@ -1149,7 +1149,7 @@ according to the following procedure.
 ``The data were generated from random numbers, and there is no relation
 between X and Y at all. Firstly, values of X and Y were generated for
 each `subject,' then a further random number was added to make the
-individual observation.'' (Bland and Altman 1994)
+individual observation.'' (Bland \& Altman, 1994)
 \end{quote}
 
 The graph below illustrates the process of simulating the data.
@@ -1170,8 +1170,8 @@ The graph below illustrates the process of simulating the data.
 An analysis that is not aware of the grouped nature of the data will
 give biased results, will mis-estimate standard errors, and importantly,
 will often attribute statistical significance to some of the independent
-variables when this is not appropriate (Raudenbush and Bryk 2002; Bland
-and Altman 1994).
+variables when this is not appropriate (Bland \& Altman, 1994;
+Raudenbush \& Bryk, 2002).
 
 In the example below, we compare a simple ordinary least squares
 analysis of the data with a multilevel model that accounts for the
@@ -1214,7 +1214,7 @@ OLS in the presence of clustered data.
 
 Associations between two variables can be \emph{very different} (or even
 \emph{reversed}) depending upon whether or not the analysis is ``aware''
-of the grouped, nested, or clustered nature of the data (Gelman et al.
+of the grouped, nested, or clustered nature of the data (Gelman et al.,
 2007). In the example presented here, the groups are countries, but
 could as easily be neighborhoods, communities, or schools.
 
@@ -1565,7 +1565,7 @@ model by examining variation in the \(\beta\)'s.
 \subsection{Variation As An Outcome}\label{variation-as-an-outcome}}
 
 Even less common is to examine \emph{variation} itself as an outcome
-(Burkner 2018).
+(Burkner, 2018).
 
 \begin{equation}\protect\hypertarget{eq-distributional}{}{\sigma_{yij} = \beta_0 + \beta_1 x_1 + u_{0j} + e_{ij}}\label{eq-distributional}\end{equation}
 
@@ -1584,7 +1584,7 @@ Burkner (2018), would allow us to explore such a question.
 Of note, while I do not explore in detail differences between Bayesian
 and frequentist approaches to multilevel modeling in this document,
 these models are likely to be only estimable with Bayesian software
-rather than with frequentist software (Burkner 2018).
+rather than with frequentist software (Burkner, 2018).
 
 \hypertarget{maximal-models}{%
 \subsection{Maximal Models}\label{maximal-models}}
@@ -1601,10 +1601,10 @@ argument for including as many random effects---i.e.~random slopes---in
 a statistical model as possible.
 
 Models with all possible random effects are termed \emph{maximal models}
-(Barr et al. 2013; Frank 2018). Such models include a large number of
+(Barr et al., 2013; Frank, 2018). Such models include a large number of
 random slopes, e.g.~\(u_1, u_2, u_3, ..., etc.\) even when some of those
 estimated slopes are close to 0. Such models may be more easily
-estimable when using Bayesian estimation (Frank 2018), a topic which I
+estimable when using Bayesian estimation (Frank, 2018), a topic which I
 do not cover in detail in this document.
 
 It should be noted that Matuschek et al. (2017) argue that such a
@@ -1612,7 +1612,7 @@ It should be noted that Matuschek et al. (2017) argue that such a
 further argue that one should adhere to ``a random effect structure that
 is supported by the data.'' In contrast, Nalborczyk et al. (2019) argue
 that maximal models are supported under the Bayesian approach. Oberauer
-(2022) also argues for including multiple random slopes. Schielzeth and
+(2022) also argues for including multiple random slopes. Schielzeth \&
 Forstmeier (2009) make a similar argument from a frequentist
 perspective.
 
@@ -1649,7 +1649,7 @@ of a multilevel model over these other approaches:
   the neighborhood. Here we run into an idea similar to that discussed
   in Section~\ref{sec-multilevelstructure}, the ``ecological fallacy'':
   the idea that group level and individual level relationships are
-  necessarily the same (Firebaugh 2001).
+  necessarily the same (Firebaugh, 2001).
 \item
   Lastly, we could adopt a statistical strategy of \emph{clustering} the
   standard errors. Clustering the standard errors means that standard
@@ -1670,7 +1670,7 @@ Model}\label{the-longitudinal-multilevel-model}}
 
 \begin{quote}
 ``Mathematics is the art of giving the same name to different things.''
-(Poincare 1908)
+(Poincare, 1908)
 \end{quote}
 
 Counter-intuitively, and surprisingly, the mathematics of estimating
@@ -1921,7 +1921,7 @@ Most software programs for multilevel modeling allow one to incorporate
 measures of autocorrelation so that, e.g., \(e_{i,t=3}\) is allowed to
 be correlated with \(e_{i,t=2}\), which in turn can be correlated with
 \(e_{i,t=1}\). More complex autocorrelation structures are usually also
-possible (StataCorp 2021a).
+possible (StataCorp, 2021a).
 
 \hypertarget{causality}{%
 \section{Causality}\label{causality}}
@@ -1933,8 +1933,8 @@ Reasoning}\label{the-importance-of-causal-reasoning}}
 Causal reasoning is sometimes considered to be a statistical--or even
 overly technical--concern. Arguably, however, whenever one is using
 research to make recommendations about interventions, or treatments, or
-policies, one is engaging in some form of causal reasoning (Duncan and
-Gibson-Davis 2006).
+policies, one is engaging in some form of causal reasoning (Duncan \&
+Gibson-Davis, 2006).
 
 \begin{quote}
 If one is saying that implementing \emph{x} would result in beneficial
@@ -1953,26 +1953,26 @@ that \emph{parental warmth} and \emph{physical punishment} are
 
 Randomized studies provide the best evidence about the internal validity
 of causal relationships. However, randomized studies have certain
-limitations (Diener et al. 2022). First of all--especially in a study
+limitations (Diener et al., 2022). First of all--especially in a study
 with a smaller sample--randomization may not always be perfect, and the
 control and treatment groups may not be statistically equivalent.
 Secondly, because of ethical concerns some studies can not be conducted
-with randomization (Diener et al. 2022). For example, in the study of
+with randomization (Diener et al., 2022). For example, in the study of
 parenting and child development, children cannot ethically be assigned
 to parents with different styles of parenting and followed over the long
 term. Thus, methods that provide rigorous causal estimation with
-observational methods are necessary (Diener et al. 2022).
+observational methods are necessary (Diener et al., 2022).
 
 Because of the assumed superiority of studies that employ randomization,
 it is sometimes maintained that \emph{correlation is not causation} and
 that studies that do not make use of randomization are \emph{only
 observational} and \emph{correlational}, and that results from
 observational studies cannot be used to support causal conclusions.
-However, in an important review (Waddington, Villar, and Valentine 2022)
-suggested that studies using appropriately quantitative methods can
-provide causally robust conclusions.
+However, in an important review (Waddington et al., 2022) suggested that
+studies using appropriately quantitative methods can provide causally
+robust conclusions.
 
-In a statement salient for social research, Duncan and Gibson-Davis
+In a statement salient for social research, Duncan \& Gibson-Davis
 (2006) point out the logical inconsistency of writing that does not
 rigorously address causal processes, but then goes on to suggest
 interventions or treatment or policies:
@@ -2004,21 +2004,21 @@ to use them for causal modeling.''
 
 Lastly, because of their often small samples, randomized studies may
 have high internal validity, but much lower external validity, or
-generalization to larger populations (Diener et al. 2022). This issue of
-generalizability becomes increasingly salient, when we are reminded of
-the fact that so little social and psychological research has been
-conducted outside of North American contexts (Henrich, Heine, and
-Norenzayan 2010; Draper et al. 2022). It is necessary to make use of
-broadly representative observational data sets, and appropriately
-sophisticiated quantitative methods to make causally robust conclusions
-from observational data.
+generalization to larger populations (Diener et al., 2022). This issue
+of generalizability becomes increasingly salient, when we are reminded
+of the fact that so little social and psychological research has been
+conducted outside of North American contexts (Draper et al., 2022;
+Henrich et al., 2010). It is necessary to make use of broadly
+representative observational data sets, and appropriately sophisticiated
+quantitative methods to make causally robust conclusions from
+observational data.
 
 \hypertarget{formal-criteria-of-causality}{%
 \subsection{Formal Criteria of
 Causality}\label{formal-criteria-of-causality}}
 
 For x to be a cause of y, one needs the following 3 things to be true
-(Holland 1986).
+(Holland, 1986).
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2055,7 +2055,7 @@ the substantive issues that I have been considering so far in this
 document.
 
 For \emph{parenting} to be a cause of \emph{child outcomes}, one needs
-the following 3 things to be true (Holland 1986).
+the following 3 things to be true (Holland, 1986).
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2097,7 +2097,7 @@ Earlier, in Section~\ref{sec-multilevelstructure}, I referred to the
 idea of \emph{multilevel structure} wherein failure to account for the
 clustering of data--omission of \(u_0\) from the equation being
 estimated--may lead to incorrect conclusions. A closely related
-phenomenon is that of \emph{Simpson's Paradox} (Simpson 1951) wherein
+phenomenon is that of \emph{Simpson's Paradox} (Simpson, 1951) wherein
 omission of a relevant \emph{covariate} (e.g.~SES, community
 characteristics, country level characteristics) may also lead to
 dramatically incorrect results.
@@ -2216,8 +2216,8 @@ Model}\label{the-correlated-random-effects-model}}
 
 The \emph{correlated random effects} model is based upon ideas first
 developed by Mundlak (1978) and later explicated in Wooldridge (2010).
-Antonakis, Bastardoz, and Ronko (2021) and Schunck (2013) provide very
-intuitive explanations of this model.
+Antonakis et al. (2021) and Schunck (2013) provide very intuitive
+explanations of this model.
 
 The central idea is that one can obtain estimates of both the time
 invariant variables, and estimates for time varying variables. The key
@@ -2233,7 +2233,7 @@ include \(\beta_{1a}\overline{\text{parental warmth}}_{i}\).
 
 By including this parameter, I obtain estimates for the time varying
 variables that are \emph{equivalent} to what I would obtain from a fixed
-effects regression (Schunck 2013).
+effects regression (Schunck, 2013).
 
 The Stata command for the correlated random effects model is:
 
@@ -2317,380 +2317,376 @@ diversity and variation.
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-Abelson1995}{}}%
-Abelson, Robert P. 1995. \emph{Statistics as Principled Argument.}
-\emph{Statistics as Principled Argument.} Lawrence Erlbaum Associates,
-Inc.
+Abelson, R. P. (1995). Statistics as principled argument. In
+\emph{Statistics as principled argument.} (pp. 221, xv, 221--xv).
+Lawrence Erlbaum Associates, Inc.
 
 \leavevmode\vadjust pre{\hypertarget{ref-Allison2009}{}}%
-Allison, Paul. 2009. \emph{Fixed Effects Regression Models}. Sage
+Allison, P. (2009). \emph{Fixed effects regression models}. Sage
 Publishing.
 
 \leavevmode\vadjust pre{\hypertarget{ref-Antonakis2019}{}}%
-Antonakis, John, Nicolas Bastardoz, and Mikko Ronko. 2021. {``On
-Ignoring the Random Effects Assumption in Multilevel Models: Review,
-Critique, and Recommendations.''} \emph{Organizational Research Methods}
-24 (October): 443--83. \url{https://doi.org/10.1177/1094428119877457}.
+Antonakis, J., Bastardoz, N., \& Ronko, M. (2021). On ignoring the
+random effects assumption in multilevel models: Review, critique, and
+recommendations. \emph{Organizational Research Methods}, \emph{24},
+443--483. \url{https://doi.org/10.1177/1094428119877457}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Aron1994}{}}%
-Aron, Adrianne, and Shawn Corne. 1994. {``Introduction.''} In
-\emph{Writings for a Liberation Psychology}, edited by Adrianne Aron and
-Shawn Corne. Harvard University Press.
+Aron, A., \& Corne, S. (1994). Introduction. In A. Aron \& S. Corne
+(Eds.), \emph{Writings for a liberation psychology}. Harvard University
+Press.
 
 \leavevmode\vadjust pre{\hypertarget{ref-Barr2013}{}}%
-Barr, Dale J., Roger Levy, Christoph Scheepers, and Harry J. Tily. 2013.
-{``Random Effects Structure for Confirmatory Hypothesis Testing: Keep It
-Maximal.''} \emph{Journal of Memory and Language} 68 (3): 255--78.
-\url{https://doi.org/10.1016/j.jml.2012.11.001}.
+Barr, D. J., Levy, R., Scheepers, C., \& Tily, H. J. (2013). Random
+effects structure for confirmatory hypothesis testing: Keep it maximal.
+\emph{Journal of Memory and Language}, \emph{68}(3), 255--278.
+\url{https://doi.org/10.1016/j.jml.2012.11.001}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Barth2020}{}}%
-Barth, Richard P., and Amanda N. Olsen. 2020. {``Are Children Oppressed?
-The Timely Importance of Answering This Question.''} \emph{Children and
-Youth Services Review} 110: 104780.
-https://doi.org/\url{https://doi.org/10.1016/j.childyouth.2020.104780}.
+Barth, R. P., \& Olsen, A. N. (2020). Are children oppressed? The timely
+importance of answering this question. \emph{Children and Youth Services
+Review}, \emph{110}, 104780.
+https://doi.org/\url{https://doi.org/10.1016/j.childyouth.2020.104780}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Bland1994}{}}%
-Bland, J M, and D G Altman. 1994. {``Statistics Notes: Correlation,
-Regression, and Repeated Data.''} \emph{BMJ} 308 (April): 896.
-\url{https://doi.org/10.1136/bmj.308.6933.896}.
+Bland, J. M., \& Altman, D. G. (1994). Statistics notes: Correlation,
+regression, and repeated data. \emph{BMJ}, \emph{308}, 896.
+\url{https://doi.org/10.1136/bmj.308.6933.896}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Blasi2022}{}}%
-Blasi, Dami'an E, Joseph Henrich, Evangelia Adamou, David Kemmerer, and
-Asifa Majid. 2022. {``Over-Reliance on {E}nglish Hinders Cognitive
-Science.''} \emph{Trends in Cognitive Sciences}, October.
-\url{https://doi.org/10.1016/j.tics.2022.09.015}.
+Blasi, D. E., Henrich, J., Adamou, E., Kemmerer, D., \& Majid, A.
+(2022). Over-reliance on {E}nglish hinders cognitive science.
+\emph{Trends in Cognitive Sciences}.
+\url{https://doi.org/10.1016/j.tics.2022.09.015}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Burkner2018}{}}%
-Burkner, Paul-Christian. 2018. {``Advanced {B}ayesian Multilevel
-Modeling with the r Package Brms.''} \emph{The R Journal} 10 (1):
-395--411.
+Burkner, P.-C. (2018). Advanced {B}ayesian multilevel modeling with the
+r package brms. \emph{The R Journal}, \emph{10}(1), 395--411.
 
 \leavevmode\vadjust pre{\hypertarget{ref-Burton2005}{}}%
-Burton, Mark, and Carolyn Kagan. 2005. {``{Liberation Social Psychology:
-Learning From Latin America Psychology of liberation: Learning from
-Latin America}.''} \emph{Journal of Community \& Applied Social
-Psychology} 15 (January). \url{https://doi.org/10.1002/casp.786}.
+Burton, M., \& Kagan, C. (2005). {Liberation Social Psychology: Learning
+From Latin America Psychology of liberation: Learning from Latin
+America}. \emph{Journal of Community \& Applied Social Psychology},
+\emph{15}. \url{https://doi.org/10.1002/casp.786}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Cesaire1956}{}}%
-Cesaire, Aime. 1956. {``Letter to {M}aurice {T}horez.''}
+Cesaire, A. (1956). \emph{Letter to {M}aurice {T}horez}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-Cokley2013}{}}%
-Cokley, Kevin, and Germine Awad. 2013. {``In Defense of Quantitative
-Methods: Using the {`Master's Tools'} to Promote Social Justice.''}
-\emph{Journal for Social Action in Counseling \& Psychology} 5 (May):
-26. \url{https://doi.org/10.33043/JSACP.5.2.26-41}.
+Cokley, K., \& Awad, G. (2013). In defense of quantitative methods:
+Using the {``master's tools''} to promote social justice. \emph{Journal
+for Social Action in Counseling \& Psychology}, \emph{5}, 26.
+\url{https://doi.org/10.33043/JSACP.5.2.26-41}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Deater-Deckard1996}{}}%
-Deater-Deckard, Kirby, Kenneth A Dodge, John E Bates, and Gregory S
-Pettit. 1996. {``{Physical discipline among African American and
-European American mothers: Links to children's externalizing
-behaviors.}''} \emph{Developmental Psychology} 32 (6): 1065--72.
-\url{https://doi.org/10.1037/0012-1649.32.6.1065}.
+Deater-Deckard, K., Dodge, K. A., Bates, J. E., \& Pettit, G. S. (1996).
+{Physical discipline among African American and European American
+mothers: Links to children's externalizing behaviors.}
+\emph{Developmental Psychology}, \emph{32}(6), 1065--1072.
+\url{https://doi.org/10.1037/0012-1649.32.6.1065}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Diener2022}{}}%
-Diener, Ed, Robert Northcott, Michael J Zyphur, and Stephen G West.
-2022. {``Beyond Experiments.''} \emph{Perspectives on Psychological
-Science} 17 (February): 1101--19.
-\url{https://doi.org/10.1177/17456916211037670}.
+Diener, E., Northcott, R., Zyphur, M. J., \& West, S. G. (2022). Beyond
+experiments. \emph{Perspectives on Psychological Science}, \emph{17},
+1101--1119. \url{https://doi.org/10.1177/17456916211037670}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Draper2022}{}}%
-Draper, Catherine E, Lisa M Barnett, Caylee J Cook, Jorge A Cuartas,
-Steven J Howard, Dana C McCoy, Rebecca Merkley, et al. 2022.
-{``Publishing Child Development Research from Around the World: An
-Unfair Playing Field Resulting in Most of the World's Child Population
-Under-Represented in Research.''} \emph{Infant and Child Development}
-n/a (October): e2375. \url{https://doi.org/10.1002/icd.2375}.
+Draper, C. E., Barnett, L. M., Cook, C. J., Cuartas, J. A., Howard, S.
+J., McCoy, D. C., Merkley, R., Molano, A., Maldonado-Carreño, C.,
+Obradovi'c, J., Scerif, G., Valentini, N. C., Venetsanou, F., \&
+Yousafzai, A. K. (2022). Publishing child development research from
+around the world: An unfair playing field resulting in most of the
+world's child population under-represented in research. \emph{Infant and
+Child Development}, \emph{n/a}, e2375.
+\url{https://doi.org/10.1002/icd.2375}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Duncan2006}{}}%
-Duncan, Greg J, and Christina M Gibson-Davis. 2006. {``{Connecting Child
-Care Quality to Child Outcomes: Drawing Policy Lessons from
-Nonexperimental Data}.''} \emph{Evaluation Review} 30 (5): 611--30.
-\url{https://doi.org/10.1177/0193841X06291530}.
+Duncan, G. J., \& Gibson-Davis, C. M. (2006). {Connecting Child Care
+Quality to Child Outcomes: Drawing Policy Lessons from Nonexperimental
+Data}. \emph{Evaluation Review}, \emph{30}(5), 611--630.
+\url{https://doi.org/10.1177/0193841X06291530}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Eamon2001}{}}%
-Eamon, Mary Keegan. 2001. {``{Poverty, Parenting, Peer, and Neighborhood
-Influences on Young Adolescent Antisocial Behavior}.''} \emph{Journal of
-Social Service Research} 28 (1): 1--23.
-\url{https://doi.org/10.1300/J079v28n01_01}.
+Eamon, M. K. (2001). {Poverty, Parenting, Peer, and Neighborhood
+Influences on Young Adolescent Antisocial Behavior}. \emph{Journal of
+Social Service Research}, \emph{28}(1), 1--23.
+\url{https://doi.org/10.1300/J079v28n01_01}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Felitti1998}{}}%
-Felitti, Vincent J, Robert F Anda, Dale Nordenberg, David F Williamson,
-Alison M Spitz, Valerie Edwards, Mary P Koss, and James S Marks. 1998.
-{``Relationship of Childhood Abuse and Household Dysfunction to Many of
-the Leading Causes of Death in Adults: The Adverse Childhood Experiences
-(ACE) Study.''} \emph{American Journal of Preventive Medicine} 14 (4):
-245--58.
-https://doi.org/\url{https://doi.org/10.1016/S0749-3797(98)00017-8}.
+Felitti, V. J., Anda, R. F., Nordenberg, D., Williamson, D. F., Spitz,
+A. M., Edwards, V., Koss, M. P., \& Marks, J. S. (1998). Relationship of
+childhood abuse and household dysfunction to many of the leading causes
+of death in adults: The adverse childhood experiences (ACE) study.
+\emph{American Journal of Preventive Medicine}, \emph{14}(4), 245--258.
+https://doi.org/\url{https://doi.org/10.1016/S0749-3797(98)00017-8}
 
 \leavevmode\vadjust pre{\hypertarget{ref-FIREBAUGH20014023}{}}%
-Firebaugh, G. 2001. {``Ecological Fallacy, Statistics Of.''} In
-\emph{International Encyclopedia of the Social \& Behavioral Sciences},
-edited by Neil J. Smelser and Paul B. Baltes, 4023--26. Oxford:
-Pergamon.
-https://doi.org/\url{https://doi.org/10.1016/B0-08-043076-7/00765-8}.
+Firebaugh, G. (2001). Ecological fallacy, statistics of. In N. J.
+Smelser \& P. B. Baltes (Eds.), \emph{International encyclopedia of the
+social \& behavioral sciences} (pp. 4023--4026). Pergamon.
+https://doi.org/\url{https://doi.org/10.1016/B0-08-043076-7/00765-8}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Frank2018}{}}%
-Frank, Michael. 2018. {``Mixed Effects Models: Is It Time to Go
-{B}ayesian by Default?''}
-\url{http://babieslearninglanguage.blogspot.com/2018/02/mixed-effects-models-is-it-time-to-go.html}.
+Frank, M. (2018). \emph{Mixed effects models: Is it time to go
+{B}ayesian by default?}
+\url{http://babieslearninglanguage.blogspot.com/2018/02/mixed-effects-models-is-it-time-to-go.html}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Gelman2007}{}}%
-Gelman, Andrew, Boris Shor, Joseph Bafumi, and David Park. 2007. {``Rich
-State, Poor State, Red State, Blue State: What's the Matter with
-Connecticut?''} \emph{Quarterly Journal of Political Science} 2
-(November): 345--67. \url{https://doi.org/10.2139/ssrn.1010426}.
+Gelman, A., Shor, B., Bafumi, J., \& Park, D. (2007). Rich state, poor
+state, red state, blue state: What's the matter with connecticut?
+\emph{Quarterly Journal of Political Science}, \emph{2}, 345--367.
+\url{https://doi.org/10.2139/ssrn.1010426}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Gershoff2016B}{}}%
-Gershoff, Elizabeth T., and Andrew Grogan-Kaylor. 2016a. {``{Race as a
-Moderator of Associations Between Spanking and Child Outcomes}.''}
-\emph{Family Relations} 65 (3): 490--501.
-\url{https://doi.org/10.1111/fare.12205}.
+Gershoff, E. T., \& Grogan-Kaylor, A. (2016a). {Race as a Moderator of
+Associations Between Spanking and Child Outcomes}. \emph{Family
+Relations}, \emph{65}(3), 490--501.
+\url{https://doi.org/10.1111/fare.12205}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Gershoff2016}{}}%
----------. 2016b. {``Spanking and Child Outcomes: Old Controversies and
-New Meta-Analyses.''} \emph{Journal of Family Psychology} 30: 453--69.
-\url{https://doi.org/10.1037/fam0000191}.
+Gershoff, E. T., \& Grogan-Kaylor, A. (2016b). Spanking and child
+outcomes: Old controversies and new meta-analyses. \emph{Journal of
+Family Psychology}, \emph{30}, 453--469.
+\url{https://doi.org/10.1037/fam0000191}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Gershoff2010}{}}%
-Gershoff, Elizabeth T., Andrew Grogan-Kaylor, Jennifer E. Lansford, Lei
-Chang, Arnaldo Zelli, Kirby Deater-Deckard, and Kenneth A. Dodge. 2010.
-{``Parent Discipline Practices in an International Sample: Associations
-with Child Behaviors and Moderation by Perceived Normativeness.''}
-\emph{Child Development} 81: 487--502.
-\url{https://doi.org/10.1111/j.1467-8624.2009.01409.x}.
+Gershoff, E. T., Grogan-Kaylor, A., Lansford, J. E., Chang, L., Zelli,
+A., Deater-Deckard, K., \& Dodge, K. A. (2010). Parent discipline
+practices in an international sample: Associations with child behaviors
+and moderation by perceived normativeness. \emph{Child Development},
+\emph{81}, 487--502.
+\url{https://doi.org/10.1111/j.1467-8624.2009.01409.x}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Grogan-Kaylor2021}{}}%
-Grogan-Kaylor, Andrew, Berenice Castillo, Garrett T Pace, Kaitlin P
-Ward, Julie Ma, Shawna J Lee, and Heather Knauer. 2021. {``{Global
-perspectives on physical and nonphysical discipline: A {B}ayesian
-multilevel analysis}.''} \emph{International Journal of Behavioral
-Development}, January. \url{https://doi.org/10.1177/0165025420981642}.
+Grogan-Kaylor, A., Castillo, B., Pace, G. T., Ward, K. P., Ma, J., Lee,
+S. J., \& Knauer, H. (2021). {Global perspectives on physical and
+nonphysical discipline: A {B}ayesian multilevel analysis}.
+\emph{International Journal of Behavioral Development}.
+\url{https://doi.org/10.1177/0165025420981642}
 
 \leavevmode\vadjust pre{\hypertarget{ref-GroganKaylor2018}{}}%
-Grogan-Kaylor, Andrew, Julie Ma, Shawna J. Lee, Berenice Castillo,
-Kaitlin P. Ward, and Sacha Klein. 2018. {``Using {B}ayesian Analysis to
-Examine Associations Between Spanking and Child Externalizing Behavior
-Across Race and Ethnic Groups.''} \emph{Child Abuse and Neglect} 86
-(December): 257--66. \url{https://doi.org/10.1016/j.chiabu.2018.10.009}.
+Grogan-Kaylor, A., Ma, J., Lee, S. J., Castillo, B., Ward, K. P., \&
+Klein, S. (2018). Using {B}ayesian analysis to examine associations
+between spanking and child externalizing behavior across race and ethnic
+groups. \emph{Child Abuse and Neglect}, \emph{86}, 257--266.
+\url{https://doi.org/10.1016/j.chiabu.2018.10.009}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Henrich2010}{}}%
-Henrich, Joseph, Steven J. Heine, and Ara Norenzayan. 2010. {``{The
-weirdest people in the world?}''}
-\url{https://doi.org/10.1017/S0140525X0999152X}.
+Henrich, J., Heine, S. J., \& Norenzayan, A. (2010). \emph{{The weirdest
+people in the world?}} \url{https://doi.org/10.1017/S0140525X0999152X}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Hines2022}{}}%
-Hines, Caitlin T, Ariel Kalil, and Rebecca M Ryan. 2022. {``{Differences
-in Parents' Attitudes Toward Spanking Across Socioeconomic Status and
-Region, 1986--2016}.''} \emph{Social Indicators Research} 160 (1):
-133--58. \url{https://doi.org/10.1007/s11205-021-02803-7}.
+Hines, C. T., Kalil, A., \& Ryan, R. M. (2022). {Differences in Parents'
+Attitudes Toward Spanking Across Socioeconomic Status and Region,
+1986--2016}. \emph{Social Indicators Research}, \emph{160}(1), 133--158.
+\url{https://doi.org/10.1007/s11205-021-02803-7}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Holland1986}{}}%
-Holland, Paul W. 1986. {``{Statistics and Causal Inference}.''}
-\emph{Journal of the American Statistical Association} 81 (396):
-945--60. \url{https://doi.org/10.1080/01621459.1986.10478354}.
+Holland, P. W. (1986). {Statistics and Causal Inference}. \emph{Journal
+of the American Statistical Association}, \emph{81}(396), 945--960.
+\url{https://doi.org/10.1080/01621459.1986.10478354}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Hooper2022}{}}%
-Hooper, Richard. 2022. {``{Designing Stepped Wedge Trials with
-Continuous Recruitment}.''} In \emph{Methods: Mind the Gap (Webinar
-Series)}. London, UK.
+Hooper, R. (2022). {Designing Stepped Wedge Trials with Continuous
+Recruitment}. \emph{Methods: Mind the Gap (Webinar Series)}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-Khaleque2002}{}}%
-Khaleque, Abdul, and Ronald P Rohner. 2002. {``Perceived Parental
-Acceptance-Rejection and Psychological Adjustment: A Meta-Analysis of
-Cross-Cultural and Intracultural Studies.''} \emph{Journal of Marriage
-and Family} 64 (February): 54--64.
-https://doi.org/\url{https://doi.org/10.1111/j.1741-3737.2002.00054.x}.
+Khaleque, A., \& Rohner, R. P. (2002). Perceived parental
+acceptance-rejection and psychological adjustment: A meta-analysis of
+cross-cultural and intracultural studies. \emph{Journal of Marriage and
+Family}, \emph{64}, 54--64.
+https://doi.org/\url{https://doi.org/10.1111/j.1741-3737.2002.00054.x}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Kottak2021}{}}%
-Kottak, Conrad. 2021. \emph{Anthropology: Appreciating Human Diversity}.
-19th ed. McGraw Hill.
+Kottak, C. (2021). \emph{Anthropology: Appreciating human diversity}
+(19th ed.). McGraw Hill.
 
 \leavevmode\vadjust pre{\hypertarget{ref-Kreft1998}{}}%
-Kreft, Ita, and Jan de Leeuw. 1998. \emph{Introducing Multilevel
-Modeling}. SAGE Publications.
-\url{https://doi.org/10.4135/9781849209366}.
+Kreft, I., \& de Leeuw, J. (1998). \emph{Introducing multilevel
+modeling}. SAGE Publications.
+\url{https://doi.org/10.4135/9781849209366}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Lee2022}{}}%
-Lee, Shawna J, Kaitlin P Ward, Andrew Grogan-Kaylor, and Vijay Singh.
-2022. {``Anxiety and Depression During {COVID-19}: Are Adults in
-Households with Children Faring Worse?''} \emph{Journal of General
-Internal Medicine} 37: 1328--30.
-\url{https://doi.org/10.1007/s11606-021-07256-9}.
+Lee, S. J., Ward, K. P., Grogan-Kaylor, A., \& Singh, V. (2022). Anxiety
+and depression during {COVID-19}: Are adults in households with children
+faring worse? \emph{Journal of General Internal Medicine}, \emph{37},
+1328--1330. \url{https://doi.org/10.1007/s11606-021-07256-9}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Luke2004}{}}%
-Luke, Douglas. 2004. \emph{Multilevel Modeling}. SAGE Publications, Inc.
-\url{https://doi.org/10.4135/9781412985147}.
+Luke, D. (2004). \emph{Multilevel modeling}. SAGE Publications, Inc.
+\url{https://doi.org/10.4135/9781412985147}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Ma2022}{}}%
-Ma, Julie, Andrew C. Grogan-Kaylor, Garrett T. Pace, Kaitlin P. Ward,
-and Shawna J. Lee. 2022. {``{The association between spanking and
-physical abuse of young children in 56 low- and middle-income
-countries}.''} \emph{Child Abuse \& Neglect} 129 (July): 105662.
-\url{https://doi.org/10.1016/j.chiabu.2022.105662}.
+Ma, J., Grogan-Kaylor, A. C., Pace, G. T., Ward, K. P., \& Lee, S. J.
+(2022). {The association between spanking and physical abuse of young
+children in 56 low- and middle-income countries}. \emph{Child Abuse \&
+Neglect}, \emph{129}, 105662.
+\url{https://doi.org/10.1016/j.chiabu.2022.105662}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Martin-Baro1994}{}}%
-Martin-Baro, Ignacio. 1994. {``Public Opinion Research.''} In
-\emph{Writings for a Liberation Psychology}, edited by Adrianne Aron and
-Shawn Corne. Harvard University Press.
+Martin-Baro, I. (1994). Public opinion research. In A. Aron \& S. Corne
+(Eds.), \emph{Writings for a liberation psychology}. Harvard University
+Press.
 
 \leavevmode\vadjust pre{\hypertarget{ref-Martin-Baro1998}{}}%
----------. 1998. {``{Retos y perspectivas de la psicología
-latinoamericana}.''} In \emph{Psicología de La Liberación}, edited by A.
-Blanco. Madrid, Spain: Trotta.
+Martin-Baro, I. (1998). {Retos y perspectivas de la psicología
+latinoamericana}. In A. Blanco (Ed.), \emph{Psicología de la
+liberación}. Trotta.
 
 \leavevmode\vadjust pre{\hypertarget{ref-Matuschek2017}{}}%
-Matuschek, Hannes, Reinhold Kliegl, Shravan Vasishth, Harald Baayen, and
-Douglas Bates. 2017. {``Balancing Type {I} Error and Power in Linear
-Mixed Models.''} \emph{Journal of Memory and Language}.
-\url{https://doi.org/10.1016/j.jml.2017.01.001}.
+Matuschek, H., Kliegl, R., Vasishth, S., Baayen, H., \& Bates, D.
+(2017). Balancing type {I} error and power in linear mixed models.
+\emph{Journal of Memory and Language}.
+\url{https://doi.org/10.1016/j.jml.2017.01.001}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Mundlak1978}{}}%
-Mundlak, Yair. 1978. {``On the Pooling of Time Series and Cross Section
-Data.''} \emph{Econometrica} 46: 69--85.
-\url{https://doi.org/10.2307/1913646}.
+Mundlak, Y. (1978). On the pooling of time series and cross section
+data. \emph{Econometrica}, \emph{46}, 69--85.
+\url{https://doi.org/10.2307/1913646}
 
 \leavevmode\vadjust pre{\hypertarget{ref-nalborczyk_batailler_loevenbruck_vilain_burkner_2019}{}}%
-Nalborczyk, Ladislas, Cedric Batailler, Helene Loevenbruck, Anne Vilain,
-and Paul-Christian Burkner. 2019. {``An Introduction to {B}ayesian
-Multilevel Models Using Brms: A Case Study of Gender Effects on Vowel
-Variability in Standard {I}ndonesian.''} PsyArXiv. May 2019.
-\url{https://doi.org/10.1044/2018_JSLHR-S-18-0006}.
+Nalborczyk, L., Batailler, C., Loevenbruck, H., Vilain, A., \& Burkner,
+P.-C. (2019, May). \emph{An introduction to {B}ayesian multilevel models
+using brms: A case study of gender effects on vowel variability in
+standard {I}ndonesian}. PsyArXiv.
+\url{https://doi.org/10.1044/2018_JSLHR-S-18-0006}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Oberauer2022}{}}%
-Oberauer, Klaus. 2022. {``{The Importance of Random Slopes in Mixed
-Models for Bayesian Hypothesis Testing}.''} \emph{Psychological
-Science}. \url{https://doi.org/doi:10.1177/09567976211046884}.
+Oberauer, K. (2022). {The Importance of Random Slopes in Mixed Models
+for Bayesian Hypothesis Testing}. \emph{Psychological Science}.
+\url{https://doi.org/doi:10.1177/09567976211046884}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Pace2019}{}}%
-Pace, Garrett T., Shawna J. Lee, and Andrew Grogan-Kaylor. 2019.
-{``{Spanking and young children's socioemotional development in low- and
-middle-income countries}.''} \emph{Child Abuse and Neglect} 88: 84--95.
-\url{https://doi.org/10.1016/j.chiabu.2018.11.003}.
+Pace, G. T., Lee, S. J., \& Grogan-Kaylor, A. (2019). {Spanking and
+young children's socioemotional development in low- and middle-income
+countries}. \emph{Child Abuse and Neglect}, \emph{88}, 84--95.
+\url{https://doi.org/10.1016/j.chiabu.2018.11.003}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Poincare1908}{}}%
-Poincare, Henri. 1908. \emph{Science Et Methode}. Flammarion.
+Poincare, H. (1908). \emph{Science et methode}. Flammarion.
 
 \leavevmode\vadjust pre{\hypertarget{ref-Proctor2012}{}}%
-Proctor, Robert N. 2012. {``{The history of the discovery of the
+Proctor, R. N. (2012). {The history of the discovery of the
 cigarette--lung cancer link: evidentiary traditions, corporate denial,
-global toll}.''} \emph{Tobacco Control} 21 (2): 87 LP--91.
-\url{https://doi.org/10.1136/tobaccocontrol-2011-050338}.
+global toll}. \emph{Tobacco Control}, \emph{21}(2), 87 LP--91.
+\url{https://doi.org/10.1136/tobaccocontrol-2011-050338}
 
 \leavevmode\vadjust pre{\hypertarget{ref-RabeHesketh2012}{}}%
-Rabe-Hesketh, Sophia, and Anders Skrondal. 2012. \emph{Multilevel and
-Longitudinal Modeling Using Stata - Volume i: Continuous Responses}.
-\emph{Stata Press}.
+Rabe-Hesketh, S., \& Skrondal, A. (2012). Multilevel and longitudinal
+modeling using stata - volume i: Continuous responses. In \emph{Stata
+Press} (p. 974).
 
 \leavevmode\vadjust pre{\hypertarget{ref-Raudenbush2002}{}}%
-Raudenbush, Stephen W, and Anthony S Bryk. 2002. \emph{Hierarchical
-Linear Models: Applications and Data Analysis Methods}. Sage
+Raudenbush, S. W., \& Bryk, A. S. (2002). \emph{Hierarchical linear
+models: Applications and data analysis methods} (pp. xxiv, 485 p.). Sage
 Publications.
 
 \leavevmode\vadjust pre{\hypertarget{ref-Rothenberg2022}{}}%
-Rothenberg, W Andrew, Sumbleen Ali, Ronald P Rohner, Jennifer E
-Lansford, Preston A Britner, Laura Di Giunta, Kenneth A Dodge, et al.
-2022. {``Effects of Parental Acceptance-Rejection on Children's
-Internalizing and Externalizing Behaviors: A Longitudinal, Multicultural
-Study.''} \emph{Journal of Child and Family Studies} 31: 29--47.
-\url{https://doi.org/10.1007/s10826-021-02072-5}.
+Rothenberg, W. A., Ali, S., Rohner, R. P., Lansford, J. E., Britner, P.
+A., Giunta, L. D., Dodge, K. A., Malone, P. S., Oburu, P., Pastorelli,
+C., Skinner, A. T., Sorbring, E., Steinberg, L., Tapanya, S., Tirado, L.
+M. U., Yotanyamaneewong, S., Alampay, L. P., Al-Hassan, S. M., Bacchini,
+D., \ldots{} Deater-Deckard, K. (2022). Effects of parental
+acceptance-rejection on children's internalizing and externalizing
+behaviors: A longitudinal, multicultural study. \emph{Journal of Child
+and Family Studies}, \emph{31}, 29--47.
+\url{https://doi.org/10.1007/s10826-021-02072-5}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Schielzeth2009}{}}%
-Schielzeth, Holger, and Wolfgang Forstmeier. 2009. {``Conclusions Beyond
-Support: Overconfident Estimates in Mixed Models.''} \emph{Behavioral
-Ecology} 20 (March): 416--20.
-\url{https://doi.org/10.1093/beheco/arn145}.
+Schielzeth, H., \& Forstmeier, W. (2009). Conclusions beyond support:
+Overconfident estimates in mixed models. \emph{Behavioral Ecology},
+\emph{20}, 416--420. \url{https://doi.org/10.1093/beheco/arn145}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Schunck2013}{}}%
-Schunck, Reinhard. 2013. {``Within and Between Estimates in
-Random-Effects Models: Advantages and Drawbacks of Correlated Random
-Effects and Hybrid Models.''} \emph{The Stata Journal} 13 (March):
-65--76. \url{https://doi.org/10.1177/1536867X1301300105}.
+Schunck, R. (2013). Within and between estimates in random-effects
+models: Advantages and drawbacks of correlated random effects and hybrid
+models. \emph{The Stata Journal}, \emph{13}, 65--76.
+\url{https://doi.org/10.1177/1536867X1301300105}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Simpson1951}{}}%
-Simpson, E H. 1951. {``The Interpretation of Interaction in Contingency
-Tables.''} \emph{Journal of the Royal Statistical Society. Series B
-(Methodological)} 13: 238--41.
-\url{http://www.jstor.org/stable/2984065}.
+Simpson, E. H. (1951). The interpretation of interaction in contingency
+tables. \emph{Journal of the Royal Statistical Society. Series B
+(Methodological)}, \emph{13}, 238--241.
+\url{http://www.jstor.org/stable/2984065}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Singer2003}{}}%
-Singer, Judith D, and John B Willett. 2003. \emph{Applied Longitudinal
-Data Analysis : Modeling Change and Event Occurrence}. \emph{Applied
-Longitudinal Data Analysis : Modeling Change and Event Occurrence}.
+Singer, J. D., \& Willett, J. B. (2003). Applied longitudinal data
+analysis : Modeling change and event occurrence. In \emph{Applied
+longitudinal data analysis : modeling change and event occurrence}.
 Oxford University Press.
 
 \leavevmode\vadjust pre{\hypertarget{ref-Stage2014}{}}%
-Stage, Frances K, and Ryan S Wells. 2014. {``Critical Quantitative
-Inquiry in Context.''} \emph{New Directions for Institutional Research}
-2013 (June): 1--7.
-https://doi.org/\url{https://doi.org/10.1002/ir.20041}.
+Stage, F. K., \& Wells, R. S. (2014). Critical quantitative inquiry in
+context. \emph{New Directions for Institutional Research}, \emph{2013},
+1--7. https://doi.org/\url{https://doi.org/10.1002/ir.20041}
 
 \leavevmode\vadjust pre{\hypertarget{ref-StataCorp2021:1}{}}%
-StataCorp. 2021a. \emph{Stata 17 Longitudinal Data/Panel Data Reference
-Manual}. Stata Press.
+StataCorp. (2021a). \emph{Stata 17 longitudinal data/panel data
+reference manual}. Stata Press.
 
 \leavevmode\vadjust pre{\hypertarget{ref-StataCorp2021}{}}%
----------. 2021b. {``Stata Statistical Software: Release 17.''}
+StataCorp. (2021b). \emph{Stata statistical software: Release 17}.
 StataCorp LLC.
 
 \leavevmode\vadjust pre{\hypertarget{ref-Su2017}{}}%
-Su, Francis Edward. 2017. {``Mathematics for Human Flourishing.''}
-\emph{The American Mathematical Monthly} 124 (June): 483--93.
-\url{https://doi.org/10.4169/amer.math.monthly.124.6.483}.
+Su, F. E. (2017). Mathematics for human flourishing. \emph{The American
+Mathematical Monthly}, \emph{124}, 483--493.
+\url{https://doi.org/10.4169/amer.math.monthly.124.6.483}
 
 \leavevmode\vadjust pre{\hypertarget{ref-UNICEF2014}{}}%
-UNICEF. 2014. \emph{Hidden in Plain Sign: A Statistical Analysis of
-Violence Against Children}. UNICEF.
+UNICEF. (2014). \emph{Hidden in plain sign: A statistical analysis of
+violence against children} (pp. 1--206). UNICEF.
 
 \leavevmode\vadjust pre{\hypertarget{ref-UNICEF2021}{}}%
----------. 2021. {``Multiple Indicator Cluster Surveys (MICS).''}
-UNICEF. \url{https://mics.unicef.org/}.
+UNICEF. (2021). \emph{Multiple indicator cluster surveys (MICS)}.
+UNICEF. \url{https://mics.unicef.org/}
 
 \leavevmode\vadjust pre{\hypertarget{ref-UN2022}{}}%
-United Nations. 2022. \emph{Sustainable Development Goals}.
+United Nations. (2022). \emph{Sustainable development goals}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-UN1989}{}}%
-United Nations General Assembly. 1989. \emph{Convention on the Rights of
-the Child}.
+United Nations General Assembly. (1989). \emph{Convention on the rights
+of the child}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-Waddington2022}{}}%
-Waddington, Hugh Sharma, Paul Fenton Villar, and Jeffrey C Valentine.
-2022. {``Can Non-Randomised Studies of Interventions Provide Unbiased
-Effect Estimates? A Systematic Review of Internal Replication
-Studies.''} \emph{Evaluation Review}, September, 0193841X221116721.
-\url{https://doi.org/10.1177/0193841X221116721}.
+Waddington, H. S., Villar, P. F., \& Valentine, J. C. (2022). Can
+non-randomised studies of interventions provide unbiased effect
+estimates? A systematic review of internal replication studies.
+\emph{Evaluation Review}, 0193841X221116721.
+\url{https://doi.org/10.1177/0193841X221116721}
 
 \leavevmode\vadjust pre{\hypertarget{ref-WardA}{}}%
-Ward, Kaitlin P, Andrew C Grogan-Kaylor, Garrett T Pace, Jorge Cuartas,
-and Shawna J. Lee. 2021. {``{A Multilevel Ecological Analysis of the
-Predictors of Spanking Across 65 Countries}.''} \emph{BMJ Open} 11
-(e046075). \url{https://doi.org/10.1136/bmjopen-2020-046075}.
+Ward, K. P., Grogan-Kaylor, A. C., Pace, G. T., Cuartas, J., \& Lee, S.
+J. (2021). {A Multilevel Ecological Analysis of the Predictors of
+Spanking Across 65 Countries}. \emph{BMJ Open}, \emph{11}(e046075).
+\url{https://doi.org/10.1136/bmjopen-2020-046075}
 
 \leavevmode\vadjust pre{\hypertarget{ref-ward_grogan-kaylor_ma_pace_lee_2021}{}}%
-Ward, Kaitlin P, Andrew Grogan-Kaylor, Julie Ma, Garrett T Pace, and
-Shawna J Lee. 2021. {``Associations Between 11 Parental Discipline
-Behaviors and Child Outcomes Across 60 Countries.''} PsyArXiv.
-\url{https://doi.org/10.31234/osf.io/f5t8x}.
+Ward, K. P., Grogan-Kaylor, A., Ma, J., Pace, G. T., \& Lee, S. J.
+(2021). \emph{Associations between 11 parental discipline behaviors and
+child outcomes across 60 countries}. PsyArXiv.
+\url{https://doi.org/10.31234/osf.io/f5t8x}
 
 \leavevmode\vadjust pre{\hypertarget{ref-WardC}{}}%
-Ward, Kaitlin P, Shawna J Lee, Andrew C Grogan-Kaylor, Julie Ma, and
-Garrett T Pace. 2022. {``{Patterns of Caregiver Aggressive and
-Nonaggressive Discipline Toward Young Children in Low- and Middle-Income
-Countries: A Latent Class Approach}.''} \emph{Child Abuse \& Neglect}
-128. https://doi.org/\url{https://doi.org/10.1016/j.chiabu.2022.105606}.
+Ward, K. P., Lee, S. J., Grogan-Kaylor, A. C., Ma, J., \& Pace, G. T.
+(2022). {Patterns of Caregiver Aggressive and Nonaggressive Discipline
+Toward Young Children in Low- and Middle-Income Countries: A Latent
+Class Approach}. \emph{Child Abuse \& Neglect}, \emph{128}.
+https://doi.org/\url{https://doi.org/10.1016/j.chiabu.2022.105606}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Watts2011}{}}%
-Watts, Duncan J. 2011. \emph{Everything Is Obvious: *Once You Know the
-Answer}. Crown Business.
+Watts, D. J. (2011). \emph{Everything is obvious: *Once you know the
+answer}. Crown Business.
 
 \leavevmode\vadjust pre{\hypertarget{ref-Wiest2007}{}}%
-Wiest, Lynda R, Heidi J Higgins, and Janet Hart Frost. 2007.
-{``Quantitative Literacy for Social Justice.''} \emph{Equity \&
-Excellence in Education} 40 (April): 47--55.
-\url{https://doi.org/10.1080/10665680601079894}.
+Wiest, L. R., Higgins, H. J., \& Frost, J. H. (2007). Quantitative
+literacy for social justice. \emph{Equity \& Excellence in Education},
+\emph{40}, 47--55. \url{https://doi.org/10.1080/10665680601079894}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Wooldridge2010}{}}%
-Wooldridge, Jefrey M. 2010. \emph{Econometric Analysis of Cross Section
-and Panel Data}. The MIT Press.
-\url{http://www.jstor.org/stable/j.ctt5hhcfr}.
+Wooldridge, J. M. (2010). \emph{Econometric analysis of cross section
+and panel data}. The MIT Press.
+\url{http://www.jstor.org/stable/j.ctt5hhcfr}
 
 \end{CSLReferences}
 

@@ -45,7 +45,9 @@ format:
       warning: false
   docx:
     reference-doc: markstat.docx
-
+    execute:
+      echo: false
+      warning: false
 
 
 
