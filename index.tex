@@ -49,46 +49,6 @@
   \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
 
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{241,243,245}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
-\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
@@ -229,11 +189,11 @@
 
 \title{Multilevel Thinking}
 \author{Andrew Grogan-Kaylor}
-\date{2022-12-21T00:00:00-05:00}
+\date{12/21/22}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, boxrule=0pt, interior hidden, sharp corners, enhanced, frame hidden, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, borderline west={3pt}{0pt}{shadecolor}, frame hidden, enhanced, sharp corners, breakable, boxrule=0pt]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -246,65 +206,6 @@
 \hypertarget{the-usefulness-of-multilevel-modeling-and-multilevel-thinking}{%
 \chapter{The Usefulness of Multilevel Modeling and Multilevel
 Thinking}\label{the-usefulness-of-multilevel-modeling-and-multilevel-thinking}}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(ggplot2) }\CommentTok{\# beautiful graphs}
-
-\FunctionTok{library}\NormalTok{(geomtextpath) }\CommentTok{\# path geoms}
-
-\FunctionTok{library}\NormalTok{(dplyr) }\CommentTok{\# data wrangling}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-
-Attaching package: 'dplyr'
-\end{verbatim}
-
-\begin{verbatim}
-The following objects are masked from 'package:stats':
-
-    filter, lag
-\end{verbatim}
-
-\begin{verbatim}
-The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(tidyr) }\CommentTok{\# data tidying}
-
-\FunctionTok{library}\NormalTok{(pander) }\CommentTok{\# nice tables}
-
-\FunctionTok{library}\NormalTok{(gt) }\CommentTok{\# beautiful tables}
-
-\FunctionTok{library}\NormalTok{(sf) }\CommentTok{\# simple (spatial) features}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-Linking to GEOS 3.10.2, GDAL 3.4.2, PROJ 8.2.1; sf_use_s2() is TRUE
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(leaflet) }\CommentTok{\# beautiful maps}
-
-\CommentTok{\# library(lme4) \# MLM}
-
-\CommentTok{\# library(sjPlot) \# nice tables for MLM}
-
-\FunctionTok{library}\NormalTok{(haven) }\CommentTok{\# read and write Stata}
-
-\CommentTok{\# library(Statamarkdown) \# run Stata commands}
-
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{3846}\NormalTok{) }\CommentTok{\# random seed}
-\end{Highlighting}
-\end{Shaded}
 
 For decades now, multilevel models have been an important quantitative
 tool for social research. While multilevel models have become ubiquitous
@@ -364,6 +265,8 @@ better research with diverse populations.
 \chapter*{Acknowledgements}\label{acknowledgements}}
 \addcontentsline{toc}{chapter}{Acknowledgements}
 
+\markboth{Acknowledgements}{Acknowledgements}
+
 No good learning happens without community. At least, that has always
 been true for me. I am grateful for many creative and energizing
 discussions with the other members of the MICS (UNICEF data) research
@@ -392,7 +295,10 @@ are of course my responsibility.
 \chapter*{Some Preliminary Thoughts}\label{some-preliminary-thoughts}}
 \addcontentsline{toc}{chapter}{Some Preliminary Thoughts}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, title={Preliminaries}, bottomtitle=1mm, breakable, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm, toptitle=1mm, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, rightrule=.15mm, colback=white]
+\markboth{Some Preliminary Thoughts}{Some Preliminary Thoughts}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, colback=white, left=2mm, title={Preliminaries}, opacitybacktitle=0.6, titlerule=0mm, opacityback=0, coltitle=black, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, breakable, arc=.35mm, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, toptitle=1mm]
+
 ``Like you I
 
 Love love, life, the sweet smell of things, the sky-blue landscape of
@@ -440,45 +346,13 @@ ourselves, bestow ourselves to silence, or a severer listening \ldots''
 purpose.''
 
 --- Zora Neale Hurston
+
 \end{tcolorbox}
 
 \bookmarksetup{startatroot}
 
 \hypertarget{introduction}{%
 \chapter{Introduction}\label{introduction}}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(ggplot2) }\CommentTok{\# beautiful graphs}
-
-\FunctionTok{library}\NormalTok{(geomtextpath) }\CommentTok{\# path geoms}
-
-\FunctionTok{library}\NormalTok{(dplyr) }\CommentTok{\# data wrangling}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-
-Attaching package: 'dplyr'
-\end{verbatim}
-
-\begin{verbatim}
-The following objects are masked from 'package:stats':
-
-    filter, lag
-\end{verbatim}
-
-\begin{verbatim}
-The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(tidyr) }\CommentTok{\# data tidying}
-\end{Highlighting}
-\end{Shaded}
 
 \hypertarget{quantitative-methods-and-social-justice}{%
 \section{Quantitative Methods and Social
@@ -828,43 +702,7 @@ In the graph below, imagine that physical punishment, or some other risk
 factor, is associated with detrimental mental health outcomes. Each
 country in the data has its own \emph{country specific regression line}.
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{tribble}\NormalTok{(}
-  \SpecialCharTok{\textasciitilde{}}\NormalTok{panel, }\SpecialCharTok{\textasciitilde{}}\NormalTok{beta0, }\SpecialCharTok{\textasciitilde{}}\NormalTok{beta1, }\SpecialCharTok{\textasciitilde{}}\NormalTok{u0, }\SpecialCharTok{\textasciitilde{}}\NormalTok{u1, }\SpecialCharTok{\textasciitilde{}}\NormalTok{label,}
-  \StringTok{"A"}\NormalTok{, }\DecValTok{9}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, .}\DecValTok{5}\NormalTok{, .}\DecValTok{1}\NormalTok{, }\StringTok{"average association"}\NormalTok{,}
-  \StringTok{"B"}\NormalTok{, }\DecValTok{8}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\FloatTok{1.5}\NormalTok{, .}\DecValTok{5}\NormalTok{, }\StringTok{"average association"}\NormalTok{,}
-  \StringTok{"C"}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{0}\NormalTok{, .}\DecValTok{5}\NormalTok{, .}\DecValTok{25}\NormalTok{, }\StringTok{"average association"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{uncount}\NormalTok{(}\AttributeTok{weights =} \DecValTok{30}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{group\_by}\NormalTok{(panel) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{country =} \FunctionTok{factor}\NormalTok{(}\FunctionTok{row\_number}\NormalTok{())) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{ungroup}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{rowwise}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{intercept =}\NormalTok{ beta0 }\SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, u0),}
-         \AttributeTok{slope =}\NormalTok{ beta1 }\SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, u1)) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{geom\_abline}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{intercept =}\NormalTok{ intercept, }
-                  \AttributeTok{slope =}\NormalTok{ slope,}
-                  \AttributeTok{color =}\NormalTok{ country)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_labelabline}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{intercept =}\NormalTok{ beta0,}
-                      \AttributeTok{slope =}\NormalTok{ beta1,}
-                      \AttributeTok{label =}\NormalTok{ label),}
-                  \AttributeTok{color =} \StringTok{"red"}\NormalTok{,}
-                  \AttributeTok{size =} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{panel) }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Plausible Alternative Patterns of Between Country Variation"}\NormalTok{,}
-       \AttributeTok{subtitle =} \StringTok{"In The Relationship of Physical Punishment }\SpecialCharTok{\textbackslash{}n}\StringTok{With Psychological Wellbeing"}\NormalTok{,}
-       \AttributeTok{x =} \StringTok{"physical punishment"}\NormalTok{,}
-       \AttributeTok{y =} \StringTok{"psychological wellbeing"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{xlim}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{10}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{ylim}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{10}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{scale\_color\_viridis\_d}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \FunctionTok{rel}\NormalTok{(.}\DecValTok{75}\NormalTok{)))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}[H]
+\begin{figure}
 
 {\centering \includegraphics{./intro_files/figure-pdf/fig-variation1-1.pdf}
 
@@ -915,42 +753,7 @@ slopes in the diagram, and consider a different set of independent
 variables, perhaps some kind of treatment or intervention designed to
 improve psychological well-being.
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{tribble}\NormalTok{(}
-  \SpecialCharTok{\textasciitilde{}}\NormalTok{panel, }\SpecialCharTok{\textasciitilde{}}\NormalTok{beta0, }\SpecialCharTok{\textasciitilde{}}\NormalTok{beta1, }\SpecialCharTok{\textasciitilde{}}\NormalTok{u0, }\SpecialCharTok{\textasciitilde{}}\NormalTok{u1, }\SpecialCharTok{\textasciitilde{}}\NormalTok{label,}
-  \StringTok{"A"}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, .}\DecValTok{5}\NormalTok{, .}\DecValTok{1}\NormalTok{, }\StringTok{"average association"}\NormalTok{,}
-  \StringTok{"B"}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\FloatTok{1.5}\NormalTok{, .}\DecValTok{5}\NormalTok{, }\StringTok{"average association"}\NormalTok{,}
-  \StringTok{"C"}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{0}\NormalTok{, .}\DecValTok{5}\NormalTok{, .}\DecValTok{25}\NormalTok{, }\StringTok{"average association"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{uncount}\NormalTok{(}\AttributeTok{weights =} \DecValTok{30}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{group\_by}\NormalTok{(panel) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{country =} \FunctionTok{factor}\NormalTok{(}\FunctionTok{row\_number}\NormalTok{())) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{ungroup}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{rowwise}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{intercept =}\NormalTok{ beta0 }\SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, u0),}
-         \AttributeTok{slope =}\NormalTok{ beta1 }\SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, u1)) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{geom\_abline}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{intercept =}\NormalTok{ intercept, }
-                  \AttributeTok{slope =}\NormalTok{ slope,}
-                  \AttributeTok{color =}\NormalTok{ country)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_labelabline}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{intercept =}\NormalTok{ beta0,}
-                       \AttributeTok{slope =}\NormalTok{ beta1,}
-                       \AttributeTok{label =}\NormalTok{ label),}
-                   \AttributeTok{color =} \StringTok{"red"}\NormalTok{,}
-                   \AttributeTok{size =} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{panel) }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Considering an Intervention or Treatment Across Countries"}\NormalTok{,}
-       \AttributeTok{x =} \StringTok{"hypothetical intervention"}\NormalTok{,}
-       \AttributeTok{y =} \StringTok{"psychological wellbeing"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{xlim}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{10}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{ylim}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{10}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{scale\_color\_viridis\_d}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \FunctionTok{rel}\NormalTok{(.}\DecValTok{75}\NormalTok{)))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}[H]
+\begin{figure}
 
 {\centering \includegraphics{./intro_files/figure-pdf/fig-variation2-1.pdf}
 
@@ -1005,41 +808,6 @@ clear.
 \chapter{Simulated Multi-Country (Multilevel)
 Data}\label{simulated-multi-country-multilevel-data}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(haven) }\CommentTok{\# read Stata}
-
-\FunctionTok{library}\NormalTok{(dplyr) }\CommentTok{\# data wrangling}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-
-Attaching package: 'dplyr'
-\end{verbatim}
-
-\begin{verbatim}
-The following objects are masked from 'package:stats':
-
-    filter, lag
-\end{verbatim}
-
-\begin{verbatim}
-The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(gt) }\CommentTok{\# beautiful tables}
-
-\FunctionTok{library}\NormalTok{(ggplot2) }\CommentTok{\# beautiful graphs}
-
-\FunctionTok{library}\NormalTok{(pander) }\CommentTok{\# tables for PDF}
-\end{Highlighting}
-\end{Shaded}
-
 I use simulated data in this example. Data come from 30 hypothetical
 countries. Data contain measures of a few key aspects of parenting that
 have proven salient in the empirical literature on parenting to date:
@@ -1054,25 +822,6 @@ In this simulation, I construct the data so that \texttt{warmth} is
 positively related to the \texttt{outcome}, while
 \texttt{physical\ punishment} is negatively related to the
 \texttt{outcome}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{simulated\_multilevel\_data }\OtherTok{\textless{}{-}}
-  \FunctionTok{read\_dta}\NormalTok{(}\StringTok{"./simulate{-}and{-}analyze{-}multilevel{-}data/simulated\_multilevel\_data.dta"}\NormalTok{)}
-
-\NormalTok{simulated\_multilevel\_data }\OtherTok{\textless{}{-}}\NormalTok{ simulated\_multilevel\_data }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{select}\NormalTok{(id, country,}
-\NormalTok{         warmth,}
-\NormalTok{         physical\_punishment,}
-\NormalTok{         outcome)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{pander}\SpecialCharTok{::}\FunctionTok{pander}\NormalTok{(}\FunctionTok{head}\NormalTok{(simulated\_multilevel\_data))}
-\end{Highlighting}
-\end{Shaded}
 
 \hypertarget{tbl-simulateddata}{}
 \begin{longtable}[]{@{}
@@ -1120,29 +869,7 @@ outcome
 \bottomrule()
 \end{longtable}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(simulated\_multilevel\_data,}
-       \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ warmth,}
-           \AttributeTok{y =}\NormalTok{ outcome,}
-           \AttributeTok{color =} \FunctionTok{factor}\NormalTok{(country))) }\SpecialCharTok{+}
-  \CommentTok{\# geom\_point() +}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{scale\_color\_viridis\_d}\NormalTok{(}\AttributeTok{name =} \StringTok{"country"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Desirable Mental Health Outcome by Parental Warmth"}\NormalTok{,}
-       \AttributeTok{subtitle =} \StringTok{"By Country"}\NormalTok{,}
-       \AttributeTok{caption =} \StringTok{"Simulated Data"}\NormalTok{,}
-       \AttributeTok{x =} \StringTok{"parental warmth"}\NormalTok{,}
-       \AttributeTok{y =} \StringTok{"desirable mental health outcome"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{theme\_minimal}\NormalTok{() }
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-`geom_smooth()` using formula = 'y ~ x'
-\end{verbatim}
-
-\begin{figure}[H]
+\begin{figure}
 
 {\centering \includegraphics{./simulated-multi-country-data_files/figure-pdf/fig-data-1.pdf}
 
@@ -1204,43 +931,6 @@ throughout this document.
 \hypertarget{conceptual-framework}{%
 \chapter{Conceptual Framework}\label{conceptual-framework}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(ggplot2) }\CommentTok{\# beautiful graphs}
-
-\FunctionTok{library}\NormalTok{(geomtextpath) }\CommentTok{\# path geoms}
-
-\FunctionTok{library}\NormalTok{(dplyr) }\CommentTok{\# data wrangling}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-
-Attaching package: 'dplyr'
-\end{verbatim}
-
-\begin{verbatim}
-The following objects are masked from 'package:stats':
-
-    filter, lag
-\end{verbatim}
-
-\begin{verbatim}
-The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(tidyr) }\CommentTok{\# data tidying}
-
-\FunctionTok{library}\NormalTok{(pander) }\CommentTok{\# nice tables}
-
-\FunctionTok{library}\NormalTok{(gt) }\CommentTok{\# beautiful tables}
-\end{Highlighting}
-\end{Shaded}
-
 \hypertarget{units-of-analysis}{%
 \section{Units of Analysis}\label{units-of-analysis}}
 
@@ -1253,35 +943,6 @@ perspective, wherein both individuals and social units are different
 levels of the same analysis. I discuss some of the statistical
 considerations of different ideas about the units of analysis in
 Section~\ref{sec-wrongapproaches}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{DiagrammeR}\SpecialCharTok{::}\FunctionTok{grViz}\NormalTok{(}\StringTok{"}
-
-\StringTok{digraph C \{}
-
-\StringTok{rankdir=\textquotesingle{}LR\textquotesingle{}}
-
-\StringTok{    subgraph cluster\_2 \{}
-\StringTok{    }
-\StringTok{    label = \textquotesingle{}Level 2: Social Units\textquotesingle{}}
-
-\StringTok{  L2 }
-\StringTok{  }
-\StringTok{    \}}
-\StringTok{    }
-\StringTok{    subgraph cluster\_1 \{}
-\StringTok{    }
-\StringTok{    label = \textquotesingle{}Level 1: Individuals\textquotesingle{}}
-
-\StringTok{  L1 {-}\textgreater{} y}
-\StringTok{  L2 {-}\textgreater{} y}
-\StringTok{    \}  }
-\StringTok{    }
-
-\StringTok{\}"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
 
 \begin{figure}
 
@@ -1296,25 +957,6 @@ Section~\ref{sec-wrongapproaches}
 \hypertarget{variables-and-processes-at-multiple-levels}{%
 \section{Variables and Processes at Multiple
 Levels}\label{variables-and-processes-at-multiple-levels}}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{conceptuallevel }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{)}
-\NormalTok{statisticallevel1 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Individual response about parenting or mental health"}\NormalTok{,}
-                       \StringTok{"Individual response about community"}\NormalTok{,}
-                       \StringTok{"N/A"}\NormalTok{)}
-
-\NormalTok{statisticallevel2 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Aggregated responses about parenting or mental health"}\NormalTok{,}
-                       \StringTok{"Aggregated response about community"}\NormalTok{,}
-                       \StringTok{"Administrative indicator of social unit"}\NormalTok{)}
-
-\NormalTok{conceptualframework }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(conceptuallevel,}
-\NormalTok{                                  statisticallevel1,}
-\NormalTok{                                  statisticallevel2)}
-
-\NormalTok{pander}\SpecialCharTok{::}\FunctionTok{pander}\NormalTok{(conceptualframework)}
-\end{Highlighting}
-\end{Shaded}
 
 \hypertarget{tbl-variablelevel}{}
 \begin{longtable}[]{@{}
@@ -1397,47 +1039,6 @@ have no easily definable Level 1 counterpart.
 \hypertarget{the-cross-sectional-multilevel-model}{%
 \chapter{The Cross Sectional Multilevel
 Model}\label{the-cross-sectional-multilevel-model}}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(haven) }\CommentTok{\# read Stata}
-
-\FunctionTok{library}\NormalTok{(tibble) }\CommentTok{\# data frames}
-
-\FunctionTok{library}\NormalTok{(ggplot2) }\CommentTok{\# beautiful graphs}
-
-\FunctionTok{library}\NormalTok{(geomtextpath) }\CommentTok{\# path geoms}
-
-\FunctionTok{library}\NormalTok{(dplyr) }\CommentTok{\# data wrangling}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-
-Attaching package: 'dplyr'
-\end{verbatim}
-
-\begin{verbatim}
-The following objects are masked from 'package:stats':
-
-    filter, lag
-\end{verbatim}
-
-\begin{verbatim}
-The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(tidyr) }\CommentTok{\# data tidying}
-
-\FunctionTok{library}\NormalTok{(pander) }\CommentTok{\# nice tables}
-
-\FunctionTok{library}\NormalTok{(gt) }\CommentTok{\# beautiful tables}
-\end{Highlighting}
-\end{Shaded}
 
 \hypertarget{the-equation}{%
 \section{The Equation}\label{the-equation}}
@@ -1551,47 +1152,9 @@ each `subject,' then a further random number was added to make the
 individual observation.'' (Bland \& Altman, 1994)
 \end{quote}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{simulated\_clustered\_data }\OtherTok{\textless{}{-}}
-  \FunctionTok{read\_dta}\NormalTok{(}\StringTok{"./simulate{-}and{-}analyze{-}multilevel{-}data/simulated\_clustered\_data.dta"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
 The graph below illustrates the process of simulating the data.
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(simulated\_clustered\_data,}
-       \FunctionTok{aes}\NormalTok{(}\AttributeTok{color =} \FunctionTok{factor}\NormalTok{(group\_numA),}
-           \AttributeTok{label =}\NormalTok{ group\_numA)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_segment}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x\_individualA, }
-                \AttributeTok{y =}\NormalTok{ y\_individualA,}
-                \AttributeTok{xend =}\NormalTok{ x\_groupA,}
-                \AttributeTok{yend =}\NormalTok{ y\_groupA),}
-               \AttributeTok{show.legend =} \ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x\_groupA, }
-                 \AttributeTok{y =}\NormalTok{ y\_groupA),}
-             \AttributeTok{size =} \DecValTok{10}\NormalTok{,}
-             \AttributeTok{alpha =} \DecValTok{1}\NormalTok{,}
-             \AttributeTok{show.legend =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{+} 
-  \FunctionTok{geom\_text}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x\_groupA,}
-                \AttributeTok{y =}\NormalTok{ y\_groupA),}
-            \AttributeTok{color =} \StringTok{"white"}\NormalTok{,}
-            \AttributeTok{show.legend =} \ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_label}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x\_individualA, }
-                \AttributeTok{y =}\NormalTok{ y\_individualA),}
-             \AttributeTok{show.legend =} \ConstantTok{FALSE}\NormalTok{,}
-             \AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+} 
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Illustrating the Process of Simulating the Data"}\NormalTok{,}
-       \AttributeTok{x =} \StringTok{"x"}\NormalTok{,}
-       \AttributeTok{y =} \StringTok{"y"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{scale\_color\_viridis\_d}\NormalTok{(}\AttributeTok{name =} \StringTok{"group"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}[H]
+\begin{figure}
 
 {\centering \includegraphics{./cross-sectional_files/figure-pdf/unnamed-chunk-3-1.pdf}
 
@@ -1667,15 +1230,6 @@ model that is not aware of the clustered nature of the data.
 \subsection{Use Some Data Simulated For This Particular
 Example}\label{use-some-data-simulated-for-this-particular-example}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{multilevelstructure }\OtherTok{\textless{}{-}}
-  \FunctionTok{read\_dta}\NormalTok{(}\StringTok{"./simulate{-}and{-}analyze{-}multilevel{-}data/multilevelstructure.dta"}\NormalTok{)}
-
-\NormalTok{multilevelstructure}\SpecialCharTok{$}\NormalTok{country }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(multilevelstructure}\SpecialCharTok{$}\NormalTok{country)}
-\end{Highlighting}
-\end{Shaded}
-
 \hypertarget{graphs}{%
 \subsection{Graphs}\label{graphs}}
 
@@ -1687,25 +1241,7 @@ Notice that the overall regression line slopes downward, even though
 there is some suggestion that \emph{within each group} the regression
 lines may slope upward.
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{p0 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(multilevelstructure, }
-             \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x,}
-                 \AttributeTok{y =}\NormalTok{ y)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"y as a function of x"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{theme\_minimal}\NormalTok{()}
-
-\NormalTok{p0  }\CommentTok{\# replay }
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-`geom_smooth()` using formula = 'y ~ x'
-\end{verbatim}
-
-\begin{figure}[H]
+\begin{figure}
 
 {\centering \includegraphics{./cross-sectional_files/figure-pdf/fig-naive-1.pdf}
 
@@ -1723,24 +1259,7 @@ graph is ``aware'' of the grouped or clustered nature of the data, and
 provides indication that the regression lines \emph{when accounting for
 group} slope upward.
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(multilevelstructure, }
-             \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x,}
-                 \AttributeTok{y =}\NormalTok{ y,}
-                 \AttributeTok{color =}\NormalTok{ country)) }\SpecialCharTok{+} \CommentTok{\# color is country}
-  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} 
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{) }\SpecialCharTok{+} 
-  \FunctionTok{scale\_color\_viridis\_d}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{theme\_minimal}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-`geom_smooth()` using formula = 'y ~ x'
-\end{verbatim}
-
-\begin{figure}[H]
+\begin{figure}
 
 {\centering \includegraphics{./cross-sectional_files/figure-pdf/fig-aware-1.pdf}
 
@@ -1813,25 +1332,7 @@ would therefore misconstrue the results, suggesting that the
 intervention was harmful, when it was in fact helpful.
 \end{quote}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{p0 }\SpecialCharTok{+} 
-  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{color =}\NormalTok{ country)) }\SpecialCharTok{+} \CommentTok{\# points with country color}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{color =}\NormalTok{ country), }\CommentTok{\# smoothers with country color}
-              \AttributeTok{method =} \StringTok{"lm"}\NormalTok{) }\SpecialCharTok{+} 
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Desirable Outcome as a Function of Intervention or Treatment"}\NormalTok{,}
-       \AttributeTok{x =} \StringTok{"intervention or treatment"}\NormalTok{,}
-       \AttributeTok{y =} \StringTok{"desirable outcome"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{scale\_color\_viridis\_d}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-\end{verbatim}
-
-\begin{figure}[H]
+\begin{figure}
 
 {\centering \includegraphics{./cross-sectional_files/figure-pdf/unnamed-chunk-9-1.pdf}
 
@@ -2003,84 +1504,7 @@ represents the amount of variation in the dependent variable that could
 As we add covariates, \(x\)'s, to the model the ICC will most often
 decrease.
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{tribble}\NormalTok{(}
-  \SpecialCharTok{\textasciitilde{}}\NormalTok{beta0, }\SpecialCharTok{\textasciitilde{}}\NormalTok{beta1, }\SpecialCharTok{\textasciitilde{}}\NormalTok{u0, }\SpecialCharTok{\textasciitilde{}}\NormalTok{u1,}
-  \DecValTok{5}\NormalTok{, }\DecValTok{0}\NormalTok{, .}\DecValTok{5}\NormalTok{, .}\DecValTok{25}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{uncount}\NormalTok{(}\AttributeTok{weights =} \DecValTok{30}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{country =} \FunctionTok{factor}\NormalTok{(}\FunctionTok{row\_number}\NormalTok{())) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{ungroup}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{rowwise}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{intercept =}\NormalTok{ beta0 }\SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, u0),}
-         \AttributeTok{slope =}\NormalTok{ beta1 }\SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, u1)) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{geom\_abline}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{intercept =}\NormalTok{ intercept, }
-                  \AttributeTok{slope =}\NormalTok{ slope),}
-              \AttributeTok{color =} \StringTok{"grey"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom =} \StringTok{"point"}\NormalTok{, }
-           \AttributeTok{x =} \DecValTok{0}\NormalTok{, }
-           \AttributeTok{y =} \DecValTok{5}\NormalTok{, }
-           \AttributeTok{color =} \StringTok{"orange"}\NormalTok{,}
-           \AttributeTok{alpha =}\NormalTok{ .}\DecValTok{5}\NormalTok{,}
-           \AttributeTok{size =} \DecValTok{17}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\StringTok{"text"}\NormalTok{, }
-           \AttributeTok{x =} \FloatTok{1.5}\NormalTok{, }
-           \AttributeTok{y =} \FloatTok{2.5}\NormalTok{, }
-           \AttributeTok{label =} \StringTok{"variation in y"}\NormalTok{,}
-           \AttributeTok{color =} \StringTok{"red"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\StringTok{"segment"}\NormalTok{, }
-           \AttributeTok{x =} \DecValTok{1}\NormalTok{, }
-           \AttributeTok{xend =} \DecValTok{0}\NormalTok{, }
-           \AttributeTok{y =} \DecValTok{3}\NormalTok{, }
-           \AttributeTok{yend =} \FloatTok{4.5}\NormalTok{,}
-           \AttributeTok{colour =} \StringTok{"red"}\NormalTok{, }
-           \AttributeTok{size =} \DecValTok{1}\NormalTok{, }
-           \AttributeTok{arrow =} \FunctionTok{arrow}\NormalTok{()) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\StringTok{"segment"}\NormalTok{, }
-           \AttributeTok{x =} \DecValTok{0}\NormalTok{, }
-           \AttributeTok{xend =} \DecValTok{10}\NormalTok{, }
-           \AttributeTok{y =} \DecValTok{1}\NormalTok{, }
-           \AttributeTok{yend =} \DecValTok{1}\NormalTok{,}
-           \AttributeTok{colour =} \StringTok{"orange"}\NormalTok{, }
-           \AttributeTok{size =} \DecValTok{1}\NormalTok{, }
-           \AttributeTok{arrow =} \FunctionTok{arrow}\NormalTok{(}\AttributeTok{ends =} \StringTok{"both"}\NormalTok{)) }\SpecialCharTok{+}
-  \FunctionTok{annotate}\NormalTok{(}\StringTok{"text"}\NormalTok{,}
-           \AttributeTok{x =} \DecValTok{5}\NormalTok{,}
-           \AttributeTok{y =}\NormalTok{ .}\DecValTok{5}\NormalTok{,}
-           \AttributeTok{label =} \StringTok{"variation in x"}\NormalTok{,}
-           \AttributeTok{color =} \StringTok{"red"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_labelabline}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{intercept =} \DecValTok{6}\NormalTok{, }
-                       \AttributeTok{slope =}\NormalTok{ .}\DecValTok{25}\NormalTok{, }
-                       \AttributeTok{label =} \StringTok{"variation in slope"}\NormalTok{),}
-                   \AttributeTok{size =} \DecValTok{2}\NormalTok{,}
-                   \AttributeTok{text\_only =} \ConstantTok{TRUE}\NormalTok{,}
-                   \AttributeTok{textcolor =} \StringTok{"red"}\NormalTok{,}
-                   \AttributeTok{linecolor =} \StringTok{"orange"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_labelabline}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{intercept =} \DecValTok{4}\NormalTok{, }
-                       \AttributeTok{slope =} \SpecialCharTok{{-}}\NormalTok{.}\DecValTok{25}\NormalTok{, }
-                       \AttributeTok{label =} \StringTok{"variation in slope"}\NormalTok{),}
-                   \AttributeTok{size =} \DecValTok{2}\NormalTok{,}
-                   \AttributeTok{text\_only =} \ConstantTok{TRUE}\NormalTok{,}
-                   \AttributeTok{textcolor =} \StringTok{"red"}\NormalTok{,}
-                   \AttributeTok{linecolor =} \StringTok{"orange"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Sources of Variation"}\NormalTok{,}
-       \AttributeTok{subtitle =} \StringTok{"In A Multilevel Model"}\NormalTok{,}
-       \AttributeTok{x =} \StringTok{"x"}\NormalTok{,}
-       \AttributeTok{y =} \StringTok{"y"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{xlim}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{10}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{ylim}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{10}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{scale\_color\_viridis\_d}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{theme\_minimal}\NormalTok{() }
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-i Please use `linewidth` instead.
-\end{verbatim}
-
-\begin{figure}[H]
+\begin{figure}
 
 {\centering \includegraphics{./cross-sectional_files/figure-pdf/fig-variationsources-1.pdf}
 
@@ -2244,47 +1668,6 @@ of a multilevel model over these other approaches:
 \chapter{The Longitudinal Multilevel
 Model}\label{the-longitudinal-multilevel-model}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(haven) }\CommentTok{\# read Stata}
-
-\FunctionTok{library}\NormalTok{(tibble) }\CommentTok{\# data frames}
-
-\FunctionTok{library}\NormalTok{(ggplot2) }\CommentTok{\# beautiful graphs}
-
-\FunctionTok{library}\NormalTok{(geomtextpath) }\CommentTok{\# path geoms}
-
-\FunctionTok{library}\NormalTok{(dplyr) }\CommentTok{\# data wrangling}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-
-Attaching package: 'dplyr'
-\end{verbatim}
-
-\begin{verbatim}
-The following objects are masked from 'package:stats':
-
-    filter, lag
-\end{verbatim}
-
-\begin{verbatim}
-The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(tidyr) }\CommentTok{\# data tidying}
-
-\FunctionTok{library}\NormalTok{(pander) }\CommentTok{\# nice tables}
-
-\FunctionTok{library}\NormalTok{(gt) }\CommentTok{\# beautiful tables}
-\end{Highlighting}
-\end{Shaded}
-
 \begin{quote}
 ``Mathematics is the art of giving the same name to different things.''
 (Poincare, 1908)
@@ -2412,19 +1795,6 @@ id & x1 & x2 & x3 \\
 \bottomrule()
 \end{longtable}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{simulated\_multilevel\_longitudinal\_data }\OtherTok{\textless{}{-}} 
-  \FunctionTok{read\_dta}\NormalTok{(}\StringTok{"./simulate{-}and{-}analyze{-}multilevel{-}data/simulated\_multilevel\_longitudinal\_data.dta"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{pander}\SpecialCharTok{::}\FunctionTok{pander}\NormalTok{(}\FunctionTok{head}\NormalTok{(simulated\_multilevel\_longitudinal\_data))}
-\end{Highlighting}
-\end{Shaded}
-
 \hypertarget{tbl-simulatedlongitudinaldata}{}
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0694}}
@@ -2481,31 +1851,7 @@ x\_noise
 \bottomrule()
 \end{longtable}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{simulated\_multilevel\_longitudinal\_data }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{slice\_head}\NormalTok{(}\AttributeTok{n =} \DecValTok{30}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ t,}
-           \AttributeTok{y =}\NormalTok{ outcome,}
-           \AttributeTok{color =} \FunctionTok{factor}\NormalTok{(id))) }\SpecialCharTok{+}
-  \CommentTok{\# geom\_point() +}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{scale\_color\_viridis\_d}\NormalTok{(}\AttributeTok{name =} \StringTok{"individual"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Desirable Outcome by Time"}\NormalTok{,}
-       \AttributeTok{subtitle =} \StringTok{"By Individual"}\NormalTok{,}
-       \AttributeTok{caption =} \StringTok{"Simulated Longitudinal Data; Selected Individuals"}\NormalTok{,}
-       \AttributeTok{x =} \StringTok{"time"}\NormalTok{,}
-       \AttributeTok{y =} \StringTok{"desirable outcome"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"none"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-`geom_smooth()` using formula = 'y ~ x'
-\end{verbatim}
-
-\begin{figure}[H]
+\begin{figure}
 
 {\centering \includegraphics{./longitudinal_files/figure-pdf/fig-data2-1.pdf}
 
@@ -2524,12 +1870,9 @@ applicable.
 \begin{equation}\protect\hypertarget{eq-MLM-longitudinal}{}{\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + }\label{eq-MLM-longitudinal}\end{equation}
 
 \[u_{0j} + u_{1j} \times \text{parental warmth}_i \ + \]
-
-\[v_{0i} + v_{1i} \times t + e_{ij}\]
-
-Here I include a random slope (\(u_{1j}\)) at the country level for
-parental warmth, as well as a random slope (\(v_{1j}\)) at the
-individual level for time.
+\[v_{0i} + v_{1i} \times t + e_{ij}\] Here I include a random slope
+(\(u_{1j}\)) at the country level for parental warmth, as well as a
+random slope (\(v_{1j}\)) at the individual level for time.
 
 \hypertarget{sec-regressionlongitudinal}{%
 \section{Regression With Simulated Multi-Country Longitudinal
@@ -2689,23 +2032,6 @@ For x to be a cause of y, one needs the following 3 things to be true
   (correlation of) \emph{x} and \emph{y}.
 \end{enumerate}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{DiagrammeR}\SpecialCharTok{::}\FunctionTok{grViz}\NormalTok{(}\StringTok{"}
-
-\StringTok{digraph G \{}
-
-\StringTok{rankdir=\textquotesingle{}LR\textquotesingle{}}
-
-\StringTok{x {-}\textgreater{} y}
-\StringTok{z {-}\textgreater{} y}
-\StringTok{z {-}\textgreater{} x [dir=\textquotesingle{}both\textquotesingle{}]}
-
-\StringTok{\} }
-\StringTok{"}\NormalTok{, }\AttributeTok{height =} \StringTok{\textquotesingle{}100\%\textquotesingle{}}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
 \begin{figure}
 
 {\centering 
@@ -2745,27 +2071,6 @@ the following 3 things to be true (Holland, 1986).
   \emph{child outcomes}.
 \end{enumerate}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{DiagrammeR}\SpecialCharTok{::}\FunctionTok{grViz}\NormalTok{(}\StringTok{"}
-
-\StringTok{digraph G \{}
-
-\StringTok{rankdir=\textquotesingle{}LR\textquotesingle{}}
-
-\StringTok{x [label = \textquotesingle{}parenting\textquotesingle{}]}
-\StringTok{y [label = \textquotesingle{}child outcome\textquotesingle{}]}
-\StringTok{z [label = \textquotesingle{}other factors\textquotesingle{}]}
-
-\StringTok{x {-}\textgreater{} y}
-\StringTok{z {-}\textgreater{} y}
-\StringTok{z {-}\textgreater{} x [dir=\textquotesingle{}both\textquotesingle{}]}
-
-\StringTok{\} }
-\StringTok{"}\NormalTok{, }\AttributeTok{height =} \StringTok{\textquotesingle{}100\%\textquotesingle{}}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
 \begin{figure}
 
 {\centering 
@@ -2800,46 +2105,13 @@ dramatically incorrect results.
 Statistically, we imagine a situation where the true model is:
 
 \[\text{child outcome}_{it} = \beta_0 + \beta_1 \text{parenting}_{it} + \beta_2 \text{community or country characteristic}_{it} + e_{it}\]
-
 If \emph{community or country characteristics} in fact influence
 \emph{outcome}, but are not included in the statistical model, perhaps
 because they are not measured in the data, then the estimate of
 \(\beta_1\) for \emph{parenting} will be biased. See
 Figure~\ref{fig-Simpson} for an illustration.
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{multilevelstructure }\OtherTok{\textless{}{-}}
-  \FunctionTok{read\_dta}\NormalTok{(}\StringTok{"./simulate{-}and{-}analyze{-}multilevel{-}data/multilevelstructure.dta"}\NormalTok{)}
-
-\NormalTok{multilevelstructure}\SpecialCharTok{$}\NormalTok{country }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(multilevelstructure}\SpecialCharTok{$}\NormalTok{country)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(multilevelstructure, }
-             \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x,}
-                 \AttributeTok{y =}\NormalTok{ y)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{color =}\NormalTok{ country)) }\SpecialCharTok{+} \CommentTok{\# points with country color}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{color =}\NormalTok{ country), }\CommentTok{\# smoothers with country color}
-              \AttributeTok{method =} \StringTok{"lm"}\NormalTok{) }\SpecialCharTok{+} 
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Desirable Outcome as a Function of Intervention or Treatment"}\NormalTok{,}
-       \AttributeTok{x =} \StringTok{"intervention or treatment or parenting (x)"}\NormalTok{,}
-       \AttributeTok{y =} \StringTok{"desirable outcome (y)"}\NormalTok{,}
-       \AttributeTok{caption =} \StringTok{"Slope not accounting for covariate(s) slopes downward. }\SpecialCharTok{\textbackslash{}n}\StringTok{Slope accounting for covariate(s) slopes upward."}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{scale\_color\_viridis\_d}\NormalTok{(}\AttributeTok{name =} \StringTok{"covariate (z)"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{theme\_minimal}\NormalTok{() }
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-\end{verbatim}
-
-\begin{figure}[H]
+\begin{figure}
 
 {\centering \includegraphics{./longitudinal_files/figure-pdf/fig-Simpson-1.pdf}
 
@@ -3039,6 +2311,8 @@ diversity and variation.
 \hypertarget{references}{%
 \chapter*{References}\label{references}}
 \addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
