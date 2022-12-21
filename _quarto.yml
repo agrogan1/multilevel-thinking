@@ -33,7 +33,9 @@ prefer-html: true
 
 format:
   html:
-    theme: cosmo
+    theme: 
+      light: cosmo
+      dark: vapor
     execute:
       echo: false
       warning: false
