@@ -1,5 +1,25 @@
 # The Longitudinal Multilevel Model
 
+```{r}
+
+library(haven) # read Stata
+
+library(tibble) # data frames
+
+library(ggplot2) # beautiful graphs
+
+library(geomtextpath) # path geoms
+
+library(dplyr) # data wrangling
+
+library(tidyr) # data tidying
+
+library(pander) # nice tables
+
+library(gt) # beautiful tables
+
+```
+
 > "Mathematics is the art of giving the same name to different things." [@Poincare1908]
 
 Counter-intuitively, and surprisingly, the mathematics of estimating models with cross-sectional clustered data easily generalizes to longitudinal data. In cross sectional clustered data, we imagine *individuals clustered in neighborhoods, schools, or countries*.
@@ -237,6 +257,15 @@ Statistically, we imagine a situation where the true model is:
 
 $$\text{child outcome}_{it} = \beta_0 + \beta_1 \text{parenting}_{it} + \beta_2 \text{community or country characteristic}_{it} + e_{it}$$
 If *community or country characteristics* in fact influence *outcome*, but are not included in the statistical model, perhaps because they are not measured in the data, then the estimate of $\beta_1$ for *parenting* will be biased. See @fig-Simpson for an illustration.
+
+```{r}
+
+multilevelstructure <-
+  read_dta("./simulate-and-analyze-multilevel-data/multilevelstructure.dta")
+
+multilevelstructure$country <- factor(multilevelstructure$country)
+
+```
 
 ```{r}
 #| label: fig-Simpson
