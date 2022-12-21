@@ -189,11 +189,11 @@
 
 \title{Multilevel Thinking}
 \author{Andrew Grogan-Kaylor}
-\date{2022-12-21T00:00:00-05:00}
+\date{12/21/22}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, sharp corners, borderline west={3pt}{0pt}{shadecolor}, interior hidden, boxrule=0pt, enhanced, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, frame hidden, boxrule=0pt, breakable, interior hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -265,6 +265,8 @@ better research with diverse populations.
 \chapter*{Acknowledgements}\label{acknowledgements}}
 \addcontentsline{toc}{chapter}{Acknowledgements}
 
+\markboth{Acknowledgements}{Acknowledgements}
+
 No good learning happens without community. At least, that has always
 been true for me. I am grateful for many creative and energizing
 discussions with the other members of the MICS (UNICEF data) research
@@ -293,7 +295,10 @@ are of course my responsibility.
 \chapter*{Some Preliminary Thoughts}\label{some-preliminary-thoughts}}
 \addcontentsline{toc}{chapter}{Some Preliminary Thoughts}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, bottomrule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, colframe=quarto-callout-note-color-frame, colback=white, titlerule=0mm, bottomtitle=1mm, left=2mm, arc=.35mm, toprule=.15mm, toptitle=1mm, coltitle=black, title={Preliminaries}, breakable]
+\markboth{Some Preliminary Thoughts}{Some Preliminary Thoughts}
+
+\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-note-color!10!white, title={Preliminaries}, opacitybacktitle=0.6, arc=.35mm, toptitle=1mm, titlerule=0mm, breakable, coltitle=black, colback=white, toprule=.15mm, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, rightrule=.15mm, bottomtitle=1mm, leftrule=.75mm, opacityback=0, left=2mm]
+
 ``Like you I
 
 Love love, life, the sweet smell of things, the sky-blue landscape of
@@ -341,6 +346,7 @@ ourselves, bestow ourselves to silence, or a severer listening \ldots''
 purpose.''
 
 --- Zora Neale Hurston
+
 \end{tcolorbox}
 
 \bookmarksetup{startatroot}
@@ -1864,12 +1870,9 @@ applicable.
 \begin{equation}\protect\hypertarget{eq-MLM-longitudinal}{}{\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + }\label{eq-MLM-longitudinal}\end{equation}
 
 \[u_{0j} + u_{1j} \times \text{parental warmth}_i \ + \]
-
-\[v_{0i} + v_{1i} \times t + e_{ij}\]
-
-Here I include a random slope (\(u_{1j}\)) at the country level for
-parental warmth, as well as a random slope (\(v_{1j}\)) at the
-individual level for time.
+\[v_{0i} + v_{1i} \times t + e_{ij}\] Here I include a random slope
+(\(u_{1j}\)) at the country level for parental warmth, as well as a
+random slope (\(v_{1j}\)) at the individual level for time.
 
 \hypertarget{sec-regressionlongitudinal}{%
 \section{Regression With Simulated Multi-Country Longitudinal
@@ -2102,7 +2105,6 @@ dramatically incorrect results.
 Statistically, we imagine a situation where the true model is:
 
 \[\text{child outcome}_{it} = \beta_0 + \beta_1 \text{parenting}_{it} + \beta_2 \text{community or country characteristic}_{it} + e_{it}\]
-
 If \emph{community or country characteristics} in fact influence
 \emph{outcome}, but are not included in the statistical model, perhaps
 because they are not measured in the data, then the estimate of
@@ -2309,6 +2311,8 @@ diversity and variation.
 \hypertarget{references}{%
 \chapter*{References}\label{references}}
 \addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
