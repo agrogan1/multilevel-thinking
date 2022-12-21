@@ -1,0 +1,84 @@
+# Simulated Multi-Country (Multilevel) Data
+
+```{r}
+
+library(haven) # read Stata
+
+library(dplyr) # data wrangling
+
+library(gt) # beautiful tables
+
+library(ggplot2) # beautiful graphs
+
+library(pander) # tables for PDF
+
+```
+
+
+I use simulated data in this example. Data come from 30 hypothetical countries. Data contain measures of a few key aspects of parenting that have proven salient in the empirical literature on parenting to date: parental `warmth`, and `physical punishment`. Both parenting measures are normally distributed variables. Our `outcome` is conceptualized as a positive mental health outcome or behavioral outcome, and higher levels of `outcome` are considered to be better. Statistically, the data are clustered within countries. 
+
+In this simulation, I construct the data so that `warmth` is positively related to the `outcome`, while `physical punishment` is negatively related to the `outcome`.
+
+```{r}
+
+simulated_multilevel_data <-
+  read_dta("./simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta")
+
+simulated_multilevel_data <- simulated_multilevel_data %>% 
+  select(id, country,
+         warmth,
+         physical_punishment,
+         outcome)
+
+```
+
+```{r}
+#| label: tbl-simulateddata
+#| tbl-cap: "Simulated Multilevel Data"
+
+if(knitr::opts_knit$get("rmarkdown.pandoc.to") == "html") {
+
+simulated_multilevel_data %>%
+  select(id, country, warmth, physical_punishment, outcome) %>%
+  slice_head(n = 10) %>%
+  gt() %>% 
+  tab_header(
+    title = md("Sample of *Simulated* Data"),
+    subtitle = "With Descriptive Statistics For Entire Sample") %>%
+  fmt_number(
+    columns = c(warmth, physical_punishment, outcome),
+    decimals = 2,
+    use_seps = FALSE) %>%
+  summary_rows(fns = list(
+      average = "mean",
+      SD = "sd"))
+  
+} else {
+  
+  pander::pander(head(simulated_multilevel_data))
+  
+}
+```
+
+
+```{r}
+#| label: fig-data
+#| fig-cap: "Graph of Simulated Data"
+#| fig-height: 6
+
+ggplot(simulated_multilevel_data,
+       aes(x = warmth,
+           y = outcome,
+           color = factor(country))) +
+  # geom_point() +
+  geom_smooth(method = "lm") +
+  scale_color_viridis_d(name = "country") +
+  labs(title = "Desirable Mental Health Outcome by Parental Warmth",
+       subtitle = "By Country",
+       caption = "Simulated Data",
+       x = "parental warmth",
+       y = "desirable mental health outcome") +
+  theme_minimal() 
+
+
+```
