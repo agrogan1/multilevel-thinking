@@ -26,6 +26,8 @@ book:
 
 bibliography: multilevel-thinking.bib
 
+prefer-html: true
+
 format:
   html:
     theme: cosmo
