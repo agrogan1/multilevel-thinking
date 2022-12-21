@@ -1,0 +1,320 @@
+# The Longitudinal Multilevel Model
+
+> "Mathematics is the art of giving the same name to different things." [@Poincare1908]
+
+Counter-intuitively, and surprisingly, the mathematics of estimating models with cross-sectional clustered data easily generalizes to longitudinal data. In cross sectional clustered data, we imagine *individuals clustered in neighborhoods, schools, or countries*.
+
+| Level | Example(s)    |
+|-------|---------------|
+| 1     | Individuals   |
+| 2     | Schools       |
+|       | Neighborhoods |
+|       | Countries     |
+
+: Levels in Cross-Sectional Data {#tbl-levelscrosssectional}
+
+In longitudinal data, we consider the *first level* to be that of *time points*, or *study waves*, which we sometimes call the *person-observation*. The *second level* is then the individual. 
+
+| Level | Example(s)    |
+|-------|---------------|
+| 1     | Timepoints    |
+| 2     | Individuals   |
+
+: Levels in Longitudinal Data {#tbl-levelslongitudinal}
+
+While it is less common, we could then easily add additional clustering to this longitudinal model, for example, clustering of individuals inside social units.
+
+| Level | Example(s)    |
+|-------|---------------|
+| 1     | Timepoints    |
+| 2     | Individuals   |
+| 3     | Schools       |
+|       | Neighborhoods |
+|       | Countries     |
+
+: Multiple Levels in Longitudinal Data {#tbl-levelslongitudinal2}
+
+## Use Data With Multiple Observations Per Individual
+
+Multilevel data suitable for longitudinal analysis therefore has *multiple rows of data per individual*. Put another way, *every row of data is a person-timepoint*.
+
+> This method of organizing data is known as the *long* format. Another way of organizing longitudinal data--which I do not discuss in detail here--is the *wide* format in which every individual still has only one row of data. In *wide* data, the different timepoints are in different columns of data.
+
+| id   | t    | x    |
+|------|------|------|
+| 1    | 1    | 10   |
+| 1    | 2    | 20   |
+| 1    | 3    | 30   |
+| 2    | 1    | 20   |
+| 2    | 2    | 30   |
+| 2    | 3    | 40   |
+
+: Data in Long Format {#tbl-datalong}
+
+| id   | x1   | x2   | x3   |
+|------|------|------|------|
+| 1    | 10   | 20   | 30   |
+| 2    | 20   | 30   | 40   |
+
+: Data in Wide Format {#tbl-datawide}
+
+```{r}
+
+simulated_multilevel_longitudinal_data <- 
+  read_dta("../simulate-and-analyze-multilevel-data/simulated_multilevel_longitudinal_data.dta")
+
+```
+
+```{r}
+#| label: tbl-simulatedlongitudinaldata
+#| tbl-cap: "Simulated Longitudinal Multilevel Data"
+
+if(knitr::opts_knit$get("rmarkdown.pandoc.to") == "html") {
+
+simulated_multilevel_longitudinal_data %>%
+  select(id, t, country, warmth, physical_punishment, outcome) %>%
+  slice_head(n = 10) %>%
+  gt() %>% 
+  tab_header(
+    title = md("Sample of *Simulated* Data"),
+    subtitle = "With Descriptive Statistics For Entire Sample") %>%
+  fmt_number(
+    columns = c(warmth, physical_punishment, outcome),
+    decimals = 2,
+    use_seps = FALSE) %>%
+  summary_rows(fns = list(
+      average = "mean",
+      SD = "sd"))
+
+} else {
+  
+  pander::pander(head(simulated_multilevel_longitudinal_data))
+  
+}
+```
+
+```{r}
+#| label: fig-data2
+#| fig-cap: "Graph of Simulated Longitudinal Data"
+
+simulated_multilevel_longitudinal_data %>%
+  slice_head(n = 30) %>% 
+  ggplot(aes(x = t,
+           y = outcome,
+           color = factor(id))) +
+  # geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  scale_color_viridis_d(name = "individual") +
+  labs(title = "Desirable Outcome by Time",
+       subtitle = "By Individual",
+       caption = "Simulated Longitudinal Data; Selected Individuals",
+       x = "time",
+       y = "desirable outcome") +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+```
+
+## The Equation
+
+When data are in *long* format, the following equation is applicable.
+
+$$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + $$ {#eq-MLM-longitudinal} 
+
+$$u_{0j} + u_{1j} \times \text{parental warmth}_i \ + $$
+$$v_{0i} + v_{1i} \times t + e_{ij}$$
+Here I include a random slope ($u_{1j}$) at the country level for parental warmth, as well as a random slope ($v_{1j}$) at the individual level for time. 
+
+## Regression With Simulated Multi-Country Longitudinal Data {#sec-regressionlongitudinal}
+
+The Stata command that we use to analyze this data is:
+
+`mixed outcome t warmth physical_punishment || country: warmth || id: t`
+
+```{r, child=c('../simulate-and-analyze-multilevel-data/table2.md')}
+```
+
+Examining the regression results, the results of the model suggest that child outcomes improve over time. Better child outcomes are again associated with parental warmth, and parental use of physical punishment is associated with reduced child outcomes. 
+
+## Autocorrelation
+
+When data are ordered by a time variable $t$, it is possible that observations that are closer together in time will have a higher correlation than observations that are distant in time. In the simplest example, $e_{i, t=k}$ may be correlated with $e_{i, t=k-1}$. This phenomenon is known as *autocorrelation*. As @Hooper2022 would suggest, it may make sense to assume that the correlation between observations "decays with increasing
+separation in time".
+
+Most software programs for multilevel modeling allow one to incorporate measures of autocorrelation so that, e.g., $e_{i,t=3}$ is allowed to be correlated with $e_{i,t=2}$, which in turn can be correlated with $e_{i,t=1}$. More complex autocorrelation structures are usually also possible [@StataCorp2021:1]. 
+
+## Causality
+
+### The Importance of Causal Reasoning
+
+Causal reasoning is sometimes considered to be a statistical--or even overly technical--concern. Arguably, however, whenever one is using research to make recommendations about interventions, or treatments, or policies, one is engaging in some form of causal reasoning [@Duncan2006]. 
+
+> If one is saying that implementing *x* would result in beneficial changes in *y*, one is arguing--at least implicitly--that *x* is one of the causes of *y*. 
+
+It then behooves one to be explicit about this chain of causal reasoning. For example, to continue one of the substantive examples of this document, if one is going to argue for programs, interventions, or treatments that promote *parental warmth*, or that discourage parental use of *physical punishment* with the aim of improving children's *mental health*, one must be at least reasonably sure that *parental warmth* and *physical punishment* are *causes* of children's mental health.
+
+Randomized studies provide the best evidence about the internal validity of causal relationships. However, randomized studies have certain limitations [@Diener2022]. First of all--especially in a study with a smaller sample--randomization may not always be perfect, and the control and treatment groups may not be statistically equivalent. Secondly, because of ethical concerns some studies can not be conducted with randomization [@Diener2022]. For example, in the study of parenting and child development, children cannot ethically be assigned to parents with different styles of parenting and followed over the long term. Thus, methods that provide rigorous causal estimation with observational methods are necessary [@Diener2022]. 
+
+Because of the assumed superiority of studies that employ randomization, it is sometimes maintained that *correlation is not causation* and that studies that do not make use of randomization are *only observational* and *correlational*, and that results from observational studies cannot be used to support causal conclusions. However, in an important review [@Waddington2022] suggested that studies using appropriately quantitative methods can provide causally robust conclusions.
+
+In a statement salient for social research, @Duncan2006 point out the logical inconsistency of writing that does not rigorously address causal processes, but then goes on to suggest interventions or treatment or policies:
+
+> "Developmental studies are usually careful to point out when their data do not come from a randomized experiment. As with much of the nonexperimental literature in developmental psychology, most of the articles then go on to assert that, as a consequence, it is impossible to draw causal inferences from the analysis. Indeed, much of their language describing results is couched in terms of 'associations' between child care quality and child outcomes. It is not uncommon, however, to see these papers make explicit statements about effects, and others draw explicit policy conclusions. For instance, NICHD (1997, 876) stated, 'The interaction analyses provided evidence that high-quality child care served a compensatory function for children whose maternal care was lacking.' On the policy side, NICHD (2002c, 199) asserted, 'These findings provide empirical support for policies that improve state regulations for caregiver training and child-staff ratios.'" 
+
+> "One cannot have it both ways. Studies that do not aspire to causal analysis should make no claim whatsoever about effects and draw no policy conclusions. At the same time, it would be a terrible waste of resources to conduct expensive longitudinal studies without attempting to use them for causal modeling."
+
+Lastly, because of their often small samples, randomized studies may have high internal validity, but much lower external validity, or generalization to larger populations [@Diener2022]. This issue of generalizability becomes increasingly salient, when we are reminded of the fact that so little social and psychological research has been conducted outside of North American contexts [@Henrich2010; @Draper2022]. It is necessary to make use of broadly representative observational data sets, and appropriately sophisticiated quantitative methods to make causally robust conclusions from observational data.
+
+### Formal Criteria of Causality
+
+For x to be a cause of y, one needs the following 3 things to be true [@Holland1986].
+
+1. *x* is (are) associated with (correlated with) *y*.
+2. *x* come(s) before *y* in time.
+3. *z*--or other factors--cannot explain the association of (correlation of) *x* and *y*.
+
+```{r}
+#| label: fig-causality
+#| fig-cap: "Formal Criteria of Causality"
+#| fig-height: 3
+
+DiagrammeR::grViz("
+
+digraph G {
+
+rankdir='LR'
+
+x -> y
+z -> y
+z -> x [dir='both']
+
+} 
+", height = '100%')
+
+```
+
+> If *z* is omitted from the regression model, then the estimates for $x \rightarrow y$ (i.e. $\beta_{x \rightarrow y}$) will be biased. In the most common scenario $\beta_{x \rightarrow y}$ will likely be an over-estimate of the effect, and statistical significance of $\beta_{x \rightarrow y}$ may represent a false positive. 
+
+It is likely useful to restate the above abstract statements in terms of the substantive issues that I have been considering so far in this document. 
+
+For *parenting* to be a cause of *child outcomes*, one needs the following 3 things to be true [@Holland1986].
+
+1. *parenting* is (are) associated with (correlated with) *child outcomes*.
+2. *parenting* come(s) before *child outcomes* in time.
+3. *SES*, *community characteristics*--or other factors--cannot explain the association of (correlation of) *parenting* and *child outcomes*.
+
+```{r}
+#| label: fig-causalitysubstantive
+#| fig-cap: "Formal Criteria of Causality"
+#| fig-height: 3
+
+DiagrammeR::grViz("
+
+digraph G {
+
+rankdir='LR'
+
+x [label = 'parenting']
+y [label = 'child outcome']
+z [label = 'other factors']
+
+x -> y
+z -> y
+z -> x [dir='both']
+
+} 
+", height = '100%')
+
+```
+
+If *other factors* are omitted from the regression model, then the estimates for $\text{parenting} \rightarrow \text{child outcome}$ (i.e. $\beta_{\text{parenting} \rightarrow \text{child outcome}}$) will be biased. In the most common scenario $\beta_{\text{parenting} \rightarrow \text{child outcome}}$ will likely be an over-estimate of the effect, and statistical significance of $\beta_{\text{parenting} \rightarrow \text{child outcome}}$ may represent a false positive. 
+
+### Simpson's Paradox
+
+Earlier, in @sec-multilevelstructure, I referred to the idea of *multilevel structure* wherein failure to account for the clustering of data--omission of $u_0$ from the equation being estimated--may lead to incorrect conclusions. A closely related phenomenon is that of *Simpson's Paradox* [@Simpson1951] wherein omission of a relevant *covariate* (e.g. SES, community characteristics, country level characteristics) may also lead to dramatically incorrect results. 
+
+Statistically, we imagine a situation where the true model is:
+
+$$\text{child outcome}_{it} = \beta_0 + \beta_1 \text{parenting}_{it} + \beta_2 \text{community or country characteristic}_{it} + e_{it}$$
+If *community or country characteristics* in fact influence *outcome*, but are not included in the statistical model, perhaps because they are not measured in the data, then the estimate of $\beta_1$ for *parenting* will be biased. See @fig-Simpson for an illustration.
+
+```{r}
+#| label: fig-Simpson
+#| fig-cap: "An Illustration of Simpson's Paradox"
+#| fig-height: 3
+
+ggplot(multilevelstructure, 
+             aes(x = x,
+                 y = y)) +
+  geom_smooth(method = "lm") +
+  geom_point(aes(color = country)) + # points with country color
+  geom_smooth(aes(color = country), # smoothers with country color
+              method = "lm") + 
+  labs(title = "Desirable Outcome as a Function of Intervention or Treatment",
+       x = "intervention or treatment or parenting (x)",
+       y = "desirable outcome (y)",
+       caption = "Slope not accounting for covariate(s) slopes downward. \nSlope accounting for covariate(s) slopes upward.") +
+  scale_color_viridis_d(name = "covariate (z)") +
+  theme_minimal() 
+
+
+```
+
+### A Simpler Multilevel Model To Explore Causality
+
+For purposes of explication of ideas about causal estimation, in this section, I imagine a simpler equation where I am only considering the clustering of *person timepoints* within *individual people*, and ignoring for the moment--again for the sake of exposition--the clustering of *individuals* within *countries*.
+
+After explication and comprehension of this model, however, it is a simple matter to add back in the random effects for country level clustering.
+
+The appropriate multilevel model is below. 
+
+$$\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_2 \text{physical punishment}_{it} + \beta_3 \text{time}_{it} \ + $$ {#eq-MLM-simpler}
+
+$$v_{0i} + e_{it}$$
+
+Note that in @eq-MLM-simpler, if one were estimating a *multilevel model*, one would consider the $v_{0i}$ to be a randomly varying parameter with a mean of 0, and a variance of $\sigma^2(v_{0i})$.
+
+### Fixed Effects Regression
+
+I can use the same equation:
+
+$$\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_2 \text{physical punishment}_{it} + \beta_3 \text{time}_{it} \ + $$ {#eq-FE}
+
+$$v_{0i} + e_{it}$$
+
+However, in @eq-FE, I now consider the $v_{0i}$ to be *estimable* for each individual $i$ in the data. In effect, the $v_{0i}$ become a unique indicator variable for each individual in the data set. This is known as a *fixed effects regression model*.
+
+Details are provided in @Allison2009 and @Wooldridge2010. @StataCorp2021 provides an exceptionally clear explication of the core idea of fixed effects regression. The essential idea is that the fixed effects model provides statistical control for all time invariant characteristics of study participants, such as--as is often the case in many data sets--their racial or ethnic identity, or neighborhood of residence, or other characteristics which by definition are time invariant, such as the region of the country or city in which a respondent was born.
+
+Thus, by ruling out many potential confounds, fixed effects regression methods provide much more causally robust analyses, specifically because they control for many more possible confounding variables than do standard regression methods, including multilevel models, which are only able to control for the variables that are measured in the study **and** included within the regression model. 
+
+However, a disadvantage of the fixed effects approach is that this approach can not provide estimates for any time invariant characteristic of study participants. Indeed, if one includes time invariant variables into a fixed effects regression, they are automatically dropped from the regression results as can be seen in the regression table below.
+
+The relevant Stata commands are:
+
+* `mixed outcome t warmth physical_punishment || id:`
+* `xtreg outcome t warmth physical_punishment, i(id) fe`
+
+```{r, child=c('../simulate-and-analyze-multilevel-data/table3.md')}
+```
+
+### The Correlated Random Effects Model
+
+The *correlated random effects* model is based upon ideas first developed by @Mundlak1978 and later explicated in @Wooldridge2010. @Antonakis2019 and @Schunck2013 provide very intuitive explanations of this model. 
+
+The central idea is that one can obtain estimates of both the time invariant variables, and estimates for time varying variables. The key idea is that for time varying variables, I include the individual level mean for that variable in the model. Thus, in the example below, I include $\beta_{1a}\overline{\text{parental warmth}}_{i}$. 
+
+$$\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_{1a}\overline{\text{parental warmth}}_{i} \ + $$ {#eq-CRE}
+
+$$\beta_2 \text{physical punishment}_{it} + \beta_3 \text{time}_{it} \ + $$ 
+
+$$v_{0i} + e_{ij}$$
+
+By including this parameter, I  obtain estimates for the time varying variables that are *equivalent* to what I would obtain from a fixed effects regression [@Schunck2013].
+
+The Stata command for the correlated random effects model is:
+
+`mixed outcome t warmth mean_warmth physical_punishment || id:`
+
+```{r, child=c('../simulate-and-analyze-multilevel-data/table4.md')}
+```
