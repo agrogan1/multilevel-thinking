@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.11.8)  20 DEC 2022 19:16
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.12.20)  21 DEC 2022 08:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **index.tex
 (./index.tex
-LaTeX2e <2022-11-01>
-L3 programming layer <2022-11-02> (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrreprt.cls
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2022-12-17> (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrreprt.cls
 Document Class: scrreprt 2022/10/12 v3.38 KOMA-Script document class (report)
 (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrkbase.sty
 Package: scrkbase 2022/10/12 v3.38 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
@@ -25,7 +25,7 @@ Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
 Already applied: [0000/00/00] Usage of raw or classic option list on input line 368.
 )) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/koma-script/tocbasic.sty
 Package: tocbasic 2022/10/12 v3.38 KOMA-Script package (handling toc-files)
-\scr@dte@tocline@numberwidth=\skip47
+\scr@dte@tocline@numberwidth=\skip48
 \scr@dte@tocline@numbox=\box51
 )
 Package tocbasic Info: omitting babel extension for `toc'
@@ -37,7 +37,7 @@ Class scrreprt Info: File `scrsize11pt.clo' used instead of
 File: scrsize11pt.clo 2022/10/12 v3.38 KOMA-Script font size class option (11pt)
 ) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/koma-script/typearea.sty
 Package: typearea 2022/10/12 v3.38 KOMA-Script package (type area)
-\ta@bcor=\skip48
+\ta@bcor=\skip49
 \ta@div=\count181
 Package typearea Info: You've used standard option `letterpaper'.
 (typearea)             This is correct!
@@ -45,10 +45,10 @@ Package typearea Info: You've used standard option `letterpaper'.
 (typearea)             If you'd like to set the option with \KOMAoptions,
 (typearea)             you'd have to use `paper=letter' there
 (typearea)             instead of `letterpaper', too.
-\ta@hblk=\skip49
-\ta@vblk=\skip50
-\ta@temp=\skip51
-\footheight=\skip52
+\ta@hblk=\skip50
+\ta@vblk=\skip51
+\ta@temp=\skip52
+\footheight=\skip53
 Package typearea Info: These are the values describing the layout:
 (typearea)             DIV  = 11
 (typearea)             BCOR = 0.0pt
@@ -74,55 +74,55 @@ Package typearea Info: These are the values describing the layout:
 \c@subsubsection=\count186
 \c@paragraph=\count187
 \c@subparagraph=\count188
-\scr@dte@chapter@maxnumwidth=\skip53
+\scr@dte@chapter@maxnumwidth=\skip54
 Class scrreprt Info: using compatibility default `afterindent=bysign'
 (scrreprt)           for `\chapter on input line 5902.
-\scr@dte@section@maxnumwidth=\skip54
+\scr@dte@section@maxnumwidth=\skip55
 Class scrreprt Info: using compatibility default `runin=bysign'
 (scrreprt)           for `\section on input line 5913.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
 (scrreprt)           for `\section on input line 5913.
-\scr@dte@part@maxnumwidth=\skip55
+\scr@dte@part@maxnumwidth=\skip56
 Class scrreprt Info: using compatibility default `afterindent=true'
 (scrreprt)           for `\part on input line 5922.
-\scr@dte@subsection@maxnumwidth=\skip56
+\scr@dte@subsection@maxnumwidth=\skip57
 Class scrreprt Info: using compatibility default `runin=bysign'
 (scrreprt)           for `\subsection on input line 5932.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
 (scrreprt)           for `\subsection on input line 5932.
-\scr@dte@subsubsection@maxnumwidth=\skip57
+\scr@dte@subsubsection@maxnumwidth=\skip58
 Class scrreprt Info: using compatibility default `runin=bysign'
 (scrreprt)           for `\subsubsection on input line 5942.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
 (scrreprt)           for `\subsubsection on input line 5942.
-\scr@dte@paragraph@maxnumwidth=\skip58
+\scr@dte@paragraph@maxnumwidth=\skip59
 Class scrreprt Info: using compatibility default `runin=bysign'
 (scrreprt)           for `\paragraph on input line 5953.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
 (scrreprt)           for `\paragraph on input line 5953.
-\scr@dte@subparagraph@maxnumwidth=\skip59
+\scr@dte@subparagraph@maxnumwidth=\skip60
 Class scrreprt Info: using compatibility default `runin=bysign'
 (scrreprt)           for `\subparagraph on input line 5963.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
 (scrreprt)           for `\subparagraph on input line 5963.
-\abovecaptionskip=\skip60
-\belowcaptionskip=\skip61
+\abovecaptionskip=\skip61
+\belowcaptionskip=\skip62
 \c@pti@nb@sid@b@x=\box52
 Package tocbasic Info: omitting babel extension for `lof'
 (tocbasic)             because of feature `nobabel' available
 (tocbasic)             for `lof' on input line 7140.
-\scr@dte@figure@maxnumwidth=\skip62
+\scr@dte@figure@maxnumwidth=\skip63
 \c@figure=\count189
 Package tocbasic Info: omitting babel extension for `lot'
 (tocbasic)             because of feature `nobabel' available
 (tocbasic)             for `lot' on input line 7157.
-\scr@dte@table@maxnumwidth=\skip63
+\scr@dte@table@maxnumwidth=\skip64
 \c@table=\count190
 Class scrreprt Info: Redefining `\numberline' on input line 7328.
 \bibindent=\dimen140
 ) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
-\@mathmargin=\skip64
+\@mathmargin=\skip65
 For additional information on amsmath, use the `?' option.
 (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
@@ -178,8 +178,8 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \totwidth@=\dimen148
 \lineht@=\dimen149
 \@envbody=\toks20
-\multlinegap=\skip65
-\multlinetaggap=\skip66
+\multlinegap=\skip66
+\multlinetaggap=\skip67
 \mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
@@ -229,7 +229,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 ) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math.sty (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2022-11-02 L3 programming layer (loader) 
+Package: expl3 2022-12-17 L3 programming layer (loader) 
 (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2022-10-26 L3 backend support: XeTeX
 \g__graphics_track_int=\count269
@@ -242,9 +242,9 @@ Package: unicode-math 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
 (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math-xetex.sty
 Package: unicode-math-xetex 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
 (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2022-06-22 L3 Experimental document command parser
+Package: xparse 2022-12-17 L3 Experimental document command parser
 ) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2022-06-22 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2022-12-17 LaTeX2e option processing using LaTeX3 keys
 ) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
 (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
@@ -300,10 +300,10 @@ File: svgnam.def 2022/06/12 v2.14 Predefined colors according to SVG 1.1 (UK)
 File: x11nam.def 2022/06/12 v2.14 Predefined colors according to Unix/X11 (UK)
 )) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
-\LTleft=\skip67
-\LTright=\skip68
-\LTpre=\skip69
-\LTpost=\skip70
+\LTleft=\skip68
+\LTright=\skip69
+\LTpre=\skip70
+\LTpost=\skip71
 \LTchunksize=\count287
 \LTcapwidth=\dimen153
 \LT@head=\box56
@@ -343,8 +343,8 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \ar@mcellbox=\box61
 \extrarowheight=\dimen168
 \NC@list=\toks23
-\extratabsurround=\skip71
-\backup@length=\skip72
+\extratabsurround=\skip72
+\backup@length=\skip73
 \ar@cellbox=\box62
 ) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
@@ -352,12 +352,12 @@ Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Bcount=\count297
 \calc@Adimen=\dimen169
 \calc@Bdimen=\dimen170
-\calc@Askip=\skip73
-\calc@Bskip=\skip74
+\calc@Askip=\skip74
+\calc@Bskip=\skip75
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count298
-\calc@Cskip=\skip75
+\calc@Cskip=\skip76
 ) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count299
@@ -379,9 +379,9 @@ Package graphics Info: Driver file: xetex.def on input line 107.
 \Gin@req@height=\dimen172
 \Gin@req@width=\dimen173
 )
-\cslhangindent=\skip76
-\csllabelwidth=\skip77
-\cslentryspacingunit=\skip78
+\cslhangindent=\skip77
+\csllabelwidth=\skip78
+\cslentryspacingunit=\skip79
 
 ! LaTeX Error: Missing \begin{document}.
 
@@ -392,11 +392,11 @@ Type  H <return>  for immediate help.
 l.101 <
        script src="site_libs/htmlwidgets-1.6.0/htmlwidgets.js"></script> 
 Here is how much of TeX's memory you used:
- 12640 strings out of 477643
- 267236 string characters out of 5840291
- 892662 words of memory out of 5000000
- 33727 multiletter control sequences out of 15000+600000
- 469275 words of font info for 30 fonts, out of 8000000 for 9000
+ 12640 strings out of 478777
+ 267236 string characters out of 5849962
+ 1844979 words of memory out of 5000000
+ 32593 multiletter control sequences out of 15000+600000
+ 512303 words of font info for 34 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,1n,106p,10600b,270s stack positions out of 10000i,1000n,20000p,200000b,200000s
 

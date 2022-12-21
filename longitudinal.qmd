@@ -89,28 +89,8 @@ simulated_multilevel_longitudinal_data <-
 #| label: tbl-simulatedlongitudinaldata
 #| tbl-cap: "Simulated Longitudinal Multilevel Data"
 
-if(knitr::opts_knit$get("rmarkdown.pandoc.to") == "html") {
-
-simulated_multilevel_longitudinal_data %>%
-  select(id, t, country, warmth, physical_punishment, outcome) %>%
-  slice_head(n = 10) %>%
-  gt() %>% 
-  tab_header(
-    title = md("Sample of *Simulated* Data"),
-    subtitle = "With Descriptive Statistics For Entire Sample") %>%
-  fmt_number(
-    columns = c(warmth, physical_punishment, outcome),
-    decimals = 2,
-    use_seps = FALSE) %>%
-  summary_rows(fns = list(
-      average = "mean",
-      SD = "sd"))
-
-} else {
+pander::pander(head(simulated_multilevel_longitudinal_data))
   
-  pander::pander(head(simulated_multilevel_longitudinal_data))
-  
-}
 ```
 
 ```{r}

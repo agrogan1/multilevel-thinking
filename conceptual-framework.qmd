@@ -72,23 +72,7 @@ conceptualframework <- data.frame(conceptuallevel,
                                   statisticallevel1,
                                   statisticallevel2)
 
-if(knitr::opts_knit$get("rmarkdown.pandoc.to") == "html") {
-
-gt(conceptualframework) %>% 
-  cols_label(
-    conceptuallevel = "conceptual level",
-    statisticallevel1 = "statistical level 1",
-    statisticallevel2 = "statistical level 2"
-  ) %>% 
-  tab_header(
-    title = md("Variables and Processes"),
-    subtitle = "at Multiple Levels") 
-
-} else {
-  
-  pander::pander(conceptualframework)
-  
-}
+pander::pander(conceptualframework)
 
 ```
 
