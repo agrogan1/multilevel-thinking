@@ -18,6 +18,10 @@ book:
     - acknowledgements.qmd
     - preliminaries.qmd
     - intro.qmd
+    - simulated-multi-country-data.qmd
+    - software.qmd
+    - conceptual-framework.qmd
+    - cross-sectional.qmd
     - references.qmd
 
 bibliography: multilevel-thinking.bib
