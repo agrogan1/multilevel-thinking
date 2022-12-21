@@ -1,0 +1,115 @@
+# Conceptual Framework
+
+```{r}
+
+library(ggplot2) # beautiful graphs
+
+library(geomtextpath) # path geoms
+
+library(dplyr) # data wrangling
+
+library(tidyr) # data tidying
+
+library(pander) # nice tables
+
+library(gt) # beautiful tables
+
+```
+
+
+## Units of Analysis
+
+When confronted with multilevel data, one has a number of choices about the units of analysis: one could consider individuals to be the units of analysis; or, one could consider the larger social units to be the units of analyses. With multilevel analytic methods, one is able to avoid this false dichotomy, and to conceptualize the data from a multilevel perspective, wherein both individuals and social units are different levels of the same analysis. I discuss some of the statistical considerations of different ideas about the units of analysis in @sec-wrongapproaches
+
+```{r}
+#| label: fig-conceptual
+#| fig-cap: "Conceptual Framework"
+#| fig-height: 3
+
+DiagrammeR::grViz("
+
+digraph C {
+
+rankdir='LR'
+
+ 	subgraph cluster_2 {
+ 	
+ 	label = 'Level 2: Social Units'
+
+  L2 
+  
+ 	}
+    
+ 	subgraph cluster_1 {
+ 	
+ 	label = 'Level 1: Individuals'
+
+  L1 -> y
+  L2 -> y
+ 	}  
+ 	
+
+}")
+
+```
+
+## Variables and Processes at Multiple Levels
+
+```{r}
+#| label: tbl-variablelevel
+#| tbl-cap: "Multiple Levels of Variables"
+
+conceptuallevel <- c(1,2,2)
+statisticallevel1 <- c("Individual response about parenting or mental health",
+                       "Individual response about community",
+                       "N/A")
+
+statisticallevel2 <- c("Aggregated responses about parenting or mental health",
+                       "Aggregated response about community",
+                       "Administrative indicator of social unit")
+
+conceptualframework <- data.frame(conceptuallevel,
+                                  statisticallevel1,
+                                  statisticallevel2)
+
+if(knitr::opts_knit$get("rmarkdown.pandoc.to") == "html") {
+
+gt(conceptualframework) %>% 
+  cols_label(
+    conceptuallevel = "conceptual level",
+    statisticallevel1 = "statistical level 1",
+    statisticallevel2 = "statistical level 2"
+  ) %>% 
+  tab_header(
+    title = md("Variables and Processes"),
+    subtitle = "at Multiple Levels") 
+
+} else {
+  
+  pander::pander(conceptualframework)
+  
+}
+
+```
+
+In this document, I distinguish between *conceptual* and *statistical* levels. 
+
+By *conceptual* level, I refer to whether a variable is *conceptualized* to be measure of an *individual* level characteristic, such as parenting or mental health, or a *community* level construct, such as community collective efficacy, or community safety.
+
+By *statistical* level, I refer to whether a variable measures an *individual* response, or an *aggregated* response.
+
+* Thus, $\text{mental health}_{ij}$ or $\text{parenting}_{ij}$ would be considered in the terminology that I am using to be a variable both *conceptually* and *statistically* at Level 1.
+
+* $\overline{\text{mental health}_{.j}}$ or $\overline{\text{parenting}_{.j}}$ would be variables that *conceptually* come from Level 1 responses, but are *statistically* aggregated to Level 2.
+
+* Using my terminology, $\text{community collective efficacy}_{ij}$ or $\text{community safety}_{ij}$ would be considered to be a variable both *conceptually* at Level 2, but *statistically* at Level 1.
+
+* $\overline{\text{community collective efficacy}_{.j}}$ or $\overline{\text{community safety}_{.j}}$ would be variables that *conceptually* come from Level 2 responses, but are *statistically* aggregated to Level 2.
+
+Some variables only exist at Level 2, and their Level 1 counterparts are undefined. For example, the size of a school, neighborhood, or country, is inherently a Level 2 variable, with no Level 1 counterpart.  Similarly, some administrative indicators, such as the Gini level of inequality, while developed by calculating across Level 1 responses, have no easily definable Level 1 counterpart. 
+
+```{r, echo=FALSE, eval=FALSE}
+
+# [@Morgenstern1995] [@DiezRoux2002]
+
+```
