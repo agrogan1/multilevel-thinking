@@ -61,7 +61,7 @@ Multilevel data suitable for longitudinal analysis therefore has *multiple rows 
 ```{r}
 
 simulated_multilevel_longitudinal_data <- 
-  read_dta("../simulate-and-analyze-multilevel-data/simulated_multilevel_longitudinal_data.dta")
+  read_dta("./simulate-and-analyze-multilevel-data/simulated_multilevel_longitudinal_data.dta")
 
 ```
 
@@ -131,7 +131,7 @@ The Stata command that we use to analyze this data is:
 
 `mixed outcome t warmth physical_punishment || country: warmth || id: t`
 
-```{r, child=c('../simulate-and-analyze-multilevel-data/table2.md')}
+```{r, child=c('./simulate-and-analyze-multilevel-data/table2.md')}
 ```
 
 Examining the regression results, the results of the model suggest that child outcomes improve over time. Better child outcomes are again associated with parental warmth, and parental use of physical punishment is associated with reduced child outcomes. 
@@ -295,7 +295,7 @@ The relevant Stata commands are:
 * `mixed outcome t warmth physical_punishment || id:`
 * `xtreg outcome t warmth physical_punishment, i(id) fe`
 
-```{r, child=c('../simulate-and-analyze-multilevel-data/table3.md')}
+```{r, child=c('./simulate-and-analyze-multilevel-data/table3.md')}
 ```
 
 ### The Correlated Random Effects Model
@@ -316,5 +316,5 @@ The Stata command for the correlated random effects model is:
 
 `mixed outcome t warmth mean_warmth physical_punishment || id:`
 
-```{r, child=c('../simulate-and-analyze-multilevel-data/table4.md')}
+```{r, child=c('./simulate-and-analyze-multilevel-data/table4.md')}
 ```
