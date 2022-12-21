@@ -28,6 +28,8 @@ book:
 
 bibliography: multilevel-thinking.bib
 
+csl: apa.csl
+
 prefer-html: true
 
 format:
@@ -41,6 +43,9 @@ format:
     execute:
       echo: false
       warning: false
+  docx:
+    reference-doc: markstat.docx
+
 
 
 
