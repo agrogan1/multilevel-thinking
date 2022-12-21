@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.37">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -13,10 +13,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
@@ -105,9 +110,8 @@ div.csl-indent {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Multilevel Thinking</a> 
-        <div class="sidebar-tools-main tools-wide">
+        <div class="sidebar-tools-main">
     <a href="https://github.com/agrogan1/multilevel-thinking" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
-    <a href="./Multilevel-Thinking.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
@@ -120,6 +124,12 @@ div.csl-indent {
           <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+            <i class="bi bi-bi-linkedin pe-1"></i>
+          LinkedIn
           </a>
         </li>
     </ul>
@@ -193,11 +203,11 @@ div.csl-indent {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-usefulness-of-multilevel-modeling-and-multilevel-thinking" id="toc-the-usefulness-of-multilevel-modeling-and-multilevel-thinking" class="nav-link active" data-scroll-target="#the-usefulness-of-multilevel-modeling-and-multilevel-thinking"> <span class="header-section-number">1</span> The Usefulness of Multilevel Modeling and Multilevel Thinking</a></li>
+  <li><a href="#the-usefulness-of-multilevel-modeling-and-multilevel-thinking" id="toc-the-usefulness-of-multilevel-modeling-and-multilevel-thinking" class="nav-link active" data-scroll-target="#the-usefulness-of-multilevel-modeling-and-multilevel-thinking"><span class="toc-section-number">1</span>  The Usefulness of Multilevel Modeling and Multilevel Thinking</a></li>
   </ul>
 </nav>
     </div>
@@ -226,6 +236,7 @@ div.csl-indent {
       <p class="date">December 21, 2022</p>
     </div>
   </div>
+  
     
   </div>
   
@@ -242,11 +253,11 @@ div.csl-indent {
 <p>My contention is that <em>multilevel modeling</em> offers powerful tools for understanding the <em>multilevel data</em> that social researchers often confront. For example, researchers are often interested in studying outcomes for diverse groups of children in different schools, residents of diverse and different neighborhoods, or individuals or families living in diverse and different countries. Such inherently multilevel data lead to analytic complexities, some of which appear to me to be well understood, while others seem to be much less often appreciated.</p>
 <p>The point that I wish to make about multilevel data is that when presented with complex multilevel data, failure to use the appropriate multilevel model may lead to conclusions that are demonstrably incorrect. Fortunately, many of these difficulties can be avoided with applications of simple and straightforward multilevel models.</p>
 <p>After presenting some initial ideas about multilevel modeling, I go on to explore some more complex ideas about multilevel models that I see less often in the published empirical literature. I focus especially on the idea of <em>multilevel models as the exploration of variation across countries and cultures</em>.</p>
-<p>Certainly, none of the statistical ideas contained in this document are unique to me. There are thorough–and often much more mathematically rigorous–presentations of many of the idea contained in this document in some of the excellent foundational texts on multilevel modeling such as the early book by <span class="citation" data-cites="Raudenbush2002">Raudenbush &amp; Bryk (<a href="#ref-Raudenbush2002" role="doc-biblioref">2002</a>)</span>, the excellent book on longitudinal models by <span class="citation" data-cites="Singer2003">Singer &amp; Willett (<a href="#ref-Singer2003" role="doc-biblioref">2003</a>)</span>, and <span class="citation" data-cites="RabeHesketh2012">Rabe-Hesketh &amp; Skrondal (<a href="#ref-RabeHesketh2012" role="doc-biblioref">2012</a>)</span>’s more recent and extremely comprehensive two volume text. <span class="citation" data-cites="Luke2004">Luke (<a href="#ref-Luke2004" role="doc-biblioref">2004</a>)</span>, and <span class="citation" data-cites="Kreft1998">Kreft &amp; de Leeuw (<a href="#ref-Kreft1998" role="doc-biblioref">1998</a>)</span>, offer shorter, less mathematical, but still excellent introductions to the topic of multilevel modeling. <span class="citation" data-cites="Gelman2007">Gelman et al. (<a href="#ref-Gelman2007" role="doc-biblioref">2007</a>)</span> introduced me to the ideas that in this document I describe as “multilevel structure” using an example with voting patterns.</p>
+<p>Certainly, none of the statistical ideas contained in this document are unique to me. There are thorough–and often much more mathematically rigorous–presentations of many of the idea contained in this document in some of the excellent foundational texts on multilevel modeling such as the early book by <span class="citation" data-cites="Raudenbush2002">Raudenbush &amp; Bryk (<a href="references.html#ref-Raudenbush2002" role="doc-biblioref">2002</a>)</span>, the excellent book on longitudinal models by <span class="citation" data-cites="Singer2003">Singer &amp; Willett (<a href="references.html#ref-Singer2003" role="doc-biblioref">2003</a>)</span>, and <span class="citation" data-cites="RabeHesketh2012">Rabe-Hesketh &amp; Skrondal (<a href="references.html#ref-RabeHesketh2012" role="doc-biblioref">2012</a>)</span>’s more recent and extremely comprehensive two volume text. <span class="citation" data-cites="Luke2004">Luke (<a href="references.html#ref-Luke2004" role="doc-biblioref">2004</a>)</span>, and <span class="citation" data-cites="Kreft1998">Kreft &amp; de Leeuw (<a href="references.html#ref-Kreft1998" role="doc-biblioref">1998</a>)</span>, offer shorter, less mathematical, but still excellent introductions to the topic of multilevel modeling. <span class="citation" data-cites="Gelman2007">Gelman et al. (<a href="references.html#ref-Gelman2007" role="doc-biblioref">2007</a>)</span> introduced me to the ideas that in this document I describe as “multilevel structure” using an example with voting patterns.</p>
 <p>My intent in this document is to offer a kind of accessible tutorial for applied researchers, including especially those who see their research having some advocacy based component. My approach, while offering up some equations, is less mathematical than some of the above mentioned texts, and written with the intent of providing a clear and practically focused guide for the applied researcher who is attempting to carry out better research with diverse populations.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography">
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography" style="display: none">
 <div id="ref-Gelman2007" class="csl-entry" role="doc-biblioentry">
 Gelman, A., Shor, B., Bafumi, J., &amp; Park, D. (2007). Rich state, poor state, red state, blue state: What’s the matter with connecticut? <em>Quarterly Journal of Political Science</em>, <em>2</em>, 345–367. <a href="https://doi.org/10.2139/ssrn.1010426">https://doi.org/10.2139/ssrn.1010426</a>
 </div>
@@ -310,7 +321,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -338,31 +366,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
