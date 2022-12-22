@@ -16,6 +16,7 @@ book:
   chapters:
     - index.qmd
     - acknowledgements.qmd
+    - license.qmd
     - preliminaries.qmd
     - intro.qmd
     - simulated-multi-country-data.qmd
