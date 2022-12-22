@@ -1,12 +1,12 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.12.21)  21 DEC 2022 11:01
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.12.21)  22 DEC 2022 13:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **index.tex
 (./index.tex
 LaTeX2e <2022-11-01> patch level 1
-L3 programming layer <2022-12-17> (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrreprt.cls
-Document Class: scrreprt 2022/10/12 v3.38 KOMA-Script document class (report)
+L3 programming layer <2022-12-17> (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrbook.cls
+Document Class: scrbook 2022/10/12 v3.38 KOMA-Script document class (book)
 (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrkbase.sty
 Package: scrkbase 2022/10/12 v3.38 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
 (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrbase.sty
@@ -31,8 +31,8 @@ Package: tocbasic 2022/10/12 v3.38 KOMA-Script package (handling toc-files)
 Package tocbasic Info: omitting babel extension for `toc'
 (tocbasic)             because of feature `nobabel' available
 (tocbasic)             for `toc' on input line 137.
-Class scrreprt Info: File `scrsize11pt.clo' used instead of
-(scrreprt)           file `scrsize11.clo' to setup font sizes on input line 2614.
+Class scrbook Info: File `scrsize11pt.clo' used instead of
+(scrbook)           file `scrsize11.clo' to setup font sizes on input line 2617.
 (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
 File: scrsize11pt.clo 2022/10/12 v3.38 KOMA-Script font size class option (11pt)
 ) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/koma-script/typearea.sty
@@ -49,17 +49,21 @@ Package typearea Info: You've used standard option `letterpaper'.
 \ta@vblk=\skip51
 \ta@temp=\skip52
 \footheight=\skip53
+Package typearea Info: With paper sizes other than (almost) `A4' predefined
+(typearea)             DIV values do not exist. Using DIV calculation for good
+(typearea)             line width (unless using `version=3.24` or prior).
+DIV calculation for typearea with good linewidth.
 Package typearea Info: These are the values describing the layout:
-(typearea)             DIV  = 11
+(typearea)             DIV  = 7
 (typearea)             BCOR = 0.0pt
 (typearea)             \paperwidth      = 614.295pt
-(typearea)              \textwidth      = 446.76004pt
-(typearea)              DIV departure   = -14%
-(typearea)              \evensidemargin = 11.49748pt
-(typearea)              \oddsidemargin  = 11.49748pt
+(typearea)              \textwidth      = 351.02573pt
+(typearea)              DIV departure   = 3%
+(typearea)              \evensidemargin = 103.24286pt
+(typearea)              \oddsidemargin  = 15.48643pt
 (typearea)             \paperheight     = 794.96999pt
-(typearea)              \textheight     = 582.20026pt
-(typearea)              \topmargin      = -37.40001pt
+(typearea)              \textheight     = 459.8002pt
+(typearea)              \topmargin      = 3.89714pt
 (typearea)              \headheight     = 17.0pt
 (typearea)              \headsep        = 20.40001pt
 (typearea)              \topskip        = 11.0pt
@@ -75,50 +79,50 @@ Package typearea Info: These are the values describing the layout:
 \c@paragraph=\count187
 \c@subparagraph=\count188
 \scr@dte@chapter@maxnumwidth=\skip54
-Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\chapter on input line 5902.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\chapter on input line 5898.
 \scr@dte@section@maxnumwidth=\skip55
-Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\section on input line 5913.
-Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\section on input line 5913.
+Class scrbook Info: using compatibility default `runin=bysign'
+(scrbook)           for `\section on input line 5909.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\section on input line 5909.
 \scr@dte@part@maxnumwidth=\skip56
-Class scrreprt Info: using compatibility default `afterindent=true'
-(scrreprt)           for `\part on input line 5922.
+Class scrbook Info: using compatibility default `afterindent=true'
+(scrbook)           for `\part on input line 5918.
 \scr@dte@subsection@maxnumwidth=\skip57
-Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\subsection on input line 5932.
-Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\subsection on input line 5932.
+Class scrbook Info: using compatibility default `runin=bysign'
+(scrbook)           for `\subsection on input line 5928.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\subsection on input line 5928.
 \scr@dte@subsubsection@maxnumwidth=\skip58
-Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\subsubsection on input line 5942.
-Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\subsubsection on input line 5942.
+Class scrbook Info: using compatibility default `runin=bysign'
+(scrbook)           for `\subsubsection on input line 5938.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\subsubsection on input line 5938.
 \scr@dte@paragraph@maxnumwidth=\skip59
-Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\paragraph on input line 5953.
-Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\paragraph on input line 5953.
+Class scrbook Info: using compatibility default `runin=bysign'
+(scrbook)           for `\paragraph on input line 5949.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\paragraph on input line 5949.
 \scr@dte@subparagraph@maxnumwidth=\skip60
-Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\subparagraph on input line 5963.
-Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\subparagraph on input line 5963.
+Class scrbook Info: using compatibility default `runin=bysign'
+(scrbook)           for `\subparagraph on input line 5959.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\subparagraph on input line 5959.
 \abovecaptionskip=\skip61
 \belowcaptionskip=\skip62
 \c@pti@nb@sid@b@x=\box52
 Package tocbasic Info: omitting babel extension for `lof'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lof' on input line 7140.
+(tocbasic)             for `lof' on input line 7142.
 \scr@dte@figure@maxnumwidth=\skip63
 \c@figure=\count189
 Package tocbasic Info: omitting babel extension for `lot'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lot' on input line 7157.
+(tocbasic)             for `lot' on input line 7159.
 \scr@dte@table@maxnumwidth=\skip64
 \c@table=\count190
-Class scrreprt Info: Redefining `\numberline' on input line 7328.
+Class scrbook Info: Redefining `\numberline' on input line 7330.
 \bibindent=\dimen140
 ) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
@@ -292,13 +296,7 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/graphics/dvipsnam.def
-File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/xcolor/svgnam.def
-File: svgnam.def 2022/06/12 v2.14 Predefined colors according to SVG 1.1 (UK)
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/xcolor/x11nam.def
-File: x11nam.def 2022/06/12 v2.14 Predefined colors according to Unix/X11 (UK)
-)) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
+) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \LTleft=\skip68
 \LTright=\skip69
@@ -317,7 +315,7 @@ Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \c@LT@chunks=\count291
 \LT@p@ftn=\toks22
 )
-Class scrreprt Info: longtable captions redefined on input line 55.
+Class scrbook Info: longtable captions redefined on input line 53.
 (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen154
@@ -389,13 +387,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.101 <
-       script src="site_libs/htmlwidgets-1.6.0/htmlwidgets.js"></script> 
+l.99 <
+      script src="site_libs/htmlwidgets-1.6.0/htmlwidgets.js"></script> 
 Here is how much of TeX's memory you used:
- 12640 strings out of 478777
- 267236 string characters out of 5849962
+ 12120 strings out of 478777
+ 258390 string characters out of 5849962
  1844979 words of memory out of 5000000
- 32593 multiletter control sequences out of 15000+600000
+ 32082 multiletter control sequences out of 15000+600000
  512303 words of font info for 34 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,1n,106p,10600b,270s stack positions out of 10000i,1000n,20000p,200000b,200000s
