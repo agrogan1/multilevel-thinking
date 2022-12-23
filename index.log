@@ -1,29 +1,29 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.12.23)  23 DEC 2022 08:21
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.12.23)  23 DEC 2022 11:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **index.tex
 (./index.tex
 LaTeX2e <2022-11-01> patch level 1
-L3 programming layer <2022-12-17> (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrreprt.cls
+L3 programming layer <2022-12-17> (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrreprt.cls
 Document Class: scrreprt 2022/10/12 v3.38 KOMA-Script document class (report)
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrkbase.sty
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrkbase.sty
 Package: scrkbase 2022/10/12 v3.38 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrbase.sty
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrbase.sty
 Package: scrbase 2022/10/12 v3.38 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrlfile.sty
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrlfile.sty
 Package: scrlfile 2022/10/12 v3.38 KOMA-Script package (file load hooks)
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
 Package: scrlfile-hook 2022/10/12 v3.38 KOMA-Script package (using LaTeX hooks)
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrlogo.sty
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrlogo.sty
 Package: scrlogo 2022/10/12 v3.38 KOMA-Script package (logo)
-))) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+))) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
 )
 Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
 Already applied: [0000/00/00] Usage of raw or classic option list on input line 368.
-)) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/koma-script/tocbasic.sty
+)) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/tocbasic.sty
 Package: tocbasic 2022/10/12 v3.38 KOMA-Script package (handling toc-files)
 \scr@dte@tocline@numberwidth=\skip48
 \scr@dte@tocline@numbox=\box51
@@ -33,9 +33,9 @@ Package tocbasic Info: omitting babel extension for `toc'
 (tocbasic)             for `toc' on input line 137.
 Class scrreprt Info: File `scrsize11pt.clo' used instead of
 (scrreprt)           file `scrsize11.clo' to setup font sizes on input line 2614.
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
 File: scrsize11pt.clo 2022/10/12 v3.38 KOMA-Script font size class option (11pt)
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/koma-script/typearea.sty
+) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/typearea.sty
 Package: typearea 2022/10/12 v3.38 KOMA-Script package (type area)
 \ta@bcor=\skip49
 \ta@div=\count181
@@ -120,20 +120,20 @@ Package tocbasic Info: omitting babel extension for `lot'
 \c@table=\count190
 Class scrreprt Info: Redefining `\numberline' on input line 7328.
 \bibindent=\dimen140
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
 \@mathmargin=\skip65
 For additional information on amsmath, use the `?' option.
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks17
 \ex@=\dimen141
-)) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+)) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen142
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count191
@@ -183,16 +183,16 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
+)) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -226,11 +226,11 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math.sty (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
+) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math.sty (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2022-12-17 L3 programming layer (loader) 
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2022-10-26 L3 backend support: XeTeX
 \g__graphics_track_int=\count269
 \l__pdf_internal_box=\box55
@@ -239,15 +239,15 @@ File: l3backend-xetex.def 2022-10-26 L3 backend support: XeTeX
 \g__pdf_backend_link_int=\count272
 ))
 Package: unicode-math 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math-xetex.sty
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math-xetex.sty
 Package: unicode-math-xetex 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2022-12-17 L3 Experimental document command parser
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 Package: l3keys2e 2022-12-17 LaTeX2e option processing using LaTeX3 keys
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty
+) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
 \l__fontspec_script_int=\count273
 \l__fontspec_language_int=\count274
@@ -263,11 +263,11 @@ Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
 \l__fontspec_tmpa_dim=\dimen150
 \l__fontspec_tmpb_dim=\dimen151
 \l__fontspec_tmpc_dim=\dimen152
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.cfg))) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/base/fix-cm.sty
+) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.cfg))) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fix-cm.sty
 Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/base/ts1enc.def
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 ))
@@ -275,42 +275,15 @@ LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 \g__um_fonts_used_int=\count285
 \l__um_primecount_int=\count286
 \g__um_primekern_muskip=\muskip17
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex))) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/upquote/upquote.sty
-Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty
-Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-)) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty
-Package: microtype 2022/06/23 v3.0f Micro-typographical refinements (RS)
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count287
-)
-\MT@toks=\toks22
-\MT@tempbox=\box56
-\MT@count=\count288
-LaTeX Info: Redefining \noprotrusionifhmode on input line 1045.
-LaTeX Info: Redefining \leftprotrusion on input line 1046.
-LaTeX Info: Redefining \rightprotrusion on input line 1056.
-LaTeX Info: Redefining \textls on input line 1234.
-\MT@outer@kern=\dimen153
-LaTeX Info: Redefining \textmicrotypecontext on input line 1858.
-\MT@listname@count=\count289
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype-xetex.def
-File: microtype-xetex.def 2022/06/23 v3.0f Definitions specific to xetex (RS)
-LaTeX Info: Redefining \lsstyle on input line 236.
-)
-Package microtype Info: Loading configuration file microtype.cfg.
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg
-File: microtype.cfg 2022/06/23 v3.0f microtype main configuration file (RS)
-)) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex))) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: xetex.def on input line 227.
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/xetex.def
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/xetex.def
 File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
 Package xcolor Info: Model `RGB' extended on input line 1369.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
@@ -319,104 +292,107 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/graphics/dvipsnam.def
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/xcolor/svgnam.def
+) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/svgnam.def
 File: svgnam.def 2022/06/12 v2.14 Predefined colors according to SVG 1.1 (UK)
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/xcolor/x11nam.def
+) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/x11nam.def
 File: x11nam.def 2022/06/12 v2.14 Predefined colors according to Unix/X11 (UK)
-)) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+)) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2022/06/06 4.5 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count290
+\FV@CodeLineNo=\count287
 \FV@InFile=\read2
-\FV@TabBox=\box57
-\c@FancyVerbLine=\count291
-\FV@StepNumber=\count292
+\FV@TabBox=\box56
+\c@FancyVerbLine=\count288
+\FV@StepNumber=\count289
 \FV@OutFile=\write3
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
+) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip68
-\fb@frw=\dimen154
-\fb@frh=\dimen155
-\FrameRule=\dimen156
-\FrameSep=\dimen157
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
+\fb@frw=\dimen153
+\fb@frh=\dimen154
+\FrameRule=\dimen155
+\FrameSep=\dimen156
+) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \LTleft=\skip69
 \LTright=\skip70
 \LTpre=\skip71
 \LTpost=\skip72
-\LTchunksize=\count293
-\LTcapwidth=\dimen158
-\LT@head=\box58
-\LT@firsthead=\box59
-\LT@foot=\box60
-\LT@lastfoot=\box61
-\LT@gbox=\box62
-\LT@cols=\count294
-\LT@rows=\count295
-\c@LT@tables=\count296
-\c@LT@chunks=\count297
-\LT@p@ftn=\toks23
+\LTchunksize=\count290
+\LTcapwidth=\dimen157
+\LT@head=\box57
+\LT@firsthead=\box58
+\LT@foot=\box59
+\LT@lastfoot=\box60
+\LT@gbox=\box61
+\LT@cols=\count291
+\LT@rows=\count292
+\c@LT@tables=\count293
+\c@LT@chunks=\count294
+\LT@p@ftn=\toks22
 )
 Class scrreprt Info: longtable captions redefined on input line 95.
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen159
-\lightrulewidth=\dimen160
-\cmidrulewidth=\dimen161
-\belowrulesep=\dimen162
-\belowbottomsep=\dimen163
-\aboverulesep=\dimen164
-\abovetopsep=\dimen165
-\cmidrulesep=\dimen166
-\cmidrulekern=\dimen167
-\defaultaddspace=\dimen168
-\@cmidla=\count298
-\@cmidlb=\count299
-\@aboverulesep=\dimen169
-\@belowrulesep=\dimen170
-\@thisruleclass=\count300
-\@lastruleclass=\count301
-\@thisrulewidth=\dimen171
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/tools/array.sty
+\heavyrulewidth=\dimen158
+\lightrulewidth=\dimen159
+\cmidrulewidth=\dimen160
+\belowrulesep=\dimen161
+\belowbottomsep=\dimen162
+\aboverulesep=\dimen163
+\abovetopsep=\dimen164
+\cmidrulesep=\dimen165
+\cmidrulekern=\dimen166
+\defaultaddspace=\dimen167
+\@cmidla=\count295
+\@cmidlb=\count296
+\@aboverulesep=\dimen168
+\@belowrulesep=\dimen169
+\@thisruleclass=\count297
+\@lastruleclass=\count298
+\@thisrulewidth=\dimen170
+) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
 Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
-\col@sep=\dimen172
-\ar@mcellbox=\box63
-\extrarowheight=\dimen173
-\NC@list=\toks24
+\col@sep=\dimen171
+\ar@mcellbox=\box62
+\extrarowheight=\dimen172
+\NC@list=\toks23
 \extratabsurround=\skip73
 \backup@length=\skip74
-\ar@cellbox=\box64
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
+\ar@cellbox=\box63
+) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count302
-\calc@Bcount=\count303
-\calc@Adimen=\dimen174
-\calc@Bdimen=\dimen175
+\calc@Acount=\count299
+\calc@Bcount=\count300
+\calc@Adimen=\dimen173
+\calc@Bdimen=\dimen174
 \calc@Askip=\skip75
 \calc@Bskip=\skip76
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count304
+\calc@Ccount=\count301
 \calc@Cskip=\skip77
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.sty
+) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count302
+) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
-\fn@notes=\box65
-\fn@width=\dimen176
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+\fn@notes=\box64
+\fn@width=\dimen175
+) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
-(/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+(c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (c:/Users/agrogan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 107.
 )
-\Gin@req@height=\dimen177
-\Gin@req@width=\dimen178
+\Gin@req@height=\dimen176
+\Gin@req@width=\dimen177
 )
 \cslhangindent=\skip78
 \csllabelwidth=\skip79
@@ -429,12 +405,12 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.141 <
-       script src="site_libs/htmlwidgets-1.6.0/htmlwidgets.js"></script> 
+       script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script> 
 Here is how much of TeX's memory you used:
- 14501 strings out of 478757
- 300667 string characters out of 5849063
- 1844979 words of memory out of 5000000
- 34440 multiletter control sequences out of 15000+600000
+ 13144 strings out of 478777
+ 276565 string characters out of 5849152
+ 1844973 words of memory out of 5000000
+ 33089 multiletter control sequences out of 15000+600000
  512303 words of font info for 34 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,1n,106p,10600b,270s stack positions out of 10000i,1000n,20000p,200000b,200000s
