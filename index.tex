@@ -138,7 +138,7 @@
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
-<script src="site_libs/htmlwidgets-1.6.0/htmlwidgets.js"></script>
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <script src="site_libs/viz-1.8.2/viz.js"></script>
 <link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="site_libs/grViz-binding-1.0.9/grViz.js"></script>
@@ -241,7 +241,7 @@ Universality and Cultural Specificity in Cross Cultural Research}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, enhanced, borderline west={3pt}{0pt}{shadecolor}, frame hidden, sharp corners, interior hidden, breakable]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, sharp corners, interior hidden, enhanced, breakable, frame hidden, boxrule=0pt]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -295,7 +295,7 @@ The following objects are masked from 'package:base':
 \end{Shaded}
 
 \begin{verbatim}
-Linking to GEOS 3.10.2, GDAL 3.4.2, PROJ 8.2.1; sf_use_s2() is TRUE
+Linking to GEOS 3.9.1, GDAL 3.4.3, PROJ 7.2.1; sf_use_s2() is TRUE
 \end{verbatim}
 
 \begin{Shaded}
@@ -420,7 +420,7 @@ Attribution 4.0 International License}
 
 \markboth{Some Preliminary Thoughts}{Some Preliminary Thoughts}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, breakable, opacityback=0, colback=white, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, coltitle=black, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, toptitle=1mm, bottomrule=.15mm, bottomtitle=1mm, titlerule=0mm, title={Preliminaries}, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, opacityback=0, breakable, bottomtitle=1mm, title={Preliminaries}, bottomrule=.15mm, leftrule=.75mm, coltitle=black, colback=white, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, arc=.35mm, opacitybacktitle=0.6, toptitle=1mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame]
 
 ``Like you I
 
@@ -1169,7 +1169,7 @@ outcome
 \end{Shaded}
 
 \begin{verbatim}
-`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula 'y ~ x'
 \end{verbatim}
 
 \begin{figure}[H]
@@ -1228,199 +1228,6 @@ Multilevel Model & \texttt{mixed\ y\ x\ \textbar{}\textbar{}\ group:} \\
 It is this multilevel syntax,
 \texttt{mixed\ y\ x\ \textbar{}\textbar{}\ group:} that we will be using
 throughout this document.
-
-\bookmarksetup{startatroot}
-
-\hypertarget{conceptual-framework}{%
-\chapter{Conceptual Framework}\label{conceptual-framework}}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(ggplot2) }\CommentTok{\# beautiful graphs}
-
-\FunctionTok{library}\NormalTok{(geomtextpath) }\CommentTok{\# path geoms}
-
-\FunctionTok{library}\NormalTok{(dplyr) }\CommentTok{\# data wrangling}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-
-Attaching package: 'dplyr'
-\end{verbatim}
-
-\begin{verbatim}
-The following objects are masked from 'package:stats':
-
-    filter, lag
-\end{verbatim}
-
-\begin{verbatim}
-The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(tidyr) }\CommentTok{\# data tidying}
-
-\FunctionTok{library}\NormalTok{(pander) }\CommentTok{\# nice tables}
-
-\CommentTok{\# library(gt) \# beautiful tables}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{units-of-analysis}{%
-\section{Units of Analysis}\label{units-of-analysis}}
-
-When confronted with multilevel data, one has a number of choices about
-the units of analysis: one could consider individuals to be the units of
-analysis; or, one could consider the larger social units to be the units
-of analyses. With multilevel analytic methods, one is able to avoid this
-false dichotomy, and to conceptualize the data from a multilevel
-perspective, wherein both individuals and social units are different
-levels of the same analysis. I discuss some of the statistical
-considerations of different ideas about the units of analysis in
-Section~\ref{sec-wrongapproaches}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{DiagrammeR}\SpecialCharTok{::}\FunctionTok{grViz}\NormalTok{(}\StringTok{"}
-
-\StringTok{digraph C \{}
-
-\StringTok{rankdir=\textquotesingle{}LR\textquotesingle{}}
-
-\StringTok{    subgraph cluster\_2 \{}
-\StringTok{    }
-\StringTok{    label = \textquotesingle{}Level 2: Social Units\textquotesingle{}}
-
-\StringTok{  L2 }
-\StringTok{  }
-\StringTok{    \}}
-\StringTok{    }
-\StringTok{    subgraph cluster\_1 \{}
-\StringTok{    }
-\StringTok{    label = \textquotesingle{}Level 1: Individuals\textquotesingle{}}
-
-\StringTok{  L1 {-}\textgreater{} y}
-\StringTok{  L2 {-}\textgreater{} y}
-\StringTok{    \}  }
-\StringTok{    }
-
-\StringTok{\}"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-
-{\centering 
-
-}
-
-\caption{\label{fig-conceptual}Conceptual Framework}
-
-\end{figure}
-
-\hypertarget{variables-and-processes-at-multiple-levels}{%
-\section{Variables and Processes at Multiple
-Levels}\label{variables-and-processes-at-multiple-levels}}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{conceptuallevel }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{)}
-\NormalTok{statisticallevel1 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Individual response about parenting or mental health"}\NormalTok{,}
-                       \StringTok{"Individual response about community"}\NormalTok{,}
-                       \StringTok{"N/A"}\NormalTok{)}
-
-\NormalTok{statisticallevel2 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Aggregated responses about parenting or mental health"}\NormalTok{,}
-                       \StringTok{"Aggregated response about community"}\NormalTok{,}
-                       \StringTok{"Administrative indicator of social unit"}\NormalTok{)}
-
-\NormalTok{conceptualframework }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(conceptuallevel,}
-\NormalTok{                                  statisticallevel1,}
-\NormalTok{                                  statisticallevel2)}
-
-\NormalTok{pander}\SpecialCharTok{::}\FunctionTok{pander}\NormalTok{(conceptualframework)}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{tbl-variablelevel}{}
-\begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2338}}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3766}}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3896}}@{}}
-\caption{\label{tbl-variablelevel}Multiple Levels of
-Variables}\tabularnewline
-\toprule()
-\begin{minipage}[b]{\linewidth}\centering
-conceptuallevel
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-statisticallevel1
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-statisticallevel2
-\end{minipage} \\
-\midrule()
-\endfirsthead
-\toprule()
-\begin{minipage}[b]{\linewidth}\centering
-conceptuallevel
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-statisticallevel1
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-statisticallevel2
-\end{minipage} \\
-\midrule()
-\endhead
-1 & Individual response about parenting or mental health & Aggregated
-responses about parenting or mental health \\
-2 & Individual response about community & Aggregated response about
-community \\
-2 & N/A & Administrative indicator of social unit \\
-\bottomrule()
-\end{longtable}
-
-In this document, I distinguish between \emph{conceptual} and
-\emph{statistical} levels.
-
-By \emph{conceptual} level, I refer to whether a variable is
-\emph{conceptualized} to be measure of an \emph{individual} level
-characteristic, such as parenting or mental health, or a
-\emph{community} level construct, such as community collective efficacy,
-or community safety.
-
-By \emph{statistical} level, I refer to whether a variable measures an
-\emph{individual} response, or an \emph{aggregated} response.
-
-\begin{itemize}
-\item
-  Thus, \(\text{mental health}_{ij}\) or \(\text{parenting}_{ij}\) would
-  be considered in the terminology that I am using to be a variable both
-  \emph{conceptually} and \emph{statistically} at Level 1.
-\item
-  \(\overline{\text{mental health}_{.j}}\) or
-  \(\overline{\text{parenting}_{.j}}\) would be variables that
-  \emph{conceptually} come from Level 1 responses, but are
-  \emph{statistically} aggregated to Level 2.
-\item
-  Using my terminology, \(\text{community collective efficacy}_{ij}\) or
-  \(\text{community safety}_{ij}\) would be considered to be a variable
-  both \emph{conceptually} at Level 2, but \emph{statistically} at Level
-  1.
-\item
-  \(\overline{\text{community collective efficacy}_{.j}}\) or
-  \(\overline{\text{community safety}_{.j}}\) would be variables that
-  \emph{conceptually} come from Level 2 responses, but are
-  \emph{statistically} aggregated to Level 2.
-\end{itemize}
-
-Some variables only exist at Level 2, and their Level 1 counterparts are
-undefined. For example, the size of a school, neighborhood, or country,
-is inherently a Level 2 variable, with no Level 1 counterpart.
-Similarly, some administrative indicators, such as the Gini level of
-inequality, while developed by calculating across Level 1 responses,
-have no easily definable Level 1 counterpart.
 
 \bookmarksetup{startatroot}
 
@@ -1732,7 +1539,7 @@ lines may slope upward.
 \end{Shaded}
 
 \begin{verbatim}
-`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula 'y ~ x'
 \end{verbatim}
 
 \begin{figure}[H]
@@ -1767,7 +1574,7 @@ group} slope upward.
 \end{Shaded}
 
 \begin{verbatim}
-`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula 'y ~ x'
 \end{verbatim}
 
 \begin{figure}[H]
@@ -1857,8 +1664,8 @@ intervention was harmful, when it was in fact helpful.
 \end{Shaded}
 
 \begin{verbatim}
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula 'y ~ x'
+`geom_smooth()` using formula 'y ~ x'
 \end{verbatim}
 
 \begin{figure}[H]
@@ -2104,11 +1911,6 @@ decrease.
   \FunctionTok{theme\_minimal}\NormalTok{() }
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-i Please use `linewidth` instead.
-\end{verbatim}
 
 \begin{figure}[H]
 
@@ -2532,7 +2334,7 @@ x\_noise
 \end{Shaded}
 
 \begin{verbatim}
-`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula 'y ~ x'
 \end{verbatim}
 
 \begin{figure}[H]
@@ -2861,8 +2663,8 @@ Figure~\ref{fig-Simpson} for an illustration.
 \end{Shaded}
 
 \begin{verbatim}
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula 'y ~ x'
+`geom_smooth()` using formula 'y ~ x'
 \end{verbatim}
 
 \begin{figure}[H]
