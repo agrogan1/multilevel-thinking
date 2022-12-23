@@ -12,11 +12,11 @@ library(tidyr) # data tidying
 
 library(pander) # nice tables
 
-library(gt) # beautiful tables
+# library(gt) # beautiful tables
 
 library(sf) # simple (spatial) features
 
-library(leaflet) # beautiful maps
+# library(leaflet) # beautiful maps
 
 # library(lme4) # MLM
 

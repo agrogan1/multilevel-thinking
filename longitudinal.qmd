@@ -16,7 +16,7 @@ library(tidyr) # data tidying
 
 library(pander) # nice tables
 
-library(gt) # beautiful tables
+# library(gt) # beautiful tables
 
 ```
 
