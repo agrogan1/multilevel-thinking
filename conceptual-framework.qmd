@@ -21,7 +21,7 @@ library(DiagrammeR) # diagrams
 
 ## Units of Analysis
 
-When confronted with multilevel data, one has a number of choices about the units of analysis: one could consider individuals to be the units of analysis; or, one could consider the larger social units to be the units of analyses. With multilevel analytic methods, one is able to avoid this false dichotomy, and to conceptualize the data from a multilevel perspective, wherein both individuals and social units are different levels of the same analysis. I discuss some of the statistical considerations of different ideas about the units of analysis in @sec-wrongapproaches
+When confronted with multilevel data, one has a number of choices about the units of analysis: one could consider individuals to be the units of analysis; or, one could consider the larger social units to be the units of analyses. With multilevel analytic methods, one is able to avoid this false dichotomy, and to conceptualize the data from a multilevel perspective, wherein both individuals and social units are different levels of the same analysis. I discuss some of the statistical implications of different ideas about the units of analysis in @sec-wrongapproaches
 
 ```{r}
 #| label: fig-conceptual
@@ -80,7 +80,7 @@ pander::pander(conceptualframework)
 
 ```
 
-In this document, I distinguish between *conceptual* and *statistical* levels. 
+In this document, I distinguish between *conceptual* and *statistical* levels of variables. 
 
 By *conceptual* level, I refer to whether a variable is *conceptualized* to be measure of an *individual* level characteristic, such as parenting or mental health, or a *community* level construct, such as community collective efficacy, or community safety.
 
