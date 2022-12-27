@@ -81,10 +81,6 @@ div.csl-indent {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script src="site_libs/htmlwidgets-1.6.0/htmlwidgets.js"></script>
-<script src="site_libs/viz-1.8.2/viz.js"></script>
-<link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
-<script src="site_libs/grViz-binding-1.0.9/grViz.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
@@ -115,6 +111,7 @@ div.csl-indent {
       <a href="./">Multilevel Thinking</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/agrogan1/multilevel-thinking" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="./Multilevel-Thinking.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
@@ -623,12 +620,13 @@ div.csl-indent {
 <li><em>z</em>–or other factors–cannot explain the association of (correlation of) <em>x</em> and <em>y</em>.</li>
 </ol>
 <div class="cell">
+<div class="cell-output-display">
 <div id="fig-causality" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<div id="htmlwidget-8255af3d3ed0e53713ac" style="width:672px;height:100%;" class="grViz html-widget "></div>
-<script type="application/json" data-for="htmlwidget-8255af3d3ed0e53713ac">{"x":{"diagram":"\n\ndigraph G {\n\nrankdir=\"LR\"\n\nx -> y\nz -> y\nz -> x [dir=\"both\"]\n\n} \n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p><img src="fig-causality.png" class="img-fluid figure-img" width="519"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;7.2: Formal Criteria of Causality</figcaption><p></p>
 </figure>
+</div>
 </div>
 </div>
 <blockquote class="blockquote">
@@ -642,12 +640,13 @@ div.csl-indent {
 <li><em>SES</em>, <em>community characteristics</em>–or other factors–cannot explain the association of (correlation of) <em>parenting</em> and <em>child outcomes</em>.</li>
 </ol>
 <div class="cell">
+<div class="cell-output-display">
 <div id="fig-causalitysubstantive" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<div id="htmlwidget-d866ab1c1e2f4abd4718" style="width:672px;height:100%;" class="grViz html-widget "></div>
-<script type="application/json" data-for="htmlwidget-d866ab1c1e2f4abd4718">{"x":{"diagram":"\n\ndigraph G {\n\nrankdir=\"LR\"\n\nx [label = \"parenting\"]\ny [label = \"child outcome\"]\nz [label = \"other factors\"]\n\nx -> y\nz -> y\nz -> x [dir=\"both\"]\n\n} \n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p><img src="fig-causalitysubstantive.png" class="img-fluid figure-img" width="519"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;7.3: Formal Criteria of Causality</figcaption><p></p>
 </figure>
+</div>
 </div>
 </div>
 <p>If <em>other factors</em> are omitted from the regression model, then the estimates for <span class="math inline">\(\text{parenting} \rightarrow \text{child outcome}\)</span> (i.e.&nbsp;<span class="math inline">\(\beta_{\text{parenting} \rightarrow \text{child outcome}}\)</span>) will be biased. In the most common scenario <span class="math inline">\(\beta_{\text{parenting} \rightarrow \text{child outcome}}\)</span> will likely be an over-estimate of the effect, and statistical significance of <span class="math inline">\(\beta_{\text{parenting} \rightarrow \text{child outcome}}\)</span> may represent a false positive.</p>
