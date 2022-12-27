@@ -15,4 +15,5 @@ A short book, or long paper, on multilevel thinking.
 * include concise summary section, from notes for class, on advantages of MLM for longitudinal data
 * should I include multiple software? e.g. Stata, R, Julia? Possibly brms/STAN, although this would involve discussion of Bayesian estimation?
 * Read Stein’s Paradox article
+* `DiagrammeR` doesn't seem to work with Quarto book PDF's so I am exporting to PNG and using those. Can this be fixed? 
 
