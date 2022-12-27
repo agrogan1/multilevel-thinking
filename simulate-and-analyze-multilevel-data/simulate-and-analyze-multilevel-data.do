@@ -19,7 +19,7 @@ set obs 30 // 30 countries
 
 generate country = _n // country id
 
-generate GDP = country * 5000 // GDP
+generate HDI = country * 3 // HDI
 
 generate u0 = rnormal(0, 1) // country specific random effect
 
@@ -175,7 +175,7 @@ estimates drop cross_sectional
 
 use "simulated_multilevel_longitudinal_data.dta", clear
 
-mixed outcome t warmth physical_punishment GDP || country: warmth || id: t // multilevel model
+mixed outcome t warmth physical_punishment HDI || country: warmth || id: t // multilevel model
 
 estat sd, variance post // post results as variance scale rather than log scale
 
@@ -193,19 +193,19 @@ estimates drop longitudinal
 
 use "simulated_multilevel_longitudinal_data.dta", clear
 
-mixed outcome t warmth physical_punishment GDP || id: // multilevel model
+mixed outcome t warmth physical_punishment HDI || id: // multilevel model
 
 estat sd, variance post // post results as variance scale rather than log scale
 
 est store MLM // store estimates
 
-xtreg outcome t warmth physical_punishment GDP, i(id) fe // FE model
+xtreg outcome t warmth physical_punishment HDI, i(id) fe // FE model
 
 est store FE
 
 bysort id: egen mean_warmth = mean(warmth)
 
-mixed outcome t warmth mean_warmth physical_punishment GDP || id: // CRE model
+mixed outcome t warmth mean_warmth physical_punishment HDI || id: // CRE model
 
 estat sd, variance post // post results as variance scale rather than log scale
 
