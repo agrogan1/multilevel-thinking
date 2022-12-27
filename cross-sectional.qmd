@@ -22,7 +22,7 @@ library(pander) # nice tables
 
 ## The Equation
 
-The equation for the multilevel model can be written in several ways: as multiple levels of equations; or as a single equation. The advantage of having multiple levels of equations is that these multiple equations make clear the multiple levels of the data, and thus conform to an initial understanding of how a multilevel model should be estimated. However, results from multiple levels of equations quickly become difficult to interpret, and thus, I will not spend a great deal of time on discussing empirical results of the two level formulation. Whether multiple levels of equations, or a single equation are employed, the numerical results are the same.
+The equation for the multilevel model can be written in several ways: as multiple levels of equations; or as a single equation. The advantage of having multiple levels of equations is that these multiple equations make clear the multiple levels of the data, and thus conform to an initial understanding of how a multilevel model should be estimated. However, *results* from multiple levels of equations quickly become difficult to interpret, and thus, I will not spend a great deal of time on discussing empirical results of the two level formulation. Whether multiple levels of equations, or a single equation are employed, the numerical results are the same.
 
 ### Two Levels of Equations
 
@@ -113,8 +113,8 @@ ggplot(simulated_clustered_data,
   labs(title = "Illustrating the Process of Simulating the Data",
        x = "x",
        y = "y") +
-  theme_minimal() +
-  scale_color_viridis_d(name = "group")
+  scale_color_viridis_d(name = "group") +
+  theme_minimal() 
 
 ```
 
@@ -126,8 +126,8 @@ In the example below, we compare a simple ordinary least squares analysis of the
 
 The Stata syntax that we use for each analysis is:
 
-* `regress y x`
-* `mixed y x || group:`
+* OLS: `regress y x`
+* Multilevel Model: `mixed y x || group:`
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/tableA.md')}
 ```
@@ -202,8 +202,8 @@ ggplot(multilevelstructure,
 
 The Stata syntax that we use for these analyses is: 
 
-* `regress y x` 
-* `mixed y x || country:`
+* OLS: `regress y x` 
+* Multilevel Model: `mixed y x || country:`
 
 The OLS model with only *x* as a covariate is not aware of the grouped structure of the data, and the coefficient for *x* in the OLS model reflects this. The coefficient for *x* in the OLS model is *negative*, and statistically significant.
 

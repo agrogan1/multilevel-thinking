@@ -81,7 +81,8 @@ Multilevel data suitable for longitudinal analysis therefore has *multiple rows 
 ```{r}
 
 simulated_multilevel_longitudinal_data <- 
-  read_dta("./simulate-and-analyze-multilevel-data/simulated_multilevel_longitudinal_data.dta")
+  read_dta("./simulate-and-analyze-multilevel-data/simulated_multilevel_longitudinal_data.dta") %>%
+  select(-x_noise)
 
 ```
 
@@ -305,8 +306,8 @@ However, a disadvantage of the fixed effects approach is that this approach can 
 
 The relevant Stata commands are:
 
-* `mixed outcome t warmth physical_punishment || id:`
-* `xtreg outcome t warmth physical_punishment, i(id) fe`
+* Multilevel Model: `mixed outcome t warmth physical_punishment || id:`
+* Fixed Effects Model: `xtreg outcome t warmth physical_punishment, i(id) fe`
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table3.md')}
 ```
