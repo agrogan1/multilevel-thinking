@@ -1,9 +1,10 @@
 |                     | cross_sectional |    |
 |---------------------|-----------------|----|
-| warmth              | 4.855           | ** |
-| physical_punishment | -3.242          | ** |
-| Intercept           | 30.930          |    |
-| var(warmth)         | 0.800           |    |
-| var(_cons)          | 1018.485        |    |
-| var(e)              | 2574.967        |    |
+| warmth              | 5.115           | ** |
+| physical_punishment | -2.950          | ** |
+| GDP                 | 0.000           |    |
+| Intercept           | -0.953          |    |
+| var(warmth)         | 0.777           |    |
+| var(_cons)          | 0.000           |    |
+| var(e)              | 2562.475        |    |
 ** p<.01, * p<.05
