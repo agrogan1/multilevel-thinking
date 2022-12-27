@@ -12,6 +12,8 @@ library(tidyr) # data tidying
 
 library(pander) # nice tables
 
+library(DiagrammeR) # diagrams
+
 # library(gt) # beautiful tables
 
 ```
@@ -26,30 +28,32 @@ When confronted with multilevel data, one has a number of choices about the unit
 #| fig-cap: "Conceptual Framework"
 #| fig-height: 3
 
-DiagrammeR::grViz("
+knitr::include_graphics("fig-conceptual.png")
 
-digraph C {
-
-rankdir='LR'
-
- 	subgraph cluster_2 {
- 	
- 	label = 'Level 2: Social Units'
-
-  L2 
-  
- 	}
-    
- 	subgraph cluster_1 {
- 	
- 	label = 'Level 1: Individuals'
-
-  L1 -> y
-  L2 -> y
- 	}  
- 	
-
-}")
+# DiagrammeR::grViz("
+# 
+# digraph C {
+# 
+# rankdir='LR'
+# 
+#  	subgraph cluster_2 {
+#  	
+#  	label = 'Level 2: Social Units'
+# 
+#   L2 
+#   
+#  	}
+#     
+#  	subgraph cluster_1 {
+#  	
+#  	label = 'Level 1: Individuals'
+# 
+#   L1 -> y
+#   L2 -> y
+#  	}  
+#  	
+# 
+# }")
 
 ```
 

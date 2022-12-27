@@ -6,7 +6,7 @@ library(haven) # read Stata
 
 library(dplyr) # data wrangling
 
-library(gt) # beautiful tables
+# library(gt) # beautiful tables
 
 library(ggplot2) # beautiful graphs
 

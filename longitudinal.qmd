@@ -178,18 +178,20 @@ For x to be a cause of y, one needs the following 3 things to be true [@Holland1
 #| fig-cap: "Formal Criteria of Causality"
 #| fig-height: 3
 
-DiagrammeR::grViz("
+knitr::include_graphics("fig-causality.png")
 
-digraph G {
-
-rankdir='LR'
-
-x -> y
-z -> y
-z -> x [dir='both']
-
-} 
-", height = '100%')
+# DiagrammeR::grViz("
+# 
+# digraph G {
+# 
+# rankdir='LR'
+# 
+# x -> y
+# z -> y
+# z -> x [dir='both']
+# 
+# } 
+# ", height = '100%')
 
 ```
 
@@ -208,22 +210,24 @@ For *parenting* to be a cause of *child outcomes*, one needs the following 3 thi
 #| fig-cap: "Formal Criteria of Causality"
 #| fig-height: 3
 
-DiagrammeR::grViz("
+knitr::include_graphics("fig-causalitysubstantive.png")
 
-digraph G {
-
-rankdir='LR'
-
-x [label = 'parenting']
-y [label = 'child outcome']
-z [label = 'other factors']
-
-x -> y
-z -> y
-z -> x [dir='both']
-
-} 
-", height = '100%')
+# DiagrammeR::grViz("
+# 
+# digraph G {
+# 
+# rankdir='LR'
+# 
+# x [label = 'parenting']
+# y [label = 'child outcome']
+# z [label = 'other factors']
+# 
+# x -> y
+# z -> y
+# z -> x [dir='both']
+# 
+# } 
+# ", height = '100%')
 
 ```
 
