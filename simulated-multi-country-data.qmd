@@ -36,6 +36,7 @@ simulated_multilevel_data <- simulated_multilevel_data %>%
   select(id, country,
          warmth,
          physical_punishment,
+         GDP,
          outcome)
 
 ```
