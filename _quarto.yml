@@ -8,6 +8,7 @@ book:
   author: "Andrew Grogan-Kaylor"
   date: "today"
   cover-image: bookcover.png
+  downloads: [pdf]
   twitter-card: true
   site-url: https://agrogan1.github.io/multilevel-thinking/
   search: true
@@ -46,6 +47,10 @@ format:
     execute:
       echo: false
       warning: false
+  pdf:
+    execute:
+      echo: false
+      warning: false    
       
       
 
