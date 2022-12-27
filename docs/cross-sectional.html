@@ -273,7 +273,7 @@ div.csl-indent {
 </div>
 <section id="the-equation" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">6.1</span> The Equation</h2>
-<p>The equation for the multilevel model can be written in several ways: as multiple levels of equations; or as a single equation. The advantage of having multiple levels of equations is that these multiple equations make clear the multiple levels of the data, and thus conform to an initial understanding of how a multilevel model should be estimated. However, results from multiple levels of equations quickly become difficult to interpret, and thus, I will not spend a great deal of time on discussing empirical results of the two level formulation. Whether multiple levels of equations, or a single equation are employed, the numerical results are the same.</p>
+<p>The equation for the multilevel model can be written in several ways: as multiple levels of equations; or as a single equation. The advantage of having multiple levels of equations is that these multiple equations make clear the multiple levels of the data, and thus conform to an initial understanding of how a multilevel model should be estimated. However, <em>results</em> from multiple levels of equations quickly become difficult to interpret, and thus, I will not spend a great deal of time on discussing empirical results of the two level formulation. Whether multiple levels of equations, or a single equation are employed, the numerical results are the same.</p>
 <section id="two-levels-of-equations" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="two-levels-of-equations"><span class="header-section-number">6.1.1</span> Two Levels of Equations</h3>
 <p>I start with two levels of equations: Level 1 at the level of the individual; and Level 2 at the level of the country.</p>
@@ -333,8 +333,8 @@ div.csl-indent {
 <p>In the example below, we compare a simple ordinary least squares analysis of the data with a multilevel model that accounts for the clustered nature of the data.</p>
 <p>The Stata syntax that we use for each analysis is:</p>
 <ul>
-<li><code>regress y x</code></li>
-<li><code>mixed y x || group:</code></li>
+<li>OLS: <code>regress y x</code></li>
+<li>Multilevel Model: <code>mixed y x || group:</code></li>
 </ul>
 <table class="table">
 <thead>
@@ -436,8 +436,8 @@ div.csl-indent {
 <h4 data-number="6.3.3.1" class="anchored" data-anchor-id="a-naive-ols-analysis-vs.-an-aware-mlm-analysis"><span class="header-section-number">6.3.3.1</span> A “Naive” OLS Analysis vs.&nbsp;An “Aware” MLM Analysis</h4>
 <p>The Stata syntax that we use for these analyses is:</p>
 <ul>
-<li><code>regress y x</code></li>
-<li><code>mixed y x || country:</code></li>
+<li>OLS: <code>regress y x</code></li>
+<li>Multilevel Model: <code>mixed y x || country:</code></li>
 </ul>
 <p>The OLS model with only <em>x</em> as a covariate is not aware of the grouped structure of the data, and the coefficient for <em>x</em> in the OLS model reflects this. The coefficient for <em>x</em> in the OLS model is <em>negative</em>, and statistically significant.</p>
 <p>The multilevel model is aware of the grouped structure of the data, and the coefficient for <em>x</em> in the multilevel model reflects this. The coefficient for <em>x</em> in the multilevel model is <em>positive</em>, and statistically significant.</p>
@@ -529,32 +529,37 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td>warmth</td>
-<td>4.855</td>
+<td>5.115</td>
 <td>**</td>
 </tr>
 <tr class="even">
 <td>physical_punishment</td>
-<td>-3.242</td>
+<td>-2.950</td>
 <td>**</td>
 </tr>
 <tr class="odd">
-<td>Intercept</td>
-<td>30.930</td>
+<td>GDP</td>
+<td>0.000</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>var(warmth)</td>
-<td>0.800</td>
+<td>Intercept</td>
+<td>-0.953</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>var(_cons)</td>
-<td>1018.485</td>
+<td>var(warmth)</td>
+<td>0.777</td>
 <td></td>
 </tr>
 <tr class="even">
+<td>var(_cons)</td>
+<td>0.000</td>
+<td></td>
+</tr>
+<tr class="odd">
 <td>var(e)</td>
-<td>2574.967</td>
+<td>2562.475</td>
 <td></td>
 </tr>
 </tbody>
