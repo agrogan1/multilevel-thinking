@@ -14,6 +14,14 @@ library(pander) # tables for PDF
 
 ```
 
+```{r}
+#| label: fig-world
+#| fig-cap: "Countries of the World"
+#| fig-height: 3
+
+knitr::include_graphics("world.png")
+  
+```
 
 I use simulated data in this example. Data come from 30 hypothetical countries. Data contain measures of a few key aspects of parenting that have proven salient in the empirical literature on parenting to date: parental `warmth`, and `physical punishment`. Both parenting measures are normally distributed variables. Our `outcome` is conceptualized as a positive mental health outcome or behavioral outcome, and higher levels of `outcome` are considered to be better. Statistically, the data are clustered within countries. 
 
