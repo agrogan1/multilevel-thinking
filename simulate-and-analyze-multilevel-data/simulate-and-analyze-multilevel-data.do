@@ -6,7 +6,7 @@
 
 clear all
 
-set seed 3846
+set seed 3846 // random seed
 
 cd "/Users/agrogan/Desktop/GitHub/multilevel-thinking/simulate-and-analyze-multilevel-data"
 
