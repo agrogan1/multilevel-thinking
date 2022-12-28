@@ -15,11 +15,13 @@ cd "/Users/agrogan/Desktop/GitHub/multilevel-thinking/simulate-and-analyze-multi
 
 clear all
 
+set seed 3846 // random seed
+
 set obs 30 // 30 countries
 
 generate country = _n // country id
 
-generate HDI = country * 3 // HDI
+generate HDI = runiformint(30, 90) // HDI
 
 generate u0 = rnormal(0, 1) // country specific random effect
 
@@ -30,6 +32,8 @@ save randomeffects.dta, replace
 * build the initial data set
 
 clear all
+
+set seed 3846 // random seed
 
 set obs 1000
 
@@ -157,7 +161,7 @@ estimates drop OLS MLM
 
 use "simulated_multilevel_data.dta", clear
 
-mixed outcome warmth physical_punishment GDP || country: warmth // multilevel model
+mixed outcome warmth physical_punishment HDI || country: warmth // multilevel model
 
 estat sd, variance post // post results as variance scale rather than log scale
 
