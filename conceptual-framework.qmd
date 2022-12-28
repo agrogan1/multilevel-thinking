@@ -1,4 +1,4 @@
-# Conceptual Framework
+# Conceptual Framework {#sec-conceptualframework}
 
 ```{r}
 
@@ -57,7 +57,7 @@ knitr::include_graphics("fig-conceptual.png")
 
 ```
 
-## Variables and Processes at Multiple Levels
+## Variables and Processes at Multiple Levels {#sec-levels}
 
 ```{r}
 #| label: tbl-variablelevel
