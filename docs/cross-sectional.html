@@ -279,29 +279,29 @@ div.csl-indent {
 <p>I start with two levels of equations: Level 1 at the level of the individual; and Level 2 at the level of the country.</p>
 <section id="level-1-individuals" class="level4" data-number="6.1.1.1">
 <h4 data-number="6.1.1.1" class="anchored" data-anchor-id="level-1-individuals"><span class="header-section-number">6.1.1.1</span> Level 1 (Individuals)</h4>
-<p><span id="eq-MLM1"><span class="math display">\[y_{ij} = \beta_{0j} + \beta_{1j} x_{ij} + \beta_{2j} z_{ij} + \beta_{3j} t_{ij} + e_{ij} \tag{6.1}\]</span></span></p>
+<p><span id="eq-MLM1"><span class="math display">\[y_{ij} = \beta_{0j} + \beta_{1j} x_{ij} + \beta_{2j} z_{ij} + e_{ij} \tag{6.1}\]</span></span></p>
 </section>
 <section id="level-2-countries" class="level4" data-number="6.1.1.2">
 <h4 data-number="6.1.1.2" class="anchored" data-anchor-id="level-2-countries"><span class="header-section-number">6.1.1.2</span> Level 2 (Countries)</h4>
-<p><span id="eq-MLM2"><span class="math display">\[\beta_{0j} = \gamma_{00} + u_{0j} \tag{6.2}\]</span></span></p>
+<p><span id="eq-MLM2"><span class="math display">\[\beta_{0j} = \gamma_{00} +\gamma_{01} w_j + u_{0j} \tag{6.2}\]</span></span></p>
 <p><span class="math display">\[\beta_{1j} = \gamma_{10} + u_{1j}\]</span></p>
 <p><span class="math display">\[\beta_{2j} = \gamma_{20}\]</span></p>
 <p><span class="math display">\[\beta_{3j} = \gamma_{30}\]</span></p>
 <p>Here <span class="math inline">\(y_{ij}\)</span> is the dependent variable, or outcome for the model. We note that the <span class="math inline">\(ij\)</span> subscripts indicate that this is outcome <span class="math inline">\(y\)</span> for individual <span class="math inline">\(i\)</span> in country <span class="math inline">\(j\)</span>. Note that the outcome is at Level 1, or the level of individuals. <span class="math inline">\(\beta_{0j}\)</span> is a regression intercept, and the other <span class="math inline">\(\beta\)</span>’s<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> are regression slope parameters. <span class="math inline">\(x_{ij}\)</span> and <span class="math inline">\(z_{ij}\)</span> are independent variables and <span class="math inline">\(t_{ij}\)</span> is an independent variable indicating the time at which different data points are measured. I note that in this discussion I am <em>not</em> considering a model in which there are repeated observations on the same individuals, although the multilevel model is certainly extensible to such cases. <span class="math inline">\(u_{0j}\)</span> is a random intercept for the <span class="math inline">\(\beta_{0j}\)</span> term, and <span class="math inline">\(u_{1j}\)</span> is a random slope for the <span class="math inline">\(\beta_{1j}\)</span> term, indicating that we are modeling cross country variation in these parameters. The other <span class="math inline">\(\beta\)</span> terms are not modeled as having random country level variation, although this could certainly be a possibility in subsequent models.</p>
-<p>In this formulation of the multilevel model, each regression parameter <span class="math inline">\(\beta\)</span> in the level 1 equation is the outcome of an equation at Level 2.</p>
+<p>In this formulation of the multilevel model, each regression parameter <span class="math inline">\(\beta\)</span> in the level 1 equation is the outcome of an equation at Level 2. The parameters for the Level 2 equations are represented by <span class="math inline">\(\gamma\)</span>’s. <span class="math inline">\(w\)</span> a Level 2 variable appears in the first Level 2 equation.</p>
 </section>
 </section>
 <section id="one-level-of-equations" class="level3" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="one-level-of-equations"><span class="header-section-number">6.1.2</span> One Level of Equations</h3>
 <p>By simply substituting the values of the Level 2 equations into the Level 1 equations, we obtain:</p>
-<p><span id="eq-MLM"><span class="math display">\[y_{ij} = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + \beta_3 t_{ij} + u_{0j} + u_{1j} \times x + e_{ij} \tag{6.3}\]</span></span></p>
-<p>Here again <span class="math inline">\(y_{ij}\)</span> is the dependent variable, or outcome for the model. <span class="math inline">\(\beta_0\)</span> is a regression intercept, and the <span class="math inline">\(\beta\)</span>’s are regression parameters. <span class="math inline">\(x_{ij}\)</span> and <span class="math inline">\(z_{ij}\)</span> are independent variables and <span class="math inline">\(t\)</span> is an independent variable indicating the time at which different data points.</p>
+<p><span id="eq-MLM"><span class="math display">\[y_{ij} = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + \beta_3 w_{j} + u_{0j} + u_{1j} \times x + e_{ij} \tag{6.3}\]</span></span></p>
+<p>Here again <span class="math inline">\(y_{ij}\)</span> is the dependent variable, or outcome for the model. <span class="math inline">\(\beta_0\)</span> is a regression intercept, and the <span class="math inline">\(\beta\)</span>’s are regression parameters. <span class="math inline">\(x_{ij}\)</span> and <span class="math inline">\(z_{ij}\)</span> are independent variables and <span class="math inline">\(w\)</span> is a Level 2 variable.</p>
 <p>While I purposely strive to keep the discussion of multilevel modeling ideas somewhat general in this document, I generally think of <span class="math inline">\(y_{ij}\)</span> as a desirable or “good” outcome. <span class="math inline">\(x\)</span> is often conceptualized as a protective factor, while <span class="math inline">\(z\)</span> is often conceptualized as a risk factor.</p>
 <p>Thus, phrased less abstractly, and more concretely in terms of the ideas of this document:</p>
-<p><span id="eq-MLMsubstantive"><span class="math display">\[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \beta_3 \text{time}_{ij} \ +  \tag{6.4}\]</span></span></p>
+<p><span id="eq-MLMsubstantive"><span class="math display">\[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \beta_3 \text{HDI}_{j} \ +  \tag{6.4}\]</span></span></p>
 <p><span class="math display">\[u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}\]</span></p>
 <p>Drawing upon ideas from <a href="software.html"><span>Chapter&nbsp;4</span></a>, this single level equation can be easily represented in Stata syntax.</p>
-<p><code>mixed outcome warmth physical_punishment || country: warmth</code></p>
+<p><code>mixed outcome warmth physical_punishment HDI || country: warmth</code></p>
 </section>
 </section>
 <section id="sec-pvalues" class="level2" data-number="6.2">
@@ -454,30 +454,30 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td>x</td>
-<td>-0.771</td>
+<td>-0.775</td>
 <td>**</td>
-<td>1.072</td>
+<td>1.038</td>
 <td>**</td>
 </tr>
 <tr class="even">
 <td>Intercept</td>
-<td>57.122</td>
+<td>57.133</td>
 <td>**</td>
-<td>28.553</td>
+<td>29.029</td>
 <td>**</td>
 </tr>
 <tr class="odd">
 <td>var(_cons)</td>
 <td></td>
 <td></td>
-<td>286.088</td>
+<td>276.867</td>
 <td></td>
 </tr>
 <tr class="even">
 <td>var(e)</td>
 <td></td>
 <td></td>
-<td>0.758</td>
+<td>0.916</td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -517,7 +517,7 @@ div.csl-indent {
 <h2 data-number="6.4" class="anchored" data-anchor-id="sec-regression"><span class="header-section-number">6.4</span> Regression With Simulated Multi-Country Data</h2>
 <p>Let’s examine the results of a multilevel regression with the simulated multicountry data. I will again imagine that the desirable outcome is an outcome such as improved psychological wellbeing.</p>
 <p>The Stata syntax that we use is:</p>
-<p><code>mixed outcome warmth physical_punishment || country: warmth</code></p>
+<p><code>mixed outcome warmth physical_punishment HDI || country: warmth</code></p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -529,27 +529,27 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td>warmth</td>
-<td>5.115</td>
+<td>5.122</td>
 <td>**</td>
 </tr>
 <tr class="even">
 <td>physical_punishment</td>
-<td>-2.950</td>
+<td>-3.096</td>
 <td>**</td>
 </tr>
 <tr class="odd">
-<td>GDP</td>
-<td>0.000</td>
+<td>HDI</td>
+<td>-0.283</td>
 <td></td>
 </tr>
 <tr class="even">
 <td>Intercept</td>
-<td>-0.953</td>
+<td>22.471</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>var(warmth)</td>
-<td>0.777</td>
+<td>0.942</td>
 <td></td>
 </tr>
 <tr class="even">
@@ -559,7 +559,7 @@ div.csl-indent {
 </tr>
 <tr class="odd">
 <td>var(e)</td>
-<td>2562.475</td>
+<td>2637.104</td>
 <td></td>
 </tr>
 </tbody>
