@@ -54,11 +54,15 @@ $$y_{ij} = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + \beta_3 w_{j} + u_{0j} + 
 
 Here again $y_{ij}$ is the dependent variable, or outcome for the model. $\beta_0$ is a regression intercept, and the $\beta$'s are regression parameters. $x_{ij}$ and $z_{ij}$ are independent variables and $w$ is a Level 2 variable. 
 
-[^beta:]: Technically, all of these $\beta$'s could be written as $\beta_j$ since the multilevel model could be said to estimate a regression parameter for each group, in this case each country. One could even write $\beta_{jk}$ to represent the regression parameter for the $k^{th}$ independent variable the for the $j^{th}$ group or country. To keep matters simple, I simply write $\beta$ in most cases.
-
 While I purposely strive to keep the discussion of multilevel modeling ideas somewhat general in this document, I generally think of $y_{ij}$ as a desirable or "good" outcome. $x$ is often conceptualized as a protective factor, while $z$ is often conceptualized as a risk factor.
 
-Thus, phrased less abstractly, and more concretely in terms of the ideas of this document:
+> Notice that in this *single equation* format all variables--no matter their *level*--appear in the same equation. 
+
+In this formulation of the equation, the nature of the random effects is more clear, and merits discussion. Notice that we have included a *random intercept* $u_{0j}$ as well as a *random slope* $u_{1j} \times x$. The *random intercept*, $u_{0j}$, indicates that there is variation in the *intercept* of the country specific regression lines, as is true in @fig-data. The *random slope* term associated with $x$, $u_{1j} \times x$, indicates that there is also variation in the *slope* of the regression lines that is associated with $x$, in this case, the slope of parental warmth, as is also demonstrated in @fig-data. 
+
+[^beta:]: Technically, all of these $\beta$'s could be written as $\beta_j$ since the multilevel model could be said to estimate a regression parameter for each group, in this case each country. One could even write $\beta_{jk}$ to represent the regression parameter for the $k^{th}$ independent variable the for the $j^{th}$ group or country. To keep matters simple, I simply write $\beta$ in most cases.
+
+To make these ideas more concrete, I rewrite this equation in terms of the main substantive ideas of this document:
 
 $$\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \beta_3 \text{HDI}_{j} \ + $$ {#eq-MLMsubstantive}
 
@@ -241,7 +245,7 @@ These data are constructed to provide this kind of extreme example, but it easy 
 
 ## Regression With Simulated Multi-Country Data {#sec-regression}
 
-Let's examine the results of a multilevel regression with the simulated multicountry data. I will again imagine that the desirable outcome is an outcome such as improved psychological wellbeing. 
+After considering some of these broader issues, let's now examine the results of a multilevel regression with the simulated multicountry data. I will again imagine that the desirable outcome is an outcome such as improved psychological wellbeing. 
 
 The Stata syntax that we use is:
 
@@ -253,6 +257,8 @@ The Stata syntax that we use is:
 The data suggest that parental warmth is positively associated with the desirable outcome, and that this result is statistically significant. Parental use of physical punishment is associated with statistically significant decreases in the desirable outcome. I note that there is some variation in the *constant* indicating that there is some variation in the initial or average levels of the desirable outcome--again improved psychological well-being--that is attributable to country.
 
 There is also some variation in the slope associated with parental warmth that is attributable to country. Thus, while largely consistent, the relationship of parental warmth with child outcomes differs somewhat from country to country. 
+
+`HDI`, the *Human Development Index*, our only country level, or Level 2, variable in this model is not associated with the outcome.
 
 ## Summary of Advantages Of The Multilevel Model
 
@@ -286,7 +292,7 @@ This is most easily seen if we introduce the idea of an unconditional model.
 
 ### Unconditional Model
 
-The unconditional model is a model with no $x$'s or covariates. 
+The unconditional model is a model with no $x$'s or covariates [@Raudenbush2002]. 
 
 $$\text{outcome}_{ij} = \beta_0 + u_{0j} + e_{ij}$$ {#eq-unconditional}
 
@@ -296,7 +302,7 @@ Thus, all of the variation in $\text{outcome}_{ij}$ is--given the unconditional 
 
 ### Intra-Class Correlation Coefficient
 
-We then introduce a measure known as the Intra-Class Correlation Coefficient, (ICC) that can be computed from this unconditional model.
+I now introduce a measure known as the Intra-Class Correlation Coefficient, (ICC) that can be computed from this unconditional model [@Raudenbush2002].
 
 $$\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}$$ {#eq-ICC}
 
@@ -421,7 +427,7 @@ Of note, while I do not explore in detail differences between Bayesian and frequ
 
 Hypothetically, one might imagine that there could be group level unobserved factors which affect regression slopes—i.e. the relationship between a predictor x and outcome variable y—arguably, were one to ignore these unobserved factors in statistical estimation, they would show up either in an error term, or in the regression coefficients themselves. Were they to show up in the regression coefficients this would represent statistical bias and a substantive mis-estimation of important effects. thus, there is a conceptual argument for including as many random effects—i.e. random slopes—in a statistical model as possible.
 
-Models with all possible random effects are termed *maximal models* [@Barr2013; @Frank2018]. Such models include a large number of random slopes, e.g. $u_1, u_2, u_3, ..., etc.$ even when some of those estimated slopes are close to 0. Such models may be more easily estimable when using Bayesian estimation [@Frank2018], a topic which I do not cover in detail in this document. 
+Models with all possible random effects are termed *maximal models* [@Barr2013; @Frank2018]. Such models include a large number of random slopes, e.g. $u_1 \times x_1, u_2 \times x_2, u_3 \times x_3, ..., \text{etc.}$ even when some of those estimated slopes are close to 0. Such models may be more easily estimable when using Bayesian estimation [@Frank2018], a topic which I do not cover in detail in this document. 
 
 It should be noted that @Matuschek2017 argue that such a *maximal* approach may lead to a loss of statistical power and further argue that one should adhere to "a random effect structure that is supported by the data." In contrast, @nalborczyk_batailler_loevenbruck_vilain_burkner_2019 argue that maximal models are supported under the Bayesian approach. @Oberauer2022 also argues for including multiple random slopes. @Schielzeth2009 make a similar argument from a frequentist perspective.
 

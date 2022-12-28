@@ -124,10 +124,12 @@ $$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_
 
 $$\beta_4 \text{HDI}_{jt} +$$
 
-$$u_{0j} + u_{1j} \times \text{parental warmth}_i \ + $$
+$$u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + $$
 
-$$v_{0i} + v_{1i} \times t + e_{ij}$$
-Here I include a random slope ($u_{1j}$) at the country level for parental warmth, as well as a random slope ($v_{1j}$) at the individual level for time. 
+$$v_{0i} + v_{1i} \times t_{itj} + e_{itj}$$
+Here I include a random slope ($u_{1j}$) at the country level for parental warmth, as well as a random slope ($v_{1i}$) at the individual level for time. 
+
+As before, the random slope for parental warmth, $u_{1j} \times \text{parental warmth}_{ij}$ suggests allows us to estimate whether the relationship between parental warmth and the outcome varies across countries. The random slope for time, $v_{1i} \times t$, allows us to estimate whether time trajectories (the slope for time) vary across individuals.
 
 ## Regression With Simulated Multi-Country Longitudinal Data {#sec-regressionlongitudinal}
 
@@ -138,7 +140,7 @@ The Stata command that we use to analyze this data is:
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table2.md')}
 ```
 
-Examining the regression results, the results of the model suggest that child outcomes improve over time. Better child outcomes are again associated with parental warmth, and parental use of physical punishment is associated with reduced child outcomes. 
+Examining the regression results, the results of the model suggest that child outcomes improve over time. Better child outcomes are again associated with parental warmth, and parental use of physical punishment is associated with reduced child outcomes. HDI is again not associated with outcomes.
 
 ## Autocorrelation
 
