@@ -431,7 +431,7 @@ div.csl-indent {
 <col style="width: 12%">
 <col style="width: 30%">
 <col style="width: 13%">
-<col style="width: 11%">
+<col style="width: 8%">
 <col style="width: 13%">
 <col style="width: 5%">
 </colgroup>
@@ -441,7 +441,7 @@ div.csl-indent {
 <th style="text-align: center;">warmth</th>
 <th style="text-align: center;">physical_punishment</th>
 <th style="text-align: center;">country</th>
-<th style="text-align: center;">GDP</th>
+<th style="text-align: center;">HDI</th>
 <th style="text-align: center;">outcome</th>
 <th style="text-align: center;">t</th>
 </tr>
@@ -449,56 +449,56 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">93.6</td>
-<td style="text-align: center;">101.7</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">50000</td>
-<td style="text-align: center;">70.31</td>
+<td style="text-align: center;">95.07</td>
+<td style="text-align: center;">94.16</td>
+<td style="text-align: center;">29</td>
+<td style="text-align: center;">88</td>
+<td style="text-align: center;">36.52</td>
 <td style="text-align: center;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">117.5</td>
-<td style="text-align: center;">101.7</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">50000</td>
-<td style="text-align: center;">281</td>
+<td style="text-align: center;">95.49</td>
+<td style="text-align: center;">94.16</td>
+<td style="text-align: center;">29</td>
+<td style="text-align: center;">88</td>
+<td style="text-align: center;">219.3</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">124.2</td>
-<td style="text-align: center;">101.7</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">50000</td>
-<td style="text-align: center;">294.7</td>
+<td style="text-align: center;">135.3</td>
+<td style="text-align: center;">94.16</td>
+<td style="text-align: center;">29</td>
+<td style="text-align: center;">88</td>
+<td style="text-align: center;">326.4</td>
 <td style="text-align: center;">3</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">2</td>
-<td style="text-align: center;">97.85</td>
-<td style="text-align: center;">83.24</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">80000</td>
-<td style="text-align: center;">187.6</td>
+<td style="text-align: center;">91.62</td>
+<td style="text-align: center;">105</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">99.05</td>
 <td style="text-align: center;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">2</td>
-<td style="text-align: center;">126.9</td>
-<td style="text-align: center;">83.24</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">80000</td>
-<td style="text-align: center;">363.3</td>
+<td style="text-align: center;">114.6</td>
+<td style="text-align: center;">105</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">323.6</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">2</td>
-<td style="text-align: center;">123.6</td>
-<td style="text-align: center;">83.24</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">80000</td>
-<td style="text-align: center;">355.1</td>
+<td style="text-align: center;">119.7</td>
+<td style="text-align: center;">105</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">257.9</td>
 <td style="text-align: center;">3</td>
 </tr>
 </tbody>
@@ -521,12 +521,14 @@ div.csl-indent {
 <h2 data-number="7.2" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">7.2</span> The Equation</h2>
 <p>When data are in <em>long</em> format, the following equation is applicable.</p>
 <p><span id="eq-MLM-longitudinal"><span class="math display">\[\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ +  \tag{7.1}\]</span></span></p>
-<p><span class="math display">\[u_{0j} + u_{1j} \times \text{parental warmth}_i \ + \]</span> <span class="math display">\[v_{0i} + v_{1i} \times t + e_{ij}\]</span> Here I include a random slope (<span class="math inline">\(u_{1j}\)</span>) at the country level for parental warmth, as well as a random slope (<span class="math inline">\(v_{1j}\)</span>) at the individual level for time.</p>
+<p><span class="math display">\[\beta_4 \text{HDI}_{jt} +\]</span></p>
+<p><span class="math display">\[u_{0j} + u_{1j} \times \text{parental warmth}_i \ + \]</span></p>
+<p><span class="math display">\[v_{0i} + v_{1i} \times t + e_{ij}\]</span> Here I include a random slope (<span class="math inline">\(u_{1j}\)</span>) at the country level for parental warmth, as well as a random slope (<span class="math inline">\(v_{1j}\)</span>) at the individual level for time.</p>
 </section>
 <section id="sec-regressionlongitudinal" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="sec-regressionlongitudinal"><span class="header-section-number">7.3</span> Regression With Simulated Multi-Country Longitudinal Data</h2>
 <p>The Stata command that we use to analyze this data is:</p>
-<p><code>mixed outcome t warmth physical_punishment || country: warmth || id: t</code></p>
+<p><code>mixed outcome t warmth physical_punishment HDI || country: warmth || id: t</code></p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -538,37 +540,37 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td>t</td>
-<td>6.672</td>
+<td>4.474</td>
 <td>**</td>
 </tr>
 <tr class="even">
 <td>warmth</td>
-<td>5.235</td>
+<td>4.984</td>
 <td>**</td>
 </tr>
 <tr class="odd">
 <td>physical_punishment</td>
-<td>-3.103</td>
+<td>-3.227</td>
 <td>**</td>
 </tr>
 <tr class="even">
-<td>GDP</td>
-<td>0.000</td>
+<td>HDI</td>
+<td>-0.562</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>Intercept</td>
-<td>6.834</td>
-<td></td>
+<td>62.059</td>
+<td>*</td>
 </tr>
 <tr class="even">
 <td>var(warmth)</td>
-<td>0.805</td>
+<td>0.986</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>var(_cons)</td>
-<td>99.193</td>
+<td>0.000</td>
 <td></td>
 </tr>
 <tr class="even">
@@ -578,12 +580,12 @@ div.csl-indent {
 </tr>
 <tr class="odd">
 <td>var(t)</td>
-<td>13.293</td>
+<td>0.000</td>
 <td></td>
 </tr>
 <tr class="even">
 <td>var(e)</td>
-<td>2503.864</td>
+<td>2698.344</td>
 <td></td>
 </tr>
 </tbody>
@@ -681,6 +683,7 @@ div.csl-indent {
 <p>After explication and comprehension of this model, however, it is a simple matter to add back in the random effects for country level clustering.</p>
 <p>The appropriate multilevel model is below.</p>
 <p><span id="eq-MLM-simpler"><span class="math display">\[\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_2 \text{physical punishment}_{it} + \beta_3 \text{time}_{it} \ +  \tag{7.2}\]</span></span></p>
+<p><span class="math display">\[\beta_4 \text{HDI}_{it} \ +\]</span></p>
 <p><span class="math display">\[v_{0i} + e_{it}\]</span></p>
 <p>Note that in <a href="#eq-MLM-simpler">Equation&nbsp;<span>7.2</span></a>, if one were estimating a <em>multilevel model</em>, one would consider the <span class="math inline">\(v_{0i}\)</span> to be a randomly varying parameter with a mean of 0, and a variance of <span class="math inline">\(\sigma^2(v_{0i})\)</span>.</p>
 </section>
@@ -688,6 +691,7 @@ div.csl-indent {
 <h3 data-number="7.5.5" class="anchored" data-anchor-id="fixed-effects-regression"><span class="header-section-number">7.5.5</span> Fixed Effects Regression</h3>
 <p>I can use the same equation:</p>
 <p><span id="eq-FE"><span class="math display">\[\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_2 \text{physical punishment}_{it} + \beta_3 \text{time}_{it} \ +  \tag{7.3}\]</span></span></p>
+<p><span class="math display">\[\beta_4 \text{HDI}_{it} \ +\]</span></p>
 <p><span class="math display">\[v_{0i} + e_{it}\]</span></p>
 <p>However, in <a href="#eq-FE">Equation&nbsp;<span>7.3</span></a>, I now consider the <span class="math inline">\(v_{0i}\)</span> to be <em>estimable</em> for each individual <span class="math inline">\(i\)</span> in the data. In effect, the <span class="math inline">\(v_{0i}\)</span> become a unique indicator variable for each individual in the data set. This is known as a <em>fixed effects regression model</em>.</p>
 <p>Details are provided in <span class="citation" data-cites="Allison2009">Allison (<a href="references.html#ref-Allison2009" role="doc-biblioref">2009</a>)</span> and <span class="citation" data-cites="Wooldridge2010">Wooldridge (<a href="references.html#ref-Wooldridge2010" role="doc-biblioref">2010</a>)</span>. <span class="citation" data-cites="StataCorp2021">StataCorp (<a href="references.html#ref-StataCorp2021" role="doc-biblioref">2021b</a>)</span> provides an exceptionally clear explication of the core idea of fixed effects regression. The essential idea is that the fixed effects model provides statistical control for all time invariant characteristics of study participants, such as–as is often the case in many data sets–their racial or ethnic identity, or neighborhood of residence, or other characteristics which by definition are time invariant, such as the region of the country or city in which a respondent was born.</p>
@@ -695,8 +699,8 @@ div.csl-indent {
 <p>However, a disadvantage of the fixed effects approach is that this approach can not provide estimates for any time invariant characteristic of study participants. Indeed, if one includes time invariant variables into a fixed effects regression, they are automatically dropped from the regression results as can be seen in the regression table below.</p>
 <p>The relevant Stata commands are:</p>
 <ul>
-<li>Multilevel Model: <code>mixed outcome t warmth physical_punishment || id:</code></li>
-<li>Fixed Effects Model: <code>xtreg outcome t warmth physical_punishment, i(id) fe</code></li>
+<li>Multilevel Model: <code>mixed outcome t warmth physical_punishment HDI || id:</code></li>
+<li>Fixed Effects Model: <code>xtreg outcome t warmth physical_punishment HDI, i(id) fe</code></li>
 </ul>
 <table class="table">
 <thead>
@@ -711,49 +715,49 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td>t</td>
-<td>5.575</td>
+<td>4.733</td>
 <td>**</td>
-<td>6.136</td>
+<td>4.708</td>
 <td>**</td>
 </tr>
 <tr class="even">
 <td>warmth</td>
-<td>5.328</td>
+<td>4.952</td>
 <td>**</td>
-<td>5.271</td>
+<td>4.955</td>
 <td>**</td>
 </tr>
 <tr class="odd">
 <td>physical_punishment</td>
-<td>-2.993</td>
+<td>-3.766</td>
 <td>**</td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>GDP</td>
-<td>0.001</td>
-<td>**</td>
+<td>HDI</td>
+<td>-0.144</td>
+<td></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>Intercept</td>
-<td>-57.276</td>
-<td></td>
-<td>-298.449</td>
+<td>94.561</td>
+<td>*</td>
+<td>-290.510</td>
 <td>**</td>
 </tr>
 <tr class="even">
 <td>var(_cons)</td>
-<td>9365.482</td>
+<td>12612.553</td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>var(e)</td>
-<td>2667.941</td>
+<td>2992.629</td>
 <td></td>
 <td></td>
 <td></td>
@@ -775,19 +779,20 @@ div.csl-indent {
 <p>The central idea is that one can obtain estimates of both the time invariant variables, and estimates for time varying variables. The key idea is that for time varying variables, I include the individual level mean for that variable in the model. Thus, in the example below, I include <span class="math inline">\(\beta_{1a}\overline{\text{parental warmth}}_{i}\)</span>.</p>
 <p><span id="eq-CRE"><span class="math display">\[\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_{1a}\overline{\text{parental warmth}}_{i} \ +  \tag{7.4}\]</span></span></p>
 <p><span class="math display">\[\beta_2 \text{physical punishment}_{it} + \beta_3 \text{time}_{it} \ + \]</span></p>
+<p><span class="math display">\[\beta_4 \text{HDI}_{it} \ +\]</span></p>
 <p><span class="math display">\[v_{0i} + e_{ij}\]</span></p>
 <p>By including this parameter, I obtain estimates for the time varying variables that are <em>equivalent</em> to what I would obtain from a fixed effects regression <span class="citation" data-cites="Schunck2013">(<a href="references.html#ref-Schunck2013" role="doc-biblioref">Schunck, 2013</a>)</span>.</p>
 <p>The Stata command for the correlated random effects model is:</p>
-<p><code>mixed outcome t warmth mean_warmth physical_punishment || id:</code></p>
+<p><code>mixed outcome t warmth mean_warmth physical_punishment HDI || id:</code></p>
 <table class="table">
 <colgroup>
-<col style="width: 36%">
-<col style="width: 15%">
-<col style="width: 6%">
-<col style="width: 15%">
-<col style="width: 6%">
-<col style="width: 15%">
-<col style="width: 6%">
+<col style="width: 35%">
+<col style="width: 16%">
+<col style="width: 5%">
+<col style="width: 14%">
+<col style="width: 5%">
+<col style="width: 16%">
+<col style="width: 5%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -803,39 +808,39 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td>t</td>
-<td>5.575</td>
+<td>4.733</td>
 <td>**</td>
-<td>6.136</td>
+<td>4.708</td>
 <td>**</td>
-<td>6.136</td>
+<td>4.708</td>
 <td>**</td>
 </tr>
 <tr class="even">
 <td>warmth</td>
-<td>5.328</td>
+<td>4.952</td>
 <td>**</td>
-<td>5.271</td>
+<td>4.955</td>
 <td>**</td>
-<td>5.271</td>
+<td>4.955</td>
 <td>**</td>
 </tr>
 <tr class="odd">
 <td>physical_punishment</td>
-<td>-2.993</td>
+<td>-3.766</td>
 <td>**</td>
 <td></td>
 <td></td>
-<td>-2.999</td>
+<td>-3.766</td>
 <td>**</td>
 </tr>
 <tr class="even">
-<td>GDP</td>
-<td>0.001</td>
-<td>**</td>
+<td>HDI</td>
+<td>-0.144</td>
 <td></td>
 <td></td>
-<td>0.001</td>
-<td>**</td>
+<td></td>
+<td>-0.143</td>
+<td></td>
 </tr>
 <tr class="odd">
 <td>mean_warmth</td>
@@ -843,34 +848,34 @@ div.csl-indent {
 <td></td>
 <td></td>
 <td></td>
-<td>0.391</td>
+<td>-0.020</td>
 <td></td>
 </tr>
 <tr class="even">
 <td>Intercept</td>
-<td>-57.276</td>
-<td></td>
-<td>-298.449</td>
-<td>**</td>
-<td>-94.957</td>
+<td>94.561</td>
 <td>*</td>
+<td>-290.510</td>
+<td>**</td>
+<td>96.468</td>
+<td></td>
 </tr>
 <tr class="odd">
 <td>var(_cons)</td>
-<td>9365.482</td>
+<td>12612.553</td>
 <td></td>
 <td></td>
 <td></td>
-<td>9350.083</td>
+<td>12612.513</td>
 <td></td>
 </tr>
 <tr class="even">
 <td>var(e)</td>
-<td>2667.941</td>
+<td>2992.629</td>
 <td></td>
 <td></td>
 <td></td>
-<td>2667.594</td>
+<td>2992.628</td>
 <td></td>
 </tr>
 <tr class="odd">

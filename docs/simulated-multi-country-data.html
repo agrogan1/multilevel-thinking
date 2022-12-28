@@ -20,6 +20,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -224,7 +243,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>I use simulated data in this example. Data come from 30 hypothetical countries. Data contain measures of a few key aspects of parenting that have proven salient in the empirical literature on parenting to date: parental <code>warmth</code>, and <code>physical punishment</code>. Both parenting measures are normally distributed variables. Our <code>outcome</code> is conceptualized as a positive mental health outcome or behavioral outcome, and higher levels of <code>outcome</code> are considered to be better. Statistically, the data are clustered within countries.</p>
+<p>I use simulated data in this example. Data come from 30 hypothetical countries. Data contain measures of a few key aspects of parenting that have proven salient in the empirical literature on parenting to date: parental <code>warmth</code>, and <code>physical punishment</code>. Both parenting measures are normally distributed variables, and are considered to be <em>Level 1</em>, or <em>individual level</em> variables. <code>HDI</code> <span class="citation" data-cites="UNDPHDI">(<a href="references.html#ref-UNDPHDI" role="doc-biblioref">United Nations Development Program, 2022</a>)</span> is a measure of the <em>Human Development Index</em>, and is measured at the <em>country level</em>, or <em>Level 2</em>. (I discuss more in depth thinking about levels of the data in <a href="conceptual-framework.html#sec-levels"><span>Section&nbsp;5.2</span></a>.)</p>
+<p>Our <code>outcome</code> is conceptualized as a positive mental health outcome or behavioral outcome, and higher levels of <code>outcome</code> are considered to be better. Statistically, the data are clustered within countries.</p>
 <p>In this simulation, I construct the data so that <code>warmth</code> is positively related to the <code>outcome</code>, while <code>physical punishment</code> is negatively related to the <code>outcome</code>.</p>
 <div class="cell">
 
@@ -239,6 +259,7 @@ ul.task-list li input[type="checkbox"] {
 <col style="width: 13%">
 <col style="width: 12%">
 <col style="width: 30%">
+<col style="width: 8%">
 <col style="width: 13%">
 </colgroup>
 <thead>
@@ -247,51 +268,58 @@ ul.task-list li input[type="checkbox"] {
 <th style="text-align: center;">country</th>
 <th style="text-align: center;">warmth</th>
 <th style="text-align: center;">physical_punishment</th>
+<th style="text-align: center;">HDI</th>
 <th style="text-align: center;">outcome</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">93.6</td>
-<td style="text-align: center;">101.7</td>
-<td style="text-align: center;">70.31</td>
+<td style="text-align: center;">29</td>
+<td style="text-align: center;">95.07</td>
+<td style="text-align: center;">94.16</td>
+<td style="text-align: center;">88</td>
+<td style="text-align: center;">36.52</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">2</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">97.85</td>
-<td style="text-align: center;">83.24</td>
-<td style="text-align: center;">187.6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">91.62</td>
+<td style="text-align: center;">105</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">99.05</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">3</td>
-<td style="text-align: center;">106.3</td>
-<td style="text-align: center;">111.8</td>
-<td style="text-align: center;">192</td>
+<td style="text-align: center;">89.19</td>
+<td style="text-align: center;">109.5</td>
+<td style="text-align: center;">42</td>
+<td style="text-align: center;">82.96</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">4</td>
-<td style="text-align: center;">26</td>
-<td style="text-align: center;">84.84</td>
-<td style="text-align: center;">104</td>
-<td style="text-align: center;">166.7</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">112.8</td>
+<td style="text-align: center;">92.64</td>
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">314.4</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">5</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">108.6</td>
-<td style="text-align: center;">99.64</td>
-<td style="text-align: center;">300.9</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">119.2</td>
+<td style="text-align: center;">88.36</td>
+<td style="text-align: center;">31</td>
+<td style="text-align: center;">241.2</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">6</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">87.04</td>
-<td style="text-align: center;">105</td>
-<td style="text-align: center;">120.8</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">96.41</td>
+<td style="text-align: center;">90.01</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">101</td>
 </tr>
 </tbody>
 </table>
@@ -310,6 +338,11 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography" style="display: none">
+<div id="ref-UNDPHDI" class="csl-entry" role="doc-biblioentry">
+United Nations Development Program. (2022). <em><span>Human Development Index (HDI)</span></em>. <a href="https://hdr.undp.org/data-center/human-development-index#/indicies/HDI">https://hdr.undp.org/data-center/human-development-index#/indicies/HDI</a>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
