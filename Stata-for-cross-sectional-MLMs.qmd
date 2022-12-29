@@ -1,0 +1,84 @@
+# Stata for Cross Sectional Multilevel Models
+
+```{r}
+
+library(dplyr)
+
+library(pander)
+
+```
+
+```{r}
+
+model <- c("Intercept Only",
+           "Intercept <br>Independent Variable(s)",
+           "Intercept <br>Random variation of the intercept",
+           "Unconditional intraclass correlation coefficient (ICC)",
+           "Intercept <br>Independent variable(s) <br>Random variation of the intercept", 
+           "Intercept <br>Independent variable <br>Random intercept <br>Random slope",
+           "We can estimate multilevel models with more than 1 random slope.")
+
+equation <- c("$y = \\beta_0 + e_{ij}$",
+              "$y = \\beta_0 + \\beta_1 x + e_{ij}$ <br>$y = \\beta_0 + \\beta_1 x + \\beta_2 z + e_{ij}$",
+              "$y = \\beta_0 + e_{ij} + u_{0j}$",
+              "$\\frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}$",
+              "$y = \\beta_0 + \\beta_1x + e_{ij} + u_{0j}$ <br> $y = \\beta_0 + \\beta_1 x + \\beta_2 z + e_{ij} + u_{0j}$",
+              "$y = \\beta_0 + \\beta_1 x + e_{ij} + u_{0j} + u_{1j} x$",
+              "$y = \\beta_0 + \\beta_1 x + \\beta_2 z +$ <br>$e_{ij} + u_{0j} + u_{1j} x + u_{2j} z$")
+
+Stata <- c("`mixed y`",
+           "`mixed y x` <br> `mixed y x z`",
+           "`mixed y || groupid:`",
+           "`mixed y || groupid:` <br>`estat icc`",
+           "`mixed y x || groupid:` <br>`mixed y x z || groupid:`",
+           "`mixed y x || groupid: x`",
+           "`mixed y x z || ///` <br>`groupid: x z`")
+
+
+English <- c("We estimated the mean of [outcome]",
+             "We estimated the relationship of [independent variable(s)] with [outcome]",
+             "We estimated the mean of [outcome]. We allowed the intercept of the model to vary by [groupid].",
+             "XX% of the variation in [outcome] was explained by clustering of participants in [groupid]",
+             "We estimated the relationship of [independent variable(s)] with [outcome].  We allowed the intercept of the model to vary by group.",
+             "We estimated the relationship of [independent variable] with [outcome].  We allowed the intercept of the model to vary by group. We also allowed the relationship of [independent variable] with [outcome] to vary by group.",
+             "")
+
+crosssectionalMLM <- data.frame(model, equation, Stata, English)
+
+```
+
+```{r}
+
+# <br> to \n for LaTeX
+
+crosssectionalMLM$model <- gsub("<br>", 
+                                "\n", 
+                                crosssectionalMLM$model) 
+
+# <br> to \n for LaTeX
+
+crosssectionalMLM$equation <- gsub("<br>", 
+                                   "\n", 
+                                   crosssectionalMLM$equation) 
+
+crosssectionalMLM$equation <- gsub("\\\\\\\\", 
+                                   "\\\\", 
+                                   crosssectionalMLM$equation)
+
+# <br> to \n for LaTeX
+
+crosssectionalMLM$Stata <- gsub("<br>", 
+                                "\n", 
+                                crosssectionalMLM$Stata) 
+
+set.alignment('left')
+
+pander(crosssectionalMLM, split.cells = 10)
+  
+```
+
+
+
+
+
+
