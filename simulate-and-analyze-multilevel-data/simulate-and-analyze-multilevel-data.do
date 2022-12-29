@@ -175,6 +175,24 @@ export("table1.md", as(markdown) replace)
 
 estimates drop cross_sectional
 
+* cross sectional with unstructured covariance matrix
+
+use "simulated_multilevel_data.dta", clear
+
+mixed outcome warmth physical_punishment HDI || country: warmth, cov(uns) // multilevel model
+
+estat sd, variance post // post results as variance scale rather than log scale
+
+est store cross_sectional2 // store estimates
+
+etable, estimates(cross_sectional2) ///
+cstat(_r_b) /// beta's only
+showstars showstarsnote ///
+column(estimates) ///
+export("table1A.md", as(markdown) replace)
+
+estimates drop cross_sectional2
+
 * longitudinal
 
 use "simulated_multilevel_longitudinal_data.dta", clear
