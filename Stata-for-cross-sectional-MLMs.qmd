@@ -27,7 +27,7 @@ equation <- c("$y = \\beta_0 + e_{ij}$",
               "$y = \\beta_0 + \\beta_1 x + \\beta_2 z +$ <br>$e_{ij} + u_{0j} + u_{1j} x + u_{2j} z$")
 
 Stata <- c("`mixed y`",
-           "`mixed y x` <br> `mixed y x z`",
+           "`mixed y x` <br>`mixed y x z`",
            "`mixed y || groupid:`",
            "`mixed y || groupid:` <br>`estat icc`",
            "`mixed y x || groupid:` <br>`mixed y x z || groupid:`",
