@@ -204,6 +204,21 @@ div.csl-indent {
   <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Stata-for-cross-sectional-MLMs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Stata for Cross Sectional Multilevel Models</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -231,20 +246,21 @@ div.csl-indent {
   <li><a href="#a-thought-experiment" id="toc-a-thought-experiment" class="nav-link" data-scroll-target="#a-thought-experiment"><span class="toc-section-number">6.3.4</span>  A Thought Experiment</a></li>
   </ul></li>
   <li><a href="#sec-regression" id="toc-sec-regression" class="nav-link" data-scroll-target="#sec-regression"><span class="toc-section-number">6.4</span>  Regression With Simulated Multi-Country Data</a></li>
-  <li><a href="#summary-of-advantages-of-the-multilevel-model" id="toc-summary-of-advantages-of-the-multilevel-model" class="nav-link" data-scroll-target="#summary-of-advantages-of-the-multilevel-model"><span class="toc-section-number">6.5</span>  Summary of Advantages Of The Multilevel Model</a></li>
-  <li><a href="#predicted-values" id="toc-predicted-values" class="nav-link" data-scroll-target="#predicted-values"><span class="toc-section-number">6.6</span>  Predicted Values</a></li>
-  <li><a href="#variation" id="toc-variation" class="nav-link" data-scroll-target="#variation"><span class="toc-section-number">6.7</span>  Variation</a>
+  <li><a href="#correlation-of-random-intercept-and-random-slopes" id="toc-correlation-of-random-intercept-and-random-slopes" class="nav-link" data-scroll-target="#correlation-of-random-intercept-and-random-slopes"><span class="toc-section-number">6.5</span>  Correlation of Random Intercept and Random Slope(s)</a></li>
+  <li><a href="#summary-of-advantages-of-the-multilevel-model" id="toc-summary-of-advantages-of-the-multilevel-model" class="nav-link" data-scroll-target="#summary-of-advantages-of-the-multilevel-model"><span class="toc-section-number">6.6</span>  Summary of Advantages Of The Multilevel Model</a></li>
+  <li><a href="#predicted-values" id="toc-predicted-values" class="nav-link" data-scroll-target="#predicted-values"><span class="toc-section-number">6.7</span>  Predicted Values</a></li>
+  <li><a href="#variation" id="toc-variation" class="nav-link" data-scroll-target="#variation"><span class="toc-section-number">6.8</span>  Variation</a>
   <ul class="collapse">
-  <li><a href="#measured-and-unmeasured-variation" id="toc-measured-and-unmeasured-variation" class="nav-link" data-scroll-target="#measured-and-unmeasured-variation"><span class="toc-section-number">6.7.1</span>  Measured and Unmeasured Variation</a></li>
-  <li><a href="#unconditional-model" id="toc-unconditional-model" class="nav-link" data-scroll-target="#unconditional-model"><span class="toc-section-number">6.7.2</span>  Unconditional Model</a></li>
-  <li><a href="#intra-class-correlation-coefficient" id="toc-intra-class-correlation-coefficient" class="nav-link" data-scroll-target="#intra-class-correlation-coefficient"><span class="toc-section-number">6.7.3</span>  Intra-Class Correlation Coefficient</a></li>
-  <li><a href="#variation-in-intercepts-or-outcomes" id="toc-variation-in-intercepts-or-outcomes" class="nav-link" data-scroll-target="#variation-in-intercepts-or-outcomes"><span class="toc-section-number">6.7.4</span>  Variation In Intercepts or Outcomes</a></li>
-  <li><a href="#variation-in-predictors" id="toc-variation-in-predictors" class="nav-link" data-scroll-target="#variation-in-predictors"><span class="toc-section-number">6.7.5</span>  Variation In Predictors</a></li>
-  <li><a href="#variation-in-slopes" id="toc-variation-in-slopes" class="nav-link" data-scroll-target="#variation-in-slopes"><span class="toc-section-number">6.7.6</span>  Variation in Slopes</a></li>
-  <li><a href="#variation-as-an-outcome" id="toc-variation-as-an-outcome" class="nav-link" data-scroll-target="#variation-as-an-outcome"><span class="toc-section-number">6.7.7</span>  Variation As An Outcome</a></li>
-  <li><a href="#maximal-models" id="toc-maximal-models" class="nav-link" data-scroll-target="#maximal-models"><span class="toc-section-number">6.7.8</span>  Maximal Models</a></li>
+  <li><a href="#measured-and-unmeasured-variation" id="toc-measured-and-unmeasured-variation" class="nav-link" data-scroll-target="#measured-and-unmeasured-variation"><span class="toc-section-number">6.8.1</span>  Measured and Unmeasured Variation</a></li>
+  <li><a href="#unconditional-model" id="toc-unconditional-model" class="nav-link" data-scroll-target="#unconditional-model"><span class="toc-section-number">6.8.2</span>  Unconditional Model</a></li>
+  <li><a href="#intra-class-correlation-coefficient" id="toc-intra-class-correlation-coefficient" class="nav-link" data-scroll-target="#intra-class-correlation-coefficient"><span class="toc-section-number">6.8.3</span>  Intra-Class Correlation Coefficient</a></li>
+  <li><a href="#variation-in-intercepts-or-outcomes" id="toc-variation-in-intercepts-or-outcomes" class="nav-link" data-scroll-target="#variation-in-intercepts-or-outcomes"><span class="toc-section-number">6.8.4</span>  Variation In Intercepts or Outcomes</a></li>
+  <li><a href="#variation-in-predictors" id="toc-variation-in-predictors" class="nav-link" data-scroll-target="#variation-in-predictors"><span class="toc-section-number">6.8.5</span>  Variation In Predictors</a></li>
+  <li><a href="#variation-in-slopes" id="toc-variation-in-slopes" class="nav-link" data-scroll-target="#variation-in-slopes"><span class="toc-section-number">6.8.6</span>  Variation in Slopes</a></li>
+  <li><a href="#variation-as-an-outcome" id="toc-variation-as-an-outcome" class="nav-link" data-scroll-target="#variation-as-an-outcome"><span class="toc-section-number">6.8.7</span>  Variation As An Outcome</a></li>
+  <li><a href="#maximal-models" id="toc-maximal-models" class="nav-link" data-scroll-target="#maximal-models"><span class="toc-section-number">6.8.8</span>  Maximal Models</a></li>
   </ul></li>
-  <li><a href="#sec-wrongapproaches" id="toc-sec-wrongapproaches" class="nav-link" data-scroll-target="#sec-wrongapproaches"><span class="toc-section-number">6.8</span>  Some Wrong (or Partially Wrong) Approaches</a></li>
+  <li><a href="#sec-wrongapproaches" id="toc-sec-wrongapproaches" class="nav-link" data-scroll-target="#sec-wrongapproaches"><span class="toc-section-number">6.9</span>  Some Wrong (or Partially Wrong) Approaches</a></li>
   </ul>
 </nav>
     </div>
@@ -297,7 +313,11 @@ div.csl-indent {
 <p><span id="eq-MLM"><span class="math display">\[y_{ij} = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + \beta_3 w_{j} + u_{0j} + u_{1j} \times x + e_{ij} \tag{6.3}\]</span></span></p>
 <p>Here again <span class="math inline">\(y_{ij}\)</span> is the dependent variable, or outcome for the model. <span class="math inline">\(\beta_0\)</span> is a regression intercept, and the <span class="math inline">\(\beta\)</span>’s are regression parameters. <span class="math inline">\(x_{ij}\)</span> and <span class="math inline">\(z_{ij}\)</span> are independent variables and <span class="math inline">\(w\)</span> is a Level 2 variable.</p>
 <p>While I purposely strive to keep the discussion of multilevel modeling ideas somewhat general in this document, I generally think of <span class="math inline">\(y_{ij}\)</span> as a desirable or “good” outcome. <span class="math inline">\(x\)</span> is often conceptualized as a protective factor, while <span class="math inline">\(z\)</span> is often conceptualized as a risk factor.</p>
-<p>Thus, phrased less abstractly, and more concretely in terms of the ideas of this document:</p>
+<blockquote class="blockquote">
+<p>Notice that in this <em>single equation</em> format all variables–no matter their <em>level</em>–appear in the same equation.</p>
+</blockquote>
+<p>In this formulation of the equation, the nature of the random effects is more clear, and merits discussion. Notice that we have included a <em>random intercept</em> <span class="math inline">\(u_{0j}\)</span> as well as a <em>random slope</em> <span class="math inline">\(u_{1j} \times x\)</span>. The <em>random intercept</em>, <span class="math inline">\(u_{0j}\)</span>, indicates that there is variation in the <em>intercept</em> of the country specific regression lines, as is true in <a href="simulated-multi-country-data.html#fig-data">Figure&nbsp;<span>3.2</span></a>. The <em>random slope</em> term associated with <span class="math inline">\(x\)</span>, <span class="math inline">\(u_{1j} \times x\)</span>, indicates that there is also variation in the <em>slope</em> of the regression lines that is associated with <span class="math inline">\(x\)</span>, in this case, the slope of parental warmth, as is also demonstrated in <a href="simulated-multi-country-data.html#fig-data">Figure&nbsp;<span>3.2</span></a>.</p>
+<p>To make these ideas more concrete, I rewrite this equation in terms of the main substantive ideas of this document:</p>
 <p><span id="eq-MLMsubstantive"><span class="math display">\[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \beta_3 \text{HDI}_{j} \ +  \tag{6.4}\]</span></span></p>
 <p><span class="math display">\[u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}\]</span></p>
 <p>Drawing upon ideas from <a href="software.html"><span>Chapter&nbsp;4</span></a>, this single level equation can be easily represented in Stata syntax.</p>
@@ -515,7 +535,7 @@ div.csl-indent {
 </section>
 <section id="sec-regression" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="sec-regression"><span class="header-section-number">6.4</span> Regression With Simulated Multi-Country Data</h2>
-<p>Let’s examine the results of a multilevel regression with the simulated multicountry data. I will again imagine that the desirable outcome is an outcome such as improved psychological wellbeing.</p>
+<p>After considering some of these broader issues, let’s now examine the results of a multilevel regression with the simulated multicountry data. I will again imagine that the desirable outcome is an outcome such as improved psychological wellbeing.</p>
 <p>The Stata syntax that we use is:</p>
 <p><code>mixed outcome warmth physical_punishment HDI || country: warmth</code></p>
 <table class="table">
@@ -567,9 +587,76 @@ div.csl-indent {
 <p>** p&lt;.01, * p&lt;.05</p>
 <p>The data suggest that parental warmth is positively associated with the desirable outcome, and that this result is statistically significant. Parental use of physical punishment is associated with statistically significant decreases in the desirable outcome. I note that there is some variation in the <em>constant</em> indicating that there is some variation in the initial or average levels of the desirable outcome–again improved psychological well-being–that is attributable to country.</p>
 <p>There is also some variation in the slope associated with parental warmth that is attributable to country. Thus, while largely consistent, the relationship of parental warmth with child outcomes differs somewhat from country to country.</p>
+<p><code>HDI</code>, the <em>Human Development Index</em>, our only country level, or Level 2, variable in this model is not associated with the outcome.</p>
 </section>
-<section id="summary-of-advantages-of-the-multilevel-model" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="summary-of-advantages-of-the-multilevel-model"><span class="header-section-number">6.5</span> Summary of Advantages Of The Multilevel Model</h2>
+<section id="correlation-of-random-intercept-and-random-slopes" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="correlation-of-random-intercept-and-random-slopes"><span class="header-section-number">6.5</span> Correlation of Random Intercept and Random Slope(s)</h2>
+<p>One could also consider a situation in which a random slope or slopes were correlated with each other, and with the random intercept. In the equation that we are considering, this would entail estimation of whether or not, the random intercept, <span class="math inline">\(u_{0j}\)</span>, was correlated with the random slope for warmth, <span class="math inline">\(u_{1j}\)</span>.</p>
+<p>Substantively, this question would be asking whether the association of warmth and the outcome, was correlated with the initial level or average level of the outcome. From <a href="simulated-multi-country-data.html#fig-data">Figure&nbsp;<span>3.2</span></a>, it appears that there is some slight evidence that the country specific regression slopes are more steep in countries where the initial level of the outcome is higher. However, we may wish to investigate this question more rigorously.</p>
+<p>By default, Stata estimates models, where the random slope or slopes are uncorrelated with each other, and uncorrelated with the intercept <span class="citation" data-cites="StataCorp2021:2">(<a href="references.html#ref-StataCorp2021:2" role="doc-biblioref">StataCorp, 2021</a>)</span>. We see this in <a href="#eq-varcovar">Equation&nbsp;<span>6.5</span></a> below, where the diagonal elements are the <em>variances</em> of each of the random effects, and the off diagonals, which would be the <em>covariances</em> of the random effects are constrained to 0.</p>
+<p><span id="eq-varcovar"><span class="math display">\[\begin{bmatrix}
+var(u_{0j}) &amp; 0 \\
+0 &amp; var(u_{1j})
+\end{bmatrix} \tag{6.5}\]</span></span></p>
+<p>Within Stata, we can ask to allow such a correlation with the <code>cov(uns)</code> option.</p>
+<p><span id="eq-varcovaruns"><span class="math display">\[\begin{bmatrix}
+var(u_{0j}) &amp; cov(u_{0j}, u_{1j}) \\
+cov(u_{0j}, u_{1j}) &amp; var(u_{1j})
+\end{bmatrix} \tag{6.6}\]</span></span></p>
+<p>We use the following syntax.</p>
+<p><code>mixed outcome warmth physical_punishment HDI || country: warmth, cov(uns)</code></p>
+<p>When we estimate such a model, we get the following information.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th>cross_sectional</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>warmth</td>
+<td>5.122</td>
+<td>**</td>
+</tr>
+<tr class="even">
+<td>physical_punishment</td>
+<td>-3.096</td>
+<td>**</td>
+</tr>
+<tr class="odd">
+<td>HDI</td>
+<td>-0.283</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Intercept</td>
+<td>22.471</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>var(warmth)</td>
+<td>0.942</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>var(_cons)</td>
+<td>0.000</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>var(e)</td>
+<td>2637.104</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>** p&lt;.01, * p&lt;.05</p>
+<p>Results are mostly similar to those above. However, here, we are asking additionally for information about the possible correlation of country specific initial levels of the outcome and the slope of the country specific regression line for parental warmth. Results indicate that there is no reason to be believe that these two parameters are correlated. Put more intuitively, it does not appear that parental warmth is any more or less correlated with the outcome in countries where initial levels of the outcome are higher.</p>
+</section>
+<section id="summary-of-advantages-of-the-multilevel-model" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="summary-of-advantages-of-the-multilevel-model"><span class="header-section-number">6.6</span> Summary of Advantages Of The Multilevel Model</h2>
 <p>The discussion so far gives an idea of the advantages of the multilevel model for studying intrinsically multilevel data: children in classrooms or schools; individuals or families in neighborhoods; individuals or families in countries. These advantages can be summarized below:</p>
 <ol type="1">
 <li>Standard errors are estimated correctly as is statistical significance. This means that p values are correctly estimated accounting for the clustered or nested nature of the data. More colloquially, this most often means that we do not make the mistake of attributing statistical significance to a given risk or protective factor, when such a statistical significance is not warranted. Put even more straightforwardly correct estimation of standard errors and statistical significance prevents us from seeing results that are simply not present in the data, whether those concern risk factors or protective factors.</li>
@@ -578,36 +665,36 @@ div.csl-indent {
 <li>An increasing focus of statistical estimation is not to focus on particular regression parameters, but instead to predict outcomes for particular combinations of independent variables. Predictions from a multilevel model could be said to be best predictions in that groups are weighted by their precision, contributing to an estimate which makes better predictions than would a simple average. More colloquially, multilevel models allow us to predict outcomes better and more accurately than would be possible with simple or more naïve models.</li>
 </ol>
 </section>
-<section id="predicted-values" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="predicted-values"><span class="header-section-number">6.6</span> Predicted Values</h2>
+<section id="predicted-values" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="predicted-values"><span class="header-section-number">6.7</span> Predicted Values</h2>
 <p>According to <strong>“Stein’s Paradox”</strong>, predictions from a multilevel model may be better than the mean.</p>
 <p><strong>shrinkage</strong></p>
 </section>
-<section id="variation" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="variation"><span class="header-section-number">6.7</span> Variation</h2>
+<section id="variation" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="variation"><span class="header-section-number">6.8</span> Variation</h2>
 <p>Above, in <a href="intro.html#sec-studyvariation"><span>Section&nbsp;2.6</span></a>, I have referred to multilevel models as the study of variation. Now that I have provided some discussion of the multilevel model, more statistical “unpacking” of ideas about variation is warranted.</p>
 <p>I provide again, for pedagogical purposes, the example substantive equation that I have been using in this document.</p>
-<p><span id="eq-MLMsubstantive2"><span class="math display">\[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \beta_3 \text{time}_{ij} \ +  \tag{6.5}\]</span></span></p>
+<p><span id="eq-MLMsubstantive2"><span class="math display">\[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \beta_3 \text{time}_{ij} \ +  \tag{6.7}\]</span></span></p>
 <p><span class="math display">\[u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}\]</span></p>
-<section id="measured-and-unmeasured-variation" class="level3" data-number="6.7.1">
-<h3 data-number="6.7.1" class="anchored" data-anchor-id="measured-and-unmeasured-variation"><span class="header-section-number">6.7.1</span> Measured and Unmeasured Variation</h3>
+<section id="measured-and-unmeasured-variation" class="level3" data-number="6.8.1">
+<h3 data-number="6.8.1" class="anchored" data-anchor-id="measured-and-unmeasured-variation"><span class="header-section-number">6.8.1</span> Measured and Unmeasured Variation</h3>
 <p>The first thing to note about the equation is that it can be divided into measured and unmeasured variation.</p>
 <p>This is most easily seen if we introduce the idea of an unconditional model.</p>
 </section>
-<section id="unconditional-model" class="level3" data-number="6.7.2">
-<h3 data-number="6.7.2" class="anchored" data-anchor-id="unconditional-model"><span class="header-section-number">6.7.2</span> Unconditional Model</h3>
-<p>The unconditional model is a model with no <span class="math inline">\(x\)</span>’s or covariates.</p>
-<p><span id="eq-unconditional"><span class="math display">\[\text{outcome}_{ij} = \beta_0 + u_{0j} + e_{ij} \tag{6.6}\]</span></span></p>
+<section id="unconditional-model" class="level3" data-number="6.8.2">
+<h3 data-number="6.8.2" class="anchored" data-anchor-id="unconditional-model"><span class="header-section-number">6.8.2</span> Unconditional Model</h3>
+<p>The unconditional model is a model with no <span class="math inline">\(x\)</span>’s or covariates <span class="citation" data-cites="Raudenbush2002">(<a href="references.html#ref-Raudenbush2002" role="doc-biblioref">Raudenbush &amp; Bryk, 2002</a>)</span>.</p>
+<p><span id="eq-unconditional"><span class="math display">\[\text{outcome}_{ij} = \beta_0 + u_{0j} + e_{ij} \tag{6.8}\]</span></span></p>
 <p>Here, <span class="math inline">\(\text{outcome}_{ij}\)</span> is a function of an intercept <span class="math inline">\(\beta_0\)</span>, a country specific error term, <span class="math inline">\(u_{0j}\)</span>, and an individual level error term <span class="math inline">\(e_{ij}\)</span>.</p>
 <p>Thus, all of the variation in <span class="math inline">\(\text{outcome}_{ij}\)</span> is–given the unconditional nature of our model–due to unmeasured variation at the country and individual level.</p>
 </section>
-<section id="intra-class-correlation-coefficient" class="level3" data-number="6.7.3">
-<h3 data-number="6.7.3" class="anchored" data-anchor-id="intra-class-correlation-coefficient"><span class="header-section-number">6.7.3</span> Intra-Class Correlation Coefficient</h3>
-<p>We then introduce a measure known as the Intra-Class Correlation Coefficient, (ICC) that can be computed from this unconditional model.</p>
-<p><span id="eq-ICC"><span class="math display">\[\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})} \tag{6.7}\]</span></span></p>
+<section id="intra-class-correlation-coefficient" class="level3" data-number="6.8.3">
+<h3 data-number="6.8.3" class="anchored" data-anchor-id="intra-class-correlation-coefficient"><span class="header-section-number">6.8.3</span> Intra-Class Correlation Coefficient</h3>
+<p>I now introduce a measure known as the Intra-Class Correlation Coefficient, (ICC) that can be computed from this unconditional model <span class="citation" data-cites="Raudenbush2002">(<a href="references.html#ref-Raudenbush2002" role="doc-biblioref">Raudenbush &amp; Bryk, 2002</a>)</span>.</p>
+<p><span id="eq-ICC"><span class="math display">\[\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})} \tag{6.9}\]</span></span></p>
 <p>Heuristically:</p>
-<p><span id="eq-ICCheuristic"><span class="math display">\[\text{ICC} = \frac{\text{group level variation}}{\text{group level variation} + \text{individual level variation}} \tag{6.8}\]</span></span></p>
-<p>The ICC from the <em>unconditional</em> model (<a href="#eq-unconditional">Equation&nbsp;<span>6.6</span></a>) is the most informative ICC as it represents the amount of variation in the dependent variable that could <em>potentially</em> be explained by the grouping variable.</p>
+<p><span id="eq-ICCheuristic"><span class="math display">\[\text{ICC} = \frac{\text{group level variation}}{\text{group level variation} + \text{individual level variation}} \tag{6.10}\]</span></span></p>
+<p>The ICC from the <em>unconditional</em> model (<a href="#eq-unconditional">Equation&nbsp;<span>6.8</span></a>) is the most informative ICC as it represents the amount of variation in the dependent variable that could <em>potentially</em> be explained by the grouping variable.</p>
 <p>As we add covariates, <span class="math inline">\(x\)</span>’s, to the model the ICC will most often decrease.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -620,40 +707,40 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="variation-in-intercepts-or-outcomes" class="level3" data-number="6.7.4">
-<h3 data-number="6.7.4" class="anchored" data-anchor-id="variation-in-intercepts-or-outcomes"><span class="header-section-number">6.7.4</span> Variation In Intercepts or Outcomes</h3>
-<p>In <a href="#eq-MLMsubstantive2">Equation&nbsp;<span>6.5</span></a>, <span class="math inline">\(var(u_{0j})\)</span> is the model estimated amount of variation in the <em>outcome</em>, <span class="math inline">\(y_{ij}\)</span>.</p>
+<section id="variation-in-intercepts-or-outcomes" class="level3" data-number="6.8.4">
+<h3 data-number="6.8.4" class="anchored" data-anchor-id="variation-in-intercepts-or-outcomes"><span class="header-section-number">6.8.4</span> Variation In Intercepts or Outcomes</h3>
+<p>In <a href="#eq-MLMsubstantive2">Equation&nbsp;<span>6.7</span></a>, <span class="math inline">\(var(u_{0j})\)</span> is the model estimated amount of variation in the <em>outcome</em>, <span class="math inline">\(y_{ij}\)</span>.</p>
 <p>In the regression in <a href="#sec-regression"><span>Section&nbsp;6.4</span></a>, there is discernible between country variation, but more of the variation is between individuals within the same country. Put another way, there is a moderate tendency for children in families in the same country to have similar outcomes, but two children in families in the same country may also have very different outcomes. Children from families in different countries may be as similar as children from families in the same country.</p>
 </section>
-<section id="variation-in-predictors" class="level3" data-number="6.7.5">
-<h3 data-number="6.7.5" class="anchored" data-anchor-id="variation-in-predictors"><span class="header-section-number">6.7.5</span> Variation In Predictors</h3>
+<section id="variation-in-predictors" class="level3" data-number="6.8.5">
+<h3 data-number="6.8.5" class="anchored" data-anchor-id="variation-in-predictors"><span class="header-section-number">6.8.5</span> Variation In Predictors</h3>
 <p>Equally important, I think, but much less frequently explored than variation in <em>outcomes</em>, is the possibility of variation in <em>predictors</em>. In the substantive example that we have employed so far, the <em>predictors</em> are different <em>parenting behaviors</em>, so considering variation in <em>predictors</em> allows us to consider variation in <em>parenting behaviors</em>, as well as variation in the <em>outcomes</em> of those behaviors.</p>
 <p>We would estimate variation in behaviors in much the same way that we would estimate variation in outcomes, estimating an unconditional model, but substituting <span class="math inline">\(x\)</span> for <span class="math inline">\(y\)</span>.</p>
-<p><span id="eq-unconditionalx"><span class="math display">\[x_{ij} = \beta_0 + u_{0j} + e_{ij} \tag{6.9}\]</span></span></p>
+<p><span id="eq-unconditionalx"><span class="math display">\[x_{ij} = \beta_0 + u_{0j} + e_{ij} \tag{6.11}\]</span></span></p>
 <p>Then, similarly, the variation in a predictor attributable to the clustered nature of the data–in this case the clustering of individuals in countries–is given by:</p>
-<p><span id="eq-ICCx"><span class="math display">\[\text{ICC}_x = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})} \tag{6.10}\]</span></span></p>
+<p><span id="eq-ICCx"><span class="math display">\[\text{ICC}_x = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})} \tag{6.12}\]</span></span></p>
 </section>
-<section id="variation-in-slopes" class="level3" data-number="6.7.6">
-<h3 data-number="6.7.6" class="anchored" data-anchor-id="variation-in-slopes"><span class="header-section-number">6.7.6</span> Variation in Slopes</h3>
+<section id="variation-in-slopes" class="level3" data-number="6.8.6">
+<h3 data-number="6.8.6" class="anchored" data-anchor-id="variation-in-slopes"><span class="header-section-number">6.8.6</span> Variation in Slopes</h3>
 <p>Another possible type of variation to investigate is variation in the relationship of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, which is represented in the multilevel model by examining variation in the <span class="math inline">\(\beta\)</span>’s.</p>
 </section>
-<section id="variation-as-an-outcome" class="level3" data-number="6.7.7">
-<h3 data-number="6.7.7" class="anchored" data-anchor-id="variation-as-an-outcome"><span class="header-section-number">6.7.7</span> Variation As An Outcome</h3>
+<section id="variation-as-an-outcome" class="level3" data-number="6.8.7">
+<h3 data-number="6.8.7" class="anchored" data-anchor-id="variation-as-an-outcome"><span class="header-section-number">6.8.7</span> Variation As An Outcome</h3>
 <p>Even less common is to examine <em>variation</em> itself as an outcome <span class="citation" data-cites="Burkner2018">(<a href="references.html#ref-Burkner2018" role="doc-biblioref">Burkner, 2018</a>)</span>.</p>
-<p><span id="eq-distributional"><span class="math display">\[\sigma_{yij} = \beta_0 + \beta_1 x_1 + u_{0j} + e_{ij} \tag{6.11}\]</span></span></p>
-<p>Here, the variation in the outcome, <span class="math inline">\(\sigma_{yij}\)</span>, rather than the mean level of the outcome, <span class="math inline">\(y_{ij}\)</span>, is the focus of interest. My notation for <a href="#eq-distributional">Equation&nbsp;<span>6.11</span></a> draws upon <span class="citation" data-cites="Burkner2018">Burkner (<a href="references.html#ref-Burkner2018" role="doc-biblioref">2018</a>)</span>’s notation, but is modified in order to be consistent with the rest of this document.</p>
+<p><span id="eq-distributional"><span class="math display">\[\sigma_{yij} = \beta_0 + \beta_1 x_1 + u_{0j} + e_{ij} \tag{6.13}\]</span></span></p>
+<p>Here, the variation in the outcome, <span class="math inline">\(\sigma_{yij}\)</span>, rather than the mean level of the outcome, <span class="math inline">\(y_{ij}\)</span>, is the focus of interest. My notation for <a href="#eq-distributional">Equation&nbsp;<span>6.13</span></a> draws upon <span class="citation" data-cites="Burkner2018">Burkner (<a href="references.html#ref-Burkner2018" role="doc-biblioref">2018</a>)</span>’s notation, but is modified in order to be consistent with the rest of this document.</p>
 <p>Why might such models be of conceptual interest? Imagine for example, that the <em>variation</em> in psychological well-being is higher in countries with higher levels of poverty, or higher levels of income inequality. The use of such models as this, discussed in more detail by <span class="citation" data-cites="Burkner2018">Burkner (<a href="references.html#ref-Burkner2018" role="doc-biblioref">2018</a>)</span>, would allow us to explore such a question.</p>
 <p>Of note, while I do not explore in detail differences between Bayesian and frequentist approaches to multilevel modeling in this document, these models are likely to be only estimable with Bayesian software rather than with frequentist software <span class="citation" data-cites="Burkner2018">(<a href="references.html#ref-Burkner2018" role="doc-biblioref">Burkner, 2018</a>)</span>.</p>
 </section>
-<section id="maximal-models" class="level3" data-number="6.7.8">
-<h3 data-number="6.7.8" class="anchored" data-anchor-id="maximal-models"><span class="header-section-number">6.7.8</span> Maximal Models</h3>
+<section id="maximal-models" class="level3" data-number="6.8.8">
+<h3 data-number="6.8.8" class="anchored" data-anchor-id="maximal-models"><span class="header-section-number">6.8.8</span> Maximal Models</h3>
 <p>Hypothetically, one might imagine that there could be group level unobserved factors which affect regression slopes—i.e.&nbsp;the relationship between a predictor x and outcome variable y—arguably, were one to ignore these unobserved factors in statistical estimation, they would show up either in an error term, or in the regression coefficients themselves. Were they to show up in the regression coefficients this would represent statistical bias and a substantive mis-estimation of important effects. thus, there is a conceptual argument for including as many random effects—i.e.&nbsp;random slopes—in a statistical model as possible.</p>
-<p>Models with all possible random effects are termed <em>maximal models</em> <span class="citation" data-cites="Barr2013 Frank2018">(<a href="references.html#ref-Barr2013" role="doc-biblioref">Barr et al., 2013</a>; <a href="references.html#ref-Frank2018" role="doc-biblioref">Frank, 2018</a>)</span>. Such models include a large number of random slopes, e.g.&nbsp;<span class="math inline">\(u_1, u_2, u_3, ..., etc.\)</span> even when some of those estimated slopes are close to 0. Such models may be more easily estimable when using Bayesian estimation <span class="citation" data-cites="Frank2018">(<a href="references.html#ref-Frank2018" role="doc-biblioref">Frank, 2018</a>)</span>, a topic which I do not cover in detail in this document.</p>
+<p>Models with all possible random effects are termed <em>maximal models</em> <span class="citation" data-cites="Barr2013 Frank2018">(<a href="references.html#ref-Barr2013" role="doc-biblioref">Barr et al., 2013</a>; <a href="references.html#ref-Frank2018" role="doc-biblioref">Frank, 2018</a>)</span>. Such models include a large number of random slopes, e.g.&nbsp;<span class="math inline">\(u_1 \times x_1, u_2 \times x_2, u_3 \times x_3, ..., \text{etc.}\)</span> even when some of those estimated slopes are close to 0. Such models may be more easily estimable when using Bayesian estimation <span class="citation" data-cites="Frank2018">(<a href="references.html#ref-Frank2018" role="doc-biblioref">Frank, 2018</a>)</span>, a topic which I do not cover in detail in this document.</p>
 <p>It should be noted that <span class="citation" data-cites="Matuschek2017">Matuschek et al. (<a href="references.html#ref-Matuschek2017" role="doc-biblioref">2017</a>)</span> argue that such a <em>maximal</em> approach may lead to a loss of statistical power and further argue that one should adhere to “a random effect structure that is supported by the data.” In contrast, <span class="citation" data-cites="nalborczyk_batailler_loevenbruck_vilain_burkner_2019">Nalborczyk et al. (<a href="references.html#ref-nalborczyk_batailler_loevenbruck_vilain_burkner_2019" role="doc-biblioref">2019</a>)</span> argue that maximal models are supported under the Bayesian approach. <span class="citation" data-cites="Oberauer2022">Oberauer (<a href="references.html#ref-Oberauer2022" role="doc-biblioref">2022</a>)</span> also argues for including multiple random slopes. <span class="citation" data-cites="Schielzeth2009">Schielzeth &amp; Forstmeier (<a href="references.html#ref-Schielzeth2009" role="doc-biblioref">2009</a>)</span> make a similar argument from a frequentist perspective.</p>
 </section>
 </section>
-<section id="sec-wrongapproaches" class="level2" data-number="6.8">
-<h2 data-number="6.8" class="anchored" data-anchor-id="sec-wrongapproaches"><span class="header-section-number">6.8</span> Some Wrong (or Partially Wrong) Approaches</h2>
+<section id="sec-wrongapproaches" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="sec-wrongapproaches"><span class="header-section-number">6.9</span> Some Wrong (or Partially Wrong) Approaches</h2>
 <p>When data are clustered–e.g.&nbsp;residents in neighborhoods, children in schools, families in countries–it is worth discussing the fact that we have several choices statistically as how to proceed, other than using a multilevel model. Given the discussion so far, we can see the advantages of a multilevel model over these other approaches:</p>
 <ol type="1">
 <li>First, we could simply ignore the clustering, and treat the data as though it were composed of statistically independent individuals, i.e.&nbsp;statistically independent <span class="math inline">\(e_i\)</span>. As we have discussed above, however, this approach has at least two disadvantages. First, as discussed in <a href="#sec-pvalues"><span>Section&nbsp;6.2</span></a>, this approach will mis-estimate standard errors, most often underestimating them, resulting in underestimated p values and false positives. Second, as discussed in <a href="#sec-multilevelstructure"><span>Section&nbsp;6.3</span></a> ignoring clustering runs the risk of estimating regression <span class="math inline">\(\beta\)</span>’s that are not estimated with information about the multilevel structure of the data, with the possibility that <span class="math inline">\(\beta\)</span> coefficients may not only have incorrect statistical significance, but also incorrect magnitude, and even incorrect sign.</li>
@@ -695,6 +782,9 @@ Raudenbush, S. W., &amp; Bryk, A. S. (2002). <em>Hierarchical linear models: App
 </div>
 <div id="ref-Schielzeth2009" class="csl-entry" role="doc-biblioentry">
 Schielzeth, H., &amp; Forstmeier, W. (2009). Conclusions beyond support: Overconfident estimates in mixed models. <em>Behavioral Ecology</em>, <em>20</em>, 416–420. <a href="https://doi.org/10.1093/beheco/arn145">https://doi.org/10.1093/beheco/arn145</a>
+</div>
+<div id="ref-StataCorp2021:2" class="csl-entry" role="doc-biblioentry">
+StataCorp. (2021). <em>Stata 17 multilevel mixed effects reference manual</em>. Stata Press.
 </div>
 </div>
 </section>
