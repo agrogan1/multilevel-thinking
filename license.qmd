@@ -1,3 +1,5 @@
 # License {.unnumbered}
 
 *Multilevel Thinking* by [Andrew Grogan-Kaylor](https://agrogan1.github.io/) is licensed under [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/)
+
+{{< pagebreak >}}
