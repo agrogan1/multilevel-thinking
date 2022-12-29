@@ -260,6 +260,37 @@ There is also some variation in the slope associated with parental warmth that i
 
 `HDI`, the *Human Development Index*, our only country level, or Level 2, variable in this model is not associated with the outcome.
 
+## Correlation of Random Intercept and Random Slope(s)
+
+One could also consider a situation in which a random slope or slopes were correlated with each other, and with the random intercept. In the equation that we are considering, this would entail estimation of whether or not, the random intercept, $u_{0j}$, was correlated with the random slope for warmth, $u_{1j}$. 
+
+Substantively, this question would be asking whether the association of warmth and the outcome, was correlated with the initial level or average level of the outcome. From @fig-data, it appears that there is some slight evidence that the country specific regression slopes are more steep in countries where the initial level of the outcome is higher. However, we may wish to investigate this question more rigorously.
+
+By default, Stata estimates models, where the random slope or slopes are uncorrelated with each other, and uncorrelated with the intercept [@StataCorp2021:2]. We see this in @eq-varcovar below, where the diagonal elements are the *variances* of each of the random effects, and the off diagonals, which would be the *covariances* of the random effects are constrained to 0.
+
+$$\begin{bmatrix}
+var(u_{0j}) & 0 \\
+0 & var(u_{1j}) 
+\end{bmatrix}$$ {#eq-varcovar}
+
+Within Stata, we can ask to allow such a correlation with the `cov(uns)` option. 
+
+$$\begin{bmatrix}
+var(u_{0j}) & cov(u_{0j}, u_{1j}) \\
+cov(u_{0j}, u_{1j}) & var(u_{1j}) 
+\end{bmatrix}$$ {#eq-varcovaruns}
+
+We use the following syntax.
+
+`mixed outcome warmth physical_punishment HDI || country: warmth, cov(uns)`
+
+When we estimate such a model, we get the following information.
+
+```{r, child=c('./simulate-and-analyze-multilevel-data/table1.md')}
+```
+
+Results are mostly similar to those above. However, here, we are asking additionally for information about the possible correlation of country specific initial levels of the outcome and the slope of the country specific regression line for parental warmth. Results indicate that there is no reason to be believe that these two parameters are correlated. Put more intuitively, it does not appear that parental warmth is any more or less correlated with the outcome in countries where initial levels of the outcome are higher. 
+
 ## Summary of Advantages Of The Multilevel Model
 
 The discussion so far gives an idea of the advantages of the multilevel model for studying intrinsically multilevel data: children in classrooms or schools; individuals or families in neighborhoods; individuals or families in countries. These advantages can be summarized below:
