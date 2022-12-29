@@ -286,7 +286,7 @@ We use the following syntax.
 
 When we estimate such a model, we get the following information.
 
-```{r, child=c('./simulate-and-analyze-multilevel-data/table1.md')}
+```{r, child=c('./simulate-and-analyze-multilevel-data/table1A.md')}
 ```
 
 Results are mostly similar to those above. However, here, we are asking additionally for information about the possible correlation of country specific initial levels of the outcome and the slope of the country specific regression line for parental warmth. Results indicate that there is no reason to be believe that these two parameters are correlated. Put more intuitively, it does not appear that parental warmth is any more or less correlated with the outcome in countries where initial levels of the outcome are higher. 
