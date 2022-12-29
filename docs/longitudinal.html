@@ -204,6 +204,21 @@ div.csl-indent {
   <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Stata-for-cross-sectional-MLMs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Stata for Cross Sectional Multilevel Models</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -522,8 +537,9 @@ div.csl-indent {
 <p>When data are in <em>long</em> format, the following equation is applicable.</p>
 <p><span id="eq-MLM-longitudinal"><span class="math display">\[\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ +  \tag{7.1}\]</span></span></p>
 <p><span class="math display">\[\beta_4 \text{HDI}_{jt} +\]</span></p>
-<p><span class="math display">\[u_{0j} + u_{1j} \times \text{parental warmth}_i \ + \]</span></p>
-<p><span class="math display">\[v_{0i} + v_{1i} \times t + e_{ij}\]</span> Here I include a random slope (<span class="math inline">\(u_{1j}\)</span>) at the country level for parental warmth, as well as a random slope (<span class="math inline">\(v_{1j}\)</span>) at the individual level for time.</p>
+<p><span class="math display">\[u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + \]</span></p>
+<p><span class="math display">\[v_{0i} + v_{1i} \times t_{itj} + e_{itj}\]</span> Here I include a random slope (<span class="math inline">\(u_{1j}\)</span>) at the country level for parental warmth, as well as a random slope (<span class="math inline">\(v_{1i}\)</span>) at the individual level for time.</p>
+<p>As before, the random slope for parental warmth, <span class="math inline">\(u_{1j} \times \text{parental warmth}_{ij}\)</span> suggests allows us to estimate whether the relationship between parental warmth and the outcome varies across countries. The random slope for time, <span class="math inline">\(v_{1i} \times t\)</span>, allows us to estimate whether time trajectories (the slope for time) vary across individuals.</p>
 </section>
 <section id="sec-regressionlongitudinal" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="sec-regressionlongitudinal"><span class="header-section-number">7.3</span> Regression With Simulated Multi-Country Longitudinal Data</h2>
@@ -591,7 +607,7 @@ div.csl-indent {
 </tbody>
 </table>
 <p>** p&lt;.01, * p&lt;.05</p>
-<p>Examining the regression results, the results of the model suggest that child outcomes improve over time. Better child outcomes are again associated with parental warmth, and parental use of physical punishment is associated with reduced child outcomes.</p>
+<p>Examining the regression results, the results of the model suggest that child outcomes improve over time. Better child outcomes are again associated with parental warmth, and parental use of physical punishment is associated with reduced child outcomes. HDI is again not associated with outcomes.</p>
 </section>
 <section id="autocorrelation" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="autocorrelation"><span class="header-section-number">7.4</span> Autocorrelation</h2>
