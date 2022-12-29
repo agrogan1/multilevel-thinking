@@ -27,6 +27,8 @@ book:
     - longitudinal.qmd
     - conclusion.qmd
     - references.qmd
+  appendices:
+    - Stata-for-cross-sectional-MLMs.qmd
 
 bibliography: multilevel-thinking.bib
 
