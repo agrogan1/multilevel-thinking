@@ -157,6 +157,8 @@ export("tableB.md", as(markdown) replace)
 
 estimates drop OLS MLM
 
+/* COMMENTED OUT AND REPLACED WITH simulate-and-analyze-multilevel-data2.do
+
 * cross sectional
 
 use "simulated_multilevel_data.dta", clear
@@ -247,7 +249,7 @@ export("table4.md", as(markdown) replace)
 
 estimates drop MLM FE CRE
 
-	
+*/	
 	
 	
 	
