@@ -256,7 +256,7 @@ The Stata syntax that we use is:
 
 The data suggest that parental warmth is positively associated with the desirable outcome, and that this result is statistically significant. Parental use of physical punishment is associated with statistically significant decreases in the desirable outcome. I note that there is some variation in the *constant* indicating that there is some variation in the initial or average levels of the desirable outcome--again improved psychological well-being--that is attributable to country.
 
-There is also some variation in the slope associated with parental warmth that is attributable to country. Thus, while largely consistent, the relationship of parental warmth with child outcomes differs somewhat from country to country. 
+There is--in contrast--no discernible variation in the *slope* associated with parental warmth that is attributable to country. Thus, the relationship of parental warmth with child outcomes does not appear to differ appreciably from country to country. 
 
 `HDI`, the *Human Development Index*, our only country level, or Level 2, variable in this model is not associated with the outcome.
 

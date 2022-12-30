@@ -121,7 +121,7 @@ When data are in *long* format, the following equation is applicable.
 
 $$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + $$ {#eq-MLM-longitudinal} 
 
-$$\beta_4 \text{group}_{it} + \beta_5 \text{HDI}_{jt} +$$
+$$\beta_4 \text{group}_{itj} + \beta_5 \text{HDI}_{itj} +$$
 
 $$u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + $$
 
