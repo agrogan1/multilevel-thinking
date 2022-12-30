@@ -318,10 +318,10 @@ div.csl-indent {
 </blockquote>
 <p>In this formulation of the equation, the nature of the random effects is more clear, and merits discussion. Notice that we have included a <em>random intercept</em> <span class="math inline">\(u_{0j}\)</span> as well as a <em>random slope</em> <span class="math inline">\(u_{1j} \times x\)</span>. The <em>random intercept</em>, <span class="math inline">\(u_{0j}\)</span>, indicates that there is variation in the <em>intercept</em> of the country specific regression lines, as is true in <a href="simulated-multi-country-data.html#fig-data">Figure&nbsp;<span>3.2</span></a>. The <em>random slope</em> term associated with <span class="math inline">\(x\)</span>, <span class="math inline">\(u_{1j} \times x\)</span>, indicates that there is also variation in the <em>slope</em> of the regression lines that is associated with <span class="math inline">\(x\)</span>, in this case, the slope of parental warmth, as is also demonstrated in <a href="simulated-multi-country-data.html#fig-data">Figure&nbsp;<span>3.2</span></a>.</p>
 <p>To make these ideas more concrete, I rewrite this equation in terms of the main substantive ideas of this document:</p>
-<p><span id="eq-MLMsubstantive"><span class="math display">\[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \beta_3 \text{HDI}_{j} \ +  \tag{6.4}\]</span></span></p>
+<p><span id="eq-MLMsubstantive"><span class="math display">\[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{j} \ +  \tag{6.4}\]</span></span></p>
 <p><span class="math display">\[u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}\]</span></p>
 <p>Drawing upon ideas from <a href="software.html"><span>Chapter&nbsp;4</span></a>, this single level equation can be easily represented in Stata syntax.</p>
-<p><code>mixed outcome warmth physical_punishment HDI || country: warmth</code></p>
+<p><code>mixed outcome warmth physical_punishment group HDI || country: warmth</code></p>
 </section>
 </section>
 <section id="sec-pvalues" class="level2" data-number="6.2">
@@ -537,7 +537,7 @@ div.csl-indent {
 <h2 data-number="6.4" class="anchored" data-anchor-id="sec-regression"><span class="header-section-number">6.4</span> Regression With Simulated Multi-Country Data</h2>
 <p>After considering some of these broader issues, let’s now examine the results of a multilevel regression with the simulated multicountry data. I will again imagine that the desirable outcome is an outcome such as improved psychological wellbeing.</p>
 <p>The Stata syntax that we use is:</p>
-<p><code>mixed outcome warmth physical_punishment HDI || country: warmth</code></p>
+<p><code>mixed outcome warmth physical_punishment group HDI || country: warmth</code></p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -549,37 +549,47 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td>warmth</td>
-<td>5.122</td>
+<td>0.983</td>
 <td>**</td>
 </tr>
 <tr class="even">
 <td>physical_punishment</td>
-<td>-3.096</td>
+<td>-0.924</td>
+<td>**</td>
+</tr>
+<tr class="odd">
+<td>group</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>0.728</td>
 <td>**</td>
 </tr>
 <tr class="odd">
 <td>HDI</td>
-<td>-0.283</td>
+<td>0.008</td>
 <td></td>
 </tr>
 <tr class="even">
 <td>Intercept</td>
-<td>22.471</td>
-<td></td>
+<td>51.500</td>
+<td>**</td>
 </tr>
 <tr class="odd">
 <td>var(warmth)</td>
-<td>0.942</td>
+<td>0.000</td>
 <td></td>
 </tr>
 <tr class="even">
 <td>var(_cons)</td>
-<td>0.000</td>
+<td>3.438</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>var(e)</td>
-<td>2637.104</td>
+<td>34.784</td>
 <td></td>
 </tr>
 </tbody>
@@ -604,7 +614,7 @@ var(u_{0j}) &amp; cov(u_{0j}, u_{1j}) \\
 cov(u_{0j}, u_{1j}) &amp; var(u_{1j})
 \end{bmatrix} \tag{6.6}\]</span></span></p>
 <p>We use the following syntax.</p>
-<p><code>mixed outcome warmth physical_punishment HDI || country: warmth, cov(uns)</code></p>
+<p><code>mixed outcome warmth physical_punishment group HDI || country: warmth, cov(uns)</code></p>
 <p>When we estimate such a model, we get the following information.</p>
 <table class="table">
 <thead>
@@ -617,42 +627,52 @@ cov(u_{0j}, u_{1j}) &amp; var(u_{1j})
 <tbody>
 <tr class="odd">
 <td>warmth</td>
-<td>5.155</td>
+<td>0.983</td>
 <td>**</td>
 </tr>
 <tr class="even">
 <td>physical_punishment</td>
-<td>-3.089</td>
+<td>-0.926</td>
+<td>**</td>
+</tr>
+<tr class="odd">
+<td>group</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>0.727</td>
 <td>**</td>
 </tr>
 <tr class="odd">
 <td>HDI</td>
-<td>-0.215</td>
+<td>0.007</td>
 <td></td>
 </tr>
 <tr class="even">
 <td>Intercept</td>
-<td>13.985</td>
-<td></td>
+<td>51.523</td>
+<td>**</td>
 </tr>
 <tr class="odd">
 <td>var(warmth)</td>
-<td>1.565</td>
+<td>0.002</td>
 <td></td>
 </tr>
 <tr class="even">
 <td>var(_cons)</td>
-<td>967.654</td>
+<td>2.982</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>cov(warmth,_cons)</td>
-<td>-36.533</td>
+<td>0.086</td>
 <td></td>
 </tr>
 <tr class="even">
 <td>var(e)</td>
-<td>2616.902</td>
+<td>34.769</td>
 <td></td>
 </tr>
 </tbody>
