@@ -64,13 +64,13 @@ In this formulation of the equation, the nature of the random effects is more cl
 
 To make these ideas more concrete, I rewrite this equation in terms of the main substantive ideas of this document:
 
-$$\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \beta_3 \text{HDI}_{j} \ + $$ {#eq-MLMsubstantive}
+$$\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{j} \ + $$ {#eq-MLMsubstantive}
 
 $$u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}$$ 
 
 Drawing upon ideas from @sec-software, this single level equation can be easily represented in Stata syntax.
 
-`mixed outcome warmth physical_punishment HDI || country: warmth`
+`mixed outcome warmth physical_punishment group HDI || country: warmth`
 
 ## Estimating Standard Errors And p Values {#sec-pvalues}
 
@@ -249,7 +249,7 @@ After considering some of these broader issues, let's now examine the results of
 
 The Stata syntax that we use is:
 
-`mixed outcome warmth physical_punishment HDI || country: warmth`
+`mixed outcome warmth physical_punishment group HDI || country: warmth`
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table1.md')}
 ```
@@ -282,7 +282,7 @@ cov(u_{0j}, u_{1j}) & var(u_{1j})
 
 We use the following syntax.
 
-`mixed outcome warmth physical_punishment HDI || country: warmth, cov(uns)`
+`mixed outcome warmth physical_punishment group HDI || country: warmth, cov(uns)`
 
 When we estimate such a model, we get the following information.
 

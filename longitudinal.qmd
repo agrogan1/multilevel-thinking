@@ -122,7 +122,7 @@ When data are in *long* format, the following equation is applicable.
 
 $$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + $$ {#eq-MLM-longitudinal} 
 
-$$\beta_4 \text{HDI}_{jt} +$$
+$$\beta_4 \text{group}_{it} + \beta_5 \text{HDI}_{jt} +$$
 
 $$u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + $$
 
@@ -135,7 +135,7 @@ As before, the random slope for parental warmth, $u_{1j} \times \text{parental w
 
 The Stata command that we use to analyze this data is:
 
-`mixed outcome t warmth physical_punishment HDI || country: warmth || id: t`
+`mixed outcome t warmth physical_punishment group HDI || country: warmth || id: t`
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table2.md')}
 ```
@@ -289,7 +289,7 @@ The appropriate multilevel model is below.
 
 $$\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_2 \text{physical punishment}_{it} + \beta_3 \text{time}_{it} \ + $$ {#eq-MLM-simpler}
 
-$$\beta_4 \text{HDI}_{it} \ +$$
+$$\beta_4 \text{group}_{it} + \beta_5 \text{HDI}_{it} \ +$$
 
 $$v_{0i} + e_{it}$$
 
@@ -301,7 +301,7 @@ I can use the same equation:
 
 $$\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_2 \text{physical punishment}_{it} + \beta_3 \text{time}_{it} \ + $$ {#eq-FE}
 
-$$\beta_4 \text{HDI}_{it} \ +$$
+$$\beta_4 \text{group}_{it} + \beta_5 \text{HDI}_{it} \ +$$
 
 $$v_{0i} + e_{it}$$
 
@@ -315,8 +315,8 @@ However, a disadvantage of the fixed effects approach is that this approach can 
 
 The relevant Stata commands are:
 
-* Multilevel Model: `mixed outcome t warmth physical_punishment HDI || id:`
-* Fixed Effects Model: `xtreg outcome t warmth physical_punishment HDI, i(id) fe`
+* Multilevel Model: `mixed outcome t warmth physical_punishment group HDI || id:`
+* Fixed Effects Model: `xtreg outcome t warmth physical_punishment group HDI, i(id) fe`
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table3.md')}
 ```
@@ -331,7 +331,7 @@ $$\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_{1
 
 $$\beta_2 \text{physical punishment}_{it} + \beta_3 \text{time}_{it} \ + $$ 
 
-$$\beta_4 \text{HDI}_{it} \ +$$
+$$\beta_4 \text{group}_{it} + \beta_5 \text{HDI}_{it} \ +$$
 
 $$v_{0i} + e_{ij}$$
 
@@ -339,7 +339,7 @@ By including this parameter, I  obtain estimates for the time varying variables 
 
 The Stata command for the correlated random effects model is:
 
-`mixed outcome t warmth mean_warmth physical_punishment HDI || id:`
+`mixed outcome t warmth mean_warmth physical_punishment group HDI || id:`
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table4.md')}
 ```

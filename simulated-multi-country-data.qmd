@@ -23,7 +23,9 @@ knitr::include_graphics("world.png")
   
 ```
 
-I use simulated data in this example. Data come from 30 hypothetical countries. Data contain measures of a few key aspects of parenting that have proven salient in the empirical literature on parenting to date: parental `warmth`, and `physical punishment`. Both parenting measures are normally distributed variables, and are considered to be *Level 1*, or *individual level* variables. `HDI` [@UNDPHDI] is a measure of the *Human Development Index*, and is measured at the *country level*, or *Level 2*. (I discuss more in depth thinking about levels of the data in @sec-levels.)
+I use simulated data in this example. Data come from 30 hypothetical countries. Data contain measures of a few key aspects of parenting that have proven salient in the empirical literature on parenting to date: parental `warmth`, and `physical punishment`. Both parenting measures are normally distributed variables, and are considered to be *Level 1*, or *individual level* variables. `group` is a hypothetical--and somewhat arbitrary--group designation that could hypothetically refer to something like different cultural groups, economic groups, or groups from different parts of the country. `group` is also a *Level 1* variable.
+
+`HDI` is a measure of the *Human Development Index* [@UNDPHDI], and is measured at the *country level*, or *Level 2*. (I discuss more in depth thinking about levels of the data in @sec-levels.)
 
 Our `outcome` is conceptualized as a positive mental health outcome or behavioral outcome, and higher levels of `outcome` are considered to be better. Statistically, the data are clustered within countries. 
 
@@ -38,6 +40,7 @@ simulated_multilevel_data <- simulated_multilevel_data %>%
   select(id, country,
          warmth,
          physical_punishment,
+         group,
          HDI,
          outcome)
 
