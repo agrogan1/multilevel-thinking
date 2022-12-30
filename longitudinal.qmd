@@ -81,8 +81,7 @@ Multilevel data suitable for longitudinal analysis therefore has *multiple rows 
 ```{r}
 
 simulated_multilevel_longitudinal_data <- 
-  read_dta("./simulate-and-analyze-multilevel-data/simulated_multilevel_longitudinal_data.dta") %>%
-  select(-x_noise)
+  read_dta("./simulate-and-analyze-multilevel-data/simulated_multilevel_longitudinal_data.dta") 
 
 ```
 
