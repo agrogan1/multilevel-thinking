@@ -130,6 +130,73 @@ Here I include a random slope ($u_{1j}$) at the country level for parental warmt
 
 As before, the random slope for parental warmth, $u_{1j} \times \text{parental warmth}_{ij}$ suggests allows us to estimate whether the relationship between parental warmth and the outcome varies across countries. The random slope for time, $v_{1i} \times t$, allows us to estimate whether time trajectories (the slope for time) vary across individuals.
 
+## Growth Trajectories
+
+In longitudinal multilevel models, the variable for *time* assumes a special role as we are often visualizing a growth trajectory over the course of time..
+
+Imagine a model as follows where *group* is a (1/0) variable for membership in one of two groups:
+
+$$\text{outcome} = \beta_0 + \beta_t \text{time} + \beta_\text{group} \text{group} + \beta_\text{interaction} \text{group} \times \text{time} + u_{0i} + e_{it}$$
+Then, each group has it's own intercept and time trajectory:
+
+| Group | Intercept     |  Slope (Time Trajectory)   |
+|-------|---------------|----------------------------|
+| 0 | $\beta_0$                      | $\beta_t$                            |
+| 1 | $\beta_0 + \beta_\text{group}$ | $\beta_t + \beta_\text{interaction}$ |
+
+: Slope and Intercept for Each Group {#tbl-trajectory}
+
+> Thus, in longitudinal multilevel models, *main effects* modify the *intercept* of the time trajectory, while *interactions with time*, modify the *slope* of the time trajectory.
+
+```{r}
+#| label: fig-trajectory
+#| fig-cap: "Heuristic Graph of a Time Trajectory"
+#| fig-height: 3
+
+ggplot(data = NULL) + 
+  geom_abline(aes(intercept = 0, 
+                  slope = .1),
+              color = "red",
+              size = 2) +
+  annotate("text", 
+           x = 1, 
+           y = 0, 
+           label = "intercept: beta[0]",
+           parse = TRUE,
+           color = "red") +
+  annotate("text", 
+           x = 6, 
+           y = .5, 
+           label = "slope: beta[t]",
+           parse = TRUE,
+           color = "red") +
+  geom_abline(aes(intercept = .75, 
+                  slope = .02),
+              color = "blue",
+              size = 2) +
+  annotate("text", 
+           x = 1, 
+           y = .7, 
+           label = "intercept: beta[0] + beta[group]",
+           parse = TRUE,
+           color = "blue") +
+  annotate("text", 
+           x = 5, 
+           y = .72, 
+           label = "slope: beta[t] + beta[interaction]",
+           parse = TRUE,
+           color = "blue") +
+  
+  xlim(0, 10) +
+  ylim(0, 1) +
+  labs(title = "Hypothetical Growth Trajectory",
+       x = "time",
+       y = "outcome") +
+  theme_minimal()
+
+```
+
+
 ## Regression With Simulated Multi-Country Longitudinal Data {#sec-regressionlongitudinal}
 
 The Stata command that we use to analyze this data is:
