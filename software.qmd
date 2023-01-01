@@ -18,10 +18,10 @@ For the sake of illustration, a few Stata commands are listed below.
 | Correlation | `corr x y` |
 | Regression | `regress y x` |
 | Logistic Regression | `logit y x, or` [^logit] |
-| Multilevel Model | `mixed y x || group:`|
+| Multilevel Model | `mixed y x || group: x`|
 
 : Example Stata Commands {#tbl-Statacommands}
 
-It is this multilevel syntax, `mixed y x || group:` that we will be using throughout this document.
+It is this multilevel syntax, `mixed y x || group: x` that we will be using throughout this document.
 
 [^logit]: Here we use the `,or` option to ask for *odds ratios* instead of *logit coefficients*.
