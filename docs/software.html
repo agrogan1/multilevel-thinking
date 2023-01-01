@@ -83,6 +83,7 @@ div.csl-indent {
 }</script>
 
 
+<link rel="stylesheet" href="multilevel-thinking.css">
 <meta name="twitter:title" content="Multilevel Thinking - 4&nbsp; Software">
 <meta name="twitter:description" content="In this document, I use Stata (StataCorp, 2021) to analyze data. Stata is my software of choice in this document because of Stata’s overall ease of use and intuitiveness.">
 <meta name="twitter:card" content="summary">
@@ -286,12 +287,12 @@ div.csl-indent {
 </tr>
 <tr class="odd">
 <td>Multilevel Model</td>
-<td><code>mixed y x || group:</code></td>
+<td><code>mixed y x || group: x</code></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>It is this multilevel syntax, <code>mixed y x || group:</code> that we will be using throughout this document.</p>
+<p>It is this multilevel syntax, <code>mixed y x || group: x</code> that we will be using throughout this document.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography" style="display: none">

@@ -84,6 +84,7 @@ div.csl-indent {
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<link rel="stylesheet" href="multilevel-thinking.css">
 <meta name="twitter:title" content="Multilevel Thinking - 7&nbsp; The Longitudinal Multilevel Model">
 <meta name="twitter:description" content="Counter-intuitively, and surprisingly, the mathematics of estimating models with cross-sectional clustered data easily generalizes to longitudinal data.">
 <meta name="twitter:card" content="summary">
@@ -560,7 +561,7 @@ div.csl-indent {
 </section>
 <section id="growth-trajectories" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="growth-trajectories"><span class="header-section-number">7.3</span> Growth Trajectories</h2>
-<p>In longitudinal multilevel models, the variable for <em>time</em> assumes a special role as we are often visualizing a growth trajectory over the course of time..</p>
+<p>In longitudinal multilevel models, the variable for <em>time</em> assumes a special role as we are often visualizing a <em>growth trajectory</em> over the course of time.</p>
 <p>Imagine a model as follows where <em>group</em> is a (1/0) variable for membership in one of two groups:</p>
 <p><span class="math display">\[\text{outcome} = \beta_0 + \beta_t \text{time} + \beta_\text{group} \text{group} + \beta_\text{interaction} \text{group} \times \text{time} + u_{0i} + e_{it}\]</span> Then, each group has it’s own intercept and time trajectory:</p>
 <div id="tbl-trajectory" class="anchored">
@@ -600,7 +601,7 @@ div.csl-indent {
 <div id="fig-trajectory" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="longitudinal_files/figure-html/fig-trajectory-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;7.2: Heuristic Graph of a Time Trajectory</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;7.2: Hypothetical Growth Trajectory</figcaption><p></p>
 </figure>
 </div>
 </div>
