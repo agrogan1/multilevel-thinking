@@ -17,7 +17,7 @@ library(pander) # tables for PDF
 ```{r}
 #| label: fig-world
 #| fig-cap: "Countries of the World"
-#| fig-height: 3
+#| out-width: 50%
 
 knitr::include_graphics("world.png")
   
