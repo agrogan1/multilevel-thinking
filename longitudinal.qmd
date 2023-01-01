@@ -8,6 +8,8 @@ library(tibble) # data frames
 
 library(ggplot2) # beautiful graphs
 
+library(scales) # scales
+
 library(geomtextpath) # path geoms
 
 library(dplyr) # data wrangling
@@ -132,7 +134,7 @@ As before, the random slope for parental warmth, $u_{1j} \times \text{parental w
 
 ## Growth Trajectories
 
-In longitudinal multilevel models, the variable for *time* assumes a special role as we are often visualizing a growth trajectory over the course of time..
+In longitudinal multilevel models, the variable for *time* assumes a special role as we are often visualizing a *growth trajectory* over the course of time.
 
 Imagine a model as follows where *group* is a (1/0) variable for membership in one of two groups:
 
@@ -150,42 +152,46 @@ Then, each group has it's own intercept and time trajectory:
 
 ```{r}
 #| label: fig-trajectory
-#| fig-cap: "Heuristic Graph of a Time Trajectory"
+#| fig-cap: "Hypothetical Growth Trajectory"
 #| fig-height: 3
+
+# show_col(viridis_pal()(7))
+# viridis_pal()(7)[1]
+# viridis_pal()(7)[3]
 
 ggplot(data = NULL) + 
   geom_abline(aes(intercept = 0, 
                   slope = .1),
-              color = "red",
+              color = "#440154FF",
               size = 2) +
   annotate("text", 
-           x = 1, 
+           x = 1.5, 
            y = 0, 
            label = "intercept: beta[0]",
            parse = TRUE,
-           color = "red") +
+           color = "#440154FF") +
   annotate("text", 
            x = 6, 
            y = .5, 
            label = "slope: beta[t]",
            parse = TRUE,
-           color = "red") +
+           color = "#440154FF") +
   geom_abline(aes(intercept = .75, 
                   slope = .02),
-              color = "blue",
+              color = "#31688EFF",
               size = 2) +
   annotate("text", 
            x = 1, 
-           y = .7, 
+           y = .6, 
            label = "intercept: beta[0] + beta[group]",
            parse = TRUE,
-           color = "blue") +
+           color = "#31688EFF") +
   annotate("text", 
            x = 5, 
            y = .72, 
            label = "slope: beta[t] + beta[interaction]",
            parse = TRUE,
-           color = "blue") +
+           color = "#31688EFF") +
   
   xlim(0, 10) +
   ylim(0, 1) +
