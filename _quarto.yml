@@ -41,6 +41,7 @@ format:
     theme: 
       light: cosmo
       dark: vapor
+    css: multilevel-thinking.css
     execute:
       echo: false
       warning: false
