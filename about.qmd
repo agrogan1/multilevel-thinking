@@ -3,12 +3,12 @@ title: "About the Author"
 about:
   template: trestles
   links:
-    - icon: house
-      text: website
+    - icon: emoji-smile
+      text: Personal Website
       href: https://agrogan1.github.io/
-    - icon: github
-      text: Github
-      href: https://github.com/agrogan1
+    - icon: house
+      text: Faculty Website
+      href: https://ssw.umich.edu/faculty/profiles/tenure-track/agrogan
 ---
 
 I am a Professor at the University of Michigan School of Social Work.
