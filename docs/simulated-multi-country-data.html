@@ -51,6 +51,7 @@ div.csl-indent {
 <meta name="quarto:offset" content="./">
 <link href="./software.html" rel="next">
 <link href="./intro.html" rel="prev">
+<link href="./logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -134,6 +135,11 @@ div.csl-indent {
         </li>
     </ul>
   <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle sidebar-tool" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
     </div>
       </div>
@@ -204,6 +210,11 @@ div.csl-indent {
   <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">About the Author</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Appendices</a>
@@ -259,7 +270,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>I use simulated data in this example. Data come from 30 hypothetical countries. Data contain measures of a few key aspects of parenting that have proven salient in the empirical literature on parenting to date: parental <code>warmth</code>, and <code>physical punishment</code>. Both parenting measures are normally distributed variables, and are considered to be <em>Level 1</em>, or <em>individual level</em> variables. <code>group</code> is a hypothetical–and somewhat arbitrary–group designation that could hypothetically refer to something like different cultural groups, economic groups, or groups from different parts of the country. <code>group</code> is also a <em>Level 1</em> variable.</p>
+<p>I use simulated data in this example. Data come from 30 hypothetical countries. Data contain measures of a few key aspects of parenting that have proven salient in the empirical literature on parenting to date: parental <code>warmth</code>, and <code>physical punishment</code>. Both parenting measures are normally distributed variables, and are considered to be <em>Level 1</em>, or <em>individual level</em> variables. <code>group</code> is a hypothetical–and somewhat arbitrary–group designation that could hypothetically refer to something like different economic groups, or groups from different parts of the country. <code>group</code> is also a <em>Level 1</em> variable.</p>
 <p><code>HDI</code> is a measure of the <em>Human Development Index</em> <span class="citation" data-cites="UNDPHDI">(<a href="references.html#ref-UNDPHDI" role="doc-biblioref">United Nations Development Program, 2022</a>)</span>, and is measured at the <em>country level</em>, or <em>Level 2</em>. (I discuss more in depth thinking about levels of the data in <a href="conceptual-framework.html#sec-levels"><span>Section&nbsp;5.2</span></a>.)</p>
 <p>Our <code>outcome</code> is conceptualized as a positive mental health outcome or behavioral outcome, and higher levels of <code>outcome</code> are considered to be better. Statistically, the data are clustered within countries.</p>
 <p>In this simulation, I construct the data so that <code>warmth</code> is positively related to the <code>outcome</code>, while <code>physical punishment</code> is negatively related to the <code>outcome</code>.</p>

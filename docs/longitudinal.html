@@ -51,6 +51,7 @@ div.csl-indent {
 <meta name="quarto:offset" content="./">
 <link href="./conclusion.html" rel="next">
 <link href="./cross-sectional.html" rel="prev">
+<link href="./logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -135,6 +136,11 @@ div.csl-indent {
         </li>
     </ul>
   <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle sidebar-tool" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
     </div>
       </div>
@@ -205,6 +211,11 @@ div.csl-indent {
   <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">About the Author</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Appendices</a>
@@ -244,7 +255,7 @@ div.csl-indent {
   <li><a href="#the-correlated-random-effects-model" id="toc-the-correlated-random-effects-model" class="nav-link" data-scroll-target="#the-correlated-random-effects-model"><span class="toc-section-number">7.6.6</span>  The Correlated Random Effects Model</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -683,7 +694,7 @@ div.csl-indent {
 </tbody>
 </table>
 <p>** p&lt;.01, * p&lt;.05</p>
-<p>Examining the regression results, the results of the model suggest that child outcomes improve over time. Better child outcomes are again associated with parental warmth, and parental use of physical punishment is associated with reduced child outcomes. HDI is again not associated with outcomes.</p>
+<p>Examining the regression results, the results of the model suggest that child outcomes improve over time. Better child outcomes are again associated with parental <code>warmth</code>, and parental use of <code>physical_punishment</code> is associated with reduced child outcomes. <code>HDI</code> is again not associated with outcomes.</p>
 </section>
 <section id="autocorrelation" class="level2" data-number="7.5">
 <h2 data-number="7.5" class="anchored" data-anchor-id="autocorrelation"><span class="header-section-number">7.5</span> Autocorrelation</h2>
@@ -787,7 +798,7 @@ div.csl-indent {
 <p><span class="math display">\[v_{0i} + e_{it}\]</span></p>
 <p>However, in <a href="#eq-FE">Equation&nbsp;<span>7.3</span></a>, I now consider the <span class="math inline">\(v_{0i}\)</span> to be <em>estimable</em> for each individual <span class="math inline">\(i\)</span> in the data. In effect, the <span class="math inline">\(v_{0i}\)</span> become a unique indicator variable for each individual in the data set. This is known as a <em>fixed effects regression model</em>.</p>
 <p>Details are provided in <span class="citation" data-cites="Allison2009">Allison (<a href="references.html#ref-Allison2009" role="doc-biblioref">2009</a>)</span> and <span class="citation" data-cites="Wooldridge2010">Wooldridge (<a href="references.html#ref-Wooldridge2010" role="doc-biblioref">2010</a>)</span>. <span class="citation" data-cites="StataCorp2021">StataCorp (<a href="references.html#ref-StataCorp2021" role="doc-biblioref">2021b</a>)</span> provides an exceptionally clear explication of the core idea of fixed effects regression. The essential idea is that the fixed effects model provides statistical control for all time invariant characteristics of study participants, such as–as is often the case in many data sets–their racial or ethnic identity, or neighborhood of residence, or other characteristics which by definition are time invariant, such as the region of the country or city in which a respondent was born.</p>
-<p>Thus, by ruling out many potential confounds, fixed effects regression methods provide much more causally robust analyses, specifically because they control for many more possible confounding variables than do standard regression methods, including multilevel models, which are only able to control for the variables that are measured in the study <strong>and</strong> included within the regression model.</p>
+<p>Thus, by ruling out many potential confounds, fixed effects regression methods provide much more causally robust analyses, specifically because they control for many more possible confounding variables than do standard regression methods, including multilevel models, which are only able to control for the variables that are measured in the study <em>and</em> that are included within the regression model.</p>
 <p>However, a disadvantage of the fixed effects approach is that this approach can not provide estimates for any time invariant characteristic of study participants. Indeed, if one includes time invariant variables into a fixed effects regression, they are automatically dropped from the regression results as can be seen in the regression table below.</p>
 <p>The relevant Stata commands are:</p>
 <ul>
@@ -878,6 +889,8 @@ div.csl-indent {
 </tbody>
 </table>
 <p>** p&lt;.01, * p&lt;.05</p>
+<p>In comparing the multilevel model and the fixed effects regression, we note a few salient difference. First, the fixed effects are similar to the multilevel model coefficients. (Most often, the fixed effect regression coefficients are attenuated versions of the multilevel model coefficients, but not always.) The fixed effects regression coefficients for variables that have some variation over time, provide estimates that control for all time invariant variables in the model.</p>
+<p>Second, estimates for any quantities that do not vary over time, in this case, <code>group</code> membership, and <code>HDI</code>, are not available from the fixed effects regression.</p>
 </section>
 <section id="the-correlated-random-effects-model" class="level3" data-number="7.6.6">
 <h3 data-number="7.6.6" class="anchored" data-anchor-id="the-correlated-random-effects-model"><span class="header-section-number">7.6.6</span> The Correlated Random Effects Model</h3>
@@ -1023,6 +1036,7 @@ div.csl-indent {
 </tbody>
 </table>
 <p>** p&lt;.01, * p&lt;.05</p>
+<p>Note a couple of things from this table. First, results from the correlated random effects model, and the fixed effects regression model are exactly the same for <em>time varying</em> variables, <code>t</code>, <code>warmth</code>, and <code>physical_punishment</code>. Again, these coefficients for <em>time varying</em> variables are estimated with statistical control for all time invariant characteristics of study subjects, whether those characteristics are observed, or unobserved. Secondly, unlike the fixed effects regression, coefficients for <em>time invariant</em> variables, e.g.&nbsp;<code>group</code>, <code>HDI</code>, mean levels of <code>warmth</code>, and mean levels of <code>physical_punishment</code> are provided, just as they would be in the multilevel model.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography" style="display: none">
