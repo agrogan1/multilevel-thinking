@@ -1,0 +1,20 @@
+---
+title: "About the Author"
+about:
+  template: trestles
+  links:
+    - icon: house
+      text: website
+      href: https://agrogan1.github.io/
+    - icon: github
+      text: Github
+      href: https://github.com/agrogan1
+---
+
+I am a Professor at the University of Michigan School of Social Work.
+
+My interests are in developing more knowledge to reduce violence against children and Adverse Childhood Experiences (ACEs), with the aim of improving child and family well-being. It is my hope that a better understanding of how to reduce violence against children, and how to reduce ACEs, will contribute to a better understanding of how to improve mental health and well-being across the lifespan. In this research I try to understand the family and community origins of aggression, antisocial behavior, anxiety and depression. My current research focuses on parenting and child development in international context. I try to understand these issues within the context of current conversations about children’s rights.
+
+A particular focus of my work has been to examine the outcomes of physical punishment. Working closely with many colleagues, we have shown that physical punishment is associated with a wide variety of negative outcomes, even when used minimally, or when used in ostensibly “normative” ways.
+
+I teach courses mostly in the area of statistics, quantitative methods and data visualization.

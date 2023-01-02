@@ -30,6 +30,7 @@ book:
     - longitudinal.qmd
     - conclusion.qmd
     - references.qmd
+    - about.qmd
   appendices:
     - Stata-for-cross-sectional-MLMs.qmd
 
