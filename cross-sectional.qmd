@@ -22,7 +22,7 @@ library(pander) # nice tables
 
 ## The Equation
 
-The equation for the multilevel model can be written in several ways: as multiple levels of equations; or as a single equation. The advantage of having multiple levels of equations is that these multiple equations make clear the multiple levels of the data, and thus conform to an initial understanding of how a multilevel model should be estimated. However, *results* from multiple levels of equations quickly become difficult to interpret, and thus, I will not spend a great deal of time on discussing empirical results of the two level formulation. Whether multiple levels of equations, or a single equation are employed, the numerical results are the same.
+The equation for the multilevel model can be written in several ways: as multiple levels of equations; or as a single equation. The advantage of having multiple levels of equations is that these multiple equations make clear the multiple levels of the data, and thus conform to an initial understanding of how a multilevel model should be estimated. However, *results* from multiple levels of equations quickly become difficult to interpret, and thus, I will not spend a great deal of time on discussing empirical results of the two level formulation. Whether multiple levels of equations, or a single equation are employed, the numerical results are equivalent.s
 
 ### Two Levels of Equations
 
@@ -48,17 +48,15 @@ In this formulation of the multilevel model, each regression parameter $\beta$ i
 
 ### One Level of Equations
 
-By simply substituting the values of the Level 2 equations into the Level 1 equations, we obtain:
+By simply substituting the values of the Level 2 equations into the Level 1 equations--and rewriting the $\gamma$'s as $\beta$'s--we obtain:
 
 $$y_{ij} = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + \beta_3 w_{j} + u_{0j} + u_{1j} \times x + e_{ij}$$ {#eq-MLM}
 
 Here again $y_{ij}$ is the dependent variable, or outcome for the model. $\beta_0$ is a regression intercept, and the $\beta$'s are regression parameters. $x_{ij}$ and $z_{ij}$ are independent variables and $w$ is a Level 2 variable. 
 
-While I purposely strive to keep the discussion of multilevel modeling ideas somewhat general in this document, I generally think of $y_{ij}$ as a desirable or "good" outcome. $x$ is often conceptualized as a protective factor, while $z$ is often conceptualized as a risk factor.
-
 > Notice that in this *single equation* format all variables--no matter their *level*--appear in the same equation. 
 
-In this formulation of the equation, the nature of the random effects is more clear, and merits discussion. Notice that we have included a *random intercept* $u_{0j}$ as well as a *random slope* $u_{1j} \times x$. The *random intercept*, $u_{0j}$, indicates that there is variation in the *intercept* of the country specific regression lines, as is true in @fig-data. The *random slope* term associated with $x$, $u_{1j} \times x$, indicates that there is also variation in the *slope* of the regression lines that is associated with $x$, in this case, the slope of parental warmth, as is also demonstrated in @fig-data. 
+In this formulation of the equation, the nature of the random effects is more clear, and merits discussion. Notice that we have included a *random intercept* $u_{0j}$ as well as a *random slope* $u_{1j} \times x$. The *random intercept*, $u_{0j}$, indicates that there is variation in the *intercept* of the country specific regression lines, as is true in @fig-data. The *random slope* term associated with $x$, $u_{1j} \times x$, indicates that we are allowing for the possibility of variation in the *slope* of the regression lines that is associated with $x$, in this case, the slope of parental warmth, as is possibly suggested in @fig-data. 
 
 [^beta:]: Technically, all of these $\beta$'s could be written as $\beta_j$ since the multilevel model could be said to estimate a regression parameter for each group, in this case each country. One could even write $\beta_{jk}$ to represent the regression parameter for the $k^{th}$ independent variable the for the $j^{th}$ group or country. To keep matters simple, I simply write $\beta$ in most cases.
 
