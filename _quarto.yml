@@ -33,9 +33,14 @@ book:
   appendices:
     - Stata-for-cross-sectional-MLMs.qmd
 
+citation:
+  url: https://agrogan1.github.io/multilevel-thinking/
+  
 bibliography: multilevel-thinking.bib
 
 csl: apa.csl
+
+google-scholar: true
 
 prefer-html: true
 
