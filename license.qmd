@@ -9,6 +9,33 @@ knitr::include_graphics("88x31.png")
 
 *Multilevel Thinking* by [Andrew Grogan-Kaylor](https://agrogan1.github.io/) is licensed under [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/)
 
+## Citation
+
+For attribution, please cite as:
+
+Grogan-Kaylor (2023). *Multilevel Thinking*. Retrieved from [https://agrogan1.github.io/multilevel-thinking](https://agrogan1.github.io/multilevel-thinking)
+
+## BibTeX Citation
+
+```{text, eval=FALSE, echo=TRUE}
+
+@book{,
+   author = {Andrew Grogan-Kaylor},
+   city = {Ann Arbor, MI},
+   title = {Multilevel Thinking},
+   url = {https://agrogan1.github.io/multilevel-thinking/},
+   year = {2023},
+}
+
+```
+
+
+
+
+
+
+
+
 
 
 
