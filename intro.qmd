@@ -203,6 +203,6 @@ Lastly, in Panel C, we note an overall association of the intervention with psyc
 
 Thus, I emphasize an approach to multilevel modeling that sees multilevel modeling as the *study of variation*, not simply *accounting for variation*, or *controlling for variation*. 
 
->  "...universal theorizing requires adequately sampled (i.e., diverse) data and better appreciation of issues of comparability and the most powerful theories ought to predict and explain variation, not sweep variation under the rug." [@Blasi2022]
+>  "... universal theorizing requires adequately sampled (i.e., diverse) data and better appreciation of issues of comparability and the most powerful theories ought to predict and explain variation, not sweep variation under the rug." [@Blasi2022]
 
 Again, sophisticated treatments of all of the ideas are available in one form or another across the excellent textbooks on multilevel modeling [@Raudenbush2002; @Singer2003; @RabeHesketh2012; @Luke2004; @Kreft1998]. However, some of these ideas appear less often in applied research, and my intention here is to make the application of these ideas to applied research more clear. 
