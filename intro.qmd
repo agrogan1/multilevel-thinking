@@ -1,5 +1,7 @@
 # Introduction
 
+> "Sure, it’s hard to get started; remember learning to use knife and fork? Dig in: you’ll never reach bottom. It’s not like it’s the end of the world--just the world as you think you know it." [@Dove1999]
+
 ```{r}
 
 library(ggplot2) # beautiful graphs
@@ -79,19 +81,15 @@ The document moves quickly into detailed statistical arguments. Some of these st
 
 ## Universalism And Particularity
 
+> "My conception of the universal is that of a universal enriched by all that is particular, a universal enriched by every particular: the deepening and coexistence of all particulars." [@Cesaire1956]
+
 The specific domain of cross-cultural research on parenting and child development raises more general questions in cross-cultural research of *universalism* and *particularity*. With regard to child development it is universal that all children need some amount of emotional and material care to grow into healthy youth and healthy adults [@Kottak2021]. Further it is broadly understood that children should be protected from violence [@UNICEF2014]. This broad consensus is manifested in such documents as the Convention on the Rights of the Child [@UN1989] and the United Nations Sustainable Development Goals [@UN2022], representing global efforts to ensure the children are cared for, and are protected against violence.
 
 At the same time, broad international efforts to improve children's well-being must engage with important considerations of cultural uniqueness. Put simply, what is considered to be beneficial for children in one country or culture may not be considered to be beneficial in all countries or cultures. Similarly, what is considered to be detrimental in one country or culture may not equally be considered to be detrimental in all. Within the area of parenting and child development, most of the debate has focused around the question of whether physical punishment is equally detrimental in all settings, particularly whether physical punishment is detrimental in countries where it is especially common, or normative [@Gershoff2010]. Much less attention has been focused on the study of positive parenting internationally, and the degree to which the outcomes of positive parenting are consistent across countries remains understudied [@ward_grogan-kaylor_ma_pace_lee_2021].
 
 However, as global initiatives to improve child well-being and family life move forward, it becomes increasingly important to continue to collect internationally relevant data about parenting and child outcomes. If recommendations are to be made for policies, interventions, or treatments, such recommendations must be based on accurate balancing of that which is universal against that which is unique to particular cultural contexts. Thus it is necessary to employ statistical methods that are able to adequately and accurately analyze data across countries.
 
-As I will outline below--and is evident in the literature [@Raudenbush2002; @Singer2003; @RabeHesketh2012; @Luke2004; @Kreft1998]--multilevel models are eminently suited for cross-cultural research in that they are not only able to *control for* the clustering of study participants within countries, but are also able to *explore the variation*--or *consistency*--of patterns of family life across countries.
-
-Long ago, Cesaire, writing about liberatory movements wrote… 
-
-> "My conception of the universal is that of a universal enriched by all that is particular, a universal enriched by every particular: the deepening and coexistence of all particulars." [@Cesaire1956]
-
-It is this sensibility that I hope to echo in my discussion of the multilevel model below.
+As I will outline below--and is evident in the literature [@Raudenbush2002; @Singer2003; @RabeHesketh2012; @Luke2004; @Kreft1998]--multilevel models are eminently suited for cross-cultural research in that they are not only able to *control for* the clustering of study participants within countries, but are also able to *explore the variation*--or *consistency*--of patterns of social life across countries.
 
 ## Multilevel Models As The Study Of Variation {#sec-studyvariation}
 

@@ -1,5 +1,7 @@
 # Conceptual Framework {#sec-conceptualframework}
 
+> "The language we have in that world is not large enough for the territory that we’ve already entered." [@Whyte2016]
+
 ```{r}
 
 library(ggplot2) # beautiful graphs

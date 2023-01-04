@@ -1,5 +1,7 @@
 # The Longitudinal Multilevel Model
 
+> "Mathematics is the art of giving the same name to different things." [@Poincare1908]
+
 ```{r}
 
 library(haven) # read Stata
@@ -21,8 +23,6 @@ library(pander) # nice tables
 # library(gt) # beautiful tables
 
 ```
-
-> "Mathematics is the art of giving the same name to different things." [@Poincare1908]
 
 Counter-intuitively, and surprisingly, the mathematics of estimating models with cross-sectional clustered data easily generalizes to longitudinal data. In cross sectional clustered data, we imagine *individuals clustered in neighborhoods, schools, or countries*.
 

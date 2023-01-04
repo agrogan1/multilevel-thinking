@@ -1,5 +1,7 @@
 # The Cross Sectional Multilevel Model
 
+> "Mathematical Science shows us what is. It is the language of unseen relations between things. But to use & apply that language we must be able fully to appreciate, to feel, to seize, the unseen, the unconscious. Imagination too shows us what is, the is that is beyond the senses.” [@Lovelace1992]
+
 ```{r}
 
 library(haven) # read Stata
