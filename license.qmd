@@ -1,4 +1,6 @@
-# License {.unnumbered}
+# License and Citation {.unnumbered}
+
+## License
 
 ```{r}
 
@@ -7,7 +9,7 @@ knitr::include_graphics("88x31.png")
 ```
 
 
-*Multilevel Thinking* by [Andrew Grogan-Kaylor](https://agrogan1.github.io/) is licensed under [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/)
+*Multilevel Thinking* by [Andrew Grogan-Kaylor](https://agrogan1.github.io/) is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/)
 
 ## Citation
 

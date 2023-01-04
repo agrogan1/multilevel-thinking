@@ -233,15 +233,22 @@
   {
     "objectID": "license.html#citation",
     "href": "license.html#citation",
-    "title": "License",
+    "title": "License and Citation",
     "section": "Citation",
     "text": "Citation\nFor attribution, please cite as:\nGrogan-Kaylor (2023). Multilevel Thinking. Retrieved from https://agrogan1.github.io/multilevel-thinking"
   },
   {
     "objectID": "license.html#bibtex-citation",
     "href": "license.html#bibtex-citation",
-    "title": "License",
+    "title": "License and Citation",
     "section": "BibTeX Citation",
     "text": "BibTeX Citation\n\n\n@book{,\n   author = {Andrew Grogan-Kaylor},\n   city = {Ann Arbor, MI},\n   title = {Multilevel Thinking},\n   url = {https://agrogan1.github.io/multilevel-thinking/},\n   year = {2023},\n}"
+  },
+  {
+    "objectID": "license.html#license",
+    "href": "license.html#license",
+    "title": "License and Citation",
+    "section": "License",
+    "text": "License\n\n\n\n\n\nMultilevel Thinking by Andrew Grogan-Kaylor is licensed under Creative Commons Attribution 4.0 International License"
   }
 ]
