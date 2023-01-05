@@ -142,11 +142,11 @@ We see that in the ordinary least squares analysis, the independent variable is 
 
 Associations between two variables can be *very different* (or even *reversed*) depending upon whether or not the analysis is "aware" of the grouped, nested, or clustered nature of the data [@Gelman2007]. In the example presented here, the groups are countries, but could as easily be neighborhoods, communities, or schools.
 
-For pedagogical purposes, I use an example with very few clusters, although it would be more appropriate to apply multilevel analysis to an example with many more clusters e.g. ($N_\text{clusters} >= 30$)
+> For teaching purposes, I use an example with very few clusters, although it would be more appropriate to apply multilevel analysis to an example with many more clusters e.g. ($N_\text{clusters} >= 30$)
 
 A model that is "aware" of the clustered nature of the data may provide very different--likely better--substantive conclusions than a model that is not aware of the clustered nature of the data. 
 
-### Use Some Data Simulated For This Particular Example
+I use some data simulated for this particular example.
 
 ```{r}
 
@@ -240,6 +240,8 @@ p0 +
   scale_color_viridis_d()
 
 ```
+
+The idea that group level and individual level relationships must be the same [@FIREBAUGH20014023] has been termed the "ecological fallacy".
 
 These data are constructed to provide this kind of extreme example, but it easy to see how multilevel thinking, and multilevel analysis may provide better answers than one would get if one ignored the grouped nature of the data.
 
