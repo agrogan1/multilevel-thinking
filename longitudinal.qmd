@@ -401,11 +401,15 @@ Second, estimates for any quantities that do not vary over time, in this case, `
 
 The *correlated random effects* model is based upon ideas first developed by @Mundlak1978 and later explicated in @Wooldridge2010. @Antonakis2019 and @Schunck2013 provide very intuitive explanations of this model. 
 
-The central idea is that one can obtain estimates of both the time invariant variables, and estimates for time varying variables. The key idea is that for time varying variables, I include the individual level mean for that variable in the model. Thus, in the example below, I include $\beta_{1a}\overline{\text{parental warmth}}_{i}$. 
+The central idea is that one can obtain estimates of both the time invariant variables, and estimates for time varying variables. The key idea is that for time varying variables, I include the *individual* level mean for that variable in the model. Thus, in the example below, I include $\beta_{1a}\overline{\text{parental warmth}}_{i}$ and $\beta_{2a}\overline{\text{physical punishment}}_{i}$. [^CREcrosssectional]
+
+[^CREcrosssectional]: The correlated random effects model can also be applied cross-sectionally, but the model is much easier to explicate in the longitudinal context.
 
 $$\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_{1a}\overline{\text{parental warmth}}_{i} \ + $$ {#eq-CRE}
 
-$$\beta_2 \text{physical punishment}_{it} + \beta_3 \text{time}_{it} \ + $$ 
+$$\beta_2 \text{physical punishment}_{it} + \beta_{2a}\overline{\text{physical punishment}}_{i} + $$
+
+$$\beta_3 \text{time}_{it} \ + $$ 
 
 $$\beta_4 \text{group}_{it} + \beta_5 \text{HDI}_{it} \ +$$
 
@@ -415,7 +419,7 @@ By including this parameter, I  obtain estimates for the time varying variables 
 
 The Stata command for the correlated random effects model is:
 
-`mixed outcome t warmth mean_warmth physical_punishment group HDI || id:`
+`mixed outcome t warmth mean_warmth physical_punishment mean_physicalpunishment group HDI || id:`
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table4.md')}
 ```
