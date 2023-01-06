@@ -1,5 +1,7 @@
 # Software {#sec-software}
 
+> "– And so, why can’t my numbers be beautiful to me? Why the scorn, the doubt in your face? Do you think I am brittle and dusty as old paper? Look again. See the numbers shine in my eyes." [@Pye2011]
+
 In this document, I use Stata [@StataCorp2021] to analyze data. Stata is my software of choice in this document because of Stata's overall ease of use and intuitiveness. The creators of Stata have created a powerful program that is extremely simple to use, but with a wide range of both basic and advanced statistical capabilities. 
 
 The general idea of most Stata commands is:
