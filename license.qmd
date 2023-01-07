@@ -19,7 +19,9 @@ Grogan-Kaylor (2023). *Multilevel Thinking*. Retrieved from [https://agrogan1.gi
 
 ## BibTeX Citation
 
-```{text, eval=FALSE, echo=TRUE}
+```{verbatim}
+#| eval: FALSE
+#| echo: TRUE
 
 @book{,
    author = {Andrew Grogan-Kaylor},
