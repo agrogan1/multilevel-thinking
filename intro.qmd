@@ -33,6 +33,8 @@ There is thus an ethical argument that is embedded in this document. Many of us 
 
 The idea of this document is that a deeper study of multilevel modeling can result in an advanced "quantitative literacy" [@Wiest2007], or "principled argument" [@Abelson1995], that is appropriate for drawing accurate conclusions from multilevel data. 
 
+I am not much of a philosopher of science. However, I am very persuaded by @Strevens2020' minimalist criterion of the "iron rule". In essence, this rule specifies that to count as "science", investigations must carry out "an experiment or make an observation that generates relevant empirical evidence" against which competing hypotheses can be tested. I believe that our work—whether qualitative, or quantitative—should strive to be both critical *and* scientific, in the sense that our research should gather evidence, and that evidence should be assessed in order to support, refute, or modify our initial beliefs. A similar perspective is offered by @Goldacre2011 who argues that ideas about interventions--and I would argue all ideas about promoting human well-being--should be scrutinized with a "fair test". That is to say, they should be tested against evidence that can support or refute those ideas. @ShraderFrechette2014 argues that a "practical philosophy of science" can contribute both to “speaking truth to power” and to "seeking justice". 
+
 ## Are Answers from Social Science "Obvious"?
 
 Closely related, I think to the the idea that quantitative research can advance issues of social justice, is the question of whether answers from social science are "obvious". If social science answers are obvious, then social science has limited abilities to make new discoveries, and to build scientific foundations for evidence. 
