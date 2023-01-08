@@ -66,7 +66,9 @@ To make these ideas more concrete, I rewrite this equation in terms of the main 
 
 $$\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{j} \ + $$ {#eq-MLMsubstantive}
 
-$$u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}$$ 
+$$u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}$$
+
+Put substantively, this model indicates that the outcome can be conceptualized as a function of an intercept term, and contributions of parental warmth, physical punishment, group membership, and country level HDI. The random intercept, $u_{0j}$ indicates that there is some unexplained variation in the outcome at the country level. The random slope $u_{1j} \times \text{parental warmth}$ indicates that the model is allowing for country level variation in the association of parental warmth with the outcome. Inspection of @fig-data indicates that it might be possible that there would be variation across countries in this slope. The model could be extended to allow for country level variation in other slope terms by adding other random slopes, eg $u_{2j}$, $u_{3j}$, etc.
 
 Drawing upon ideas from @sec-software, this single level equation can be easily represented in Stata syntax.
 
