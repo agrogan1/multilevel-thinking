@@ -440,6 +440,7 @@ div.csl-indent {
 <p>To make these ideas more concrete, I rewrite this equation in terms of the main substantive ideas of this document:</p>
 <p><span id="eq-MLMsubstantive"><span class="math display">\[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{j} \ +  \tag{6.4}\]</span></span></p>
 <p><span class="math display">\[u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}\]</span></p>
+<p>Put substantively, this model indicates that the outcome can be conceptualized as a function of an intercept term, and contributions of parental warmth, physical punishment, group membership, and country level HDI. The random intercept, <span class="math inline">\(u_{0j}\)</span> indicates that there is some unexplained variation in the outcome at the country level. The random slope <span class="math inline">\(u_{1j} \times \text{parental warmth}\)</span> indicates that the model is allowing for country level variation in the association of parental warmth with the outcome. Inspection of <a href="simulated-multi-country-data.html#fig-data">Figure&nbsp;<span>3.2</span></a> indicates that it might be possible that there would be variation across countries in this slope. The model could be extended to allow for country level variation in other slope terms by adding other random slopes, eg <span class="math inline">\(u_{2j}\)</span>, <span class="math inline">\(u_{3j}\)</span>, etc.</p>
 <p>Drawing upon ideas from <a href="software.html"><span>Chapter&nbsp;4</span></a>, this single level equation can be easily represented in Stata syntax.</p>
 <p><code>mixed outcome warmth physical_punishment group HDI || country: warmth</code></p>
 </section>
@@ -458,10 +459,10 @@ div.csl-indent {
 <p>The graph below illustrates the process of simulating the data.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-simulatedclustereddata" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="cross-sectional_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Simulated Clustered Data</figcaption><p></p>
+<p><img src="cross-sectional_files/figure-html/fig-simulatedclustereddata-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.1: Simulated Clustered Data</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -549,7 +550,7 @@ div.csl-indent {
 <div id="fig-naive" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="cross-sectional_files/figure-html/fig-naive-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6.1: A ‘Naive’ Graph</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.2: A ‘Naive’ Graph</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -563,7 +564,7 @@ div.csl-indent {
 <div id="fig-aware" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="cross-sectional_files/figure-html/fig-aware-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6.2: An ‘Aware’ Graph</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.3: An ‘Aware’ Graph</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -847,7 +848,7 @@ cov(u_{0j}, u_{1j}) &amp; var(u_{1j})
 <div id="fig-variationsources" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="cross-sectional_files/figure-html/fig-variationsources-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6.3: Sources of Variation in a Multilevel Model</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.4: Sources of Variation in a Multilevel Model</figcaption><p></p>
 </figure>
 </div>
 </div>
