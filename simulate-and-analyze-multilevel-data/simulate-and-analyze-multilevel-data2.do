@@ -136,6 +136,32 @@ export("table1A.md", as(markdown) replace)
 
 estimates drop cross_sectional2
 
+* within and between
+
+egen gmean_warmth = mean(warmth) // grand mean
+
+bysort country: egen cmean_warmth = mean(warmth) // country specific means
+
+generate dev_warmth = warmth - cmean_warmth // deviation from country specific means
+
+generate cdev_warmth = cmean_warmth - gmean_warmth // deviation from grand mean
+
+mixed outcome dev_warmth cdev_warmth physical_punishment i.group HDI || country: warmth // multilevel model
+
+estat sd, variance post // post results as variance scale rather than log scale
+
+est store cross_sectional3 // store estimates
+
+etable, estimates(cross_sectional3) ///
+cstat(_r_b) /// beta's only
+showstars showstarsnote ///
+column(estimates) ///
+export("table1B.md", as(markdown) replace)
+
+estimates drop cross_sectional3
+
+drop gmean_warmth cmean_warmth dev_warmth cdev_warmth
+
 ********************
 * longitudinal
 ********************

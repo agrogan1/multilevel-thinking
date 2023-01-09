@@ -296,6 +296,125 @@ When we estimate such a model, we get the following information.
 
 Results are mostly similar to those above. However, here, we are asking additionally for information about the possible correlation of country specific initial levels of the outcome and the slope of the country specific regression line for parental warmth. Results indicate that there is no reason to be believe that these two parameters are correlated. Put more intuitively, it does not appear that parental warmth is any more or less correlated with the outcome in countries where initial levels of the outcome are higher. 
 
+## Within and Between {#sec-withinbetween}
+
+```{r}
+
+simulated_multilevel_data <- read_dta("simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta")
+
+```
+
+Coefficients in models can be divided into within and between. A substantive example may be helpful here. When we consider the variable of parental `warmth`, we can imagine the parental warmth expressed in each family, $\text{warmth}_{ij}$, representing family *i* in country *j*. We can also think about the *grand mean* of warmth across the entire sample, $\overline{\text{warmth}}_{..}$. We can then also think about the mean expression of parental warmth in each country, $\overline{\text{warmth}}_{.j}$, i.e. the mean level of parental warmth in country *j*.
+
+```{r}
+#| fig-cap: "Distribution of Parental Warmth Across Countries"
+#| fig-height: 6
+#| label: fig-distributionwarmth
+
+library(ggplot2)
+
+simulated_multilevel_data$country <- factor(simulated_multilevel_data$country)
+
+ggplot(simulated_multilevel_data,
+       aes(x = warmth,
+           fill = country)) +
+  geom_bar() +
+  scale_fill_viridis_d(name = "Country") +
+  facet_wrap(~country) +
+  labs(title = "Levels of Parental Warmth",
+       subtitle = "by Country",
+       x = "Parental Warmth",
+       caption = "Every country has a different distribution of parental warmth \nand mean level of parental warmth") +
+  # coord_flip() +
+  theme_minimal() +
+  theme(axis.text = element_text(size = rel(.5)))
+
+```
+
+Bearing this in mind, one can then think about the *difference* between each individual expression of parental warmth and the overall, or grand mean: $\text{warmth}_{ij} - \overline{\text{warmth}}_{..}$. This value can then be decomposed into two values:
+
+$$\text{warmth}_{ij} - \overline{\text{warmth}}_{..} = \text{warmth}_{ij} - \overline{\text{warmth}}_{.j} + \overline{\text{warmth}}_{.j} - \overline{\text{warmth}}_{..}$$
+Put into words, this equation says that the difference in parental warmth displayed by family i in country j from the overall or grand mean of parental warmth is composed of two components:
+
+* *Within Country Component*: How is the level of warmth expressed by family *i* in country *j* different from the *mean* level of warmth in country *j*. Is family *i* different from the *average* family in country *j*? For this particular country, is this a family that is higher, or lower, than average in parental warmth?
+* *Between Country Component*: How is the *mean* level of warmth in country *j* different from the overall or *grand mean* level of warmth in the sample as a whole? To what degree is country *j* different from *all countries* in the sample? Is this country a country where parents tend to be higher, or lower, in parental warmth?
+
+Theoretically, or conceptually, one might imagine that it would be useful to decompose a particular behavior into within country and between country components. The within country component could be theorized as *how an individual family differs from their context*, and the between country component could be theorized as *how a particular context differs from the average context*. 
+
+```{r}
+#| fig-cap: "Decomposing a Variable into Within and Between Differences"
+#| fig-height: 3
+#| label: fig-withinbetween
+
+aggdata <- multilevelstructure %>%
+  filter(country != 2) %>%
+  group_by(country) %>%
+  summarise(mean_x = mean(x))
+
+multilevelstructure %>%
+  filter(country != 2) %>%
+ggplot(aes(x = x,
+           fill = factor(country))) +
+  geom_density(alpha = .5) +
+  geom_vline(aes(xintercept = mean(x)), 
+             linewidth = 2) +
+  geom_vline(data = aggdata, 
+             aes(xintercept = mean_x)) +
+  geom_segment(aes(x = 15.5, 
+                   xend = 25.5,
+                   y = .05, 
+                   yend = .05),
+               arrow = arrow(ends = "both",
+                             length = unit(0.1, 
+                                           "inches"))) +
+  geom_segment(aes(x = 25.5,
+                   xend = 21,
+                   y = .025,
+                   yend = .025),
+               arrow = arrow(ends = "both",
+                             length = unit(0.1, 
+                                           "inches"))) +
+  geom_point(aes(x = 21, 
+                 y = .025),
+             color = "red",
+             show.legend = FALSE) +
+  annotate("text", 
+           x = 19, 
+           y = .07, 
+           label = "\ncountry mean - \ngrand mean",
+           size = 3) +
+  annotate("text", 
+           x = 22, 
+           y = .015, 
+           label = "\nindividual mean - \ncountry mean",
+           size = 3) +
+  scale_fill_manual(name = "Country",
+                    values = c("#440154", "#FDE725"),
+                    labels = c("A", "B")) +
+  labs(title = "Components of An Individual Score",
+       y = "") +
+  theme_minimal()
+
+```
+
+In terms of using statistical software (Stata), we need to follow a few steps.
+
+1. Calculate the *grand mean* of the variable.
+2. Calculate *country specific means* of the variable.
+3. Calculate:
+    + individual scores - country specific means
+    + country specific means - grand mean
+
+1. `egen gmean_warmth = mean(warmth)`
+2. `bysort country: egen cmean_warmth = mean(warmth)`
+3. `generate dev_warmth = warmth - cmean_warmth`
+4. `generate cdev_warmth = cmean_warmth - gmean_warmth`
+
+```{r, child=c('./simulate-and-analyze-multilevel-data/table1B.md')}
+```
+
+Estimates suggest that both the difference in an individual family's expression of parental warmth from the country level mean, *and* the difference in the country level mean from the grand mean are statistically significant predictors of the outcome. The difference in the country level mean from the grand mean appears to have the larger effect.
+
 ## Summary of Advantages Of The Multilevel Model
 
 The discussion so far gives an idea of the advantages of the multilevel model for studying intrinsically multilevel data: children in classrooms or schools; individuals or families in neighborhoods; individuals or families in countries. These advantages can be summarized below:
