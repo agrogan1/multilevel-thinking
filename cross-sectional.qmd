@@ -94,6 +94,7 @@ The graph below illustrates the process of simulating the data.
 ```{r}
 #| fig-cap: "Simulated Clustered Data"
 #| fig-height: 3
+#| label: fig-simulatedclustereddata
 
 ggplot(simulated_clustered_data,
        aes(color = factor(group_numA),
