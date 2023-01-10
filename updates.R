@@ -8,7 +8,7 @@ mybib <- sort(mybib, sorting = "nyt") # sort by name - year - title
 
 WriteBib(mybib, file = "multilevel-thinking.bib")
 
-# use pandoc to conver to PDF
+# use pandoc to convert to PDF
 
 # getwd()
 # 
