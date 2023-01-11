@@ -5,7 +5,7 @@
 | group               |                  |    |
 |   2                 | 0.727            | ** |
 | HDI                 | 0.007            |    |
-| Intercept           | 51.523           | ** |
+| _cons               | 51.523           | ** |
 | var(warmth)         | 0.002            |    |
 | var(_cons)          | 2.982            |    |
 | cov(warmth,_cons)   | 0.086            |    |

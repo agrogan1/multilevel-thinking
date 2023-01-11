@@ -74,6 +74,22 @@ generate outcome = 50 + ///
 1 * t + ///
 u_0i + u_0ij + e_ijt
 
+* labels
+
+label variable warmth "parental warmth in past week"
+
+label variable physical_punishment "physical punishment in past week"
+
+label variable HDI "Human Development Index"
+
+label variable group "arbitrary group variable"
+
+label variable country "country id"
+
+label variable family "family id"
+
+label variable id "unique country family id"
+
 ********************
 * save data
 ********************
@@ -113,6 +129,7 @@ estat sd, variance post // post results as variance scale rather than log scale
 est store cross_sectional // store estimates
 
 etable, estimates(cross_sectional) ///
+novarlabel /// variable names only
 cstat(_r_b) /// beta's only
 showstars showstarsnote ///
 column(estimates) ///
@@ -129,6 +146,7 @@ estat sd, variance post // post results as variance scale rather than log scale
 est store cross_sectional2 // store estimates
 
 etable, estimates(cross_sectional2) ///
+novarlabel /// variable names only
 cstat(_r_b) /// beta's only
 showstars showstarsnote ///
 column(estimates) ///
@@ -153,6 +171,7 @@ estat sd, variance post // post results as variance scale rather than log scale
 est store cross_sectional3 // store estimates
 
 etable, estimates(cross_sectional3) ///
+novarlabel /// variable names only
 cstat(_r_b) /// beta's only
 showstars showstarsnote ///
 column(estimates) ///
@@ -183,6 +202,7 @@ estat sd, variance post // post results as variance scale rather than log scale
 est store longitudinal // store estimates
 
 etable, estimates(longitudinal) ///
+novarlabel /// variable names only
 cstat(_r_b) /// beta's only
 showstars showstarsnote ///
 column(estimates) ///
@@ -215,12 +235,14 @@ estat sd, variance post // post results as variance scale rather than log scale
 est store CRE // store estimates
 
 etable, estimates(MLM FE) /// MLM & FE
+novarlabel /// variable names only
 cstat(_r_b) /// beta's only
 showstars showstarsnote ///
 column(estimates) ///
 export("table3.md", as(markdown) replace)
 
 etable, estimates(MLM FE CRE) /// MLM, FE & CRE
+novarlabel /// variable names only
 cstat(_r_b) /// beta's only
 showstars showstarsnote ///
 column(estimates) ///
