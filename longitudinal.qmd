@@ -313,12 +313,16 @@ If *other factors* are omitted from the regression model, then the estimates for
 
 ### Simpson's Paradox
 
-Earlier, in @sec-multilevelstructure, I referred to the idea of *multilevel structure* wherein failure to account for the clustering of data--omission of $u_0$ from the equation being estimated--may lead to incorrect conclusions. A closely related phenomenon is that of *Simpson's Paradox* [@Simpson1951] wherein omission of a relevant *covariate* (e.g. SES, community characteristics, country level characteristics) may also lead to dramatically incorrect results. 
+Earlier, in @sec-multilevelstructure, I referred to the idea of *multilevel structure* wherein failure to account for the clustering of data--omission of $u_0$ from the equation being estimated--may lead to incorrect conclusions. A closely related phenomenon is that of *Simpson's Paradox* [@Simpson1951] wherein omission of a relevant *covariate* (e.g. $z_{it}$ such as SES, community characteristics, country level characteristics) may also lead to dramatically incorrect results. 
 
 Statistically, we imagine a situation where the true model is:
 
-$$\text{child outcome}_{it} = \beta_0 + \beta_1 \text{parenting}_{it} + \beta_2 \text{community or country characteristic}_{it} + e_{it}$$
-If *community or country characteristics* in fact influence *outcome*, but are not included in the statistical model, perhaps because they are not measured in the data, then the estimate of $\beta_1$ for *parenting* will be biased. See @fig-Simpson for an illustration.
+$$\text{child outcome}_{it} = \beta_0 + \beta_1 \text{parenting}_{it} +$$ 
+
+$$\beta_2 \text{individual or family or community or country characteristic}_{it} + $$
+$$u_{0i} + e_{it}$$
+
+If *individual or family or community or country characteristics* in fact influence *outcome*, but are not included in the statistical model, perhaps because they are not measured in the data, then the estimate of $\beta_1$ for *parenting* will be biased. See @fig-Simpson for an illustration. When possible confounders are *measured*, we can include those variables in the statistical model. When possible confounders are *unmeasured*, we need to try to use methods that capture those *unmeasured* confounders.
 
 ```{r}
 
