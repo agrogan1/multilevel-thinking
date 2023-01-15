@@ -351,8 +351,8 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#units-of-analysis" id="toc-units-of-analysis" class="nav-link active" data-scroll-target="#units-of-analysis"><span class="toc-section-number">5.1</span>  Units of Analysis</a></li>
-  <li><a href="#sec-levels" id="toc-sec-levels" class="nav-link" data-scroll-target="#sec-levels"><span class="toc-section-number">5.2</span>  Variables and Processes at Multiple Levels</a></li>
+  <li><a href="#units-of-analysis-and-processes-at-multiple-levels" id="toc-units-of-analysis-and-processes-at-multiple-levels" class="nav-link active" data-scroll-target="#units-of-analysis-and-processes-at-multiple-levels"><span class="toc-section-number">5.1</span>  Units of Analysis and Processes at Multiple Levels</a></li>
+  <li><a href="#sec-levels" id="toc-sec-levels" class="nav-link" data-scroll-target="#sec-levels"><span class="toc-section-number">5.2</span>  Variables at Multiple Levels</a></li>
   <li><a href="#sec-studyvariation" id="toc-sec-studyvariation" class="nav-link" data-scroll-target="#sec-studyvariation"><span class="toc-section-number">5.3</span>  Multilevel Models As The Study Of Variation</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -383,9 +383,10 @@ div.csl-indent {
 <div class="cell">
 
 </div>
-<section id="units-of-analysis" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="units-of-analysis"><span class="header-section-number">5.1</span> Units of Analysis</h2>
-<p>When confronted with multilevel data, one has a number of choices about the units of analysis: one could consider individuals to be the units of analysis; or, one could consider the larger social units to be the units of analyses. With multilevel analytic methods, one is able to avoid this false dichotomy, and to conceptualize the data from a multilevel perspective, wherein both individuals and social units are different levels of the same analysis. I discuss some of the statistical implications of different ideas about the units of analysis in <a href="cross-sectional.html#sec-wrongapproaches"><span>Section&nbsp;6.10</span></a></p>
+<section id="units-of-analysis-and-processes-at-multiple-levels" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="units-of-analysis-and-processes-at-multiple-levels"><span class="header-section-number">5.1</span> Units of Analysis and Processes at Multiple Levels</h2>
+<p>When confronted with multilevel data, one has a number of choices about the units of analysis: one could consider individuals to be the units of analysis; or, one could consider the larger social units to be the units of analyses. With multilevel analytic methods, one is able to avoid this false dichotomy, and to conceptualize the data from a multilevel perspective, wherein both individuals and social units are different levels of the same analysis. I discuss some of the statistical implications of different ideas about the units of analysis in <a href="cross-sectional.html#sec-wrongapproaches"><span>Section&nbsp;6.10</span></a>.</p>
+<p>Further, with multilevel models, we are not only able to consider the idea of units of analysis at multiple levels of the data, but to consider how variables at both Level 2 and Level 1 may affect an individual level (Level 1) outcome.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-conceptual" class="quarto-figure quarto-figure-center anchored">
@@ -398,7 +399,10 @@ div.csl-indent {
 </div>
 </section>
 <section id="sec-levels" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="sec-levels"><span class="header-section-number">5.2</span> Variables and Processes at Multiple Levels</h2>
+<h2 data-number="5.2" class="anchored" data-anchor-id="sec-levels"><span class="header-section-number">5.2</span> Variables at Multiple Levels</h2>
+<p>In this document, I distinguish between <em>conceptual</em> and <em>statistical</em> levels of variables.</p>
+<p>By <em>conceptual</em> level, I refer to whether a variable is <em>conceptualized</em> to be measure of an <em>individual</em> level characteristic, such as parenting or mental health, or a <em>community</em> level construct, such as community collective efficacy, or community safety.</p>
+<p>By <em>statistical</em> level, I refer to whether a variable measures an <em>individual</em> response, or an <em>aggregated</em> response.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="tbl-variablelevel" class="anchored">
@@ -437,9 +441,6 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>In this document, I distinguish between <em>conceptual</em> and <em>statistical</em> levels of variables.</p>
-<p>By <em>conceptual</em> level, I refer to whether a variable is <em>conceptualized</em> to be measure of an <em>individual</em> level characteristic, such as parenting or mental health, or a <em>community</em> level construct, such as community collective efficacy, or community safety.</p>
-<p>By <em>statistical</em> level, I refer to whether a variable measures an <em>individual</em> response, or an <em>aggregated</em> response.</p>
 <ul>
 <li><p>Thus, <span class="math inline">\(\text{mental health}_{ij}\)</span> or <span class="math inline">\(\text{parenting}_{ij}\)</span> would be considered in the terminology that I am using to be a variable both <em>conceptually</em> and <em>statistically</em> at Level 1.</p></li>
 <li><p><span class="math inline">\(\overline{\text{mental health}_{.j}}\)</span> or <span class="math inline">\(\overline{\text{parenting}_{.j}}\)</span> would be variables that <em>conceptually</em> come from Level 1 responses, but are <em>statistically</em> aggregated to Level 2.</p></li>
