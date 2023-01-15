@@ -109,3 +109,118 @@ Some variables only exist at Level 2, and their Level 1 counterparts are undefin
 # [@Morgenstern1995] [@DiezRoux2002]
 
 ```
+
+## Multilevel Models As The Study Of Variation {#sec-studyvariation}
+
+> "Every being cries out silently to be read differently." 
+
+— Simone Weil, *Gravity and Grace* as reported in @Su2017
+
+Multilevel models are sometimes seen as an analytic technique that *controls for* the clustering or nesting of individuals inside larger social units such as schools, neighborhoods, or countries. I will describe below how this ability to *control for* clustering is indeed an important and crucial aspect of multilevel models.
+
+However, my argument here is that multilevel models are better seen as a method to *explore* the variation in inherent within nested or clustered data. Again, while these issues are well understood within the statistical literature [@Raudenbush2002; @Singer2003; @RabeHesketh2012; @Luke2004; @Kreft1998], they are less often noted in applied research.
+
+In the graph below, imagine that physical punishment, or some other risk factor, is associated with detrimental mental health outcomes. Each country in the data has its own *country specific regression line*.
+
+```{r}
+#| label: fig-variation1
+#| fig-cap: "Plausible Alternative Patterns of Between Country Variation"
+#| fig-height: 6
+
+tribble(
+  ~panel, ~beta0, ~beta1, ~u0, ~u1, ~label,
+  "A", 9, -1, .5, .1, "average association",
+  "B", 8, -1, 1.5, .5, "average association",
+  "C", 5, 0, .5, .25, "average association") %>% 
+  uncount(weights = 30) %>%
+  group_by(panel) %>%
+  mutate(country = factor(row_number())) %>%
+  ungroup() %>%
+  rowwise() %>%
+  mutate(intercept = beta0 + rnorm(1, 0, u0),
+         slope = beta1 + rnorm(1, 0, u1)) %>%
+  ggplot() +
+  geom_abline(aes(intercept = intercept, 
+                  slope = slope,
+                  color = country)) +
+  geom_labelabline(aes(intercept = beta0,
+                      slope = beta1,
+                      label = label),
+                  color = "red",
+                  size = 2) +
+  facet_wrap(~panel) +
+  labs(title = "Plausible Alternative Patterns of Between Country Variation",
+       subtitle = "In The Relationship of Physical Punishment \nWith Psychological Wellbeing",
+       x = "physical punishment",
+       y = "psychological wellbeing") +
+  xlim(0,10) +
+  ylim(0,10) +
+  scale_color_viridis_d() +
+  theme_minimal() +
+  theme(axis.text.x = element_text(size = rel(.75)))
+
+```
+
+In Panel A, there is some variation in the *intercept*, which is equivalent to saying that there is some variation in the average level of psychological well-being across countries. When we look at the slope of the country-specific regression lines in Panel A, we notice that there is little variation in these *slopes*. Put another way, there is a great amount of consistency in the slopes of the country-specific regression lines: parental use of physical punishment is consistently associated with decreases in child psychological wellbeing across countries.
+
+In Panel B, the situation is different. There is more variation in the *intercept*, that is, more variation between countries in the initial or average amount of psychological well-being. There is also more variation in the *slopes* of the country-specific regression lines. While the average association between physical punishment and psychological well-being is very similar to that in Panel A, there is more variation across countries, in the relationship of physical punishment and child psychological wellbeing, which would likely merit exploration were one considering developing programs, policies or interventions for different countries. 
+
+Lastly, the pattern of variation in Panel C is considerably different from either Panel A or Panel B. The average association of physical punishment with psychological well-being in the hypothetical scenario represented by Panel C is approximately 0. There is some variation in the *intercepts* of the country-specific regression lines. Additionally, there is considerable variation in the *slopes* of the country-specific regression line, suggesting that the use of physical punishment might be beneficial in some countries, and detrimental in others. 
+
+Empirically, data generally suggest a scenario somewhere between Panel A and Panel B, but these different hypothetical scenarios afford us the opportunity to think about possible patterns of variation.
+
+A second pedagogically helpful example might be obtained if we flip the slopes in the diagram, and consider a different set of independent variables, perhaps some kind of treatment or intervention designed to improve psychological well-being. 
+
+```{r}
+#| label: fig-variation2
+#| fig-cap: "Considering an Intervention or Treatment Across Countries"
+#| fig-height: 6
+
+tribble(
+  ~panel, ~beta0, ~beta1, ~u0, ~u1, ~label,
+  "A", 1, 1, .5, .1, "average association",
+  "B", 1, 1, 1.5, .5, "average association",
+  "C", 5, 0, .5, .25, "average association") %>% 
+  uncount(weights = 30) %>%
+  group_by(panel) %>%
+  mutate(country = factor(row_number())) %>%
+  ungroup() %>%
+  rowwise() %>%
+  mutate(intercept = beta0 + rnorm(1, 0, u0),
+         slope = beta1 + rnorm(1, 0, u1)) %>%
+  ggplot() +
+  geom_abline(aes(intercept = intercept, 
+                  slope = slope,
+                  color = country)) +
+  geom_labelabline(aes(intercept = beta0,
+                       slope = beta1,
+                       label = label),
+                   color = "red",
+                   size = 2) +
+  facet_wrap(~panel) +
+  labs(title = "Considering an Intervention or Treatment Across Countries",
+       x = "hypothetical intervention",
+       y = "psychological wellbeing") +
+  xlim(0,10) +
+  ylim(0,10) +
+  scale_color_viridis_d() +
+  theme_minimal() +
+  theme(axis.text.x = element_text(size = rel(.75)))
+
+
+```
+
+We see a similar pattern as before, but the use of a different substantive example may be illustrative. 
+
+In Panel A, there is relative consistency in the initial levels of psychological well-being across countries, as well as consistency in the degree to which the intervention is associated with improvements in psychological well-being across countries. 
+
+In Panel B, we see more variation in both initial levels of psychological well-being, but also more variation in the association of the intervention with improvements in psychological well-being. 
+
+Lastly, in Panel C, we note an overall association of the intervention with psychological well-being that is close to zero. However associations vary widely by countries. In some countries there appears to be evidence that the intervention is beneficial, while in other countries there appears to be evidence that the intervention is not beneficial, or even possibly harmful. 
+
+Thus, I emphasize an approach to multilevel modeling that sees multilevel modeling as the *study of variation*, not simply *accounting for variation*, or *controlling for variation*. 
+
+>  "... universal theorizing requires adequately sampled (i.e., diverse) data and better appreciation of issues of comparability and the most powerful theories ought to predict and explain variation, not sweep variation under the rug." [@Blasi2022]
+
+Again, sophisticated treatments of all of the ideas are available in one form or another across the excellent textbooks on multilevel modeling [@Raudenbush2002; @Singer2003; @RabeHesketh2012; @Luke2004; @Kreft1998]. However, some of these ideas appear less often in applied research, and my intention here is to make the application of these ideas to applied research more clear. 
+
