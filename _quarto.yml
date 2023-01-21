@@ -59,6 +59,8 @@ format:
       echo: false
       warning: false
   pdf:
+    lot: true
+    lof: true
     execute:
       echo: false
       warning: false    
