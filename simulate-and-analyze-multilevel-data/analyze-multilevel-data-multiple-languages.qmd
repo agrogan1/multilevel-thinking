@@ -1,0 +1,32 @@
+---
+title: "Models in Multiple Languages"
+---
+
+```{r}
+
+library(JuliaCall)
+
+julia_setup(JULIA_HOME = "/Applications/Julia-1.8.app/Contents/Resources/julia/bin")
+
+```
+
+
+```{julia}
+
+using Tables, MixedModels, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
+
+df = DataFrame(load("/Users/agrogan/Desktop/GitHub/multilevel-thinking/simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta"))
+
+@transform!(df, :country = categorical(:country))
+
+```
+
+```{julia}
+
+m1 = fit(MixedModel, @formula(outcome ~ warmth + physical_punishment + 
+               group + HDI +
+               (1 + warmth | country)), df)
+
+```
+
+
