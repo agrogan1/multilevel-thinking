@@ -1,5 +1,14 @@
 ---
 title: "Models in Multiple Languages"
+author: "Andy Grogan-Kaylor"
+date: "today"
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme:
+      light: cosmo
+      dark: quartz
 ---
 
 ```{r}
