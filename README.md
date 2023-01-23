@@ -6,13 +6,12 @@ A book draft of an introduction to multilevel thinking.
 
 ## To-Do's
 
-* Is the title too long? 
-* Alternative title suggestions: 
+* New title: 
     + *Multilevel Thinking: Using Multilevel Models to Engage With Diversity in Cross Cultural Research*
-    + *Multilevel Thinking: Discovering Universals and Particulars in Cross-Cultural Research*
+    + ~*Multilevel Thinking: Discovering Universals and Particulars in Cross-Cultural Research*~
 * Should I include multiple software? e.g. Stata, R, Julia? SAS? Possibly brms/STAN--probably not--because this would involve discussion of Bayesian estimation? Probably only Stata, R and Julia.
 * may need to move section on ICC and unconditional models
-* Read Stein’s Paradox article
+* read Stein’s Paradox article
 * ✓ better explanation of random slopes
 * ✓ within and between
 * include concise summary tables
