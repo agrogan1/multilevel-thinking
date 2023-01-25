@@ -1,0 +1,84 @@
+# Reshaping Data in Stata {#sec-reshape}
+
+## Introduction
+
+Data can be reshaped from wide format to long format, and back again. Almost any software that is capable of estimating multilevel models is capable of reshaping data.
+
+Below, I detail the procedure for reshaping data in Stata. Here is a sample of the longitudinal data set used in this document.
+
+These data are in long format (see @tbl-datalong).
+
+> Every individual in the data has multiple rows. Every row of the data is a *person-timepoint*.
+
+```{r}
+
+library(haven)
+
+library(pander)
+
+```
+
+```{r}
+
+simulated_multilevel_longitudinal_data <- read_dta("simulate-and-analyze-multilevel-data/simulated_multilevel_longitudinal_data.dta")
+
+```
+
+```{r}
+#| label: tbl-reshapelongdata
+#| tbl-cap: "Data in Long Format"
+
+pander(head(simulated_multilevel_longitudinal_data))
+
+```
+
+## Reshaping Data From Long To Wide
+
+While it is not often that we want to reshape data from *long* to *wide*, we do so here for illustrative purposes. The Stata command for reshaping the data to *wide* format is:
+
+`reshape wide physical_punishment warmth outcome, i(id) j(t)` 
+
+The data are now in *wide* format (See @tbl-datawide).
+
+> Every individual in the data set has a single row of data. Every row in the data set is an individual.
+
+```{r}
+
+simulated_multilevel_longitudinal_data_WIDE <- read_dta("simulate-and-analyze-multilevel-data/simulated_multilevel_longitudinal_data_WIDE.dta")
+
+```
+
+```{r}
+#| label: tbl-reshapewidedata
+#| tbl-cap: "Data in Wide Format"
+
+pander(head(simulated_multilevel_longitudinal_data_WIDE))
+
+```
+
+## Reshaping Data From Wide To Long
+
+Usually, we are more interested in reshaping data from *wide* to *long*, and that is what I do now.
+
+The command is: 
+
+`reshape long physical_punishment warmth outcome, i(id) j(t)`
+
+If we use this command, we are back to the original format of the data set. 
+
+```{r}
+#| label: tbl-reshapelongdata2
+#| tbl-cap: "Data in Long Format"
+
+pander(head(simulated_multilevel_longitudinal_data))
+
+```
+
+
+
+
+
+
+
+
+

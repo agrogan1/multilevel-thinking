@@ -58,9 +58,9 @@ While it is less common, we could then easily add additional clustering to this 
 
 ## Use Data With Multiple Observations Per Individual
 
-Multilevel data suitable for longitudinal analysis therefore has *multiple rows of data per individual*. Put another way, *every row of data is a person-timepoint*.
+Multilevel data suitable for longitudinal analysis  has *multiple rows of data per individual*. Put another way, *every row of data is a person-timepoint*.
 
-> This method of organizing data is known as the *long* format. Another way of organizing longitudinal data--which I do not discuss in detail here--is the *wide* format in which every individual still has only one row of data. In *wide* data, the different timepoints are in different columns of data.
+> This method of organizing data is known as the *long* format. Another way of organizing longitudinal data--which I do not discuss in detail here--is the *wide* format in which every individual has only a single row of data. In *wide* data, the different timepoints are in *different columns* of data. I do discuss *reshaping* data from *wide* to *long*, and vice versa, in @sec-reshape.
 
 | id   | t    | x    |
 |------|------|------|
@@ -80,6 +80,10 @@ Multilevel data suitable for longitudinal analysis therefore has *multiple rows 
 
 : Data in Wide Format {#tbl-datawide}
 
+## Simulated Multilevel Longitudinal Data
+
+For the discussion below, I use a longitudinal version of the simulated data that has multiple rows of data per individual. 
+
 ```{r}
 
 simulated_multilevel_longitudinal_data <- 
@@ -94,6 +98,8 @@ simulated_multilevel_longitudinal_data <-
 pander::pander(head(simulated_multilevel_longitudinal_data))
   
 ```
+
+Since I will be discussing the estimation of a *longitudinal* model, it is often useful to graph the outcome variable against time. 
 
 ```{r}
 #| label: fig-data2
