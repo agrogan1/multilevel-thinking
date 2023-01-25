@@ -2,11 +2,11 @@
 
 ## Introduction
 
-Data can be reshaped from wide format to long format, and back again. Almost any software that is capable of estimating multilevel models is capable of reshaping data.
+Data can be reshaped from *wide* format to *long* format, and back again. Almost any software that is capable of estimating multilevel models is capable of reshaping data.
 
 Below, I detail the procedure for reshaping data in Stata. Here is a sample of the longitudinal data set used in this document.
 
-These data are in long format (see @tbl-datalong).
+These data are in *long* format (see @tbl-datalong).
 
 > Every individual in the data has multiple rows. Every row of the data is a *person-timepoint*.
 
