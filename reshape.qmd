@@ -34,7 +34,7 @@ pander(head(simulated_multilevel_longitudinal_data))
 
 ## Reshaping Data From Long To Wide
 
-While it is not often that we want to reshape data from *long* to *wide*, we do so here for illustrative purposes. The Stata command for reshaping the data to *wide* format is:
+While it is not often that we want to reshape data from *long* to *wide*, I do so here for illustrative purposes. The Stata command for reshaping the data to *wide* format is:
 
 `reshape wide physical_punishment warmth outcome, i(id) j(t)` 
 
