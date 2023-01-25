@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Multilevel Thinking - Acknowledgements</title>
+<title>Multilevel Thinking - Appendix B — Reshaping Data in Stata</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./license.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./Stata-for-cross-sectional-MLMs.html" rel="prev">
 <link href="./logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -66,10 +65,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="multilevel-thinking.css">
-<meta name="twitter:title" content="Multilevel Thinking - Acknowledgements">
-<meta name="twitter:description" content="No good learning happens without community. At least, that has always been true for me.">
+<meta name="twitter:title" content="Multilevel Thinking - Appendix B — Reshaping Data in Stata">
+<meta name="twitter:description" content="Data can be reshaped from wide format to long format, and back again. Almost any software that is capable of estimating multilevel models is capable of reshaping data.">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="Acknowledgements">
+<meta name="citation_title" content="[Appendix B — Reshaping Data in Stata]{#sec-reshape .quarto-section-identifier}">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-thinking/">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Where’s the evidence;,citation_author=William Silverman;,citation_publication_date=1998;,citation_cover_date=1998;,citation_year=1998;">
@@ -196,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Acknowledgements</h1>
+      <h1 class="quarto-secondary-nav-title">Appendix B — Reshaping Data in Stata</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -252,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link active">Acknowledgements</a>
+  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">Acknowledgements</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -325,7 +324,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reshape.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Reshaping Data in Stata</span></a>
+  <a href="./reshape.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Reshaping Data in Stata</span></a>
   </div>
 </li>
       </ul>
@@ -335,14 +334,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">B.1</span>  Introduction</a></li>
+  <li><a href="#reshaping-data-from-long-to-wide" id="toc-reshaping-data-from-long-to-wide" class="nav-link" data-scroll-target="#reshaping-data-from-long-to-wide"><span class="toc-section-number">B.2</span>  Reshaping Data From Long To Wide</a></li>
+  <li><a href="#reshaping-data-from-wide-to-long" id="toc-reshaping-data-from-wide-to-long" class="nav-link" data-scroll-target="#reshaping-data-from-wide-to-long"><span class="toc-section-number">B.3</span>  Reshaping Data From Wide To Long</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Acknowledgements</h1>
+<h1 class="title"><span id="sec-reshape" class="quarto-section-identifier d-none d-lg-block">Appendix B — Reshaping Data in Stata</span></h1>
 </div>
 
 
@@ -357,9 +364,441 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>No good learning happens without community. At least, that has always been true for me. I am grateful for many creative and energizing discussions with the other members of the MICS (UNICEF data) research team: Professor Shawna Lee, Professor Julie Ma, Dr.&nbsp;Kaitlin Ward, and Professor Garrett Pace. I’m thankful for their collegiality, their friendship, their patience with me, and their dedication to good science. Working with these colleagues has greatly deepened my understanding of multilevel models. I’m also very grateful to one of my mentors, Professor Sandra Danziger, who has taught me so much about the <em>what</em> and the <em>why</em> of mentoring, teaching, and doing research. I’d like to thank Ross Grogan-Kaylor for continued interest in the progress of this document, and probing thoughtful questions. Shari Grogan-Kaylor had many important and challenging questions about the <em>what</em> and the <em>why</em> of this document, and most importantly to me, <em>has believed</em> in it. Don Deutsch showed ongoing interest in the development of this document, and has asked some hard questions that have improved its logic. Thank you to Professor Jim Allen for our discussions about how quantitative methods can better listen to lived experience. Importantly, I’d like to express gratitude to the many students in my class on <em>Multilevel and Longitudinal Modeling</em> who over the years have helped me think more deeply about statistical and substantive issues, including Dr.&nbsp;Kaitlin Ward, Professor Garrett Pace, Professor Julie Ma, Professor Yoonsun Han, Professor Berenice Castillo, Professor Maria Galano, Dr.&nbsp;Sara Stein, Madhur Singh, and Tong Suo. Thank you for the many valuable discussions during class breaks, and after class. These discussions have also greatly extended my understanding of multilevel models. Lastly, I’d like to thank Marty Betts and Greg Knollmeyer for their help and support. While I’m thankful for the inspiration and colleagueship provided by others, any remaining errors and omissions in this document are of course my responsibility.</p>
+<section id="introduction" class="level2" data-number="B.1">
+<h2 data-number="B.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">B.1</span> Introduction</h2>
+<p>Data can be reshaped from wide format to long format, and back again. Almost any software that is capable of estimating multilevel models is capable of reshaping data.</p>
+<p>Below, I detail the procedure for reshaping data in Stata. Here is a sample of the longitudinal data set used in this document.</p>
+<p>These data are in long format (see <a href="longitudinal.html#tbl-datalong">Table&nbsp;<span>7.4</span></a>).</p>
+<blockquote class="blockquote">
+<p>Every individual in the data has multiple rows. Every row of the data is a <em>person-timepoint</em>.</p>
+</blockquote>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-reshapelongdata" class="anchored">
+<table class="table table-sm table-striped">
+<caption>Table&nbsp;B.1: Data in Long Format</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 7%">
+<col style="width: 10%">
+<col style="width: 7%">
+<col style="width: 9%">
+<col style="width: 4%">
+<col style="width: 26%">
+<col style="width: 10%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">country</th>
+<th style="text-align: center;">HDI</th>
+<th style="text-align: center;">family</th>
+<th style="text-align: center;">id</th>
+<th style="text-align: center;">group</th>
+<th style="text-align: center;">t</th>
+<th style="text-align: center;">physical_punishment</th>
+<th style="text-align: center;">warmth</th>
+<th style="text-align: center;">outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">42.89</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">58.69</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">56.66</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;">51.94</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;">50.55</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">55.05</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="reshaping-data-from-long-to-wide" class="level2" data-number="B.2">
+<h2 data-number="B.2" class="anchored" data-anchor-id="reshaping-data-from-long-to-wide"><span class="header-section-number">B.2</span> Reshaping Data From Long To Wide</h2>
+<p>While it is not often that we want to reshape data from <em>long</em> to <em>wide</em>, we do so here for illustrative purposes. The Stata command for reshaping the data to <em>wide</em> format is:</p>
+<p><code>reshape wide physical_punishment warmth outcome, i(id) j(t)</code></p>
+<p>The data are now in <em>wide</em> format (See <a href="longitudinal.html#tbl-datawide">Table&nbsp;<span>7.5</span></a>).</p>
+<blockquote class="blockquote">
+<p>Every individual in the data set has a single row of data. Every row in the data set is an individual.</p>
+</blockquote>
+<div class="cell">
+
+</div>
+<div id="tbl-reshapewidedata" class="cell tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Table&nbsp;B.2: Data in Wide Format</p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-reshapewidedata-1" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-reshapewidedata" style="flex-basis: 100.0%;justify-content: center;">
+<table class="table table-sm table-striped">
+<caption>(a) Table continues below</caption>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 30%">
+<col style="width: 13%">
+<col style="width: 14%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">id</th>
+<th style="text-align: center;">physical_punishment1</th>
+<th style="text-align: center;">warmth1</th>
+<th style="text-align: center;">outcome1</th>
+<th style="text-align: center;">physical_punishment2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1.1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">42.89</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1.10</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">61.51</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1.100</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">56.46</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1.11</td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">51.68</td>
+<td style="text-align: center;">-2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1.12</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">54.12</td>
+<td style="text-align: center;">-1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1.13</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">62.9</td>
+<td style="text-align: center;">5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-reshapewidedata-2" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-reshapewidedata" style="flex-basis: 100.0%;justify-content: center;">
+<table class="table table-sm table-striped">
+<caption>(b) Table continues below</caption>
+<colgroup>
+<col style="width: 12%">
+<col style="width: 13%">
+<col style="width: 28%">
+<col style="width: 12%">
+<col style="width: 13%">
+<col style="width: 12%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">warmth2</th>
+<th style="text-align: center;">outcome2</th>
+<th style="text-align: center;">physical_punishment3</th>
+<th style="text-align: center;">warmth3</th>
+<th style="text-align: center;">outcome3</th>
+<th style="text-align: center;">country</th>
+<th style="text-align: center;">HDI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">58.69</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">56.66</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">67.1</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">68.78</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">48.8</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">50.49</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">57.98</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">49.1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">55.43</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">48.81</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">55.19</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">65.42</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">family</th>
+<th style="text-align: center;">group</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="reshaping-data-from-wide-to-long" class="level2" data-number="B.3">
+<h2 data-number="B.3" class="anchored" data-anchor-id="reshaping-data-from-wide-to-long"><span class="header-section-number">B.3</span> Reshaping Data From Wide To Long</h2>
+<p>Usually, we are more interested in reshaping data from <em>wide</em> to <em>long</em>, and that is what I do now.</p>
+<p>The command is:</p>
+<p><code>reshape long physical_punishment warmth outcome, i(id) j(t)</code></p>
+<p>If we use this command, we are back to the original format of the data set.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-reshapelongdata2" class="anchored">
+<table class="table table-sm table-striped">
+<caption>Table&nbsp;B.3: Data in Long Format</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 7%">
+<col style="width: 10%">
+<col style="width: 7%">
+<col style="width: 9%">
+<col style="width: 4%">
+<col style="width: 26%">
+<col style="width: 10%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">country</th>
+<th style="text-align: center;">HDI</th>
+<th style="text-align: center;">family</th>
+<th style="text-align: center;">id</th>
+<th style="text-align: center;">group</th>
+<th style="text-align: center;">t</th>
+<th style="text-align: center;">physical_punishment</th>
+<th style="text-align: center;">warmth</th>
+<th style="text-align: center;">outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">42.89</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">58.69</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">56.66</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;">51.94</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;">50.55</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">55.05</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -612,14 +1051,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Usefulness of Multilevel Modeling and Multilevel Thinking</span></span>
+      <a href="./Stata-for-cross-sectional-MLMs.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Stata for Cross Sectional Multilevel Models</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./license.html" class="pagination-link">
-        <span class="nav-page-text">License and Citation</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

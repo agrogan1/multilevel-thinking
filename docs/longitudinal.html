@@ -343,6 +343,11 @@ div.csl-indent {
   <a href="./Stata-for-cross-sectional-MLMs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Stata for Cross Sectional Multilevel Models</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reshape.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Reshaping Data in Stata</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -355,18 +360,19 @@ div.csl-indent {
    
   <ul>
   <li><a href="#use-data-with-multiple-observations-per-individual" id="toc-use-data-with-multiple-observations-per-individual" class="nav-link active" data-scroll-target="#use-data-with-multiple-observations-per-individual"><span class="toc-section-number">7.1</span>  Use Data With Multiple Observations Per Individual</a></li>
-  <li><a href="#the-equation" id="toc-the-equation" class="nav-link" data-scroll-target="#the-equation"><span class="toc-section-number">7.2</span>  The Equation</a></li>
-  <li><a href="#growth-trajectories" id="toc-growth-trajectories" class="nav-link" data-scroll-target="#growth-trajectories"><span class="toc-section-number">7.3</span>  Growth Trajectories</a></li>
-  <li><a href="#sec-regressionlongitudinal" id="toc-sec-regressionlongitudinal" class="nav-link" data-scroll-target="#sec-regressionlongitudinal"><span class="toc-section-number">7.4</span>  Regression With Simulated Multi-Country Longitudinal Data</a></li>
-  <li><a href="#autocorrelation" id="toc-autocorrelation" class="nav-link" data-scroll-target="#autocorrelation"><span class="toc-section-number">7.5</span>  Autocorrelation</a></li>
-  <li><a href="#causality" id="toc-causality" class="nav-link" data-scroll-target="#causality"><span class="toc-section-number">7.6</span>  Causality</a>
+  <li><a href="#simulated-multilevel-longitudinal-data" id="toc-simulated-multilevel-longitudinal-data" class="nav-link" data-scroll-target="#simulated-multilevel-longitudinal-data"><span class="toc-section-number">7.2</span>  Simulated Multilevel Longitudinal Data</a></li>
+  <li><a href="#the-equation" id="toc-the-equation" class="nav-link" data-scroll-target="#the-equation"><span class="toc-section-number">7.3</span>  The Equation</a></li>
+  <li><a href="#growth-trajectories" id="toc-growth-trajectories" class="nav-link" data-scroll-target="#growth-trajectories"><span class="toc-section-number">7.4</span>  Growth Trajectories</a></li>
+  <li><a href="#sec-regressionlongitudinal" id="toc-sec-regressionlongitudinal" class="nav-link" data-scroll-target="#sec-regressionlongitudinal"><span class="toc-section-number">7.5</span>  Regression With Simulated Multi-Country Longitudinal Data</a></li>
+  <li><a href="#autocorrelation" id="toc-autocorrelation" class="nav-link" data-scroll-target="#autocorrelation"><span class="toc-section-number">7.6</span>  Autocorrelation</a></li>
+  <li><a href="#causality" id="toc-causality" class="nav-link" data-scroll-target="#causality"><span class="toc-section-number">7.7</span>  Causality</a>
   <ul class="collapse">
-  <li><a href="#the-importance-of-causal-reasoning" id="toc-the-importance-of-causal-reasoning" class="nav-link" data-scroll-target="#the-importance-of-causal-reasoning"><span class="toc-section-number">7.6.1</span>  The Importance of Causal Reasoning</a></li>
-  <li><a href="#formal-criteria-of-causality" id="toc-formal-criteria-of-causality" class="nav-link" data-scroll-target="#formal-criteria-of-causality"><span class="toc-section-number">7.6.2</span>  Formal Criteria of Causality</a></li>
-  <li><a href="#simpsons-paradox" id="toc-simpsons-paradox" class="nav-link" data-scroll-target="#simpsons-paradox"><span class="toc-section-number">7.6.3</span>  Simpson’s Paradox</a></li>
-  <li><a href="#a-simpler-multilevel-model-to-explore-causality" id="toc-a-simpler-multilevel-model-to-explore-causality" class="nav-link" data-scroll-target="#a-simpler-multilevel-model-to-explore-causality"><span class="toc-section-number">7.6.4</span>  A Simpler Multilevel Model To Explore Causality</a></li>
-  <li><a href="#fixed-effects-regression" id="toc-fixed-effects-regression" class="nav-link" data-scroll-target="#fixed-effects-regression"><span class="toc-section-number">7.6.5</span>  Fixed Effects Regression</a></li>
-  <li><a href="#the-correlated-random-effects-model" id="toc-the-correlated-random-effects-model" class="nav-link" data-scroll-target="#the-correlated-random-effects-model"><span class="toc-section-number">7.6.6</span>  The Correlated Random Effects Model</a></li>
+  <li><a href="#the-importance-of-causal-reasoning" id="toc-the-importance-of-causal-reasoning" class="nav-link" data-scroll-target="#the-importance-of-causal-reasoning"><span class="toc-section-number">7.7.1</span>  The Importance of Causal Reasoning</a></li>
+  <li><a href="#formal-criteria-of-causality" id="toc-formal-criteria-of-causality" class="nav-link" data-scroll-target="#formal-criteria-of-causality"><span class="toc-section-number">7.7.2</span>  Formal Criteria of Causality</a></li>
+  <li><a href="#simpsons-paradox" id="toc-simpsons-paradox" class="nav-link" data-scroll-target="#simpsons-paradox"><span class="toc-section-number">7.7.3</span>  Simpson’s Paradox</a></li>
+  <li><a href="#a-simpler-multilevel-model-to-explore-causality" id="toc-a-simpler-multilevel-model-to-explore-causality" class="nav-link" data-scroll-target="#a-simpler-multilevel-model-to-explore-causality"><span class="toc-section-number">7.7.4</span>  A Simpler Multilevel Model To Explore Causality</a></li>
+  <li><a href="#fixed-effects-regression" id="toc-fixed-effects-regression" class="nav-link" data-scroll-target="#fixed-effects-regression"><span class="toc-section-number">7.7.5</span>  Fixed Effects Regression</a></li>
+  <li><a href="#the-correlated-random-effects-model" id="toc-the-correlated-random-effects-model" class="nav-link" data-scroll-target="#the-correlated-random-effects-model"><span class="toc-section-number">7.7.6</span>  The Correlated Random Effects Model</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -485,9 +491,9 @@ div.csl-indent {
 </div>
 <section id="use-data-with-multiple-observations-per-individual" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="use-data-with-multiple-observations-per-individual"><span class="header-section-number">7.1</span> Use Data With Multiple Observations Per Individual</h2>
-<p>Multilevel data suitable for longitudinal analysis therefore has <em>multiple rows of data per individual</em>. Put another way, <em>every row of data is a person-timepoint</em>.</p>
+<p>Multilevel data suitable for longitudinal analysis has <em>multiple rows of data per individual</em>. Put another way, <em>every row of data is a person-timepoint</em>.</p>
 <blockquote class="blockquote">
-<p>This method of organizing data is known as the <em>long</em> format. Another way of organizing longitudinal data–which I do not discuss in detail here–is the <em>wide</em> format in which every individual still has only one row of data. In <em>wide</em> data, the different timepoints are in different columns of data.</p>
+<p>This method of organizing data is known as the <em>long</em> format. Another way of organizing longitudinal data–which I do not discuss in detail here–is the <em>wide</em> format in which every individual has only a single row of data. In <em>wide</em> data, the different timepoints are in <em>different columns</em> of data. I do discuss <em>reshaping</em> data from <em>wide</em> to <em>long</em>, and vice versa, in <a href="reshape.html"><span>Appendix&nbsp;B</span></a>.</p>
 </blockquote>
 <div id="tbl-datalong" class="anchored">
 <table class="table">
@@ -560,6 +566,10 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
+</section>
+<section id="simulated-multilevel-longitudinal-data" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="simulated-multilevel-longitudinal-data"><span class="header-section-number">7.2</span> Simulated Multilevel Longitudinal Data</h2>
+<p>For the discussion below, I use a longitudinal version of the simulated data that has multiple rows of data per individual.</p>
 <div class="cell">
 
 </div>
@@ -664,6 +674,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
+<p>Since I will be discussing the estimation of a <em>longitudinal</em> model, it is often useful to graph the outcome variable against time.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-data2" class="quarto-figure quarto-figure-center anchored">
@@ -675,8 +686,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="the-equation" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">7.2</span> The Equation</h2>
+<section id="the-equation" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">7.3</span> The Equation</h2>
 <p>When data are in <em>long</em> format, the following equation is applicable.</p>
 <p><span id="eq-MLM-longitudinal"><span class="math display">\[\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ +  \tag{7.1}\]</span></span></p>
 <p><span class="math display">\[\beta_4 \text{group}_{itj} + \beta_5 \text{HDI}_{itj} +\]</span></p>
@@ -684,8 +695,8 @@ div.csl-indent {
 <p><span class="math display">\[v_{0i} + v_{1i} \times t_{itj} + e_{itj}\]</span> Here I include a random slope (<span class="math inline">\(u_{1j}\)</span>) at the country level for parental warmth, as well as a random slope (<span class="math inline">\(v_{1i}\)</span>) at the individual level for time.</p>
 <p>As before, the random slope for parental warmth, <span class="math inline">\(u_{1j} \times \text{parental warmth}_{ij}\)</span> suggests allows us to estimate whether the relationship between parental warmth and the outcome varies across countries. The random slope for time, <span class="math inline">\(v_{1i} \times t\)</span>, allows us to estimate whether time trajectories (the slope for time) vary across individuals.</p>
 </section>
-<section id="growth-trajectories" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="growth-trajectories"><span class="header-section-number">7.3</span> Growth Trajectories</h2>
+<section id="growth-trajectories" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="growth-trajectories"><span class="header-section-number">7.4</span> Growth Trajectories</h2>
 <p>In longitudinal multilevel models, the variable for <em>time</em> assumes a special role as we are often visualizing a <em>growth trajectory</em> over the course of time.</p>
 <p>Imagine a model as follows where <em>group</em> is a (1/0) variable for membership in one of two groups:</p>
 <p><span class="math display">\[\text{outcome} = \beta_0 + \beta_t \text{time} + \beta_\text{group} \text{group} + \beta_\text{interaction} \text{group} \times \text{time} + u_{0i} + e_{it}\]</span> Then, each group has it’s own intercept and time trajectory:</p>
@@ -732,8 +743,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="sec-regressionlongitudinal" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="sec-regressionlongitudinal"><span class="header-section-number">7.4</span> Regression With Simulated Multi-Country Longitudinal Data</h2>
+<section id="sec-regressionlongitudinal" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="sec-regressionlongitudinal"><span class="header-section-number">7.5</span> Regression With Simulated Multi-Country Longitudinal Data</h2>
 <p>The Stata command that we use to analyze this data is:</p>
 <p><code>mixed outcome t warmth physical_punishment group HDI || country: warmth || id: t</code></p>
 <table class="table">
@@ -810,15 +821,15 @@ div.csl-indent {
 <p>** p&lt;.01, * p&lt;.05</p>
 <p>Examining the regression results, the results of the model suggest that child outcomes improve over time. Better child outcomes are again associated with parental <code>warmth</code>, and parental use of <code>physical_punishment</code> is associated with reduced child outcomes. <code>HDI</code> is again not associated with outcomes.</p>
 </section>
-<section id="autocorrelation" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="autocorrelation"><span class="header-section-number">7.5</span> Autocorrelation</h2>
+<section id="autocorrelation" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="autocorrelation"><span class="header-section-number">7.6</span> Autocorrelation</h2>
 <p>When data are ordered by a time variable <span class="math inline">\(t\)</span>, it is possible that observations that are closer together in time will have a higher correlation than observations that are distant in time. In the simplest example, <span class="math inline">\(e_{i, t=k}\)</span> may be correlated with <span class="math inline">\(e_{i, t=k-1}\)</span>. This phenomenon is known as <em>autocorrelation</em>. As <span class="citation" data-cites="Hooper2022">Hooper (<a href="references.html#ref-Hooper2022" role="doc-biblioref">2022</a>)</span> would suggest, it may make sense to assume that the correlation between observations “decays with increasing separation in time”.</p>
 <p>Most software programs for multilevel modeling allow one to incorporate measures of autocorrelation so that, e.g., <span class="math inline">\(e_{i,t=3}\)</span> is allowed to be correlated with <span class="math inline">\(e_{i,t=2}\)</span>, which in turn can be correlated with <span class="math inline">\(e_{i,t=1}\)</span>. More complex autocorrelation structures are usually also possible <span class="citation" data-cites="StataCorp2021:1">(<a href="references.html#ref-StataCorp2021:1" role="doc-biblioref">StataCorp, 2021a</a>)</span>.</p>
 </section>
-<section id="causality" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="causality"><span class="header-section-number">7.6</span> Causality</h2>
-<section id="the-importance-of-causal-reasoning" class="level3" data-number="7.6.1">
-<h3 data-number="7.6.1" class="anchored" data-anchor-id="the-importance-of-causal-reasoning"><span class="header-section-number">7.6.1</span> The Importance of Causal Reasoning</h3>
+<section id="causality" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="causality"><span class="header-section-number">7.7</span> Causality</h2>
+<section id="the-importance-of-causal-reasoning" class="level3" data-number="7.7.1">
+<h3 data-number="7.7.1" class="anchored" data-anchor-id="the-importance-of-causal-reasoning"><span class="header-section-number">7.7.1</span> The Importance of Causal Reasoning</h3>
 <p>Causal reasoning is sometimes considered to be a statistical–or even overly technical–concern. Arguably, however, whenever one is using research to make recommendations about interventions, or treatments, or policies, one is engaging in some form of causal reasoning <span class="citation" data-cites="Duncan2006">(<a href="references.html#ref-Duncan2006" role="doc-biblioref">Duncan &amp; Gibson-Davis, 2006</a>)</span>.</p>
 <blockquote class="blockquote">
 <p>If one is saying that implementing <em>x</em> would result in beneficial changes in <em>y</em>, one is arguing–at least implicitly–that <em>x</em> is one of the causes of <em>y</em>.</p>
@@ -835,8 +846,8 @@ div.csl-indent {
 </blockquote>
 <p>Lastly, because of their often small samples, randomized studies may have high internal validity, but much lower external validity, or generalization to larger populations <span class="citation" data-cites="Diener2022">(<a href="references.html#ref-Diener2022" role="doc-biblioref">Diener et al., 2022</a>)</span>. This issue of generalizability becomes increasingly salient, when we are reminded of the fact that so little social and psychological research has been conducted outside of North American contexts <span class="citation" data-cites="Henrich2010 Draper2022">(<a href="references.html#ref-Draper2022" role="doc-biblioref">Draper et al., 2022</a>; <a href="references.html#ref-Henrich2010" role="doc-biblioref">Henrich et al., 2010</a>)</span>. It is necessary to make use of broadly representative observational data sets, and appropriately sophisticiated quantitative methods to make causally robust conclusions from observational data.</p>
 </section>
-<section id="formal-criteria-of-causality" class="level3" data-number="7.6.2">
-<h3 data-number="7.6.2" class="anchored" data-anchor-id="formal-criteria-of-causality"><span class="header-section-number">7.6.2</span> Formal Criteria of Causality</h3>
+<section id="formal-criteria-of-causality" class="level3" data-number="7.7.2">
+<h3 data-number="7.7.2" class="anchored" data-anchor-id="formal-criteria-of-causality"><span class="header-section-number">7.7.2</span> Formal Criteria of Causality</h3>
 <p>For x to be a cause of y, one needs the following 3 things to be true <span class="citation" data-cites="Holland1986">(<a href="references.html#ref-Holland1986" role="doc-biblioref">Holland, 1986</a>)</span>.</p>
 <ol type="1">
 <li><em>x</em> is (are) associated with (correlated with) <em>y</em>.</li>
@@ -875,8 +886,8 @@ div.csl-indent {
 </div>
 <p>If <em>other factors</em> are omitted from the regression model, then the estimates for <span class="math inline">\(\text{parenting} \rightarrow \text{child outcome}\)</span> (i.e.&nbsp;<span class="math inline">\(\beta_{\text{parenting} \rightarrow \text{child outcome}}\)</span>) will be biased. In the most common scenario <span class="math inline">\(\beta_{\text{parenting} \rightarrow \text{child outcome}}\)</span> will likely be an over-estimate of the effect, and statistical significance of <span class="math inline">\(\beta_{\text{parenting} \rightarrow \text{child outcome}}\)</span> may represent a false positive.</p>
 </section>
-<section id="simpsons-paradox" class="level3" data-number="7.6.3">
-<h3 data-number="7.6.3" class="anchored" data-anchor-id="simpsons-paradox"><span class="header-section-number">7.6.3</span> Simpson’s Paradox</h3>
+<section id="simpsons-paradox" class="level3" data-number="7.7.3">
+<h3 data-number="7.7.3" class="anchored" data-anchor-id="simpsons-paradox"><span class="header-section-number">7.7.3</span> Simpson’s Paradox</h3>
 <p>Earlier, in <a href="cross-sectional.html#sec-multilevelstructure"><span>Section&nbsp;6.2</span></a>, I referred to the idea of <em>multilevel structure</em> wherein failure to account for the clustering of data–omission of <span class="math inline">\(u_0\)</span> from the equation being estimated–may lead to incorrect conclusions. A closely related phenomenon is that of <em>Simpson’s Paradox</em> <span class="citation" data-cites="Simpson1951">(<a href="references.html#ref-Simpson1951" role="doc-biblioref">Simpson, 1951</a>)</span> wherein omission of a relevant <em>covariate</em> (e.g.&nbsp;<span class="math inline">\(z_{it}\)</span> such as SES, community characteristics, country level characteristics) may also lead to dramatically incorrect results.</p>
 <p>Statistically, we imagine a situation where the true model is:</p>
 <p><span class="math display">\[\text{child outcome}_{it} = \beta_0 + \beta_1 \text{parenting}_{it} +\]</span></p>
@@ -896,8 +907,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="a-simpler-multilevel-model-to-explore-causality" class="level3" data-number="7.6.4">
-<h3 data-number="7.6.4" class="anchored" data-anchor-id="a-simpler-multilevel-model-to-explore-causality"><span class="header-section-number">7.6.4</span> A Simpler Multilevel Model To Explore Causality</h3>
+<section id="a-simpler-multilevel-model-to-explore-causality" class="level3" data-number="7.7.4">
+<h3 data-number="7.7.4" class="anchored" data-anchor-id="a-simpler-multilevel-model-to-explore-causality"><span class="header-section-number">7.7.4</span> A Simpler Multilevel Model To Explore Causality</h3>
 <p>For purposes of explication of ideas about causal estimation, in this section, I imagine a simpler equation where I am only considering the clustering of <em>person timepoints</em> within <em>individual people</em>, and ignoring for the moment–again for the sake of exposition–the clustering of <em>individuals</em> within <em>countries</em>.</p>
 <p>After explication and comprehension of this model, however, it is a simple matter to add back in the random effects for country level clustering.</p>
 <p>The appropriate multilevel model is below.</p>
@@ -906,8 +917,8 @@ div.csl-indent {
 <p><span class="math display">\[v_{0i} + e_{it}\]</span></p>
 <p>Note that in <a href="#eq-MLM-simpler">Equation&nbsp;<span>7.2</span></a>, if one were estimating a <em>multilevel model</em>, one would consider the <span class="math inline">\(v_{0i}\)</span> to be a randomly varying parameter with a mean of 0, and a variance of <span class="math inline">\(\sigma^2(v_{0i})\)</span>.</p>
 </section>
-<section id="fixed-effects-regression" class="level3" data-number="7.6.5">
-<h3 data-number="7.6.5" class="anchored" data-anchor-id="fixed-effects-regression"><span class="header-section-number">7.6.5</span> Fixed Effects Regression</h3>
+<section id="fixed-effects-regression" class="level3" data-number="7.7.5">
+<h3 data-number="7.7.5" class="anchored" data-anchor-id="fixed-effects-regression"><span class="header-section-number">7.7.5</span> Fixed Effects Regression</h3>
 <p>I can use the same equation:</p>
 <p><span id="eq-FE"><span class="math display">\[\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_2 \text{physical punishment}_{it} + \beta_3 \text{time}_{it} \ +  \tag{7.3}\]</span></span></p>
 <p><span class="math display">\[\beta_4 \text{group}_{it} + \beta_5 \text{HDI}_{it} \ +\]</span></p>
@@ -1013,8 +1024,8 @@ div.csl-indent {
 <p>In comparing the multilevel model and the fixed effects regression, we note a few salient difference. First, the fixed effects are similar to the multilevel model coefficients. (Most often, the fixed effect regression coefficients are attenuated versions of the multilevel model coefficients, but not always.) The fixed effects regression coefficients for variables that have some variation over time, provide estimates that control for all time invariant variables in the model.</p>
 <p>Second, estimates for any quantities that do not vary over time, in this case, <code>group</code> membership, and <code>HDI</code>, are not available from the fixed effects regression.</p>
 </section>
-<section id="the-correlated-random-effects-model" class="level3" data-number="7.6.6">
-<h3 data-number="7.6.6" class="anchored" data-anchor-id="the-correlated-random-effects-model"><span class="header-section-number">7.6.6</span> The Correlated Random Effects Model</h3>
+<section id="the-correlated-random-effects-model" class="level3" data-number="7.7.6">
+<h3 data-number="7.7.6" class="anchored" data-anchor-id="the-correlated-random-effects-model"><span class="header-section-number">7.7.6</span> The Correlated Random Effects Model</h3>
 <p>The <em>correlated random effects</em> model is based upon ideas first developed by <span class="citation" data-cites="Mundlak1978">Mundlak (<a href="references.html#ref-Mundlak1978" role="doc-biblioref">1978</a>)</span> and later explicated in <span class="citation" data-cites="Wooldridge2010">Wooldridge (<a href="references.html#ref-Wooldridge2010" role="doc-biblioref">2010</a>)</span>. <span class="citation" data-cites="Antonakis2019">Antonakis et al. (<a href="references.html#ref-Antonakis2019" role="doc-biblioref">2021</a>)</span> and <span class="citation" data-cites="Schunck2013">Schunck (<a href="references.html#ref-Schunck2013" role="doc-biblioref">2013</a>)</span> provide very intuitive explanations of this model.</p>
 <p>The central idea is that one can obtain estimates of both the time invariant variables, and estimates for time varying variables. The key idea is that for time varying variables, I include the <em>individual</em> level mean for that variable in the model. Thus, in the example below, I include <span class="math inline">\(\beta_{1a}\overline{\text{parental warmth}}_{i}\)</span> and <span class="math inline">\(\beta_{2a}\overline{\text{physical punishment}}_{i}\)</span>. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> This is similar in approach to what is described in <a href="cross-sectional.html#sec-withinbetween"><span>Section&nbsp;6.6</span></a>, however, here I am simply adding the group level mean to the equation instead of decomposing independent variables into within and between components.</p>
 <p><span id="eq-CRE"><span class="math display">\[\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_{1a}\overline{\text{parental warmth}}_{i} \ +  \tag{7.4}\]</span></span></p>
