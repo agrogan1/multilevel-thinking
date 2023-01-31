@@ -6,10 +6,14 @@ format:
   html:
     toc: true
     number-sections: true
+    code-tools: true
+    code-link: true
     theme:
       light: cosmo
       dark: quartz
 ---
+
+# Set Up Julia
 
 ```{r}
 
@@ -19,6 +23,13 @@ julia_setup(JULIA_HOME = "/Applications/Julia-1.8.app/Contents/Resources/julia/b
 
 ```
 
+# Run Models
+
+::: {.panel-tabset}
+
+## R
+
+## Julia
 
 ```{julia}
 
@@ -38,4 +49,5 @@ m1 = fit(MixedModel, @formula(outcome ~ warmth + physical_punishment +
 
 ```
 
+:::
 
