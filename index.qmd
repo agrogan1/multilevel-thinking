@@ -30,7 +30,7 @@ set.seed(3846) # random seed
 
 ```
 
-> "I am because we are; and since we are, therefore I am." [@Mbiti1990]
+> "I am because we are; and since we are, therefore I am." [@Mbiti1970]
 
 For decades now, multilevel models have been an important quantitative tool for social research. While multilevel models have become very common in social research, there are aspects of these models that are explored less frequently in published articles. This document arises from my experiences of teaching a course entitled *Multilevel and Longitudinal Modeling* that I have taught for over a decade in the *Joint Doctoral Program in Social Work and Social Science* at the University of Michigan.
 
