@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andrew Grogan-Kaylor">
-<meta name="dcterms.date" content="2023-01-31">
+<meta name="dcterms.date" content="2023-02-01">
 
 <title>Multilevel Thinking</title>
 <style>
@@ -88,17 +88,17 @@ div.csl-indent {
 
 <link rel="stylesheet" href="multilevel-thinking.css">
 <meta name="twitter:title" content="Multilevel Thinking">
-<meta name="twitter:description" content="Discovering Universals and Particulars in Cross-Cultural Research">
+<meta name="twitter:description" content="Discovering Diversity, Universals, and Particulars in Cross-Cultural Research">
 <meta name="twitter:image" content="https://agrogan1.github.io/multilevel-thinking/bookcover.png">
 <meta name="twitter:image-height" content="960">
 <meta name="twitter:image-width" content="720">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="citation_title" content="Multilevel Thinking">
 <meta name="citation_author" content="Andrew Grogan-Kaylor">
-<meta name="citation_publication_date" content="2023-01-31">
-<meta name="citation_cover_date" content="2023-01-31">
+<meta name="citation_publication_date" content="2023-02-01">
+<meta name="citation_cover_date" content="2023-02-01">
 <meta name="citation_year" content="2023">
-<meta name="citation_online_date" content="2023-01-31">
+<meta name="citation_online_date" content="2023-02-01">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-thinking/">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Power failure: Why small sample size undermines the reliability of neuroscience;,citation_abstract=Low statistical power undermines the purpose of scientific research; it reduces the chance of detecting a true effect. Perhaps less intuitively, low power also reduces the likelihood that a statistically significant result reflects a true effect. Empirically, we estimate the median statistical power of studies in the neurosciences is between ∼8;,citation_author=Katherine S Button;,citation_author=John P A Ioannidis;,citation_author=Claire Mokrysz;,citation_author=Brian A Nosek;,citation_author=Jonathan Flint;,citation_author=Emma S J Robinson;,citation_author=Marcus R Munafò;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_fulltext_html_url=https://doi.org/10.1038/nrn3475;,citation_doi=10.1038/nrn3475;,citation_issn=1471-0048;,citation_volume=14;,citation_journal_title=Nature Reviews Neuroscience;">
@@ -380,7 +380,7 @@ div.csl-indent {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title d-none d-lg-block">Multilevel Thinking</h1>
-<p class="subtitle lead">Discovering Universals and Particulars in Cross-Cultural Research</p>
+<p class="subtitle lead">Discovering Diversity, Universals, and Particulars in Cross-Cultural Research</p>
 </div>
 
 
@@ -397,7 +397,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 31, 2023</p>
+      <p class="date">February 1, 2023</p>
     </div>
   </div>
   
@@ -421,7 +421,7 @@ div.csl-indent {
 <p>My contention is that <em>multilevel modeling</em> offers powerful tools for understanding the <em>multilevel data</em> that social researchers often confront. For example, researchers are often interested in studying outcomes for diverse groups of children in different schools, residents of diverse and different neighborhoods, or individuals or families living in diverse and different countries. Such inherently multilevel data lead to analytic complexities, some of which appear to me to be well understood, while others seem to be much less often appreciated.</p>
 <p>The point that I wish to make about multilevel data is that when presented with complex multilevel data, failure to use the appropriate multilevel model may lead to conclusions that are demonstrably incorrect. Fortunately, many of these difficulties can be avoided with applications of simple and straightforward multilevel models.</p>
 <p>I first present some initial ideas about multilevel modeling. First, as is relatively commonly understood, <em>multilevel models allow for the correct estimation of p values in the presence of data clustering</em>. Second, as is less commonly appreciated, when data are clustered, <em>multilevel models correctly estimate <span class="math inline">\(\beta\)</span> regression coefficients and may avoid estimating a regression coefficient that is too large, too small, or even has the wrong sign</em>.</p>
-<p>I go on to explore some more complex ideas about multilevel models that I see less often in the published empirical literature. I focus especially on two ideas: <em>multilevel models as the exploration of variation across countries and cultures</em>; and <em>multilevel models as a foundation for models that let us think more rigorously about causality</em>.</p>
+<p>I go on to explore some more complex ideas about multilevel models that I see less often in the published empirical literature. I focus especially on two ideas: <em>multilevel models as the exploration of diversity and variation across countries and cultures</em>; and <em>multilevel models as a foundation for models that let us think more rigorously about causality</em>. I argue that multilevel models provide a foundation for engaging with cross-cultural diversity in a quantitatively rigorous fashion.</p>
 <p>Certainly, none of the statistical ideas contained in this document are unique to me. There are thorough–and often much more mathematically rigorous–presentations of many of the idea contained in this document in some of the excellent foundational texts on multilevel modeling such as the early book by <span class="citation" data-cites="Raudenbush2002">Raudenbush &amp; Bryk (<a href="references.html#ref-Raudenbush2002" role="doc-biblioref">2002</a>)</span>, the excellent book on longitudinal models by <span class="citation" data-cites="Singer2003">Singer &amp; Willett (<a href="references.html#ref-Singer2003" role="doc-biblioref">2003</a>)</span>, and <span class="citation" data-cites="RabeHesketh2012">Rabe-Hesketh &amp; Skrondal (<a href="references.html#ref-RabeHesketh2012" role="doc-biblioref">2012</a>)</span>’s more recent and extremely comprehensive two volume text. <span class="citation" data-cites="Luke2004">Luke (<a href="references.html#ref-Luke2004" role="doc-biblioref">2004</a>)</span>, and <span class="citation" data-cites="Kreft1998">Kreft &amp; de Leeuw (<a href="references.html#ref-Kreft1998" role="doc-biblioref">1998</a>)</span>, offer shorter, less mathematically rigorous, but still excellent introductions to the topic of multilevel modeling. <span class="citation" data-cites="Gelman2007">Gelman et al. (<a href="references.html#ref-Gelman2007" role="doc-biblioref">2007</a>)</span> introduced me to the ideas that in this document I describe as “multilevel structure” using an example with voting patterns.</p>
 <p>My intent in this document is to offer a kind of accessible tutorial for applied researchers, including especially those who see their research having some advocacy based component. My approach, while offering up some equations, is less mathematically rigorous than some of the above mentioned texts, and written with the intent of providing a clear and practically focused guide for the applied researcher who is attempting to carry out better research with diverse populations.</p>
 
