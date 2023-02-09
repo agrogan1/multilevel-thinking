@@ -499,17 +499,17 @@ tribble(
            y = 5, 
            color = "orange",
            alpha = .5,
-           size = 17) +
+           size = 23) +
   annotate("text", 
            x = 1.5, 
            y = 2.5, 
-           label = "variation in y",
+           label = "variation in intercept",
            color = "red") +
   annotate("segment", 
            x = 1, 
            xend = 0, 
            y = 3, 
-           yend = 4.5,
+           yend = 5,
            colour = "red", 
            size = 1, 
            arrow = arrow()) +
