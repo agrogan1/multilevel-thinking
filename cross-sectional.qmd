@@ -559,9 +559,9 @@ In the regression in @sec-regression, there is discernible between country varia
 
 ### Variation In Predictors
 
-Equally important, I think, but much less frequently explored than variation in *outcomes*, is the possibility of variation in *predictors*. In the substantive example that we have employed so far, the *predictors* are different *parenting behaviors*, so considering variation in *predictors* allows us to consider variation in *parenting behaviors*, as well as variation in the *outcomes* of those behaviors.
+Equally important, I think, but much less frequently explored than variation in *outcomes*, is the possibility of variation in *predictors*, $var(x_{ij})$. In the substantive example that we have employed so far, the *predictors* are different *parenting behaviors*, so considering variation in *predictors* allows us to consider variation in *parenting behaviors*, as well as variation in the *outcomes* of those behaviors.
 
-We would estimate variation in behaviors in much the same way that we would estimate variation in outcomes, estimating an unconditional model, but substituting $x$ for $y$.
+We would estimate variation in behaviors attributable to country in much the same way that we would estimate variation in outcomes, estimating an unconditional model, but substituting $x$ for $y$.
 
 $$x_{ij} = \beta_0 + u_{0j} + e_{ij}$$ {#eq-unconditionalx}
 
@@ -571,7 +571,7 @@ $$\text{ICC}_x = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}$$ {#eq-ICCx}
 
 ### Variation in Slopes
 
-Another possible type of variation to investigate is variation in the relationship of $x$ and $y$, which is represented in the multilevel model by examining variation in the $\beta$'s.
+Another possible type of variation to investigate is variation in the relationship of $x$ and $y$, which is represented in the multilevel model by examining variation in the $\beta$'s, i.e. $var(u_{1j})$.
 
 ### Variation As An Outcome
 
