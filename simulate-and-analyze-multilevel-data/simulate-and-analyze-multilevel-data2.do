@@ -90,6 +90,10 @@ label variable family "family id"
 
 label variable id "unique country family id"
 
+label variable t "time"
+
+label variable outcome "beneficial outcome"
+
 ********************
 * save data
 ********************
