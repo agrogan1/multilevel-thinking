@@ -6,14 +6,36 @@ format:
   html:
     toc: true
     number-sections: true
-    code-tools: true
+    code-tools: false
     code-link: true
     theme:
       light: cosmo
       dark: quartz
 ---
 
-# Set Up Julia
+# Setup 
+
+::: {.panel-tabset}
+
+## Stata
+
+```{r}
+
+library(Statamarkdown)
+
+```
+
+## R
+
+```{r}
+
+library(lme4)
+
+```
+
+## Julia
+
+Call Julia from R.
 
 ```{r}
 
@@ -23,19 +45,58 @@ julia_setup(JULIA_HOME = "/Applications/Julia-1.8.app/Contents/Resources/julia/b
 
 ```
 
-# Run Models
+:::
+
+# Get Data & Run Models
 
 ::: {.panel-tabset}
 
+## Stata
+
+```{stata}
+
+use simulated_multilevel_data.dta
+
+mixed outcome warmth physical_punishment group HDI || country: warmth
+
+```
+
+
 ## R
+
+```{r}
+
+library(haven)
+
+df <- read_dta("simulated_multilevel_data.dta")
+
+```
+
+```{r}
+#| warning: false
+
+fit1 <- lmer(outcome ~ warmth + physical_punishment + 
+               group + HDI +
+               (1 + warmth || country),
+             data = df)
+
+summary(fit1)
+
+```
 
 ## Julia
 
 ```{julia}
+#| output: false
 
 using Tables, MixedModels, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
 
-df = DataFrame(load("/Users/agrogan/Desktop/GitHub/multilevel-thinking/simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta"))
+df = DataFrame(load("simulated_multilevel_data.dta"))
+
+```
+
+```{julia}
+#| output: false
 
 @transform!(df, :country = categorical(:country))
 
