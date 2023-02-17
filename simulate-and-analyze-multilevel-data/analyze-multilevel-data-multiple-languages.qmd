@@ -1,23 +1,24 @@
----
-title: "Models in Multiple Languages"
-author: "Andy Grogan-Kaylor"
-date: "today"
-format:
-  html:
-    toc: true
-    number-sections: true
-    code-tools: false
-    code-link: true
-    theme:
-      light: cosmo
-      dark: quartz
----
+# Multilevel Models in Stata, R and Julia
 
-# Setup 
+## Introduction
+
+Below, I describe the use of Stata, R, and Julia to estimate multilevel models. Because this document is built by `quarto` I describe calling these programs from within a `quarto` environment. However, each piece of software could be used individually.
+
+## The Data
+
+The examples below use the `simulated_multilevel_data.dta` file.
+
+## The Equation
+
+$$\begin{gather} \text{outcome}_{ij}= \beta_0 + \beta_1 \text{warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \\ \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{ij} + \\ u_{0j} + u_{1j} \times \text{warmth} + e_{ij} \end{gather}$$ {#eq-MLMsubstantive}
+   
+## Setup 
 
 ::: {.panel-tabset}
 
-## Stata
+### Stata
+
+I need to use the library `Statamarkdown` to call Stata, or I could run Stata on its own
 
 ```{r}
 
@@ -25,7 +26,9 @@ library(Statamarkdown)
 
 ```
 
-## R
+### R
+
+In R, I use the library `lme4` to run multilevel models.
 
 ```{r}
 
@@ -33,9 +36,9 @@ library(lme4)
 
 ```
 
-## Julia
+### Julia
 
-Call Julia from R.
+I need to call Julia from R.
 
 ```{r}
 
@@ -47,11 +50,19 @@ julia_setup(JULIA_HOME = "/Applications/Julia-1.8.app/Contents/Resources/julia/b
 
 :::
 
-# Get Data & Run Models
+## Get Data & Run Models
+
+To explain statistical syntax for each software, I consider the more general case of a multilevel model with dependent variable `y`, independent variables `x` and `z`, clustering variable `group`, and a random slope for `x`.
+
+$$y = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + u_0 + u_1j \times x + e_{ij}$$ {#eq-MLMsimple}
 
 ::: {.panel-tabset}
 
-## Stata
+### Stata
+
+In Stata, the syntax for a multilevel model of the form described in @eq-MLMsimple is:
+
+`mixed y x || group: x`
 
 ```{stata}
 
@@ -61,8 +72,13 @@ mixed outcome warmth physical_punishment group HDI || country: warmth
 
 ```
 
+### R
 
-## R
+In `lme4`, the general syntax for a multilevel model of the form described in @eq-MLMsimple is:
+
+`lmer(y ~ x + z + (1 + x || group), data = ...)`
+
+#### Get The Data
 
 ```{r}
 
@@ -71,6 +87,8 @@ library(haven)
 df <- read_dta("simulated_multilevel_data.dta")
 
 ```
+
+#### Run The Model
 
 ```{r}
 #| warning: false
@@ -84,7 +102,13 @@ summary(fit1)
 
 ```
 
-## Julia
+### Julia
+
+In Julia, the general syntax for a multilevel model of the form described in @eq-MLMsimple is:
+
+`fit(MixedModel, @formula(y ~ x + z + (1 + x | group)), data)`
+
+#### Load The Needed Packages And Load The Data
 
 ```{julia}
 #| output: false
@@ -95,12 +119,16 @@ df = DataFrame(load("simulated_multilevel_data.dta"))
 
 ```
 
+#### Change Country To Categorical
+
 ```{julia}
 #| output: false
 
 @transform!(df, :country = categorical(:country))
 
 ```
+
+#### Run The Model
 
 ```{julia}
 
