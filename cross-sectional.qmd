@@ -252,8 +252,11 @@ Put substantively, this model indicates that the outcome can be conceptualized a
 
 Drawing upon ideas from @sec-software, this single level equation can be easily represented in Stata syntax.
 
-`mixed outcome warmth physical_punishment group HDI || country: warmth`
+```{stata, eval = FALSE, echo=TRUE}
 
+mixed outcome warmth physical_punishment group HDI || country: warmth
+
+```
 
 ## Regression With Simulated Multi-Country Data {#sec-regression}
 
@@ -261,7 +264,11 @@ After considering some of these broader issues, let's now examine the results of
 
 The Stata syntax that we use is:
 
-`mixed outcome warmth physical_punishment group HDI || country: warmth`
+```{stata, eval = FALSE, echo=TRUE}
+
+mixed outcome warmth physical_punishment group HDI || country: warmth
+
+```
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table1.md')}
 ```
@@ -294,7 +301,11 @@ cov(u_{0j}, u_{1j}) & var(u_{1j})
 
 We use the following syntax.
 
-`mixed outcome warmth physical_punishment group HDI || country: warmth, cov(uns)`
+```{stata, eval = FALSE, echo=TRUE}
+
+mixed outcome warmth physical_punishment group HDI || country: warmth, cov(uns)
+
+```
 
 When we estimate such a model, we get the following information.
 

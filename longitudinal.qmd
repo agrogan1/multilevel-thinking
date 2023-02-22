@@ -213,7 +213,11 @@ ggplot(data = NULL) +
 
 The Stata command that we use to analyze this data is:
 
-`mixed outcome t warmth physical_punishment group HDI || country: warmth || id: t`
+```{stata, eval = FALSE, echo=TRUE}
+
+mixed outcome t warmth physical_punishment group HDI || country: warmth || id: t
+
+```
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table2.md')}
 ```
@@ -437,7 +441,11 @@ By including these parameters, I  obtain estimates for the time varying variable
 
 The Stata command for the correlated random effects model is:
 
-`mixed outcome t warmth mean_warmth physical_punishment mean_physicalpunishment group HDI || id:`
+```{stata, eval = FALSE, echo=TRUE}
+
+mixed outcome t warmth mean_warmth physical_punishment mean_physicalpunishment group HDI || id:
+  
+```
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table4.md')}
 ```
