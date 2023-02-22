@@ -744,7 +744,10 @@ div.csl-indent {
 <h2 data-number="6.4" class="anchored" data-anchor-id="sec-regression"><span class="header-section-number">6.4</span> Regression With Simulated Multi-Country Data</h2>
 <p>After considering some of these broader issues, let’s now examine the results of a multilevel regression with the simulated multicountry data. I will again imagine that the desirable outcome is an outcome such as improved psychological wellbeing.</p>
 <p>The Stata syntax that we use is:</p>
-<p><code>mixed outcome warmth physical_punishment group HDI || country: warmth</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mixed outcome warmth physical_punishment <span class="fu">group</span> HDI || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <table class="table">
 <thead>
 <tr class="header">
@@ -821,7 +824,10 @@ var(u_{0j}) &amp; cov(u_{0j}, u_{1j}) \\
 cov(u_{0j}, u_{1j}) &amp; var(u_{1j})
 \end{bmatrix} \tag{6.6}\]</span></span></p>
 <p>We use the following syntax.</p>
-<p><code>mixed outcome warmth physical_punishment group HDI || country: warmth, cov(uns)</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>mixed outcome warmth physical_punishment <span class="fu">group</span> HDI || country: warmth, cov(uns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>When we estimate such a model, we get the following information.</p>
 <table class="table">
 <thead>
