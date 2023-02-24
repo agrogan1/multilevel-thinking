@@ -49,9 +49,9 @@ generate u_0ij = rnormal(0, 3) // random intercept
 
 * ... at the family level ...
 
-generate mean_warmth = runiformint(0, 7) // different levels of mean warmth
+generate mean_warmth = runiformint(2, 7) // different levels of mean warmth
 
-generate mean_physicalpunishment = runiformint(0, 5) // different levels of mean physical_punishment
+generate mean_physicalpunishment = runiformint(2, 5) // different levels of mean physical_punishment
 
 generate group = runiformint(1, 2) // randomly distributed group
 

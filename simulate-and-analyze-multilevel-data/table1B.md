@@ -1,13 +1,13 @@
 |                     | cross_sectional3 |    |
 |---------------------|------------------|----|
-| dev_warmth          | 0.980            | ** |
-| cdev_warmth         | 4.099            | ** |
-| physical_punishment | -0.924           | ** |
+| dev_warmth          | 0.961            | ** |
+| cdev_warmth         | 1.899            |    |
+| physical_punishment | -0.845           | ** |
 | group               |                  |    |
-|   2                 | 0.729            | ** |
-| HDI                 | 0.013            |    |
-| _cons               | 53.667           | ** |
+|   2                 | 1.085            | ** |
+| HDI                 | 0.008            |    |
+| _cons               | 54.489           | ** |
 | var(warmth)         | 0.000            |    |
-| var(_cons)          | 2.980            |    |
-| var(e)              | 34.784           |    |
+| var(_cons)          | 3.351            |    |
+| var(e)              | 36.019           |    |
 ** p<.01, * p<.05
