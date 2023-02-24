@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -342,8 +405,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">B.1</span>  Introduction</a></li>
-  <li><a href="#reshaping-data-from-long-to-wide" id="toc-reshaping-data-from-long-to-wide" class="nav-link" data-scroll-target="#reshaping-data-from-long-to-wide"><span class="toc-section-number">B.2</span>  Reshaping Data From Long To Wide</a></li>
-  <li><a href="#reshaping-data-from-wide-to-long" id="toc-reshaping-data-from-wide-to-long" class="nav-link" data-scroll-target="#reshaping-data-from-wide-to-long"><span class="toc-section-number">B.3</span>  Reshaping Data From Wide To Long</a></li>
+  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management"><span class="toc-section-number">B.2</span>  Data Management</a></li>
+  <li><a href="#reshaping-data-from-long-to-wide" id="toc-reshaping-data-from-long-to-wide" class="nav-link" data-scroll-target="#reshaping-data-from-long-to-wide"><span class="toc-section-number">B.3</span>  Reshaping Data From Long To Wide</a></li>
+  <li><a href="#reshaping-data-from-wide-to-long" id="toc-reshaping-data-from-wide-to-long" class="nav-link" data-scroll-target="#reshaping-data-from-wide-to-long"><span class="toc-section-number">B.4</span>  Reshaping Data From Wide To Long</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -369,7 +433,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introduction" class="level2" data-number="B.1">
 <h2 data-number="B.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">B.1</span> Introduction</h2>
-<p>Data can be reshaped from <em>wide</em> format to <em>long</em> format, and back again. Almost any software that is capable of estimating multilevel models is capable of reshaping data.</p>
+<p>Data can be reshaped from <em>wide</em> format to <em>long</em> format, and back again. Almost any software that is capable of estimating multilevel models is capable of reshaping data. The Stata command for reshaping data is <code>reshape</code>.</p>
 <p>Below, I detail the procedure for reshaping data in Stata. Here is a sample of the longitudinal data set used in this document.</p>
 <p>These data are in <em>long</em> format (see <a href="longitudinal.html#tbl-datalong">Table&nbsp;<span>7.4</span></a>).</p>
 <blockquote class="blockquote">
@@ -418,9 +482,9 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">1.1</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
 <td style="text-align: center;">3</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">42.89</td>
+<td style="text-align: center;">59.18</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">1</td>
@@ -431,7 +495,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">2</td>
-<td style="text-align: center;">58.69</td>
+<td style="text-align: center;">58.29</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">1</td>
@@ -441,41 +505,41 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">3</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">56.66</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">60.58</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">69</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">1.2</td>
+<td style="text-align: center;">2</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">-2</td>
-<td style="text-align: center;">51.94</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">61.54</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">69</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">1.2</td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">4</td>
-<td style="text-align: center;">-2</td>
-<td style="text-align: center;">50.55</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">55.96</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">69</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">1.2</td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">4</td>
-<td style="text-align: center;">-1</td>
-<td style="text-align: center;">55.05</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">56.19</td>
 </tr>
 </tbody>
 </table>
@@ -483,10 +547,21 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="reshaping-data-from-long-to-wide" class="level2" data-number="B.2">
-<h2 data-number="B.2" class="anchored" data-anchor-id="reshaping-data-from-long-to-wide"><span class="header-section-number">B.2</span> Reshaping Data From Long To Wide</h2>
+<section id="data-management" class="level2" data-number="B.2">
+<h2 data-number="B.2" class="anchored" data-anchor-id="data-management"><span class="header-section-number">B.2</span> Data Management</h2>
+<ol type="1">
+<li>Because <code>reshape</code>-ing your data dramatically changes the structure of your data, it is a good idea to have your raw data saved in a location where it will not be changed, and can be retrieved again if the <code>reshape</code> command does not work correctly, or if you simply want to modify your <code>reshape</code>-ing data workflow.</li>
+<li>Usually we want to work with only a subset of your data, so keep only the data in which you are interested. In Stata, the command to keep only variables of interest would be <code>keep y x z t</code>.</li>
+</ol>
+</section>
+<section id="reshaping-data-from-long-to-wide" class="level2" data-number="B.3">
+<h2 data-number="B.3" class="anchored" data-anchor-id="reshaping-data-from-long-to-wide"><span class="header-section-number">B.3</span> Reshaping Data From Long To Wide</h2>
 <p>While it is not often that we want to reshape data from <em>long</em> to <em>wide</em>, I do so here for illustrative purposes. The Stata command for reshaping the data to <em>wide</em> format is:</p>
-<p><code>reshape wide physical_punishment warmth outcome, i(id) j(t)</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">reshape</span> <span class="kw">wide</span> physical_punishment warmth outcome, i(id) j(t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Notice that I only list variables that vary over time, or are <em>time varying</em>. Stata assumes that variables that are not listed do not vary over time, or are <em>time invariant</em>.</p>
 <p>The data are now in <em>wide</em> format (See <a href="longitudinal.html#tbl-datawide">Table&nbsp;<span>7.5</span></a>).</p>
 <blockquote class="blockquote">
 <p>Every individual in the data set has a single row of data. Every row in the data set is an individual.</p>
@@ -521,45 +596,45 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">1.1</td>
+<td style="text-align: center;">2</td>
 <td style="text-align: center;">3</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">42.89</td>
+<td style="text-align: center;">59.18</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">1.10</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">61.51</td>
-<td style="text-align: center;">4</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">52.09</td>
+<td style="text-align: center;">3</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">1.100</td>
-<td style="text-align: center;">0</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">56.46</td>
-<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">49.3</td>
+<td style="text-align: center;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">1.11</td>
-<td style="text-align: center;">-2</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">51.68</td>
-<td style="text-align: center;">-2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">61.99</td>
+<td style="text-align: center;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">1.12</td>
-<td style="text-align: center;">-1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">54.12</td>
-<td style="text-align: center;">-1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">47.45</td>
+<td style="text-align: center;">3</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">1.13</td>
 <td style="text-align: center;">5</td>
 <td style="text-align: center;">3</td>
-<td style="text-align: center;">62.9</td>
-<td style="text-align: center;">5</td>
+<td style="text-align: center;">61.11</td>
+<td style="text-align: center;">3</td>
 </tr>
 </tbody>
 </table>
@@ -592,55 +667,55 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">2</td>
-<td style="text-align: center;">58.69</td>
+<td style="text-align: center;">58.29</td>
 <td style="text-align: center;">3</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">56.66</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">60.58</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">69</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">7</td>
-<td style="text-align: center;">67.1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">52.99</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">64.37</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+</tr>
+<tr class="odd">
 <td style="text-align: center;">4</td>
+<td style="text-align: center;">64</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">57.34</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">69</td>
+</tr>
+<tr class="even">
 <td style="text-align: center;">5</td>
-<td style="text-align: center;">68.78</td>
+<td style="text-align: center;">55.91</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">65.44</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">69</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">48.8</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">50.49</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">69</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">57.98</td>
-<td style="text-align: center;">-1</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">49.1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">69</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">55.43</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">-1</td>
-<td style="text-align: center;">48.81</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">46.42</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">48.35</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">69</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">55.19</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">56.99</td>
 <td style="text-align: center;">3</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">65.42</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">50.63</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">69</td>
 </tr>
@@ -668,7 +743,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td style="text-align: center;">10</td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">100</td>
@@ -676,15 +751,15 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td style="text-align: center;">11</td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">12</td>
-<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">13</td>
-<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
 </tr>
 </tbody>
 </table>
@@ -692,11 +767,16 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="reshaping-data-from-wide-to-long" class="level2" data-number="B.3">
-<h2 data-number="B.3" class="anchored" data-anchor-id="reshaping-data-from-wide-to-long"><span class="header-section-number">B.3</span> Reshaping Data From Wide To Long</h2>
+<section id="reshaping-data-from-wide-to-long" class="level2" data-number="B.4">
+<h2 data-number="B.4" class="anchored" data-anchor-id="reshaping-data-from-wide-to-long"><span class="header-section-number">B.4</span> Reshaping Data From Wide To Long</h2>
 <p>Usually, we are more interested in reshaping data from <em>wide</em> to <em>long</em>, and that is what I do now.</p>
+<p>Notice again that I only list variables that vary over time, or are <em>time varying</em>. As before, Stata assumes that variables that are not listed do not vary over time, or are <em>time invariant</em>.</p>
+<p>Notice also that our <em>time varying</em> data are in the <em>stub-time</em> format, e.g.&nbsp;<code>warmth1</code>, <code>warmth2</code>, <code>physical_punishment1</code> <code>physical_punishment2</code>, etc. Because the variables are named in this way, Stata knows to use the <em>stub</em> (e.g.&nbsp;<code>warmth</code>) as the variable name, and the numeric value, (e.g.&nbsp;1, 2, 3) as the timepoint.</p>
 <p>The command is:</p>
-<p><code>reshape long physical_punishment warmth outcome, i(id) j(t)</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">reshape</span> <span class="kw">long</span> physical_punishment warmth outcome, i(id) j(t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>If we use this command, we are back to the original format of the data set.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -735,9 +815,9 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">1.1</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
 <td style="text-align: center;">3</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">42.89</td>
+<td style="text-align: center;">59.18</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">1</td>
@@ -748,7 +828,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">2</td>
-<td style="text-align: center;">58.69</td>
+<td style="text-align: center;">58.29</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">1</td>
@@ -758,41 +838,41 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">3</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">56.66</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">60.58</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">69</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">1.2</td>
+<td style="text-align: center;">2</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">-2</td>
-<td style="text-align: center;">51.94</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">61.54</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">69</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">1.2</td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">4</td>
-<td style="text-align: center;">-2</td>
-<td style="text-align: center;">50.55</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">55.96</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">69</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">1.2</td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">4</td>
-<td style="text-align: center;">-1</td>
-<td style="text-align: center;">55.05</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">56.19</td>
 </tr>
 </tbody>
 </table>
