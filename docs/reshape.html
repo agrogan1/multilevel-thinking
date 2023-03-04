@@ -777,6 +777,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">reshape</span> <span class="kw">long</span> physical_punishment warmth outcome, i(id) j(t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<blockquote class="blockquote">
+<p>The <code>id</code> variable, whatever it is named, has to uniquely identify the observations. A useful Stata command here is <code>isid</code>, e.g.&nbsp;<code>isid id</code>. If your <code>id</code> variable is not unique, it is often due to missing values. <code>drop if id == .</code> usually solves the problem (assuming that your <code>id</code> variable is indeed named <code>id</code>, and not something else).</p>
+</blockquote>
 <p>If we use this command, we are back to the original format of the data set.</p>
 <div class="cell">
 <div class="cell-output-display">

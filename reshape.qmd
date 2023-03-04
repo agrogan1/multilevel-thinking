@@ -83,6 +83,8 @@ reshape long physical_punishment warmth outcome, i(id) j(t)
 
 ```
 
+> The `id` variable, whatever it is named, has to uniquely identify the observations. A useful Stata command here is `isid`, e.g. `isid id`. If your `id` variable is not unique, it is often due to missing values. `drop if id == .` usually solves the problem (assuming that your `id` variable is indeed named `id`, and not something else).
+
 If we use this command, we are back to the original format of the data set. 
 
 ```{r}
