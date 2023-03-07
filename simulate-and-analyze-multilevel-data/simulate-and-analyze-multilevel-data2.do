@@ -124,6 +124,19 @@ mixed outcome || country:
 
 estat icc
 
+estat sd, variance post // post results as variance scale rather than log scale
+
+est store cross_sectional0 // store estimates
+
+etable, estimates(cross_sectional0) ///
+novarlabel /// variable names only
+cstat(_r_b) /// beta's only
+showstars showstarsnote ///
+column(estimates) ///
+export("table0.md", as(markdown) replace)
+
+estimates drop cross_sectional0
+
 * model w covariates
 
 mixed outcome warmth physical_punishment i.group HDI || country: warmth // multilevel model
