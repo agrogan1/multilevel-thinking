@@ -244,9 +244,7 @@ In this formulation of the equation, the nature of the random effects is more cl
 
 To make these ideas more concrete, I rewrite this equation in terms of the main substantive ideas of this document:
 
-$$\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{j} \ + $$ {#eq-MLMsubstantive}
-
-$$u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}$$
+$$\begin{gather} \text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} + \beta_3 \text{group}_{ij} + \\ \beta_4 \text{HDI}_{j} + \\ u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij} \end{gather}$$ {#eq-MLMsubstantive}
 
 Put substantively, this model indicates that the outcome can be conceptualized as a function of an intercept term, and contributions of parental warmth, physical punishment, group membership, and country level HDI. The random intercept, $u_{0j}$ indicates that there is some unexplained variation in the outcome at the country level. The random slope $u_{1j} \times \text{parental warmth}$ indicates that the model is allowing for country level variation in the association of parental warmth with the outcome. Inspection of @fig-data indicates that it might be possible that there would be variation across countries in this slope. The model could be extended to allow for country level variation in other slope terms by adding other random slopes, eg $u_{2j}$, $u_{3j}$, etc.
 
@@ -261,6 +259,49 @@ mixed outcome warmth physical_punishment group HDI || country: warmth
 ## Regression With Simulated Multi-Country Data {#sec-regression}
 
 After considering some of these broader issues, let's now examine the results of a multilevel regression with the simulated multicountry data. I will again imagine that the desirable outcome is an outcome such as improved psychological wellbeing. 
+
+### Unconditional Model {#sec-unconditional}
+
+The unconditional model is a model with no $x$'s or covariates [@Raudenbush2002]. 
+
+$$\text{outcome}_{ij} = \beta_0 + u_{0j} + e_{ij}$$ {#eq-unconditional}
+
+Here, $\text{outcome}_{ij}$ is a function of an intercept $\beta_0$, a country specific error term, $u_{0j}$, and an individual level error term $e_{ij}$.
+
+Thus, all of the variation in $\text{outcome}_{ij}$ is--given the *unconditional* nature of our model--attributable to unmeasured variation at the country and individual level.
+
+### Intra-Class Correlation Coefficient {#sec-ICC}
+
+I now introduce a measure known as the Intra-Class Correlation Coefficient, (ICC) that can be computed from this unconditional model [@Raudenbush2002].
+
+$$\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}$$ {#eq-ICC}
+
+Heuristically:
+
+$$\text{ICC} = \frac{\text{group level variation}}{\text{group level variation} + \text{individual level variation}}$$ {#eq-ICCheuristic}
+
+The ICC from the *unconditional* model (@eq-unconditional) is the most informative ICC as it represents the amount of variation in the dependent variable that could *potentially* be explained by the grouping variable.
+
+The Stata syntax that we use is:
+
+```{stata, eval = FALSE, echo=TRUE}
+
+mixed outcome || country: warmth
+
+estat icc
+
+```
+
+```{r, child=c('./simulate-and-analyze-multilevel-data/table0.md')}
+```
+
+From `estat icc`, or calculating by hand, we see that the ICC for this data is .076 or 7.6%.
+
+As we add covariates, $x$'s, to the model the ICC will most often decrease.
+
+### Conditional Model
+
+We next estimate a *conditional* model, *with* independent variables.
 
 The Stata syntax that we use is:
 
@@ -453,39 +494,13 @@ Above, in @sec-studyvariation, I have referred to multilevel models as the study
 
 I provide again, for pedagogical purposes, the example substantive equation that I have been using in this document.
 
-$$\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \beta_3 \text{time}_{ij} \ + $$ {#eq-MLMsubstantive2}
-
-$$u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}$$ 
+$$\begin{gather} \text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} + \beta_3 \text{group}_{ij} + \\ \beta_4 \text{HDI}_{j} + \\ u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij} \end{gather}$$ {#eq-MLMsubstantive2}
 
 ### Measured and Unmeasured Variation
 
 The first thing to note about the equation is that it can be divided into measured and unmeasured variation. 
 
-This is most easily seen if we introduce the idea of an unconditional model.
-
-### Unconditional Model
-
-The unconditional model is a model with no $x$'s or covariates [@Raudenbush2002]. 
-
-$$\text{outcome}_{ij} = \beta_0 + u_{0j} + e_{ij}$$ {#eq-unconditional}
-
-Here, $\text{outcome}_{ij}$ is a function of an intercept $\beta_0$, a country specific error term, $u_{0j}$, and an individual level error term $e_{ij}$.
-
-Thus, all of the variation in $\text{outcome}_{ij}$ is--given the unconditional nature of our model--due to unmeasured variation at the country and individual level.
-
-### Intra-Class Correlation Coefficient
-
-I now introduce a measure known as the Intra-Class Correlation Coefficient, (ICC) that can be computed from this unconditional model [@Raudenbush2002].
-
-$$\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}$$ {#eq-ICC}
-
-Heuristically:
-
-$$\text{ICC} = \frac{\text{group level variation}}{\text{group level variation} + \text{individual level variation}}$$ {#eq-ICCheuristic}
-
-The ICC from the *unconditional* model (@eq-unconditional) is the most informative ICC as it represents the amount of variation in the dependent variable that could *potentially* be explained by the grouping variable.
-
-As we add covariates, $x$'s, to the model the ICC will most often decrease.
+I have already introduced the idea of an unconditional model (@sec-unconditional), in which there are no independent variables, and all of the variation is unmeasured. The ICC (@sec-ICC) is a measure of the amount of variation that could potentially be attributable to the Level 2 units, in this case, different countries.
 
 ```{r}
 #| label: fig-variationsources
@@ -583,6 +598,31 @@ $$\text{ICC}_x = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}$$ {#eq-ICCx}
 ### Variation in Slopes
 
 Another possible type of variation to investigate is variation in the relationship of $x$ and $y$, which is represented in the multilevel model by examining variation in the $\beta$'s, i.e. $var(u_{1j})$.
+
+### Summary
+
+Thus, we can consider a number of sources of possible variation.
+
+| Model Parameter       | Meaning         |   
+|-----------------------|-----------------|
+| Independent Variables |                 |
+| $var(x_{ij})$         | What is the variation in x? |
+| $range(x_{ij})$       | What are the maximum and minimum of x? |
+| $var(w_{0j}) \text{ if } x = w_{0j} + e_{ij}$[^w] | What is the country specific variation in the value of x? | 
+| Dependent Variable    | 
+| $var(y_{ij})$         | What is the variation in y? |
+| $range(y_{ij})$       | What are the maximum and minimum of y? |
+| $var(u_{0j})$              | What is the country specific variation in the intercept of y? |   
+| Regression Coefficients for Slopes |     |
+| $\beta_{x} x$ | What is the relationship of x and y? |
+| $\beta_{xz} z \times x$ | What is the effect of z on the relationship of x and y? |
+| $var(u_{1j}) \text{ from } u_{1j} \times x$  | What is the country specific variation in the relationship of x and y? |     
+| $cov(u_{0j}, u_{1j})$ | What is the covariance of the country specific intercept and and country specific slope. Is the country specific intercept related to the country specific slope? |   
+
+:  Some Possible Sources of Variation To Consider in A Multilevel Model {#tbl-sourcesvariation}
+
+[^w]: Here for the sake of clarity, I use $w_{0j}$ as a random effect to think about country specific variation in $x$.
+
 
 ### Variation As An Outcome
 
