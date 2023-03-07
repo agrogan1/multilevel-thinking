@@ -244,7 +244,9 @@ In this formulation of the equation, the nature of the random effects is more cl
 
 To make these ideas more concrete, I rewrite this equation in terms of the main substantive ideas of this document:
 
-$$\begin{gather} \text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} + \beta_3 \text{group}_{ij} + \\ \beta_4 \text{HDI}_{j} + \\ u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij} \end{gather}$$ {#eq-MLMsubstantive}
+$$\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} +$$
+$$\beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{j} + $$
+$$u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}$$ {#eq-MLMsubstantive}
 
 Put substantively, this model indicates that the outcome can be conceptualized as a function of an intercept term, and contributions of parental warmth, physical punishment, group membership, and country level HDI. The random intercept, $u_{0j}$ indicates that there is some unexplained variation in the outcome at the country level. The random slope $u_{1j} \times \text{parental warmth}$ indicates that the model is allowing for country level variation in the association of parental warmth with the outcome. Inspection of @fig-data indicates that it might be possible that there would be variation across countries in this slope. The model could be extended to allow for country level variation in other slope terms by adding other random slopes, eg $u_{2j}$, $u_{3j}$, etc.
 
@@ -459,20 +461,46 @@ ggplot(aes(x = x,
 In terms of using statistical software (Stata), we need to follow a few steps.
 
 1. Calculate the *grand mean* of the variable.
+
+```{stata, eval=FALSE, echo=TRUE}
+
+egen gmean_warmth = mean(warmth)
+
+```
+
 2. Calculate *country specific means* of the variable.
+
+```{stata, eval=FALSE, echo=TRUE}
+
+bysort country: egen cmean_warmth = mean(warmth)
+
+```
+
 3. Calculate:
     + individual scores - country specific means
     + country specific means - grand mean
+    
+```{stata, eval=FALSE, echo=TRUE}
 
-1. `egen gmean_warmth = mean(warmth)`
-2. `bysort country: egen cmean_warmth = mean(warmth)`
-3. `generate dev_warmth = warmth - cmean_warmth`
-4. `generate cdev_warmth = cmean_warmth - gmean_warmth`
+generate dev_warmth = warmth - cmean_warmth
+
+generate cdev_warmth = cmean_warmth - gmean_warmth
+
+```
+
+4. Estimate the model with within and between.
+
+```{stata, eval=FALSE, echo=TRUE}
+
+mixed outcome dev_warmth cdev_warmth physical_punishment i.group HDI ///
+|| country: warmth
+
+```
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table1B.md')}
 ```
 
-Estimates suggest that both the difference in an individual family's expression of parental warmth from the country level mean, *and* the difference in the country level mean from the grand mean are statistically significant predictors of the outcome. The difference in the country level mean from the grand mean appears to have the larger effect.
+Estimates suggest that both the difference in an individual family's expression of parental warmth from the country level mean, *but not* the difference in the country level mean from the grand mean are statistically significant predictors of the outcome. 
 
 ## Summary of Advantages Of The Multilevel Model
 
@@ -494,7 +522,9 @@ Above, in @sec-studyvariation, I have referred to multilevel models as the study
 
 I provide again, for pedagogical purposes, the example substantive equation that I have been using in this document.
 
-$$\begin{gather} \text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} + \beta_3 \text{group}_{ij} + \\ \beta_4 \text{HDI}_{j} + \\ u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij} \end{gather}$$ {#eq-MLMsubstantive2}
+$$\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} +$$
+$$\beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{j} + $$
+$$u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}$$ {#eq-MLMsubstantive2}
 
 ### Measured and Unmeasured Variation
 
