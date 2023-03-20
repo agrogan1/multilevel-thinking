@@ -553,7 +553,7 @@ tribble(
            y = 5, 
            color = "orange",
            alpha = .5,
-           size = 23) +
+           size = 25) +
   annotate("text", 
            x = 1.5, 
            y = 2.5, 
@@ -565,7 +565,7 @@ tribble(
            y = 3, 
            yend = 5,
            colour = "red", 
-           size = 1, 
+           linewidth = 1, 
            arrow = arrow()) +
   annotate("segment", 
            x = 0, 
@@ -573,7 +573,7 @@ tribble(
            y = 1, 
            yend = 1,
            colour = "orange", 
-           size = 1, 
+           linewidth = 1, 
            arrow = arrow(ends = "both")) +
   annotate("text",
            x = 5,
@@ -636,7 +636,7 @@ Thus, we can consider a number of sources of possible variation.
 | Independent Variables |                 |
 | $var(x_{ij})$         | What is the variation in x? |
 | $range(x_{ij})$       | What are the maximum and minimum of x? |
-| $var(w_{0j}) \text{ if } x = w_{0j} + e_{ij}$[^w] | What is the country specific variation in the value of x? | 
+| $var(w_{0j}) \text{ if } x = \bar{x}_{..} + w_{0j} + e_{ij}$[^w] | What is the country specific variation in the value of x? | 
 | Dependent Variable    | 
 | $var(y_{ij})$         | What is the variation in y? |
 | $range(y_{ij})$       | What are the maximum and minimum of y? |
