@@ -512,9 +512,7 @@ The discussion so far gives an idea of the advantages of the multilevel model fo
 
 ## Predicted Values
 
-According to **"Stein's Paradox"**, predictions from a multilevel model may be better than the mean.
-
-**shrinkage**
+**To Be Developed:** According to **"Stein's Paradox"**, predictions from a multilevel model may be better than the mean (**shrinkage**).
 
 ## Variation
 
