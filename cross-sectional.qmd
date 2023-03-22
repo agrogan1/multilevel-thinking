@@ -636,7 +636,7 @@ Thus, we can consider a number of sources of possible variation.
 | Independent Variables |                 |
 | $var(x_{ij})$         | What is the variation in x? |
 | $range(x_{ij})$       | What are the maximum and minimum of x? |
-| $var(w_{0j}) \text{ if } x = \bar{x}_{..} + w_{0j} + e_{ij}$[^w] | What is the country specific variation in the value of x? | 
+| $var(w_{0j}) \text{ if } x = \beta_0 + w_{0j} + e_{ij}$[^w] | What is the country specific variation in the value of x? | 
 | Dependent Variable    | 
 | $var(y_{ij})$         | What is the variation in y? |
 | $range(y_{ij})$       | What are the maximum and minimum of y? |
