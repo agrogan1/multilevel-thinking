@@ -528,6 +528,8 @@ $$u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}$$ {#eq-MLMsubstantive2}
 
 The first thing to note about the equation is that it can be divided into measured and unmeasured variation. 
 
+\begin{gather} \underbrace{y_{ij}}_\text{outcome} = \underbrace{\beta_0}_\text{intercept} + \underbrace{\beta_1 x}_\text{slope of x} + \underbrace{\beta_2 \text{group}}_{\substack{\text{association of group} \\ \text{with intercept}}} + \underbrace{\beta_3 x \times \text{group}}_{\substack{\text{association of group} \\ \text{with slope of x}}} + \\ \underbrace{u_{0j}}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in intercept}}} + \underbrace{u_{1j} \times x}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in slope of x}}} + \underbrace{e_{ij}}_{\substack{\text{unmeasured} \\ \text{individual} \\ \text{error}}} \end{gather} 
+
 I have already introduced the idea of an unconditional model (@sec-unconditional), in which there are no independent variables, and all of the variation is unmeasured. The ICC (@sec-ICC) is a measure of the amount of variation that could potentially be attributable to the Level 2 units, in this case, different countries.
 
 ```{r}
