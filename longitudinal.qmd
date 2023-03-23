@@ -125,7 +125,7 @@ simulated_multilevel_longitudinal_data %>%
 
 ## The Equation
 
-When data are in *long* format, the following equation is applicable.
+When data are in *long* format, the following equation is applicable. Observe that the model below is a *three level* model where *timepoints* are nested inside *individuals* which in turn are nested inside *countries*. A simpler two level model with *timepoints* nested inside *individuals* would also be possible to estimate.
 
 $$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + $$ {#eq-MLM-longitudinal} 
 
