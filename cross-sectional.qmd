@@ -502,6 +502,10 @@ mixed outcome dev_warmth cdev_warmth physical_punishment i.group HDI ///
 
 Estimates suggest that both the difference in an individual family's expression of parental warmth from the country level mean, *but not* the difference in the country level mean from the grand mean are statistically significant predictors of the outcome. 
 
+## Predicted Values
+
+**To Be Developed:** According to **"Stein's Paradox"**, predictions from a multilevel model may be better than the mean (**shrinkage**).
+
 ## Summary of Advantages Of The Multilevel Model
 
 The discussion so far gives an idea of the advantages of the multilevel model for studying intrinsically multilevel data: children in classrooms or schools; individuals or families in neighborhoods; individuals or families in countries. These advantages can be summarized below:
@@ -510,9 +514,13 @@ The discussion so far gives an idea of the advantages of the multilevel model fo
 2. Regression coefficients are estimated correctly accounting for the clustered or nested structure of the data. If one does not account for the clustered or nested structure of the data, regression slopes can be estimated as negative when they are more correctly estimated as positive, or as null, or conversely estimated as positive when there are more correctly seen as negative (or null). Again, to phrase things in a more colloquial fashion, this means that we do not judge something to be a risk factor when it is in fact a protective factor or a null effect; or a protective factor when it is in fact a risk factor, or a null effect.  
 3. An increasing focus of statistical estimation is not to focus on particular regression parameters, but instead to predict outcomes for particular combinations of independent variables. Predictions from a multilevel model could be said to be best predictions in that groups are weighted by their precision, contributing to an estimate which makes better predictions than would a simple average. More colloquially, multilevel models allow us to predict outcomes better and more accurately than would be possible with simple or more naïve models.
 
-## Predicted Values
+## Some Wrong (or Partially Wrong) Approaches {#sec-wrongapproaches}
 
-**To Be Developed:** According to **"Stein's Paradox"**, predictions from a multilevel model may be better than the mean (**shrinkage**).
+When data are clustered--e.g. residents in neighborhoods, children in schools, families in countries--it is worth discussing the fact that we have several choices statistically as how to proceed, other than using a multilevel model. Given the discussion so far, we can see the advantages of a multilevel model over these other approaches: 
+
+1. First, we could simply ignore the clustering, and treat the data as though it were composed of statistically independent individuals, i.e. statistically independent $e_i$. As we have discussed above, however, this approach has at least two disadvantages. First, as discussed in @sec-pvalues, this approach will mis-estimate standard errors, most often underestimating them, resulting in underestimated p values and false positives. Second, as discussed in @sec-multilevelstructure ignoring clustering runs the risk of estimating regression $\beta$'s that are not estimated with information about the multilevel structure of the data, with the possibility that $\beta$ coefficients may not only have incorrect statistical significance, but also incorrect magnitude, and even incorrect sign.
+2. A second approach would be to *aggregate* the data to the level of the higher social unit, e.g. aggregating the data at the level of the neighborhood. Here we run into an idea similar to that discussed in @sec-multilevelstructure, the "ecological fallacy": the idea that group level and individual level relationships are necessarily the same [@FIREBAUGH20014023].
+3. Lastly, we could adopt a statistical strategy of *clustering* the standard errors. Clustering the standard errors means that standard errors are corrected for the non-independence of the $e_i$ within clusters. Thus, *p* values are estimated correctly. However, clustering still does not account for the multilevel structure of the data (@sec-multilevelstructure), and thus when relationships between *x*'s and *y* at different levels of the data are very different, simply clustering the standard errors may not give correct estimates of the $\beta$'s.
 
 ## Variation
 
@@ -526,11 +534,11 @@ $$u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}$$ {#eq-MLMsubstantive2}
 
 ### Measured and Unmeasured Variation
 
-The first thing to note about the equation is that it can be divided into measured and unmeasured variation. 
+The first thing to note about an equation for a multilevel model--here written in a more general form--is that it can be divided into measured and unmeasured variation. 
 
 \begin{gather} \underbrace{y_{ij}}_\text{outcome} = \underbrace{\beta_0}_\text{intercept} + \underbrace{\beta_1 x}_\text{slope of x} + \underbrace{\beta_2 \text{group}}_{\substack{\text{association of group} \\ \text{with intercept}}} + \underbrace{\beta_3 x \times \text{group}}_{\substack{\text{association of group} \\ \text{with slope of x}}} + \\ \underbrace{u_{0j}}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in intercept}}} + \underbrace{u_{1j} \times x}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in slope of x}}} + \underbrace{e_{ij}}_{\substack{\text{unmeasured} \\ \text{individual} \\ \text{error}}} \end{gather} 
 
-I have already introduced the idea of an unconditional model (@sec-unconditional), in which there are no independent variables, and all of the variation is unmeasured. The ICC (@sec-ICC) is a measure of the amount of variation that could potentially be attributable to the Level 2 units, in this case, different countries.
+I have already introduced the idea of an unconditional model (@sec-unconditional), in which there are no independent variables, and all of the variation is unmeasured. The unconditional intraclcass correlation coefficient (ICC) (@sec-ICC) is a measure of the amount of variation that could potentially be attributable to the Level 2 units, in this case, different countries.
 
 ```{r}
 #| label: fig-variationsources
@@ -617,13 +625,15 @@ In the regression in @sec-regression, there is discernible between country varia
 
 Equally important, I think, but much less frequently explored than variation in *outcomes*, is the possibility of variation in *predictors*, $var(x_{ij})$. In the substantive example that we have employed so far, the *predictors* are different *parenting behaviors*, so considering variation in *predictors* allows us to consider variation in *parenting behaviors*, as well as variation in the *outcomes* of those behaviors.
 
-We would estimate variation in behaviors attributable to country in much the same way that we would estimate variation in outcomes, estimating an unconditional model, but substituting $x$ for $y$.
+We would estimate variation in behaviors attributable to country in much the same way that we would estimate variation in outcomes, estimating an unconditional model, but substituting $x$ for $y$.[^w]
 
-$$x_{ij} = \beta_0 + u_{0j} + e_{ij}$$ {#eq-unconditionalx}
+$$x_{ij} = \beta_0 + w_{0j} + e_{ij}$$ {#eq-unconditionalx}
 
 Then, similarly, the variation in a predictor attributable to the clustered nature of the data--in this case the clustering of individuals in countries--is given by:
 
-$$\text{ICC}_x = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}$$ {#eq-ICCx}
+$$\text{ICC}_x = \frac{var(w_{0j})}{var(w_{0j}) + var(e_{ij})}$$ {#eq-ICCx} 
+
+[^w]: Here for the sake of clarity, I use $w_{0j}$ as a random effect to think about country specific variation in $x$.
 
 ### Variation in Slopes
 
@@ -638,7 +648,7 @@ Thus, we can consider a number of sources of possible variation.
 | Independent Variables |                 |
 | $var(x_{ij})$         | What is the variation in x? |
 | $range(x_{ij})$       | What are the maximum and minimum of x? |
-| $var(w_{0j}) \text{ if } x = \beta_0 + w_{0j} + e_{ij}$[^w] | What is the country specific variation in the value of x? | 
+| $var(w_{0j}) \text{ if } x = \beta_0 + w_{0j} + e_{ij}$ | What is the country specific variation in the value of x? | 
 | Dependent Variable    | 
 | $var(y_{ij})$         | What is the variation in y? |
 | $range(y_{ij})$       | What are the maximum and minimum of y? |
@@ -650,9 +660,6 @@ Thus, we can consider a number of sources of possible variation.
 | $cov(u_{0j}, u_{1j})$ | What is the covariance of the country specific intercept and and country specific slope. Is the country specific intercept related to the country specific slope? |   
 
 :  Some Possible Sources of Variation To Consider in A Multilevel Model {#tbl-sourcesvariation}
-
-[^w]: Here for the sake of clarity, I use $w_{0j}$ as a random effect to think about country specific variation in $x$.
-
 
 ### Variation As An Outcome
 
@@ -674,10 +681,3 @@ Models with all possible random effects are termed *maximal models* [@Barr2013; 
 
 It should be noted that @Matuschek2017 argue that such a *maximal* approach may lead to a loss of statistical power and further argue that one should adhere to "a random effect structure that is supported by the data." In contrast, @nalborczyk_batailler_loevenbruck_vilain_burkner_2019 argue that maximal models are supported under the Bayesian approach. @Oberauer2022 also argues for including multiple random slopes. @Schielzeth2009 make a similar argument from a frequentist perspective.
 
-## Some Wrong (or Partially Wrong) Approaches {#sec-wrongapproaches}
-
-When data are clustered--e.g. residents in neighborhoods, children in schools, families in countries--it is worth discussing the fact that we have several choices statistically as how to proceed, other than using a multilevel model. Given the discussion so far, we can see the advantages of a multilevel model over these other approaches: 
-
-1. First, we could simply ignore the clustering, and treat the data as though it were composed of statistically independent individuals, i.e. statistically independent $e_i$. As we have discussed above, however, this approach has at least two disadvantages. First, as discussed in @sec-pvalues, this approach will mis-estimate standard errors, most often underestimating them, resulting in underestimated p values and false positives. Second, as discussed in @sec-multilevelstructure ignoring clustering runs the risk of estimating regression $\beta$'s that are not estimated with information about the multilevel structure of the data, with the possibility that $\beta$ coefficients may not only have incorrect statistical significance, but also incorrect magnitude, and even incorrect sign.
-2. A second approach would be to *aggregate* the data to the level of the higher social unit, e.g. aggregating the data at the level of the neighborhood. Here we run into an idea similar to that discussed in @sec-multilevelstructure, the "ecological fallacy": the idea that group level and individual level relationships are necessarily the same [@FIREBAUGH20014023].
-3. Lastly, we could adopt a statistical strategy of *clustering* the standard errors. Clustering the standard errors means that standard errors are corrected for the non-independence of the $e_i$ within clusters. Thus, *p* values are estimated correctly. However, clustering still does not account for the multilevel structure of the data (@sec-multilevelstructure), and thus when relationships between *x*'s and *y* at different levels of the data are very different, simply clustering the standard errors may not give correct estimates of the $\beta$'s.
