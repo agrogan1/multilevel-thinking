@@ -24,43 +24,45 @@ library(pander) # nice tables
 
 ```
 
-Counter-intuitively, and surprisingly, the mathematics of estimating models with cross-sectional clustered data easily generalizes to longitudinal data. In cross sectional clustered data, we imagine *individuals clustered in neighborhoods, schools, or countries*.
+Counter-intuitively, and surprisingly, the mathematics of estimating models with cross-sectional clustered data easily generalizes to longitudinal data. In cross sectional clustered data, we imagine *individuals or families clustered in neighborhoods, schools, or countries*.
 
-| Level | Example(s)    |
-|-------|---------------|
-| 1     | Individuals   |
-| 2     | Schools       |
-|       | Neighborhoods |
-|       | Countries     |
+| Level | Example(s)               |
+|-------|--------------------------|
+| 1     | Individuals or Families  |
+| 2     | Schools                  |
+|       | Neighborhoods            |
+|       | Countries                |
 
 : Levels in Cross-Sectional Data {#tbl-levelscrosssectional}
 
-In longitudinal data, we consider the *first level* to be that of *time points*, or *study waves*, which we sometimes call the *person-observation*. The *second level* is then the individual. 
+In longitudinal data, we consider the *first level* to be that of *time points*, or *study waves*, which we sometimes call the *person-observation*.[^personobservation] The *second level* is then the individual or family. 
 
-| Level | Example(s)    |
-|-------|---------------|
-| 1     | Timepoints    |
-| 2     | Individuals   |
+[^personobservation]: When we are studying families, e.g. a parent-child pair, it might be more appropriate to call each row of data a *family-observation*, but the term *person-observation* is more commonly used.
+
+| Level | Example(s)              |
+|-------|-------------------------|
+| 1     | Timepoints              |
+| 2     | Individuals or Families |
 
 : Levels in Longitudinal Data {#tbl-levelslongitudinal}
 
-While it is less common, we could then easily add additional clustering to this longitudinal model, for example, clustering of individuals inside social units.
+While it is less common, we could then easily add additional clustering to this longitudinal model, for example, clustering of individuals or families inside social units.
 
-| Level | Example(s)    |
-|-------|---------------|
-| 1     | Timepoints    |
-| 2     | Individuals   |
-| 3     | Schools       |
-|       | Neighborhoods |
-|       | Countries     |
+| Level | Example(s)                |
+|-------|---------------------------|
+| 1     | Timepoints                |
+| 2     | Individuals or Families   |
+| 3     | Schools                   |
+|       | Neighborhoods             |
+|       | Countries                 |
 
 : Multiple Levels in Longitudinal Data {#tbl-levelslongitudinal2}
 
 ## Use Data With Multiple Observations Per Individual
 
-Multilevel data suitable for longitudinal analysis  has *multiple rows of data per individual*. Put another way, *every row of data is a person-timepoint*.
+Multilevel data suitable for longitudinal analysis  has *multiple rows of data per individual or family*. Put another way, *every row of data is a person-timepoint*.
 
-> This method of organizing data is known as the *long* format. Another way of organizing longitudinal data--which I do not discuss in detail here--is the *wide* format in which every individual has only a single row of data. In *wide* data, the different timepoints are in *different columns* of data. I do discuss *reshaping* data from *wide* to *long*, and vice versa, in @sec-reshape.
+> This method of organizing data is known as the *long* format. Another way of organizing longitudinal data--which I do not discuss in detail here--is the *wide* format in which every individual or family has only a single row of data. In *wide* data, the different timepoints are in *different columns* of data. I do discuss *reshaping* data from *wide* to *long*, and vice versa, in @sec-reshape.
 
 | id   | t    | x    |
 |------|------|------|
@@ -82,7 +84,7 @@ Multilevel data suitable for longitudinal analysis  has *multiple rows of data p
 
 ## Simulated Multilevel Longitudinal Data
 
-For the discussion below, I use a longitudinal version of the simulated data that has multiple rows of data per individual. 
+For the discussion below, I use a longitudinal version of the simulated data that has multiple rows of data per family. 
 
 ```{r}
 
@@ -114,7 +116,7 @@ simulated_multilevel_longitudinal_data %>%
   geom_smooth(method = "lm", se = FALSE) +
   scale_color_viridis_d(name = "individual") +
   labs(title = "Desirable Outcome by Time",
-       subtitle = "By Individual",
+       subtitle = "By Family",
        caption = "Simulated Longitudinal Data; Selected Individuals",
        x = "time",
        y = "desirable outcome") +
@@ -125,7 +127,7 @@ simulated_multilevel_longitudinal_data %>%
 
 ## The Equation
 
-When data are in *long* format, the following equation is applicable. Observe that the model below is a *three level* model where *timepoints* are nested inside *individuals* which in turn are nested inside *countries*. A simpler two level model with *timepoints* nested inside *individuals* would also be possible to estimate.
+When data are in *long* format, the following equation is applicable. Observe that the model below is a *three level* model where *timepoints* are nested inside *families* which in turn are nested inside *countries*. A simpler two level model with *timepoints* nested inside *families* would also be possible to estimate.
 
 $$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + $$ {#eq-MLM-longitudinal} 
 
@@ -134,9 +136,9 @@ $$\beta_4 \text{group}_{itj} + \beta_5 \text{HDI}_{itj} +$$
 $$u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + $$
 
 $$v_{0i} + v_{1i} \times t_{itj} + e_{itj}$$
-Here I include a random slope ($u_{1j}$) at the country level for parental warmth, as well as a random slope ($v_{1i}$) at the individual level for time. 
+Here I include a random slope ($u_{1j}$) at the country level for parental warmth, as well as a random slope ($v_{1i}$) at the family level for time. 
 
-As before, the random slope for parental warmth, $u_{1j} \times \text{parental warmth}_{ij}$ suggests allows us to estimate whether the relationship between parental warmth and the outcome varies across countries. The random slope for time, $v_{1i} \times t$, allows us to estimate whether time trajectories (the slope for time) vary across individuals.
+As before, the random slope for parental warmth, $u_{1j} \times \text{parental warmth}_{ij}$ suggests allows us to estimate whether the relationship between parental warmth and the outcome varies across countries. The random slope for time, $v_{1i} \times t$, allows us to estimate whether time trajectories (the slope for time) vary across families.
 
 ## Growth Trajectories
 

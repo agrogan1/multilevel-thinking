@@ -473,7 +473,7 @@ div.csl-indent {
 <div class="cell">
 
 </div>
-<p>Counter-intuitively, and surprisingly, the mathematics of estimating models with cross-sectional clustered data easily generalizes to longitudinal data. In cross sectional clustered data, we imagine <em>individuals clustered in neighborhoods, schools, or countries</em>.</p>
+<p>Counter-intuitively, and surprisingly, the mathematics of estimating models with cross-sectional clustered data easily generalizes to longitudinal data. In cross sectional clustered data, we imagine <em>individuals or families clustered in neighborhoods, schools, or countries</em>.</p>
 <div id="tbl-levelscrosssectional" class="anchored">
 <table class="table">
 <caption>Table&nbsp;7.1: Levels in Cross-Sectional Data</caption>
@@ -486,7 +486,7 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td>Individuals</td>
+<td>Individuals or Families</td>
 </tr>
 <tr class="even">
 <td>2</td>
@@ -503,7 +503,7 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p>In longitudinal data, we consider the <em>first level</em> to be that of <em>time points</em>, or <em>study waves</em>, which we sometimes call the <em>person-observation</em>. The <em>second level</em> is then the individual.</p>
+<p>In longitudinal data, we consider the <em>first level</em> to be that of <em>time points</em>, or <em>study waves</em>, which we sometimes call the <em>person-observation</em>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The <em>second level</em> is then the individual or family.</p>
 <div id="tbl-levelslongitudinal" class="anchored">
 <table class="table">
 <caption>Table&nbsp;7.2: Levels in Longitudinal Data</caption>
@@ -520,12 +520,12 @@ div.csl-indent {
 </tr>
 <tr class="even">
 <td>2</td>
-<td>Individuals</td>
+<td>Individuals or Families</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>While it is less common, we could then easily add additional clustering to this longitudinal model, for example, clustering of individuals inside social units.</p>
+<p>While it is less common, we could then easily add additional clustering to this longitudinal model, for example, clustering of individuals or families inside social units.</p>
 <div id="tbl-levelslongitudinal2" class="anchored">
 <table class="table">
 <caption>Table&nbsp;7.3: Multiple Levels in Longitudinal Data</caption>
@@ -542,7 +542,7 @@ div.csl-indent {
 </tr>
 <tr class="even">
 <td>2</td>
-<td>Individuals</td>
+<td>Individuals or Families</td>
 </tr>
 <tr class="odd">
 <td>3</td>
@@ -561,9 +561,9 @@ div.csl-indent {
 </div>
 <section id="use-data-with-multiple-observations-per-individual" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="use-data-with-multiple-observations-per-individual"><span class="header-section-number">7.1</span> Use Data With Multiple Observations Per Individual</h2>
-<p>Multilevel data suitable for longitudinal analysis has <em>multiple rows of data per individual</em>. Put another way, <em>every row of data is a person-timepoint</em>.</p>
+<p>Multilevel data suitable for longitudinal analysis has <em>multiple rows of data per individual or family</em>. Put another way, <em>every row of data is a person-timepoint</em>.</p>
 <blockquote class="blockquote">
-<p>This method of organizing data is known as the <em>long</em> format. Another way of organizing longitudinal data–which I do not discuss in detail here–is the <em>wide</em> format in which every individual has only a single row of data. In <em>wide</em> data, the different timepoints are in <em>different columns</em> of data. I do discuss <em>reshaping</em> data from <em>wide</em> to <em>long</em>, and vice versa, in <a href="reshape.html"><span>Appendix&nbsp;B</span></a>.</p>
+<p>This method of organizing data is known as the <em>long</em> format. Another way of organizing longitudinal data–which I do not discuss in detail here–is the <em>wide</em> format in which every individual or family has only a single row of data. In <em>wide</em> data, the different timepoints are in <em>different columns</em> of data. I do discuss <em>reshaping</em> data from <em>wide</em> to <em>long</em>, and vice versa, in <a href="reshape.html"><span>Appendix&nbsp;B</span></a>.</p>
 </blockquote>
 <div id="tbl-datalong" class="anchored">
 <table class="table">
@@ -639,7 +639,7 @@ div.csl-indent {
 </section>
 <section id="simulated-multilevel-longitudinal-data" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="simulated-multilevel-longitudinal-data"><span class="header-section-number">7.2</span> Simulated Multilevel Longitudinal Data</h2>
-<p>For the discussion below, I use a longitudinal version of the simulated data that has multiple rows of data per individual.</p>
+<p>For the discussion below, I use a longitudinal version of the simulated data that has multiple rows of data per family.</p>
 <div class="cell">
 
 </div>
@@ -758,12 +758,12 @@ div.csl-indent {
 </section>
 <section id="the-equation" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">7.3</span> The Equation</h2>
-<p>When data are in <em>long</em> format, the following equation is applicable. Observe that the model below is a <em>three level</em> model where <em>timepoints</em> are nested inside <em>individuals</em> which in turn are nested inside <em>countries</em>. A simpler two level model with <em>timepoints</em> nested inside <em>individuals</em> would also be possible to estimate.</p>
+<p>When data are in <em>long</em> format, the following equation is applicable. Observe that the model below is a <em>three level</em> model where <em>timepoints</em> are nested inside <em>families</em> which in turn are nested inside <em>countries</em>. A simpler two level model with <em>timepoints</em> nested inside <em>families</em> would also be possible to estimate.</p>
 <p><span id="eq-MLM-longitudinal"><span class="math display">\[\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ +  \tag{7.1}\]</span></span></p>
 <p><span class="math display">\[\beta_4 \text{group}_{itj} + \beta_5 \text{HDI}_{itj} +\]</span></p>
 <p><span class="math display">\[u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + \]</span></p>
-<p><span class="math display">\[v_{0i} + v_{1i} \times t_{itj} + e_{itj}\]</span> Here I include a random slope (<span class="math inline">\(u_{1j}\)</span>) at the country level for parental warmth, as well as a random slope (<span class="math inline">\(v_{1i}\)</span>) at the individual level for time.</p>
-<p>As before, the random slope for parental warmth, <span class="math inline">\(u_{1j} \times \text{parental warmth}_{ij}\)</span> suggests allows us to estimate whether the relationship between parental warmth and the outcome varies across countries. The random slope for time, <span class="math inline">\(v_{1i} \times t\)</span>, allows us to estimate whether time trajectories (the slope for time) vary across individuals.</p>
+<p><span class="math display">\[v_{0i} + v_{1i} \times t_{itj} + e_{itj}\]</span> Here I include a random slope (<span class="math inline">\(u_{1j}\)</span>) at the country level for parental warmth, as well as a random slope (<span class="math inline">\(v_{1i}\)</span>) at the family level for time.</p>
+<p>As before, the random slope for parental warmth, <span class="math inline">\(u_{1j} \times \text{parental warmth}_{ij}\)</span> suggests allows us to estimate whether the relationship between parental warmth and the outcome varies across countries. The random slope for time, <span class="math inline">\(v_{1i} \times t\)</span>, allows us to estimate whether time trajectories (the slope for time) vary across families.</p>
 </section>
 <section id="growth-trajectories" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="growth-trajectories"><span class="header-section-number">7.4</span> Growth Trajectories</h2>
@@ -908,7 +908,7 @@ div.csl-indent {
 <p>If one is saying that implementing <em>x</em> would result in beneficial changes in <em>y</em>, one is arguing–at least implicitly–that <em>x</em> is one of the causes of <em>y</em>.</p>
 </blockquote>
 <p>It then behooves one to be explicit about this chain of causal reasoning. For example, to continue one of the substantive examples of this document, if one is going to argue for programs, interventions, or treatments that promote <em>parental warmth</em>, or that discourage parental use of <em>physical punishment</em> with the aim of improving children’s <em>mental health</em>, one must be at least reasonably sure that <em>parental warmth</em> and <em>physical punishment</em> are <em>causes</em> of children’s mental health.</p>
-<p>Randomized studies provide the best evidence about <em>internal validity</em> and causal relationships. However, randomized studies have certain limitations <span class="citation" data-cites="Diener2022">(<a href="references.html#ref-Diener2022" role="doc-biblioref">Diener et al., 2022</a>)</span>. First of all–especially in a study with a smaller sample–randomization may not always be perfect, and the control and treatment groups may not be statistically equivalent. Secondly, because randomized studies are costly to conduct, they may have small samples and may be statistically underpowered. Smaller samples and underpowered studies are more likely to generate false positive results than larger samples <span class="citation" data-cites="Button2013">(<a href="references.html#ref-Button2013" role="doc-biblioref">Button et al., 2013</a>)</span> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Lastly, because of ethical concerns some studies can not be conducted with randomization <span class="citation" data-cites="Diener2022">(<a href="references.html#ref-Diener2022" role="doc-biblioref">Diener et al., 2022</a>)</span>. For example, in the study of parenting and child development, children cannot ethically be assigned to parents with different styles of parenting and followed over the long term <span class="citation" data-cites="Heilmann2021">(<a href="references.html#ref-Heilmann2021" role="doc-biblioref">Heilmann et al., 2021</a>)</span>. Thus, methods that provide rigorous causal estimation with observational methods are necessary <span class="citation" data-cites="Diener2022">(<a href="references.html#ref-Diener2022" role="doc-biblioref">Diener et al., 2022</a>)</span>.</p>
+<p>Randomized studies provide the best evidence about <em>internal validity</em> and causal relationships. However, randomized studies have certain limitations <span class="citation" data-cites="Diener2022">(<a href="references.html#ref-Diener2022" role="doc-biblioref">Diener et al., 2022</a>)</span>. First of all–especially in a study with a smaller sample–randomization may not always be perfect, and the control and treatment groups may not be statistically equivalent. Secondly, because randomized studies are costly to conduct, they may have small samples and may be statistically underpowered. Smaller samples and underpowered studies are more likely to generate false positive results than larger samples <span class="citation" data-cites="Button2013">(<a href="references.html#ref-Button2013" role="doc-biblioref">Button et al., 2013</a>)</span> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Lastly, because of ethical concerns some studies can not be conducted with randomization <span class="citation" data-cites="Diener2022">(<a href="references.html#ref-Diener2022" role="doc-biblioref">Diener et al., 2022</a>)</span>. For example, in the study of parenting and child development, children cannot ethically be assigned to parents with different styles of parenting and followed over the long term <span class="citation" data-cites="Heilmann2021">(<a href="references.html#ref-Heilmann2021" role="doc-biblioref">Heilmann et al., 2021</a>)</span>. Thus, methods that provide rigorous causal estimation with observational methods are necessary <span class="citation" data-cites="Diener2022">(<a href="references.html#ref-Diener2022" role="doc-biblioref">Diener et al., 2022</a>)</span>.</p>
 <p>Because of the assumed superiority of studies that employ randomization, it is sometimes maintained that <em>correlation is not causation</em> and that studies that do not make use of randomization are <em>only observational</em> and <em>correlational</em>, and that results from observational studies cannot be used to support causal conclusions. However, in an important review <span class="citation" data-cites="Waddington2022">(<a href="references.html#ref-Waddington2022" role="doc-biblioref">Waddington et al., 2022</a>)</span> suggested that studies using appropriately quantitative methods can provide causally robust conclusions. <span class="citation" data-cites="Heilmann2021">Heilmann et al. (<a href="references.html#ref-Heilmann2021" role="doc-biblioref">2021</a>)</span> make a similar assertion with specific regard to studies of physical punishment and child outcomes.</p>
 <p>In a statement salient for social research, <span class="citation" data-cites="Duncan2006">Duncan &amp; Gibson-Davis (<a href="references.html#ref-Duncan2006" role="doc-biblioref">2006</a>)</span> point out the logical inconsistency of writing that does not rigorously address causal processes, but then goes on to suggest interventions or treatment or policies:</p>
 <blockquote class="blockquote">
@@ -1100,7 +1100,7 @@ div.csl-indent {
 <section id="the-correlated-random-effects-model" class="level3" data-number="7.7.6">
 <h3 data-number="7.7.6" class="anchored" data-anchor-id="the-correlated-random-effects-model"><span class="header-section-number">7.7.6</span> The Correlated Random Effects Model</h3>
 <p>The <em>correlated random effects</em> model is based upon ideas first developed by <span class="citation" data-cites="Mundlak1978">Mundlak (<a href="references.html#ref-Mundlak1978" role="doc-biblioref">1978</a>)</span> and later explicated in <span class="citation" data-cites="Wooldridge2010">Wooldridge (<a href="references.html#ref-Wooldridge2010" role="doc-biblioref">2010</a>)</span>. <span class="citation" data-cites="Antonakis2019">Antonakis et al. (<a href="references.html#ref-Antonakis2019" role="doc-biblioref">2021</a>)</span> and <span class="citation" data-cites="Schunck2013">Schunck (<a href="references.html#ref-Schunck2013" role="doc-biblioref">2013</a>)</span> provide very intuitive explanations of this model.</p>
-<p>The central idea is that one can obtain estimates of both the time invariant variables, and estimates for time varying variables. The key idea is that for time varying variables, I include the <em>individual</em> level mean for that variable in the model. Thus, in the example below, I include <span class="math inline">\(\beta_{1a}\overline{\text{parental warmth}}_{i}\)</span> and <span class="math inline">\(\beta_{2a}\overline{\text{physical punishment}}_{i}\)</span>. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> This is similar in approach to what is described in <a href="cross-sectional.html#sec-withinbetween"><span>Section&nbsp;6.6</span></a>, however, here I am simply adding the group level mean to the equation instead of decomposing independent variables into within and between components.</p>
+<p>The central idea is that one can obtain estimates of both the time invariant variables, and estimates for time varying variables. The key idea is that for time varying variables, I include the <em>individual</em> level mean for that variable in the model. Thus, in the example below, I include <span class="math inline">\(\beta_{1a}\overline{\text{parental warmth}}_{i}\)</span> and <span class="math inline">\(\beta_{2a}\overline{\text{physical punishment}}_{i}\)</span>. <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> This is similar in approach to what is described in <a href="cross-sectional.html#sec-withinbetween"><span>Section&nbsp;6.6</span></a>, however, here I am simply adding the group level mean to the equation instead of decomposing independent variables into within and between components.</p>
 <p><span id="eq-CRE"><span class="math display">\[\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_{1a}\overline{\text{parental warmth}}_{i} \ +  \tag{7.4}\]</span></span></p>
 <p><span class="math display">\[\beta_2 \text{physical punishment}_{it} + \beta_{2a}\overline{\text{physical punishment}}_{i} + \]</span></p>
 <p><span class="math display">\[\beta_3 \text{time}_{it} \ + \]</span></p>
@@ -1316,8 +1316,9 @@ Wooldridge, J. M. (2010). <em>Econometric analysis of cross section and panel da
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>See <a href="https://agrogan.shinyapps.io/Thinking-Through-Bayes/">https://agrogan.shinyapps.io/Thinking-Through-Bayes/</a> for a demonstration of this idea from a Bayesian perspective.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>The correlated random effects model can also be applied cross-sectionally, but the model is much easier to explicate in the longitudinal context.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>When we are studying families, e.g.&nbsp;a parent-child pair, it might be more appropriate to call each row of data a <em>family-observation</em>, but the term <em>person-observation</em> is more commonly used.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>See <a href="https://agrogan.shinyapps.io/Thinking-Through-Bayes/">https://agrogan.shinyapps.io/Thinking-Through-Bayes/</a> for a demonstration of this idea from a Bayesian perspective.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>The correlated random effects model can also be applied cross-sectionally, but the model is much easier to explicate in the longitudinal context.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
