@@ -287,7 +287,7 @@ knitr::include_graphics("fig-causality.png")
 
 ```
 
-> If *z* is omitted from the regression model, then the estimates for $x \rightarrow y$ (i.e. $\beta_{x \rightarrow y}$) will be biased. In the most common scenario $\beta_{x \rightarrow y}$ will likely be an over-estimate of the effect, and statistical significance of $\beta_{x \rightarrow y}$ may represent a false positive. 
+> If *z* is omitted from the regression model, then the estimates for $x \rightarrow y$ (i.e. $\beta_{x \rightarrow y}$) will be biased. In a common scenario, $\beta_{x \rightarrow y}$ may be an over-estimate of the effect, and statistical significance of $\beta_{x \rightarrow y}$ may represent a false positive. 
 
 It is likely useful to restate the above abstract statements in terms of the substantive issues that I have been considering so far in this document. 
 
@@ -323,7 +323,7 @@ knitr::include_graphics("fig-causalitysubstantive.png")
 
 ```
 
-If *other factors* are omitted from the regression model, then the estimates for $\text{parenting} \rightarrow \text{child outcome}$ (i.e. $\beta_{\text{parenting} \rightarrow \text{child outcome}}$) will be biased. In the most common scenario $\beta_{\text{parenting} \rightarrow \text{child outcome}}$ will likely be an over-estimate of the effect, and statistical significance of $\beta_{\text{parenting} \rightarrow \text{child outcome}}$ may represent a false positive. 
+If *other factors* are omitted from the regression model, then the estimates for $\text{parenting} \rightarrow \text{child outcome}$ (i.e. $\beta_{\text{parenting} \rightarrow \text{child outcome}}$) will be biased. In a common scenario, $\beta_{\text{parenting} \rightarrow \text{child outcome}}$ may be an over-estimate of the effect, and statistical significance of $\beta_{\text{parenting} \rightarrow \text{child outcome}}$ may represent a false positive. 
 
 ### Simpson's Paradox
 
