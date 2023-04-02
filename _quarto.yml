@@ -63,6 +63,7 @@ format:
   pdf:
     lot: true
     lof: true
+    keep-tex: true
     execute:
       echo: false
       warning: false    
