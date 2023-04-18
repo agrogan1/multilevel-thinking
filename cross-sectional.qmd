@@ -561,20 +561,20 @@ tribble(
   annotate(geom = "point", 
            x = 0, 
            y = 5, 
-           color = "orange",
+           color = "#FDE725",
            alpha = .5,
            size = 25) +
   annotate("text", 
            x = 1.5, 
            y = 2.5, 
            label = "variation in intercept",
-           color = "red") +
+           color = "#440154") +
   annotate("segment", 
            x = 1, 
            xend = 0, 
            y = 3, 
            yend = 5,
-           colour = "red", 
+           colour = "#440154", 
            linewidth = 1, 
            arrow = arrow()) +
   annotate("segment", 
@@ -582,28 +582,28 @@ tribble(
            xend = 10, 
            y = 1, 
            yend = 1,
-           colour = "orange", 
+           colour = "#440154", 
            linewidth = 1, 
            arrow = arrow(ends = "both")) +
   annotate("text",
            x = 5,
            y = .5,
            label = "variation in x",
-           color = "red") +
-  geom_labelabline(aes(intercept = 6, 
-                       slope = .25, 
+           color = "#440154") +
+  geom_labelabline(aes(intercept = 5, 
+                       slope = max(slope), 
                        label = "variation in slope"),
                    size = 2,
                    text_only = TRUE,
-                   textcolor = "red",
-                   linecolor = "orange") +
-  geom_labelabline(aes(intercept = 4, 
-                       slope = -.25, 
+                   textcolor = "#440154",
+                   linecolor = "#440154") +
+  geom_labelabline(aes(intercept = 5, 
+                       slope = min(slope), 
                        label = "variation in slope"),
                    size = 2,
                    text_only = TRUE,
-                   textcolor = "red",
-                   linecolor = "orange") +
+                   textcolor = "#440154",
+                   linecolor = "#440154") +
   labs(title = "Sources of Variation",
        subtitle = "In A Multilevel Model",
        x = "x",
