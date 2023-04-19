@@ -217,11 +217,11 @@
 \subtitle{Discovering Diversity, Universals, and Particulars in
 Cross-Cultural Research}
 \author{Andrew Grogan-Kaylor}
-\date{4/2/23}
+\date{4/19/23}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, frame hidden, borderline west={3pt}{0pt}{shadecolor}, enhanced, interior hidden, breakable, sharp corners]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, interior hidden, boxrule=0pt, frame hidden, enhanced, sharp corners, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -1990,13 +1990,6 @@ expression of parental warmth from the country level mean, \emph{but
 not} the difference in the country level mean from the grand mean are
 statistically significant predictors of the outcome.
 
-\hypertarget{predicted-values}{%
-\section{Predicted Values}\label{predicted-values}}
-
-\textbf{To Be Developed:} According to \textbf{``Stein's Paradox''},
-predictions from a multilevel model may be better than the mean
-(\textbf{shrinkage}).
-
 \hypertarget{summary-of-advantages-of-the-multilevel-model}{%
 \section{Summary of Advantages Of The Multilevel
 Model}\label{summary-of-advantages-of-the-multilevel-model}}
@@ -2030,17 +2023,7 @@ families in countries. These advantages can be summarized below:
   in a more colloquial fashion, this means that we do not judge
   something to be a risk factor when it is in fact a protective factor
   or a null effect; or a protective factor when it is in fact a risk
-  factor, or a null effect.\\
-\item
-  An increasing focus of statistical estimation is not to focus on
-  particular regression parameters, but instead to predict outcomes for
-  particular combinations of independent variables. Predictions from a
-  multilevel model could be said to be best predictions in that groups
-  are weighted by their precision, contributing to an estimate which
-  makes better predictions than would a simple average. More
-  colloquially, multilevel models allow us to predict outcomes better
-  and more accurately than would be possible with simple or more naïve
-  models.
+  factor, or a null effect.
 \end{enumerate}
 
 \hypertarget{sec-wrongapproaches}{%
@@ -2112,7 +2095,9 @@ The first thing to note about an equation for a multilevel model--here
 written in a more general form--is that it can be divided into measured
 and unmeasured variation.
 
-\begin{gather} \underbrace{y_{ij}}_\text{outcome} = \underbrace{\beta_0}_\text{intercept} + \underbrace{\beta_1 x}_\text{slope of x} + \underbrace{\beta_2 \text{group}}_{\substack{\text{association of group} \\ \text{with intercept}}} + \underbrace{\beta_3 x \times \text{group}}_{\substack{\text{association of group} \\ \text{with slope of x}}} + \\ \underbrace{u_{0j}}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in intercept}}} + \underbrace{u_{1j} \times x}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in slope of x}}} + \underbrace{e_{ij}}_{\substack{\text{unmeasured} \\ \text{individual} \\ \text{error}}} \end{gather}
+\[\underbrace{y_{ij}}_\text{outcome} = \underbrace{\beta_0}_\text{intercept} + \underbrace{\beta_1 x}_{\text{slope of} \\ \text{measured x}} + \underbrace{\beta_2 \text{group}}_{\substack{\text{association of} \\ \text{measured group} \\ \text{with intercept}}} + \underbrace{\beta_3 x \times \text{group}}_{\substack{\text{association of} \\ \text{measured group} \\ \text{with slope of} \\  \text{measured x}}} + \]
+
+\[\underbrace{u_{0j}}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in intercept}}} + \underbrace{u_{1j} \times x}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in slope of x}}} + \underbrace{e_{ij}}_{\substack{\text{unmeasured} \\ \text{individual} \\ \text{error}}}\]
 
 I have already introduced the idea of an unconditional model
 (Section~\ref{sec-unconditional}), in which there are no independent
