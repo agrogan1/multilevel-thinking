@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Andrew Grogan-Kaylor">
-<meta name="dcterms.date" content="2023-04-19">
 
-<title>Multilevel Thinking</title>
+<title>Multilevel Thinking - 6&nbsp; The Cross Sectional Multilevel Model</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
@@ -51,7 +112,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./acknowledgements.html" rel="next">
+<link href="./longitudinal.html" rel="next">
+<link href="./conceptual-framework.html" rel="prev">
 <link href="./logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -87,24 +149,13 @@ div.csl-indent {
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="multilevel-thinking.css">
-<meta property="og:title" content="Multilevel Thinking">
-<meta property="og:description" content="Discovering Diversity, Universals, and Particulars in Cross-Cultural Research">
-<meta property="og:image" content="https://agrogan1.github.io/multilevel-thinking/bookcover.png">
+<meta property="og:title" content="Multilevel Thinking - 6&nbsp; The Cross Sectional Multilevel Model">
+<meta property="og:description" content="I begin this chapter by introducing two key concepts: multilevel models can improve our estimation of p values; multilevel models can improve our estimation of \(\beta\) coefficients.">
 <meta property="og:site-name" content="Multilevel Thinking">
-<meta property="og:image:height" content="960">
-<meta property="og:image:width" content="720">
-<meta name="twitter:title" content="Multilevel Thinking">
-<meta name="twitter:description" content="Discovering Diversity, Universals, and Particulars in Cross-Cultural Research">
-<meta name="twitter:image" content="https://agrogan1.github.io/multilevel-thinking/bookcover.png">
-<meta name="twitter:image-height" content="960">
-<meta name="twitter:image-width" content="720">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="citation_title" content="Multilevel Thinking">
-<meta name="citation_author" content="Andrew Grogan-Kaylor">
-<meta name="citation_publication_date" content="2023-04-19">
-<meta name="citation_cover_date" content="2023-04-19">
-<meta name="citation_year" content="2023">
-<meta name="citation_online_date" content="2023-04-19">
+<meta name="twitter:title" content="Multilevel Thinking - 6&nbsp; The Cross Sectional Multilevel Model">
+<meta name="twitter:description" content="I begin this chapter by introducing two key concepts: multilevel models can improve our estimation of p values; multilevel models can improve our estimation of \(\beta\) coefficients.">
+<meta name="twitter:card" content="summary">
+<meta name="citation_title" content="[6]{.chapter-number}&nbsp; [The Cross Sectional Multilevel Model]{.chapter-title}">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-thinking/">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Statistics as principled argument.;,citation_abstract=Abelson delves into the . . . problems of interpreting quantitative data and then presenting them in the context of a coherent story about one’s research. [This book is] filled with . . . real-life (and real-research) examples rather than . . . recipes for analysis. [It is intended for] beginning graduate students and researchers alike. (PsycINFO Database Record (c) 2016 APA, all rights reserved);,citation_author=Robert P Abelson;,citation_publication_date=1995;,citation_cover_date=1995;,citation_year=1995;,citation_isbn=0-8058-0527-3 (Hardcover); 0-8058-0528-1 (Paperback);,citation_book_title=Statistics as principled argument.;">
@@ -235,7 +286,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Multilevel Thinking</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Cross Sectional Multilevel Model</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -286,7 +337,7 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Usefulness of Multilevel Modeling and Multilevel Thinking</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Usefulness of Multilevel Modeling and Multilevel Thinking</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -326,7 +377,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cross-sectional.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Cross Sectional Multilevel Model</span></a>
+  <a href="./cross-sectional.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Cross Sectional Multilevel Model</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -378,7 +429,42 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-usefulness-of-multilevel-modeling-and-multilevel-thinking" id="toc-the-usefulness-of-multilevel-modeling-and-multilevel-thinking" class="nav-link active" data-scroll-target="#the-usefulness-of-multilevel-modeling-and-multilevel-thinking"><span class="toc-section-number">1</span>  The Usefulness of Multilevel Modeling and Multilevel Thinking</a></li>
+  <li><a href="#sec-pvalues" id="toc-sec-pvalues" class="nav-link active" data-scroll-target="#sec-pvalues"><span class="toc-section-number">6.1</span>  Estimating Standard Errors And p Values</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="toc-section-number">6.1.1</span>  Introduction</a></li>
+  <li><a href="#compare-ols-and-mlm" id="toc-compare-ols-and-mlm" class="nav-link" data-scroll-target="#compare-ols-and-mlm"><span class="toc-section-number">6.1.2</span>  Compare OLS and MLM</a></li>
+  </ul></li>
+  <li><a href="#sec-multilevelstructure" id="toc-sec-multilevelstructure" class="nav-link" data-scroll-target="#sec-multilevelstructure"><span class="toc-section-number">6.2</span>  Multilevel Structure</a>
+  <ul class="collapse">
+  <li><a href="#graphs" id="toc-graphs" class="nav-link" data-scroll-target="#graphs"><span class="toc-section-number">6.2.1</span>  Graphs</a></li>
+  <li><a href="#regressions" id="toc-regressions" class="nav-link" data-scroll-target="#regressions"><span class="toc-section-number">6.2.2</span>  Regressions</a></li>
+  <li><a href="#a-thought-experiment" id="toc-a-thought-experiment" class="nav-link" data-scroll-target="#a-thought-experiment"><span class="toc-section-number">6.2.3</span>  A Thought Experiment</a></li>
+  </ul></li>
+  <li><a href="#the-equation" id="toc-the-equation" class="nav-link" data-scroll-target="#the-equation"><span class="toc-section-number">6.3</span>  The Equation</a>
+  <ul class="collapse">
+  <li><a href="#two-levels-of-equations" id="toc-two-levels-of-equations" class="nav-link" data-scroll-target="#two-levels-of-equations"><span class="toc-section-number">6.3.1</span>  Two Levels of Equations</a></li>
+  <li><a href="#one-level-of-equations" id="toc-one-level-of-equations" class="nav-link" data-scroll-target="#one-level-of-equations"><span class="toc-section-number">6.3.2</span>  One Level of Equations</a></li>
+  </ul></li>
+  <li><a href="#sec-regression" id="toc-sec-regression" class="nav-link" data-scroll-target="#sec-regression"><span class="toc-section-number">6.4</span>  Regression With Simulated Multi-Country Data</a>
+  <ul class="collapse">
+  <li><a href="#sec-unconditional" id="toc-sec-unconditional" class="nav-link" data-scroll-target="#sec-unconditional"><span class="toc-section-number">6.4.1</span>  Unconditional Model</a></li>
+  <li><a href="#sec-ICC" id="toc-sec-ICC" class="nav-link" data-scroll-target="#sec-ICC"><span class="toc-section-number">6.4.2</span>  Intra-Class Correlation Coefficient</a></li>
+  <li><a href="#conditional-model" id="toc-conditional-model" class="nav-link" data-scroll-target="#conditional-model"><span class="toc-section-number">6.4.3</span>  Conditional Model</a></li>
+  </ul></li>
+  <li><a href="#correlation-of-random-intercept-and-random-slopes" id="toc-correlation-of-random-intercept-and-random-slopes" class="nav-link" data-scroll-target="#correlation-of-random-intercept-and-random-slopes"><span class="toc-section-number">6.5</span>  Correlation of Random Intercept and Random Slope(s)</a></li>
+  <li><a href="#sec-withinbetween" id="toc-sec-withinbetween" class="nav-link" data-scroll-target="#sec-withinbetween"><span class="toc-section-number">6.6</span>  Within and Between</a></li>
+  <li><a href="#summary-of-advantages-of-the-multilevel-model" id="toc-summary-of-advantages-of-the-multilevel-model" class="nav-link" data-scroll-target="#summary-of-advantages-of-the-multilevel-model"><span class="toc-section-number">6.7</span>  Summary of Advantages Of The Multilevel Model</a></li>
+  <li><a href="#sec-wrongapproaches" id="toc-sec-wrongapproaches" class="nav-link" data-scroll-target="#sec-wrongapproaches"><span class="toc-section-number">6.8</span>  Some Wrong (or Partially Wrong) Approaches</a></li>
+  <li><a href="#variation" id="toc-variation" class="nav-link" data-scroll-target="#variation"><span class="toc-section-number">6.9</span>  Variation</a>
+  <ul class="collapse">
+  <li><a href="#measured-and-unmeasured-variation" id="toc-measured-and-unmeasured-variation" class="nav-link" data-scroll-target="#measured-and-unmeasured-variation"><span class="toc-section-number">6.9.1</span>  Measured and Unmeasured Variation</a></li>
+  <li><a href="#variation-in-intercepts-or-outcomes" id="toc-variation-in-intercepts-or-outcomes" class="nav-link" data-scroll-target="#variation-in-intercepts-or-outcomes"><span class="toc-section-number">6.9.2</span>  Variation In Intercepts or Outcomes</a></li>
+  <li><a href="#variation-in-predictors" id="toc-variation-in-predictors" class="nav-link" data-scroll-target="#variation-in-predictors"><span class="toc-section-number">6.9.3</span>  Variation In Predictors</a></li>
+  <li><a href="#variation-in-slopes" id="toc-variation-in-slopes" class="nav-link" data-scroll-target="#variation-in-slopes"><span class="toc-section-number">6.9.4</span>  Variation in Slopes</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="toc-section-number">6.9.5</span>  Summary</a></li>
+  <li><a href="#variation-as-an-outcome" id="toc-variation-as-an-outcome" class="nav-link" data-scroll-target="#variation-as-an-outcome"><span class="toc-section-number">6.9.6</span>  Variation As An Outcome</a></li>
+  <li><a href="#maximal-models" id="toc-maximal-models" class="nav-link" data-scroll-target="#maximal-models"><span class="toc-section-number">6.9.7</span>  Maximal Models</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -387,27 +473,14 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Multilevel Thinking</h1>
-<p class="subtitle lead">Discovering Diversity, Universals, and Particulars in Cross-Cultural Research</p>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Cross Sectional Multilevel Model</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Andrew Grogan-Kaylor </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">April 19, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -415,48 +488,798 @@ div.csl-indent {
 
 </header>
 
-
-<section id="the-usefulness-of-multilevel-modeling-and-multilevel-thinking" class="level1" data-number="1">
-<p><img src="bookcover.png" title="Multilevel Thinking" class="quarto-cover-image img-fluid"></p><h1 data-number="1"><span class="header-section-number">1</span> The Usefulness of Multilevel Modeling and Multilevel Thinking</h1>
+<blockquote class="blockquote">
+<p>“Mathematical Science shows us what is. It is the language of unseen relations between things. But to use &amp; apply that language we must be able fully to appreciate, to feel, to seize, the unseen, the unconscious. Imagination too shows us what is, the is that is beyond the senses.” <span class="citation" data-cites="Lovelace1992">(<a href="references.html#ref-Lovelace1992" role="doc-biblioref">Lovelace, 1992</a>)</span></p>
+</blockquote>
 <div class="cell">
 
 </div>
+<p>I begin this chapter by introducing two key concepts: multilevel models can improve our estimation of p values; multilevel models can improve our estimation of <span class="math inline">\(\beta\)</span> coefficients.</p>
+<p>In these sections I make some initial use of the Stata syntax for regression <code>regress y x z</code>, and the Stata syntax for multilevel models, <code>mixed y x z || groupid:</code>.</p>
+<p>After introducing these two key concepts of multilevel modeling, I then begin a more in depth exploration of the equations and concepts and statistical syntax of the cross sectional multilevel model.</p>
+<section id="sec-pvalues" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="sec-pvalues"><span class="header-section-number">6.1</span> Estimating Standard Errors And p Values</h2>
+<section id="introduction" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">6.1.1</span> Introduction</h3>
+<p>If the data are grouped, nested, or clustered, then this aspect of the structure of the data needs to be accounted for. <span class="citation" data-cites="Bland1994">Bland &amp; Altman (<a href="references.html#ref-Bland1994" role="doc-biblioref">1994</a>)</span> describe a simulation in which grouped data are artificially generated according to the following procedure.</p>
 <blockquote class="blockquote">
-<p>“I am because we are; and since we are, therefore I am.” <span class="citation" data-cites="Mbiti1970">(<a href="references.html#ref-Mbiti1970" role="doc-biblioref">Mbiti, 1970</a>)</span></p>
+<p>“The data were generated from random numbers, and there is no relation between X and Y at all. Firstly, values of X and Y were generated for each ‘subject,’ then a further random number was added to make the individual observation.” <span class="citation" data-cites="Bland1994">(<a href="references.html#ref-Bland1994" role="doc-biblioref">Bland &amp; Altman, 1994</a>)</span></p>
 </blockquote>
-<p>For decades now, multilevel models have been an important quantitative tool for social research. While multilevel models have become very common in social research, there are aspects of these models that are explored less frequently in published articles. This document arises from my experiences of teaching a course entitled <em>Multilevel and Longitudinal Modeling</em> that I have taught for over a decade in the <em>Joint Doctoral Program in Social Work and Social Science</em> at the University of Michigan.</p>
-<p>The document started out as a set of notes on <em>things I only get to discuss during breaks, or after class, or during office hours</em> in my class on <em>Multilevel and Longitudinal Modeling</em>, and has grown from that set of notes into an introduction to multilevel modeling.</p>
-<p>My contention is that <em>multilevel modeling</em> offers powerful tools for understanding the <em>multilevel data</em> that social researchers often confront. For example, researchers are often interested in studying outcomes for diverse groups of children in different schools, residents of diverse and different neighborhoods, or individuals or families living in diverse and different countries. Such inherently multilevel data lead to analytic complexities, some of which appear to me to be well understood, while others seem to be much less often appreciated.</p>
-<p>The point that I wish to make about multilevel data is that when presented with complex multilevel data, failure to use the appropriate multilevel model may lead to conclusions that are demonstrably incorrect. Fortunately, many of these difficulties can be avoided with applications of simple and straightforward multilevel models.</p>
-<p>I first present some initial ideas about multilevel modeling. First, as is relatively commonly understood, <em>multilevel models allow for the correct estimation of p values in the presence of data clustering</em>. Second, as is less commonly appreciated, when data are clustered, <em>multilevel models correctly estimate <span class="math inline">\(\beta\)</span> regression coefficients and may avoid estimating a regression coefficient that is too large, too small, or even has the wrong sign</em>.</p>
-<p>I go on to explore some more complex ideas about multilevel models that I see less often in the published empirical literature. I focus especially on two ideas: <em>multilevel models as the exploration of diversity and variation across countries and cultures</em>; and <em>multilevel models as a foundation for models that let us think more rigorously about causality</em>. I argue that multilevel models provide a foundation for engaging with cross-cultural diversity in a quantitatively rigorous fashion.</p>
-<p>Certainly, none of the statistical ideas contained in this document are unique to me. There are thorough–and often much more mathematically rigorous–presentations of many of the idea contained in this document in some of the excellent foundational texts on multilevel modeling such as the early book by <span class="citation" data-cites="Raudenbush2002">Raudenbush &amp; Bryk (<a href="references.html#ref-Raudenbush2002" role="doc-biblioref">2002</a>)</span>, the excellent book on longitudinal models by <span class="citation" data-cites="Singer2003">Singer &amp; Willett (<a href="references.html#ref-Singer2003" role="doc-biblioref">2003</a>)</span>, and <span class="citation" data-cites="RabeHesketh2022">Rabe-Hesketh &amp; Skrondal (<a href="references.html#ref-RabeHesketh2022" role="doc-biblioref">2022</a>)</span>’s more recent and extremely comprehensive two volume text. <span class="citation" data-cites="Luke2004">Luke (<a href="references.html#ref-Luke2004" role="doc-biblioref">2004</a>)</span>, and <span class="citation" data-cites="Kreft1998">Kreft &amp; de Leeuw (<a href="references.html#ref-Kreft1998" role="doc-biblioref">1998</a>)</span>, offer shorter, less mathematically rigorous, but still excellent introductions to the topic of multilevel modeling. <span class="citation" data-cites="Gelman2007">Gelman et al. (<a href="references.html#ref-Gelman2007" role="doc-biblioref">2007</a>)</span> introduced me to the ideas that in this document I describe as “multilevel structure” using an example with voting patterns.</p>
-<p>My intent in this document is to offer a kind of accessible tutorial for applied researchers, including especially those who see their research having some advocacy based component. My approach, while offering up some equations, is less mathematically rigorous than some of the above mentioned texts, and written with the intent of providing a clear and practically focused guide for the applied researcher who is attempting to carry out better research with diverse populations.</p>
+<div class="cell">
+
+</div>
+<p>The graph below illustrates the process of simulating the data.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-simulatedclustereddata" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="cross-sectional_files/figure-html/fig-simulatedclustereddata-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.1: Simulated Clustered Data</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="compare-ols-and-mlm" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="compare-ols-and-mlm"><span class="header-section-number">6.1.2</span> Compare OLS and MLM</h3>
+<p>An analysis that is not aware of the grouped nature of the data will give biased results, will mis-estimate standard errors, and importantly, will often attribute statistical significance to some of the independent variables when this is not appropriate <span class="citation" data-cites="Raudenbush2002 Bland1994">(<a href="references.html#ref-Bland1994" role="doc-biblioref">Bland &amp; Altman, 1994</a>; <a href="references.html#ref-Raudenbush2002" role="doc-biblioref">Raudenbush &amp; Bryk, 2002</a>)</span>.</p>
+<p>In the example below, we compare a simple ordinary least squares analysis of the data with a multilevel model that accounts for the clustered nature of the data.</p>
+<p>The Stata syntax that we use for each analysis is:</p>
+<ul>
+<li>OLS: <code>regress y x</code></li>
+<li>Multilevel Model: <code>mixed y x || group:</code></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th>OLS</th>
+<th></th>
+<th>MLM</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>x</td>
+<td>1.046</td>
+<td>**</td>
+<td>0.039</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Intercept</td>
+<td>4.488</td>
+<td></td>
+<td>97.005</td>
+<td>**</td>
+</tr>
+<tr class="odd">
+<td>var(_cons)</td>
+<td></td>
+<td></td>
+<td>74.523</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>var(e)</td>
+<td></td>
+<td></td>
+<td>0.594</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Number of observations</td>
+<td>25</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>** p&lt;.01, * p&lt;.05</p>
+<p>We see that in the ordinary least squares analysis, the independent variable is judged to have a statistically significant association with the dependent variable. The more appropriate multilevel model finds that in fact the independent variable <span class="math inline">\(x\)</span> is <em>not</em> associated with <span class="math inline">\(y\)</span>. Thus, the multilevel model provides more accurate results than OLS in the presence of clustered data.</p>
+</section>
+</section>
+<section id="sec-multilevelstructure" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="sec-multilevelstructure"><span class="header-section-number">6.2</span> Multilevel Structure</h2>
+<p>Associations between two variables can be <em>very different</em> (or even <em>reversed</em>) depending upon whether or not the analysis is “aware” of the grouped, nested, or clustered nature of the data <span class="citation" data-cites="Gelman2007">(<a href="references.html#ref-Gelman2007" role="doc-biblioref">Gelman et al., 2007</a>)</span>. In the example presented here, the groups are countries, but could as easily be neighborhoods, communities, or schools.</p>
+<blockquote class="blockquote">
+<p>For teaching purposes, I use an example with very few clusters, although it would be more appropriate to apply multilevel analysis to an example with many more clusters e.g.&nbsp;(<span class="math inline">\(N_\text{clusters} &gt;= 30\)</span>)</p>
+</blockquote>
+<p>A model that is “aware” of the clustered nature of the data may provide very different–likely better–substantive conclusions than a model that is not aware of the clustered nature of the data.</p>
+<p>I use some data simulated for this particular example.</p>
+<div class="cell">
+
+</div>
+<section id="graphs" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="graphs"><span class="header-section-number">6.2.1</span> Graphs</h3>
+<section id="a-naive-graph" class="level4" data-number="6.2.1.1">
+<h4 data-number="6.2.1.1" class="anchored" data-anchor-id="a-naive-graph"><span class="header-section-number">6.2.1.1</span> A “Naive” Graph</h4>
+<p>This “naive” graph is unaware of the grouped nature of the data. Notice that the overall regression line slopes downward, even though there is some suggestion that <em>within each group</em> the regression lines may slope upward.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-naive" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="cross-sectional_files/figure-html/fig-naive-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.2: A ‘Naive’ Graph</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="an-aware-graph" class="level4" data-number="6.2.1.2">
+<h4 data-number="6.2.1.2" class="anchored" data-anchor-id="an-aware-graph"><span class="header-section-number">6.2.1.2</span> An “Aware” Graph</h4>
+<p>This “aware” graph is aware of the grouped nature of the data. The graph is “aware” of the grouped or clustered nature of the data, and provides indication that the regression lines <em>when accounting for group</em> slope upward.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-aware" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="cross-sectional_files/figure-html/fig-aware-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.3: An ‘Aware’ Graph</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="regressions" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="regressions"><span class="header-section-number">6.2.2</span> Regressions</h3>
+<section id="a-naive-ols-analysis-vs.-an-aware-mlm-analysis" class="level4" data-number="6.2.2.1">
+<h4 data-number="6.2.2.1" class="anchored" data-anchor-id="a-naive-ols-analysis-vs.-an-aware-mlm-analysis"><span class="header-section-number">6.2.2.1</span> A “Naive” OLS Analysis vs.&nbsp;An “Aware” MLM Analysis</h4>
+<p>The Stata syntax that we use for these analyses is:</p>
+<ul>
+<li>OLS: <code>regress y x</code></li>
+<li>Multilevel Model: <code>mixed y x || country:</code></li>
+</ul>
+<p>The OLS model with only <em>x</em> as a covariate is not aware of the grouped structure of the data, and the coefficient for <em>x</em> in the OLS model reflects this. The coefficient for <em>x</em> in the OLS model is <em>negative</em>, and statistically significant.</p>
+<p>The multilevel model is aware of the grouped structure of the data, and the coefficient for <em>x</em> in the multilevel model reflects this. The coefficient for <em>x</em> in the multilevel model is <em>positive</em>, and statistically significant.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th>OLS</th>
+<th></th>
+<th>MLM</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>x</td>
+<td>-0.775</td>
+<td>**</td>
+<td>1.038</td>
+<td>**</td>
+</tr>
+<tr class="even">
+<td>Intercept</td>
+<td>57.133</td>
+<td>**</td>
+<td>29.029</td>
+<td>**</td>
+</tr>
+<tr class="odd">
+<td>var(_cons)</td>
+<td></td>
+<td></td>
+<td>276.867</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>var(e)</td>
+<td></td>
+<td></td>
+<td>0.916</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Number of observations</td>
+<td>30</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>** p&lt;.01, * p&lt;.05</p>
+</section>
+</section>
+<section id="a-thought-experiment" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="a-thought-experiment"><span class="header-section-number">6.2.3</span> A Thought Experiment</h3>
+<p>When might a situation like this arise in practice? This is surprisingly difficult to think through.</p>
+<p>Imagine that <em>x</em> is a protective factor, or an intervention or treatment. Imagine that <em>y</em> is a desirable outcome, like improved mental health or psychological well being.</p>
+<p>Now imagine that residents of countries provide more of the protective factor or more of the intervention in situations where there are lower levels of the desirable outcome. If one thinks about it, this is a very plausible situation.</p>
+<blockquote class="blockquote">
+<p>A naive analysis that was unaware of the grouped nature of the data would therefore misconstrue the results, suggesting that the intervention was harmful, when it was in fact helpful.</p>
+</blockquote>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="cross-sectional_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">A Heuristic Example</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The idea that group level and individual level relationships must be the same <span class="citation" data-cites="FIREBAUGH20014023">(<a href="references.html#ref-FIREBAUGH20014023" role="doc-biblioref">Firebaugh, 2001</a>)</span> has been termed the “ecological fallacy”.</p>
+<p>These data are constructed to provide this kind of extreme example, but it easy to see how multilevel thinking, and multilevel analysis may provide better answers than one would get if one ignored the grouped nature of the data.</p>
+</section>
+</section>
+<section id="the-equation" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="the-equation"><span class="header-section-number">6.3</span> The Equation</h2>
+<p>The equation for the multilevel model can be written in several ways: as multiple levels of equations; or as a single equation. The advantage of having multiple levels of equations is that these multiple equations make clear the multiple levels of the data, and thus conform to an initial understanding of how a multilevel model should be estimated. However, <em>results</em> from multiple levels of equations quickly become difficult to interpret, and thus, I will not spend a great deal of time on discussing empirical results of the two level formulation. Whether multiple levels of equations, or a single equation are employed, the numerical results are equivalent.s</p>
+<section id="two-levels-of-equations" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="two-levels-of-equations"><span class="header-section-number">6.3.1</span> Two Levels of Equations</h3>
+<p>I start with two levels of equations: Level 1 at the level of the individual; and Level 2 at the level of the country.</p>
+<section id="level-1-individuals" class="level4" data-number="6.3.1.1">
+<h4 data-number="6.3.1.1" class="anchored" data-anchor-id="level-1-individuals"><span class="header-section-number">6.3.1.1</span> Level 1 (Individuals)</h4>
+<p><span id="eq-MLM1"><span class="math display">\[y_{ij} = \beta_{0j} + \beta_{1j} x_{ij} + \beta_{2j} z_{ij} + e_{ij} \tag{6.1}\]</span></span></p>
+</section>
+<section id="level-2-countries" class="level4" data-number="6.3.1.2">
+<h4 data-number="6.3.1.2" class="anchored" data-anchor-id="level-2-countries"><span class="header-section-number">6.3.1.2</span> Level 2 (Countries)</h4>
+<p><span id="eq-MLM2"><span class="math display">\[\beta_{0j} = \gamma_{00} +\gamma_{01} w_j + u_{0j} \tag{6.2}\]</span></span></p>
+<p><span class="math display">\[\beta_{1j} = \gamma_{10} + u_{1j}\]</span></p>
+<p><span class="math display">\[\beta_{2j} = \gamma_{20}\]</span></p>
+<p><span class="math display">\[\beta_{3j} = \gamma_{30}\]</span></p>
+<p>Here <span class="math inline">\(y_{ij}\)</span> is the dependent variable, or outcome for the model. We note that the <span class="math inline">\(ij\)</span> subscripts indicate that this is outcome <span class="math inline">\(y\)</span> for individual <span class="math inline">\(i\)</span> in country <span class="math inline">\(j\)</span>. Note that the outcome is at Level 1, or the level of individuals. <span class="math inline">\(\beta_{0j}\)</span> is a regression intercept, and the other <span class="math inline">\(\beta\)</span>’s<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> are regression slope parameters. <span class="math inline">\(x_{ij}\)</span> and <span class="math inline">\(z_{ij}\)</span> are independent variables and <span class="math inline">\(t_{ij}\)</span> is an independent variable indicating the time at which different data points are measured. I note that in this discussion I am <em>not</em> considering a model in which there are repeated observations on the same individuals, although the multilevel model is certainly extensible to such cases. <span class="math inline">\(u_{0j}\)</span> is a random intercept for the <span class="math inline">\(\beta_{0j}\)</span> term, and <span class="math inline">\(u_{1j}\)</span> is a random slope for the <span class="math inline">\(\beta_{1j}\)</span> term, indicating that we are modeling cross country variation in these parameters. The other <span class="math inline">\(\beta\)</span> terms are not modeled as having random country level variation, although this could certainly be a possibility in subsequent models.</p>
+<p>In this formulation of the multilevel model, each regression parameter <span class="math inline">\(\beta\)</span> in the level 1 equation is the outcome of an equation at Level 2. The parameters for the Level 2 equations are represented by <span class="math inline">\(\gamma\)</span>’s. <span class="math inline">\(w\)</span> a Level 2 variable appears in the first Level 2 equation.</p>
+</section>
+</section>
+<section id="one-level-of-equations" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="one-level-of-equations"><span class="header-section-number">6.3.2</span> One Level of Equations</h3>
+<p>By simply substituting the values of the Level 2 equations into the Level 1 equations–and rewriting the <span class="math inline">\(\gamma\)</span>’s as <span class="math inline">\(\beta\)</span>’s–we obtain:</p>
+<p><span id="eq-MLM"><span class="math display">\[y_{ij} = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + \beta_3 w_{j} + u_{0j} + u_{1j} \times x + e_{ij} \tag{6.3}\]</span></span></p>
+<p>Here again <span class="math inline">\(y_{ij}\)</span> is the dependent variable, or outcome for the model. <span class="math inline">\(\beta_0\)</span> is a regression intercept, and the <span class="math inline">\(\beta\)</span>’s are regression parameters. <span class="math inline">\(x_{ij}\)</span> and <span class="math inline">\(z_{ij}\)</span> are independent variables and <span class="math inline">\(w\)</span> is a Level 2 variable.</p>
+<blockquote class="blockquote">
+<p>Notice that in this <em>single equation</em> format all variables–no matter their <em>level</em>–appear in the same equation.</p>
+</blockquote>
+<p>In this formulation of the equation, the nature of the random effects is more clear, and merits discussion. Notice that we have included a <em>random intercept</em> <span class="math inline">\(u_{0j}\)</span> as well as a <em>random slope</em> <span class="math inline">\(u_{1j} \times x\)</span>. The <em>random intercept</em>, <span class="math inline">\(u_{0j}\)</span>, indicates that there is variation in the <em>intercept</em> of the country specific regression lines, as is true in <a href="simulated-multi-country-data.html#fig-data">Figure&nbsp;<span>3.2</span></a>. The <em>random slope</em> term associated with <span class="math inline">\(x\)</span>, <span class="math inline">\(u_{1j} \times x\)</span>, indicates that we are allowing for the possibility of variation in the <em>slope</em> of the regression lines that is associated with <span class="math inline">\(x\)</span>, in this case, the slope of parental warmth, as is possibly suggested in <a href="simulated-multi-country-data.html#fig-data">Figure&nbsp;<span>3.2</span></a>.</p>
+<p>To make these ideas more concrete, I rewrite this equation in terms of the main substantive ideas of this document:</p>
+<p><span class="math display">\[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} +\]</span> <span class="math display">\[\beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{j} + \]</span> <span id="eq-MLMsubstantive"><span class="math display">\[u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij} \tag{6.4}\]</span></span></p>
+<p>Put substantively, this model indicates that the outcome can be conceptualized as a function of an intercept term, and contributions of parental warmth, physical punishment, group membership, and country level HDI. The random intercept, <span class="math inline">\(u_{0j}\)</span> indicates that there is some unexplained variation in the outcome at the country level. The random slope <span class="math inline">\(u_{1j} \times \text{parental warmth}\)</span> indicates that the model is allowing for country level variation in the association of parental warmth with the outcome. Inspection of <a href="simulated-multi-country-data.html#fig-data">Figure&nbsp;<span>3.2</span></a> indicates that it might be possible that there would be variation across countries in this slope. The model could be extended to allow for country level variation in other slope terms by adding other random slopes, eg <span class="math inline">\(u_{2j}\)</span>, <span class="math inline">\(u_{3j}\)</span>, etc.</p>
+<p>Drawing upon ideas from <a href="software.html"><span>Chapter&nbsp;4</span></a>, this single level equation can be easily represented in Stata syntax.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>mixed outcome warmth physical_punishment <span class="fu">group</span> HDI || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="sec-regression" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="sec-regression"><span class="header-section-number">6.4</span> Regression With Simulated Multi-Country Data</h2>
+<p>After considering some of these broader issues, let’s now examine the results of a multilevel regression with the simulated multicountry data. I will again imagine that the desirable outcome is an outcome such as improved psychological wellbeing.</p>
+<section id="sec-unconditional" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="sec-unconditional"><span class="header-section-number">6.4.1</span> Unconditional Model</h3>
+<p>The unconditional model is a model with no <span class="math inline">\(x\)</span>’s or covariates <span class="citation" data-cites="Raudenbush2002">(<a href="references.html#ref-Raudenbush2002" role="doc-biblioref">Raudenbush &amp; Bryk, 2002</a>)</span>.</p>
+<p><span id="eq-unconditional"><span class="math display">\[\text{outcome}_{ij} = \beta_0 + u_{0j} + e_{ij} \tag{6.5}\]</span></span></p>
+<p>Here, <span class="math inline">\(\text{outcome}_{ij}\)</span> is a function of an intercept <span class="math inline">\(\beta_0\)</span>, a country specific error term, <span class="math inline">\(u_{0j}\)</span>, and an individual level error term <span class="math inline">\(e_{ij}\)</span>.</p>
+<p>Thus, all of the variation in <span class="math inline">\(\text{outcome}_{ij}\)</span> is–given the <em>unconditional</em> nature of our model–attributable to unmeasured variation at the country and individual level.</p>
+</section>
+<section id="sec-ICC" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="sec-ICC"><span class="header-section-number">6.4.2</span> Intra-Class Correlation Coefficient</h3>
+<p>I now introduce a measure known as the Intra-Class Correlation Coefficient, (ICC) that can be computed from this unconditional model <span class="citation" data-cites="Raudenbush2002">(<a href="references.html#ref-Raudenbush2002" role="doc-biblioref">Raudenbush &amp; Bryk, 2002</a>)</span>.</p>
+<p><span id="eq-ICC"><span class="math display">\[\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})} \tag{6.6}\]</span></span></p>
+<p>Heuristically:</p>
+<p><span id="eq-ICCheuristic"><span class="math display">\[\text{ICC} = \frac{\text{group level variation}}{\text{group level variation} + \text{individual level variation}} \tag{6.7}\]</span></span></p>
+<p>The ICC from the <em>unconditional</em> model (<a href="#eq-unconditional">Equation&nbsp;<span>6.5</span></a>) is the most informative ICC as it represents the amount of variation in the dependent variable that could <em>potentially</em> be explained by the grouping variable.</p>
+<p>The Stata syntax that we use is:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mixed outcome || country: warmth</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">estat</span> icc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th>cross_sectional0</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>_cons</td>
+<td>53.468</td>
+<td>**</td>
+</tr>
+<tr class="even">
+<td>var(_cons)</td>
+<td>3.349</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>var(e)</td>
+<td>40.883</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>** p&lt;.01, * p&lt;.05</p>
+<p>From <code>estat icc</code>, or calculating by hand, we see that the ICC for this data is .076 or 7.6%.</p>
+<p>As we add covariates, <span class="math inline">\(x\)</span>’s, to the model the ICC will most often decrease.</p>
+</section>
+<section id="conditional-model" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="conditional-model"><span class="header-section-number">6.4.3</span> Conditional Model</h3>
+<p>We next estimate a <em>conditional</em> model, <em>with</em> independent variables.</p>
+<p>The Stata syntax that we use is:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>mixed outcome warmth physical_punishment <span class="fu">group</span> HDI || country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th>cross_sectional</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>warmth</td>
+<td>0.962</td>
+<td>**</td>
+</tr>
+<tr class="even">
+<td>physical_punishment</td>
+<td>-0.845</td>
+<td>**</td>
+</tr>
+<tr class="odd">
+<td>group</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1.084</td>
+<td>**</td>
+</tr>
+<tr class="odd">
+<td>HDI</td>
+<td>0.011</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>_cons</td>
+<td>50.964</td>
+<td>**</td>
+</tr>
+<tr class="odd">
+<td>var(warmth)</td>
+<td>0.000</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>var(_cons)</td>
+<td>3.370</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>var(e)</td>
+<td>36.019</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>** p&lt;.01, * p&lt;.05</p>
+<p>The data suggest that parental warmth is positively associated with the desirable outcome, and that this result is statistically significant. Parental use of physical punishment is associated with statistically significant decreases in the desirable outcome. I note that there is some variation in the <em>constant</em> indicating that there is some variation in the initial or average levels of the desirable outcome–again improved psychological well-being–that is attributable to country.</p>
+<p>There is–in contrast–no discernible variation in the <em>slope</em> associated with parental warmth that is attributable to country. Thus, the relationship of parental warmth with child outcomes does not appear to differ appreciably from country to country.</p>
+<p><code>HDI</code>, the <em>Human Development Index</em>, our only country level, or Level 2, variable in this model is not associated with the outcome.</p>
+</section>
+</section>
+<section id="correlation-of-random-intercept-and-random-slopes" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="correlation-of-random-intercept-and-random-slopes"><span class="header-section-number">6.5</span> Correlation of Random Intercept and Random Slope(s)</h2>
+<p>One could also consider a situation in which a random slope or slopes were correlated with each other, and with the random intercept. In the equation that we are considering, this would entail estimation of whether or not, the random intercept, <span class="math inline">\(u_{0j}\)</span>, was correlated with the random slope for warmth, <span class="math inline">\(u_{1j}\)</span>.</p>
+<p>Substantively, this question would be asking whether the association of warmth and the outcome, was correlated with the initial level or average level of the outcome. From <a href="simulated-multi-country-data.html#fig-data">Figure&nbsp;<span>3.2</span></a>, it appears that there is some slight evidence that the country specific regression slopes are more steep in countries where the initial level of the outcome is higher. However, we may wish to investigate this question more rigorously.</p>
+<p>By default, Stata estimates models, where the random slope or slopes are uncorrelated with each other, and uncorrelated with the intercept <span class="citation" data-cites="StataCorp2021:2">(<a href="references.html#ref-StataCorp2021:2" role="doc-biblioref">StataCorp, 2021</a>)</span>. We see this in <a href="#eq-varcovar">Equation&nbsp;<span>6.8</span></a> below, where the diagonal elements are the <em>variances</em> of each of the random effects, and the off diagonals, which would be the <em>covariances</em> of the random effects are constrained to 0.</p>
+<p><span id="eq-varcovar"><span class="math display">\[\begin{bmatrix}
+var(u_{0j}) &amp; 0 \\
+0 &amp; var(u_{1j})
+\end{bmatrix} \tag{6.8}\]</span></span></p>
+<p>Within Stata, we can ask to allow such a correlation with the <code>cov(uns)</code> option.</p>
+<p><span id="eq-varcovaruns"><span class="math display">\[\begin{bmatrix}
+var(u_{0j}) &amp; cov(u_{0j}, u_{1j}) \\
+cov(u_{0j}, u_{1j}) &amp; var(u_{1j})
+\end{bmatrix} \tag{6.9}\]</span></span></p>
+<p>We use the following syntax.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>mixed outcome warmth physical_punishment <span class="fu">group</span> HDI || country: warmth, cov(uns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>When we estimate such a model, we get the following information.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th>cross_sectional2</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>warmth</td>
+<td>0.962</td>
+<td>**</td>
+</tr>
+<tr class="even">
+<td>physical_punishment</td>
+<td>-0.845</td>
+<td>**</td>
+</tr>
+<tr class="odd">
+<td>group</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1.085</td>
+<td>**</td>
+</tr>
+<tr class="odd">
+<td>HDI</td>
+<td>0.010</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>_cons</td>
+<td>50.987</td>
+<td>**</td>
+</tr>
+<tr class="odd">
+<td>var(warmth)</td>
+<td>0.000</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>var(_cons)</td>
+<td>3.237</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>cov(warmth,_cons)</td>
+<td>0.019</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>var(e)</td>
+<td>36.019</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>** p&lt;.01, * p&lt;.05</p>
+<p>Results are mostly similar to those above. However, here, we are asking additionally for information about the possible correlation of country specific initial levels of the outcome and the slope of the country specific regression line for parental warmth. Results indicate that there is no reason to be believe that these two parameters are correlated. Put more intuitively, it does not appear that parental warmth is any more or less correlated with the outcome in countries where initial levels of the outcome are higher.</p>
+</section>
+<section id="sec-withinbetween" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="sec-withinbetween"><span class="header-section-number">6.6</span> Within and Between</h2>
+<div class="cell">
+
+</div>
+<p>Coefficients in models can be divided into within and between. A substantive example may be helpful here. When we consider the variable of parental <code>warmth</code>, we can imagine the parental warmth expressed in each family, <span class="math inline">\(\text{warmth}_{ij}\)</span>, representing family <em>i</em> in country <em>j</em>. We can also think about the <em>grand mean</em> of warmth across the entire sample, <span class="math inline">\(\overline{\text{warmth}}_{..}\)</span>. We can then also think about the mean expression of parental warmth in each country, <span class="math inline">\(\overline{\text{warmth}}_{.j}\)</span>, i.e.&nbsp;the mean level of parental warmth in country <em>j</em>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-distributionwarmth" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="cross-sectional_files/figure-html/fig-distributionwarmth-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.4: Distribution of Parental Warmth Across Countries</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Bearing this in mind, one can then think about the <em>difference</em> between each individual expression of parental warmth and the overall, or grand mean: <span class="math inline">\(\text{warmth}_{ij} - \overline{\text{warmth}}_{..}\)</span>. This value can then be decomposed into two values:</p>
+<p><span class="math display">\[\text{warmth}_{ij} - \overline{\text{warmth}}_{..} = \text{warmth}_{ij} - \overline{\text{warmth}}_{.j} + \overline{\text{warmth}}_{.j} - \overline{\text{warmth}}_{..}\]</span> Put into words, this equation says that the difference in parental warmth displayed by family i in country j from the overall or grand mean of parental warmth is composed of two components:</p>
+<ul>
+<li><em>Within Country Component</em>: How is the level of warmth expressed by family <em>i</em> in country <em>j</em> different from the <em>mean</em> level of warmth in country <em>j</em>. Is family <em>i</em> different from the <em>average</em> family in country <em>j</em>? For this particular country, is this a family that is higher, or lower, than average in parental warmth?</li>
+<li><em>Between Country Component</em>: How is the <em>mean</em> level of warmth in country <em>j</em> different from the overall or <em>grand mean</em> level of warmth in the sample as a whole? To what degree is country <em>j</em> different from <em>all countries</em> in the sample? Is this country a country where parents tend to be higher, or lower, in parental warmth?</li>
+</ul>
+<p>Theoretically, or conceptually, one might imagine that it would be useful to decompose a particular behavior into within country and between country components. The within country component could be theorized as <em>how an individual family differs from their context</em>, and the between country component could be theorized as <em>how a particular context differs from the average context</em>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-withinbetween" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="cross-sectional_files/figure-html/fig-withinbetween-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.5: Decomposing a Variable into Within and Between Differences</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In terms of using statistical software (Stata), we need to follow a few steps.</p>
+<ol type="1">
+<li>Calculate the <em>grand mean</em> of the variable.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">egen</span> gmean_warmth = <span class="kw">mean</span>(warmth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Calculate <em>country specific means</em> of the variable.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">bysort</span> country: <span class="kw">egen</span> cmean_warmth = <span class="kw">mean</span>(warmth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>Calculate:
+<ul>
+<li>individual scores - country specific means</li>
+<li>country specific means - grand mean</li>
+</ul></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">generate</span> dev_warmth = warmth - cmean_warmth</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="kw">generate</span> cdev_warmth = cmean_warmth - gmean_warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li>Estimate the model with within and between.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>mixed outcome dev_warmth cdev_warmth physical_punishment i.<span class="fu">group</span> HDI <span class="co">///</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>|| country: warmth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th>cross_sectional3</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>dev_warmth</td>
+<td>0.961</td>
+<td>**</td>
+</tr>
+<tr class="even">
+<td>cdev_warmth</td>
+<td>1.899</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>physical_punishment</td>
+<td>-0.845</td>
+<td>**</td>
+</tr>
+<tr class="even">
+<td>group</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>1.085</td>
+<td>**</td>
+</tr>
+<tr class="even">
+<td>HDI</td>
+<td>0.008</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>_cons</td>
+<td>54.489</td>
+<td>**</td>
+</tr>
+<tr class="even">
+<td>var(warmth)</td>
+<td>0.000</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>var(_cons)</td>
+<td>3.351</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>var(e)</td>
+<td>36.019</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>** p&lt;.01, * p&lt;.05</p>
+<p>Estimates suggest that both the difference in an individual family’s expression of parental warmth from the country level mean, <em>but not</em> the difference in the country level mean from the grand mean are statistically significant predictors of the outcome.</p>
+</section>
+<section id="summary-of-advantages-of-the-multilevel-model" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="summary-of-advantages-of-the-multilevel-model"><span class="header-section-number">6.7</span> Summary of Advantages Of The Multilevel Model</h2>
+<p>The discussion so far gives an idea of the advantages of the multilevel model for studying intrinsically multilevel data: children in classrooms or schools; individuals or families in neighborhoods; individuals or families in countries. These advantages can be summarized below:</p>
+<ol type="1">
+<li>Standard errors are estimated correctly as is statistical significance. This means that p values are correctly estimated accounting for the clustered or nested nature of the data. More colloquially, this most often means that we do not make the mistake of attributing statistical significance to a given risk or protective factor, when such a statistical significance is not warranted. Put even more straightforwardly correct estimation of standard errors and statistical significance prevents us from seeing results that are simply not present in the data, whether those concern risk factors or protective factors.</li>
+<li>Regression coefficients are estimated correctly accounting for the clustered or nested structure of the data. If one does not account for the clustered or nested structure of the data, regression slopes can be estimated as negative when they are more correctly estimated as positive, or as null, or conversely estimated as positive when there are more correctly seen as negative (or null). Again, to phrase things in a more colloquial fashion, this means that we do not judge something to be a risk factor when it is in fact a protective factor or a null effect; or a protective factor when it is in fact a risk factor, or a null effect.</li>
+</ol>
+</section>
+<section id="sec-wrongapproaches" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="sec-wrongapproaches"><span class="header-section-number">6.8</span> Some Wrong (or Partially Wrong) Approaches</h2>
+<p>When data are clustered–e.g.&nbsp;residents in neighborhoods, children in schools, families in countries–it is worth discussing the fact that we have several choices statistically as how to proceed, other than using a multilevel model. Given the discussion so far, we can see the advantages of a multilevel model over these other approaches:</p>
+<ol type="1">
+<li>First, we could simply ignore the clustering, and treat the data as though it were composed of statistically independent individuals, i.e.&nbsp;statistically independent <span class="math inline">\(e_i\)</span>. As we have discussed above, however, this approach has at least two disadvantages. First, as discussed in <a href="#sec-pvalues"><span>Section&nbsp;6.1</span></a>, this approach will mis-estimate standard errors, most often underestimating them, resulting in underestimated p values and false positives. Second, as discussed in <a href="#sec-multilevelstructure"><span>Section&nbsp;6.2</span></a> ignoring clustering runs the risk of estimating regression <span class="math inline">\(\beta\)</span>’s that are not estimated with information about the multilevel structure of the data, with the possibility that <span class="math inline">\(\beta\)</span> coefficients may not only have incorrect statistical significance, but also incorrect magnitude, and even incorrect sign.</li>
+<li>A second approach would be to <em>aggregate</em> the data to the level of the higher social unit, e.g.&nbsp;aggregating the data at the level of the neighborhood. Here we run into an idea similar to that discussed in <a href="#sec-multilevelstructure"><span>Section&nbsp;6.2</span></a>, the “ecological fallacy”: the idea that group level and individual level relationships are necessarily the same <span class="citation" data-cites="FIREBAUGH20014023">(<a href="references.html#ref-FIREBAUGH20014023" role="doc-biblioref">Firebaugh, 2001</a>)</span>.</li>
+<li>Lastly, we could adopt a statistical strategy of <em>clustering</em> the standard errors. Clustering the standard errors means that standard errors are corrected for the non-independence of the <span class="math inline">\(e_i\)</span> within clusters. Thus, <em>p</em> values are estimated correctly. However, clustering still does not account for the multilevel structure of the data (<a href="#sec-multilevelstructure"><span>Section&nbsp;6.2</span></a>), and thus when relationships between <em>x</em>’s and <em>y</em> at different levels of the data are very different, simply clustering the standard errors may not give correct estimates of the <span class="math inline">\(\beta\)</span>’s.</li>
+</ol>
+</section>
+<section id="variation" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="variation"><span class="header-section-number">6.9</span> Variation</h2>
+<p>Above, in <a href="conceptual-framework.html#sec-studyvariation"><span>Section&nbsp;5.3</span></a>, I have referred to multilevel models as the study of variation. Now that I have provided some discussion of the multilevel model, more statistical “unpacking” of ideas about variation is warranted.</p>
+<p>I provide again, for pedagogical purposes, the example substantive equation that I have been using in this document.</p>
+<p><span class="math display">\[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} +\]</span> <span class="math display">\[\beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{j} + \]</span> <span id="eq-MLMsubstantive2"><span class="math display">\[u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij} \tag{6.10}\]</span></span></p>
+<section id="measured-and-unmeasured-variation" class="level3" data-number="6.9.1">
+<h3 data-number="6.9.1" class="anchored" data-anchor-id="measured-and-unmeasured-variation"><span class="header-section-number">6.9.1</span> Measured and Unmeasured Variation</h3>
+<p>The first thing to note about an equation for a multilevel model–here written in a more general form–is that it can be divided into measured and unmeasured variation.</p>
+<p><span class="math display">\[\underbrace{y_{ij}}_\text{outcome} = \underbrace{\beta_0}_\text{intercept} + \underbrace{\beta_1 x}_{\text{slope of} \\ \text{measured x}} + \underbrace{\beta_2 \text{group}}_{\substack{\text{association of} \\ \text{measured group} \\ \text{with intercept}}} + \underbrace{\beta_3 x \times \text{group}}_{\substack{\text{association of} \\ \text{measured group} \\ \text{with slope of} \\  \text{measured x}}} + \]</span></p>
+<p><span class="math display">\[\underbrace{u_{0j}}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in intercept}}} + \underbrace{u_{1j} \times x}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in slope of x}}} + \underbrace{e_{ij}}_{\substack{\text{unmeasured} \\ \text{individual} \\ \text{error}}}\]</span></p>
+<p>I have already introduced the idea of an unconditional model (<a href="#sec-unconditional"><span>Section&nbsp;6.4.1</span></a>), in which there are no independent variables, and all of the variation is unmeasured. The unconditional intraclcass correlation coefficient (ICC) (<a href="#sec-ICC"><span>Section&nbsp;6.4.2</span></a>) is a measure of the amount of variation that could potentially be attributable to the Level 2 units, in this case, different countries.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-variationsources" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="cross-sectional_files/figure-html/fig-variationsources-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.6: Sources of Variation in a Multilevel Model</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="variation-in-intercepts-or-outcomes" class="level3" data-number="6.9.2">
+<h3 data-number="6.9.2" class="anchored" data-anchor-id="variation-in-intercepts-or-outcomes"><span class="header-section-number">6.9.2</span> Variation In Intercepts or Outcomes</h3>
+<p>In <a href="#eq-MLMsubstantive2">Equation&nbsp;<span>6.10</span></a>, <span class="math inline">\(var(u_{0j})\)</span> is the model estimated amount of variation in the <em>outcome</em>, <span class="math inline">\(y_{ij}\)</span>.</p>
+<p>In the regression in <a href="#sec-regression"><span>Section&nbsp;6.4</span></a>, there is discernible between country variation, but more of the variation is between individuals within the same country. Put another way, there is a moderate tendency for children in families in the same country to have similar outcomes, but two children in families in the same country may also have very different outcomes. Children from families in different countries may be as similar as children from families in the same country.</p>
+</section>
+<section id="variation-in-predictors" class="level3" data-number="6.9.3">
+<h3 data-number="6.9.3" class="anchored" data-anchor-id="variation-in-predictors"><span class="header-section-number">6.9.3</span> Variation In Predictors</h3>
+<p>Equally important, I think, but much less frequently explored than variation in <em>outcomes</em>, is the possibility of variation in <em>predictors</em>, <span class="math inline">\(var(x_{ij})\)</span>. In the substantive example that we have employed so far, the <em>predictors</em> are different <em>parenting behaviors</em>, so considering variation in <em>predictors</em> allows us to consider variation in <em>parenting behaviors</em>, as well as variation in the <em>outcomes</em> of those behaviors.</p>
+<p>We would estimate variation in behaviors attributable to country in much the same way that we would estimate variation in outcomes, estimating an unconditional model, but substituting <span class="math inline">\(x\)</span> for <span class="math inline">\(y\)</span>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p><span id="eq-unconditionalx"><span class="math display">\[x_{ij} = \beta_0 + w_{0j} + e_{ij} \tag{6.11}\]</span></span></p>
+<p>Then, similarly, the variation in a predictor attributable to the clustered nature of the data–in this case the clustering of individuals in countries–is given by:</p>
+<p><span id="eq-ICCx"><span class="math display">\[\text{ICC}_x = \frac{var(w_{0j})}{var(w_{0j}) + var(e_{ij})} \tag{6.12}\]</span></span></p>
+</section>
+<section id="variation-in-slopes" class="level3" data-number="6.9.4">
+<h3 data-number="6.9.4" class="anchored" data-anchor-id="variation-in-slopes"><span class="header-section-number">6.9.4</span> Variation in Slopes</h3>
+<p>Another possible type of variation to investigate is variation in the relationship of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, which is represented in the multilevel model by examining variation in the <span class="math inline">\(\beta\)</span>’s, i.e.&nbsp;<span class="math inline">\(var(u_{1j})\)</span>.</p>
+</section>
+<section id="summary" class="level3" data-number="6.9.5">
+<h3 data-number="6.9.5" class="anchored" data-anchor-id="summary"><span class="header-section-number">6.9.5</span> Summary</h3>
+<p>Thus, we can consider a number of sources of possible variation.</p>
+<div id="tbl-sourcesvariation" class="anchored">
+<table class="table">
+<caption>Table&nbsp;6.1: Some Possible Sources of Variation To Consider in A Multilevel Model</caption>
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Model Parameter</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Independent Variables</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(var(x_{ij})\)</span></td>
+<td>What is the variation in x?</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(range(x_{ij})\)</span></td>
+<td>What are the maximum and minimum of x?</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(var(w_{0j}) \text{ if } x = \beta_0 + w_{0j} + e_{ij}\)</span></td>
+<td>What is the country specific variation in the value of x?</td>
+</tr>
+<tr class="odd">
+<td>Dependent Variable</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(var(y_{ij})\)</span></td>
+<td>What is the variation in y?</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(range(y_{ij})\)</span></td>
+<td>What are the maximum and minimum of y?</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(var(u_{0j})\)</span></td>
+<td>What is the country specific variation in the intercept of y?</td>
+</tr>
+<tr class="odd">
+<td>Regression Coefficients for Slopes</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\beta_{x} x\)</span></td>
+<td>What is the relationship of x and y?</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\beta_{xz} z \times x\)</span></td>
+<td>What is the effect of z on the relationship of x and y?</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(var(u_{1j}) \text{ from } u_{1j} \times x\)</span></td>
+<td>What is the country specific variation in the relationship of x and y?</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(cov(u_{0j}, u_{1j})\)</span></td>
+<td>What is the covariance of the country specific intercept and and country specific slope. Is the country specific intercept related to the country specific slope?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="variation-as-an-outcome" class="level3" data-number="6.9.6">
+<h3 data-number="6.9.6" class="anchored" data-anchor-id="variation-as-an-outcome"><span class="header-section-number">6.9.6</span> Variation As An Outcome</h3>
+<p>Even less common is to examine <em>variation</em> itself as an outcome <span class="citation" data-cites="Burkner2018">(<a href="references.html#ref-Burkner2018" role="doc-biblioref">Burkner, 2018</a>)</span>.</p>
+<p><span id="eq-distributional"><span class="math display">\[\sigma_{yij} = \beta_0 + \beta_1 x_1 + u_{0j} + e_{ij} \tag{6.13}\]</span></span></p>
+<p>Here, the variation in the outcome, <span class="math inline">\(\sigma_{yij}\)</span>, rather than the mean level of the outcome, <span class="math inline">\(y_{ij}\)</span>, is the focus of interest. My notation for <a href="#eq-distributional">Equation&nbsp;<span>6.13</span></a> draws upon <span class="citation" data-cites="Burkner2018">Burkner (<a href="references.html#ref-Burkner2018" role="doc-biblioref">2018</a>)</span>’s notation, but is modified in order to be consistent with the rest of this document.</p>
+<p>Why might such models be of conceptual interest? Imagine for example, that the <em>variation</em> in psychological well-being is higher in countries with higher levels of poverty, or higher levels of income inequality. The use of such models as this, discussed in more detail by <span class="citation" data-cites="Burkner2018">Burkner (<a href="references.html#ref-Burkner2018" role="doc-biblioref">2018</a>)</span>, would allow us to explore such a question.</p>
+<p>Of note, while I do not explore in detail differences between Bayesian and frequentist approaches to multilevel modeling in this document, these models are likely to be only estimable with Bayesian software rather than with frequentist software <span class="citation" data-cites="Burkner2018">(<a href="references.html#ref-Burkner2018" role="doc-biblioref">Burkner, 2018</a>)</span>.</p>
+</section>
+<section id="maximal-models" class="level3" data-number="6.9.7">
+<h3 data-number="6.9.7" class="anchored" data-anchor-id="maximal-models"><span class="header-section-number">6.9.7</span> Maximal Models</h3>
+<p>Hypothetically, one might imagine that there could be group level unobserved factors which affect regression slopes: i.e.&nbsp;the relationship between a predictor x and outcome variable y. Arguably, were one to ignore these unobserved factors in statistical estimation, they would show up either in an error term, or in the regression coefficients themselves. Were they to show up in the regression coefficients this would represent statistical bias and a substantive mis-estimation of important effects. thus, there is a conceptual argument for including as many random effects—i.e.&nbsp;random slopes—in a statistical model as possible.</p>
+<p>Models with all possible random effects are termed <em>maximal models</em> <span class="citation" data-cites="Barr2013 Frank2018">(<a href="references.html#ref-Barr2013" role="doc-biblioref">Barr et al., 2013</a>; <a href="references.html#ref-Frank2018" role="doc-biblioref">Frank, 2018</a>)</span>. Such models include a large number of random slopes, e.g.&nbsp;<span class="math inline">\(u_1 \times x_1, u_2 \times x_2, u_3 \times x_3, ..., \text{etc.}\)</span> even when some of those estimated slopes are close to 0. Such models may be more easily estimable when using Bayesian estimation <span class="citation" data-cites="Frank2018">(<a href="references.html#ref-Frank2018" role="doc-biblioref">Frank, 2018</a>)</span>, a topic which I do not cover in detail in this document.</p>
+<p>It should be noted that <span class="citation" data-cites="Matuschek2017">Matuschek et al. (<a href="references.html#ref-Matuschek2017" role="doc-biblioref">2017</a>)</span> argue that such a <em>maximal</em> approach may lead to a loss of statistical power and further argue that one should adhere to “a random effect structure that is supported by the data.” In contrast, <span class="citation" data-cites="nalborczyk_batailler_loevenbruck_vilain_burkner_2019">Nalborczyk et al. (<a href="references.html#ref-nalborczyk_batailler_loevenbruck_vilain_burkner_2019" role="doc-biblioref">2019</a>)</span> argue that maximal models are supported under the Bayesian approach. <span class="citation" data-cites="Oberauer2022">Oberauer (<a href="references.html#ref-Oberauer2022" role="doc-biblioref">2022</a>)</span> also argues for including multiple random slopes. <span class="citation" data-cites="Schielzeth2009">Schielzeth &amp; Forstmeier (<a href="references.html#ref-Schielzeth2009" role="doc-biblioref">2009</a>)</span> make a similar argument from a frequentist perspective.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography" style="display: none">
+<div id="ref-Barr2013" class="csl-entry" role="doc-biblioentry">
+Barr, D. J., Levy, R., Scheepers, C., &amp; Tily, H. J. (2013). Random effects structure for confirmatory hypothesis testing: Keep it maximal. <em>Journal of Memory and Language</em>, <em>68</em>(3), 255–278. <a href="https://doi.org/10.1016/j.jml.2012.11.001">https://doi.org/10.1016/j.jml.2012.11.001</a>
+</div>
+<div id="ref-Bland1994" class="csl-entry" role="doc-biblioentry">
+Bland, J. M., &amp; Altman, D. G. (1994). Statistics notes: Correlation, regression, and repeated data. <em>BMJ</em>, <em>308</em>, 896. <a href="https://doi.org/10.1136/bmj.308.6933.896">https://doi.org/10.1136/bmj.308.6933.896</a>
+</div>
+<div id="ref-Burkner2018" class="csl-entry" role="doc-biblioentry">
+Burkner, P.-C. (2018). Advanced <span>B</span>ayesian multilevel modeling with the <span>R</span> package brms. <em>The R Journal</em>, <em>10</em>(1), 395–411.
+</div>
+<div id="ref-FIREBAUGH20014023" class="csl-entry" role="doc-biblioentry">
+Firebaugh, G. (2001). Ecological fallacy, statistics of. In N. J. Smelser &amp; P. B. Baltes (Eds.), <em>International encyclopedia of the social &amp; behavioral sciences</em> (pp. 4023–4026). Pergamon. https://doi.org/<a href="https://doi.org/10.1016/B0-08-043076-7/00765-8">https://doi.org/10.1016/B0-08-043076-7/00765-8</a>
+</div>
+<div id="ref-Frank2018" class="csl-entry" role="doc-biblioentry">
+Frank, M. (2018). <em>Mixed effects models: Is it time to go <span>B</span>ayesian by default?</em> <a href="http://babieslearninglanguage.blogspot.com/2018/02/mixed-effects-models-is-it-time-to-go.html">http://babieslearninglanguage.blogspot.com/2018/02/mixed-effects-models-is-it-time-to-go.html</a>
+</div>
 <div id="ref-Gelman2007" class="csl-entry" role="doc-biblioentry">
 Gelman, A., Shor, B., Bafumi, J., &amp; Park, D. (2007). Rich state, poor state, red state, blue state: What’s the matter with connecticut? <em>Quarterly Journal of Political Science</em>, <em>2</em>, 345–367. <a href="https://doi.org/10.2139/ssrn.1010426">https://doi.org/10.2139/ssrn.1010426</a>
 </div>
-<div id="ref-Kreft1998" class="csl-entry" role="doc-biblioentry">
-Kreft, I., &amp; de Leeuw, J. (1998). <em>Introducing multilevel modeling</em>. SAGE Publications. <a href="https://doi.org/10.4135/9781849209366">https://doi.org/10.4135/9781849209366</a>
+<div id="ref-Lovelace1992" class="csl-entry" role="doc-biblioentry">
+Lovelace, A. K. (1992). Ada: The enchantress of numbers: A selection from the letters of <span>L</span>ord <span>B</span>yron’s daughter and her description of the first computer. In <em>Ada: the enchantress of numbers: a selection from the letters of <span>L</span>ord <span>B</span>yron’s daughter and her description of the first computer</em>. Strawberry Press.
 </div>
-<div id="ref-Luke2004" class="csl-entry" role="doc-biblioentry">
-Luke, D. (2004). <em>Multilevel modeling</em>. SAGE Publications, Inc. <a href="https://doi.org/10.4135/9781412985147">https://doi.org/10.4135/9781412985147</a>
+<div id="ref-Matuschek2017" class="csl-entry" role="doc-biblioentry">
+Matuschek, H., Kliegl, R., Vasishth, S., Baayen, H., &amp; Bates, D. (2017). Balancing type <span>I</span> error and power in linear mixed models. <em>Journal of Memory and Language</em>. <a href="https://doi.org/10.1016/j.jml.2017.01.001">https://doi.org/10.1016/j.jml.2017.01.001</a>
 </div>
-<div id="ref-Mbiti1970" class="csl-entry" role="doc-biblioentry">
-Mbiti, J. S. (1970). <em>African religions and philosophy</em>. Anchor Books.
+<div id="ref-nalborczyk_batailler_loevenbruck_vilain_burkner_2019" class="csl-entry" role="doc-biblioentry">
+Nalborczyk, L., Batailler, C., Loevenbruck, H., Vilain, A., &amp; Burkner, P.-C. (2019, May). <em>An introduction to <span>B</span>ayesian multilevel models using brms: A case study of gender effects on vowel variability in standard <span>I</span>ndonesian</em>. PsyArXiv. <a href="https://doi.org/10.1044/2018_JSLHR-S-18-0006">https://doi.org/10.1044/2018_JSLHR-S-18-0006</a>
 </div>
-<div id="ref-RabeHesketh2022" class="csl-entry" role="doc-biblioentry">
-Rabe-Hesketh, S., &amp; Skrondal, A. (2022). Multilevel and longitudinal modeling using <span>S</span>tata. In <em>Stata Press</em> (4th ed.). Stata Press.
+<div id="ref-Oberauer2022" class="csl-entry" role="doc-biblioentry">
+Oberauer, K. (2022). <span class="nocase">The Importance of Random Slopes in Mixed Models for Bayesian Hypothesis Testing</span>. <em>Psychological Science</em>. <a href="https://doi.org/doi:10.1177/09567976211046884">https://doi.org/doi:10.1177/09567976211046884</a>
 </div>
 <div id="ref-Raudenbush2002" class="csl-entry" role="doc-biblioentry">
 Raudenbush, S. W., &amp; Bryk, A. S. (2002). <em>Hierarchical linear models: Applications and data analysis methods</em> (pp. xxiv, 485 p.). Sage Publications.
 </div>
-<div id="ref-Singer2003" class="csl-entry" role="doc-biblioentry">
-Singer, J. D., &amp; Willett, J. B. (2003). Applied longitudinal data analysis : Modeling change and event occurrence. In <em>Applied longitudinal data analysis : modeling change and event occurrence</em>. Oxford University Press.
+<div id="ref-Schielzeth2009" class="csl-entry" role="doc-biblioentry">
+Schielzeth, H., &amp; Forstmeier, W. (2009). Conclusions beyond support: Overconfident estimates in mixed models. <em>Behavioral Ecology</em>, <em>20</em>, 416–420. <a href="https://doi.org/10.1093/beheco/arn145">https://doi.org/10.1093/beheco/arn145</a>
+</div>
+<div id="ref-StataCorp2021:2" class="csl-entry" role="doc-biblioentry">
+StataCorp. (2021). <em>Stata 17 multilevel mixed effects reference manual</em>. Stata Press.
 </div>
 </div>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Technically, all of these <span class="math inline">\(\beta\)</span>’s could be written as <span class="math inline">\(\beta_j\)</span> since the multilevel model could be said to estimate a regression parameter for each group, in this case each country. One could even write <span class="math inline">\(\beta_{jk}\)</span> to represent the regression parameter for the <span class="math inline">\(k^{th}\)</span> independent variable the for the <span class="math inline">\(j^{th}\)</span> group or country. To keep matters simple, I simply write <span class="math inline">\(\beta\)</span> in most cases.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Here for the sake of clarity, I use <span class="math inline">\(w_{0j}\)</span> as a random effect to think about country specific variation in <span class="math inline">\(x\)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -710,10 +1533,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./conceptual-framework.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conceptual Framework</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./acknowledgements.html" class="pagination-link">
-        <span class="nav-page-text">Acknowledgements</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./longitudinal.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Longitudinal Multilevel Model</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
