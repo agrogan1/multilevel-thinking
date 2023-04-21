@@ -268,4 +268,3 @@ export("table4.md", as(markdown) replace)
 estimates drop MLM FE CRE
 
 	
-
