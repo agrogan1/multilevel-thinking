@@ -33,6 +33,14 @@ I use simulated data in this example. Data come from 30 hypothetical countries. 
 
 Our `outcome` is conceptualized as a positive mental health outcome or behavioral outcome, and higher levels of `outcome` are considered to be better. Statistically, the data are clustered within countries. 
 
+:::{.callout-note collapse="true"}
+## Download The Data in Stata Format
+
+* [Cross-Sectional Data](https://github.com/agrogan1/multilevel-thinking/raw/main/simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta)
+* [Longitudinal Data](https://github.com/agrogan1/multilevel-thinking/raw/main/simulate-and-analyze-multilevel-data/simulated_multilevel_longitudinal_data.dta)
+
+:::
+
 In this simulation, I construct the data so that `warmth` is positively related to the `outcome`, while `physical punishment` is negatively related to the `outcome`.
 
 ```{r}
