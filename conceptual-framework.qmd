@@ -1,5 +1,7 @@
 # Conceptual Framework {#sec-conceptualframework}
 
+> "Ubuntu" defined as: "A person is a person through other people." e.g. in [@Mangharam2017]
+
 > "The language we have in that world is not large enough for the territory that we’ve already entered." [@Whyte2016]
 
 ```{r}
