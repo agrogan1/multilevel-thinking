@@ -299,7 +299,7 @@ For *parenting* to be a cause of *child outcomes*, one needs the following 3 thi
 
 ```{r}
 #| label: fig-causalitysubstantive
-#| fig-cap: "Formal Criteria of Causality"
+#| fig-cap: "Formal Criteria of Causality: A Substantive Example"
 #| fig-height: 3
 
 knitr::include_graphics("fig-causalitysubstantive.png")
