@@ -140,6 +140,22 @@
 
 \KOMAoption{captions}{tableheading}
 \makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
 \makeatother
 \makeatletter
 \@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
@@ -217,11 +233,11 @@
 \subtitle{Discovering Diversity, Universals, and Particulars in
 Cross-Cultural Research}
 \author{Andrew Grogan-Kaylor}
-\date{6/5/23}
+\date{6/25/23}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, breakable, interior hidden, enhanced, borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, sharp corners]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, enhanced, frame hidden, interior hidden, breakable, sharp corners]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -271,13 +287,13 @@ multilevel model may lead to conclusions that are demonstrably
 incorrect. Fortunately, many of these difficulties can be avoided with
 applications of simple and straightforward multilevel models.
 
-I first present some initial ideas about multilevel modeling. First, as
-is relatively commonly understood, \emph{multilevel models allow for the
-correct estimation of p values in the presence of data clustering}.
-Second, as is less commonly appreciated, when data are clustered,
-\emph{multilevel models correctly estimate \(\beta\) regression
-coefficients and may avoid estimating a regression coefficient that is
-too large, too small, or even has the wrong sign}.
+I start by presenting some initial ideas about multilevel modeling.
+First, as is relatively commonly understood, \emph{multilevel models
+allow for the correct estimation of p values in the presence of data
+clustering}. Second, as is less commonly appreciated, when data are
+clustered, \emph{multilevel models correctly estimate \(\beta\)
+regression coefficients and may avoid estimating a regression
+coefficient that is too large, too small, or even has the wrong sign}.
 
 I go on to explore some more complex ideas about multilevel models that
 I see less often in the published empirical literature. I focus
@@ -874,6 +890,20 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
+\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, opacityback=0, left=2mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, bottomtitle=1mm, opacitybacktitle=0.6, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, breakable, bottomrule=.15mm, rightrule=.15mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data in Stata Format}, leftrule=.75mm]
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://github.com/agrogan1/multilevel-thinking/raw/main/simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta}{Cross-Sectional
+  Data}
+\item
+  \href{https://github.com/agrogan1/multilevel-thinking/raw/main/simulate-and-analyze-multilevel-data/simulated_multilevel_longitudinal_data.dta}{Longitudinal
+  Data}
+\end{itemize}
+
+\end{tcolorbox}
+
 In this simulation, I construct the data so that \texttt{warmth} is
 positively related to the \texttt{outcome}, while
 \texttt{physical\ punishment} is negatively related to the
@@ -1003,6 +1033,11 @@ using throughout this document.
 
 \hypertarget{sec-conceptualframework}{%
 \chapter{Conceptual Framework}\label{sec-conceptualframework}}
+
+\begin{quote}
+``Ubuntu'' defined as: ``A person is a person through other people.''
+e.g.~in (Mangharam, 2017)
+\end{quote}
 
 \begin{quote}
 ``The language we have in that world is not large enough for the
@@ -3385,6 +3420,11 @@ neighborhood disorganization and maternal spanking with children's
 aggression: A fixed-effects regression analysis. \emph{Child Abuse \&
 Neglect}, \emph{76}, 106--116.
 \url{https://doi.org/10.1016/j.chiabu.2017.10.013}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Mangharam2017}{}}%
+Mangharam, M. L. (2017). \emph{Literatures of liberation: Non-{E}uropean
+universalisms and democratic progress}. Ohio State University Press.
+\url{https://doi.org/10.2307/j.ctv16gff5b}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Martin-Baro1994}{}}%
 Martin-Baro, I. (1994a). Public opinion research. In A. Aron \& S. Corne
