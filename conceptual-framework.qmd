@@ -29,7 +29,7 @@ When confronted with multilevel data, one has a number of choices about the unit
 
 Further, with multilevel models, we are not only able to consider the idea of units of analysis at multiple levels of the data, but to consider how variables at both Level 2 and Level 1 may affect an individual level (Level 1) outcome.
 
-```{r}
+```{r, out.width="50%"}
 #| label: fig-conceptual
 #| fig-cap: "Conceptual Framework"
 #| fig-height: 3
