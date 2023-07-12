@@ -164,7 +164,7 @@ tribble(
   ylim(0,10) +
   scale_color_viridis_d() +
   theme_minimal() +
-  theme(axis.text.x = element_text(size = rel(.75)))
+  theme(axis.text.x = element_text(size = rel(.75))) 
 
 ```
 
@@ -213,9 +213,8 @@ tribble(
   xlim(0,10) +
   ylim(0,10) +
   scale_color_viridis_d() +
-  theme_minimal() +
-  theme(axis.text.x = element_text(size = rel(.75)))
-
+  theme_minimal() + 
+  theme(axis.text.x = element_text(size = rel(.75))) 
 
 ```
 
