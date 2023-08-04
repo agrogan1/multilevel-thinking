@@ -9,7 +9,6 @@
   numbers=noendperiod]{scrreprt}
 
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -19,6 +18,10 @@
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -140,7 +143,7 @@
 
 \KOMAoption{captions}{tableheading}
 \makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
 \definecolor{quarto-callout-color}{HTML}{909090}
 \definecolor{quarto-callout-note-color}{HTML}{0758E5}
@@ -200,10 +203,12 @@
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
 \makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \makeatother
 \makeatletter
 \@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
 \makeatother
 \makeatletter
 \makeatother
@@ -233,11 +238,11 @@
 \subtitle{Discovering Diversity, Universals, and Particulars in
 Cross-Cultural Research}
 \author{Andrew Grogan-Kaylor}
-\date{7/18/23}
+\date{2023-08-04}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, frame hidden, sharp corners, interior hidden, breakable, enhanced, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, enhanced, interior hidden, sharp corners, boxrule=0pt, frame hidden, breakable]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -378,7 +383,7 @@ errors and omissions in this document are of course my responsibility.
 
 \markright{License}
 
-\includegraphics[width=0.29in,height=\textheight]{./88x31.png}
+\includegraphics[width=0.29in,height=\textheight]{88x31.png}
 
 \emph{Multilevel Thinking} by \href{https://agrogan1.github.io/}{Andrew
 Grogan-Kaylor} is licensed under a
@@ -739,7 +744,7 @@ own area of research.
 I ground this presentation in research that we have conducted on
 parenting and child development in international context (Grogan-Kaylor
 et al., 2021; Ma et al., 2022; Pace et al., 2019; Ward, Grogan-Kaylor,
-Ma, et al., 2021; Ward, Grogan-Kaylor, Pace, et al., 2021; Ward et al.,
+Pace, et al., 2021; Ward, Grogan-Kaylor, Ma, et al., 2021; Ward et al.,
 2022). For the presentation in this document, I use simulated data on
 these issues.
 
@@ -852,7 +857,7 @@ Data}\label{simulated-multi-country-multilevel-data}}
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.5\textwidth,height=\textheight]{./world.png}
+{\centering \includegraphics[width=0.5\textwidth,height=\textheight]{world.png}
 
 }
 
@@ -890,7 +895,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, breakable, toprule=.15mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data in Stata Format}, arc=.35mm, toptitle=1mm, leftrule=.75mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, colback=white, titlerule=0mm, rightrule=.15mm, left=2mm, opacityback=0, colframe=quarto-callout-note-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, breakable, colback=white, toprule=.15mm, colframe=quarto-callout-note-color-frame, arc=.35mm, left=2mm, bottomtitle=1mm, toptitle=1mm, coltitle=black, bottomrule=.15mm, opacityback=0, rightrule=.15mm, opacitybacktitle=0.6, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data in Stata Format}]
 
 \begin{itemize}
 \tightlist
@@ -920,7 +925,7 @@ positively related to the \texttt{outcome}, while
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1389}}@{}}
 \caption{\label{tbl-simulateddata}Simulated Multilevel
 Data}\tabularnewline
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 id
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -936,9 +941,9 @@ HDI
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 outcome
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 id
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -954,20 +959,21 @@ HDI
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 outcome
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1.1 & 1 & 3 & 2 & 2 & 69 & 59.18 \\
 1.2 & 1 & 0 & 4 & 2 & 69 & 61.54 \\
 1.3 & 1 & 4 & 4 & 1 & 69 & 51.87 \\
 1.4 & 1 & 6 & 0 & 2 & 69 & 51.71 \\
 1.5 & 1 & 2 & 3 & 2 & 69 & 55.88 \\
 1.6 & 1 & 3 & 5 & 1 & 69 & 60.78 \\
-\bottomrule()
 \end{longtable}
 
 \begin{figure}
 
-{\centering \includegraphics{./simulated-multi-country-data_files/figure-pdf/fig-data-1.pdf}
+{\centering \includegraphics{simulated-multi-country-data_files/figure-pdf/fig-data-1.pdf}
 
 }
 
@@ -1004,14 +1010,16 @@ For the sake of illustration, a few Stata commands are listed below.
 \hypertarget{tbl-Statacommands}{}
 \begin{longtable}[]{@{}ll@{}}
 \caption{\label{tbl-Statacommands}Example Stata Commands}\tabularnewline
-\toprule()
+\toprule\noalign{}
 Task & Command \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 Task & Command \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Open data & \texttt{use\ mydata.dta} \\
 Descriptive statistics & \texttt{summarize\ x\ y} \\
 Frequencies & \texttt{tabulate\ x} \\
@@ -1022,7 +1030,6 @@ Logistic Regression & \texttt{logit\ y\ x,\ or} \footnote{Here we use
   \emph{logit coefficients}.} \\
 Multilevel Model &
 \texttt{mixed\ y\ x\ \textbar{}\textbar{}\ group:\ x} \\
-\bottomrule()
 \end{longtable}
 
 It is this multilevel syntax,
@@ -1065,7 +1072,7 @@ individual level (Level 1) outcome.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.5\textwidth,height=\textheight]{./fig-conceptual.png}
+{\centering \includegraphics[width=0.5\textwidth,height=\textheight]{fig-conceptual.png}
 
 }
 
@@ -1095,7 +1102,7 @@ By \emph{statistical} level, I refer to whether a variable measures an
   >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3846}}@{}}
 \caption{\label{tbl-variablelevel}Multiple Levels of
 Variables}\tabularnewline
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 conceptual level
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -1103,9 +1110,9 @@ statistical level 1
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 statistical level 2
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 conceptual level
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -1113,14 +1120,15 @@ statistical level 1
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 statistical level 2
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1 & Individual response about parenting or mental health & Aggregated
 responses about parenting or mental health \\
 2 & Individual response about community & Aggregated response about
 community \\
 2 & N/A & Administrative indicator of social unit \\
-\bottomrule()
 \end{longtable}
 
 \begin{itemize}
@@ -1185,7 +1193,7 @@ country in the data has its own \emph{country specific regression line}.
 
 \begin{figure}
 
-{\centering \includegraphics{./conceptual-framework_files/figure-pdf/fig-variation1-1.pdf}
+{\centering \includegraphics{conceptual-framework_files/figure-pdf/fig-variation1-1.pdf}
 
 }
 
@@ -1240,7 +1248,7 @@ improve psychological well-being.
 
 \begin{figure}
 
-{\centering \includegraphics{./conceptual-framework_files/figure-pdf/fig-variation2-1.pdf}
+{\centering \includegraphics{conceptual-framework_files/figure-pdf/fig-variation2-1.pdf}
 
 }
 
@@ -1339,7 +1347,7 @@ The graph below illustrates the process of simulating the data.
 
 \begin{figure}
 
-{\centering \includegraphics{./cross-sectional_files/figure-pdf/fig-simulatedclustereddata-1.pdf}
+{\centering \includegraphics{cross-sectional_files/figure-pdf/fig-simulatedclustereddata-1.pdf}
 
 }
 
@@ -1371,16 +1379,17 @@ The Stata syntax that we use for each analysis is:
 \end{itemize}
 
 \begin{longtable}[]{@{}lllll@{}}
-\toprule()
+\toprule\noalign{}
 & OLS & & MLM & \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 x & 1.046 & ** & 0.039 & \\
 Intercept & 4.488 & & 97.005 & ** \\
 var(\_cons) & & & 74.523 & \\
 var(e) & & & 0.594 & \\
 Number of observations & 25 & & & \\
-\bottomrule()
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
@@ -1426,7 +1435,7 @@ lines may slope upward.
 
 \begin{figure}
 
-{\centering \includegraphics{./cross-sectional_files/figure-pdf/fig-naive-1.pdf}
+{\centering \includegraphics{cross-sectional_files/figure-pdf/fig-naive-1.pdf}
 
 }
 
@@ -1444,7 +1453,7 @@ group} slope upward.
 
 \begin{figure}
 
-{\centering \includegraphics{./cross-sectional_files/figure-pdf/fig-aware-1.pdf}
+{\centering \includegraphics{cross-sectional_files/figure-pdf/fig-aware-1.pdf}
 
 }
 
@@ -1480,16 +1489,17 @@ coefficient for \emph{x} in the multilevel model is \emph{positive}, and
 statistically significant.
 
 \begin{longtable}[]{@{}lllll@{}}
-\toprule()
+\toprule\noalign{}
 & OLS & & MLM & \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 x & -0.775 & ** & 1.038 & ** \\
 Intercept & 57.133 & ** & 29.029 & ** \\
 var(\_cons) & & & 276.867 & \\
 var(e) & & & 0.916 & \\
 Number of observations & 30 & & & \\
-\bottomrule()
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
@@ -1517,7 +1527,7 @@ intervention was harmful, when it was in fact helpful.
 
 \begin{figure}
 
-{\centering \includegraphics{./cross-sectional_files/figure-pdf/unnamed-chunk-9-1.pdf}
+{\centering \includegraphics{cross-sectional_files/figure-pdf/unnamed-chunk-9-1.pdf}
 
 }
 
@@ -1714,14 +1724,15 @@ The Stata syntax that we use is:
 \end{Shaded}
 
 \begin{longtable}[]{@{}lll@{}}
-\toprule()
+\toprule\noalign{}
 & cross\_sectional0 & \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 \_cons & 53.468 & ** \\
 var(\_cons) & 3.349 & \\
 var(e) & 40.883 & \\
-\bottomrule()
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
@@ -1748,10 +1759,12 @@ The Stata syntax that we use is:
 \end{Shaded}
 
 \begin{longtable}[]{@{}lll@{}}
-\toprule()
+\toprule\noalign{}
 & cross\_sectional & \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 warmth & 0.962 & ** \\
 physical\_punishment & -0.845 & ** \\
 group & & \\
@@ -1761,7 +1774,6 @@ HDI & 0.011 & \\
 var(warmth) & 0.000 & \\
 var(\_cons) & 3.370 & \\
 var(e) & 36.019 & \\
-\bottomrule()
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
@@ -1834,10 +1846,12 @@ We use the following syntax.
 When we estimate such a model, we get the following information.
 
 \begin{longtable}[]{@{}lll@{}}
-\toprule()
+\toprule\noalign{}
 & cross\_sectional2 & \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 warmth & 0.962 & ** \\
 physical\_punishment & -0.845 & ** \\
 group & & \\
@@ -1848,7 +1862,6 @@ var(warmth) & 0.000 & \\
 var(\_cons) & 3.237 & \\
 cov(warmth,\_cons) & 0.019 & \\
 var(e) & 36.019 & \\
-\bottomrule()
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
@@ -1878,7 +1891,7 @@ warmth in country \emph{j}.
 
 \begin{figure}
 
-{\centering \includegraphics{./cross-sectional_files/figure-pdf/fig-distributionwarmth-1.pdf}
+{\centering \includegraphics{cross-sectional_files/figure-pdf/fig-distributionwarmth-1.pdf}
 
 }
 
@@ -1924,7 +1937,7 @@ particular context differs from the average context}.
 
 \begin{figure}
 
-{\centering \includegraphics{./cross-sectional_files/figure-pdf/fig-withinbetween-1.pdf}
+{\centering \includegraphics{cross-sectional_files/figure-pdf/fig-withinbetween-1.pdf}
 
 }
 
@@ -2007,10 +2020,12 @@ steps.
 \end{Shaded}
 
 \begin{longtable}[]{@{}lll@{}}
-\toprule()
+\toprule\noalign{}
 & cross\_sectional3 & \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 dev\_warmth & 0.961 & ** \\
 cdev\_warmth & 1.899 & \\
 physical\_punishment & -0.845 & ** \\
@@ -2021,7 +2036,6 @@ HDI & 0.008 & \\
 var(warmth) & 0.000 & \\
 var(\_cons) & 3.351 & \\
 var(e) & 36.019 & \\
-\bottomrule()
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
@@ -2149,7 +2163,7 @@ attributable to the Level 2 units, in this case, different countries.
 
 \begin{figure}
 
-{\centering \includegraphics{./cross-sectional_files/figure-pdf/fig-variationsources-1.pdf}
+{\centering \includegraphics{cross-sectional_files/figure-pdf/fig-variationsources-1.pdf}
 
 }
 
@@ -2218,22 +2232,24 @@ Thus, we can consider a number of sources of possible variation.
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4250}}@{}}
 \caption{\label{tbl-sourcesvariation}Some Possible Sources of Variation
 To Consider in A Multilevel Model}\tabularnewline
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Model Parameter
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Meaning
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Model Parameter
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Meaning
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Independent Variables & \\
 \(var(x_{ij})\) & What is the variation in x? \\
 \(range(x_{ij})\) & What are the maximum and minimum of x? \\
@@ -2253,7 +2269,6 @@ specific variation in the relationship of x and y? \\
 \(cov(u_{0j}, u_{1j})\) & What is the covariance of the country specific
 intercept and and country specific slope. Is the country specific
 intercept related to the country specific slope? \\
-\bottomrule()
 \end{longtable}
 
 \hypertarget{variation-as-an-outcome}{%
@@ -2333,19 +2348,20 @@ countries}.
 \begin{longtable}[]{@{}ll@{}}
 \caption{\label{tbl-levelscrosssectional}Levels in Cross-Sectional
 Data}\tabularnewline
-\toprule()
+\toprule\noalign{}
 Level & Example(s) \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 Level & Example(s) \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1 & Individuals or Families \\
 2 & Schools \\
 & Neighborhoods \\
 & Countries \\
-\bottomrule()
 \end{longtable}
 
 In longitudinal data, we consider the \emph{first level} to be that of
@@ -2360,17 +2376,18 @@ level} is then the individual or family.
 \begin{longtable}[]{@{}ll@{}}
 \caption{\label{tbl-levelslongitudinal}Levels in Longitudinal
 Data}\tabularnewline
-\toprule()
+\toprule\noalign{}
 Level & Example(s) \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 Level & Example(s) \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1 & Timepoints \\
 2 & Individuals or Families \\
-\bottomrule()
 \end{longtable}
 
 While it is less common, we could then easily add additional clustering
@@ -2381,20 +2398,21 @@ families inside social units.
 \begin{longtable}[]{@{}ll@{}}
 \caption{\label{tbl-levelslongitudinal2}Multiple Levels in Longitudinal
 Data}\tabularnewline
-\toprule()
+\toprule\noalign{}
 Level & Example(s) \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 Level & Example(s) \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1 & Timepoints \\
 2 & Individuals or Families \\
 3 & Schools \\
 & Neighborhoods \\
 & Countries \\
-\bottomrule()
 \end{longtable}
 
 \hypertarget{use-data-with-multiple-observations-per-individual}{%
@@ -2418,37 +2436,39 @@ in Appendix~\ref{sec-reshape}.
 \hypertarget{tbl-datalong}{}
 \begin{longtable}[]{@{}lll@{}}
 \caption{\label{tbl-datalong}Data in Long Format}\tabularnewline
-\toprule()
+\toprule\noalign{}
 id & t & x \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 id & t & x \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1 & 1 & 10 \\
 1 & 2 & 20 \\
 1 & 3 & 30 \\
 2 & 1 & 20 \\
 2 & 2 & 30 \\
 2 & 3 & 40 \\
-\bottomrule()
 \end{longtable}
 
 \hypertarget{tbl-datawide}{}
 \begin{longtable}[]{@{}llll@{}}
 \caption{\label{tbl-datawide}Data in Wide Format}\tabularnewline
-\toprule()
+\toprule\noalign{}
 id & x1 & x2 & x3 \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 id & x1 & x2 & x3 \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1 & 10 & 20 & 30 \\
 2 & 20 & 30 & 40 \\
-\bottomrule()
 \end{longtable}
 
 \hypertarget{simulated-multilevel-longitudinal-data}{%
@@ -2471,7 +2491,7 @@ data that has multiple rows of data per family.
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1190}}@{}}
 \caption{\label{tbl-simulatedlongitudinaldata}Simulated Longitudinal
 Multilevel Data}\tabularnewline
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 country
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -2491,9 +2511,9 @@ warmth
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 outcome
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 country
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -2513,15 +2533,16 @@ warmth
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 outcome
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1 & 69 & 1 & 1.1 & 2 & 1 & 2 & 3 & 59.18 \\
 1 & 69 & 1 & 1.1 & 2 & 2 & 2 & 2 & 58.29 \\
 1 & 69 & 1 & 1.1 & 2 & 3 & 3 & 3 & 60.58 \\
 1 & 69 & 2 & 1.2 & 2 & 1 & 4 & 0 & 61.54 \\
 1 & 69 & 2 & 1.2 & 2 & 2 & 4 & 0 & 55.96 \\
 1 & 69 & 2 & 1.2 & 2 & 3 & 4 & 2 & 56.19 \\
-\bottomrule()
 \end{longtable}
 
 Since I will be discussing the estimation of a \emph{longitudinal}
@@ -2529,7 +2550,7 @@ model, it is often useful to graph the outcome variable against time.
 
 \begin{figure}
 
-{\centering \includegraphics{./longitudinal_files/figure-pdf/fig-data2-1.pdf}
+{\centering \includegraphics{longitudinal_files/figure-pdf/fig-data2-1.pdf}
 
 }
 
@@ -2584,7 +2605,7 @@ Then, each group has it's own intercept and time trajectory:
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5600}}@{}}
 \caption{\label{tbl-trajectory}Slope and Intercept for Each
 Group}\tabularnewline
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Group
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -2592,9 +2613,9 @@ Intercept
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Slope (Time Trajectory)
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Group
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -2602,12 +2623,13 @@ Intercept
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Slope (Time Trajectory)
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 0 & \(\beta_0\) & \(\beta_t\) \\
 1 & \(\beta_0 + \beta_\text{group}\) &
 \(\beta_t + \beta_\text{interaction}\) \\
-\bottomrule()
 \end{longtable}
 
 \begin{quote}
@@ -2618,7 +2640,7 @@ time}, modify the \emph{slope} of the time trajectory.
 
 \begin{figure}
 
-{\centering \includegraphics{./longitudinal_files/figure-pdf/fig-trajectory-1.pdf}
+{\centering \includegraphics{longitudinal_files/figure-pdf/fig-trajectory-1.pdf}
 
 }
 
@@ -2640,10 +2662,12 @@ The Stata command that we use to analyze this data is:
 \end{Shaded}
 
 \begin{longtable}[]{@{}lll@{}}
-\toprule()
+\toprule\noalign{}
 & longitudinal & \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 t & 0.988 & ** \\
 warmth & 0.946 & ** \\
 physical\_punishment & -0.927 & ** \\
@@ -2656,7 +2680,6 @@ var(\_cons) & 3.651 & \\
 var(\_cons) & 8.853 & \\
 var(t) & 0.000 & \\
 var(e) & 26.001 & \\
-\bottomrule()
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
@@ -2712,36 +2735,6 @@ children's \emph{mental health}, one must be at least reasonably sure
 that \emph{parental warmth} and \emph{physical punishment} are
 \emph{causes} of children's mental health.
 
-Randomized studies provide the best evidence about \emph{internal
-validity} and causal relationships. However, randomized studies have
-certain important limitations (Diener et al., 2022). First of
-all--especially in a study with a smaller sample--randomization may not
-always be perfect, and the control and treatment groups may not be
-statistically equivalent. Secondly, because randomized studies are
-costly to conduct, they may have small samples and may be statistically
-underpowered. Smaller samples and underpowered studies are more likely
-to generate false positive results than larger samples (Button et al.,
-2013) \footnote{See
-  \url{https://agrogan.shinyapps.io/Thinking-Through-Bayes/} for a
-  demonstration of this idea from a Bayesian perspective.}. Lastly,
-because of ethical concerns some studies can not be conducted with
-randomization (Diener et al., 2022). For example, in the study of
-parenting and child development, children cannot ethically be assigned
-to parents with different styles of parenting and followed over the long
-term (Heilmann et al., 2021). Thus, methods that provide rigorous causal
-estimation with observational methods are necessary (Diener et al.,
-2022).
-
-Because of the assumed superiority of studies that employ randomization,
-it is sometimes maintained that \emph{correlation is not causation} and
-that studies that do not make use of randomization are \emph{only
-observational} and \emph{correlational}, and that results from
-observational studies cannot be used to support causal conclusions.
-However, in an important review (Waddington et al., 2022) suggested that
-studies using appropriately quantitative methods can provide causally
-robust conclusions. Heilmann et al. (2021) make a similar assertion with
-specific regard to studies of physical punishment and child outcomes.
-
 In a statement salient for social research, Duncan \& Gibson-Davis
 (2006) point out the logical inconsistency of writing that does not
 rigorously address causal processes, but then goes on to suggest
@@ -2772,16 +2765,50 @@ resources to conduct expensive longitudinal studies without attempting
 to use them for causal modeling.''
 \end{quote}
 
-Finally, and very importantly, because of their often small samples,
-randomized studies may have high internal validity, but much lower
-external validity, or generalization to larger populations (Diener et
-al., 2022). This issue of generalizability becomes increasingly salient,
-when we are reminded of the fact that so little social and psychological
-research has been conducted outside of North American contexts (Draper
-et al., 2022; Henrich et al., 2010). It is necessary to make use of
-broadly representative observational data sets, and appropriately
-sophisticated quantitative methods to make causally robust conclusions
-from observational data.
+Randomized studies provide the best evidence about \emph{internal
+validity} and causal relationships. However, randomized studies have
+certain important limitations (Diener et al., 2022). First of
+all--especially in a study with a smaller sample--randomization may not
+always be perfect, and the control and treatment groups may not be
+statistically equivalent. Secondly, because randomized studies are
+costly to conduct, they may have small samples and may be statistically
+underpowered. Smaller samples and underpowered studies are more likely
+to generate false positive results than larger samples (Button et al.,
+2013) \footnote{See
+  \url{https://agrogan.shinyapps.io/Thinking-Through-Bayes/} for a
+  demonstration of this idea from a Bayesian perspective.}. Lastly,
+because of ethical concerns some studies can not be conducted with
+randomization (Diener et al., 2022). For example, in the study of
+parenting and child development, children cannot ethically be assigned
+to parents with different styles of parenting and followed over the long
+term (Heilmann et al., 2021). Thus, methods that provide rigorous causal
+estimation with observational methods are necessary (Diener et al.,
+2022).
+
+Because of the assumed superiority of studies that employ randomization,
+it is sometimes maintained that \emph{correlation is not causation} and
+that studies that do not make use of randomization are \emph{only
+observational} and \emph{correlational}, and that results from
+observational studies cannot be used to support causal conclusions.
+However, in an important review (Waddington et al., 2022) suggested that
+studies using appropriately quantitative methods can provide causally
+robust conclusions. Heilmann et al. (2021) make a similar assertion with
+specific regard to studies of physical punishment and child outcomes,
+arguing that observational studies that make use of appropriately
+advanced quantitative methods can make causally robust conclusions about
+the effects of physical discipline.
+
+Finally, and very importantly, because of their often small samples, and
+their often rigorous exclusion criteria, randomized studies may have
+high internal validity, but much lower external validity, or
+generalization to larger populations (Diener et al., 2022). This issue
+of generalizability becomes increasingly salient, when we are reminded
+of the fact that so little social and psychological research has been
+conducted outside of North American contexts (Draper et al., 2022;
+Henrich et al., 2010). It is necessary to make use of broadly
+representative observational data sets, and appropriately sophisticated
+quantitative methods, to make causally robust conclusions from
+observational data that are applicable across diverse populations.
 
 \hypertarget{formal-criteria-of-causality}{%
 \subsection{Formal Criteria of
@@ -2804,7 +2831,7 @@ For x to be a cause of y, one needs the following 3 things to be true
 
 \begin{figure}
 
-{\centering \includegraphics[width=3.46in,height=\textheight]{./fig-causality.png}
+{\centering \includegraphics[width=3.46in,height=\textheight]{fig-causality.png}
 
 }
 
@@ -2843,7 +2870,7 @@ the following 3 things to be true (Holland, 1986).
 
 \begin{figure}
 
-{\centering \includegraphics[width=3.46in,height=\textheight]{./fig-causalitysubstantive.png}
+{\centering \includegraphics[width=3.46in,height=\textheight]{fig-causalitysubstantive.png}
 
 }
 
@@ -2892,7 +2919,7 @@ confounders.
 
 \begin{figure}
 
-{\centering \includegraphics{./longitudinal_files/figure-pdf/fig-Simpson-1.pdf}
+{\centering \includegraphics{longitudinal_files/figure-pdf/fig-Simpson-1.pdf}
 
 }
 
@@ -2995,10 +3022,12 @@ The relevant Stata commands are:
 \end{itemize}
 
 \begin{longtable}[]{@{}lllll@{}}
-\toprule()
+\toprule\noalign{}
 & MLM & & FE & \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 t & 0.988 & ** & 0.988 & ** \\
 warmth & 0.947 & ** & 0.970 & ** \\
 physical\_punishment & -0.910 & ** & -1.033 & ** \\
@@ -3009,7 +3038,6 @@ HDI & 0.008 & & & \\
 var(\_cons) & 12.497 & & & \\
 var(e) & 26.003 & & & \\
 Number of observations & & & 9000 & \\
-\bottomrule()
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
@@ -3073,10 +3101,12 @@ The Stata command for the correlated random effects model is:
 \end{Shaded}
 
 \begin{longtable}[]{@{}lllllll@{}}
-\toprule()
+\toprule\noalign{}
 & MLM & & FE & & CRE & \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 t & 0.988 & ** & 0.988 & ** & 0.988 & ** \\
 warmth & 0.947 & ** & 0.970 & ** & 0.970 & ** \\
 physical\_punishment & -0.910 & ** & -1.033 & ** & -1.033 & ** \\
@@ -3090,7 +3120,6 @@ var(\_cons) & 12.497 & & & & & \\
 var(e) & 26.003 & & & & 25.993 & \\
 var(\_cons) & & & & & 12.488 & \\
 Number of observations & & & 9000 & & & \\
-\bottomrule()
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
@@ -3684,8 +3713,10 @@ strategies.
 I teach courses mostly in the area of statistics, quantitative methods
 and data visualization.
 
-\appendix
+\cleardoublepage
+\phantomsection
 \addcontentsline{toc}{part}{Appendices}
+\appendix
 
 \hypertarget{stata-for-cross-sectional-multilevel-models}{%
 \chapter{Stata for Cross Sectional Multilevel
@@ -3696,7 +3727,7 @@ Models}\label{stata-for-cross-sectional-multilevel-models}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4359}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1667}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1923}}@{}}
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 model
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -3706,8 +3737,10 @@ Stata
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 English
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Intercept Only & \(y = \beta_0 + e_{ij}\) & \texttt{mixed\ y} & We
 estimated the mean of {[}outcome{]} \\
 Intercept Independent Variable(s) & \(y = \beta_0 + \beta_1 x + e_{ij}\)
@@ -3743,7 +3776,6 @@ We can estimate multilevel models with more than 1 random slope. &
 \(e_{ij} + u_{0j} + u_{1j} x + u_{2j} z\) &
 \texttt{mixed\ y\ x\ z\ \textbar{}\textbar{}\ ///}
 \texttt{groupid:\ x\ z} & \\
-\bottomrule()
 \end{longtable}
 
 \hypertarget{sec-reshape}{%
@@ -3779,7 +3811,7 @@ a \emph{person-timepoint}.
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1071}}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1190}}@{}}
 \caption{\label{tbl-reshapelongdata}Data in Long Format}\tabularnewline
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 country
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -3799,9 +3831,9 @@ warmth
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 outcome
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 country
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -3821,15 +3853,16 @@ warmth
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 outcome
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1 & 69 & 1 & 1.1 & 2 & 1 & 2 & 3 & 59.18 \\
 1 & 69 & 1 & 1.1 & 2 & 2 & 2 & 2 & 58.29 \\
 1 & 69 & 1 & 1.1 & 2 & 3 & 3 & 3 & 60.58 \\
 1 & 69 & 2 & 1.2 & 2 & 1 & 4 & 0 & 61.54 \\
 1 & 69 & 2 & 1.2 & 2 & 2 & 4 & 0 & 55.96 \\
 1 & 69 & 2 & 1.2 & 2 & 3 & 4 & 2 & 56.19 \\
-\bottomrule()
 \end{longtable}
 
 \hypertarget{data-management}{%
@@ -3930,21 +3963,22 @@ warmth2 & outcome2 & physical\_punishment3 & warmth3 & outcome3 & country & HDI\
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1250}}
   >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1250}}@{}}
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 family
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 group
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1 & 2 \\
 10 & 2 \\
 100 & 2 \\
 11 & 2 \\
 12 & 1 \\
 13 & 1 \\
-\bottomrule()
 \end{longtable}
 
 }
@@ -4004,7 +4038,7 @@ set.
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1071}}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1190}}@{}}
 \caption{\label{tbl-reshapelongdata2}Data in Long Format}\tabularnewline
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 country
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -4024,9 +4058,9 @@ warmth
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 outcome
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 country
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -4046,15 +4080,16 @@ warmth
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 outcome
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1 & 69 & 1 & 1.1 & 2 & 1 & 2 & 3 & 59.18 \\
 1 & 69 & 1 & 1.1 & 2 & 2 & 2 & 2 & 58.29 \\
 1 & 69 & 1 & 1.1 & 2 & 3 & 3 & 3 & 60.58 \\
 1 & 69 & 2 & 1.2 & 2 & 1 & 4 & 0 & 61.54 \\
 1 & 69 & 2 & 1.2 & 2 & 2 & 4 & 0 & 55.96 \\
 1 & 69 & 2 & 1.2 & 2 & 3 & 4 & 2 & 56.19 \\
-\bottomrule()
 \end{longtable}
 
 
