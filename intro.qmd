@@ -2,6 +2,8 @@
 
 > "Sure, it’s hard to get started; remember learning to use knife and fork? Dig in: you’ll never reach bottom. It’s not like it’s the end of the world--just the world as you think you know it." [@Dove1999]
 
+> "Listening to the world. Well, I did that, and I still do it. I still do it." [@Oliver2015]
+
 ```{r}
 
 library(ggplot2) # beautiful graphs
