@@ -117,10 +117,6 @@ Some variables only exist at Level 2, and their Level 1 counterparts are undefin
 
 ## Multilevel Models As The Study Of Variation and Diversity {#sec-studyvariation}
 
-> "Every being cries out silently to be read differently." 
-
-— Simone Weil, *Gravity and Grace* as reported in @Su2017
-
 Multilevel models are sometimes seen as an analytic technique that *controls for* the clustering or nesting of individuals inside larger social units such as schools, neighborhoods, or countries. I will describe below how this ability to *control for* clustering is indeed an important and crucial aspect of multilevel models.
 
 However, my argument here is that multilevel models are better seen as a method to *explore* the variation and diversity inherent within nested or clustered data. Again, while these issues are well understood within the statistical literature [@Raudenbush2002; @Singer2003; @RabeHesketh2012; @Luke2004; @Kreft1998], they are less often noted in applied research.
