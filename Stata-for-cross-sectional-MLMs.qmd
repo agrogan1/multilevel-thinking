@@ -19,7 +19,7 @@ model <- c("Intercept Only",
            "We can estimate multilevel models with more than 1 random slope.")
 
 equation <- c("$y = \\beta_0 + e_{ij}$",
-              "$y = \\beta_0 + \\beta_1 x + e_{ij}$ <br>$y = \\beta_0 + \\beta_1 x + \\beta_2 z + e_{ij}$",
+              "$y = \\beta_0 + \\beta_1 x + \\beta_2 z + e_{ij}$",
               "$y = \\beta_0 + e_{ij} + u_{0j}$",
               "$\\frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}$",
               "$y = \\beta_0 + \\beta_1 x + \\beta_2 z + e_{ij} + u_{0j}$",
@@ -27,7 +27,7 @@ equation <- c("$y = \\beta_0 + e_{ij}$",
               "$y = \\beta_0 + \\beta_1 x + \\beta_2 z +$ <br>$e_{ij} + u_{0j} + u_{1j} x + u_{2j} z$")
 
 Stata <- c("`mixed y`",
-           "`mixed y x` <br>`mixed y x z`",
+           "`mixed y x z`",
            "`mixed y || groupid:`",
            "`mixed y || groupid:` then `estat icc`",
            "`mixed y x z || groupid:`",
