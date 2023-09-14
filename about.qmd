@@ -1,14 +1,5 @@
 ---
 title: "About the Author"
-about:
-  template: trestles
-  links:
-    - icon: emoji-smile
-      text: Personal Website
-      href: https://agrogan1.github.io/
-    - icon: house
-      text: Faculty Website
-      href: https://ssw.umich.edu/faculty/profiles/tenure-track/agrogan
 ---
 
 I am the Sandra K. Danziger Collegiate Professor of Social Work at the University of Michigan School of Social Work.

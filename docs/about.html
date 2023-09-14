@@ -36,6 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
@@ -201,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="citation_reference" content="citation_title=Econometric analysis of cross section and panel data;,citation_abstract=The second edition of this acclaimed graduate text provides a unified treatment of two methods used in contemporary econometric research, cross section and data panel methods. By focusing on assumptions that can be given behavioral content, the book maintains an appropriate level of rigor while emphasizing intuitive thinking. The analysis covers both linear and nonlinear models, including models with dynamics and/or individual heterogeneity. In addition to general estimation frameworks (particular methods of moments and maximum likelihood), specific linear and nonlinear methods are covered in detail, including probit and logit models and their multivariate, Tobit models, models for count data, censored and missing data schemes, causal (or treatment) effects, and duration analysis.Econometric Analysis of Cross Section and Panel Data was the first graduate econometrics text to focus on microeconomic data structures, allowing assumptions to be separated into population and sampling assumptions. This second edition has been substantially updated and revised. Improvements include a broader class of models for missing data problems; more detailed treatment of cluster problems, an important topic for empirical researchers; expanded discussion of &amp;amp;amp;quot;generalized instrumental variables&amp;quot; (GIV) estimation; new coverage (based on the author’s own recent research) of inverse probability weighting; a more complete framework for estimating treatment effects with panel data, and a firmly established link between econometric approaches to nonlinear panel data and the &quot;generalized estimating equation&quot; literature popular in statistics and other fields. New attention is given to explaining when particular econometric methods can be applied; the goal is not only to tell readers what does work, but why certain &quot;obvious&quot; procedures do not. The numerous included exercises, both theoretical and computer-based, allow the reader to extend methods covered in the text and discover new insights.;,citation_author=Jefrey M Wooldridge;,citation_publication_date=2010;,citation_cover_date=2010;,citation_year=2010;,citation_fulltext_html_url=http://www.jstor.org/stable/j.ctt5hhcfr;,citation_isbn=9780262232586;">
 </head>
 
-<body class="nav-sidebar floating fullcontent">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -369,29 +370,29 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
+<main class="content" id="quarto-document-content">
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">About the Author</span></h1>
 </div>
+
+
+
 <div class="quarto-title-meta">
+
+    
+  
+    
   </div>
+  
+
 </header>
-    <div class="about-links">
-  <a href="https://agrogan1.github.io/" class="about-link" rel="" target="">
-    <i class="bi bi-emoji-smile"></i>
-     <span class="about-link-text">Personal Website</span>
-  </a>
-  <a href="https://ssw.umich.edu/faculty/profiles/tenure-track/agrogan" class="about-link" rel="" target="">
-    <i class="bi bi-house"></i>
-     <span class="about-link-text">Faculty Website</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
+
 <p>I am the Sandra K. Danziger Collegiate Professor of Social Work at the University of Michigan School of Social Work.</p>
 <p>My interests are in developing more knowledge to reduce violence against children and Adverse Childhood Experiences (ACEs), with the aim of improving child and family well-being. It is my hope that a better understanding of how to reduce violence against children, and how to reduce ACEs, will contribute to a better understanding of how to improve mental health and well-being across the lifespan. In this research I try to understand the family and community origins of aggression, antisocial behavior, anxiety and depression across diverse communities and contexts. My current research focuses on parenting and child development using international data. I try to understand these issues within the context of current conversations about children’s rights.</p>
 <p>A particular focus of my work has been to examine the outcomes of physical punishment. Working closely with many colleagues, we have shown that physical punishment is associated with a wide variety of negative outcomes. This finding remains true even in contexts when physical punishment is used minimally, or when used in ostensibly “normative” ways. We have investigated these associations across diverse communities and countries. Lastly, we have worked to demonstrate more “causally robust” associations between physical punishment and undesirable child outcomes using a variety of quantitative methods.</p>
@@ -399,9 +400,8 @@ ul.task-list li input[type="checkbox"] {
 <p>I teach courses mostly in the area of statistics, quantitative methods and data visualization.</p>
 
 
-</main></div>
-</div>
- <!-- /main -->
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -537,6 +537,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   } else {
     toggleColorMode(false);
   }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
