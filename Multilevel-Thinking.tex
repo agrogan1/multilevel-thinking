@@ -238,11 +238,11 @@
 \subtitle{Discovering Diversity, Universals, and Particulars in
 Cross-Cultural Research}
 \author{Andrew Grogan-Kaylor}
-\date{2023-09-14}
+\date{2023-10-02}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, borderline west={3pt}{0pt}{shadecolor}, breakable, sharp corners, interior hidden, boxrule=0pt, enhanced]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, sharp corners, interior hidden, borderline west={3pt}{0pt}{shadecolor}, breakable, enhanced, frame hidden]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -823,18 +823,20 @@ against violence.
 
 At the same time, broad international efforts to improve children's
 well-being must engage with important considerations of cultural
-uniqueness. Put simply, what is considered to be beneficial for children
-in one country or culture may not be considered to be beneficial in all
-countries or cultures. Similarly, what is considered to be detrimental
-in one country or culture may not equally be considered to be
-detrimental in all. Within the area of parenting and child development,
-most of the debate has focused around the question of whether physical
-punishment is equally detrimental in all settings, particularly whether
-physical punishment is detrimental in countries where it is especially
-common, or normative (Gershoff et al., 2010). Much less attention has
-been focused on the study of positive parenting internationally, and the
-degree to which the outcomes of positive parenting are consistent across
-countries remains understudied (Ward, Grogan-Kaylor, Ma, et al., 2021).
+uniqueness. Put simply, parenting practices may vary widely between
+cultural groups (Gottlieb, 2002). Further, what is considered to be
+beneficial for children in one country or culture may not be considered
+to be beneficial in all countries or cultures. Similarly, what is
+considered to be detrimental in one country or culture may not equally
+be considered to be detrimental in all. Within the area of parenting and
+child development, most of the debate has focused around the question of
+whether physical punishment is equally detrimental in all settings,
+particularly whether physical punishment is detrimental in countries
+where it is especially common, or normative (Gershoff et al., 2010).
+Much less attention has been focused on the study of positive parenting
+internationally, and the degree to which the outcomes of positive
+parenting are consistent across countries remains understudied (Ward,
+Grogan-Kaylor, Ma, et al., 2021).
 
 However, as global initiatives to improve child well-being and family
 life move forward, it becomes increasingly important to continue to
@@ -856,9 +858,9 @@ countries, but are also able to \emph{explore the variation}--or
 
 \bookmarksetup{startatroot}
 
-\hypertarget{simulated-multi-country-multilevel-data}{%
+\hypertarget{sec-simulateddata}{%
 \chapter{Simulated Multi-Country (Multilevel)
-Data}\label{simulated-multi-country-multilevel-data}}
+Data}\label{sec-simulateddata}}
 
 \begin{figure}
 
@@ -873,8 +875,8 @@ Data}\label{simulated-multi-country-multilevel-data}}
 \begin{quote}
 ``\ldots{} the particular and the universal are not to be seen as
 opposites, \ldots{} the universal is not the negation of the particular
-but is reached by a deeper exploration of the particular.'' (UNESCO,
-1997)
+but is reached by a deeper exploration of the particular.'' (Cesaire in
+UNESCO (1997))
 \end{quote}
 
 I use simulated data in this example. Data come from 30 hypothetical
@@ -900,7 +902,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, bottomtitle=1mm, breakable, colbacktitle=quarto-callout-note-color!10!white, coltitle=black, bottomrule=.15mm, opacityback=0, toprule=.15mm, opacitybacktitle=0.6, titlerule=0mm, colback=white, left=2mm, leftrule=.75mm, arc=.35mm, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data in Stata Format}]
+\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, rightrule=.15mm, titlerule=0mm, left=2mm, bottomrule=.15mm, colback=white, leftrule=.75mm, arc=.35mm, toptitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data in Stata Format}, opacitybacktitle=0.6, coltitle=black, opacityback=0, breakable]
 
 \begin{itemize}
 \tightlist
@@ -1146,6 +1148,19 @@ community \\
   \(\overline{\text{parenting}_{.j}}\) would be variables that
   \emph{conceptually} come from Level 1 responses, but are
   \emph{statistically} aggregated to Level 2.
+\end{itemize}
+
+\begin{quote}
+Such aggregated variables represent the average level of a response
+across each Level 2 unit. I could create such a level 2 variable for a
+variable \texttt{x}, using the command:
+\texttt{bysort\ group:\ egen\ mean\_x\ =\ mean(x)}. For example, in the
+data described in Chapter~\ref{sec-simulateddata} I could create a mean
+country level warmth score with the command
+\texttt{bysort\ country:\ egen\ mean\_warmth\ =\ mean(warmth)}.
+\end{quote}
+
+\begin{itemize}
 \item
   Using my terminology, \(\text{community collective efficacy}_{ij}\) or
   \(\text{community safety}_{ij}\) would be considered to be a variable
@@ -1160,10 +1175,10 @@ community \\
 
 Some variables only exist at Level 2, and their Level 1 counterparts are
 undefined. For example, the size of a school, neighborhood, or country,
-is inherently a Level 2 variable, with no Level 1 counterpart.
-Similarly, some administrative indicators, such as the Gini level of
-inequality, while developed by calculating across Level 1 responses,
-have no easily definable Level 1 counterpart.
+is inherently a Level 2 variable, with no easily definable Level 1
+counterpart. Similarly, some administrative indicators, such as the Gini
+level of inequality, while developed by calculating across Level 1
+responses, have no easily definable Level 1 counterpart.
 
 \hypertarget{sec-studyvariation}{%
 \section{Multilevel Models As The Study Of Variation and
@@ -3361,6 +3376,11 @@ and moderation by perceived normativeness. \emph{Child Development},
 
 \leavevmode\vadjust pre{\hypertarget{ref-Goldacre2011}{}}%
 Goldacre, B. (2011). {Foreward}. In \emph{Testing treatments} (2nd ed.).
+
+\leavevmode\vadjust pre{\hypertarget{ref-Gottlieb2002}{}}%
+Gottlieb, A. (2002). New developments in the anthropology of childcare.
+\emph{Anthropology News}, \emph{43}, 13.
+\url{https://doi.org/10.1111/an.2002.43.7.13}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Grogan-Kaylor2021}{}}%
 Grogan-Kaylor, A., Castillo, B., Pace, G. T., Ward, K. P., Ma, J., Lee,
