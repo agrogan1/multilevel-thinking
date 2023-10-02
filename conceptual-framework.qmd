@@ -105,7 +105,7 @@ pander::pander(conceptualframework)
 
 > Such aggregated variables represent the average level of a response across each Level 2 unit. I could create such a level 2 variable for a variable `x`, using the command: `bysort group: egen mean_x = mean(x)`. For example, in the data described in @sec-simulateddata I could create a mean country level warmth score with the command `bysort country: egen mean_warmth = mean(warmth)`.
 
-* Using my terminology, $\text{community collective efficacy}_{ij}$ or $\text{community safety}_{ij}$ would be considered to be a variable both *conceptually* at Level 2, but *statistically* at Level 1.
+* Using my terminology, $\text{community collective efficacy}_{ij}$ or $\text{community safety}_{ij}$ would be considered to be a variable that was *conceptually* at Level 2, but *statistically* at Level 1.
 
 * $\overline{\text{community collective efficacy}_{.j}}$ or $\overline{\text{community safety}_{.j}}$ would be variables that *conceptually* come from Level 2 responses, but are *statistically* aggregated to Level 2.
 
