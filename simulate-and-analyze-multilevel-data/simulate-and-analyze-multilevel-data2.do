@@ -108,6 +108,10 @@ drop t // drop time indicator for cross sectional data
 
 save simulated_multilevel_data.dta, replace
 
+export excel using "simulated_multilevel_data.xlsx", firstrow(variables) replace // Excel
+
+export spss using "simulated_multilevel_data.sav", replace // SPSS
+
 ********************
 * analysis
 ********************
