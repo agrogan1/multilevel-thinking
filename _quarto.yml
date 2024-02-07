@@ -52,6 +52,7 @@ format:
       light: cosmo
       dark: vapor
     css: multilevel-thinking.css
+    lightbox: true
     execute:
       echo: false
       warning: false
