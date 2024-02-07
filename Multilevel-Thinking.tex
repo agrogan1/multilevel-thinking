@@ -117,28 +117,38 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
   % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \KOMAoption{captions}{tableheading}
@@ -157,8 +167,6 @@
 \definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
 \definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
 \definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
-\makeatother
-\makeatletter
 \makeatother
 \makeatletter
 \@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
@@ -199,23 +207,16 @@
 \newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
 \makeatother
 \makeatletter
+\makeatother
+\makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
-\makeatother
-\makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
-\makeatother
-\makeatletter
-\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
-\makeatother
-\makeatletter
-\makeatother
-\makeatletter
 \makeatother
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
+
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
@@ -238,11 +239,10 @@
 \subtitle{Discovering Diversity, Universals, and Particulars in
 Cross-Cultural Research}
 \author{Andrew Grogan-Kaylor}
-\date{2023-11-30}
+\date{2024-02-07}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, sharp corners, borderline west={3pt}{0pt}{shadecolor}, interior hidden, frame hidden, breakable, enhanced]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -254,9 +254,8 @@ Cross-Cultural Research}
 \listoftables
 \bookmarksetup{startatroot}
 
-\hypertarget{the-usefulness-of-multilevel-modeling-and-multilevel-thinking}{%
 \chapter{The Usefulness of Multilevel Modeling and Multilevel
-Thinking}\label{the-usefulness-of-multilevel-modeling-and-multilevel-thinking}}
+Thinking}\label{the-usefulness-of-multilevel-modeling-and-multilevel-thinking}
 
 \begin{quote}
 ``I am because we are; and since we are, therefore I am.'' (Mbiti, 1970)
@@ -332,8 +331,7 @@ to carry out better research with diverse populations.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{acknowledgements}{%
-\chapter*{Acknowledgements}\label{acknowledgements}}
+\chapter*{Acknowledgements}\label{acknowledgements}
 \addcontentsline{toc}{chapter}{Acknowledgements}
 
 \markboth{Acknowledgements}{Acknowledgements}
@@ -371,14 +369,12 @@ errors and omissions in this document are of course my responsibility.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{license-and-citation}{%
-\chapter*{License and Citation}\label{license-and-citation}}
+\chapter*{License and Citation}\label{license-and-citation}
 \addcontentsline{toc}{chapter}{License and Citation}
 
 \markboth{License and Citation}{License and Citation}
 
-\hypertarget{license}{%
-\section*{License}\label{license}}
+\section*{License}\label{license}
 \addcontentsline{toc}{section}{License}
 
 \markright{License}
@@ -390,8 +386,7 @@ Grogan-Kaylor} is licensed under a
 \href{http://creativecommons.org/licenses/by/4.0/}{Creative Commons
 Attribution 4.0 International License}
 
-\hypertarget{citation}{%
-\section*{Citation}\label{citation}}
+\section*{Citation}\label{citation}
 \addcontentsline{toc}{section}{Citation}
 
 \markright{Citation}
@@ -401,8 +396,7 @@ For attribution, please cite as:
 Grogan-Kaylor (2023). \emph{Multilevel Thinking}. Retrieved from
 \url{https://agrogan1.github.io/multilevel-thinking}
 
-\hypertarget{bibtex-citation}{%
-\section*{BibTeX Citation}\label{bibtex-citation}}
+\section*{BibTeX Citation}\label{bibtex-citation}
 \addcontentsline{toc}{section}{BibTeX Citation}
 
 \markright{BibTeX Citation}
@@ -421,8 +415,7 @@ Grogan-Kaylor (2023). \emph{Multilevel Thinking}. Retrieved from
 
 \bookmarksetup{startatroot}
 
-\hypertarget{some-preliminary-thoughts}{%
-\chapter*{Some Preliminary Thoughts}\label{some-preliminary-thoughts}}
+\chapter*{Some Preliminary Thoughts}\label{some-preliminary-thoughts}
 \addcontentsline{toc}{chapter}{Some Preliminary Thoughts}
 
 \markboth{Some Preliminary Thoughts}{Some Preliminary Thoughts}
@@ -483,8 +476,7 @@ purpose.''
 
 \bookmarksetup{startatroot}
 
-\hypertarget{introduction}{%
-\chapter{Introduction}\label{introduction}}
+\chapter{Introduction}\label{introduction}
 
 \begin{quote}
 ``Sure, it's hard to get started; remember learning to use knife and
@@ -497,9 +489,8 @@ the world--just the world as you think you know it.'' (Dove, 1999)
 do it.'' (Oliver \& Tippett, 2015)
 \end{quote}
 
-\hypertarget{quantitative-methods-and-social-justice}{%
 \section{Quantitative Methods and Social
-Justice}\label{quantitative-methods-and-social-justice}}
+Justice}\label{quantitative-methods-and-social-justice}
 
 There is clearly need for both qualitative and quantitative methods.
 Central to the argument of this document is the idea that advanced
@@ -583,8 +574,7 @@ can result in an advanced ``quantitative literacy'' (Wiest et al.,
 2007), or ``principled argument'' (Abelson, 1995), that is appropriate
 for drawing accurate conclusions from multilevel data.
 
-\hypertarget{some-philosophy-of-science}{%
-\section{Some Philosophy of Science}\label{some-philosophy-of-science}}
+\section{Some Philosophy of Science}\label{some-philosophy-of-science}
 
 I am not much of a philosopher of science. However, I am very persuaded
 by Strevens' (2020) minimalist criterion of the ``iron rule''. In
@@ -608,8 +598,7 @@ to this idea, Shrader-Frechette (2014) suggests that a ``practical
 philosophy of science'' can contribute both to ``speaking truth to
 power'' and to ``seeking justice''.
 
-\hypertarget{a-pragmatic-approach}{%
-\section{A Pragmatic Approach}\label{a-pragmatic-approach}}
+\section{A Pragmatic Approach}\label{a-pragmatic-approach}
 
 This document will discuss the ways in which a multilevel statistical
 perspective not only allows one to appropriately analyze cross cultural
@@ -644,9 +633,8 @@ data---might lead to statistical analyses that point in the wrong
 direction: yielding false positives; false negatives; or substantively
 wrong conclusions.
 
-\hypertarget{are-answers-from-social-science-obvious}{%
 \section{Are Answers from Social Science
-``Obvious''?}\label{are-answers-from-social-science-obvious}}
+``Obvious''?}\label{are-answers-from-social-science-obvious}
 
 Closely related, I think to the the idea that quantitative research can
 advance issues of social justice, is the question of whether answers
@@ -729,9 +717,8 @@ Section~\ref{sec-multilevelstructure}, I provide specific examples of
 how multilevel data provides even more opportunity to present answers
 that are \emph{not} obvious.
 
-\hypertarget{presenting-advanced-statistical-ideas}{%
 \section{Presenting Advanced Statistical
-Ideas}\label{presenting-advanced-statistical-ideas}}
+Ideas}\label{presenting-advanced-statistical-ideas}
 
 In presenting advanced, statistical concepts, one is faced with a
 quandary. One can present statistical concepts in the most general
@@ -770,9 +757,8 @@ apply these ideas to their own area of interest, whether that be
 \emph{children in schools}; \emph{residents in neighborhoods}; or
 \emph{people in different countries}.
 
-\hypertarget{research-on-parenting-and-child-development-in-international-context}{%
 \section{Research on Parenting and Child Development in International
-Context}\label{research-on-parenting-and-child-development-in-international-context}}
+Context}\label{research-on-parenting-and-child-development-in-international-context}
 
 Research on parenting and child development has identified robust
 associations between parenting behaviors and child developmental
@@ -799,9 +785,8 @@ relationships between certain forms of parenting and child developmental
 outcomes, largely consistent across countries, largely different across
 countries, or somewhere in between?
 
-\hypertarget{universalism-and-particularity}{%
 \section{Universalism And
-Particularity}\label{universalism-and-particularity}}
+Particularity}\label{universalism-and-particularity}
 
 \begin{quote}
 ``My conception of the universal is that of a universal enriched by all
@@ -859,19 +844,20 @@ countries, but are also able to \emph{explore the variation}--or
 
 \bookmarksetup{startatroot}
 
-\hypertarget{sec-simulateddata}{%
 \chapter{Simulated Multi-Country (Multilevel)
-Data}\label{sec-simulateddata}}
+Data}\label{sec-simulateddata}
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.5\textwidth,height=\textheight]{world.png}
+\centering{
+
+\includegraphics[width=0.5\textwidth,height=\textheight]{world.png}
 
 }
 
 \caption{\label{fig-world}Countries of the World}
 
-\end{figure}
+\end{figure}%
 
 \begin{quote}
 ``\ldots{} the particular and the universal are not to be seen as
@@ -903,7 +889,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, coltitle=black, toprule=.15mm, breakable, arc=.35mm, colback=white, bottomrule=.15mm, opacityback=0, bottomtitle=1mm, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data in Stata Format}, toptitle=1mm, titlerule=0mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, breakable, leftrule=.75mm, toprule=.15mm, arc=.35mm, colback=white, opacityback=0, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, coltitle=black, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data in Stata Format}, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, titlerule=0mm, toptitle=1mm, rightrule=.15mm, bottomrule=.15mm, left=2mm]
 
 \begin{itemize}
 \tightlist
@@ -922,7 +908,6 @@ positively related to the \texttt{outcome}, while
 \texttt{physical\ punishment} is negatively related to the
 \texttt{outcome}.
 
-\hypertarget{tbl-simulateddata}{}
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0833}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1389}}
@@ -931,26 +916,11 @@ positively related to the \texttt{outcome}, while
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1111}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0833}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1389}}@{}}
-\caption{\label{tbl-simulateddata}Simulated Multilevel
-Data}\tabularnewline
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\centering
-id
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-country
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-warmth
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-physical\_punishment
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-group
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-HDI
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-outcome
-\end{minipage} \\
-\midrule\noalign{}
-\endfirsthead
+
+\caption{\label{tbl-simulateddata}Simulated Multilevel Data}
+
+\tabularnewline
+
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 id
@@ -977,22 +947,24 @@ outcome
 1.4 & 1 & 6 & 0 & 2 & 69 & 51.71 \\
 1.5 & 1 & 2 & 3 & 2 & 69 & 55.88 \\
 1.6 & 1 & 3 & 5 & 1 & 69 & 60.78 \\
+
 \end{longtable}
 
 \begin{figure}
 
-{\centering \includegraphics{simulated-multi-country-data_files/figure-pdf/fig-data-1.pdf}
+\centering{
+
+\includegraphics{simulated-multi-country-data_files/figure-pdf/fig-data-1.pdf}
 
 }
 
 \caption{\label{fig-data}Graph of Simulated Data}
 
-\end{figure}
+\end{figure}%
 
 \bookmarksetup{startatroot}
 
-\hypertarget{sec-software}{%
-\chapter{Software}\label{sec-software}}
+\chapter{Software}\label{sec-software}
 
 \begin{quote}
 ``-- And so, why can't my numbers be beautiful to me? Why the scorn, the
@@ -1015,9 +987,8 @@ have done such a good job of thinking about the defaults.
 
 For the sake of illustration, a few Stata commands are listed below.
 
-\hypertarget{tbl-Statacommands}{}
 \begin{longtable}[]{@{}ll@{}}
-\caption{\label{tbl-Statacommands}Example Stata Commands}\tabularnewline
+\caption{Example Stata Commands}\label{tbl-Statacommands}\tabularnewline
 \toprule\noalign{}
 Task & Command \\
 \midrule\noalign{}
@@ -1046,8 +1017,7 @@ using throughout this document.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{sec-conceptualframework}{%
-\chapter{Conceptual Framework}\label{sec-conceptualframework}}
+\chapter{Conceptual Framework}\label{sec-conceptualframework}
 
 \begin{quote}
 ``Ubuntu'' defined as: ``A person is a person through other people.''
@@ -1059,9 +1029,8 @@ e.g.~in (Mangharam, 2017)
 territory that we've already entered.'' (Whyte \& Tippett, 2016)
 \end{quote}
 
-\hypertarget{units-of-analysis-and-processes-at-multiple-levels}{%
 \section{Units of Analysis and Processes at Multiple
-Levels}\label{units-of-analysis-and-processes-at-multiple-levels}}
+Levels}\label{units-of-analysis-and-processes-at-multiple-levels}
 
 When confronted with multilevel data, one has a number of choices about
 the units of analysis: one could consider individuals to be the units of
@@ -1080,16 +1049,17 @@ individual level (Level 1) outcome.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.5\textwidth,height=\textheight]{fig-conceptual.png}
+\centering{
+
+\includegraphics[width=0.5\textwidth,height=\textheight]{fig-conceptual.png}
 
 }
 
 \caption{\label{fig-conceptual}Conceptual Framework}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{sec-levels}{%
-\section{Variables at Multiple Levels}\label{sec-levels}}
+\section{Variables at Multiple Levels}\label{sec-levels}
 
 In this document, I distinguish between \emph{conceptual} and
 \emph{statistical} levels of variables.
@@ -1103,23 +1073,15 @@ or community safety.
 By \emph{statistical} level, I refer to whether a variable measures an
 \emph{individual} response, or an \emph{aggregated} response.
 
-\hypertarget{tbl-variablelevel}{}
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2436}}
   >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3718}}
   >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3846}}@{}}
-\caption{\label{tbl-variablelevel}Multiple Levels of
-Variables}\tabularnewline
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\centering
-conceptual level
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-statistical level 1
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-statistical level 2
-\end{minipage} \\
-\midrule\noalign{}
-\endfirsthead
+
+\caption{\label{tbl-variablelevel}Multiple Levels of Variables}
+
+\tabularnewline
+
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 conceptual level
@@ -1137,6 +1099,7 @@ responses about parenting or mental health \\
 2 & Individual response about community & Aggregated response about
 community \\
 2 & N/A & Administrative indicator of social unit \\
+
 \end{longtable}
 
 \begin{itemize}
@@ -1181,9 +1144,8 @@ counterpart. Similarly, some administrative indicators, such as the Gini
 level of inequality, while developed by calculating across Level 1
 responses, have no easily definable Level 1 counterpart.
 
-\hypertarget{sec-studyvariation}{%
 \section{Multilevel Models As The Study Of Variation and
-Diversity}\label{sec-studyvariation}}
+Diversity}\label{sec-studyvariation}
 
 Multilevel models are sometimes seen as an analytic technique that
 \emph{controls for} the clustering or nesting of individuals inside
@@ -1198,9 +1160,8 @@ within the statistical literature (Kreft \& de Leeuw, 1998; Luke, 2004;
 Rabe-Hesketh \& Skrondal, 2012; Raudenbush \& Bryk, 2002; Singer \&
 Willett, 2003), they are less often noted in applied research.
 
-\hypertarget{a-first-example-a-study-of-parenting-and-child-development}{%
 \subsection{A First Example: A Study Of Parenting And Child
-Development}\label{a-first-example-a-study-of-parenting-and-child-development}}
+Development}\label{a-first-example-a-study-of-parenting-and-child-development}
 
 In the graph below, imagine that physical punishment, or some other risk
 factor, is associated with detrimental mental health outcomes. Each
@@ -1208,14 +1169,16 @@ country in the data has its own \emph{country specific regression line}.
 
 \begin{figure}
 
-{\centering \includegraphics{conceptual-framework_files/figure-pdf/fig-variation1-1.pdf}
+\centering{
+
+\includegraphics{conceptual-framework_files/figure-pdf/fig-variation1-1.pdf}
 
 }
 
 \caption{\label{fig-variation1}Plausible Alternative Patterns of Between
 Country Variation}
 
-\end{figure}
+\end{figure}%
 
 In Panel A, there is some variation in the \emph{intercept}, which is
 equivalent to saying that there is some variation in the average level
@@ -1252,9 +1215,8 @@ Empirically, data generally suggest a scenario somewhere between Panel A
 and Panel B, but these different hypothetical scenarios afford us the
 opportunity to think about possible patterns of variation.
 
-\hypertarget{a-second-example-a-study-of-a-treatment-or-intervention}{%
 \subsection{A Second Example: A Study Of A Treatment Or
-Intervention}\label{a-second-example-a-study-of-a-treatment-or-intervention}}
+Intervention}\label{a-second-example-a-study-of-a-treatment-or-intervention}
 
 A second pedagogically helpful example might be obtained if we flip the
 slopes in the diagram, and consider a different set of independent
@@ -1263,14 +1225,16 @@ improve psychological well-being.
 
 \begin{figure}
 
-{\centering \includegraphics{conceptual-framework_files/figure-pdf/fig-variation2-1.pdf}
+\centering{
+
+\includegraphics{conceptual-framework_files/figure-pdf/fig-variation2-1.pdf}
 
 }
 
 \caption{\label{fig-variation2}Considering an Intervention or Treatment
 Across Countries}
 
-\end{figure}
+\end{figure}%
 
 We see a similar pattern as before, but the use of a different
 substantive example may be illustrative.
@@ -1291,8 +1255,7 @@ to be evidence that the intervention is beneficial, while in other
 countries there appears to be evidence that the intervention is not
 beneficial, or even possibly harmful.
 
-\hypertarget{exploring-variation}{%
-\subsection{Exploring Variation}\label{exploring-variation}}
+\subsection{Exploring Variation}\label{exploring-variation}
 
 Thus, I emphasize an approach to multilevel modeling that sees
 multilevel modeling as the \emph{study of variation}, not simply
@@ -1315,9 +1278,8 @@ clear.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{the-cross-sectional-multilevel-model}{%
 \chapter{The Cross Sectional Multilevel
-Model}\label{the-cross-sectional-multilevel-model}}
+Model}\label{the-cross-sectional-multilevel-model}
 
 \begin{quote}
 ``Mathematical Science shows us what is. It is the language of unseen
@@ -1340,11 +1302,9 @@ After introducing these two key concepts of multilevel modeling, I then
 begin a more in depth exploration of the equations and concepts and
 statistical syntax of the cross sectional multilevel model.
 
-\hypertarget{sec-pvalues}{%
-\section{Estimating Standard Errors And p Values}\label{sec-pvalues}}
+\section{Estimating Standard Errors And p Values}\label{sec-pvalues}
 
-\hypertarget{introduction-1}{%
-\subsection{Introduction}\label{introduction-1}}
+\subsection{Introduction}\label{introduction-1}
 
 If the data are grouped, nested, or clustered, then this aspect of the
 structure of the data needs to be accounted for. Bland \& Altman (1994)
@@ -1362,16 +1322,17 @@ The graph below illustrates the process of simulating the data.
 
 \begin{figure}
 
-{\centering \includegraphics{cross-sectional_files/figure-pdf/fig-simulatedclustereddata-1.pdf}
+\centering{
+
+\includegraphics{cross-sectional_files/figure-pdf/fig-simulatedclustereddata-1.pdf}
 
 }
 
 \caption{\label{fig-simulatedclustereddata}Simulated Clustered Data}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{compare-ols-and-mlm}{%
-\subsection{Compare OLS and MLM}\label{compare-ols-and-mlm}}
+\subsection{Compare OLS and MLM}\label{compare-ols-and-mlm}
 
 An analysis that is not aware of the grouped nature of the data will
 give biased results, will mis-estimate standard errors, and importantly,
@@ -1416,8 +1377,7 @@ in fact the independent variable \(x\) is \emph{not} associated with
 \(y\). Thus, the multilevel model provides more accurate results than
 OLS in the presence of clustered data.
 
-\hypertarget{sec-multilevelstructure}{%
-\section{Multilevel Structure}\label{sec-multilevelstructure}}
+\section{Multilevel Structure}\label{sec-multilevelstructure}
 
 Associations between two variables can be \emph{very different} (or even
 \emph{reversed}) depending upon whether or not the analysis is ``aware''
@@ -1437,11 +1397,9 @@ model that is not aware of the clustered nature of the data.
 
 I use some data simulated for this particular example.
 
-\hypertarget{graphs}{%
-\subsection{Graphs}\label{graphs}}
+\subsection{Graphs}\label{graphs}
 
-\hypertarget{a-naive-graph}{%
-\subsubsection{A ``Naive'' Graph}\label{a-naive-graph}}
+\subsubsection{A ``Naive'' Graph}\label{a-naive-graph}
 
 This ``naive'' graph is unaware of the grouped nature of the data.
 Notice that the overall regression line slopes downward, even though
@@ -1450,16 +1408,17 @@ lines may slope upward.
 
 \begin{figure}
 
-{\centering \includegraphics{cross-sectional_files/figure-pdf/fig-naive-1.pdf}
+\centering{
+
+\includegraphics{cross-sectional_files/figure-pdf/fig-naive-1.pdf}
 
 }
 
 \caption{\label{fig-naive}A `Naive' Graph}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{an-aware-graph}{%
-\subsubsection{An ``Aware'' Graph}\label{an-aware-graph}}
+\subsubsection{An ``Aware'' Graph}\label{an-aware-graph}
 
 This ``aware'' graph is aware of the grouped nature of the data. The
 graph is ``aware'' of the grouped or clustered nature of the data, and
@@ -1468,20 +1427,20 @@ group} slope upward.
 
 \begin{figure}
 
-{\centering \includegraphics{cross-sectional_files/figure-pdf/fig-aware-1.pdf}
+\centering{
+
+\includegraphics{cross-sectional_files/figure-pdf/fig-aware-1.pdf}
 
 }
 
 \caption{\label{fig-aware}An `Aware' Graph}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{regressions}{%
-\subsection{Regressions}\label{regressions}}
+\subsection{Regressions}\label{regressions}
 
-\hypertarget{a-naive-ols-analysis-vs.-an-aware-mlm-analysis}{%
 \subsubsection{A ``Naive'' OLS Analysis vs.~An ``Aware'' MLM
-Analysis}\label{a-naive-ols-analysis-vs.-an-aware-mlm-analysis}}
+Analysis}\label{a-naive-ols-analysis-vs.-an-aware-mlm-analysis}
 
 The Stata syntax that we use for these analyses is:
 
@@ -1519,8 +1478,7 @@ Number of observations & 30 & & & \\
 
 ** p\textless.01, * p\textless.05
 
-\hypertarget{a-thought-experiment}{%
-\subsection{A Thought Experiment}\label{a-thought-experiment}}
+\subsection{A Thought Experiment}\label{a-thought-experiment}
 
 When might a situation like this arise in practice? This is surprisingly
 difficult to think through.
@@ -1540,7 +1498,7 @@ would therefore misconstrue the results, suggesting that the
 intervention was harmful, when it was in fact helpful.
 \end{quote}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{cross-sectional_files/figure-pdf/unnamed-chunk-9-1.pdf}
 
@@ -1548,7 +1506,7 @@ intervention was harmful, when it was in fact helpful.
 
 \caption{A Heuristic Example}
 
-\end{figure}
+\end{figure}%
 
 The idea that group level and individual level relationships must be the
 same (Firebaugh, 2001) has been termed the ``ecological fallacy''.
@@ -1558,8 +1516,7 @@ it easy to see how multilevel thinking, and multilevel analysis may
 provide better answers than one would get if one ignored the grouped
 nature of the data.
 
-\hypertarget{the-equation}{%
-\section{The Equation}\label{the-equation}}
+\section{The Equation}\label{the-equation}
 
 The equation for the multilevel model can be written in several ways: as
 multiple levels of equations; or as a single equation. The advantage of
@@ -1572,21 +1529,18 @@ on discussing empirical results of the two level formulation. Whether
 multiple levels of equations, or a single equation are employed, the
 numerical results are equivalent.s
 
-\hypertarget{two-levels-of-equations}{%
-\subsection{Two Levels of Equations}\label{two-levels-of-equations}}
+\subsection{Two Levels of Equations}\label{two-levels-of-equations}
 
 I start with two levels of equations: Level 1 at the level of the
 individual; and Level 2 at the level of the country.
 
-\hypertarget{level-1-individuals}{%
-\subsubsection{Level 1 (Individuals)}\label{level-1-individuals}}
+\subsubsection{Level 1 (Individuals)}\label{level-1-individuals}
 
-\begin{equation}\protect\hypertarget{eq-MLM1}{}{y_{ij} = \beta_{0j} + \beta_{1j} x_{ij} + \beta_{2j} z_{ij} + e_{ij}}\label{eq-MLM1}\end{equation}
+\begin{equation}\phantomsection\label{eq-MLM1}{y_{ij} = \beta_{0j} + \beta_{1j} x_{ij} + \beta_{2j} z_{ij} + e_{ij}}\end{equation}
 
-\hypertarget{level-2-countries}{%
-\subsubsection{Level 2 (Countries)}\label{level-2-countries}}
+\subsubsection{Level 2 (Countries)}\label{level-2-countries}
 
-\begin{equation}\protect\hypertarget{eq-MLM2}{}{\beta_{0j} = \gamma_{00} +\gamma_{01} w_j + u_{0j}}\label{eq-MLM2}\end{equation}
+\begin{equation}\phantomsection\label{eq-MLM2}{\beta_{0j} = \gamma_{00} +\gamma_{01} w_j + u_{0j}}\end{equation}
 
 \[\beta_{1j} = \gamma_{10} + u_{1j}\]
 
@@ -1623,14 +1577,13 @@ In this formulation of the multilevel model, each regression parameter
 \(\gamma\)'s. \(w\) a Level 2 variable appears in the first Level 2
 equation.
 
-\hypertarget{one-level-of-equations}{%
-\subsection{One Level of Equations}\label{one-level-of-equations}}
+\subsection{One Level of Equations}\label{one-level-of-equations}
 
 By simply substituting the values of the Level 2 equations into the
 Level 1 equations--and rewriting the \(\gamma\)'s as \(\beta\)'s--we
 obtain:
 
-\begin{equation}\protect\hypertarget{eq-MLM}{}{y_{ij} = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + \beta_3 w_{j} + u_{0j} + u_{1j} \times x + e_{ij}}\label{eq-MLM}\end{equation}
+\begin{equation}\phantomsection\label{eq-MLM}{y_{ij} = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + \beta_3 w_{j} + u_{0j} + u_{1j} \times x + e_{ij}}\end{equation}
 
 Here again \(y_{ij}\) is the dependent variable, or outcome for the
 model. \(\beta_0\) is a regression intercept, and the \(\beta\)'s are
@@ -1659,7 +1612,7 @@ the main substantive ideas of this document:
 
 \[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} +\]
 \[\beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{j} + \]
-\begin{equation}\protect\hypertarget{eq-MLMsubstantive}{}{u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}}\label{eq-MLMsubstantive}\end{equation}
+\begin{equation}\phantomsection\label{eq-MLMsubstantive}{u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}}\end{equation}
 
 Put substantively, this model indicates that the outcome can be
 conceptualized as a function of an intercept term, and contributions of
@@ -1684,22 +1637,20 @@ equation can be easily represented in Stata syntax.
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{sec-regression}{%
 \section{Regression With Simulated Multi-Country
-Data}\label{sec-regression}}
+Data}\label{sec-regression}
 
 After considering some of these broader issues, let's now examine the
 results of a multilevel regression with the simulated multicountry data.
 I will again imagine that the desirable outcome is an outcome such as
 improved psychological wellbeing.
 
-\hypertarget{sec-unconditional}{%
-\subsection{Unconditional Model}\label{sec-unconditional}}
+\subsection{Unconditional Model}\label{sec-unconditional}
 
 The unconditional model is a model with no \(x\)'s or covariates
 (Raudenbush \& Bryk, 2002).
 
-\begin{equation}\protect\hypertarget{eq-unconditional}{}{\text{outcome}_{ij} = \beta_0 + u_{0j} + e_{ij}}\label{eq-unconditional}\end{equation}
+\begin{equation}\phantomsection\label{eq-unconditional}{\text{outcome}_{ij} = \beta_0 + u_{0j} + e_{ij}}\end{equation}
 
 Here, \(\text{outcome}_{ij}\) is a function of an intercept \(\beta_0\),
 a country specific error term, \(u_{0j}\), and an individual level error
@@ -1709,18 +1660,17 @@ Thus, all of the variation in \(\text{outcome}_{ij}\) is--given the
 \emph{unconditional} nature of our model--attributable to unmeasured
 variation at the country and individual level.
 
-\hypertarget{sec-ICC}{%
-\subsection{Intra-Class Correlation Coefficient}\label{sec-ICC}}
+\subsection{Intra-Class Correlation Coefficient}\label{sec-ICC}
 
 I now introduce a measure known as the Intra-Class Correlation
 Coefficient, (ICC) that can be computed from this unconditional model
 (Raudenbush \& Bryk, 2002).
 
-\begin{equation}\protect\hypertarget{eq-ICC}{}{\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}}\label{eq-ICC}\end{equation}
+\begin{equation}\phantomsection\label{eq-ICC}{\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}}\end{equation}
 
 Heuristically:
 
-\begin{equation}\protect\hypertarget{eq-ICCheuristic}{}{\text{ICC} = \frac{\text{group level variation}}{\text{group level variation} + \text{individual level variation}}}\label{eq-ICCheuristic}\end{equation}
+\begin{equation}\phantomsection\label{eq-ICCheuristic}{\text{ICC} = \frac{\text{group level variation}}{\text{group level variation} + \text{individual level variation}}}\end{equation}
 
 The ICC from the \emph{unconditional} model
 (Equation~\ref{eq-unconditional}) is the most informative ICC as it
@@ -1758,8 +1708,7 @@ for this data is .076 or 7.6\%.
 As we add covariates, \(x\)'s, to the model the ICC will most often
 decrease.
 
-\hypertarget{conditional-model}{%
-\subsection{Conditional Model}\label{conditional-model}}
+\subsection{Conditional Model}\label{conditional-model}
 
 We next estimate a \emph{conditional} model, \emph{with} independent
 variables.
@@ -1811,9 +1760,8 @@ to differ appreciably from country to country.
 level, or Level 2, variable in this model is not associated with the
 outcome.
 
-\hypertarget{correlation-of-random-intercept-and-random-slopes}{%
 \section{Correlation of Random Intercept and Random
-Slope(s)}\label{correlation-of-random-intercept-and-random-slopes}}
+Slope(s)}\label{correlation-of-random-intercept-and-random-slopes}
 
 One could also consider a situation in which a random slope or slopes
 were correlated with each other, and with the random intercept. In the
@@ -1836,18 +1784,18 @@ where the diagonal elements are the \emph{variances} of each of the
 random effects, and the off diagonals, which would be the
 \emph{covariances} of the random effects are constrained to 0.
 
-\begin{equation}\protect\hypertarget{eq-varcovar}{}{\begin{bmatrix}
+\begin{equation}\phantomsection\label{eq-varcovar}{\begin{bmatrix}
 var(u_{0j}) & 0 \\
 0 & var(u_{1j}) 
-\end{bmatrix}}\label{eq-varcovar}\end{equation}
+\end{bmatrix}}\end{equation}
 
 Within Stata, we can ask to allow such a correlation with the
 \texttt{cov(uns)} option.
 
-\begin{equation}\protect\hypertarget{eq-varcovaruns}{}{\begin{bmatrix}
+\begin{equation}\phantomsection\label{eq-varcovaruns}{\begin{bmatrix}
 var(u_{0j}) & cov(u_{0j}, u_{1j}) \\
 cov(u_{0j}, u_{1j}) & var(u_{1j}) 
-\end{bmatrix}}\label{eq-varcovaruns}\end{equation}
+\end{bmatrix}}\end{equation}
 
 We use the following syntax.
 
@@ -1890,8 +1838,7 @@ correlated. Put more intuitively, it does not appear that parental
 warmth is any more or less correlated with the outcome in countries
 where initial levels of the outcome are higher.
 
-\hypertarget{sec-withinbetween}{%
-\section{Within and Between}\label{sec-withinbetween}}
+\section{Within and Between}\label{sec-withinbetween}
 
 Coefficients in models can be divided into within and between. A
 substantive example may be helpful here. When we consider the variable
@@ -1906,14 +1853,16 @@ warmth in country \emph{j}.
 
 \begin{figure}
 
-{\centering \includegraphics{cross-sectional_files/figure-pdf/fig-distributionwarmth-1.pdf}
+\centering{
+
+\includegraphics{cross-sectional_files/figure-pdf/fig-distributionwarmth-1.pdf}
 
 }
 
 \caption{\label{fig-distributionwarmth}Distribution of Parental Warmth
 Across Countries}
 
-\end{figure}
+\end{figure}%
 
 Bearing this in mind, one can then think about the \emph{difference}
 between each individual expression of parental warmth and the overall,
@@ -1952,14 +1901,16 @@ particular context differs from the average context}.
 
 \begin{figure}
 
-{\centering \includegraphics{cross-sectional_files/figure-pdf/fig-withinbetween-1.pdf}
+\centering{
+
+\includegraphics{cross-sectional_files/figure-pdf/fig-withinbetween-1.pdf}
 
 }
 
 \caption{\label{fig-withinbetween}Decomposing a Variable into Within and
 Between Differences}
 
-\end{figure}
+\end{figure}%
 
 In terms of using statistical software (Stata), we need to follow a few
 steps.
@@ -2060,9 +2011,8 @@ expression of parental warmth from the country level mean, \emph{but
 not} the difference in the country level mean from the grand mean are
 statistically significant predictors of the outcome.
 
-\hypertarget{summary-of-advantages-of-the-multilevel-model}{%
 \section{Summary of Advantages Of The Multilevel
-Model}\label{summary-of-advantages-of-the-multilevel-model}}
+Model}\label{summary-of-advantages-of-the-multilevel-model}
 
 The discussion so far gives an idea of the advantages of the multilevel
 model for studying intrinsically multilevel data: children in classrooms
@@ -2096,9 +2046,8 @@ families in countries. These advantages can be summarized below:
   factor, or a null effect.
 \end{enumerate}
 
-\hypertarget{sec-wrongapproaches}{%
 \section{Some Wrong (or Partially Wrong)
-Approaches}\label{sec-wrongapproaches}}
+Approaches}\label{sec-wrongapproaches}
 
 When data are clustered--e.g.~residents in neighborhoods, children in
 schools, families in countries--it is worth discussing the fact that we
@@ -2142,8 +2091,7 @@ of a multilevel model over these other approaches:
   not give correct estimates of the \(\beta\)'s.
 \end{enumerate}
 
-\hypertarget{variation}{%
-\section{Variation}\label{variation}}
+\section{Variation}\label{variation}
 
 Above, in Section~\ref{sec-studyvariation}, I have referred to
 multilevel models as the study of variation. Now that I have provided
@@ -2155,11 +2103,10 @@ equation that I have been using in this document.
 
 \[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} +\]
 \[\beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{j} + \]
-\begin{equation}\protect\hypertarget{eq-MLMsubstantive2}{}{u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}}\label{eq-MLMsubstantive2}\end{equation}
+\begin{equation}\phantomsection\label{eq-MLMsubstantive2}{u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}}\end{equation}
 
-\hypertarget{measured-and-unmeasured-variation}{%
 \subsection{Measured and Unmeasured
-Variation}\label{measured-and-unmeasured-variation}}
+Variation}\label{measured-and-unmeasured-variation}
 
 The first thing to note about an equation for a multilevel model--here
 written in a more general form--is that it can be divided into measured
@@ -2178,18 +2125,19 @@ attributable to the Level 2 units, in this case, different countries.
 
 \begin{figure}
 
-{\centering \includegraphics{cross-sectional_files/figure-pdf/fig-variationsources-1.pdf}
+\centering{
+
+\includegraphics{cross-sectional_files/figure-pdf/fig-variationsources-1.pdf}
 
 }
 
 \caption{\label{fig-variationsources}Sources of Variation in a
 Multilevel Model}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{variation-in-intercepts-or-outcomes}{%
 \subsection{Variation In Intercepts or
-Outcomes}\label{variation-in-intercepts-or-outcomes}}
+Outcomes}\label{variation-in-intercepts-or-outcomes}
 
 In Equation~\ref{eq-MLMsubstantive2}, \(var(u_{0j})\) is the model
 estimated amount of variation in the \emph{outcome}, \(y_{ij}\).
@@ -2203,8 +2151,7 @@ also have very different outcomes. Children from families in different
 countries may be as similar as children from families in the same
 country.
 
-\hypertarget{variation-in-predictors}{%
-\subsection{Variation In Predictors}\label{variation-in-predictors}}
+\subsection{Variation In Predictors}\label{variation-in-predictors}
 
 Equally important, I think, but much less frequently explored than
 variation in \emph{outcomes}, is the possibility of variation in
@@ -2221,32 +2168,29 @@ unconditional model, but substituting \(x\) for \(y\).\footnote{Here for
   the sake of clarity, I use \(w_{0j}\) as a random effect to think
   about country specific variation in \(x\).}
 
-\begin{equation}\protect\hypertarget{eq-unconditionalx}{}{x_{ij} = \beta_0 + w_{0j} + e_{ij}}\label{eq-unconditionalx}\end{equation}
+\begin{equation}\phantomsection\label{eq-unconditionalx}{x_{ij} = \beta_0 + w_{0j} + e_{ij}}\end{equation}
 
 Then, similarly, the variation in a predictor attributable to the
 clustered nature of the data--in this case the clustering of individuals
 in countries--is given by:
 
-\begin{equation}\protect\hypertarget{eq-ICCx}{}{\text{ICC}_x = \frac{var(w_{0j})}{var(w_{0j}) + var(e_{ij})}}\label{eq-ICCx}\end{equation}
+\begin{equation}\phantomsection\label{eq-ICCx}{\text{ICC}_x = \frac{var(w_{0j})}{var(w_{0j}) + var(e_{ij})}}\end{equation}
 
-\hypertarget{variation-in-slopes}{%
-\subsection{Variation in Slopes}\label{variation-in-slopes}}
+\subsection{Variation in Slopes}\label{variation-in-slopes}
 
 Another possible type of variation to investigate is variation in the
 relationship of \(x\) and \(y\), which is represented in the multilevel
 model by examining variation in the \(\beta\)'s, i.e.~\(var(u_{1j})\).
 
-\hypertarget{summary}{%
-\subsection{Summary}\label{summary}}
+\subsection{Summary}\label{summary}
 
 Thus, we can consider a number of sources of possible variation.
 
-\hypertarget{tbl-sourcesvariation}{}
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5750}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4250}}@{}}
-\caption{\label{tbl-sourcesvariation}Some Possible Sources of Variation
-To Consider in A Multilevel Model}\tabularnewline
+\caption{Some Possible Sources of Variation To Consider in A Multilevel
+Model}\label{tbl-sourcesvariation}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Model Parameter
@@ -2286,13 +2230,12 @@ intercept and and country specific slope. Is the country specific
 intercept related to the country specific slope? \\
 \end{longtable}
 
-\hypertarget{variation-as-an-outcome}{%
-\subsection{Variation As An Outcome}\label{variation-as-an-outcome}}
+\subsection{Variation As An Outcome}\label{variation-as-an-outcome}
 
 Even less common is to examine \emph{variation} itself as an outcome
 (Burkner, 2018).
 
-\begin{equation}\protect\hypertarget{eq-distributional}{}{\sigma_{yij} = \beta_0 + \beta_1 x_1 + u_{0j} + e_{ij}}\label{eq-distributional}\end{equation}
+\begin{equation}\phantomsection\label{eq-distributional}{\sigma_{yij} = \beta_0 + \beta_1 x_1 + u_{0j} + e_{ij}}\end{equation}
 
 Here, the variation in the outcome, \(\sigma_{yij}\), rather than the
 mean level of the outcome, \(y_{ij}\), is the focus of interest. My
@@ -2311,8 +2254,7 @@ and frequentist approaches to multilevel modeling in this document,
 these models are likely to be only estimable with Bayesian software
 rather than with frequentist software (Burkner, 2018).
 
-\hypertarget{maximal-models}{%
-\subsection{Maximal Models}\label{maximal-models}}
+\subsection{Maximal Models}\label{maximal-models}
 
 Hypothetically, one might imagine that there could be group level
 unobserved factors which affect regression slopes: i.e.~the relationship
@@ -2344,9 +2286,8 @@ perspective.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{the-longitudinal-multilevel-model}{%
 \chapter{The Longitudinal Multilevel
-Model}\label{the-longitudinal-multilevel-model}}
+Model}\label{the-longitudinal-multilevel-model}
 
 \begin{quote}
 ``Mathematics is the art of giving the same name to different things.''
@@ -2359,10 +2300,9 @@ longitudinal data. In cross sectional clustered data, we imagine
 \emph{individuals or families clustered in neighborhoods, schools, or
 countries}.
 
-\hypertarget{tbl-levelscrosssectional}{}
 \begin{longtable}[]{@{}ll@{}}
-\caption{\label{tbl-levelscrosssectional}Levels in Cross-Sectional
-Data}\tabularnewline
+\caption{Levels in Cross-Sectional
+Data}\label{tbl-levelscrosssectional}\tabularnewline
 \toprule\noalign{}
 Level & Example(s) \\
 \midrule\noalign{}
@@ -2387,10 +2327,9 @@ In longitudinal data, we consider the \emph{first level} to be that of
   \emph{person-observation} is more commonly used.} The \emph{second
 level} is then the individual or family.
 
-\hypertarget{tbl-levelslongitudinal}{}
 \begin{longtable}[]{@{}ll@{}}
-\caption{\label{tbl-levelslongitudinal}Levels in Longitudinal
-Data}\tabularnewline
+\caption{Levels in Longitudinal
+Data}\label{tbl-levelslongitudinal}\tabularnewline
 \toprule\noalign{}
 Level & Example(s) \\
 \midrule\noalign{}
@@ -2409,10 +2348,9 @@ While it is less common, we could then easily add additional clustering
 to this longitudinal model, for example, clustering of individuals or
 families inside social units.
 
-\hypertarget{tbl-levelslongitudinal2}{}
 \begin{longtable}[]{@{}ll@{}}
-\caption{\label{tbl-levelslongitudinal2}Multiple Levels in Longitudinal
-Data}\tabularnewline
+\caption{Multiple Levels in Longitudinal
+Data}\label{tbl-levelslongitudinal2}\tabularnewline
 \toprule\noalign{}
 Level & Example(s) \\
 \midrule\noalign{}
@@ -2430,9 +2368,8 @@ Level & Example(s) \\
 & Countries \\
 \end{longtable}
 
-\hypertarget{use-data-with-multiple-observations-per-individual}{%
 \section{Use Data With Multiple Observations Per
-Individual}\label{use-data-with-multiple-observations-per-individual}}
+Individual}\label{use-data-with-multiple-observations-per-individual}
 
 Multilevel data suitable for longitudinal analysis has \emph{multiple
 rows of data per individual or family}. Put another way, \emph{every row
@@ -2448,9 +2385,8 @@ timepoints are in \emph{different columns} of data. I do discuss
 in Appendix~\ref{sec-reshape}.
 \end{quote}
 
-\hypertarget{tbl-datalong}{}
 \begin{longtable}[]{@{}lll@{}}
-\caption{\label{tbl-datalong}Data in Long Format}\tabularnewline
+\caption{Data in Long Format}\label{tbl-datalong}\tabularnewline
 \toprule\noalign{}
 id & t & x \\
 \midrule\noalign{}
@@ -2469,9 +2405,8 @@ id & t & x \\
 2 & 3 & 40 \\
 \end{longtable}
 
-\hypertarget{tbl-datawide}{}
 \begin{longtable}[]{@{}llll@{}}
-\caption{\label{tbl-datawide}Data in Wide Format}\tabularnewline
+\caption{Data in Wide Format}\label{tbl-datawide}\tabularnewline
 \toprule\noalign{}
 id & x1 & x2 & x3 \\
 \midrule\noalign{}
@@ -2486,14 +2421,12 @@ id & x1 & x2 & x3 \\
 2 & 20 & 30 & 40 \\
 \end{longtable}
 
-\hypertarget{simulated-multilevel-longitudinal-data}{%
 \section{Simulated Multilevel Longitudinal
-Data}\label{simulated-multilevel-longitudinal-data}}
+Data}\label{simulated-multilevel-longitudinal-data}
 
 For the discussion below, I use a longitudinal version of the simulated
 data that has multiple rows of data per family.
 
-\hypertarget{tbl-simulatedlongitudinaldata}{}
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1190}}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0714}}
@@ -2504,30 +2437,12 @@ data that has multiple rows of data per family.
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.2619}}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1071}}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1190}}@{}}
+
 \caption{\label{tbl-simulatedlongitudinaldata}Simulated Longitudinal
-Multilevel Data}\tabularnewline
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\centering
-country
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-HDI
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-family
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-id
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-group
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-t
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-physical\_punishment
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-warmth
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-outcome
-\end{minipage} \\
-\midrule\noalign{}
-\endfirsthead
+Multilevel Data}
+
+\tabularnewline
+
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 country
@@ -2558,6 +2473,7 @@ outcome
 1 & 69 & 2 & 1.2 & 2 & 1 & 4 & 0 & 61.54 \\
 1 & 69 & 2 & 1.2 & 2 & 2 & 4 & 0 & 55.96 \\
 1 & 69 & 2 & 1.2 & 2 & 3 & 4 & 2 & 56.19 \\
+
 \end{longtable}
 
 Since I will be discussing the estimation of a \emph{longitudinal}
@@ -2565,16 +2481,17 @@ model, it is often useful to graph the outcome variable against time.
 
 \begin{figure}
 
-{\centering \includegraphics{longitudinal_files/figure-pdf/fig-data2-1.pdf}
+\centering{
+
+\includegraphics{longitudinal_files/figure-pdf/fig-data2-1.pdf}
 
 }
 
 \caption{\label{fig-data2}Graph of Simulated Longitudinal Data}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{the-equation-1}{%
-\section{The Equation}\label{the-equation-1}}
+\section{The Equation}\label{the-equation-1}
 
 When data are in \emph{long} format, the following equation is
 applicable. Observe that the model below is a \emph{three level} model
@@ -2583,7 +2500,7 @@ are nested inside \emph{countries}. A simpler two level model with
 \emph{timepoints} nested inside \emph{families} would also be possible
 to estimate.
 
-\begin{equation}\protect\hypertarget{eq-MLM-longitudinal}{}{\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + }\label{eq-MLM-longitudinal}\end{equation}
+\begin{equation}\phantomsection\label{eq-MLM-longitudinal}{\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + }\end{equation}
 
 \[\beta_4 \text{group}_{itj} + \beta_5 \text{HDI}_{itj} +\]
 
@@ -2600,8 +2517,7 @@ outcome varies across countries. The random slope for time,
 \(v_{1i} \times t\), allows us to estimate whether time trajectories
 (the slope for time) vary across families.
 
-\hypertarget{growth-trajectories}{%
-\section{Growth Trajectories}\label{growth-trajectories}}
+\section{Growth Trajectories}\label{growth-trajectories}
 
 In longitudinal multilevel models, the variable for \emph{time} assumes
 a special role as we are often visualizing a \emph{growth trajectory}
@@ -2613,13 +2529,12 @@ membership in one of two groups:
 \[\text{outcome} = \beta_0 + \beta_t \text{time} + \beta_\text{group} \text{group} + \beta_\text{interaction} \text{group} \times \text{time} + u_{0i} + e_{it}\]
 Then, each group has it's own intercept and time trajectory:
 
-\hypertarget{tbl-trajectory}{}
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1400}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5600}}@{}}
-\caption{\label{tbl-trajectory}Slope and Intercept for Each
-Group}\tabularnewline
+\caption{Slope and Intercept for Each
+Group}\label{tbl-trajectory}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Group
@@ -2655,17 +2570,18 @@ time}, modify the \emph{slope} of the time trajectory.
 
 \begin{figure}
 
-{\centering \includegraphics{longitudinal_files/figure-pdf/fig-trajectory-1.pdf}
+\centering{
+
+\includegraphics{longitudinal_files/figure-pdf/fig-trajectory-1.pdf}
 
 }
 
 \caption{\label{fig-trajectory}Hypothetical Growth Trajectory}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{sec-regressionlongitudinal}{%
 \section{Regression With Simulated Multi-Country Longitudinal
-Data}\label{sec-regressionlongitudinal}}
+Data}\label{sec-regressionlongitudinal}
 
 The Stata command that we use to analyze this data is:
 
@@ -2705,8 +2621,7 @@ associated with parental \texttt{warmth}, and parental use of
 \texttt{physical\_punishment} is associated with reduced child outcomes.
 \texttt{HDI} is again not associated with outcomes.
 
-\hypertarget{autocorrelation}{%
-\section{Autocorrelation}\label{autocorrelation}}
+\section{Autocorrelation}\label{autocorrelation}
 
 When data are ordered by a time variable \(t\), it is possible that
 observations that are closer together in time will have a higher
@@ -2722,12 +2637,10 @@ be correlated with \(e_{i,t=2}\), which in turn can be correlated with
 \(e_{i,t=1}\). More complex autocorrelation structures are usually also
 possible (StataCorp, 2021a).
 
-\hypertarget{causality}{%
-\section{Causality}\label{causality}}
+\section{Causality}\label{causality}
 
-\hypertarget{the-importance-of-causal-reasoning}{%
 \subsection{The Importance of Causal
-Reasoning}\label{the-importance-of-causal-reasoning}}
+Reasoning}\label{the-importance-of-causal-reasoning}
 
 Causal reasoning is sometimes considered to be a statistical--or even
 overly technical--concern. Arguably, however, whenever one is using
@@ -2780,6 +2693,9 @@ resources to conduct expensive longitudinal studies without attempting
 to use them for causal modeling.''
 \end{quote}
 
+\subsection{Randomized Controlled
+Trials}\label{randomized-controlled-trials}
+
 Randomized studies provide the best evidence about \emph{internal
 validity} and causal relationships. However, randomized studies have
 certain important limitations (Diener et al., 2022). First of
@@ -2791,14 +2707,24 @@ underpowered. Smaller samples and underpowered studies are more likely
 to generate false positive results than larger samples (Button et al.,
 2013) \footnote{See
   \url{https://agrogan.shinyapps.io/Thinking-Through-Bayes/} for a
-  demonstration of this idea from a Bayesian perspective.}. Lastly,
-because of ethical concerns some studies can not be conducted with
-randomization (Diener et al., 2022). For example, in the study of
-parenting and child development, children cannot ethically be assigned
-to parents with different styles of parenting and followed over the long
-term (Heilmann et al., 2021). Thus, methods that provide rigorous causal
-estimation with observational methods are necessary (Diener et al.,
-2022).
+  demonstration of this idea from a Bayesian perspective.}. Further, and
+importantly, because of ethical concerns some studies can not be
+conducted with randomization (Diener et al., 2022). For example, in the
+study of parenting and child development, children cannot ethically be
+assigned to parents with different styles of parenting and followed over
+the long term (Heilmann et al., 2021). Finally, and crucially, because
+of their often small samples, and their often rigorous exclusion
+criteria, randomized studies may have high internal validity, but much
+lower external validity, or generalization to larger populations (Diener
+et al., 2022). This issue of generalizability becomes increasingly
+salient, when we are reminded of the fact that so little social and
+psychological research has been conducted outside of North American
+contexts (Draper et al., 2022; Henrich et al., 2010). Thus, methods that
+provide rigorous causal estimation with observational methods are
+necessary (Diener et al., 2022).
+
+\subsection{Observational Studies and
+Causality}\label{observational-studies-and-causality}
 
 Because of the assumed superiority of studies that employ randomization,
 it is sometimes maintained that \emph{correlation is not causation} and
@@ -2813,21 +2739,13 @@ arguing that observational studies that make use of appropriately
 advanced quantitative methods can make causally robust conclusions about
 the effects of physical discipline.
 
-Finally, and very importantly, because of their often small samples, and
-their often rigorous exclusion criteria, randomized studies may have
-high internal validity, but much lower external validity, or
-generalization to larger populations (Diener et al., 2022). This issue
-of generalizability becomes increasingly salient, when we are reminded
-of the fact that so little social and psychological research has been
-conducted outside of North American contexts (Draper et al., 2022;
-Henrich et al., 2010). It is necessary to make use of broadly
-representative observational data sets, and appropriately sophisticated
-quantitative methods, to make causally robust conclusions from
-observational data that are applicable across diverse populations.
+It is necessary to make use of broadly representative observational data
+sets, and appropriately sophisticated quantitative methods, to make
+causally robust conclusions from observational data that are applicable
+across diverse populations.
 
-\hypertarget{formal-criteria-of-causality}{%
 \subsection{Formal Criteria of
-Causality}\label{formal-criteria-of-causality}}
+Causality}\label{formal-criteria-of-causality}
 
 For x to be a cause of y, one needs the following 3 things to be true
 (Holland, 1986).
@@ -2846,13 +2764,15 @@ For x to be a cause of y, one needs the following 3 things to be true
 
 \begin{figure}
 
-{\centering \includegraphics[width=3.46in,height=\textheight]{fig-causality.png}
+\centering{
+
+\includegraphics[width=3.46in,height=\textheight]{fig-causality.png}
 
 }
 
 \caption{\label{fig-causality}Formal Criteria of Causality}
 
-\end{figure}
+\end{figure}%
 
 \begin{quote}
 If \emph{z} is omitted from the regression model, then the estimates for
@@ -2885,14 +2805,16 @@ the following 3 things to be true (Holland, 1986).
 
 \begin{figure}
 
-{\centering \includegraphics[width=3.46in,height=\textheight]{fig-causalitysubstantive.png}
+\centering{
+
+\includegraphics[width=3.46in,height=\textheight]{fig-causalitysubstantive.png}
 
 }
 
 \caption{\label{fig-causalitysubstantive}Formal Criteria of Causality: A
 Substantive Example}
 
-\end{figure}
+\end{figure}%
 
 If \emph{other factors} are omitted from the regression model, then the
 estimates for \(\text{parenting} \rightarrow \text{child outcome}\)
@@ -2903,8 +2825,7 @@ over-estimate of the effect, and statistical significance of
 \(\beta_{\text{parenting} \rightarrow \text{child outcome}}\) may
 represent a false positive.
 
-\hypertarget{simpsons-paradox}{%
-\subsection{Simpson's Paradox}\label{simpsons-paradox}}
+\subsection{Simpson's Paradox}\label{simpsons-paradox}
 
 Earlier, in Section~\ref{sec-multilevelstructure}, I referred to the
 idea of \emph{multilevel structure} wherein failure to account for the
@@ -2934,17 +2855,18 @@ confounders.
 
 \begin{figure}
 
-{\centering \includegraphics{longitudinal_files/figure-pdf/fig-Simpson-1.pdf}
+\centering{
+
+\includegraphics{longitudinal_files/figure-pdf/fig-Simpson-1.pdf}
 
 }
 
 \caption{\label{fig-Simpson}An Illustration of Simpson's Paradox}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{a-simpler-multilevel-model-to-explore-causality}{%
 \subsection{A Simpler Multilevel Model To Explore
-Causality}\label{a-simpler-multilevel-model-to-explore-causality}}
+Causality}\label{a-simpler-multilevel-model-to-explore-causality}
 
 For purposes of explication of ideas about causal estimation, in this
 section, I imagine a simpler equation where I am only considering the
@@ -2958,7 +2880,7 @@ clustering.
 
 The appropriate multilevel model is below.
 
-\begin{equation}\protect\hypertarget{eq-MLM-simpler}{}{\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_2 \text{physical punishment}_{it} + \beta_3 \text{time}_{it} \ + }\label{eq-MLM-simpler}\end{equation}
+\begin{equation}\phantomsection\label{eq-MLM-simpler}{\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_2 \text{physical punishment}_{it} + \beta_3 \text{time}_{it} \ + }\end{equation}
 
 \[\beta_4 \text{group}_{it} + \beta_5 \text{HDI}_{it} \ +\]
 
@@ -2969,12 +2891,11 @@ Note that in Equation~\ref{eq-MLM-simpler}, if one were estimating a
 randomly varying parameter with a mean of 0, and a variance of
 \(\sigma^2(v_{0i})\).
 
-\hypertarget{fixed-effects-regression}{%
-\subsection{Fixed Effects Regression}\label{fixed-effects-regression}}
+\subsection{Fixed Effects Regression}\label{fixed-effects-regression}
 
 I can use the same equation:
 
-\begin{equation}\protect\hypertarget{eq-FE}{}{\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_2 \text{physical punishment}_{it} + \beta_3 \text{time}_{it} \ + }\label{eq-FE}\end{equation}
+\begin{equation}\phantomsection\label{eq-FE}{\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_2 \text{physical punishment}_{it} + \beta_3 \text{time}_{it} \ + }\end{equation}
 
 \[\beta_4 \text{group}_{it} + \beta_5 \text{HDI}_{it} \ +\]
 
@@ -3069,9 +2990,8 @@ Second, estimates for any quantities that do not vary over time, in this
 case, \texttt{group} membership, and \texttt{HDI}, are not available
 from the fixed effects regression.
 
-\hypertarget{the-correlated-random-effects-model}{%
 \subsection{The Correlated Random Effects
-Model}\label{the-correlated-random-effects-model}}
+Model}\label{the-correlated-random-effects-model}
 
 The \emph{correlated random effects} model is based upon ideas first
 developed by Mundlak (1978) and later explicated in Wooldridge (2010).
@@ -3091,7 +3011,7 @@ Section~\ref{sec-withinbetween}, however, here I am simply adding the
 group level mean to the equation instead of decomposing independent
 variables into within and between components.
 
-\begin{equation}\protect\hypertarget{eq-CRE}{}{\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_{1a}\overline{\text{parental warmth}}_{i} \ + }\label{eq-CRE}\end{equation}
+\begin{equation}\phantomsection\label{eq-CRE}{\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_{1a}\overline{\text{parental warmth}}_{i} \ + }\end{equation}
 
 \[\beta_2 \text{physical punishment}_{it} + \beta_{2a}\overline{\text{physical punishment}}_{i} + \]
 
@@ -3154,8 +3074,7 @@ in the fixed effects model.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{conclusion}{%
-\chapter{Conclusion}\label{conclusion}}
+\chapter{Conclusion}\label{conclusion}
 
 \begin{quote}
 ``We have peered into a new world and have seen that it is more
@@ -3205,110 +3124,109 @@ variation.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{references}{%
-\chapter*{References}\label{references}}
+\chapter*{References}\label{references}
 \addcontentsline{toc}{chapter}{References}
 
 \markboth{References}{References}
 
-\hypertarget{refs}{}
+\phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-Abelson1995}{}}%
+\bibitem[\citeproctext]{ref-Abelson1995}
 Abelson, R. P. (1995). Statistics as principled argument. In
 \emph{Statistics as principled argument.} (pp. 221, xv, 221--xv).
 Lawrence Erlbaum Associates, Inc.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Allison2009}{}}%
+\bibitem[\citeproctext]{ref-Allison2009}
 Allison, P. (2009). \emph{Fixed effects regression models}. Sage
 Publishing.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Antonakis2019}{}}%
+\bibitem[\citeproctext]{ref-Antonakis2019}
 Antonakis, J., Bastardoz, N., \& Ronko, M. (2021). On ignoring the
 random effects assumption in multilevel models: Review, critique, and
 recommendations. \emph{Organizational Research Methods}, \emph{24},
 443--483. \url{https://doi.org/10.1177/1094428119877457}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Aron1994}{}}%
+\bibitem[\citeproctext]{ref-Aron1994}
 Aron, A., \& Corne, S. (1994). Introduction. In A. Aron \& S. Corne
 (Eds.), \emph{Writings for a liberation psychology}. Harvard University
 Press.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Barr2013}{}}%
+\bibitem[\citeproctext]{ref-Barr2013}
 Barr, D. J., Levy, R., Scheepers, C., \& Tily, H. J. (2013). Random
 effects structure for confirmatory hypothesis testing: Keep it maximal.
 \emph{Journal of Memory and Language}, \emph{68}(3), 255--278.
 \url{https://doi.org/10.1016/j.jml.2012.11.001}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Barth2020}{}}%
+\bibitem[\citeproctext]{ref-Barth2020}
 Barth, R. P., \& Olsen, A. N. (2020). Are children oppressed? The timely
 importance of answering this question. \emph{Children and Youth Services
 Review}, \emph{110}, 104780.
 \url{https://doi.org/10.1016/j.childyouth.2020.104780}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Bland1994}{}}%
+\bibitem[\citeproctext]{ref-Bland1994}
 Bland, J. M., \& Altman, D. G. (1994). Statistics notes: Correlation,
 regression, and repeated data. \emph{BMJ}, \emph{308}, 896.
 \url{https://doi.org/10.1136/bmj.308.6933.896}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Blasi2022}{}}%
+\bibitem[\citeproctext]{ref-Blasi2022}
 Blasi, D. E., Henrich, J., Adamou, E., Kemmerer, D., \& Majid, A.
 (2022). Over-reliance on {E}nglish hinders cognitive science.
 \emph{Trends in Cognitive Sciences}.
 \url{https://doi.org/10.1016/j.tics.2022.09.015}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Burkner2018}{}}%
+\bibitem[\citeproctext]{ref-Burkner2018}
 Burkner, P.-C. (2018). Advanced {B}ayesian multilevel modeling with the
 {R} package brms. \emph{The R Journal}, \emph{10}(1), 395--411.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Burton2005}{}}%
+\bibitem[\citeproctext]{ref-Burton2005}
 Burton, M., \& Kagan, C. (2005). {Liberation Social Psychology: Learning
 From Latin America Psychology of liberation: Learning from Latin
 America}. \emph{Journal of Community \& Applied Social Psychology},
 \emph{15}. \url{https://doi.org/10.1002/casp.786}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Button2013}{}}%
+\bibitem[\citeproctext]{ref-Button2013}
 Button, K. S., Ioannidis, J. P. A., Mokrysz, C., Nosek, B. A., Flint,
 J., Robinson, E. S. J., \& Munaf`o, M. R. (2013). Power failure: Why
 small sample size undermines the reliability of neuroscience.
 \emph{Nature Reviews Neuroscience}, \emph{14}, 365--376.
 \url{https://doi.org/10.1038/nrn3475}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Caspi2000}{}}%
+\bibitem[\citeproctext]{ref-Caspi2000}
 Caspi, A., Taylor, A., Moffitt, T. E., \& Plomin, R. (2000).
 Neighborhood deprivation affects children's mental health: Environmental
 risks identified in a genetic design. \emph{Psychological Science},
 \emph{11}(4), 338--342. \url{https://doi.org/10.1111/1467-9280.00267}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Cesaire1956}{}}%
+\bibitem[\citeproctext]{ref-Cesaire1956}
 Cesaire, A. (1956). \emph{Letter to {M}aurice {T}horez}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Cokley2013}{}}%
+\bibitem[\citeproctext]{ref-Cokley2013}
 Cokley, K., \& Awad, G. (2013). In defense of quantitative methods:
 Using the {``master's tools''} to promote social justice. \emph{Journal
 for Social Action in Counseling \& Psychology}, \emph{5}, 26.
 \url{https://doi.org/10.33043/JSACP.5.2.26-41}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Dalton2000}{}}%
+\bibitem[\citeproctext]{ref-Dalton2000}
 Dalton, R. (2000). Como t{ú}. In M. Espada (Ed.), \emph{Poetry like
 bread: Poets of the political imagination}. Curbstone Press.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Deater-Deckard1996}{}}%
+\bibitem[\citeproctext]{ref-Deater-Deckard1996}
 Deater-Deckard, K., Dodge, K. A., Bates, J. E., \& Pettit, G. S. (1996).
 {Physical discipline among African American and European American
 mothers: Links to children's externalizing behaviors.}
 \emph{Developmental Psychology}, \emph{32}(6), 1065--1072.
 \url{https://doi.org/10.1037/0012-1649.32.6.1065}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Diener2022}{}}%
+\bibitem[\citeproctext]{ref-Diener2022}
 Diener, E., Northcott, R., Zyphur, M. J., \& West, S. G. (2022). Beyond
 experiments. \emph{Perspectives on Psychological Science}, \emph{17},
 1101--1119. \url{https://doi.org/10.1177/17456916211037670}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Dove1999}{}}%
+\bibitem[\citeproctext]{ref-Dove1999}
 Dove, R. (1999). The first book. In \emph{On the bus with {R}osa
 {P}arks}. W.W. Norton.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Draper2022}{}}%
+\bibitem[\citeproctext]{ref-Draper2022}
 Draper, C. E., Barnett, L. M., Cook, C. J., Cuartas, J. A., Howard, S.
 J., McCoy, D. C., Merkley, R., Molano, A., Maldonado-Carreño, C.,
 Obradovic, J., Scerif, G., Valentini, N. C., Venetsanou, F., \&
@@ -3318,19 +3236,19 @@ world's child population under-represented in research. \emph{Infant and
 Child Development}, \emph{n/a}, e2375.
 \url{https://doi.org/10.1002/icd.2375}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Duncan2006}{}}%
+\bibitem[\citeproctext]{ref-Duncan2006}
 Duncan, G. J., \& Gibson-Davis, C. M. (2006). {Connecting Child Care
 Quality to Child Outcomes: Drawing Policy Lessons from Nonexperimental
 Data}. \emph{Evaluation Review}, \emph{30}(5), 611--630.
 \url{https://doi.org/10.1177/0193841X06291530}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Eamon2001}{}}%
+\bibitem[\citeproctext]{ref-Eamon2001}
 Eamon, M. K. (2001). {Poverty, Parenting, Peer, and Neighborhood
 Influences on Young Adolescent Antisocial Behavior}. \emph{Journal of
 Social Service Research}, \emph{28}(1), 1--23.
 \url{https://doi.org/10.1300/J079v28n01_01}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Felitti1998}{}}%
+\bibitem[\citeproctext]{ref-Felitti1998}
 Felitti, V. J., Anda, R. F., Nordenberg, D., Williamson, D. F., Spitz,
 A. M., Edwards, V., Koss, M. P., \& Marks, J. S. (1998). Relationship of
 childhood abuse and household dysfunction to many of the leading causes
@@ -3338,36 +3256,36 @@ of death in adults: The adverse childhood experiences (ACE) study.
 \emph{American Journal of Preventive Medicine}, \emph{14}(4), 245--258.
 \url{https://doi.org/10.1016/S0749-3797(98)00017-8}
 
-\leavevmode\vadjust pre{\hypertarget{ref-FIREBAUGH20014023}{}}%
+\bibitem[\citeproctext]{ref-FIREBAUGH20014023}
 Firebaugh, G. (2001). Ecological fallacy, statistics of. In N. J.
 Smelser \& P. B. Baltes (Eds.), \emph{International encyclopedia of the
 social \& behavioral sciences} (pp. 4023--4026). Pergamon.
 \url{https://doi.org/10.1016/B0-08-043076-7/00765-8}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Frank2018}{}}%
+\bibitem[\citeproctext]{ref-Frank2018}
 Frank, M. (2018). \emph{Mixed effects models: Is it time to go
 {B}ayesian by default?}
 \url{http://babieslearninglanguage.blogspot.com/2018/02/mixed-effects-models-is-it-time-to-go.html}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Gelman2007}{}}%
+\bibitem[\citeproctext]{ref-Gelman2007}
 Gelman, A., Shor, B., Bafumi, J., \& Park, D. (2007). Rich state, poor
 state, red state, blue state: What's the matter with connecticut?
 \emph{Quarterly Journal of Political Science}, \emph{2}, 345--367.
 \url{https://doi.org/10.2139/ssrn.1010426}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Gershoff2016B}{}}%
+\bibitem[\citeproctext]{ref-Gershoff2016B}
 Gershoff, E. T., \& Grogan-Kaylor, A. (2016a). {Race as a Moderator of
 Associations Between Spanking and Child Outcomes}. \emph{Family
 Relations}, \emph{65}(3), 490--501.
 \url{https://doi.org/10.1111/fare.12205}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Gershoff2016}{}}%
+\bibitem[\citeproctext]{ref-Gershoff2016}
 Gershoff, E. T., \& Grogan-Kaylor, A. (2016b). Spanking and child
 outcomes: Old controversies and new meta-analyses. \emph{Journal of
 Family Psychology}, \emph{30}, 453--469.
 \url{https://doi.org/10.1037/fam0000191}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Gershoff2010}{}}%
+\bibitem[\citeproctext]{ref-Gershoff2010}
 Gershoff, E. T., Grogan-Kaylor, A., Lansford, J. E., Chang, L., Zelli,
 A., Deater-Deckard, K., \& Dodge, K. A. (2010). Parent discipline
 practices in an international sample: Associations with child behaviors
@@ -3375,195 +3293,195 @@ and moderation by perceived normativeness. \emph{Child Development},
 \emph{81}, 487--502.
 \url{https://doi.org/10.1111/j.1467-8624.2009.01409.x}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Goldacre2011}{}}%
+\bibitem[\citeproctext]{ref-Goldacre2011}
 Goldacre, B. (2011). {Foreward}. In \emph{Testing treatments} (2nd ed.).
 
-\leavevmode\vadjust pre{\hypertarget{ref-Gottlieb2002}{}}%
+\bibitem[\citeproctext]{ref-Gottlieb2002}
 Gottlieb, A. (2002). New developments in the anthropology of childcare.
 \emph{Anthropology News}, \emph{43}, 13.
 \url{https://doi.org/10.1111/an.2002.43.7.13}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Grogan-Kaylor2021}{}}%
+\bibitem[\citeproctext]{ref-Grogan-Kaylor2021}
 Grogan-Kaylor, A., Castillo, B., Pace, G. T., Ward, K. P., Ma, J., Lee,
 S. J., \& Knauer, H. (2021). {Global perspectives on physical and
 nonphysical discipline: A {B}ayesian multilevel analysis}.
 \emph{International Journal of Behavioral Development}.
 \url{https://doi.org/10.1177/0165025420981642}
 
-\leavevmode\vadjust pre{\hypertarget{ref-GroganKaylor2018}{}}%
+\bibitem[\citeproctext]{ref-GroganKaylor2018}
 Grogan-Kaylor, A., Ma, J., Lee, S. J., Castillo, B., Ward, K. P., \&
 Klein, S. (2018). Using {B}ayesian analysis to examine associations
 between spanking and child externalizing behavior across race and ethnic
 groups. \emph{Child Abuse and Neglect}, \emph{86}, 257--266.
 \url{https://doi.org/10.1016/j.chiabu.2018.10.009}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Heilmann2021}{}}%
+\bibitem[\citeproctext]{ref-Heilmann2021}
 Heilmann, A., Mehay, A., Watt, R. G., Kelly, Y., Durrant, J. E., van
 Turnhout, J., \& Gershoff, E. T. (2021). Physical punishment and child
 outcomes: A narrative review of prospective studies. \emph{The Lancet}.
 \url{https://doi.org/10.1016/S0140-6736(21)00582-1}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Henrich2010}{}}%
+\bibitem[\citeproctext]{ref-Henrich2010}
 Henrich, J., Heine, S. J., \& Norenzayan, A. (2010). {The weirdest
 people in the world?} \emph{Behavioral and Brain Sciences}.
 \url{https://doi.org/10.1017/S0140525X0999152X}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Hines2022}{}}%
+\bibitem[\citeproctext]{ref-Hines2022}
 Hines, C. T., Kalil, A., \& Ryan, R. M. (2022). {Differences in Parents'
 Attitudes Toward Spanking Across Socioeconomic Status and Region,
 1986--2016}. \emph{Social Indicators Research}, \emph{160}(1), 133--158.
 \url{https://doi.org/10.1007/s11205-021-02803-7}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Holland1986}{}}%
+\bibitem[\citeproctext]{ref-Holland1986}
 Holland, P. W. (1986). {Statistics and Causal Inference}. \emph{Journal
 of the American Statistical Association}, \emph{81}(396), 945--960.
 \url{https://doi.org/10.1080/01621459.1986.10478354}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Hooper2022}{}}%
+\bibitem[\citeproctext]{ref-Hooper2022}
 Hooper, R. (2022). {Designing Stepped Wedge Trials with Continuous
 Recruitment}. \emph{Methods: Mind the Gap (Webinar Series)}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Hurston1942}{}}%
+\bibitem[\citeproctext]{ref-Hurston1942}
 Hurston, Z. N. (1942). \emph{Dust tracks on a road}. HarperPerennial.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Khaleque2002}{}}%
+\bibitem[\citeproctext]{ref-Khaleque2002}
 Khaleque, A., \& Rohner, R. P. (2002). Perceived parental
 acceptance-rejection and psychological adjustment: A meta-analysis of
 cross-cultural and intracultural studies. \emph{Journal of Marriage and
 Family}, \emph{64}, 54--64.
 \url{https://doi.org/10.1111/j.1741-3737.2002.00054.x}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Kottak2021}{}}%
+\bibitem[\citeproctext]{ref-Kottak2021}
 Kottak, C. (2021). \emph{Anthropology: Appreciating human diversity}
 (19th ed.). McGraw Hill.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Kreft1998}{}}%
+\bibitem[\citeproctext]{ref-Kreft1998}
 Kreft, I., \& de Leeuw, J. (1998). \emph{Introducing multilevel
 modeling}. SAGE Publications.
 \url{https://doi.org/10.4135/9781849209366}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Lee2022}{}}%
+\bibitem[\citeproctext]{ref-Lee2022}
 Lee, S. J., Ward, K. P., Grogan-Kaylor, A., \& Singh, V. (2022). Anxiety
 and depression during {COVID-19}: Are adults in households with children
 faring worse? \emph{Journal of General Internal Medicine}, \emph{37},
 1328--1330. \url{https://doi.org/10.1007/s11606-021-07256-9}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Lovelace1992}{}}%
+\bibitem[\citeproctext]{ref-Lovelace1992}
 Lovelace, A. K. (1992). Ada: The enchantress of numbers: A selection
 from the letters of {L}ord {B}yron's daughter and her description of the
 first computer. In \emph{Ada: the enchantress of numbers: a selection
 from the letters of {L}ord {B}yron's daughter and her description of the
 first computer}. Strawberry Press.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Luke2004}{}}%
+\bibitem[\citeproctext]{ref-Luke2004}
 Luke, D. (2004). \emph{Multilevel modeling}. SAGE Publications, Inc.
 \url{https://doi.org/10.4135/9781412985147}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Ma2022}{}}%
+\bibitem[\citeproctext]{ref-Ma2022}
 Ma, J., Grogan-Kaylor, A. C., Pace, G. T., Ward, K. P., \& Lee, S. J.
 (2022). {The association between spanking and physical abuse of young
 children in 56 low- and middle-income countries}. \emph{Child Abuse \&
 Neglect}, \emph{129}, 105662.
 \url{https://doi.org/10.1016/j.chiabu.2022.105662}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Ma2018}{}}%
+\bibitem[\citeproctext]{ref-Ma2018}
 Ma, J., Grogan-Kaylor, A., \& Lee, S. J. (2018). Associations of
 neighborhood disorganization and maternal spanking with children's
 aggression: A fixed-effects regression analysis. \emph{Child Abuse \&
 Neglect}, \emph{76}, 106--116.
 \url{https://doi.org/10.1016/j.chiabu.2017.10.013}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Mangharam2017}{}}%
+\bibitem[\citeproctext]{ref-Mangharam2017}
 Mangharam, M. L. (2017). \emph{Literatures of liberation: Non-{E}uropean
 universalisms and democratic progress}. Ohio State University Press.
 \url{https://doi.org/10.2307/j.ctv16gff5b}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Martin-Baro1994}{}}%
+\bibitem[\citeproctext]{ref-Martin-Baro1994}
 Martin-Baro, I. (1994a). Public opinion research. In A. Aron \& S. Corne
 (Eds.), \emph{Writings for a liberation psychology}. Harvard University
 Press.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Martin-Baro1994B}{}}%
+\bibitem[\citeproctext]{ref-Martin-Baro1994B}
 Martin-Baro, I. (1994b). Toward a liberation psychology. In A. Aron \&
 S. Corne (Eds.), \emph{Writings for a liberation psychology}. Harvard
 University Press.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Martin-Baro1998}{}}%
+\bibitem[\citeproctext]{ref-Martin-Baro1998}
 Martin-Baro, I. (1998). {Retos y perspectivas de la psicología
 latinoamericana}. In A. Blanco (Ed.), \emph{Psicología de la
 liberación}. Trotta.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Matuschek2017}{}}%
+\bibitem[\citeproctext]{ref-Matuschek2017}
 Matuschek, H., Kliegl, R., Vasishth, S., Baayen, H., \& Bates, D.
 (2017). Balancing type {I} error and power in linear mixed models.
 \emph{Journal of Memory and Language}.
 \url{https://doi.org/10.1016/j.jml.2017.01.001}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Mbiti1970}{}}%
+\bibitem[\citeproctext]{ref-Mbiti1970}
 Mbiti, J. S. (1970). \emph{African religions and philosophy}. Anchor
 Books.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Mundlak1978}{}}%
+\bibitem[\citeproctext]{ref-Mundlak1978}
 Mundlak, Y. (1978). On the pooling of time series and cross section
 data. \emph{Econometrica}, \emph{46}, 69--85.
 \url{https://doi.org/10.2307/1913646}
 
-\leavevmode\vadjust pre{\hypertarget{ref-nalborczyk_batailler_loevenbruck_vilain_burkner_2019}{}}%
+\bibitem[\citeproctext]{ref-nalborczyk_batailler_loevenbruck_vilain_burkner_2019}
 Nalborczyk, L., Batailler, C., Loevenbruck, H., Vilain, A., \& Burkner,
 P.-C. (2019, May). \emph{An introduction to {B}ayesian multilevel models
 using brms: A case study of gender effects on vowel variability in
 standard {I}ndonesian}. PsyArXiv.
 \url{https://doi.org/10.1044/2018_JSLHR-S-18-0006}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Oberauer2022}{}}%
+\bibitem[\citeproctext]{ref-Oberauer2022}
 Oberauer, K. (2022). {The Importance of Random Slopes in Mixed Models
 for Bayesian Hypothesis Testing}. \emph{Psychological Science}.
 \url{https://doi.org/doi:10.1177/09567976211046884}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Oliver2015}{}}%
+\bibitem[\citeproctext]{ref-Oliver2015}
 Oliver, M., \& Tippett, K. (2015). \emph{{M}ary {O}liver: {``{I} got
 saved by the beauty of the world.''}} The On Being Project.
 \url{https://onbeing.org/programs/mary-oliver-i-got-saved-by-the-beauty-of-the-world/}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Pace2019}{}}%
+\bibitem[\citeproctext]{ref-Pace2019}
 Pace, G. T., Lee, S. J., \& Grogan-Kaylor, A. (2019). {Spanking and
 young children's socioemotional development in low- and middle-income
 countries}. \emph{Child Abuse and Neglect}, \emph{88}, 84--95.
 \url{https://doi.org/10.1016/j.chiabu.2018.11.003}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Poincare1908}{}}%
+\bibitem[\citeproctext]{ref-Poincare1908}
 Poincare, H. (1908). \emph{Science et methode}. Flammarion.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Proctor2012}{}}%
+\bibitem[\citeproctext]{ref-Proctor2012}
 Proctor, R. N. (2012). {The history of the discovery of the
 cigarette--lung cancer link: evidentiary traditions, corporate denial,
 global toll}. \emph{Tobacco Control}, \emph{21}(2), 87 LP--91.
 \url{https://doi.org/10.1136/tobaccocontrol-2011-050338}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Pye2011}{}}%
+\bibitem[\citeproctext]{ref-Pye2011}
 Pye, E. (2011). {E}veline {P}ye: Poetry in numbers, by {J}ulian
 {C}hampkin. \emph{Significance}, \emph{8}(3), 127--130.
 \url{https://doi.org/10.1111/j.1740-9713.2011.00510.x}
 
-\leavevmode\vadjust pre{\hypertarget{ref-RabeHesketh2012}{}}%
+\bibitem[\citeproctext]{ref-RabeHesketh2012}
 Rabe-Hesketh, S., \& Skrondal, A. (2012). \emph{Multilevel and
 longitudinal modeling using {S}tata - {V}olume {I}: Continuous
 responses} (p. 974). Stata Press.
 
-\leavevmode\vadjust pre{\hypertarget{ref-RabeHesketh2022}{}}%
+\bibitem[\citeproctext]{ref-RabeHesketh2022}
 Rabe-Hesketh, S., \& Skrondal, A. (2022). \emph{Multilevel and
 longitudinal modeling using {S}tata} (4th ed.). Stata Press.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Raudenbush2002}{}}%
+\bibitem[\citeproctext]{ref-Raudenbush2002}
 Raudenbush, S. W., \& Bryk, A. S. (2002). \emph{Hierarchical linear
 models: Applications and data analysis methods} (pp. xxiv, 485 p.). Sage
 Publications.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Rich1984}{}}%
+\bibitem[\citeproctext]{ref-Rich1984}
 Rich, A. (1984). Transcendental etude. In \emph{The fact of a doorframe:
 Poems selected and new 1950-1984}. Norton.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Rothenberg2022}{}}%
+\bibitem[\citeproctext]{ref-Rothenberg2022}
 Rothenberg, W. A., Ali, S., Rohner, R. P., Lansford, J. E., Britner, P.
 A., Giunta, L. D., Dodge, K. A., Malone, P. S., Oburu, P., Pastorelli,
 C., Skinner, A. T., Sorbring, E., Steinberg, L., Tapanya, S., Tirado, L.
@@ -3574,123 +3492,123 @@ behaviors: A longitudinal, multicultural study. \emph{Journal of Child
 and Family Studies}, \emph{31}, 29--47.
 \url{https://doi.org/10.1007/s10826-021-02072-5}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Rubin1997}{}}%
+\bibitem[\citeproctext]{ref-Rubin1997}
 Rubin, V. C. (1997). Bright galaxies, dark matters. In \emph{Bright
 galaxies, dark matters}. American Institute of Physics.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Schielzeth2009}{}}%
+\bibitem[\citeproctext]{ref-Schielzeth2009}
 Schielzeth, H., \& Forstmeier, W. (2009). Conclusions beyond support:
 Overconfident estimates in mixed models. \emph{Behavioral Ecology},
 \emph{20}, 416--420. \url{https://doi.org/10.1093/beheco/arn145}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Schunck2013}{}}%
+\bibitem[\citeproctext]{ref-Schunck2013}
 Schunck, R. (2013). Within and between estimates in random-effects
 models: Advantages and drawbacks of correlated random effects and hybrid
 models. \emph{The Stata Journal}, \emph{13}, 65--76.
 \url{https://doi.org/10.1177/1536867X1301300105}
 
-\leavevmode\vadjust pre{\hypertarget{ref-ShraderFrechette2014}{}}%
+\bibitem[\citeproctext]{ref-ShraderFrechette2014}
 Shrader-Frechette, K. (2014). \emph{Tainted : How philosophy of science
 can expose bad science}. Oxford University Press.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Simpson1951}{}}%
+\bibitem[\citeproctext]{ref-Simpson1951}
 Simpson, E. H. (1951). The interpretation of interaction in contingency
 tables. \emph{Journal of the Royal Statistical Society. Series B
 (Methodological)}, \emph{13}, 238--241.
 \url{http://www.jstor.org/stable/2984065}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Singer2003}{}}%
+\bibitem[\citeproctext]{ref-Singer2003}
 Singer, J. D., \& Willett, J. B. (2003). Applied longitudinal data
 analysis : Modeling change and event occurrence. In \emph{Applied
 longitudinal data analysis : modeling change and event occurrence}.
 Oxford University Press.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Stage2014}{}}%
+\bibitem[\citeproctext]{ref-Stage2014}
 Stage, F. K., \& Wells, R. S. (2014). Critical quantitative inquiry in
 context. \emph{New Directions for Institutional Research}, \emph{2013},
 1--7. \url{https://doi.org/10.1002/ir.20041}
 
-\leavevmode\vadjust pre{\hypertarget{ref-StataCorp2021:1}{}}%
+\bibitem[\citeproctext]{ref-StataCorp2021:1}
 StataCorp. (2021a). \emph{Stata 17 longitudinal data/panel data
 reference manual}. Stata Press.
 
-\leavevmode\vadjust pre{\hypertarget{ref-StataCorp2021:2}{}}%
+\bibitem[\citeproctext]{ref-StataCorp2021:2}
 StataCorp. (2021b). \emph{Stata 17 multilevel mixed effects reference
 manual}. Stata Press.
 
-\leavevmode\vadjust pre{\hypertarget{ref-StataCorp2021}{}}%
+\bibitem[\citeproctext]{ref-StataCorp2021}
 StataCorp. (2021c). \emph{Stata statistical software: Release 17}.
 StataCorp LLC.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Strevens2020}{}}%
+\bibitem[\citeproctext]{ref-Strevens2020}
 Strevens, M. (2020). \emph{The knowledge machine: How irrationality
 created modern science}. Liveright.
 
-\leavevmode\vadjust pre{\hypertarget{ref-UNESCO1997}{}}%
+\bibitem[\citeproctext]{ref-UNESCO1997}
 UNESCO. (1997). {A}ime {C}esaire: The liberating power of words.
 \emph{UNESCO Courier}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-UNICEF2014}{}}%
+\bibitem[\citeproctext]{ref-UNICEF2014}
 UNICEF. (2014). \emph{Hidden in plain sign: A statistical analysis of
 violence against children} (pp. 1--206). UNICEF.
 
-\leavevmode\vadjust pre{\hypertarget{ref-UNICEF2021}{}}%
+\bibitem[\citeproctext]{ref-UNICEF2021}
 UNICEF. (2021). \emph{Multiple indicator cluster surveys (MICS)}.
 UNICEF. \url{https://mics.unicef.org/}
 
-\leavevmode\vadjust pre{\hypertarget{ref-UN2022}{}}%
+\bibitem[\citeproctext]{ref-UN2022}
 United Nations. (2022). \emph{Sustainable development goals}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-UNDPHDI}{}}%
+\bibitem[\citeproctext]{ref-UNDPHDI}
 United Nations Development Program. (2022). \emph{{Human Development
 Index (HDI)}}.
 \url{https://hdr.undp.org/data-center/human-development-index\#/indicies/HDI}
 
-\leavevmode\vadjust pre{\hypertarget{ref-UN1989}{}}%
+\bibitem[\citeproctext]{ref-UN1989}
 United Nations General Assembly. (1989). \emph{Convention on the rights
 of the child}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Waddington2022}{}}%
+\bibitem[\citeproctext]{ref-Waddington2022}
 Waddington, H. S., Villar, P. F., \& Valentine, J. C. (2022). Can
 non-randomised studies of interventions provide unbiased effect
 estimates? A systematic review of internal replication studies.
 \emph{Evaluation Review}, 0193841X221116721.
 \url{https://doi.org/10.1177/0193841X221116721}
 
-\leavevmode\vadjust pre{\hypertarget{ref-WardA}{}}%
+\bibitem[\citeproctext]{ref-WardA}
 Ward, K. P., Grogan-Kaylor, A. C., Pace, G. T., Cuartas, J., \& Lee, S.
 J. (2021). {A Multilevel Ecological Analysis of the Predictors of
 Spanking Across 65 Countries}. \emph{BMJ Open}, \emph{11}(e046075).
 \url{https://doi.org/10.1136/bmjopen-2020-046075}
 
-\leavevmode\vadjust pre{\hypertarget{ref-ward_grogan-kaylor_ma_pace_lee_2021}{}}%
+\bibitem[\citeproctext]{ref-ward_grogan-kaylor_ma_pace_lee_2021}
 Ward, K. P., Grogan-Kaylor, A., Ma, J., Pace, G. T., \& Lee, S. J.
 (2021). \emph{Associations between 11 parental discipline behaviors and
 child outcomes across 60 countries}. PsyArXiv.
 \url{https://doi.org/10.31234/osf.io/f5t8x}
 
-\leavevmode\vadjust pre{\hypertarget{ref-WardC}{}}%
+\bibitem[\citeproctext]{ref-WardC}
 Ward, K. P., Lee, S. J., Grogan-Kaylor, A. C., Ma, J., \& Pace, G. T.
 (2022). {Patterns of Caregiver Aggressive and Nonaggressive Discipline
 Toward Young Children in Low- and Middle-Income Countries: A Latent
 Class Approach}. \emph{Child Abuse \& Neglect}, \emph{128}.
 \url{https://doi.org/10.1016/j.chiabu.2022.105606}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Watts2011}{}}%
+\bibitem[\citeproctext]{ref-Watts2011}
 Watts, D. J. (2011). \emph{Everything is obvious: *Once you know the
 answer}. Crown Business.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Whyte2016}{}}%
+\bibitem[\citeproctext]{ref-Whyte2016}
 Whyte, D., \& Tippett, K. (2016). \emph{{D}avid {W}hyte: Seeking
 language large enough}. The On Being Project.
 \url{https://onbeing.org/programs/david-whyte-seeking-language-large-enough/}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Wiest2007}{}}%
+\bibitem[\citeproctext]{ref-Wiest2007}
 Wiest, L. R., Higgins, H. J., \& Frost, J. H. (2007). Quantitative
 literacy for social justice. \emph{Equity \& Excellence in Education},
 \emph{40}, 47--55. \url{https://doi.org/10.1080/10665680601079894}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Wooldridge2010}{}}%
+\bibitem[\citeproctext]{ref-Wooldridge2010}
 Wooldridge, J. M. (2010). \emph{Econometric analysis of cross section
 and panel data}. The MIT Press.
 \url{http://www.jstor.org/stable/j.ctt5hhcfr}
@@ -3699,8 +3617,7 @@ and panel data}. The MIT Press.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{about-the-author}{%
-\chapter{About the Author}\label{about-the-author}}
+\chapter{About the Author}\label{about-the-author}
 
 I am the Sandra K. Danziger Collegiate Professor of Social Work at the
 University of Michigan School of Social Work.
@@ -3739,9 +3656,8 @@ and data visualization.
 \addcontentsline{toc}{part}{Appendices}
 \appendix
 
-\hypertarget{stata-for-cross-sectional-multilevel-models}{%
 \chapter{Stata for Cross Sectional Multilevel
-Models}\label{stata-for-cross-sectional-multilevel-models}}
+Models}\label{stata-for-cross-sectional-multilevel-models}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2051}}
@@ -3762,45 +3678,62 @@ English
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Intercept Only & \(y = \beta_0 + e_{ij}\) & \texttt{mixed\ y} & We
-estimated the mean of {[}outcome{]} \\
-Intercept, Independent Variable(s) &
-\(y = \beta_0 + \beta_1 x + \beta_2 z + e_{ij}\) &
-\texttt{mixed\ y\ x\ z} & We estimated the relationship of
+Intercept Only & \(y =
+\beta_0 +
+e_{ij}\) & \texttt{mixed\ y} & We estimated the mean of {[}outcome{]} \\
+Intercept, Independent Variable(s) & \(y =
+\beta_0 +
+\beta_1 x
++ \beta_2
+z +
+e_{ij}\) & \texttt{mixed\ y\ x\ z} & We estimated the relationship of
 {[}independent variable(s){]} with {[}outcome{]} \\
-Intercept, Random variation of the intercept &
-\(y = \beta_0 + e_{ij} + u_{0j}\) &
-\texttt{mixed\ y\ \textbar{}\textbar{}\ groupid:} & We estimated the
-mean of {[}outcome{]}. We allowed the intercept of the model to vary by
-{[}groupid{]}. \\
+Intercept, Random variation of the intercept & \(y =
+\beta_0 +
+e_{ij} +
+u_{0j}\) & \texttt{mixed\ y\ \textbar{}\textbar{}\ groupid:} & We
+estimated the mean of {[}outcome{]}. We allowed the intercept of the
+model to vary by {[}groupid{]}. \\
 Unconditional intraclass correlation coefficient (ICC) &
-\(\frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}\) &
-\texttt{mixed\ y\ \textbar{}\textbar{}\ groupid:} then
+\(\frac{var(u_{0j})}{var(u_{0j})
++
+var(e_{ij})}\) & \texttt{mixed\ y\ \textbar{}\textbar{}\ groupid:} then
 \texttt{estat\ icc} & XX\% of the variation in {[}outcome{]} was
 explained by clustering of participants in {[}groupid{]} \\
 Intercept, Independent variable(s), Random variation of the intercept &
-\(y = \beta_0 + \beta_1 x + \beta_2 z + e_{ij} + u_{0j}\) &
-\texttt{mixed\ y\ x\ z\ \textbar{}\textbar{}\ groupid:} & We estimated
-the relationship of {[}independent variable(s){]} with {[}outcome{]}. We
-allowed the intercept of the model to vary by group. \\
-Intercept, Independent variable, Random intercept, Random slope &
-\(y = \beta_0 + \beta_1 x + e_{ij} + u_{0j} + u_{1j} x\) &
-\texttt{mixed\ y\ x\ \textbar{}\textbar{}\ groupid:\ x} & We estimated
-the relationship of {[}independent variable{]} with {[}outcome{]}. We
-allowed the intercept of the model to vary by group. We also allowed the
-relationship of {[}independent variable{]} with {[}outcome{]} to vary by
+\(y =
+\beta_0 +
+\beta_1 x
++ \beta_2
+z + e_{ij}
++ u_{0j}\) & \texttt{mixed\ y\ x\ z\ \textbar{}\textbar{}\ groupid:} &
+We estimated the relationship of {[}independent variable(s){]} with
+{[}outcome{]}. We allowed the intercept of the model to vary by
 group. \\
-We can estimate multilevel models with more than 1 random slope. &
-\(y = \beta_0 + \beta_1 x + \beta_2 z +\)
-\(e_{ij} + u_{0j} + u_{1j} x + u_{2j} z\) &
+Intercept, Independent variable, Random intercept, Random slope & \(y =
+\beta_0 +
+\beta_1 x
++ e_{ij} +
+u_{0j} +
+u_{1j} x\) & \texttt{mixed\ y\ x\ \textbar{}\textbar{}\ groupid:\ x} &
+We estimated the relationship of {[}independent variable{]} with
+{[}outcome{]}. We allowed the intercept of the model to vary by group.
+We also allowed the relationship of {[}independent variable{]} with
+{[}outcome{]} to vary by group. \\
+We can estimate multilevel models with more than 1 random slope. & \(y =
+\beta_0 +
+\beta_1 x
++ \beta_2
+z +\) \(e_{ij} +
+u_{0j} +
+u_{1j} x +
+u_{2j} z\) &
 \texttt{mixed\ y\ x\ z\ \textbar{}\textbar{}\ groupid:\ x\ z} & \\
 \end{longtable}
 
-\hypertarget{sec-reshape}{%
-\chapter{Reshaping Data in Stata}\label{sec-reshape}}
+\chapter{Reshaping Data in Stata}\label{sec-reshape}
 
-\hypertarget{introduction-2}{%
-\section{Introduction}\label{introduction-2}}
+\section{Introduction}\label{introduction-2}
 
 Data can be reshaped from \emph{wide} format to \emph{long} format, and
 back again. Almost any software that is capable of estimating multilevel
@@ -3817,7 +3750,6 @@ Every individual in the data has multiple rows. Every row of the data is
 a \emph{person-timepoint}.
 \end{quote}
 
-\hypertarget{tbl-reshapelongdata}{}
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1190}}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0714}}
@@ -3828,29 +3760,11 @@ a \emph{person-timepoint}.
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.2619}}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1071}}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1190}}@{}}
-\caption{\label{tbl-reshapelongdata}Data in Long Format}\tabularnewline
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\centering
-country
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-HDI
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-family
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-id
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-group
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-t
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-physical\_punishment
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-warmth
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-outcome
-\end{minipage} \\
-\midrule\noalign{}
-\endfirsthead
+
+\caption{\label{tbl-reshapelongdata}Data in Long Format}
+
+\tabularnewline
+
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 country
@@ -3881,10 +3795,10 @@ outcome
 1 & 69 & 2 & 1.2 & 2 & 1 & 4 & 0 & 61.54 \\
 1 & 69 & 2 & 1.2 & 2 & 2 & 4 & 0 & 55.96 \\
 1 & 69 & 2 & 1.2 & 2 & 3 & 4 & 2 & 56.19 \\
+
 \end{longtable}
 
-\hypertarget{data-management}{%
-\section{Data Management}\label{data-management}}
+\section{Data Management}\label{data-management}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3901,9 +3815,8 @@ outcome
   only variables of interest would be \texttt{keep\ y\ x\ z\ t}.
 \end{enumerate}
 
-\hypertarget{reshaping-data-from-long-to-wide}{%
 \section{Reshaping Data From Long To
-Wide}\label{reshaping-data-from-long-to-wide}}
+Wide}\label{reshaping-data-from-long-to-wide}
 
 While it is not often that we want to reshape data from \emph{long} to
 \emph{wide}, I do so here for illustrative purposes. The Stata command
@@ -3927,60 +3840,126 @@ Every individual in the data set has a single row of data. Every row in
 the data set is an individual.
 \end{quote}
 
-\begin{table}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1067}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3067}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1333}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1467}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3067}}@{}}
 
-\caption{\label{tbl-reshapewidedata}Data in Wide
-Format}\begin{minipage}[t]{\linewidth}
-\subcaption{\label{tbl-reshapewidedata-1}Table continues below}
+\caption{\label{tbl-reshapewidedata}Data in Wide Format}
 
-{\centering 
+\tabularnewline
 
-\begin{tabular}[t]{ccccc}
-\toprule
-id & physical\_punishment1 & warmth1 & outcome1 & physical\_punishment2\\
-\midrule
-1.1 & 2 & 3 & 59.18 & 2\\
-1.10 & 3 & 1 & 52.09 & 3\\
-1.100 & 1 & 4 & 49.3 & 0\\
-1.11 & 2 & 3 & 61.99 & 2\\
-1.12 & 3 & 4 & 47.45 & 3\\
-1.13 & 5 & 3 & 61.11 & 3\\
-\bottomrule
-\end{tabular}
+\caption{Table continues below}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+id
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+physical\_punishment1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+warmth1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+outcome1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+physical\_punishment2
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+id
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+physical\_punishment1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+warmth1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+outcome1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+physical\_punishment2
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1.1 & 2 & 3 & 59.18 & 2 \\
+1.10 & 3 & 1 & 52.09 & 3 \\
+1.100 & 1 & 4 & 49.3 & 0 \\
+1.11 & 2 & 3 & 61.99 & 2 \\
+1.12 & 3 & 4 & 47.45 & 3 \\
+1.13 & 5 & 3 & 61.11 & 3 \\
 
-}
+\end{longtable}
 
-\end{minipage}%
-\newline
-\begin{minipage}[t]{\linewidth}
-\subcaption{\label{tbl-reshapewidedata-2}Table continues below}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1235}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1358}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2840}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1235}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1358}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1235}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0741}}@{}}
 
-{\centering 
+\caption{\label{tbl-reshapewidedata}Data in Wide Format}
 
-\begin{tabular}[t]{ccccccc}
-\toprule
-warmth2 & outcome2 & physical\_punishment3 & warmth3 & outcome3 & country & HDI\\
-\midrule
-2 & 58.29 & 3 & 3 & 60.58 & 1 & 69\\
-2 & 52.99 & 2 & 1 & 64.37 & 1 & 69\\
-4 & 64 & 2 & 4 & 57.34 & 1 & 69\\
-5 & 55.91 & 2 & 4 & 65.44 & 1 & 69\\
-4 & 46.42 & 5 & 6 & 48.35 & 1 & 69\\
-4 & 56.99 & 3 & 4 & 50.63 & 1 & 69\\
-\bottomrule
-\end{tabular}
+\tabularnewline
 
-}
+\caption{Table continues below}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+warmth2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+outcome2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+physical\_punishment3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+warmth3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+outcome3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+country
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+HDI
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+warmth2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+outcome2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+physical\_punishment3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+warmth3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+outcome3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+country
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+HDI
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+2 & 58.29 & 3 & 3 & 60.58 & 1 & 69 \\
+2 & 52.99 & 2 & 1 & 64.37 & 1 & 69 \\
+4 & 64 & 2 & 4 & 57.34 & 1 & 69 \\
+5 & 55.91 & 2 & 4 & 65.44 & 1 & 69 \\
+4 & 46.42 & 5 & 6 & 48.35 & 1 & 69 \\
+4 & 56.99 & 3 & 4 & 50.63 & 1 & 69 \\
 
-\end{minipage}%
-\newline
-\begin{minipage}[t]{\linewidth}
-
-{\centering 
+\end{longtable}
 
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1250}}
   >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1250}}@{}}
+
+\caption{\label{tbl-reshapewidedata}Data in Wide Format}
+
+\tabularnewline
+
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 family
@@ -3997,17 +3976,11 @@ group
 11 & 2 \\
 12 & 1 \\
 13 & 1 \\
+
 \end{longtable}
 
-}
-
-\end{minipage}%
-
-\end{table}
-
-\hypertarget{reshaping-data-from-wide-to-long}{%
 \section{Reshaping Data From Wide To
-Long}\label{reshaping-data-from-wide-to-long}}
+Long}\label{reshaping-data-from-wide-to-long}
 
 Usually, we are more interested in reshaping data from \emph{wide} to
 \emph{long}, and that is what I do now.
@@ -4044,7 +4017,6 @@ named \texttt{id}, and not something else).
 If we use this command, we are back to the original format of the data
 set.
 
-\hypertarget{tbl-reshapelongdata2}{}
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1190}}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0714}}
@@ -4055,29 +4027,11 @@ set.
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.2619}}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1071}}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1190}}@{}}
-\caption{\label{tbl-reshapelongdata2}Data in Long Format}\tabularnewline
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\centering
-country
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-HDI
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-family
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-id
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-group
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-t
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-physical\_punishment
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-warmth
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-outcome
-\end{minipage} \\
-\midrule\noalign{}
-\endfirsthead
+
+\caption{\label{tbl-reshapelongdata2}Data in Long Format}
+
+\tabularnewline
+
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 country
@@ -4108,6 +4062,7 @@ outcome
 1 & 69 & 2 & 1.2 & 2 & 1 & 4 & 0 & 61.54 \\
 1 & 69 & 2 & 1.2 & 2 & 2 & 4 & 0 & 55.96 \\
 1 & 69 & 2 & 1.2 & 2 & 3 & 4 & 2 & 56.19 \\
+
 \end{longtable}
 
 
