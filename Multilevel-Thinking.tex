@@ -152,6 +152,8 @@
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
+\usepackage{makeidx}
+\makeindex
 \KOMAoption{captions}{tableheading}
 \makeatletter
 \@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
@@ -292,6 +294,7 @@ presented with complex multilevel data, failure to use the appropriate
 multilevel model may lead to conclusions that are demonstrably
 incorrect. Fortunately, many of these difficulties can be avoided with
 applications of simple and straightforward multilevel models.
+\index{correct answers}
 
 I start by presenting some initial ideas about multilevel modeling.
 First, as is relatively commonly understood, \emph{multilevel models
@@ -891,7 +894,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, breakable, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data in Stata Format}, colback=white, left=2mm, opacityback=0, coltitle=black, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, titlerule=0mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, breakable, colback=white, coltitle=black, left=2mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data in Stata Format}, arc=.35mm, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, bottomtitle=1mm, opacityback=0, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, rightrule=.15mm, toptitle=1mm]
 
 \begin{itemize}
 \tightlist
@@ -4068,5 +4071,7 @@ outcome
 \end{longtable}
 
 
+
+\printindex
 
 \end{document}
