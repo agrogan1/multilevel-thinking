@@ -69,6 +69,12 @@ format:
     execute:
       echo: false
       warning: false    
-      
+   include-in-header: 
+      text: |
+        \usepackage{makeidx}
+        \makeindex
+    include-after-body: 
+      text: |
+        \printindex   
       
 
