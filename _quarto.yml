@@ -64,6 +64,7 @@ format:
   pdf:
     lot: true
     lof: true
+    linestretch: 2.0
     keep-tex: true
     execute:
       echo: false
