@@ -69,7 +69,7 @@ format:
     execute:
       echo: false
       warning: false    
-   include-in-header: 
+    include-in-header: 
       text: |
         \usepackage{makeidx}
         \makeindex
