@@ -135,12 +135,12 @@ $$\beta_4 \text{group}_{itj} + \beta_5 \text{HDI}_{itj} +$$
 
 $$u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + $$
 
-$$v_{0i} + v_{1i} \times t_{itj} + e_{itj}$$
+$$v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}$$
 Here I include a random slope ($u_{1j}$) at the country level for parental warmth, as well as a random slope ($v_{1i}$) at the family level for time. 
 
 As before, the random slope for parental warmth, $u_{1j} \times \text{parental warmth}_{ij}$ suggests allows us to estimate whether the relationship between parental warmth and the outcome varies across countries. The random slope for time, $v_{1i} \times t$, allows us to estimate whether time trajectories (the slope for time) vary across families.
 
-## Growth Trajectories
+## Growth Trajectories {#sec-growthtrajectories}
 
 In longitudinal multilevel models, the variable for *time* assumes a special role as we are often visualizing a *growth trajectory* over the course of time.
 
@@ -149,10 +149,10 @@ Imagine a model as follows where *group* is a (1/0) variable for membership in o
 $$\text{outcome} = \beta_0 + \beta_t \text{time} + \beta_\text{group} \text{group} + \beta_\text{interaction} \text{group} \times \text{time} + u_{0i} + e_{it}$$
 Then, each group has it's own intercept and time trajectory:
 
-| Group | Intercept     |  Slope (Time Trajectory)   |
-|-------|---------------|----------------------------|
-| 0 | $\beta_0$                      | $\beta_t$                            |
-| 1 | $\beta_0 + \beta_\text{group}$ | $\beta_t + \beta_\text{interaction}$ |
+| Group | Intercept                      |  Slope (Time Trajectory)   |
+|-------|--------------------------------|----------------------------|
+| 0     | $\beta_0$                      | $\beta_t$                            |
+| 1     | $\beta_0 + \beta_\text{group}$ | $\beta_t + \beta_\text{interaction}$ |
 
 : Slope and Intercept for Each Group {#tbl-trajectory}
 
@@ -171,7 +171,7 @@ ggplot(data = NULL) +
   geom_abline(aes(intercept = 0, 
                   slope = .1),
               color = "#440154FF",
-              size = 2) +
+              linewidth = 2) +
   annotate("text", 
            x = 1.5, 
            y = 0, 
@@ -187,7 +187,7 @@ ggplot(data = NULL) +
   geom_abline(aes(intercept = .75, 
                   slope = .02),
               color = "#31688EFF",
-              size = 2) +
+              linewidth = 2) +
   annotate("text", 
            x = 1, 
            y = .6, 
@@ -213,6 +213,8 @@ ggplot(data = NULL) +
 
 ## Regression With Simulated Multi-Country Longitudinal Data {#sec-regressionlongitudinal}
 
+### Main Effects Only
+
 The Stata command that we use to analyze this data is:
 
 ```{stata, eval = FALSE, echo=TRUE}
@@ -225,6 +227,40 @@ mixed outcome t warmth physical_punishment group HDI || country: warmth || id: t
 ```
 
 Examining the regression results, the results of the model suggest that child outcomes improve over time. Better child outcomes are again associated with parental `warmth`, and parental use of `physical_punishment` is associated with reduced child outcomes. `HDI` is again not associated with outcomes.
+
+### Interactions With Time
+
+As discussed in @sec-growthtrajectories, we will likely wish to model not only associations of other independent variables with the intercept of the time trajectory, but also associations of other independent variables with the slope of the time trajectory. Accordingly, we modify @eq-MLM-longitudinal so that it includes these interactions. Below, I add the letter $B$ to some $\beta$ coefficients to denote that they are a second coefficient estimating the *interaction* of that variable with time.
+
+$$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + $$ {#eq-MLM-longitudinal} 
+
+$$\beta_{1B} \text{parental warmth}_{itj} \times \text{time}_{itj} + \beta_{2B} \text{physical punishment}_{itj} \times \text{time}_{itj} +$$
+
+$$\beta_4 \text{group}_{itj} + \beta_5 \text{HDI}_{itj} +$$
+
+$$\beta_{4B} \text{group}_{itj} \times \text{time}_{itj} + \beta_{5B} \text{HDI}_{itj} \times \text{time}_{itj} +$$
+
+$$u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + $$
+
+$$v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}$$
+
+The Stata command that we use to analyze this data is below. Because this ends up being a somewhat longer line of syntax, we use `///` to ensure that Stata continues to the next line:
+
+```{stata, eval = FALSE, echo=TRUE}
+
+mixed outcome c.t##(c.warmth c.physical_punishment i.group c.HDI) || ///
+country: warmth || id: t
+
+```
+
+In Stata, when estimating interactions, it is especially important to denote which variables are *continuous*, and which variables are *categorical*. We do this by prefixing variable names with `c.` and `i.` respectively.
+
+```{r, child=c('./simulate-and-analyze-multilevel-data/table2B.md')}
+```
+
+Examining the regression results, the results of the model again suggest that child outcomes improve over time. Better child outcomes are again associated with parental `warmth`, and parental use of `physical_punishment` is associated with reduced child outcomes. `HDI` is again not associated with outcomes.
+
+Examining the interaction terms, we find that none of these variables modify the time trajectory of the outcome. 
 
 ## Autocorrelation
 
