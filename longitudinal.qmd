@@ -24,7 +24,7 @@ library(pander) # nice tables
 
 ```
 
-Counter-intuitively, and surprisingly, the mathematics of estimating models with cross-sectional clustered data easily generalizes to longitudinal data. In cross sectional clustered data, we imagine *individuals or families clustered in neighborhoods, schools, or countries*.
+Counter-intuitively, and surprisingly, the mathematics of estimating models with cross-sectional clustered data easily generalizes to longitudinal data. In cross sectional clustered data, we imagine *individuals or families clustered in neighborhoods, schools, or countries*. \index{longitudinal models}
 
 | Level | Example(s)               |
 |-------|--------------------------|
@@ -142,7 +142,7 @@ As before, the random slope for parental warmth, $u_{1j} \times \text{parental w
 
 ## Growth Trajectories {#sec-growthtrajectories}
 
-In longitudinal multilevel models, the variable for *time* assumes a special role as we are often visualizing a *growth trajectory* over the course of time.
+In longitudinal multilevel models, the variable for *time* assumes a special role as we are often visualizing a *growth trajectory* over the course of time. \index{growth trajectories}
 
 Imagine a model as follows where *group* is a (1/0) variable for membership in one of two groups:
 
@@ -273,7 +273,7 @@ Most software programs for multilevel modeling allow one to incorporate measures
 
 ### The Importance of Causal Reasoning
 
-Causal reasoning is sometimes considered to be a statistical--or even overly technical--concern. Arguably, however, whenever one is using research to make recommendations about *interventions*, or *treatments*, or *policies*, one is engaging in some form of causal reasoning [@Duncan2006]. 
+Causal reasoning is sometimes considered to be a statistical--or even overly technical--concern. Arguably, however, whenever one is using research to make recommendations about *interventions*, or *treatments*, or *policies*, one is engaging in some form of causal reasoning [@Duncan2006]. \index{causality}
 
 > If one is saying that implementing *x* would result in beneficial changes in *y*, one is arguing--at least implicitly--that *x* is one of the causes of *y*. 
 
@@ -287,13 +287,13 @@ In a statement salient for social research, @Duncan2006 point out the logical in
 
 ### Randomized Controlled Trials
 
-Randomized studies provide the best evidence about *internal validity* and causal relationships. However, randomized studies have certain important limitations [@Diener2022]. First of all--especially in a study with a smaller sample--randomization may not always be perfect, and the control and treatment groups may not be statistically equivalent. Secondly, because randomized studies are costly to conduct, they may have small samples and may be statistically underpowered. Smaller samples and underpowered studies are more likely to generate false positive results than larger samples [@Button2013] [^Thinking-Through-Bayes]. Further, and importantly, because of ethical concerns some studies can not be conducted with randomization [@Diener2022]. For example, in the study of parenting and child development, children cannot ethically be assigned to parents with different styles of parenting and followed over the long term [@Heilmann2021]. Finally, and crucially, because of their often small samples, and their often rigorous exclusion criteria, randomized studies may have high internal validity, but much lower external validity, or generalization to larger populations [@Diener2022]. This issue of generalizability becomes increasingly salient, when we are reminded of the fact that so little social and psychological research has been conducted outside of North American contexts [@Henrich2010; @Draper2022]. Thus, methods that provide rigorous causal estimation with observational methods are necessary [@Diener2022]. 
+Randomized studies provide the best evidence about *internal validity* and causal relationships. However, randomized studies have certain important limitations [@Diener2022]. First of all--especially in a study with a smaller sample--randomization may not always be perfect, and the control and treatment groups may not be statistically equivalent. Secondly, because randomized studies are costly to conduct, they may have small samples and may be statistically underpowered. Smaller samples and underpowered studies are more likely to generate false positive results than larger samples [@Button2013] [^Thinking-Through-Bayes]. Further, and importantly, because of ethical concerns some studies can not be conducted with randomization [@Diener2022]. For example, in the study of parenting and child development, children cannot ethically be assigned to parents with different styles of parenting and followed over the long term [@Heilmann2021]. Finally, and crucially, because of their often small samples, and their often rigorous exclusion criteria, randomized studies may have high internal validity, but much lower external validity, or generalization to larger populations [@Diener2022]. This issue of generalizability becomes increasingly salient, when we are reminded of the fact that so little social and psychological research has been conducted outside of North American contexts [@Henrich2010; @Draper2022]. Thus, methods that provide rigorous causal estimation with observational methods are necessary [@Diener2022]. \index{randomized controlled trials}
 
 [^Thinking-Through-Bayes]: See [https://agrogan.shinyapps.io/Thinking-Through-Bayes/](https://agrogan.shinyapps.io/Thinking-Through-Bayes/) for a demonstration of this idea from a Bayesian perspective.
 
 ### Observational Studies and Causality
 
-Because of the assumed superiority of studies that employ randomization, it is sometimes maintained that *correlation is not causation* and that studies that do not make use of randomization are *only observational* and *correlational*, and that results from observational studies cannot be used to support causal conclusions. However, in an important review [@Waddington2022] suggested that studies using appropriately quantitative methods can provide causally robust conclusions. @Heilmann2021 make a similar assertion with specific regard to studies of physical punishment and child outcomes, arguing that observational studies that make use of appropriately advanced quantitative methods can make causally robust conclusions about the effects of physical discipline.
+Because of the assumed superiority of studies that employ randomization, it is sometimes maintained that *correlation is not causation* and that studies that do not make use of randomization are *only observational* and *correlational*, and that results from observational studies cannot be used to support causal conclusions. However, in an important review [@Waddington2022] suggested that studies using appropriately quantitative methods can provide causally robust conclusions. @Heilmann2021 make a similar assertion with specific regard to studies of physical punishment and child outcomes, arguing that observational studies that make use of appropriately advanced quantitative methods can make causally robust conclusions about the effects of physical discipline. \index{observational studies and causality}
 
 It is necessary to make use of broadly representative observational data sets, and appropriately sophisticated quantitative methods, to make causally robust conclusions from observational data that are applicable across diverse populations.
 
@@ -435,7 +435,7 @@ $$\beta_4 \text{group}_{it} + \beta_5 \text{HDI}_{it} \ +$$
 
 $$v_{0i} + e_{it}$$
 
-However, in @eq-FE, I now consider the $v_{0i}$ to be *estimable* for each individual $i$ in the data. In effect, the $v_{0i}$ become a unique indicator variable for each individual in the data set. This is known as a *fixed effects regression model*.
+However, in @eq-FE, I now consider the $v_{0i}$ to be *estimable* for each individual $i$ in the data. In effect, the $v_{0i}$ become a unique indicator variable for each individual in the data set. This is known as a *fixed effects regression model*. \index{fixed effects regression}
 
 Recall the discussion in @sec-withinbetween. In essence, in the fixed effects regression model, I am only making use of the variation within individuals, and not making use of the variation between individuals.
 
@@ -463,7 +463,7 @@ Second, estimates for any quantities that do not vary over time, in this case, `
 
 ### The Correlated Random Effects Model
 
-The *correlated random effects* model is based upon ideas first developed by @Mundlak1978 and later explicated in @Wooldridge2010. @Antonakis2019 and @Schunck2013 provide very intuitive explanations of this model. 
+The *correlated random effects* model is based upon ideas first developed by @Mundlak1978 and later explicated in @Wooldridge2010. @Antonakis2019 and @Schunck2013 provide very intuitive explanations of this model. \index{correlated random effects model}
 
 The central idea is that one can obtain estimates of both the time invariant variables, and estimates for time varying variables. The key idea is that for time varying variables, I include the *individual* level mean for that variable in the model. Thus, in the example below, I include $\beta_{1a}\overline{\text{parental warmth}}_{i}$ and $\beta_{2a}\overline{\text{physical punishment}}_{i}$. [^CREcrosssectional] This is similar in approach to what is described in @sec-withinbetween, however, here I am simply adding the group level mean to the equation instead of decomposing independent variables into within and between components.
 

@@ -242,7 +242,7 @@
 \subtitle{Discovering Diversity, Universals, and Particulars in
 Cross-Cultural Research}
 \author{Andrew Grogan-Kaylor}
-\date{2024-02-29}
+\date{2024-03-15}
 
 \begin{document}
 \maketitle
@@ -894,7 +894,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, colback=white, coltitle=black, left=2mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data in Stata Format}, arc=.35mm, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, bottomtitle=1mm, opacityback=0, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, rightrule=.15mm, toptitle=1mm]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data in Stata Format}, coltitle=black, opacitybacktitle=0.6, opacityback=0, bottomrule=.15mm, colback=white, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, titlerule=0mm, rightrule=.15mm, breakable, arc=.35mm, leftrule=.75mm, left=2mm]
 
 \begin{itemize}
 \tightlist
@@ -2511,9 +2511,9 @@ to estimate.
 
 \[u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + \]
 
-\[v_{0i} + v_{1i} \times t_{itj} + e_{itj}\] Here I include a random
-slope (\(u_{1j}\)) at the country level for parental warmth, as well as
-a random slope (\(v_{1i}\)) at the family level for time.
+\[v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}\] Here I include a
+random slope (\(u_{1j}\)) at the country level for parental warmth, as
+well as a random slope (\(v_{1i}\)) at the family level for time.
 
 As before, the random slope for parental warmth,
 \(u_{1j} \times \text{parental warmth}_{ij}\) suggests allows us to
@@ -2522,7 +2522,7 @@ outcome varies across countries. The random slope for time,
 \(v_{1i} \times t\), allows us to estimate whether time trajectories
 (the slope for time) vary across families.
 
-\section{Growth Trajectories}\label{growth-trajectories}
+\section{Growth Trajectories}\label{sec-growthtrajectories}
 
 In longitudinal multilevel models, the variable for \emph{time} assumes
 a special role as we are often visualizing a \emph{growth trajectory}
@@ -2535,9 +2535,9 @@ membership in one of two groups:
 Then, each group has it's own intercept and time trajectory:
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1400}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5600}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1045}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4776}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4179}}@{}}
 \caption{Slope and Intercept for Each
 Group}\label{tbl-trajectory}\tabularnewline
 \toprule\noalign{}
@@ -2588,6 +2588,8 @@ time}, modify the \emph{slope} of the time trajectory.
 \section{Regression With Simulated Multi-Country Longitudinal
 Data}\label{sec-regressionlongitudinal}
 
+\subsection{Main Effects Only}\label{main-effects-only}
+
 The Stata command that we use to analyze this data is:
 
 \begin{Shaded}
@@ -2625,6 +2627,83 @@ child outcomes improve over time. Better child outcomes are again
 associated with parental \texttt{warmth}, and parental use of
 \texttt{physical\_punishment} is associated with reduced child outcomes.
 \texttt{HDI} is again not associated with outcomes.
+
+\subsection{Interactions With Time}\label{interactions-with-time}
+
+As discussed in Section~\ref{sec-growthtrajectories}, we will likely
+wish to model not only associations of other independent variables with
+the intercept of the time trajectory, but also associations of other
+independent variables with the slope of the time trajectory.
+Accordingly, we modify Equation~\ref{eq-MLM-longitudinal} so that it
+includes these interactions. Below, I add the letter \(B\) to some
+\(\beta\) coefficients to denote that they are a second coefficient
+estimating the \emph{interaction} of that variable with time.
+
+\begin{equation}\phantomsection\label{eq-MLM-longitudinal}{\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + }\end{equation}
+
+\[\beta_{1B} \text{parental warmth}_{itj} \times \text{time}_{itj} + \beta_{2B} \text{physical punishment}_{itj} \times \text{time}_{itj} +\]
+
+\[\beta_4 \text{group}_{itj} + \beta_5 \text{HDI}_{itj} +\]
+
+\[\beta_{4B} \text{group}_{itj} \times \text{time}_{itj} + \beta_{5B} \text{HDI}_{itj} \times \text{time}_{itj} +\]
+
+\[u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + \]
+
+\[v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}\]
+
+The Stata command that we use to analyze this data is below. Because
+this ends up being a somewhat longer line of syntax, we use \texttt{///}
+to ensure that Stata continues to the next line:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{mixed outcome c.t\#\#(c.warmth c.physical\_punishment i.}\FunctionTok{group}\NormalTok{ c.HDI) || }\CommentTok{///}
+\NormalTok{country: warmth || id: t}
+\end{Highlighting}
+\end{Shaded}
+
+In Stata, when estimating interactions, it is especially important to
+denote which variables are \emph{continuous}, and which variables are
+\emph{categorical}. We do this by prefixing variable names with
+\texttt{c.} and \texttt{i.} respectively.
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+& longitudinalB & \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+t & 1.017 & ** \\
+warmth & 0.866 & ** \\
+physical\_punishment & -0.908 & ** \\
+group & & \\
+2 & 0.967 & ** \\
+HDI & 0.012 & \\
+t \# warmth & 0.040 & \\
+t \# physical\_punishment & -0.009 & \\
+group \# t & & \\
+2 & 0.009 & \\
+t \# HDI & -0.002 & \\
+\_cons & 50.420 & ** \\
+var(warmth) & 0.000 & \\
+var(\_cons) & 3.652 & \\
+var(\_cons) & 8.861 & \\
+var(t) & 0.000 & \\
+var(e) & 25.990 & \\
+\end{longtable}
+
+** p\textless.01, * p\textless.05
+
+Examining the regression results, the results of the model again suggest
+that child outcomes improve over time. Better child outcomes are again
+associated with parental \texttt{warmth}, and parental use of
+\texttt{physical\_punishment} is associated with reduced child outcomes.
+\texttt{HDI} is again not associated with outcomes.
+
+Examining the interaction terms, we find that none of these variables
+modify the time trajectory of the outcome.
 
 \section{Autocorrelation}\label{autocorrelation}
 

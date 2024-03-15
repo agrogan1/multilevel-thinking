@@ -25,7 +25,7 @@ library(DiagrammeR) # diagrams
 
 ## Units of Analysis and Processes at Multiple Levels
 
-When confronted with multilevel data, one has a number of choices about the units of analysis: one could consider individuals to be the units of analysis; or, one could consider the larger social units to be the units of analyses. With multilevel analytic methods, one is able to avoid this false dichotomy, and to conceptualize the data from a multilevel perspective, wherein both individuals and social units are different levels of the same analysis. I discuss some of the statistical implications of different ideas about the units of analysis in @sec-wrongapproaches.
+When confronted with multilevel data, one has a number of choices about the units of analysis: one could consider individuals to be the units of analysis; or, one could consider the larger social units to be the units of analyses. With multilevel analytic methods, one is able to avoid this false dichotomy, and to conceptualize the data from a multilevel perspective, wherein both individuals and social units are different levels of the same analysis. I discuss some of the statistical implications of different ideas about the units of analysis in @sec-wrongapproaches. \index{units of analysis}
 
 Further, with multilevel models, we are not only able to consider the idea of units of analysis at multiple levels of the data, but to consider how variables at both Level 2 and Level 1 may affect an individual level (Level 1) outcome.
 
@@ -65,7 +65,7 @@ knitr::include_graphics("fig-conceptual.png")
 
 ## Variables at Multiple Levels {#sec-levels}
 
-In this document, I distinguish between *conceptual* and *statistical* levels of variables. 
+In this document, I distinguish between *conceptual* and *statistical* levels of variables. \index{variables at multiple levels}
 
 By *conceptual* level, I refer to whether a variable is *conceptualized* to be measure of an *individual* level characteristic, such as parenting or mental health, or a *community* level construct, such as community collective efficacy, or community safety.
 
@@ -119,7 +119,7 @@ Some variables only exist at Level 2, and their Level 1 counterparts are undefin
 
 ## Multilevel Models As The Study Of Variation and Diversity {#sec-studyvariation}
 
-Multilevel models are sometimes seen as an analytic technique that *controls for* the clustering or nesting of individuals inside larger social units such as schools, neighborhoods, or countries. I will describe below how this ability to *control for* clustering is indeed an important and crucial aspect of multilevel models.
+Multilevel models are sometimes seen as an analytic technique that *controls for* the clustering or nesting of individuals inside larger social units such as schools, neighborhoods, or countries. I will describe below how this ability to *control for* clustering is indeed an important and crucial aspect of multilevel models. \index{variation and diversity}
 
 However, my argument here is that multilevel models are better seen as a method to *explore* the variation and diversity inherent within nested or clustered data. Again, while these issues are well understood within the statistical literature [@Raudenbush2002; @Singer2003; @RabeHesketh2012; @Luke2004; @Kreft1998], they are less often noted in applied research.
 
@@ -226,7 +226,7 @@ Lastly, in Panel C, we note an overall association of the intervention with psyc
 
 ### Exploring Variation
 
-Thus, I emphasize an approach to multilevel modeling that sees multilevel modeling as the *study of variation*, not simply *accounting for variation*, or *controlling for variation*. 
+Thus, I emphasize an approach to multilevel modeling that sees multilevel modeling as the *study of variation*, not simply *accounting for variation*, or *controlling for variation*. \index{variation and diversity} \index{universalism}
 
 >  "... universal theorizing requires adequately sampled (i.e., diverse) data and better appreciation of issues of comparability and the most powerful theories ought to predict and explain variation, not sweep variation under the rug." [@Blasi2022]
 
