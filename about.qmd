@@ -1,6 +1,4 @@
----
-title: "About the Author"
----
+# About the Author
 
 I am the Sandra K. Danziger Collegiate Professor of Social Work at the University of Michigan School of Social Work.
 
