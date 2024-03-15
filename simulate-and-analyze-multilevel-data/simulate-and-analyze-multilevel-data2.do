@@ -231,6 +231,24 @@ export("table2.md", as(markdown) replace)
 
 estimates drop longitudinal
 
+* model w covariates and interactions
+
+mixed outcome c.t##(c.warmth c.physical_punishment i.group c.HDI) || country: warmth || id: t // multilevel model
+
+estat sd, variance post // post results as variance scale rather than log scale
+
+est store longitudinalB // store estimates
+
+etable, estimates(longitudinalB) ///
+novarlabel /// variable names only
+cstat(_r_b) /// beta's only
+showstars showstarsnote ///
+column(estimates) ///
+export("table2B.md", as(markdown) replace)
+
+estimates drop longitudinalB
+
+
 * MLM, FE and CRE
 
 mixed outcome t warmth physical_punishment i.group HDI || id: // multilevel model
