@@ -75,7 +75,10 @@ By *statistical* level, I refer to whether a variable measures an *individual* r
 #| label: tbl-variablelevel
 #| tbl-cap: "Multiple Levels of Variables"
 
-conceptuallevel <- c(1,2,2)
+conceptuallevel <- c("conceptual level 1", 
+                     "conceptual level 2", 
+                     "conceptual level 2")
+
 statisticallevel1 <- c("Individual response about parenting or mental health",
                        "Individual response about community",
                        "N/A")
