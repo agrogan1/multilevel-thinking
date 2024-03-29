@@ -91,11 +91,13 @@ conceptualframework <- data.frame(conceptuallevel,
                                   statisticallevel1,
                                   statisticallevel2)
 
-names(conceptualframework)[1] <- "conceptual level"
+names(conceptualframework)[1] <- " "
 
 names(conceptualframework)[2] <- "statistical level 1"
 
 names(conceptualframework)[3] <- "statistical level 2"
+
+# pander::emphasize.strong.cols(1)
 
 pander::pander(conceptualframework)
 
