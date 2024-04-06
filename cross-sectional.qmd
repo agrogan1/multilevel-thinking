@@ -290,6 +290,7 @@ Put another way, in a two level model, the ICC provides a quantitative measure o
 
 $$\text{Level 1 varation} = \text{total variation} - \text{Level 2 variation} =$$
 $$= \text{100%} - (\text{100%} \times \text{ICC})$$
+
 Thus, in some broader sense, the ICC might be thought of as a measure of diversity: the higher the ICC, the higher the clustering of the data in groups, and the lower the diversity within the groups; the lower the ICC, the lower the clustering of the data in groups, and the higher the diversity within groups between individuals.
 
 The Stata syntax that we use is:
