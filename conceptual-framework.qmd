@@ -237,5 +237,5 @@ Thus, I emphasize an approach to multilevel modeling that sees multilevel modeli
 
 As I discuss these ideas in more statistical depth, later in the book, I develop more statistically based ideas about the study of diversity and variation in @sec-ICC, @sec-withinbetween, and @sec-studyvariation2.
 
-Again, sophisticated treatments of all of the ideas are available in one form or another across the excellent textbooks on multilevel modeling [@Raudenbush2002; @Singer2003; @RabeHesketh2012; @Luke2004; @Kreft1998]. However, some of these ideas appear less often in applied research, and my intention here is to make the application of these ideas to applied research more clear. 
+Again, statistically sophisticated treatments of all of the ideas are available in one form or another across the excellent textbooks on multilevel modeling [@Raudenbush2002; @Singer2003; @RabeHesketh2012; @Luke2004; @Kreft1998]. However, some of these ideas appear less often in applied research, and my intention here is to make the application of these ideas to applied research, and to concerns of variation and diversity, more clear. 
 
