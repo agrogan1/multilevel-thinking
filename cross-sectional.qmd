@@ -274,15 +274,22 @@ Thus, all of the variation in $\text{outcome}_{ij}$ is--given the *unconditional
 
 ### Intra-Class Correlation Coefficient {#sec-ICC}
 
-I now introduce a measure known as the Intra-Class Correlation Coefficient, (ICC) that can be computed from this unconditional model [@Raudenbush2002].
+I now introduce a measure known as the Intra-Class Correlation Coefficient, (ICC) that can be computed from this unconditional model [@Raudenbush2002]. \index{variation and diversity}
 
 $$\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}$$ {#eq-ICC}
 
 Heuristically:
 
-$$\text{ICC} = \frac{\text{group level variation}}{\text{group level variation} + \text{individual level variation}}$$ {#eq-ICCheuristic}
+$$\text{ICC} = \frac{\text{group level variation}}{\text{group level variation} + \text{individual level variation}} = $$ {#eq-ICCheuristic}
+
+$$\frac{\text{group level variation}}{\text{total variation}}$$
 
 The ICC from the *unconditional* model (@eq-unconditional) is the most informative ICC as it represents the amount of variation in the dependent variable that could *potentially* be explained by the grouping variable.
+
+Put another way, in a two level model, the ICC provides a quantitative measure of the amount of variation in a measure that is present at Level 2. Knowing the ICC, we can then easily calculate the percentage of variation at Level 1: 
+
+$$\text{Level 1 varation} = \text{total variation} - \text{Level 2 variation} =$$
+$$= \text{100%} - (\text{100%} \times \text{ICC})$$
 
 The Stata syntax that we use is:
 
@@ -531,9 +538,9 @@ When data are clustered--e.g. residents in neighborhoods, children in schools, f
 2. A second approach would be to *aggregate* the data to the level of the higher social unit, e.g. aggregating the data at the level of the neighborhood. Here we run into an idea similar to that discussed in @sec-multilevelstructure, the "ecological fallacy": the idea that group level and individual level relationships are necessarily the same [@FIREBAUGH20014023].
 3. Lastly, we could adopt a statistical strategy of *clustering* the standard errors. Clustering the standard errors means that standard errors are corrected for the non-independence of the $e_i$ within clusters. Thus, *p* values are estimated correctly. However, clustering still does not account for the multilevel structure of the data (@sec-multilevelstructure), and thus when relationships between *x*'s and *y* at different levels of the data are very different, simply clustering the standard errors may not give correct estimates of the $\beta$'s.
 
-## Variation
+## Variation {#sec-studyvariation2}
 
-Above, in @sec-studyvariation, I have referred to multilevel models as the study of variation. Now that I have provided some discussion of the multilevel model, more statistical "unpacking" of ideas about variation is warranted. \index{variation and diversity}
+Above, in @sec-studyvariation, I have referred to multilevel models as the study and exploration of variation. Now that I have provided some discussion of the multilevel model, more statistical "unpacking" of ideas about variation is warranted. \index{variation and diversity}
 
 I provide again, for pedagogical purposes, the example substantive equation that I have been using in this book.
 
