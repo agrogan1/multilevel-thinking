@@ -2,7 +2,7 @@
 
 > "– And so, why can’t my numbers be beautiful to me? Why the scorn, the doubt in your face? Do you think I am brittle and dusty as old paper? Look again. See the numbers shine in my eyes." [@Pye2011]
 
-In this document, I use Stata [@StataCorp2021] to analyze data. Stata is my software of choice in this document because of Stata's overall ease of use and intuitiveness. The creators of Stata have created a powerful program that is extremely simple to use, but with a wide range of both basic and advanced statistical capabilities. 
+In this book, I use Stata [@StataCorp2021] to analyze data. Stata is my software of choice in this book because of Stata's overall ease of use and intuitiveness. The creators of Stata have created a powerful program that is extremely simple to use, but with a wide range of both basic and advanced statistical capabilities. 
 
 The general idea of most Stata commands is:
 
@@ -24,6 +24,6 @@ For the sake of illustration, a few Stata commands are listed below.
 
 : Example Stata Commands {#tbl-Statacommands}
 
-It is this multilevel syntax, `mixed y x || group: x` that we will be using throughout this document.
+It is this multilevel syntax, `mixed y x || group: x` that we will be using throughout this book.
 
 [^logit]: Here we use the `,or` option to ask for *odds ratios* instead of *logit coefficients*.
