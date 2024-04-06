@@ -4,7 +4,7 @@
 
 Data can be reshaped from *wide* format to *long* format, and back again. Almost any software that is capable of estimating multilevel models is capable of reshaping data. The Stata command for reshaping data is `reshape`.
 
-Below, I detail the procedure for reshaping data in Stata. Here is a sample of the longitudinal data set used in this document.
+Below, I detail the procedure for reshaping data in Stata. Here is a sample of the longitudinal data set used in this book.
 
 These data are in *long* format (see @tbl-datalong).
 

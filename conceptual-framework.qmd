@@ -65,7 +65,7 @@ knitr::include_graphics("fig-conceptual.png")
 
 ## Variables at Multiple Levels {#sec-levels}
 
-In this document, I distinguish between *conceptual* and *statistical* levels of variables. \index{variables at multiple levels}
+In this book, I distinguish between *conceptual* and *statistical* levels of variables. \index{variables at multiple levels}
 
 By *conceptual* level, I refer to whether a variable is *conceptualized* to be measure of an *individual* level characteristic, such as parenting or mental health, or a *community* level construct, such as community collective efficacy, or community safety.
 

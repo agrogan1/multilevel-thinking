@@ -277,7 +277,7 @@ Causal reasoning is sometimes considered to be a statistical--or even overly tec
 
 > If one is saying that implementing *x* would result in beneficial changes in *y*, one is arguing--at least implicitly--that *x* is one of the causes of *y*. 
 
-It then behooves one to be explicit about this chain of causal reasoning. For example, to continue one of the substantive examples of this document, if one is going to argue for programs, interventions, or treatments that promote *parental warmth*, or that discourage parental use of *physical punishment* with the aim of improving children's *mental health*, one must be at least reasonably sure that *parental warmth* and *physical punishment* are *causes* of children's mental health.
+It then behooves one to be explicit about this chain of causal reasoning. For example, to continue one of the substantive examples of this book, if one is going to argue for programs, interventions, or treatments that promote *parental warmth*, or that discourage parental use of *physical punishment* with the aim of improving children's *mental health*, one must be at least reasonably sure that *parental warmth* and *physical punishment* are *causes* of children's mental health.
 
 In a statement salient for social research, @Duncan2006 point out the logical inconsistency of writing that does not rigorously address causal processes, but then goes on to suggest interventions or treatment or policies:
 
@@ -329,7 +329,7 @@ knitr::include_graphics("fig-causality.png")
 
 > If *z* is omitted from the regression model, then the estimates for $x \rightarrow y$ (i.e. $\beta_{x \rightarrow y}$) will be biased. In a common scenario, $\beta_{x \rightarrow y}$ may be an over-estimate of the effect, and statistical significance of $\beta_{x \rightarrow y}$ may represent a false positive. 
 
-It is likely useful to restate the above abstract statements in terms of the substantive issues that I have been considering so far in this document. 
+It is likely useful to restate the above abstract statements in terms of the substantive issues that I have been considering so far in this book. 
 
 For *parenting* to be a cause of *child outcomes*, one needs the following 3 things to be true [@Holland1986].
 
