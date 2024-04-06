@@ -122,7 +122,7 @@ Some variables only exist at Level 2, and their Level 1 counterparts are undefin
 
 ```
 
-## Multilevel Models As The Study Of Variation and Diversity {#sec-studyvariation}
+## Multilevel Models As The Exploration Of Variation and Diversity {#sec-studyvariation}
 
 Multilevel models are sometimes seen as an analytic technique that *controls for* the clustering or nesting of individuals inside larger social units such as schools, neighborhoods, or countries. I will describe below how this ability to *control for* clustering is indeed an important and crucial aspect of multilevel models. \index{variation and diversity}
 
@@ -234,6 +234,8 @@ Lastly, in Panel C, we note an overall association of the intervention with psyc
 Thus, I emphasize an approach to multilevel modeling that sees multilevel modeling as the *study of variation*, not simply *accounting for variation*, or *controlling for variation*. \index{variation and diversity} \index{universalism}
 
 >  "... universal theorizing requires adequately sampled (i.e., diverse) data and better appreciation of issues of comparability and the most powerful theories ought to predict and explain variation, not sweep variation under the rug." [@Blasi2022]
+
+As I discuss these ideas in more statistical depth, later in the book, I develop more statistically based ideas about the study of diversity and variation in @sec-ICC, @sec-withinbetween, and @sec-studyvariation2.
 
 Again, sophisticated treatments of all of the ideas are available in one form or another across the excellent textbooks on multilevel modeling [@Raudenbush2002; @Singer2003; @RabeHesketh2012; @Luke2004; @Kreft1998]. However, some of these ideas appear less often in applied research, and my intention here is to make the application of these ideas to applied research more clear. 
 
