@@ -77,7 +77,7 @@ In presenting advanced, statistical concepts, one is faced with a quandary. One 
 
 Alternatively, one can present statistical ideas in terms of specific substantive concepts. The risk of making use of a specific substantive concept is that while concrete examples are always helpful, it may be difficult for the reader to generalize from a specific example to their own area of research.
 
-I ground this presentation in research that we have conducted on parenting and child development in international context [@Grogan-Kaylor2021; @WardA; @WardC; @ward_grogan-kaylor_ma_pace_lee_2021; @Pace2019; @Ma2022]. For the presentation in this document, I use simulated data on these issues.
+I ground this presentation in research that we have conducted on parenting and child development in international context [@Grogan-Kaylor2021; @WardA; @WardC; @Ward2023; @Pace2019; @Ma2022]. For the presentation in this document, I use simulated data on these issues.
 
 Using the simulated data, I refer to *predictors* and *outcomes*, and explore the ways that the multilevel model can contribute to understanding how relationships between predictors and outcomes might be similar, or might be different, across *social contexts*. In the examples presented below, I focus on two predictors, parental *warmth*, and parental use of *physical punishment* and focus on the *outcome* of *improved* mental health. I use the social context of different *countries* in our example. 
 
