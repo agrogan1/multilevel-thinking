@@ -242,7 +242,7 @@
 \subtitle{Discovering Diversity, Universals, and Particulars in
 Cross-Cultural Research}
 \author{Andrew Grogan-Kaylor}
-\date{2024-03-25}
+\date{2024-04-06}
 
 \begin{document}
 \maketitle
@@ -269,12 +269,12 @@ For decades now, multilevel models have been an important quantitative
 tool for social research. While multilevel models have become very
 common in social research, there are aspects of these models that are
 explored less frequently in published articles that appear in academic
-journals. This document arises from my experiences of teaching a course
+journals. This book arises from my experiences of teaching a course
 entitled \emph{Multilevel and Longitudinal Modeling} that I have taught
 for over a decade in the \emph{Joint Doctoral Program in Social Work and
 Social Science} at the University of Michigan.
 
-The document started out as a set of notes on \emph{things I only get to
+The book started out as a set of notes on \emph{things I only get to
 discuss during breaks, or after class, or during office hours} in my
 class on \emph{Multilevel and Longitudinal Modeling}, and has grown from
 that set of notes into an introduction to multilevel modeling.
@@ -314,20 +314,20 @@ more rigorously about causality}. I argue that multilevel models provide
 a foundation for engaging with cross-cultural diversity in a
 quantitatively rigorous fashion.
 
-Certainly, none of the statistical ideas contained in this document are
+Certainly, none of the statistical ideas contained in this book are
 unique to me. There are thorough--and often much more mathematically
-rigorous--presentations of many of the ideas contained in this document
-in some of the excellent foundational texts on multilevel modeling such
-as the early book by Raudenbush \& Bryk (2002), the excellent book on
+rigorous--presentations of many of the ideas contained in this book in
+some of the excellent foundational texts on multilevel modeling such as
+the early book by Raudenbush \& Bryk (2002), the excellent book on
 longitudinal models by Singer \& Willett (2003), and Rabe-Hesketh \&
 Skrondal (2022)'s more recent and extremely comprehensive two volume
 text. Luke (2004), and Kreft \& de Leeuw (1998), offer shorter, less
 mathematically rigorous, but still excellent introductions to the topic
 of multilevel modeling. Gelman et al. (2007) introduced me to the ideas
-that in this document I describe as ``multilevel structure'' using an
+that in this book I describe as ``multilevel structure'' using an
 example with voting patterns.
 
-My intent in this document is to offer a kind of accessible tutorial for
+My intent in this book is to offer a kind of accessible tutorial for
 applied researchers, including especially those who see their research
 having some advocacy based component. My approach, while offering up
 some equations, is less mathematically rigorous than some of the above
@@ -353,25 +353,25 @@ understanding of multilevel models. I'm also very grateful to one of my
 mentors, Professor Sandra Danziger, who has taught me so much about the
 \emph{what} and the \emph{why} of mentoring, teaching, and doing
 research. I'd like to thank Ross Grogan-Kaylor for continued interest in
-the progress of this document, and probing thoughtful questions. Shari
+the progress of this book, and probing thoughtful questions. Shari
 Grogan-Kaylor had many important and challenging questions about the
-\emph{what} and the \emph{why} of this document, and most importantly to
-me, \emph{has believed} in it. Don Deutsch showed ongoing interest in
-the development of this document, and has asked some hard questions that
-have improved its logic. Thank you to Professor Jim Allen for our
-discussions about how quantitative methods can better listen to lived
-experience. Importantly, I'd like to express gratitude to the many
-students in my class on \emph{Multilevel and Longitudinal Modeling} who
-over the years have helped me think more deeply about statistical and
-substantive issues, including Dr.~Kaitlin Ward, Professor Garrett Pace,
-Professor Julie Ma, Professor Yoonsun Han, Professor Berenice Castillo,
-Professor Maria Galano, Dr.~Sara Stein, Madhur Singh, and Tong Suo.
-Thank you for the many valuable discussions during class breaks, and
-after class. These discussions have also greatly extended my
-understanding of multilevel models. Lastly, I'd like to thank Marty
-Betts and Greg Knollmeyer for their help and support. While I'm thankful
-for the inspiration and colleagueship provided by others, any remaining
-errors and omissions in this document are of course my responsibility.
+\emph{what} and the \emph{why} of this book, and most importantly to me,
+\emph{has believed} in it. Don Deutsch showed ongoing interest in the
+development of this book, and has asked some hard questions that have
+improved its logic. Thank you to Professor Jim Allen for our discussions
+about how quantitative methods can better listen to lived experience.
+Importantly, I'd like to express gratitude to the many students in my
+class on \emph{Multilevel and Longitudinal Modeling} who over the years
+have helped me think more deeply about statistical and substantive
+issues, including Dr.~Kaitlin Ward, Professor Garrett Pace, Professor
+Julie Ma, Professor Yoonsun Han, Professor Berenice Castillo, Professor
+Maria Galano, Dr.~Sara Stein, Madhur Singh, and Tong Suo. Thank you for
+the many valuable discussions during class breaks, and after class.
+These discussions have also greatly extended my understanding of
+multilevel models. Lastly, I'd like to thank Marty Betts and Greg
+Knollmeyer for their help and support. While I'm thankful for the
+inspiration and colleagueship provided by others, any remaining errors
+and omissions in this book are of course my responsibility.
 
 \bookmarksetup{startatroot}
 
@@ -500,19 +500,20 @@ do it.'' (Oliver \& Tippett, 2015)
 Justice}\label{quantitative-methods-and-social-justice}
 
 There is clearly need for both qualitative and quantitative methods.
-Central to the argument of this document is the idea that advanced
-quantitative methods can be core contributors to the agenda of
-understanding issues of diversity and social justice more fully and
-thoroughly (Cokley \& Awad, 2013; Grogan-Kaylor et al., 2018).
-Quantitative methods, particularly in discussions comparing qualitative
-and quantitative methodologies, are sometimes labelled as inherently
-\emph{positivist} methods. My argument regarding this point is twofold.
-First, there is nothing within the mathematics of quantitative methods
-that requires a positivist epistemology. Quantitative methodologies
-could as easily be conducted using a critical epistemology--that is
-aware of dynamics of power and privilege--as any other methodology
-(Stage \& Wells, 2014). I note that one of the pioneers of liberation
-psychology, Martin-Baró (Aron \& Corne, 1994), used both qualitative and
+\index{quantitative and qualitative methods} Central to the argument of
+this book is the idea that advanced quantitative methods can be core
+contributors to the agenda of understanding issues of diversity and
+social justice more fully and thoroughly (Cokley \& Awad, 2013;
+Grogan-Kaylor et al., 2018). Quantitative methods, particularly in
+discussions comparing qualitative and quantitative methodologies, are
+sometimes labelled as inherently \emph{positivist} methods.
+\index{positivist} My argument regarding this point is twofold. First,
+there is nothing within the mathematics of quantitative methods that
+requires a positivist epistemology. Quantitative methodologies could as
+easily be conducted using a critical epistemology--that is aware of
+dynamics of power and privilege--as any other methodology (Stage \&
+Wells, 2014). I note that one of the pioneers of liberation psychology,
+Martin-Baró (Aron \& Corne, 1994), used both qualitative and
 quantitative methods (Martin-Baro, 1994a), including in the latter case,
 relatively sophisticated arguments about patterns of missing data across
 a survey data set (Aron \& Corne, 1994). \index{liberation psychology}
@@ -552,15 +553,15 @@ I thus argue that advanced quantitative methods, like multilevel
 modeling, can play an important role in contributing to liberatory
 ideas.
 
-There is thus an ethical argument that is embedded in this document.
-Many of us do research with the hope of better understanding the
-relationship of risk and protective factors with outcomes in diverse,
-and often disadvantaged or marginalized, populations. Many of us further
-hope that our work might be part of conversations about appropriate
-polices, programs, treatments or interventions. Given the frequent
-vulnerability and marginalization of the people with whom we work, when
-using quantitative methods, it is incumbent upon us to employ methods
-that adequately address the complexities of the data, that offer an
+There is thus an ethical argument that is embedded in this book. Many of
+us do research with the hope of better understanding the relationship of
+risk and protective factors with outcomes in diverse, and often
+disadvantaged or marginalized, populations. Many of us further hope that
+our work might be part of conversations about appropriate polices,
+programs, treatments or interventions. Given the frequent vulnerability
+and marginalization of the people with whom we work, when using
+quantitative methods, it is incumbent upon us to employ methods that
+adequately address the complexities of the data, that offer an
 appreciation of the variability and diversity within the data, that
 provide the most accurate estimates possible, and that increase the
 probability of obtaining correct answers to important substantive
@@ -576,11 +577,12 @@ quantitative understanding and reasoning, as well as accompanying
 action-oriented dispositions.'' (Wiest et al., 2007)
 \end{quote}
 
-The idea of this document is that a deeper study of multilevel modeling
-can result in an advanced ``quantitative literacy'' (Wiest et al.,
-2007), ``quantitative criticalism'' (Scharrer \& Ramasubramanian, 2021),
-or ``principled argument'' (Abelson, 1995), that is appropriate for
-drawing accurate conclusions from multilevel data.
+The idea of this book is that a deeper study of multilevel modeling can
+result in an advanced ``quantitative literacy'' (Wiest et al., 2007),
+\index{quantitative literacy} ``quantitative criticalism'' (Scharrer \&
+Ramasubramanian, 2021), \index{quantitative criticalism} or ``principled
+argument'' (Abelson, 1995), that is appropriate for drawing accurate
+conclusions from multilevel data.
 
 \section{Some Philosophy of Science}\label{some-philosophy-of-science}
 
@@ -608,12 +610,12 @@ power'' and to ``seeking justice''.
 
 \section{A Pragmatic Approach}\label{a-pragmatic-approach}
 
-This document will discuss the ways in which a multilevel statistical
+This book will discuss the ways in which a multilevel statistical
 perspective not only allows one to appropriately analyze cross cultural
 or international data, but also the ways in which a multilevel
 perspective affords the opportunity for more precise quantitative
-thinking about cross cultural phenomena. The document takes a very
-pragmatic and very advocacy oriented approach to improving research.
+thinking about cross cultural phenomena. The book takes a very pragmatic
+and very advocacy oriented approach to improving research.
 \index{pragmatic approach} \index{theory}
 
 \begin{quote}
@@ -628,15 +630,15 @@ by the place from which we begin our examination of history; but it is
 determined also by reality itself.'' (Martin-Baro, 1994b)
 \end{quote}
 
-Following from this pragmatic and advocacy oriented emphasis, the
-document is largely oriented to the \emph{doing} of quantitative social
-research with multilevel (or multi-country) data, and is therefore
-mostly statistical in nature.
+Following from this pragmatic and advocacy oriented emphasis, the book
+is largely oriented to the \emph{doing} of quantitative social research
+with multilevel (or multi-country) data, and is therefore mostly
+statistical in nature.
 
-The document moves quickly into detailed statistical arguments. Some of
+The book moves quickly into detailed statistical arguments. Some of
 these statistical discussions may seem very technical, or even overly
-technical. However, an overarching theme of the document is that
-multilevel data contains hidden complexities. A lack of awareness of the
+technical. However, an overarching theme of the book is that multilevel
+data contains hidden complexities. A lack of awareness of the
 complexities of multilevel data---e.g.~complexities of multi-country
 data---might lead to statistical analyses that point in the wrong
 direction: yielding false positives; false negatives; or substantively
@@ -746,9 +748,8 @@ own area of research.
 I ground this presentation in research that we have conducted on
 parenting and child development in international context (Grogan-Kaylor
 et al., 2021; Ma et al., 2022; Pace et al., 2019; Ward, Grogan-Kaylor,
-Pace, et al., 2021; Ward, Grogan-Kaylor, Ma, et al., 2021; Ward et al.,
-2022). For the presentation in this document, I use simulated data on
-these issues.
+Pace, et al., 2021; Ward et al., 2022; Ward et al., 2023). For the
+presentation in this book, I use simulated data on these issues.
 
 Using the simulated data, I refer to \emph{predictors} and
 \emph{outcomes}, and explore the ways that the multilevel model can
@@ -877,9 +878,9 @@ UNESCO (1997))
 
 I use simulated data in this example. Data come from 30 hypothetical
 countries. Data contain measures of a few key aspects of
-parenting\footnote{I use the term parenting throughout this document,
-  but am aware that such parenting may come from biological parents, or
-  from other caregivers.} or caregiving that have proven salient in the
+parenting\footnote{I use the term parenting throughout this book, but am
+  aware that such parenting may come from biological parents, or from
+  other caregivers.} or caregiving that have proven salient in the
 empirical literature on parenting to date: parental \texttt{warmth}, and
 \texttt{physical\ punishment}. Both parenting measures are normally
 distributed variables, and are considered to be \emph{Level 1}, or
@@ -898,7 +899,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data in Stata Format}, titlerule=0mm, colback=white, left=2mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, toprule=.15mm, rightrule=.15mm, opacityback=0, toptitle=1mm, arc=.35mm, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, opacitybacktitle=0.6, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, rightrule=.15mm, leftrule=.75mm, coltitle=black, colframe=quarto-callout-note-color-frame, titlerule=0mm, toprule=.15mm, opacitybacktitle=0.6, arc=.35mm, bottomrule=.15mm, left=2mm, breakable, opacityback=0, colback=white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data in Stata Format}]
 
 \begin{itemize}
 \tightlist
@@ -981,11 +982,11 @@ doubt in your face? Do you think I am brittle and dusty as old paper?
 Look again. See the numbers shine in my eyes.'' (Pye, 2011)
 \end{quote}
 
-In this document, I use Stata (StataCorp, 2021c) to analyze data. Stata
-is my software of choice in this document because of Stata's overall
-ease of use and intuitiveness. The creators of Stata have created a
-powerful program that is extremely simple to use, but with a wide range
-of both basic and advanced statistical capabilities.
+In this book, I use Stata (StataCorp, 2021c) to analyze data. Stata is
+my software of choice in this book because of Stata's overall ease of
+use and intuitiveness. The creators of Stata have created a powerful
+program that is extremely simple to use, but with a wide range of both
+basic and advanced statistical capabilities.
 
 The general idea of most Stata commands is:
 
@@ -1022,7 +1023,7 @@ Multilevel Model &
 
 It is this multilevel syntax,
 \texttt{mixed\ y\ x\ \textbar{}\textbar{}\ group:\ x} that we will be
-using throughout this document.
+using throughout this book.
 
 \bookmarksetup{startatroot}
 
@@ -1070,7 +1071,7 @@ individual level (Level 1) outcome.
 
 \section{Variables at Multiple Levels}\label{sec-levels}
 
-In this document, I distinguish between \emph{conceptual} and
+In this book, I distinguish between \emph{conceptual} and
 \emph{statistical} levels of variables.
 \index{variables at multiple levels}
 
@@ -1084,17 +1085,16 @@ By \emph{statistical} level, I refer to whether a variable measures an
 \emph{individual} response, or an \emph{aggregated} response.
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2436}}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3718}}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3846}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2625}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3625}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3750}}@{}}
 
 \caption{\label{tbl-variablelevel}Multiple Levels of Variables}
 
 \tabularnewline
 
 \toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\centering
-conceptual level
+\begin{minipage}[b]{\linewidth}\raggedright
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 statistical level 1
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -1104,11 +1104,11 @@ statistical level 2
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-1 & Individual response about parenting or mental health & Aggregated
-responses about parenting or mental health \\
-2 & Individual response about community & Aggregated response about
-community \\
-2 & N/A & Administrative indicator of social unit \\
+conceptual level 1 & Individual response about parenting or mental
+health & Aggregated responses about parenting or mental health \\
+conceptual level 2 & Individual response about community & Aggregated
+response about community \\
+conceptual level 2 & N/A & Administrative indicator of social unit \\
 
 \end{longtable}
 
@@ -1621,7 +1621,7 @@ slope of parental warmth, as is possibly suggested in
 Figure~\ref{fig-data}.
 
 To make these ideas more concrete, I rewrite this equation in terms of
-the main substantive ideas of this document:
+the main substantive ideas of this book:
 
 \[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} +\]
 \[\beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{j} + \]
@@ -2113,7 +2113,7 @@ some discussion of the multilevel model, more statistical ``unpacking''
 of ideas about variation is warranted. \index{variation and diversity}
 
 I provide again, for pedagogical purposes, the example substantive
-equation that I have been using in this document.
+equation that I have been using in this book.
 
 \[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} +\]
 \[\beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{j} + \]
@@ -2255,7 +2255,7 @@ Here, the variation in the outcome, \(\sigma_{yij}\), rather than the
 mean level of the outcome, \(y_{ij}\), is the focus of interest. My
 notation for Equation~\ref{eq-distributional} draws upon Burkner
 (2018)'s notation, but is modified in order to be consistent with the
-rest of this document.
+rest of this book.
 
 Why might such models be of conceptual interest? Imagine for example,
 that the \emph{variation} in psychological well-being is higher in
@@ -2264,9 +2264,9 @@ inequality. The use of such models as this, discussed in more detail by
 Burkner (2018), would allow us to explore such a question.
 
 Of note, while I do not explore in detail differences between Bayesian
-and frequentist approaches to multilevel modeling in this document,
-these models are likely to be only estimable with Bayesian software
-rather than with frequentist software (Burkner, 2018).
+and frequentist approaches to multilevel modeling in this book, these
+models are likely to be only estimable with Bayesian software rather
+than with frequentist software (Burkner, 2018).
 
 \subsection{Maximal Models}\label{maximal-models}
 
@@ -2287,7 +2287,7 @@ random slopes,
 e.g.~\(u_1 \times x_1, u_2 \times x_2, u_3 \times x_3, ..., \text{etc.}\)
 even when some of those estimated slopes are close to 0. Such models may
 be more easily estimable when using Bayesian estimation (Frank, 2018), a
-topic which I do not cover in detail in this document.
+topic which I do not cover in detail in this book.
 
 It should be noted that Matuschek et al. (2017) argue that such a
 \emph{maximal} approach may lead to a loss of statistical power and
@@ -2749,7 +2749,7 @@ is one of the causes of \emph{y}.
 
 It then behooves one to be explicit about this chain of causal
 reasoning. For example, to continue one of the substantive examples of
-this document, if one is going to argue for programs, interventions, or
+this book, if one is going to argue for programs, interventions, or
 treatments that promote \emph{parental warmth}, or that discourage
 parental use of \emph{physical punishment} with the aim of improving
 children's \emph{mental health}, one must be at least reasonably sure
@@ -2877,8 +2877,7 @@ over-estimate of the effect, and statistical significance of
 \end{quote}
 
 It is likely useful to restate the above abstract statements in terms of
-the substantive issues that I have been considering so far in this
-document.
+the substantive issues that I have been considering so far in this book.
 
 For \emph{parenting} to be a cause of \emph{child outcomes}, one needs
 the following 3 things to be true (Holland, 1986).
@@ -3675,6 +3674,12 @@ estimates? A systematic review of internal replication studies.
 \emph{Evaluation Review}.
 \url{https://doi.org/10.1177/0193841X221116721}
 
+\bibitem[\citeproctext]{ref-Ward2023}
+Ward, K. P., Grogan-Kaylor, A. C., Ma, J., Pace, G., \& Lee, S. J.
+(2023). Associations between 11 parental discipline behaviors and child
+outcomes across 60 countries. \emph{BMJ Open}.
+\url{https://doi.org/10.1136/bmjopen-2021-058439}
+
 \bibitem[\citeproctext]{ref-WardA}
 Ward, K. P., Grogan-Kaylor, A. C., Pace, G. T., Cuartas, J., \& Lee, S.
 J. (2021). {A Multilevel Ecological Analysis of the Predictors of
@@ -3756,81 +3761,6 @@ and data visualization.
 \addcontentsline{toc}{part}{Appendices}
 \appendix
 
-\chapter{Stata for Cross Sectional Multilevel
-Models}\label{stata-for-cross-sectional-multilevel-models}
-
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2051}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4359}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1667}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1923}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-model
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-equation
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Stata
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-English
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Intercept Only & \(y =
-\beta_0 +
-e_{ij}\) & \texttt{mixed\ y} & We estimated the mean of {[}outcome{]} \\
-Intercept, Independent Variable(s) & \(y =
-\beta_0 +
-\beta_1 x
-+ \beta_2
-z +
-e_{ij}\) & \texttt{mixed\ y\ x\ z} & We estimated the relationship of
-{[}independent variable(s){]} with {[}outcome{]} \\
-Intercept, Random variation of the intercept & \(y =
-\beta_0 +
-e_{ij} +
-u_{0j}\) & \texttt{mixed\ y\ \textbar{}\textbar{}\ groupid:} & We
-estimated the mean of {[}outcome{]}. We allowed the intercept of the
-model to vary by {[}groupid{]}. \\
-Unconditional intraclass correlation coefficient (ICC) &
-\(\frac{var(u_{0j})}{var(u_{0j})
-+
-var(e_{ij})}\) & \texttt{mixed\ y\ \textbar{}\textbar{}\ groupid:} then
-\texttt{estat\ icc} & XX\% of the variation in {[}outcome{]} was
-explained by clustering of participants in {[}groupid{]} \\
-Intercept, Independent variable(s), Random variation of the intercept &
-\(y =
-\beta_0 +
-\beta_1 x
-+ \beta_2
-z + e_{ij}
-+ u_{0j}\) & \texttt{mixed\ y\ x\ z\ \textbar{}\textbar{}\ groupid:} &
-We estimated the relationship of {[}independent variable(s){]} with
-{[}outcome{]}. We allowed the intercept of the model to vary by
-group. \\
-Intercept, Independent variable, Random intercept, Random slope & \(y =
-\beta_0 +
-\beta_1 x
-+ e_{ij} +
-u_{0j} +
-u_{1j} x\) & \texttt{mixed\ y\ x\ \textbar{}\textbar{}\ groupid:\ x} &
-We estimated the relationship of {[}independent variable{]} with
-{[}outcome{]}. We allowed the intercept of the model to vary by group.
-We also allowed the relationship of {[}independent variable{]} with
-{[}outcome{]} to vary by group. \\
-We can estimate multilevel models with more than 1 random slope. & \(y =
-\beta_0 +
-\beta_1 x
-+ \beta_2
-z +\) \(e_{ij} +
-u_{0j} +
-u_{1j} x +
-u_{2j} z\) &
-\texttt{mixed\ y\ x\ z\ \textbar{}\textbar{}\ groupid:\ x\ z} & \\
-\end{longtable}
-
 \chapter{Reshaping Data in Stata}\label{sec-reshape}
 
 \section{Introduction}\label{introduction-2}
@@ -3841,7 +3771,7 @@ models is capable of reshaping data. The Stata command for reshaping
 data is \texttt{reshape}.
 
 Below, I detail the procedure for reshaping data in Stata. Here is a
-sample of the longitudinal data set used in this document.
+sample of the longitudinal data set used in this book.
 
 These data are in \emph{long} format (see Table~\ref{tbl-datalong}).
 
