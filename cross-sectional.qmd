@@ -289,7 +289,7 @@ The ICC from the *unconditional* model (@eq-unconditional) is the most informati
 Put another way, in a two level model, the ICC provides a quantitative measure of the amount of variation in a measure that is present at Level 2. Knowing the ICC, we can then easily calculate the percentage of variation at Level 1: 
 
 $$\text{Level 1 varation} = \text{total variation} - \text{Level 2 variation} =$$
-$$= \text{100%} - (\text{100%} \times \text{ICC})$$
+$$= 100\% - (100\% \times \text{ICC})$$
 
 Thus, in some broader sense, the ICC might be thought of as a measure of diversity: the higher the ICC, the higher the clustering of the data in groups, and the lower the diversity within the groups; the lower the ICC, the lower the clustering of the data in groups, and the higher the diversity within groups between individuals.
 

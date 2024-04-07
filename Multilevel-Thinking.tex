@@ -899,7 +899,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, rightrule=.15mm, leftrule=.75mm, coltitle=black, colframe=quarto-callout-note-color-frame, titlerule=0mm, toprule=.15mm, opacitybacktitle=0.6, arc=.35mm, bottomrule=.15mm, left=2mm, breakable, opacityback=0, colback=white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data in Stata Format}]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacityback=0, colback=white, breakable, coltitle=black, toprule=.15mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, left=2mm, bottomtitle=1mm, toptitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data in Stata Format}, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6]
 
 \begin{itemize}
 \tightlist
@@ -1154,7 +1154,7 @@ counterpart. Similarly, some administrative indicators, such as the Gini
 level of inequality, while developed by calculating across Level 1
 responses, have no easily definable Level 1 counterpart.
 
-\section{Multilevel Models As The Study Of Variation and
+\section{Multilevel Models As The Exploration Of Variation and
 Diversity}\label{sec-studyvariation}
 
 Multilevel models are sometimes seen as an analytic technique that
@@ -1280,13 +1280,18 @@ most powerful theories ought to predict and explain variation, not sweep
 variation under the rug.'' (Blasi et al., 2022)
 \end{quote}
 
-Again, sophisticated treatments of all of the ideas are available in one
-form or another across the excellent textbooks on multilevel modeling
-(Kreft \& de Leeuw, 1998; Luke, 2004; Rabe-Hesketh \& Skrondal, 2012;
-Raudenbush \& Bryk, 2002; Singer \& Willett, 2003). However, some of
-these ideas appear less often in applied research, and my intention here
-is to make the application of these ideas to applied research more
-clear.
+As I discuss these ideas in more statistical depth, later in the book, I
+develop more statistically based ideas about the study of diversity and
+variation in Section~\ref{sec-ICC}, Section~\ref{sec-withinbetween}, and
+Section~\ref{sec-studyvariation2}.
+
+Again, statistically sophisticated treatments of all of the ideas are
+available in one form or another across the excellent textbooks on
+multilevel modeling (Kreft \& de Leeuw, 1998; Luke, 2004; Rabe-Hesketh
+\& Skrondal, 2012; Raudenbush \& Bryk, 2002; Singer \& Willett, 2003).
+However, some of these ideas appear less often in applied research, and
+my intention here is to make the application of these ideas to applied
+research, and to concerns of variation and diversity, more clear.
 
 \bookmarksetup{startatroot}
 
@@ -1677,18 +1682,34 @@ variation at the country and individual level.
 
 I now introduce a measure known as the Intra-Class Correlation
 Coefficient, (ICC) that can be computed from this unconditional model
-(Raudenbush \& Bryk, 2002).
+(Raudenbush \& Bryk, 2002). \index{variation and diversity}
 
 \begin{equation}\phantomsection\label{eq-ICC}{\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}}\end{equation}
 
 Heuristically:
 
-\begin{equation}\phantomsection\label{eq-ICCheuristic}{\text{ICC} = \frac{\text{group level variation}}{\text{group level variation} + \text{individual level variation}}}\end{equation}
+\begin{equation}\phantomsection\label{eq-ICCheuristic}{\text{ICC} = \frac{\text{group level variation}}{\text{group level variation} + \text{individual level variation}} = }\end{equation}
+
+\[\frac{\text{group level variation}}{\text{total variation}}\]
 
 The ICC from the \emph{unconditional} model
 (Equation~\ref{eq-unconditional}) is the most informative ICC as it
 represents the amount of variation in the dependent variable that could
 \emph{potentially} be explained by the grouping variable.
+
+Put another way, in a two level model, the ICC provides a quantitative
+measure of the amount of variation in a measure that is present at Level
+2. Knowing the ICC, we can then easily calculate the percentage of
+variation at Level 1:
+
+\[\text{Level 1 varation} = \text{total variation} - \text{Level 2 variation} =\]
+\[= 100\% - (100\% \times \text{ICC})\]
+
+Thus, in some broader sense, the ICC might be thought of as a measure of
+diversity: the higher the ICC, the higher the clustering of the data in
+groups, and the lower the diversity within the groups; the lower the
+ICC, the lower the clustering of the data in groups, and the higher the
+diversity within groups between individuals.
 
 The Stata syntax that we use is:
 
@@ -1911,6 +1932,7 @@ between country components. The within country component could be
 theorized as \emph{how an individual family differs from their context},
 and the between country component could be theorized as \emph{how a
 particular context differs from the average context}.
+\index{variation and diversity}
 
 \begin{figure}
 
@@ -2105,12 +2127,13 @@ of a multilevel model over these other approaches:
   not give correct estimates of the \(\beta\)'s.
 \end{enumerate}
 
-\section{Variation}\label{variation}
+\section{Variation}\label{sec-studyvariation2}
 
 Above, in Section~\ref{sec-studyvariation}, I have referred to
-multilevel models as the study of variation. Now that I have provided
-some discussion of the multilevel model, more statistical ``unpacking''
-of ideas about variation is warranted. \index{variation and diversity}
+multilevel models as the study and exploration of variation. Now that I
+have provided some discussion of the multilevel model, more statistical
+``unpacking'' of ideas about variation is warranted.
+\index{variation and diversity}
 
 I provide again, for pedagogical purposes, the example substantive
 equation that I have been using in this book.
