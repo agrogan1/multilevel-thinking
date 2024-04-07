@@ -32,7 +32,7 @@ After introducing these two key concepts of multilevel modeling, I then begin a 
 
 ### Introduction
 
-If the data are grouped, nested, or clustered, then this aspect of the structure of the data needs to be accounted for. @Bland1994 describe a simulation in which grouped data are artificially generated according to the following procedure. \index{p values}
+If the data are grouped, nested, or clustered, then this aspect of the structure of the data needs to be accounted for. @Bland1994 describe a simulation in which grouped data are artificially generated according to the following procedure. \index{p values} \index{advantages of the multilevel model}
 
 > "The data were generated from random numbers, and there is no relation between X and Y at all. Firstly, values of X and Y were generated for each 'subject,' then a further random number was added to make the individual observation." [@Bland1994]
 
@@ -101,7 +101,7 @@ Associations between two variables can be *very different* (or even *reversed*) 
 
 > For teaching purposes, I use an example with very few clusters, although it would be more appropriate to apply multilevel analysis to an example with many more clusters e.g. ($N_\text{clusters} >= 30$)
 
-A model that is "aware" of the clustered nature of the data may provide very different--likely better--substantive conclusions than a model that is not aware of the clustered nature of the data. \index{sign of coefficients} 
+A model that is "aware" of the clustered nature of the data may provide very different--likely better--substantive conclusions than a model that is not aware of the clustered nature of the data. \index{sign of coefficients} \index{advantages of the multilevel model}
 
 I use some data simulated for this particular example.
 

@@ -23,7 +23,7 @@ knitr::include_graphics("world.png")
   
 ```
 
-> "... the particular and the universal are not to be seen as opposites, ... the universal is not the negation of the particular but is reached by a deeper exploration of the particular." (Cesaire in @UNESCO1997)
+> "... the particular and the universal are not to be seen as opposites, ... the universal is not the negation of the particular but is reached by a deeper exploration of the particular." (Cesaire in @UNESCO1997) \index{universalism}
 
 I use simulated data in this example. Data come from 30 hypothetical countries. Data contain measures of a few key aspects of parenting[^parenting] or caregiving that have proven salient in the empirical literature on parenting to date: parental `warmth`, and `physical punishment`. Both parenting measures are normally distributed variables, and are considered to be *Level 1*, or *individual level* variables. `group` is a hypothetical--and somewhat arbitrary--group designation that could hypothetically refer to something like different economic groups, or groups from different parts of the country. `group` is also a *Level 1* variable.
 
@@ -38,7 +38,6 @@ Our `outcome` is conceptualized as a positive mental health outcome or behaviora
 
 * [Cross-Sectional Data](https://github.com/agrogan1/multilevel-thinking/raw/main/simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta)
 * [Longitudinal Data](https://github.com/agrogan1/multilevel-thinking/raw/main/simulate-and-analyze-multilevel-data/simulated_multilevel_longitudinal_data.dta)
-
 :::
 
 In this simulation, I construct the data so that `warmth` is positively related to the `outcome`, while `physical punishment` is negatively related to the `outcome`.
