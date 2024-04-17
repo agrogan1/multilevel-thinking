@@ -71,6 +71,7 @@ format:
       text: |
         \usepackage{makeidx}
         \makeindex
+        \titlehead{\includegraphics[width=6in]{bookcover.png}}
     include-after-body: 
       text: |
         \printindex   
