@@ -35,7 +35,7 @@ Counter-intuitively, and surprisingly, the mathematics of estimating models with
 
 : Levels in Cross-Sectional Data {#tbl-levelscrosssectional}
 
-In longitudinal data, we consider the *first level* to be that of *time points*, or *study waves*, which we sometimes call the *person-observation*.[^personobservation] The *second level* is then the individual or family. 
+In longitudinal data, we consider the *first level* to be that of *time points*, or *study waves*, which we sometimes call the *person-observation*.[^personobservation] The *second level* is then the individual or family. \index{person-observation}
 
 [^personobservation]: When we are studying families, e.g. a parent-child pair, it might be more appropriate to call each row of data a *family-observation*, but the term *person-observation* is more commonly used.
 
@@ -62,7 +62,7 @@ While it is less common, we could then easily add additional clustering to this 
 
 Multilevel data suitable for longitudinal analysis  has *multiple rows of data per individual or family*. Put another way, *every row of data is a person-timepoint*.
 
-> This method of organizing data is known as the *long* format. Another way of organizing longitudinal data--which I do not discuss in detail here--is the *wide* format in which every individual or family has only a single row of data. In *wide* data, the different timepoints are in *different columns* of data. I do discuss *reshaping* data from *wide* to *long*, and vice versa, in @sec-reshape.
+> This method of organizing data is known as the *long* format. Another way of organizing longitudinal data--which I do not discuss in detail here--is the *wide* format in which every individual or family has only a single row of data. In *wide* data, the different timepoints are in *different columns* of data. I do discuss *reshaping* data from *wide* to *long*, and vice versa, in the Appendix. \index{wide and long data}
 
 | id   | t    | x    |
 |------|------|------|
@@ -131,7 +131,7 @@ When data are in *long* format, the following equation is applicable. Observe th
 
 $$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + $$ {#eq-MLM-longitudinal} 
 
-$$\beta_4 \text{group}_{itj} + \beta_5 \text{HDI}_{itj} +$$
+$$\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +$$
 
 $$u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + $$
 
@@ -144,15 +144,15 @@ As before, the random slope for parental warmth, $u_{1j} \times \text{parental w
 
 In longitudinal multilevel models, the variable for *time* assumes a special role as we are often visualizing a *growth trajectory* over the course of time. \index{growth trajectories}
 
-Imagine a model as follows where *group* is a (1/0) variable for membership in one of two groups:
+Imagine a model as follows where *identity* is a (1/0) variable for membership in one of two groups:
 
-$$\text{outcome} = \beta_0 + \beta_t \text{time} + \beta_\text{group} \text{group} + \beta_\text{interaction} \text{group} \times \text{time} + u_{0i} + e_{it}$$
-Then, each group has it's own intercept and time trajectory:
+$$\text{outcome} = \beta_0 + \beta_t \text{time} + \beta_\text{identity} \text{identity} + \beta_\text{interaction} \text{identity} \times \text{time} + u_{0i} + e_{it}$$
+Then, each identity group has its own intercept and time trajectory:
 
-| Group | Intercept                      |  Slope (Time Trajectory)   |
-|-------|--------------------------------|----------------------------|
-| 0     | $\beta_0$                      | $\beta_t$                            |
-| 1     | $\beta_0 + \beta_\text{group}$ | $\beta_t + \beta_\text{interaction}$ |
+| Group | Intercept                         |  Slope (Time Trajectory)   |
+|-------|-----------------------------------|----------------------------|
+| 0     | $\beta_0$                         | $\beta_t$                            |
+| 1     | $\beta_0 + \beta_\text{identity}$ | $\beta_t + \beta_\text{interaction}$ |
 
 : Slope and Intercept for Each Group {#tbl-trajectory}
 
@@ -191,7 +191,7 @@ ggplot(data = NULL) +
   annotate("text", 
            x = 1, 
            y = .6, 
-           label = "intercept: beta[0] + beta[group]",
+           label = "intercept: beta[0] + beta[identity]",
            parse = TRUE,
            color = "#31688EFF") +
   annotate("text", 
@@ -213,20 +213,11 @@ ggplot(data = NULL) +
 
 ## Regression With Simulated Multi-Country Longitudinal Data {#sec-regressionlongitudinal}
 
-### Main Effects Only
-
-The Stata command that we use to analyze this data is:
-
-```{stata, eval = FALSE, echo=TRUE}
-
-mixed outcome t warmth physical_punishment group HDI || country: warmth || id: t
-
-```
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table2.md')}
 ```
 
-Examining the regression results, the results of the model suggest that child outcomes improve over time. Better child outcomes are again associated with parental `warmth`, and parental use of `physical_punishment` is associated with reduced child outcomes. `HDI` is again not associated with outcomes.
+Examining the regression results, the results of the model suggest that child outcomes improve over time. Better child outcomes are again associated with parental `warmth`, and parental use of `physical_punishment` is associated with reduced child outcomes. `identity` is not associated with the outcome. However, the `intervention` is associated with increases in the outcome. `HDI` is again not associated with outcomes.
 
 ### Interactions With Time
 
@@ -236,29 +227,18 @@ $$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_
 
 $$\beta_{1B} \text{parental warmth}_{itj} \times \text{time}_{itj} + \beta_{2B} \text{physical punishment}_{itj} \times \text{time}_{itj} +$$
 
-$$\beta_4 \text{group}_{itj} + \beta_5 \text{HDI}_{itj} +$$
+$$\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +$$
 
-$$\beta_{4B} \text{group}_{itj} \times \text{time}_{itj} + \beta_{5B} \text{HDI}_{itj} \times \text{time}_{itj} +$$
+$$\beta_{4B} \text{identity}_{itj} \times \text{time}_{itj} + \beta_{5B} \text{intervention}_{itj} \times \text{time}_{itj} + \beta_{6B} \text{HDI}_{itj} \times \text{time}_{itj} +$$
 
 $$u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + $$
 
 $$v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}$$
 
-The Stata command that we use to analyze this data is below. Because this ends up being a somewhat longer line of syntax, we use `///` to ensure that Stata continues to the next line:
-
-```{stata, eval = FALSE, echo=TRUE}
-
-mixed outcome c.t##(c.warmth c.physical_punishment i.group c.HDI) || ///
-country: warmth || id: t
-
-```
-
-In Stata, when estimating interactions, it is especially important to denote which variables are *continuous*, and which variables are *categorical*. We do this by prefixing variable names with `c.` and `i.` respectively.
-
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table2B.md')}
 ```
 
-Examining the regression results, the results of the model again suggest that child outcomes improve over time. Better child outcomes are again associated with parental `warmth`, and parental use of `physical_punishment` is associated with reduced child outcomes. `HDI` is again not associated with outcomes.
+Examining the regression results, the results of the model again suggest that child outcomes improve over time. Better child outcomes are again associated with parental `warmth`, and parental use of `physical_punishment` is associated with reduced child outcomes. `identity` is again not associated with outcomes, while participation in the `intervention` is associated with improvements in outcomes. `HDI` is again not associated with outcomes.
 
 Examining the interaction terms, we find that none of these variables modify the time trajectory of the outcome. 
 
@@ -419,7 +399,7 @@ The appropriate multilevel model is below.
 
 $$\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_2 \text{physical punishment}_{it} + \beta_3 \text{time}_{it} \ + $$ {#eq-MLM-simpler}
 
-$$\beta_4 \text{group}_{it} + \beta_5 \text{HDI}_{it} \ +$$
+$$\beta_4 \text{identity}_{it} + \beta_5 \text{intervention}_{it} + \beta_6 \text{HDI}_{it} \ +$$
 
 $$v_{0i} + e_{it}$$
 
@@ -431,7 +411,7 @@ I can use the same equation:
 
 $$\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_2 \text{physical punishment}_{it} + \beta_3 \text{time}_{it} \ + $$ {#eq-FE}
 
-$$\beta_4 \text{group}_{it} + \beta_5 \text{HDI}_{it} \ +$$
+$$\beta_4 \text{identity}_{it} + \beta_5 \text{intervention}_{it} + \beta_6 \text{HDI}_{it} \ +$$
 
 $$v_{0i} + e_{it}$$
 
@@ -448,11 +428,6 @@ Such genetic heritage could be considered to be a time invariant variable that, 
 Thus, by ruling out many potential confounds, fixed effects regression methods provide much more causally robust analyses, specifically because they control for many more possible confounding variables than do standard regression methods, including multilevel models, which are only able to control for the variables that are measured in the study *and* that are included within the regression model. 
 
 However, a disadvantage of the fixed effects approach is that this approach can not provide estimates for any time invariant characteristic of study participants. Indeed, if one includes time invariant variables into a fixed effects regression, they are automatically dropped from the regression results as can be seen in the regression table below.
-
-The relevant Stata commands are:
-
-* Multilevel Model: `mixed outcome t warmth physical_punishment group HDI || id:`
-* Fixed Effects Model: `xtreg outcome t warmth physical_punishment group HDI, i(id) fe`
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table3.md')}
 ```
@@ -475,19 +450,11 @@ $$\beta_2 \text{physical punishment}_{it} + \beta_{2a}\overline{\text{physical p
 
 $$\beta_3 \text{time}_{it} \ + $$ 
 
-$$\beta_4 \text{group}_{it} + \beta_5 \text{HDI}_{it} \ +$$
+$$\beta_4 \text{identity}_{it} + \beta_5 \text{intervention}_{it} + \beta_6 \text{HDI}_{it} \ +$$
 
 $$v_{0i} + e_{ij}$$
 
 By including these parameters, I  obtain estimates for the time varying variables that are *equivalent* to what I would obtain from a fixed effects regression [@Schunck2013].
-
-The Stata command for the correlated random effects model is:
-
-```{stata, eval = FALSE, echo=TRUE}
-
-mixed outcome t warmth mean_warmth physical_punishment mean_physicalpunishment group HDI || id:
-  
-```
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table4.md')}
 ```

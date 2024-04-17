@@ -27,7 +27,7 @@ knitr::include_graphics("world.png")
 
 I use simulated data in this example. Data come from 30 hypothetical countries. Data contain measures of a few key aspects of parenting[^parenting] or caregiving that have proven salient in the empirical literature on parenting to date: parental `warmth`, and `physical punishment`. Both parenting measures are normally distributed variables, and are considered to be *Level 1*, or *individual level* variables. 
 
-`identity` is a hypothetical designation of an identity--such as race, ethnicity, or gender identity. In this simulated data, identity has three categories--for ease of presentation--but could easily be a two category variable, or a variable with more than three categories. `identity` is also a *Level 1* variable.
+`identity` is a hypothetical designation of an identity--such as race, ethnicity, or gender identity. In this simulated data, identity has two categories--for ease of presentation--but could easily be a more than two category variable. `identity` is also a *Level 1* variable.
 
 Many readers will be interested in using multilevel models to evaluate interventions. The variable `intervention` represents a program, treatment or intervention to which study participants have been assigned. `intervention` is a *Level 1* variable. Assignment to interventions may or may not be random, a topic which is considered in more detail in @sec-causality.
 
