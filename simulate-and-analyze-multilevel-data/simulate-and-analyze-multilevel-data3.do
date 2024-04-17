@@ -6,6 +6,7 @@
 
 * based on a blog at 
 * https://blog.stata.com/2014/07/18/how-to-simulate-multilevellongitudinal-data/
+* Spring 2024: updated after Reviews by Oxford university Press
 
 ********************
 * setup
@@ -53,7 +54,7 @@ generate mean_warmth = runiformint(2, 7) // different levels of mean warmth
 
 generate mean_physicalpunishment = runiformint(2, 5) // different levels of mean physical_punishment
 
-generate group = runiformint(1, 2) // randomly distributed group
+generate identity = runiformint(1, 2) // randomly distributed group
 
 * event level
 
