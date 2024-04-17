@@ -50,7 +50,8 @@ simulated_multilevel_data <-
   read_dta("./simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta")
 
 simulated_multilevel_data <- simulated_multilevel_data %>% 
-  select(id, country,
+  select(id, 
+         country,
          warmth,
          physical_punishment,
          identity,
