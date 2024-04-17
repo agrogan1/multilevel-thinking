@@ -910,7 +910,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, opacityback=0, toptitle=1mm, rightrule=.15mm, bottomtitle=1mm, bottomrule=.15mm, toprule=.15mm, colback=white, coltitle=black, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, breakable, arc=.35mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, breakable, colback=white, titlerule=0mm, opacitybacktitle=0.6, left=2mm, coltitle=black, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, toptitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, arc=.35mm, rightrule=.15mm, leftrule=.75mm]
 
 Data are presented in Stata format. The Appendix considers the analysis
 of multilevel models using multiple software packages: Stata, R \&
@@ -1686,7 +1686,7 @@ diversity within groups between individuals.
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
-& cross\_sectional0 & \\
+& 1 & \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -1694,6 +1694,7 @@ diversity within groups between individuals.
 \_cons & 53.433 & ** \\
 var(\_cons) & 3.179 & \\
 var(e) & 39.461 & \\
+Number of observations & 3000 & \\
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
@@ -1712,7 +1713,7 @@ variables.
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
-& cross\_sectional & \\
+& 1 & \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -1728,6 +1729,7 @@ HDI & -0.003 & \\
 var(warmth) & 0.023 & \\
 var(\_cons) & 2.964 & \\
 var(e) & 34.975 & \\
+Number of observations & 3000 & \\
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
@@ -1797,7 +1799,7 @@ When we estimate such a model, we get the following information.
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
-& cross\_sectional2 & \\
+& 1 & \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -1814,6 +1816,7 @@ var(warmth) & 0.010 & \\
 var(\_cons) & 2.257 & \\
 cov(warmth,\_cons) & 0.147 & \\
 var(e) & 35.006 & \\
+Number of observations & 3000 & \\
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
@@ -1929,7 +1932,7 @@ In terms of using statistical software, we need to follow a few steps.
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
-& cross\_sectional3 & \\
+& 1 & \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -1946,6 +1949,7 @@ HDI & -0.004 & \\
 var(warmth) & 0.023 & \\
 var(\_cons) & 2.964 & \\
 var(e) & 34.975 & \\
+Number of observations & 3000 & \\
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
@@ -2577,7 +2581,7 @@ Data}\label{sec-regressionlongitudinal}
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
-& longitudinal & \\
+& 1 & \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -2596,6 +2600,7 @@ var(\_cons) & 3.167 & \\
 var(\_cons) & 8.387 & \\
 var(t) & 0.000 & \\
 var(e) & 26.027 & \\
+Number of observations & 9000 & \\
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
@@ -2633,7 +2638,7 @@ estimating the \emph{interaction} of that variable with time.
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
-& longitudinalB & \\
+& 1 & \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -2659,6 +2664,7 @@ var(\_cons) & 3.170 & \\
 var(\_cons) & 8.392 & \\
 var(t) & 0.000 & \\
 var(e) & 26.016 & \\
+Number of observations & 9000 & \\
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
@@ -3018,7 +3024,7 @@ HDI & 0.001 & & & \\
 \_cons & 51.298 & ** & 51.988 & ** \\
 var(\_cons) & 11.831 & & & \\
 var(e) & 26.033 & & & \\
-Number of observations & & & 9000 & \\
+Number of observations & 9000 & & 9000 & \\
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
@@ -3091,7 +3097,7 @@ mean\_physicalpunishment & & & & & 0.192 & \\
 var(\_cons) & 11.831 & & & & & \\
 var(e) & 26.033 & & & & 26.024 & \\
 var(\_cons) & & & & & 11.824 & \\
-Number of observations & & & 9000 & & & \\
+Number of observations & 9000 & & 9000 & & 9000 & \\
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
