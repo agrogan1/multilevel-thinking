@@ -909,7 +909,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-note-color!10!white, breakable, titlerule=0mm, left=2mm, opacityback=0, coltitle=black, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, colback=white, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, toptitle=1mm, toprule=.15mm, arc=.35mm, leftrule=.75mm, rightrule=.15mm, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-note-color!10!white, left=2mm, arc=.35mm, breakable, leftrule=.75mm, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, bottomtitle=1mm, opacityback=0, toptitle=1mm, coltitle=black, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, colback=white, opacitybacktitle=0.6, toprule=.15mm]
 
 Data are presented in Stata format. The Appendix considers the analysis
 of multilevel models using multiple software packages: Stata, R \&
@@ -1123,9 +1123,9 @@ conceptual level 2 & N/A & Administrative indicator of social unit \\
   be considered in the terminology that I am using to be a variable both
   \emph{conceptually} and \emph{statistically} at Level 1.
 \item
-  \(\color{black}\overline{\text{mental health}_{.j}}\) or
-  \(\color{black}\overline{\text{parenting}_{.j}}\) would be variables
-  that \emph{conceptually} come from Level 1 responses, but are
+  \(\overline{\text{mental health}_{.j}}\) or
+  \(\overline{\text{parenting}_{.j}}\) would be variables that
+  \emph{conceptually} come from Level 1 responses, but are
   \emph{statistically} aggregated to Level 2.
 \end{itemize}
 
@@ -1146,9 +1146,9 @@ country level warmth score with the command
   that was \emph{conceptually} at Level 2, but \emph{statistically} at
   Level 1.
 \item
-  \(\color{black}\overline{\text{community collective efficacy}_{.j}}\)
-  or \(\color{black}\overline{\text{community safety}_{.j}}\) would be
-  variables that \emph{conceptually} refer to Level 2 concepts that are
+  \(\overline{\text{community collective efficacy}_{.j}}\) or
+  \(\overline{\text{community safety}_{.j}}\) would be variables that
+  \emph{conceptually} refer to Level 2 concepts that are
   \emph{statistically} aggregated to Level 2.
 \end{itemize}
 
@@ -2057,7 +2057,7 @@ The first thing to note about an equation for a multilevel model--here
 written in a more general form--is that it can be divided into measured
 and unmeasured variation.
 
-\[\underbrace{y_{ij}}_\text{outcome} = \underbrace{\beta_0}_\text{intercept} + \underbrace{\beta_1 x}_{\text{slope of} \\ \text{measured x}} + \underbrace{\beta_2 \text{group}}_{\substack{\text{association of} \\ \text{measured group} \\ \text{with intercept}}} + \underbrace{\beta_3 x \times \text{group}}_{\substack{\text{association of} \\ \text{measured group} \\ \text{with slope of} \\  \text{measured x}}} + \]
+\[\underbrace{y_{ij}}_\text{outcome} = \underbrace{\beta_0}_\text{intercept} + \underbrace{\beta_1 x}_{\text{slope of} \\ \text{measured x}} + \underbrace{\beta_2 \text{identity}}_{\substack{\text{association of} \\ \text{measured identity} \\ \text{with intercept}}} + \underbrace{\beta_3 x \times \text{identity}}_{\substack{\text{association of} \\ \text{measured identity} \\ \text{with slope of} \\  \text{measured x}}} + \]
 
 \[\underbrace{u_{0j}}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in intercept}}} + \underbrace{u_{1j} \times x}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in slope of x}}} + \underbrace{e_{ij}}_{\substack{\text{unmeasured} \\ \text{individual} \\ \text{error}}}\]
 

@@ -1095,7 +1095,7 @@ Figure&nbsp;5.5: Decomposing a Variable into Within and Between Differences
 <section id="measured-and-unmeasured-variation" class="level3" data-number="5.9.1">
 <h3 data-number="5.9.1" class="anchored" data-anchor-id="measured-and-unmeasured-variation"><span class="header-section-number">5.9.1</span> Measured and Unmeasured Variation</h3>
 <p>The first thing to note about an equation for a multilevel model–here written in a more general form–is that it can be divided into measured and unmeasured variation.</p>
-<p><span class="math display">\[\underbrace{y_{ij}}_\text{outcome} = \underbrace{\beta_0}_\text{intercept} + \underbrace{\beta_1 x}_{\text{slope of} \\ \text{measured x}} + \underbrace{\beta_2 \text{group}}_{\substack{\text{association of} \\ \text{measured group} \\ \text{with intercept}}} + \underbrace{\beta_3 x \times \text{group}}_{\substack{\text{association of} \\ \text{measured group} \\ \text{with slope of} \\  \text{measured x}}} + \]</span></p>
+<p><span class="math display">\[\underbrace{y_{ij}}_\text{outcome} = \underbrace{\beta_0}_\text{intercept} + \underbrace{\beta_1 x}_{\text{slope of} \\ \text{measured x}} + \underbrace{\beta_2 \text{identity}}_{\substack{\text{association of} \\ \text{measured identity} \\ \text{with intercept}}} + \underbrace{\beta_3 x \times \text{identity}}_{\substack{\text{association of} \\ \text{measured identity} \\ \text{with slope of} \\  \text{measured x}}} + \]</span></p>
 <p><span class="math display">\[\underbrace{u_{0j}}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in intercept}}} + \underbrace{u_{1j} \times x}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in slope of x}}} + \underbrace{e_{ij}}_{\substack{\text{unmeasured} \\ \text{individual} \\ \text{error}}}\]</span></p>
 <p>I have already introduced the idea of an unconditional model (<a href="#sec-unconditional" class="quarto-xref"><span>Section 5.4.1</span></a>), in which there are no independent variables, and all of the variation is unmeasured. The unconditional intraclcass correlation coefficient (ICC) (<a href="#sec-ICC" class="quarto-xref"><span>Section 5.4.2</span></a>) is a measure of the amount of variation that could potentially be attributable to the Level 2 units, in this case, different countries.</p>
 <div class="cell">
@@ -1826,7 +1826,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","loop":false,"closeEffect":"zoom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
