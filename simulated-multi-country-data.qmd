@@ -25,7 +25,9 @@ knitr::include_graphics("world.png")
 
 > "... the particular and the universal are not to be seen as opposites, ... the universal is not the negation of the particular but is reached by a deeper exploration of the particular." (Cesaire in @UNESCO1997) \index{universalism}
 
-I use simulated data in this example. Data come from 30 hypothetical countries. Data contain measures of a few key aspects of parenting[^parenting] or caregiving that have proven salient in the empirical literature on parenting to date: parental `warmth`, and `physical punishment`. Both parenting measures are normally distributed variables, and are considered to be *Level 1*, or *individual level* variables. `identity` is a hypothetical designation of an identity--such as race, ethnicity, or gender identity. In this simulated data, identity has three categories--for ease of presentation--but could easily be a two category variable, or a variable with more than three categories. `identity` is also a *Level 1* variable.
+I use simulated data in this example. Data come from 30 hypothetical countries. Data contain measures of a few key aspects of parenting[^parenting] or caregiving that have proven salient in the empirical literature on parenting to date: parental `warmth`, and `physical punishment`. Both parenting measures are normally distributed variables, and are considered to be *Level 1*, or *individual level* variables. 
+
+`identity` is a hypothetical designation of an identity--such as race, ethnicity, or gender identity. In this simulated data, identity has three categories--for ease of presentation--but could easily be a two category variable, or a variable with more than three categories. `identity` is also a *Level 1* variable.
 
 Many readers will be interested in using multilevel models to evaluate interventions. The variable `intervention` represents a program, treatment or intervention to which study participants have been assigned. `intervention` is a *Level 1* variable. Assignment to interventions may or may not be random, a topic which is considered in more detail in @sec-causality.
 
@@ -36,7 +38,9 @@ Many readers will be interested in using multilevel models to evaluate intervent
 Our `outcome` is conceptualized as a positive mental health outcome or behavioral outcome, and higher levels of `outcome` are considered to be better. Statistically, the data are clustered within countries. 
 
 :::{.callout-note collapse="true"}
-## Download The Data in Stata Format
+## Download The Data 
+
+Data are presented in Stata format. The Appendix considers the analysis of multilevel models using multiple software packages: Stata, R & Julia, but Stata format is used to store the data as it can be read by each of these software packages.
 
 * [Cross-Sectional Data](https://github.com/agrogan1/multilevel-thinking/raw/main/simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta)
 * [Longitudinal Data](https://github.com/agrogan1/multilevel-thinking/raw/main/simulate-and-analyze-multilevel-data/simulated_multilevel_longitudinal_data.dta)

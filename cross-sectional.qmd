@@ -24,8 +24,6 @@ library(pander) # nice tables
 
 I begin this chapter by introducing two key concepts: multilevel models can improve our estimation of p values; multilevel models can improve our estimation of $\beta$ coefficients. \index{cross sectional models}
 
-In these sections I make some initial use of the Stata syntax for regression `regress y x z`, and the Stata syntax for multilevel models, `mixed y x z || groupid:`.
-
 After introducing these two key concepts of multilevel modeling, I then begin a more in depth exploration of the equations and concepts and statistical syntax of the cross sectional multilevel model.
 
 ## Estimating Standard Errors And p Values {#sec-pvalues}
@@ -81,14 +79,9 @@ ggplot(simulated_clustered_data,
 
 ### Compare OLS and MLM
 
-An analysis that is not aware of the grouped nature of the data will give biased results, will mis-estimate standard errors, and importantly, will often attribute statistical significance to some of the independent variables when this is not appropriate [@Raudenbush2002; @Bland1994]. 
+An analysis that is not aware of the grouped nature of the data will give biased results, will mis-estimate standard errors, and importantly, will often attribute statistical significance to some of the independent variables when this is not appropriate [@Raudenbush2002; @Bland1994]. \index{p values}
 
 In the example below, we compare a simple ordinary least squares analysis of the data with a multilevel model that accounts for the clustered nature of the data.
-
-The Stata syntax that we use for each analysis is:
-
-* OLS: `regress y x`
-* Multilevel Model: `mixed y x || group:`
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/tableA.md')}
 ```
@@ -161,11 +154,6 @@ ggplot(multilevelstructure,
 
 #### A "Naive" OLS Analysis vs. An "Aware" MLM Analysis
 
-The Stata syntax that we use for these analyses is: 
-
-* OLS: `regress y x` 
-* Multilevel Model: `mixed y x || country:`
-
 The OLS model with only *x* as a covariate is not aware of the grouped structure of the data, and the coefficient for *x* in the OLS model reflects this. The coefficient for *x* in the OLS model is *negative*, and statistically significant.
 
 The multilevel model is aware of the grouped structure of the data, and the coefficient for *x* in the multilevel model reflects this. The coefficient for *x* in the multilevel model is *positive*, and statistically significant.
@@ -198,7 +186,7 @@ p0 +
 
 ```
 
-The idea that group level and individual level relationships must be the same [@FIREBAUGH20014023] has been termed the "ecological fallacy".
+The idea that group level and individual level relationships must be the same [@FIREBAUGH20014023] has been termed the "ecological fallacy". \index{ecological fallacy}
 
 These data are constructed to provide this kind of extreme example, but it easy to see how multilevel thinking, and multilevel analysis may provide better answers than one would get if one ignored the grouped nature of the data.
 
@@ -250,14 +238,6 @@ $$u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}$$ {#eq-MLMsubstantive}
 
 Put substantively, this model indicates that the outcome can be conceptualized as a function of an intercept term, and contributions of parental warmth, physical punishment, group membership, and country level HDI. The random intercept, $u_{0j}$ indicates that there is some unexplained variation in the outcome at the country level. The random slope $u_{1j} \times \text{parental warmth}$ indicates that the model is allowing for country level variation in the association of parental warmth with the outcome. Inspection of @fig-data indicates that it might be possible that there would be variation across countries in this slope. The model could be extended to allow for country level variation in other slope terms by adding other random slopes, eg $u_{2j}$, $u_{3j}$, etc.
 
-This single level equation can be easily represented in Stata syntax.
-
-```{stata, eval = FALSE, echo=TRUE}
-
-mixed outcome warmth physical_punishment group HDI || country: warmth
-
-```
-
 ## Regression With Simulated Multi-Country Data {#sec-regression}
 
 After considering some of these broader issues, let's now examine the results of a multilevel regression with the simulated multicountry data. I will again imagine that the desirable outcome is an outcome such as improved psychological wellbeing. 
@@ -293,20 +273,10 @@ $$= 100\% - (100\% \times \text{ICC})$$
 
 Thus, in some broader sense, the ICC might be thought of as a measure of diversity: the higher the ICC, the higher the clustering of the data in groups, and the lower the diversity within the groups; the lower the ICC, the lower the clustering of the data in groups, and the higher the diversity within groups between individuals.
 
-The Stata syntax that we use is:
-
-```{stata, eval = FALSE, echo=TRUE}
-
-mixed outcome || country: 
-
-estat icc
-
-```
-
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table0.md')}
 ```
 
-From `estat icc`, or calculating by hand, we see that the ICC for this data is .076 or 7.6%.
+From using procedures to estimate the ICC, as detailed in the Appendix, or calculating by hand, we see that the ICC for this data is .076 or 7.6%.
 
 As we add covariates, $x$'s, to the model the ICC will most often decrease.
 
@@ -314,20 +284,14 @@ As we add covariates, $x$'s, to the model the ICC will most often decrease.
 
 We next estimate a *conditional* model, *with* independent variables.
 
-The Stata syntax that we use is:
-
-```{stata, eval = FALSE, echo=TRUE}
-
-mixed outcome warmth physical_punishment group HDI || country: warmth
-
-```
-
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table1.md')}
 ```
 
-The data suggest that parental warmth is positively associated with the desirable outcome, and that this result is statistically significant. Parental use of physical punishment is associated with statistically significant decreases in the desirable outcome. I note that there is some variation in the *constant* indicating that there is some variation in the initial or average levels of the desirable outcome--again improved psychological well-being--that is attributable to country.
+The data suggest that parental warmth is positively associated with the desirable outcome, and that this result is statistically significant. Parental use of physical punishment is associated with statistically significant decreases in the desirable outcome. The identity variable is not associated here with the outcome. In contrast, the application of the intervention is associated with increases in the outcome. 
 
-There is--in contrast--no discernible variation in the *slope* associated with parental warmth that is attributable to country. Thus, the relationship of parental warmth with child outcomes does not appear to differ appreciably from country to country. 
+I note that there is some variation in the *constant* indicating that there is some variation in the initial or average levels of the desirable outcome--again improved psychological well-being--that is attributable to country.
+
+There is--in contrast--no discernible variation in the *slope* associated with parental warmth that is attributable to country. Thus, the relationship of parental warmth with child outcomes does not appear to differ appreciably from country to country. Had there been statistically significant variation in this *random slope*, it would have indicated that the association of parental warmth with the outcome varied across countries.
 
 `HDI`, the *Human Development Index*, our only country level, or Level 2, variable in this model is not associated with the outcome.
 
@@ -337,34 +301,26 @@ One could also consider a situation in which a random slope or slopes were corre
 
 Substantively, this question would be asking whether the association of warmth and the outcome, was correlated with the initial level or average level of the outcome. From @fig-data, it appears that there is some slight evidence that the country specific regression slopes are more steep in countries where the initial level of the outcome is higher. However, we may wish to investigate this question more rigorously.
 
-By default, Stata estimates models, where the random slope or slopes are uncorrelated with each other, and uncorrelated with the intercept [@StataCorp2021:2]. We see this in @eq-varcovar below, where the diagonal elements are the *variances* of each of the random effects, and the off diagonals, which would be the *covariances* of the random effects are constrained to 0.
+Procedures for estimating models with correlated or uncorrelated random effects vary across software. I illustrate this issue in @eq-varcovar below, where the diagonal elements are the *variances* of each of the random effects, and the off diagonals, which would be the *covariances* of the random effects are constrained to 0.
 
 $$\begin{bmatrix}
 var(u_{0j}) & 0 \\
 0 & var(u_{1j}) 
 \end{bmatrix}$$ {#eq-varcovar}
 
-Within Stata, we can ask to allow such a correlation with the `cov(uns)` option. 
+In contrast, we might wish to estimate a model in which the random effects are allowed to be correlated.
 
 $$\begin{bmatrix}
 var(u_{0j}) & cov(u_{0j}, u_{1j}) \\
 cov(u_{0j}, u_{1j}) & var(u_{1j}) 
 \end{bmatrix}$$ {#eq-varcovaruns}
 
-We use the following syntax.
-
-```{stata, eval = FALSE, echo=TRUE}
-
-mixed outcome warmth physical_punishment group HDI || country: warmth, cov(uns)
-
-```
-
 When we estimate such a model, we get the following information.
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table1A.md')}
 ```
 
-Results are mostly similar to those above. However, here, we are asking additionally for information about the possible correlation of country specific initial levels of the outcome and the slope of the country specific regression line for parental warmth. Results indicate that there is no reason to be believe that these two parameters are correlated. Put more intuitively, it does not appear that parental warmth is any more or less correlated with the outcome in countries where initial levels of the outcome are higher. 
+Results are mostly similar to those above. However, here, we are asking additionally for information about the possible *correlation* of country specific initial levels of the outcome and the slope of the country specific regression line for parental warmth. Results indicate that there is no reason to be believe that these two parameters are correlated. Put more intuitively, it does not appear that parental warmth is any more or less correlated with the outcome in countries where initial levels of the outcome are higher. Again, had this correlation been statistically significant and positive, it would have indicated that higher initial, or average levels of the outcome were associated with a greater association of warmth with the outcome.
 
 ## Within and Between {#sec-withinbetween}
 
@@ -467,44 +423,17 @@ ggplot(aes(x = x,
 
 ```
 
-In terms of using statistical software (Stata), we need to follow a few steps.
+In terms of using statistical software, we need to follow a few steps.
 
 1. Calculate the *grand mean* of the variable.
 
-```{stata, eval=FALSE, echo=TRUE}
-
-egen gmean_warmth = mean(warmth)
-
-```
-
 2. Calculate *country specific means* of the variable.
-
-```{stata, eval=FALSE, echo=TRUE}
-
-bysort country: egen cmean_warmth = mean(warmth)
-
-```
 
 3. Calculate:
     + individual scores - country specific means
     + country specific means - grand mean
     
-```{stata, eval=FALSE, echo=TRUE}
-
-generate dev_warmth = warmth - cmean_warmth
-
-generate cdev_warmth = cmean_warmth - gmean_warmth
-
-```
-
 4. Estimate the model with within and between.
-
-```{stata, eval=FALSE, echo=TRUE}
-
-mixed outcome dev_warmth cdev_warmth physical_punishment i.group HDI ///
-|| country: warmth
-
-```
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table1B.md')}
 ```
@@ -523,8 +452,8 @@ Estimates suggest that both the difference in an individual family's expression 
 
 The discussion so far gives an idea of the advantages of the multilevel model for studying intrinsically multilevel data: children in classrooms or schools; individuals or families in neighborhoods; individuals or families in countries. These advantages can be summarized below: \index{advantages of the multilevel model}
 
-1. Standard errors are estimated correctly as is statistical significance. This means that p values are correctly estimated accounting for the clustered or nested nature of the data. More colloquially, this most often means that we do not make the mistake of attributing statistical significance to a given risk or protective factor, when such a statistical significance is not warranted. Put even more straightforwardly correct estimation of standard errors and statistical significance prevents us from seeing results that are simply not present in the data, whether those concern risk factors or protective factors. 
-2. Regression coefficients are estimated correctly accounting for the clustered or nested structure of the data. If one does not account for the clustered or nested structure of the data, regression slopes can be estimated as negative when they are more correctly estimated as positive, or as null, or conversely estimated as positive when there are more correctly seen as negative (or null). Again, to phrase things in a more colloquial fashion, this means that we do not judge something to be a risk factor when it is in fact a protective factor or a null effect; or a protective factor when it is in fact a risk factor, or a null effect.
+1. Standard errors are estimated correctly as is statistical significance. This means that p values are correctly estimated accounting for the clustered or nested nature of the data. More colloquially, this most often means that we do not make the mistake of attributing statistical significance to a given risk or protective factor, when such a statistical significance is not warranted. Put even more straightforwardly correct estimation of standard errors and statistical significance prevents us from seeing results that are simply not present in the data, whether those concern risk factors or protective factors. \index{p values}
+2. Regression coefficients are estimated correctly accounting for the clustered or nested structure of the data. If one does not account for the clustered or nested structure of the data, regression slopes can be estimated as negative when they are more correctly estimated as positive, or as null, or conversely estimated as positive when there are more correctly seen as negative (or null). Again, to phrase things in a more colloquial fashion, this means that we do not judge something to be a risk factor when it is in fact a protective factor or a null effect; or a protective factor when it is in fact a risk factor, or a null effect. \index{sign of coefficients}
 
 ```{comment, eval=FALSE, echo=FALSE}
 
@@ -536,9 +465,9 @@ The discussion so far gives an idea of the advantages of the multilevel model fo
 
 When data are clustered--e.g. residents in neighborhoods, children in schools, families in countries--it is worth discussing the fact that we have several choices statistically as how to proceed, other than using a multilevel model. Given the discussion so far, we can see the advantages of a multilevel model over these other approaches: 
 
-1. First, we could simply ignore the clustering, and treat the data as though it were composed of statistically independent individuals, i.e. statistically independent $e_i$. As we have discussed above, however, this approach has at least two disadvantages. First, as discussed in @sec-pvalues, this approach will mis-estimate standard errors, most often underestimating them, resulting in underestimated p values and false positives. Second, as discussed in @sec-multilevelstructure ignoring clustering runs the risk of estimating regression $\beta$'s that are not estimated with information about the multilevel structure of the data, with the possibility that $\beta$ coefficients may not only have incorrect statistical significance, but also incorrect magnitude, and even incorrect sign.
-2. A second approach would be to *aggregate* the data to the level of the higher social unit, e.g. aggregating the data at the level of the neighborhood. Here we run into an idea similar to that discussed in @sec-multilevelstructure, the "ecological fallacy": the idea that group level and individual level relationships are necessarily the same [@FIREBAUGH20014023].
-3. Lastly, we could adopt a statistical strategy of *clustering* the standard errors. Clustering the standard errors means that standard errors are corrected for the non-independence of the $e_i$ within clusters. Thus, *p* values are estimated correctly. However, clustering still does not account for the multilevel structure of the data (@sec-multilevelstructure), and thus when relationships between *x*'s and *y* at different levels of the data are very different, simply clustering the standard errors may not give correct estimates of the $\beta$'s.
+1. First, we could simply ignore the clustering, and treat the data as though it were composed of statistically independent individuals, i.e. statistically independent $e_i$. As we have discussed above, however, this approach has at least two disadvantages. First, as discussed in @sec-pvalues, this approach will mis-estimate standard errors, most often underestimating them, resulting in underestimated p values and false positives. Second, as discussed in @sec-multilevelstructure ignoring clustering runs the risk of estimating regression $\beta$'s that are not estimated with information about the multilevel structure of the data, with the possibility that $\beta$ coefficients may not only have incorrect statistical significance, but also incorrect magnitude, and even incorrect sign. \index{p values} \index{sign of coefficients}
+2. A second approach would be to *aggregate* the data to the level of the higher social unit, e.g. aggregating the data at the level of the neighborhood. Here we run into an idea similar to that discussed in @sec-multilevelstructure, the "ecological fallacy": the idea that group level and individual level relationships are necessarily the same [@FIREBAUGH20014023]. \index{ecological fallacy}
+3. Lastly, we could adopt a statistical strategy of *clustering* the standard errors. Clustering the standard errors means that standard errors are corrected for the non-independence of the $e_i$ within clusters. Thus, *p* values are estimated correctly. However, clustering still does not account for the multilevel structure of the data (@sec-multilevelstructure), and thus when relationships between *x*'s and *y* at different levels of the data are very different, simply clustering the standard errors may not give correct estimates of the $\beta$'s. \index{p values}
 
 ## Variation {#sec-studyvariation2}
 
@@ -647,13 +576,13 @@ tribble(
  
 ### Variation In Intercepts or Outcomes
 
-In @eq-MLMsubstantive2, $var(u_{0j})$ is the model estimated amount of variation in the *outcome*, $y_{ij}$.
+In @eq-MLMsubstantive2, $var(u_{0j})$ is the model estimated amount of variation in the *outcome*, $y_{ij}$. \index{variation in intercepts or outcomes}
 
 In the regression in @sec-regression, there is discernible between country variation, but more of the variation is between individuals within the same country. Put another way, there is a moderate tendency for children in families in the same country to have similar outcomes, but two children in families in the same country may also have very different outcomes. Children from families in different countries may be as similar as children from families in the same country.
 
 ### Variation In Predictors
 
-Equally important, I think, but much less frequently explored than variation in *outcomes*, is the possibility of variation in *predictors*, $var(x_{ij})$. In the substantive example that we have employed so far, the *predictors* are different *parenting behaviors*, so considering variation in *predictors* allows us to consider variation in *parenting behaviors*, as well as variation in the *outcomes* of those behaviors.
+Equally important, I think, but much less frequently explored than variation in *outcomes*, is the possibility of variation in *predictors*, $var(x_{ij})$. In the substantive example that we have employed so far, the *predictors* are different *parenting behaviors*, so considering variation in *predictors* allows us to consider variation in *parenting behaviors*, as well as variation in the *outcomes* of those behaviors. \index{variation in predictors}
 
 We would estimate variation in behaviors attributable to country in much the same way that we would estimate variation in outcomes, estimating an unconditional model, but substituting $x$ for $y$.[^w]
 
@@ -667,7 +596,7 @@ $$\text{ICC}_x = \frac{var(w_{0j})}{var(w_{0j}) + var(e_{ij})}$$ {#eq-ICCx}
 
 ### Variation in Slopes
 
-Another possible type of variation to investigate is variation in the relationship of $x$ and $y$, which is represented in the multilevel model by examining variation in the $\beta$'s, i.e. $var(u_{1j})$.
+Another possible type of variation to investigate is variation in the relationship of $x$ and $y$, which is represented in the multilevel model by examining variation in the $\beta$'s, i.e. $var(u_{1j})$. \index{variation in slopes}
 
 ### Summary
 
@@ -693,7 +622,7 @@ Thus, we can consider a number of sources of possible variation.
 
 ### Variation As An Outcome
 
-Even less common is to examine *variation* itself as an outcome [@Burkner2018]. 
+Even less common is to examine *variation* itself as an outcome [@Burkner2018]. \inde{variation as an outcome}
 
 $$\sigma_{yij} = \beta_0 + \beta_1 x_1 + u_{0j} + e_{ij}$$ {#eq-distributional}
 
