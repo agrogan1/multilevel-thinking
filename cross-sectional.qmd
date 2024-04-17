@@ -622,7 +622,7 @@ Thus, we can consider a number of sources of possible variation.
 
 ### Variation As An Outcome
 
-Even less common is to examine *variation* itself as an outcome [@Burkner2018]. \inde{variation as an outcome}
+Even less common is to examine *variation* itself as an outcome [@Burkner2018]. \index{variation as an outcome}
 
 $$\sigma_{yij} = \beta_0 + \beta_1 x_1 + u_{0j} + e_{ij}$$ {#eq-distributional}
 

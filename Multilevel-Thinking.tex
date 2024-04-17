@@ -242,7 +242,7 @@
 \subtitle{Discovering Diversity, Universals, and Particulars in
 Cross-Cultural Research}
 \author{Andrew Grogan-Kaylor}
-\date{2024-04-06}
+\date{2024-04-17}
 
 \begin{document}
 \maketitle
@@ -873,7 +873,7 @@ Data}\label{sec-simulateddata}
 ``\ldots{} the particular and the universal are not to be seen as
 opposites, \ldots{} the universal is not the negation of the particular
 but is reached by a deeper exploration of the particular.'' (Cesaire in
-UNESCO (1997))
+UNESCO (1997)) \index{universalism}
 \end{quote}
 
 I use simulated data in this example. Data come from 30 hypothetical
@@ -884,10 +884,20 @@ parenting\footnote{I use the term parenting throughout this book, but am
 empirical literature on parenting to date: parental \texttt{warmth}, and
 \texttt{physical\ punishment}. Both parenting measures are normally
 distributed variables, and are considered to be \emph{Level 1}, or
-\emph{individual level} variables. \texttt{group} is a hypothetical--and
-somewhat arbitrary--group designation that could hypothetically refer to
-something like different economic groups, or groups from different parts
-of the country. \texttt{group} is also a \emph{Level 1} variable.
+\emph{individual level} variables.
+
+\texttt{identity} is a hypothetical designation of an identity--such as
+race, ethnicity, or gender identity. In this simulated data, identity
+has two categories--for ease of presentation--but could easily be a more
+than two category variable. \texttt{identity} is also a \emph{Level 1}
+variable.
+
+Many readers will be interested in using multilevel models to evaluate
+interventions. The variable \texttt{intervention} represents a program,
+treatment or intervention to which study participants have been
+assigned. \texttt{intervention} is a \emph{Level 1} variable. Assignment
+to interventions may or may not be random, a topic which is considered
+in more detail in Section~\ref{sec-causality}.
 
 \texttt{HDI} is a measure of the \emph{Human Development Index} (United
 Nations Development Program, 2022), and is measured at the \emph{country
@@ -899,7 +909,12 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacityback=0, colback=white, breakable, coltitle=black, toprule=.15mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, left=2mm, bottomtitle=1mm, toptitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data in Stata Format}, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-note-color!10!white, breakable, titlerule=0mm, left=2mm, opacityback=0, coltitle=black, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, colback=white, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, toptitle=1mm, toprule=.15mm, arc=.35mm, leftrule=.75mm, rightrule=.15mm, opacitybacktitle=0.6]
+
+Data are presented in Stata format. The Appendix considers the analysis
+of multilevel models using multiple software packages: Stata, R \&
+Julia, but Stata format is used to store the data as it can be read by
+each of these software packages.
 
 \begin{itemize}
 \tightlist
@@ -919,18 +934,19 @@ positively related to the \texttt{outcome}, while
 \texttt{outcome}.
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0833}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1389}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1250}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.3056}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1111}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0833}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1389}}@{}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0759}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1266}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1139}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2785}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1392}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1899}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0759}}@{}}
 
 \caption{\label{tbl-simulateddata}Simulated Multilevel Data}
 
 \tabularnewline
 
+\caption{Table continues below}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 id
@@ -941,22 +957,64 @@ warmth
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 physical\_punishment
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-group
+identity
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+intervention
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 HDI
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+id
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+country
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+warmth
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+physical\_punishment
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+identity
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+intervention
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+HDI
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1.1 & 1 & 3 & 3 & 2 & 1 & 69 \\
+1.2 & 1 & 1 & 2 & 2 & 2 & 69 \\
+1.3 & 1 & 2 & 3 & 1 & 2 & 69 \\
+1.4 & 1 & 5 & 0 & 2 & 1 & 69 \\
+1.5 & 1 & 4 & 4 & 2 & 1 & 69 \\
+1.6 & 1 & 3 & 5 & 1 & 2 & 69 \\
+
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{0.1389}}@{}}
+
+\caption{\label{tbl-simulateddata}Simulated Multilevel Data}
+
+\tabularnewline
+
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
 outcome
 \end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-1.1 & 1 & 3 & 2 & 2 & 69 & 59.18 \\
-1.2 & 1 & 0 & 4 & 2 & 69 & 61.54 \\
-1.3 & 1 & 4 & 4 & 1 & 69 & 51.87 \\
-1.4 & 1 & 6 & 0 & 2 & 69 & 51.71 \\
-1.5 & 1 & 2 & 3 & 2 & 69 & 55.88 \\
-1.6 & 1 & 3 & 5 & 1 & 69 & 60.78 \\
+58.47 \\
+51.1 \\
+53.92 \\
+61.17 \\
+56.05 \\
+50.81 \\
 
 \end{longtable}
 
@@ -971,59 +1029,6 @@ outcome
 \caption{\label{fig-data}Graph of Simulated Data}
 
 \end{figure}%
-
-\bookmarksetup{startatroot}
-
-\chapter{Software}\label{sec-software}
-
-\begin{quote}
-``-- And so, why can't my numbers be beautiful to me? Why the scorn, the
-doubt in your face? Do you think I am brittle and dusty as old paper?
-Look again. See the numbers shine in my eyes.'' (Pye, 2011)
-\end{quote}
-
-In this book, I use Stata (StataCorp, 2021c) to analyze data. Stata is
-my software of choice in this book because of Stata's overall ease of
-use and intuitiveness. The creators of Stata have created a powerful
-program that is extremely simple to use, but with a wide range of both
-basic and advanced statistical capabilities.
-
-The general idea of most Stata commands is:
-
-\texttt{do\_something\ to\_a\_variable\_or\_variables,\ options}
-
-Often it is not necessary to use any options since the authors of Stata
-have done such a good job of thinking about the defaults.
-
-For the sake of illustration, a few Stata commands are listed below.
-
-\begin{longtable}[]{@{}ll@{}}
-\caption{Example Stata Commands}\label{tbl-Statacommands}\tabularnewline
-\toprule\noalign{}
-Task & Command \\
-\midrule\noalign{}
-\endfirsthead
-\toprule\noalign{}
-Task & Command \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Open data & \texttt{use\ mydata.dta} \\
-Descriptive statistics & \texttt{summarize\ x\ y} \\
-Frequencies & \texttt{tabulate\ x} \\
-Correlation & \texttt{corr\ x\ y} \\
-Regression & \texttt{regress\ y\ x} \\
-Logistic Regression & \texttt{logit\ y\ x,\ or} \footnote{Here we use
-  the \texttt{,or} option to ask for \emph{odds ratios} instead of
-  \emph{logit coefficients}.} \\
-Multilevel Model &
-\texttt{mixed\ y\ x\ \textbar{}\textbar{}\ group:\ x} \\
-\end{longtable}
-
-It is this multilevel syntax,
-\texttt{mixed\ y\ x\ \textbar{}\textbar{}\ group:\ x} that we will be
-using throughout this book.
 
 \bookmarksetup{startatroot}
 
@@ -1310,11 +1315,6 @@ I begin this chapter by introducing two key concepts: multilevel models
 can improve our estimation of p values; multilevel models can improve
 our estimation of \(\beta\) coefficients. \index{cross sectional models}
 
-In these sections I make some initial use of the Stata syntax for
-regression \texttt{regress\ y\ x\ z}, and the Stata syntax for
-multilevel models,
-\texttt{mixed\ y\ x\ z\ \textbar{}\textbar{}\ groupid:}.
-
 After introducing these two key concepts of multilevel modeling, I then
 begin a more in depth exploration of the equations and concepts and
 statistical syntax of the cross sectional multilevel model.
@@ -1327,6 +1327,7 @@ If the data are grouped, nested, or clustered, then this aspect of the
 structure of the data needs to be accounted for. Bland \& Altman (1994)
 describe a simulation in which grouped data are artificially generated
 according to the following procedure. \index{p values}
+\index{advantages of the multilevel model}
 
 \begin{quote}
 ``The data were generated from random numbers, and there is no relation
@@ -1355,21 +1356,11 @@ An analysis that is not aware of the grouped nature of the data will
 give biased results, will mis-estimate standard errors, and importantly,
 will often attribute statistical significance to some of the independent
 variables when this is not appropriate (Bland \& Altman, 1994;
-Raudenbush \& Bryk, 2002).
+Raudenbush \& Bryk, 2002). \index{p values}
 
 In the example below, we compare a simple ordinary least squares
 analysis of the data with a multilevel model that accounts for the
 clustered nature of the data.
-
-The Stata syntax that we use for each analysis is:
-
-\begin{itemize}
-\tightlist
-\item
-  OLS: \texttt{regress\ y\ x}
-\item
-  Multilevel Model: \texttt{mixed\ y\ x\ \textbar{}\textbar{}\ group:}
-\end{itemize}
 
 \begin{longtable}[]{@{}lllll@{}}
 \toprule\noalign{}
@@ -1411,7 +1402,7 @@ with many more clusters e.g.~(\(N_\text{clusters} >= 30\))
 A model that is ``aware'' of the clustered nature of the data may
 provide very different--likely better--substantive conclusions than a
 model that is not aware of the clustered nature of the data.
-\index{sign of coefficients}
+\index{sign of coefficients} \index{advantages of the multilevel model}
 
 I use some data simulated for this particular example.
 
@@ -1459,16 +1450,6 @@ group} slope upward.
 
 \subsubsection{A ``Naive'' OLS Analysis vs.~An ``Aware'' MLM
 Analysis}\label{a-naive-ols-analysis-vs.-an-aware-mlm-analysis}
-
-The Stata syntax that we use for these analyses is:
-
-\begin{itemize}
-\tightlist
-\item
-  OLS: \texttt{regress\ y\ x}
-\item
-  Multilevel Model: \texttt{mixed\ y\ x\ \textbar{}\textbar{}\ country:}
-\end{itemize}
 
 The OLS model with only \emph{x} as a covariate is not aware of the
 grouped structure of the data, and the coefficient for \emph{x} in the
@@ -1528,6 +1509,7 @@ intervention was harmful, when it was in fact helpful.
 
 The idea that group level and individual level relationships must be the
 same (Firebaugh, 2001) has been termed the ``ecological fallacy''.
+\index{ecological fallacy}
 
 These data are constructed to provide this kind of extreme example, but
 it easy to see how multilevel thinking, and multilevel analysis may
@@ -1645,16 +1627,6 @@ in this slope. The model could be extended to allow for country level
 variation in other slope terms by adding other random slopes, eg
 \(u_{2j}\), \(u_{3j}\), etc.
 
-Drawing upon ideas from Chapter~\ref{sec-software}, this single level
-equation can be easily represented in Stata syntax.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-
-\NormalTok{mixed outcome warmth physical\_punishment }\FunctionTok{group}\NormalTok{ HDI || country: warmth}
-\end{Highlighting}
-\end{Shaded}
-
 \section{Regression With Simulated Multi-Country
 Data}\label{sec-regression}
 
@@ -1711,17 +1683,6 @@ groups, and the lower the diversity within the groups; the lower the
 ICC, the lower the clustering of the data in groups, and the higher the
 diversity within groups between individuals.
 
-The Stata syntax that we use is:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-
-\NormalTok{mixed outcome || country: }
-
-\KeywordTok{estat}\NormalTok{ icc}
-\end{Highlighting}
-\end{Shaded}
-
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
 & cross\_sectional0 & \\
@@ -1729,15 +1690,16 @@ The Stata syntax that we use is:
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\_cons & 53.468 & ** \\
-var(\_cons) & 3.349 & \\
-var(e) & 40.883 & \\
+\_cons & 53.433 & ** \\
+var(\_cons) & 3.179 & \\
+var(e) & 39.461 & \\
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
 
-From \texttt{estat\ icc}, or calculating by hand, we see that the ICC
-for this data is .076 or 7.6\%.
+From using procedures to estimate the ICC, as detailed in the Appendix,
+or calculating by hand, we see that the ICC for this data is .076 or
+7.6\%.
 
 As we add covariates, \(x\)'s, to the model the ICC will most often
 decrease.
@@ -1747,15 +1709,6 @@ decrease.
 We next estimate a \emph{conditional} model, \emph{with} independent
 variables.
 
-The Stata syntax that we use is:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-
-\NormalTok{mixed outcome warmth physical\_punishment }\FunctionTok{group}\NormalTok{ HDI || country: warmth}
-\end{Highlighting}
-\end{Shaded}
-
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
 & cross\_sectional & \\
@@ -1763,15 +1716,17 @@ The Stata syntax that we use is:
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-warmth & 0.962 & ** \\
-physical\_punishment & -0.845 & ** \\
-group & & \\
-2 & 1.084 & ** \\
-HDI & 0.011 & \\
-\_cons & 50.964 & ** \\
-var(warmth) & 0.000 & \\
-var(\_cons) & 3.370 & \\
-var(e) & 36.019 & \\
+warmth & 0.835 & ** \\
+physical\_punishment & -0.992 & ** \\
+identity & & \\
+2 & -0.300 & \\
+intervention & & \\
+2 & 0.640 & ** \\
+HDI & -0.003 & \\
+\_cons & 53.000 & ** \\
+var(warmth) & 0.023 & \\
+var(\_cons) & 2.964 & \\
+var(e) & 34.975 & \\
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
@@ -1779,16 +1734,22 @@ var(e) & 36.019 & \\
 The data suggest that parental warmth is positively associated with the
 desirable outcome, and that this result is statistically significant.
 Parental use of physical punishment is associated with statistically
-significant decreases in the desirable outcome. I note that there is
-some variation in the \emph{constant} indicating that there is some
-variation in the initial or average levels of the desirable
-outcome--again improved psychological well-being--that is attributable
-to country.
+significant decreases in the desirable outcome. The identity variable is
+not associated here with the outcome. In contrast, the application of
+the intervention is associated with increases in the outcome.
+
+I note that there is some variation in the \emph{constant} indicating
+that there is some variation in the initial or average levels of the
+desirable outcome--again improved psychological well-being--that is
+attributable to country.
 
 There is--in contrast--no discernible variation in the \emph{slope}
 associated with parental warmth that is attributable to country. Thus,
 the relationship of parental warmth with child outcomes does not appear
-to differ appreciably from country to country.
+to differ appreciably from country to country. Had there been
+statistically significant variation in this \emph{random slope}, it
+would have indicated that the association of parental warmth with the
+outcome varied across countries.
 
 \texttt{HDI}, the \emph{Human Development Index}, our only country
 level, or Level 2, variable in this model is not associated with the
@@ -1811,34 +1772,25 @@ more steep in countries where the initial level of the outcome is
 higher. However, we may wish to investigate this question more
 rigorously.
 
-By default, Stata estimates models, where the random slope or slopes are
-uncorrelated with each other, and uncorrelated with the intercept
-(StataCorp, 2021b). We see this in Equation~\ref{eq-varcovar} below,
-where the diagonal elements are the \emph{variances} of each of the
-random effects, and the off diagonals, which would be the
-\emph{covariances} of the random effects are constrained to 0.
+Procedures for estimating models with correlated or uncorrelated random
+effects vary across software. I illustrate this issue in
+Equation~\ref{eq-varcovar} below, where the diagonal elements are the
+\emph{variances} of each of the random effects, and the off diagonals,
+which would be the \emph{covariances} of the random effects are
+constrained to 0.
 
 \begin{equation}\phantomsection\label{eq-varcovar}{\begin{bmatrix}
 var(u_{0j}) & 0 \\
 0 & var(u_{1j}) 
 \end{bmatrix}}\end{equation}
 
-Within Stata, we can ask to allow such a correlation with the
-\texttt{cov(uns)} option.
+In contrast, we might wish to estimate a model in which the random
+effects are allowed to be correlated.
 
 \begin{equation}\phantomsection\label{eq-varcovaruns}{\begin{bmatrix}
 var(u_{0j}) & cov(u_{0j}, u_{1j}) \\
 cov(u_{0j}, u_{1j}) & var(u_{1j}) 
 \end{bmatrix}}\end{equation}
-
-We use the following syntax.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-
-\NormalTok{mixed outcome warmth physical\_punishment }\FunctionTok{group}\NormalTok{ HDI || country: warmth, cov(uns)}
-\end{Highlighting}
-\end{Shaded}
 
 When we estimate such a model, we get the following information.
 
@@ -1849,28 +1801,33 @@ When we estimate such a model, we get the following information.
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-warmth & 0.962 & ** \\
-physical\_punishment & -0.845 & ** \\
-group & & \\
-2 & 1.085 & ** \\
-HDI & 0.010 & \\
-\_cons & 50.987 & ** \\
-var(warmth) & 0.000 & \\
-var(\_cons) & 3.237 & \\
-cov(warmth,\_cons) & 0.019 & \\
-var(e) & 36.019 & \\
+warmth & 0.833 & ** \\
+physical\_punishment & -0.994 & ** \\
+identity & & \\
+2 & -0.298 & \\
+intervention & & \\
+2 & 0.644 & ** \\
+HDI & -0.008 & \\
+\_cons & 53.292 & ** \\
+var(warmth) & 0.010 & \\
+var(\_cons) & 2.257 & \\
+cov(warmth,\_cons) & 0.147 & \\
+var(e) & 35.006 & \\
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
 
 Results are mostly similar to those above. However, here, we are asking
-additionally for information about the possible correlation of country
-specific initial levels of the outcome and the slope of the country
-specific regression line for parental warmth. Results indicate that
-there is no reason to be believe that these two parameters are
+additionally for information about the possible \emph{correlation} of
+country specific initial levels of the outcome and the slope of the
+country specific regression line for parental warmth. Results indicate
+that there is no reason to be believe that these two parameters are
 correlated. Put more intuitively, it does not appear that parental
 warmth is any more or less correlated with the outcome in countries
-where initial levels of the outcome are higher.
+where initial levels of the outcome are higher. Again, had this
+correlation been statistically significant and positive, it would have
+indicated that higher initial, or average levels of the outcome were
+associated with a greater association of warmth with the outcome.
 
 \section{Within and Between}\label{sec-withinbetween}
 
@@ -1947,42 +1904,14 @@ Between Differences}
 
 \end{figure}%
 
-In terms of using statistical software (Stata), we need to follow a few
-steps.
+In terms of using statistical software, we need to follow a few steps.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   Calculate the \emph{grand mean} of the variable.
-\end{enumerate}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-
-\KeywordTok{egen}\NormalTok{ gmean\_warmth = }\KeywordTok{mean}\NormalTok{(warmth)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
 \item
   Calculate \emph{country specific means} of the variable.
-\end{enumerate}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-
-\KeywordTok{bysort}\NormalTok{ country: }\KeywordTok{egen}\NormalTok{ cmean\_warmth = }\KeywordTok{mean}\NormalTok{(warmth)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
 \item
   Calculate:
 
@@ -1993,32 +1922,9 @@ steps.
   \item
     country specific means - grand mean
   \end{itemize}
-\end{enumerate}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-
-\KeywordTok{generate}\NormalTok{ dev\_warmth = warmth {-} cmean\_warmth}
-
-\KeywordTok{generate}\NormalTok{ cdev\_warmth = cmean\_warmth {-} gmean\_warmth}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{3}
-\tightlist
 \item
   Estimate the model with within and between.
 \end{enumerate}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-
-\NormalTok{mixed outcome dev\_warmth cdev\_warmth physical\_punishment i.}\FunctionTok{group}\NormalTok{ HDI }\CommentTok{///}
-\NormalTok{|| country: warmth}
-\end{Highlighting}
-\end{Shaded}
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
@@ -2027,16 +1933,18 @@ steps.
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-dev\_warmth & 0.961 & ** \\
-cdev\_warmth & 1.899 & \\
-physical\_punishment & -0.845 & ** \\
-group & & \\
-2 & 1.085 & ** \\
-HDI & 0.008 & \\
-\_cons & 54.489 & ** \\
-var(warmth) & 0.000 & \\
-var(\_cons) & 3.351 & \\
-var(e) & 36.019 & \\
+dev\_warmth & 0.834 & ** \\
+cdev\_warmth & 1.196 & \\
+physical\_punishment & -0.992 & ** \\
+identity & & \\
+2 & -0.300 & \\
+intervention & & \\
+2 & 0.640 & ** \\
+HDI & -0.004 & \\
+\_cons & 55.981 & ** \\
+var(warmth) & 0.023 & \\
+var(\_cons) & 2.964 & \\
+var(e) & 34.975 & \\
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
@@ -2068,7 +1976,7 @@ families in countries. These advantages can be summarized below:
   even more straightforwardly correct estimation of standard errors and
   statistical significance prevents us from seeing results that are
   simply not present in the data, whether those concern risk factors or
-  protective factors.
+  protective factors. \index{p values}
 \item
   Regression coefficients are estimated correctly accounting for the
   clustered or nested structure of the data. If one does not account for
@@ -2079,7 +1987,7 @@ families in countries. These advantages can be summarized below:
   in a more colloquial fashion, this means that we do not judge
   something to be a risk factor when it is in fact a protective factor
   or a null effect; or a protective factor when it is in fact a risk
-  factor, or a null effect.
+  factor, or a null effect. \index{sign of coefficients}
 \end{enumerate}
 
 \section{Some Wrong (or Partially Wrong)
@@ -2107,14 +2015,14 @@ of a multilevel model over these other approaches:
   estimated with information about the multilevel structure of the data,
   with the possibility that \(\beta\) coefficients may not only have
   incorrect statistical significance, but also incorrect magnitude, and
-  even incorrect sign.
+  even incorrect sign. \index{p values} \index{sign of coefficients}
 \item
   A second approach would be to \emph{aggregate} the data to the level
   of the higher social unit, e.g.~aggregating the data at the level of
   the neighborhood. Here we run into an idea similar to that discussed
   in Section~\ref{sec-multilevelstructure}, the ``ecological fallacy'':
   the idea that group level and individual level relationships are
-  necessarily the same (Firebaugh, 2001).
+  necessarily the same (Firebaugh, 2001). \index{ecological fallacy}
 \item
   Lastly, we could adopt a statistical strategy of \emph{clustering} the
   standard errors. Clustering the standard errors means that standard
@@ -2124,7 +2032,7 @@ of a multilevel model over these other approaches:
   data (Section~\ref{sec-multilevelstructure}), and thus when
   relationships between \emph{x}'s and \emph{y} at different levels of
   the data are very different, simply clustering the standard errors may
-  not give correct estimates of the \(\beta\)'s.
+  not give correct estimates of the \(\beta\)'s. \index{p values}
 \end{enumerate}
 
 \section{Variation}\label{sec-studyvariation2}
@@ -2178,6 +2086,7 @@ Outcomes}\label{variation-in-intercepts-or-outcomes}
 
 In Equation~\ref{eq-MLMsubstantive2}, \(var(u_{0j})\) is the model
 estimated amount of variation in the \emph{outcome}, \(y_{ij}\).
+\index{variation in intercepts or outcomes}
 
 In the regression in Section~\ref{sec-regression}, there is discernible
 between country variation, but more of the variation is between
@@ -2197,7 +2106,7 @@ have employed so far, the \emph{predictors} are different
 \emph{parenting behaviors}, so considering variation in
 \emph{predictors} allows us to consider variation in \emph{parenting
 behaviors}, as well as variation in the \emph{outcomes} of those
-behaviors.
+behaviors. \index{variation in predictors}
 
 We would estimate variation in behaviors attributable to country in much
 the same way that we would estimate variation in outcomes, estimating an
@@ -2218,6 +2127,7 @@ in countries--is given by:
 Another possible type of variation to investigate is variation in the
 relationship of \(x\) and \(y\), which is represented in the multilevel
 model by examining variation in the \(\beta\)'s, i.e.~\(var(u_{1j})\).
+\index{variation in slopes}
 
 \subsection{Summary}\label{summary}
 
@@ -2270,7 +2180,7 @@ intercept related to the country specific slope? \\
 \subsection{Variation As An Outcome}\label{variation-as-an-outcome}
 
 Even less common is to examine \emph{variation} itself as an outcome
-(Burkner, 2018).
+(Burkner, 2018). \index{variation as an outcome}
 
 \begin{equation}\phantomsection\label{eq-distributional}{\sigma_{yij} = \beta_0 + \beta_1 x_1 + u_{0j} + e_{ij}}\end{equation}
 
@@ -2362,7 +2272,7 @@ In longitudinal data, we consider the \emph{first level} to be that of
   e.g.~a parent-child pair, it might be more appropriate to call each
   row of data a \emph{family-observation}, but the term
   \emph{person-observation} is more commonly used.} The \emph{second
-level} is then the individual or family.
+level} is then the individual or family. \index{person-observation}
 
 \begin{longtable}[]{@{}ll@{}}
 \caption{Levels in Longitudinal
@@ -2419,7 +2329,7 @@ detail here--is the \emph{wide} format in which every individual or
 family has only a single row of data. In \emph{wide} data, the different
 timepoints are in \emph{different columns} of data. I do discuss
 \emph{reshaping} data from \emph{wide} to \emph{long}, and vice versa,
-in Appendix~\ref{sec-reshape}.
+in the Appendix. \index{wide and long data}
 \end{quote}
 
 \begin{longtable}[]{@{}lll@{}}
@@ -2465,21 +2375,20 @@ For the discussion below, I use a longitudinal version of the simulated
 data that has multiple rows of data per family.
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1190}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0714}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1071}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0714}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0952}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0476}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.2619}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1071}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1190}}@{}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1389}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0833}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0833}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1528}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2083}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0556}}@{}}
 
 \caption{\label{tbl-simulatedlongitudinaldata}Simulated Longitudinal
 Multilevel Data}
 
 \tabularnewline
 
+\caption{Table continues below}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 country
@@ -2490,10 +2399,55 @@ family
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 id
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-group
+identity
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+intervention
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 t
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+country
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+HDI
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+family
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+id
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+identity
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+intervention
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+t
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & 69 & 1 & 1.1 & 2 & 1 & 1 \\
+1 & 69 & 1 & 1.1 & 2 & 1 & 2 \\
+1 & 69 & 1 & 1.1 & 2 & 1 & 3 \\
+1 & 69 & 2 & 1.2 & 2 & 2 & 1 \\
+1 & 69 & 2 & 1.2 & 2 & 2 & 2 \\
+1 & 69 & 2 & 1.2 & 2 & 2 & 3 \\
+
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3056}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1389}}@{}}
+
+\caption{\label{tbl-simulatedlongitudinaldata}Simulated Longitudinal
+Multilevel Data}
+
+\tabularnewline
+
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
 physical\_punishment
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 warmth
@@ -2504,12 +2458,12 @@ outcome
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-1 & 69 & 1 & 1.1 & 2 & 1 & 2 & 3 & 59.18 \\
-1 & 69 & 1 & 1.1 & 2 & 2 & 2 & 2 & 58.29 \\
-1 & 69 & 1 & 1.1 & 2 & 3 & 3 & 3 & 60.58 \\
-1 & 69 & 2 & 1.2 & 2 & 1 & 4 & 0 & 61.54 \\
-1 & 69 & 2 & 1.2 & 2 & 2 & 4 & 0 & 55.96 \\
-1 & 69 & 2 & 1.2 & 2 & 3 & 4 & 2 & 56.19 \\
+3 & 3 & 58.47 \\
+3 & 4 & 56.06 \\
+1 & 2 & 59.77 \\
+2 & 1 & 51.1 \\
+3 & 0 & 54.31 \\
+3 & 1 & 50.79 \\
 
 \end{longtable}
 
@@ -2539,7 +2493,7 @@ to estimate.
 
 \begin{equation}\phantomsection\label{eq-MLM-longitudinal}{\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + }\end{equation}
 
-\[\beta_4 \text{group}_{itj} + \beta_5 \text{HDI}_{itj} +\]
+\[\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +\]
 
 \[u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + \]
 
@@ -2560,16 +2514,16 @@ In longitudinal multilevel models, the variable for \emph{time} assumes
 a special role as we are often visualizing a \emph{growth trajectory}
 over the course of time. \index{growth trajectories}
 
-Imagine a model as follows where \emph{group} is a (1/0) variable for
+Imagine a model as follows where \emph{identity} is a (1/0) variable for
 membership in one of two groups:
 
-\[\text{outcome} = \beta_0 + \beta_t \text{time} + \beta_\text{group} \text{group} + \beta_\text{interaction} \text{group} \times \text{time} + u_{0i} + e_{it}\]
-Then, each group has it's own intercept and time trajectory:
+\[\text{outcome} = \beta_0 + \beta_t \text{time} + \beta_\text{identity} \text{identity} + \beta_\text{interaction} \text{identity} \times \text{time} + u_{0i} + e_{it}\]
+Then, each identity group has its own intercept and time trajectory:
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1045}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4776}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4179}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4000}}@{}}
 \caption{Slope and Intercept for Each
 Group}\label{tbl-trajectory}\tabularnewline
 \toprule\noalign{}
@@ -2595,7 +2549,7 @@ Slope (Time Trajectory)
 \bottomrule\noalign{}
 \endlastfoot
 0 & \(\beta_0\) & \(\beta_t\) \\
-1 & \(\beta_0 + \beta_\text{group}\) &
+1 & \(\beta_0 + \beta_\text{identity}\) &
 \(\beta_t + \beta_\text{interaction}\) \\
 \end{longtable}
 
@@ -2620,17 +2574,6 @@ time}, modify the \emph{slope} of the time trajectory.
 \section{Regression With Simulated Multi-Country Longitudinal
 Data}\label{sec-regressionlongitudinal}
 
-\subsection{Main Effects Only}\label{main-effects-only}
-
-The Stata command that we use to analyze this data is:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-
-\NormalTok{mixed outcome t warmth physical\_punishment }\FunctionTok{group}\NormalTok{ HDI || country: warmth || id: t}
-\end{Highlighting}
-\end{Shaded}
-
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
 & longitudinal & \\
@@ -2638,18 +2581,20 @@ The Stata command that we use to analyze this data is:
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-t & 0.988 & ** \\
-warmth & 0.946 & ** \\
-physical\_punishment & -0.927 & ** \\
-group & & \\
-2 & 0.986 & ** \\
-HDI & 0.008 & \\
-\_cons & 50.480 & ** \\
-var(warmth) & 0.000 & \\
-var(\_cons) & 3.651 & \\
-var(\_cons) & 8.853 & \\
+t & 0.944 & ** \\
+warmth & 0.913 & ** \\
+physical\_punishment & -1.008 & ** \\
+identity & & \\
+2 & -0.128 & \\
+intervention & & \\
+2 & 0.859 & ** \\
+HDI & -0.001 & \\
+\_cons & 51.467 & ** \\
+var(warmth) & 0.011 & \\
+var(\_cons) & 3.167 & \\
+var(\_cons) & 8.387 & \\
 var(t) & 0.000 & \\
-var(e) & 26.001 & \\
+var(e) & 26.027 & \\
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
@@ -2658,6 +2603,8 @@ Examining the regression results, the results of the model suggest that
 child outcomes improve over time. Better child outcomes are again
 associated with parental \texttt{warmth}, and parental use of
 \texttt{physical\_punishment} is associated with reduced child outcomes.
+\texttt{identity} is not associated with the outcome. However, the
+\texttt{intervention} is associated with increases in the outcome.
 \texttt{HDI} is again not associated with outcomes.
 
 \subsection{Interactions With Time}\label{interactions-with-time}
@@ -2675,30 +2622,13 @@ estimating the \emph{interaction} of that variable with time.
 
 \[\beta_{1B} \text{parental warmth}_{itj} \times \text{time}_{itj} + \beta_{2B} \text{physical punishment}_{itj} \times \text{time}_{itj} +\]
 
-\[\beta_4 \text{group}_{itj} + \beta_5 \text{HDI}_{itj} +\]
+\[\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +\]
 
-\[\beta_{4B} \text{group}_{itj} \times \text{time}_{itj} + \beta_{5B} \text{HDI}_{itj} \times \text{time}_{itj} +\]
+\[\beta_{4B} \text{identity}_{itj} \times \text{time}_{itj} + \beta_{5B} \text{intervention}_{itj} \times \text{time}_{itj} + \beta_{6B} \text{HDI}_{itj} \times \text{time}_{itj} +\]
 
 \[u_{0j} + u_{1j} \times \text{parental warmth}_{itj} \ + \]
 
 \[v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}\]
-
-The Stata command that we use to analyze this data is below. Because
-this ends up being a somewhat longer line of syntax, we use \texttt{///}
-to ensure that Stata continues to the next line:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-
-\NormalTok{mixed outcome c.t\#\#(c.warmth c.physical\_punishment i.}\FunctionTok{group}\NormalTok{ c.HDI) || }\CommentTok{///}
-\NormalTok{country: warmth || id: t}
-\end{Highlighting}
-\end{Shaded}
-
-In Stata, when estimating interactions, it is especially important to
-denote which variables are \emph{continuous}, and which variables are
-\emph{categorical}. We do this by prefixing variable names with
-\texttt{c.} and \texttt{i.} respectively.
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
@@ -2707,23 +2637,27 @@ denote which variables are \emph{continuous}, and which variables are
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-t & 1.017 & ** \\
-warmth & 0.866 & ** \\
-physical\_punishment & -0.908 & ** \\
-group & & \\
-2 & 0.967 & ** \\
-HDI & 0.012 & \\
-t \# warmth & 0.040 & \\
-t \# physical\_punishment & -0.009 & \\
-group \# t & & \\
-2 & 0.009 & \\
-t \# HDI & -0.002 & \\
-\_cons & 50.420 & ** \\
-var(warmth) & 0.000 & \\
-var(\_cons) & 3.652 & \\
-var(\_cons) & 8.861 & \\
+t & 0.758 & * \\
+warmth & 0.817 & ** \\
+physical\_punishment & -1.009 & ** \\
+identity & & \\
+2 & -0.239 & \\
+intervention & & \\
+2 & 0.661 & * \\
+HDI & 0.001 & \\
+t \# warmth & 0.048 & \\
+t \# physical\_punishment & 0.001 & \\
+identity \# t & & \\
+2 & 0.055 & \\
+intervention \# t & & \\
+2 & 0.099 & \\
+t \# HDI & -0.001 & \\
+\_cons & 51.836 & ** \\
+var(warmth) & 0.011 & \\
+var(\_cons) & 3.170 & \\
+var(\_cons) & 8.392 & \\
 var(t) & 0.000 & \\
-var(e) & 25.990 & \\
+var(e) & 26.016 & \\
 \end{longtable}
 
 ** p\textless.01, * p\textless.05
@@ -2732,7 +2666,10 @@ Examining the regression results, the results of the model again suggest
 that child outcomes improve over time. Better child outcomes are again
 associated with parental \texttt{warmth}, and parental use of
 \texttt{physical\_punishment} is associated with reduced child outcomes.
-\texttt{HDI} is again not associated with outcomes.
+\texttt{identity} is again not associated with outcomes, while
+participation in the \texttt{intervention} is associated with
+improvements in outcomes. \texttt{HDI} is again not associated with
+outcomes.
 
 Examining the interaction terms, we find that none of these variables
 modify the time trajectory of the outcome.
@@ -2753,7 +2690,7 @@ be correlated with \(e_{i,t=2}\), which in turn can be correlated with
 \(e_{i,t=1}\). More complex autocorrelation structures are usually also
 possible (StataCorp, 2021a).
 
-\section{Causality}\label{causality}
+\section{Causality}\label{sec-causality}
 
 \subsection{The Importance of Causal
 Reasoning}\label{the-importance-of-causal-reasoning}
@@ -2998,7 +2935,7 @@ The appropriate multilevel model is below.
 
 \begin{equation}\phantomsection\label{eq-MLM-simpler}{\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_2 \text{physical punishment}_{it} + \beta_3 \text{time}_{it} \ + }\end{equation}
 
-\[\beta_4 \text{group}_{it} + \beta_5 \text{HDI}_{it} \ +\]
+\[\beta_4 \text{identity}_{it} + \beta_5 \text{intervention}_{it} + \beta_6 \text{HDI}_{it} \ +\]
 
 \[v_{0i} + e_{it}\]
 
@@ -3013,7 +2950,7 @@ I can use the same equation:
 
 \begin{equation}\phantomsection\label{eq-FE}{\text{outcome}_{it} = \beta_0 + \beta_1 \text{parental warmth}_{it} + \beta_2 \text{physical punishment}_{it} + \beta_3 \text{time}_{it} \ + }\end{equation}
 
-\[\beta_4 \text{group}_{it} + \beta_5 \text{HDI}_{it} \ +\]
+\[\beta_4 \text{identity}_{it} + \beta_5 \text{intervention}_{it} + \beta_6 \text{HDI}_{it} \ +\]
 
 \[v_{0i} + e_{it}\]
 
@@ -3029,7 +2966,7 @@ variation within individuals, and not making use of the variation
 between individuals.
 
 Details are provided in Allison (2009) and Wooldridge (2010). StataCorp
-(2021c) provides an exceptionally clear explication of the core idea of
+(2021b) provides an exceptionally clear explication of the core idea of
 fixed effects regression. The essential idea is that the fixed effects
 model provides statistical control for all time invariant
 characteristics of study participants, such as--as is often the case in
@@ -3062,18 +2999,6 @@ of study participants. Indeed, if one includes time invariant variables
 into a fixed effects regression, they are automatically dropped from the
 regression results as can be seen in the regression table below.
 
-The relevant Stata commands are:
-
-\begin{itemize}
-\tightlist
-\item
-  Multilevel Model:
-  \texttt{mixed\ outcome\ t\ warmth\ physical\_punishment\ group\ HDI\ \textbar{}\textbar{}\ id:}
-\item
-  Fixed Effects Model:
-  \texttt{xtreg\ outcome\ t\ warmth\ physical\_punishment\ group\ HDI,\ i(id)\ fe}
-\end{itemize}
-
 \begin{longtable}[]{@{}lllll@{}}
 \toprule\noalign{}
 & MLM & & FE & \\
@@ -3081,15 +3006,17 @@ The relevant Stata commands are:
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-t & 0.988 & ** & 0.988 & ** \\
-warmth & 0.947 & ** & 0.970 & ** \\
-physical\_punishment & -0.910 & ** & -1.033 & ** \\
-group & & & & \\
-2 & 0.997 & ** & & \\
-HDI & 0.008 & & & \\
-\_cons & 50.429 & ** & 51.640 & ** \\
-var(\_cons) & 12.497 & & & \\
-var(e) & 26.003 & & & \\
+t & 0.943 & ** & 0.944 & ** \\
+warmth & 0.913 & ** & 0.916 & ** \\
+physical\_punishment & -0.982 & ** & -1.094 & ** \\
+identity & & & & \\
+2 & -0.116 & & & \\
+intervention & & & & \\
+2 & 0.886 & ** & & \\
+HDI & 0.001 & & & \\
+\_cons & 51.298 & ** & 51.988 & ** \\
+var(\_cons) & 11.831 & & & \\
+var(e) & 26.033 & & & \\
 Number of observations & & & 9000 & \\
 \end{longtable}
 
@@ -3134,23 +3061,13 @@ variables into within and between components.
 
 \[\beta_3 \text{time}_{it} \ + \]
 
-\[\beta_4 \text{group}_{it} + \beta_5 \text{HDI}_{it} \ +\]
+\[\beta_4 \text{identity}_{it} + \beta_5 \text{intervention}_{it} + \beta_6 \text{HDI}_{it} \ +\]
 
 \[v_{0i} + e_{ij}\]
 
 By including these parameters, I obtain estimates for the time varying
 variables that are \emph{equivalent} to what I would obtain from a fixed
 effects regression (Schunck, 2013).
-
-The Stata command for the correlated random effects model is:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-
-\NormalTok{mixed outcome t warmth mean\_warmth physical\_punishment mean\_physicalpunishment }\FunctionTok{group}\NormalTok{ HDI || id:}
-  
-\end{Highlighting}
-\end{Shaded}
 
 \begin{longtable}[]{@{}lllllll@{}}
 \toprule\noalign{}
@@ -3159,18 +3076,20 @@ The Stata command for the correlated random effects model is:
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-t & 0.988 & ** & 0.988 & ** & 0.988 & ** \\
-warmth & 0.947 & ** & 0.970 & ** & 0.970 & ** \\
-physical\_punishment & -0.910 & ** & -1.033 & ** & -1.033 & ** \\
-group & & & & & & \\
-2 & 0.997 & ** & & & 0.995 & ** \\
-HDI & 0.008 & & & & 0.008 & \\
-mean\_warmth & & & & & -0.032 & \\
-mean\_physicalpunishment & & & & & 0.214 & * \\
-\_cons & 50.429 & ** & 51.640 & ** & 50.224 & ** \\
-var(\_cons) & 12.497 & & & & & \\
-var(e) & 26.003 & & & & 25.993 & \\
-var(\_cons) & & & & & 12.488 & \\
+t & 0.943 & ** & 0.944 & ** & 0.944 & ** \\
+warmth & 0.913 & ** & 0.916 & ** & 0.916 & ** \\
+physical\_punishment & -0.982 & ** & -1.094 & ** & -1.094 & ** \\
+identity & & & & & & \\
+2 & -0.116 & & & & -0.116 & \\
+intervention & & & & & & \\
+2 & 0.886 & ** & & & 0.890 & ** \\
+HDI & 0.001 & & & & 0.001 & \\
+mean\_warmth & & & & & -0.005 & \\
+mean\_physicalpunishment & & & & & 0.192 & \\
+\_cons & 51.298 & ** & 51.988 & ** & 51.086 & ** \\
+var(\_cons) & 11.831 & & & & & \\
+var(e) & 26.033 & & & & 26.024 & \\
+var(\_cons) & & & & & 11.824 & \\
 Number of observations & & & 9000 & & & \\
 \end{longtable}
 
@@ -3206,7 +3125,7 @@ popular majorities. Only then will the theories and models show their
 validity or deficiency, their utility or lack thereof, the universality
 or provincialism. Only then will the techniques we have learned display
 their liberating potential or their seeds of subjugation.''
-(Martin-Baro, 1994b)
+(Martin-Baro, 1994b) \index{universalism}
 \end{quote}
 
 Many data sets relevant to the study of important social issues, or
@@ -3223,21 +3142,21 @@ Failure to use appropriate basic multilevel models with such multilevel
 data can lead to answers that are either biased, or demonstrably wrong.
 Simple multilevel models allow the researcher to correctly estimate
 statistical significance, and to correctly estimate regression
-coefficients while accounting for multilevel structure. More advanced
-applications of multilevel models allow the researcher to explore the
-variation in both predictors and outcomes--and the relationship of
-predictors to outcomes--and to characterize the extent of this
-variation. Lastly, multilevel models provide a foundation for thinking
-about closely related models--fixed effects regression, and correlated
-random effects models--that provide methods for estimation that afford
-stronger causal conclusions.
+coefficients while accounting for multilevel structure.
+\index{correct answers} More advanced applications of multilevel models
+allow the researcher to explore the variation in both predictors and
+outcomes--and the relationship of predictors to outcomes--and to
+characterize the extent of this variation. Lastly, multilevel models
+provide a foundation for thinking about closely related models--fixed
+effects regression, and correlated random effects models--that provide
+methods for estimation that afford stronger causal conclusions.
 
 Thus, for applied researchers, interested in addressing a variety of
 social problems and social issues with diverse samples of individuals,
 multilevel models present a method to think clearly about variation, to
 explore that variation, and to extend that thinking about variation to
 estimate more causally robust models within the context of diversity and
-variation.
+variation. \index{variation and diversity}
 
 \bookmarksetup{startatroot}
 
@@ -3575,11 +3494,6 @@ cigarette--lung cancer link: evidentiary traditions, corporate denial,
 global toll}. \emph{Tobacco Control}, \emph{21}(2), 87 LP--91.
 \url{https://doi.org/10.1136/tobaccocontrol-2011-050338}
 
-\bibitem[\citeproctext]{ref-Pye2011}
-Pye, E. (2011). {E}veline {P}ye: Poetry in numbers, by {J}ulian
-{C}hampkin. \emph{Significance}, \emph{8}(3), 127--130.
-\url{https://doi.org/10.1111/j.1740-9713.2011.00510.x}
-
 \bibitem[\citeproctext]{ref-RabeHesketh2012}
 Rabe-Hesketh, S., \& Skrondal, A. (2012). \emph{Multilevel and
 longitudinal modeling using {S}tata - {V}olume {I}: Continuous
@@ -3654,12 +3568,8 @@ context. \emph{New Directions for Institutional Research}, \emph{2013},
 StataCorp. (2021a). \emph{Stata 17 longitudinal data/panel data
 reference manual}. Stata Press.
 
-\bibitem[\citeproctext]{ref-StataCorp2021:2}
-StataCorp. (2021b). \emph{Stata 17 multilevel mixed effects reference
-manual}. Stata Press.
-
 \bibitem[\citeproctext]{ref-StataCorp2021}
-StataCorp. (2021c). \emph{Stata statistical software: Release 17}.
+StataCorp. (2021b). \emph{Stata statistical software: Release 17}.
 StataCorp LLC.
 
 \bibitem[\citeproctext]{ref-Strevens2020}
@@ -3804,20 +3714,19 @@ a \emph{person-timepoint}.
 \end{quote}
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1190}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0714}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1071}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0714}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0952}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0476}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.2619}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1071}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1190}}@{}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1389}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0833}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0833}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1528}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2083}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0556}}@{}}
 
 \caption{\label{tbl-reshapelongdata}Data in Long Format}
 
 \tabularnewline
 
+\caption{Table continues below}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 country
@@ -3828,10 +3737,54 @@ family
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 id
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-group
+identity
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+intervention
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 t
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+country
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+HDI
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+family
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+id
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+identity
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+intervention
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+t
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & 69 & 1 & 1.1 & 2 & 1 & 1 \\
+1 & 69 & 1 & 1.1 & 2 & 1 & 2 \\
+1 & 69 & 1 & 1.1 & 2 & 1 & 3 \\
+1 & 69 & 2 & 1.2 & 2 & 2 & 1 \\
+1 & 69 & 2 & 1.2 & 2 & 2 & 2 \\
+1 & 69 & 2 & 1.2 & 2 & 2 & 3 \\
+
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3056}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1389}}@{}}
+
+\caption{\label{tbl-reshapelongdata}Data in Long Format}
+
+\tabularnewline
+
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
 physical\_punishment
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 warmth
@@ -3842,12 +3795,12 @@ outcome
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-1 & 69 & 1 & 1.1 & 2 & 1 & 2 & 3 & 59.18 \\
-1 & 69 & 1 & 1.1 & 2 & 2 & 2 & 2 & 58.29 \\
-1 & 69 & 1 & 1.1 & 2 & 3 & 3 & 3 & 60.58 \\
-1 & 69 & 2 & 1.2 & 2 & 1 & 4 & 0 & 61.54 \\
-1 & 69 & 2 & 1.2 & 2 & 2 & 4 & 0 & 55.96 \\
-1 & 69 & 2 & 1.2 & 2 & 3 & 4 & 2 & 56.19 \\
+3 & 3 & 58.47 \\
+3 & 4 & 56.06 \\
+1 & 2 & 59.77 \\
+2 & 1 & 51.1 \\
+3 & 0 & 54.31 \\
+3 & 1 & 50.79 \\
 
 \end{longtable}
 
@@ -4071,20 +4024,19 @@ If we use this command, we are back to the original format of the data
 set.
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1190}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0714}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1071}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0714}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0952}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.0476}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.2619}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1071}}
-  >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1190}}@{}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1389}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0833}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0833}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1528}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2083}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0556}}@{}}
 
 \caption{\label{tbl-reshapelongdata2}Data in Long Format}
 
 \tabularnewline
 
+\caption{Table continues below}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 country
@@ -4095,10 +4047,54 @@ family
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 id
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-group
+identity
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+intervention
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 t
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+country
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+HDI
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+family
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+id
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+identity
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+intervention
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+t
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & 69 & 1 & 1.1 & 2 & 1 & 1 \\
+1 & 69 & 1 & 1.1 & 2 & 1 & 2 \\
+1 & 69 & 1 & 1.1 & 2 & 1 & 3 \\
+1 & 69 & 2 & 1.2 & 2 & 2 & 1 \\
+1 & 69 & 2 & 1.2 & 2 & 2 & 2 \\
+1 & 69 & 2 & 1.2 & 2 & 2 & 3 \\
+
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3056}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1389}}@{}}
+
+\caption{\label{tbl-reshapelongdata2}Data in Long Format}
+
+\tabularnewline
+
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
 physical\_punishment
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 warmth
@@ -4109,12 +4105,12 @@ outcome
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-1 & 69 & 1 & 1.1 & 2 & 1 & 2 & 3 & 59.18 \\
-1 & 69 & 1 & 1.1 & 2 & 2 & 2 & 2 & 58.29 \\
-1 & 69 & 1 & 1.1 & 2 & 3 & 3 & 3 & 60.58 \\
-1 & 69 & 2 & 1.2 & 2 & 1 & 4 & 0 & 61.54 \\
-1 & 69 & 2 & 1.2 & 2 & 2 & 4 & 0 & 55.96 \\
-1 & 69 & 2 & 1.2 & 2 & 3 & 4 & 2 & 56.19 \\
+3 & 3 & 58.47 \\
+3 & 4 & 56.06 \\
+1 & 2 & 59.77 \\
+2 & 1 & 51.1 \\
+3 & 0 & 54.31 \\
+3 & 1 & 50.79 \\
 
 \end{longtable}
 

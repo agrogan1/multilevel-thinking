@@ -421,7 +421,7 @@ div.csl-indent {
 <div id="fig-world" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-world-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="world.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="world.png" class="img-fluid figure-img" style="width:50.0%"></a>
+<a href="world.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="world.png" class="img-fluid figure-img" style="width:50.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-world-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3.1: Countries of the World
@@ -434,9 +434,9 @@ Figure&nbsp;3.1: Countries of the World
 <p>“… the particular and the universal are not to be seen as opposites, … the universal is not the negation of the particular but is reached by a deeper exploration of the particular.” (Cesaire in <span class="citation" data-cites="UNESCO1997">UNESCO (<a href="references.html#ref-UNESCO1997" role="doc-biblioref">1997</a>)</span>) </p>
 </blockquote>
 <p>I use simulated data in this example. Data come from 30 hypothetical countries. Data contain measures of a few key aspects of parenting<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> or caregiving that have proven salient in the empirical literature on parenting to date: parental <code>warmth</code>, and <code>physical punishment</code>. Both parenting measures are normally distributed variables, and are considered to be <em>Level 1</em>, or <em>individual level</em> variables.</p>
-<p><code>identity</code> is a hypothetical designation of an identity–such as race, ethnicity, or gender identity. In this simulated data, identity has three categories–for ease of presentation–but could easily be a two category variable, or a variable with more than three categories. <code>identity</code> is also a <em>Level 1</em> variable.</p>
+<p><code>identity</code> is a hypothetical designation of an identity–such as race, ethnicity, or gender identity. In this simulated data, identity has two categories–for ease of presentation–but could easily be a more than two category variable. <code>identity</code> is also a <em>Level 1</em> variable.</p>
 <p>Many readers will be interested in using multilevel models to evaluate interventions. The variable <code>intervention</code> represents a program, treatment or intervention to which study participants have been assigned. <code>intervention</code> is a <em>Level 1</em> variable. Assignment to interventions may or may not be random, a topic which is considered in more detail in <a href="longitudinal.html#sec-causality" class="quarto-xref"><span>Section 6.7</span></a>.</p>
-<p><code>HDI</code> is a measure of the <em>Human Development Index</em> <span class="citation" data-cites="UNDPHDI">(<a href="references.html#ref-UNDPHDI" role="doc-biblioref">United Nations Development Program, 2022</a>)</span>, and is measured at the <em>country level</em>, or <em>Level 2</em>. (I discuss more in depth thinking about levels of the data in <a href="conceptual-framework.html" class="quarto-xref"><span>Chapter 5</span></a>.)</p>
+<p><code>HDI</code> is a measure of the <em>Human Development Index</em> <span class="citation" data-cites="UNDPHDI">(<a href="references.html#ref-UNDPHDI" role="doc-biblioref">United Nations Development Program, 2022</a>)</span>, and is measured at the <em>country level</em>, or <em>Level 2</em>. (I discuss more in depth thinking about levels of the data in <a href="conceptual-framework.html" class="quarto-xref"><span>Chapter 4</span></a>.)</p>
 <p>Our <code>outcome</code> is conceptualized as a positive mental health outcome or behavioral outcome, and higher levels of <code>outcome</code> are considered to be better. Statistically, the data are clustered within countries.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -586,7 +586,7 @@ Table&nbsp;3.1: Simulated Multilevel Data
 <div id="fig-data" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="simulated-multi-country-data_files/figure-html/fig-data-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="simulated-multi-country-data_files/figure-html/fig-data-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="simulated-multi-country-data_files/figure-html/fig-data-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2"><img src="simulated-multi-country-data_files/figure-html/fig-data-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3.2: Graph of Simulated Data
@@ -1161,7 +1161,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":false,"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
