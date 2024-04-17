@@ -139,7 +139,7 @@ mixed outcome || country:
 
 estat icc
 
-estat sd, variance post // post results as variance scale rather than log scale
+* estat sd, variance post // post results as variance scale rather than log scale
 
 est store cross_sectional0 // store estimates
 
@@ -147,7 +147,7 @@ etable, estimates(cross_sectional0) ///
 novarlabel /// variable names only
 cstat(_r_b) /// beta's only
 showstars showstarsnote ///
-column(estimates) ///
+column(index) ///
 export("table0.md", as(markdown) replace)
 
 estimates drop cross_sectional0
@@ -156,7 +156,7 @@ estimates drop cross_sectional0
 
 mixed outcome warmth physical_punishment i.identity i.intervention HDI || country: warmth // multilevel model
 
-estat sd, variance post // post results as variance scale rather than log scale
+* estat sd, variance post // post results as variance scale rather than log scale
 
 est store cross_sectional // store estimates
 
@@ -164,7 +164,7 @@ etable, estimates(cross_sectional) ///
 novarlabel /// variable names only
 cstat(_r_b) /// beta's only
 showstars showstarsnote ///
-column(estimates) ///
+column(index) ///
 export("table1.md", as(markdown) replace)
 
 estimates drop cross_sectional
@@ -173,15 +173,15 @@ estimates drop cross_sectional
 
 mixed outcome warmth physical_punishment i.identity i.intervention HDI || country: warmth, cov(uns) // multilevel model
 
-estat sd, variance post // post results as variance scale rather than log scale
+* estat sd, variance post // post results as variance scale rather than log scale
 
 est store cross_sectional2 // store estimates
 
 etable, estimates(cross_sectional2) ///
-novarlabel /// variable names only
+novarlabel /// variable names only 
 cstat(_r_b) /// beta's only
 showstars showstarsnote ///
-column(estimates) ///
+column(index) ///
 export("table1A.md", as(markdown) replace)
 
 estimates drop cross_sectional2
@@ -198,7 +198,7 @@ generate cdev_warmth = cmean_warmth - gmean_warmth // deviation from grand mean
 
 mixed outcome dev_warmth cdev_warmth physical_punishment i.identity i.intervention HDI || country: warmth // multilevel model
 
-estat sd, variance post // post results as variance scale rather than log scale
+* estat sd, variance post // post results as variance scale rather than log scale
 
 est store cross_sectional3 // store estimates
 
@@ -206,7 +206,7 @@ etable, estimates(cross_sectional3) ///
 novarlabel /// variable names only
 cstat(_r_b) /// beta's only
 showstars showstarsnote ///
-column(estimates) ///
+column(index) ///
 export("table1B.md", as(markdown) replace)
 
 estimates drop cross_sectional3
@@ -229,7 +229,7 @@ estat icc
 
 mixed outcome t warmth physical_punishment i.identity i.intervention HDI || country: warmth || id: t // multilevel model
 
-estat sd, variance post // post results as variance scale rather than log scale
+* estat sd, variance post // post results as variance scale rather than log scale
 
 est store longitudinal // store estimates
 
@@ -237,7 +237,7 @@ etable, estimates(longitudinal) ///
 novarlabel /// variable names only
 cstat(_r_b) /// beta's only
 showstars showstarsnote ///
-column(estimates) ///
+column(index) ///
 export("table2.md", as(markdown) replace)
 
 estimates drop longitudinal
@@ -246,7 +246,7 @@ estimates drop longitudinal
 
 mixed outcome c.t##(c.warmth c.physical_punishment i.identity i.intervention c.HDI) || country: warmth || id: t // multilevel model
 
-estat sd, variance post // post results as variance scale rather than log scale
+* estat sd, variance post // post results as variance scale rather than log scale
 
 est store longitudinalB // store estimates
 
@@ -254,7 +254,7 @@ etable, estimates(longitudinalB) ///
 novarlabel /// variable names only
 cstat(_r_b) /// beta's only
 showstars showstarsnote ///
-column(estimates) ///
+column(index) ///
 export("table2B.md", as(markdown) replace)
 
 estimates drop longitudinalB
@@ -264,7 +264,7 @@ estimates drop longitudinalB
 
 mixed outcome t warmth physical_punishment i.identity i.intervention HDI || id: // multilevel model
 
-estat sd, variance post // post results as variance scale rather than log scale
+* estat sd, variance post // post results as variance scale rather than log scale
 
 est store MLM // store estimates
 
@@ -280,7 +280,7 @@ bysort id: egen mean_physicalpunishment = mean(physical_punishment)
 
 mixed outcome t warmth mean_warmth physical_punishment mean_physicalpunishment i.identity i.intervention HDI || idNUMERIC: // CRE model
 
-estat sd, variance post // post results as variance scale rather than log scale
+* estat sd, variance post // post results as variance scale rather than log scale
 
 est store CRE // store estimates
 

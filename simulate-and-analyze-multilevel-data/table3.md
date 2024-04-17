@@ -11,5 +11,5 @@
 | _cons                  | 51.298 | ** | 51.988 | ** |
 | var(_cons)             | 11.831 |    |        |    |
 | var(e)                 | 26.033 |    |        |    |
-| Number of observations |        |    | 9000   |    |
+| Number of observations | 9000   |    | 9000   |    |
 ** p<.01, * p<.05
