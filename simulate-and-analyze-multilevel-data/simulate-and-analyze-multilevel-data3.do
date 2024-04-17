@@ -54,7 +54,9 @@ generate mean_warmth = runiformint(2, 7) // different levels of mean warmth
 
 generate mean_physicalpunishment = runiformint(2, 5) // different levels of mean physical_punishment
 
-generate identity = runiformint(1, 2) // randomly distributed group
+generate identity = runiformint(1, 2) // randomly distributed identity group
+
+generate intervention = runiformint(1, 2) // randomly distributed intervention
 
 * event level
 
@@ -71,7 +73,7 @@ generate warmth = mean_warmth - runiformint(0, 2) // warmth
 generate outcome = 50 + ///
 -1 * physical_punishment + ///
 1 * warmth + /// 
-1 * group + /// 
+1 * intervention + /// 
 1 * t + ///
 u_0i + u_0ij + e_ijt
 
@@ -83,7 +85,9 @@ label variable physical_punishment "physical punishment in past week"
 
 label variable HDI "Human Development Index"
 
-label variable group "arbitrary group variable"
+label variable identity "hypothetical identity group variable"
+
+label variable intervention "recieved intervention"
 
 label variable country "country id"
 
@@ -99,15 +103,21 @@ label variable outcome "beneficial outcome"
 * save data
 ********************
 
+* longitudinal data
+
 drop mean_warmth mean_physicalpunishment u_0i u_0ij e_ijt
 
 save simulated_multilevel_longitudinal_data.dta, replace
+
+* cross sectional data
 
 keep if t == 1 // only keep time 1 observation
 
 drop t // drop time indicator for cross sectional data
 
 save simulated_multilevel_data.dta, replace
+
+* export to other formats
 
 export excel using "simulated_multilevel_data.xlsx", firstrow(variables) replace // Excel
 
@@ -144,7 +154,7 @@ estimates drop cross_sectional0
 
 * model w covariates
 
-mixed outcome warmth physical_punishment i.group HDI || country: warmth // multilevel model
+mixed outcome warmth physical_punishment i.identity i.intervention HDI || country: warmth // multilevel model
 
 estat sd, variance post // post results as variance scale rather than log scale
 
@@ -161,7 +171,7 @@ estimates drop cross_sectional
 
 * cross sectional with unstructured covariance matrix
 
-mixed outcome warmth physical_punishment i.group HDI || country: warmth, cov(uns) // multilevel model
+mixed outcome warmth physical_punishment i.identity i.intervention HDI || country: warmth, cov(uns) // multilevel model
 
 estat sd, variance post // post results as variance scale rather than log scale
 
@@ -186,7 +196,7 @@ generate dev_warmth = warmth - cmean_warmth // deviation from country specific m
 
 generate cdev_warmth = cmean_warmth - gmean_warmth // deviation from grand mean
 
-mixed outcome dev_warmth cdev_warmth physical_punishment i.group HDI || country: warmth // multilevel model
+mixed outcome dev_warmth cdev_warmth physical_punishment i.identity i.intervention HDI || country: warmth // multilevel model
 
 estat sd, variance post // post results as variance scale rather than log scale
 
@@ -217,7 +227,7 @@ estat icc
 
 * model w covariates
 
-mixed outcome t warmth physical_punishment i.group HDI || country: warmth || id: t // multilevel model
+mixed outcome t warmth physical_punishment i.identity i.intervention HDI || country: warmth || id: t // multilevel model
 
 estat sd, variance post // post results as variance scale rather than log scale
 
@@ -234,7 +244,7 @@ estimates drop longitudinal
 
 * model w covariates and interactions
 
-mixed outcome c.t##(c.warmth c.physical_punishment i.group c.HDI) || country: warmth || id: t // multilevel model
+mixed outcome c.t##(c.warmth c.physical_punishment i.identity i.intervention c.HDI) || country: warmth || id: t // multilevel model
 
 estat sd, variance post // post results as variance scale rather than log scale
 
@@ -252,7 +262,7 @@ estimates drop longitudinalB
 
 * MLM, FE and CRE
 
-mixed outcome t warmth physical_punishment i.group HDI || id: // multilevel model
+mixed outcome t warmth physical_punishment i.identity i.intervention HDI || id: // multilevel model
 
 estat sd, variance post // post results as variance scale rather than log scale
 
@@ -260,7 +270,7 @@ est store MLM // store estimates
 
 encode id, generate(idNUMERIC) // numeric version of id for FE
 
-xtreg outcome t warmth physical_punishment i.group HDI, i(idNUMERIC) fe // FE model
+xtreg outcome t warmth physical_punishment i.identity i.intervention HDI, i(idNUMERIC) fe // FE model
 
 est store FE
 
@@ -268,7 +278,7 @@ bysort id: egen mean_warmth = mean(warmth)
 
 bysort id: egen mean_physicalpunishment = mean(physical_punishment)
 
-mixed outcome t warmth mean_warmth physical_punishment mean_physicalpunishment i.group HDI || idNUMERIC: // CRE model
+mixed outcome t warmth mean_warmth physical_punishment mean_physicalpunishment i.identity i.intervention HDI || idNUMERIC: // CRE model
 
 estat sd, variance post // post results as variance scale rather than log scale
 
