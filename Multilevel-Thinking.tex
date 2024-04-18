@@ -243,7 +243,7 @@
 \subtitle{Discovering Diversity, Universals, and Particulars in
 Cross-Cultural Research}
 \author{Andrew Grogan-Kaylor}
-\date{2024-04-17}
+\date{2024-04-18}
 
 \begin{document}
 \maketitle
@@ -910,7 +910,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, opacityback=0, breakable, colframe=quarto-callout-note-color-frame, coltitle=black, toprule=.15mm, rightrule=.15mm, colback=white, bottomrule=.15mm, arc=.35mm, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, toptitle=1mm, breakable, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, arc=.35mm, toprule=.15mm, bottomtitle=1mm, leftrule=.75mm, coltitle=black, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, colback=white, bottomrule=.15mm]
 
 Data are presented in Stata format. The Appendix considers the analysis
 of multilevel models using multiple software packages: Stata, R \&
@@ -1131,13 +1131,12 @@ conceptual level 2 & N/A & Administrative indicator of social unit \\
 \end{itemize}
 
 \begin{quote}
-Such aggregated variables represent the average level of a response
-across each Level 2 unit. I could create such a level 2 variable for a
-variable \texttt{x}, using the command:
-\texttt{bysort\ group:\ egen\ mean\_x\ =\ mean(x)}. For example, in the
-data described in Chapter~\ref{sec-simulateddata} I could create a mean
-country level warmth score with the command
-\texttt{bysort\ country:\ egen\ mean\_warmth\ =\ mean(warmth)}.
+Such aggregated variables represent the \emph{average} level of a
+response across each Level 2 unit, and are sometimes called ``contextual
+variables'' (Diez Roux, 2002). These aggreagated variables could be
+included in the model alongside the individual level, or Level 1,
+predictors. Discussion of ways to create variables that are the average
+of a predictor is contained in the Appendix.
 \end{quote}
 
 \begin{itemize}
@@ -1612,16 +1611,17 @@ To make these ideas more concrete, I rewrite this equation in terms of
 the main substantive ideas of this book:
 
 \[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} +\]
-\[\beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{j} + \]
+\[\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \text{HDI}_{ij} + \]
 \begin{equation}\phantomsection\label{eq-MLMsubstantive}{u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}}\end{equation}
 
 Put substantively, this model indicates that the outcome can be
 conceptualized as a function of an intercept term, and contributions of
-parental warmth, physical punishment, group membership, and country
-level HDI. The random intercept, \(u_{0j}\) indicates that there is some
-unexplained variation in the outcome at the country level. The random
-slope \(u_{1j} \times \text{parental warmth}\) indicates that the model
-is allowing for country level variation in the association of parental
+parental warmth, physical punishment, identity group membership,
+participation in the intervention, and country level HDI. The random
+intercept, \(u_{0j}\) indicates that there is some unexplained variation
+in the outcome at the country level. The random slope
+\(u_{1j} \times \text{parental warmth}\) indicates that the model is
+allowing for country level variation in the association of parental
 warmth with the outcome. Inspection of Figure~\ref{fig-data} indicates
 that it might be possible that there would be variation across countries
 in this slope. The model could be extended to allow for country level
@@ -2049,18 +2049,20 @@ have provided some discussion of the multilevel model, more statistical
 \index{variation and diversity}
 
 I provide again, for pedagogical purposes, the example substantive
-equation that I have been using in this book.
+equation (Equation~\ref{eq-MLMsubstantive}) that I have been using in
+this book.
 
 \[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} +\]
-\[\beta_3 \text{group}_{ij} + \beta_4 \text{HDI}_{j} + \]
+\[\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \text{HDI}_{ij} + \]
 \begin{equation}\phantomsection\label{eq-MLMsubstantive2}{u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}}\end{equation}
 
 \subsection{Measured and Unmeasured
 Variation}\label{measured-and-unmeasured-variation}
 
-The first thing to note about an equation for a multilevel model--here
-written in a more general form--is that it can be divided into measured
-and unmeasured variation.
+An equation for a multilevel model can be divided into measured and
+unmeasured variation. Below I use a simplified form of
+Equation~\ref{eq-MLMsubstantive2}, focusing in particular--for sake of
+illustration--on the identity variable.
 
 \[\underbrace{y_{ij}}_\text{outcome} = \underbrace{\beta_0}_\text{intercept} + \underbrace{\beta_1 x}_{\text{slope of} \\ \text{measured x}} + \underbrace{\beta_2 \text{identity}}_{\substack{\text{association of} \\ \text{measured identity} \\ \text{with intercept}}} + \underbrace{\beta_3 x \times \text{identity}}_{\substack{\text{association of} \\ \text{measured identity} \\ \text{with slope of} \\  \text{measured x}}} + \]
 
@@ -3264,6 +3266,11 @@ mothers: Links to children's externalizing behaviors.}
 Diener, E., Northcott, R., Zyphur, M. J., \& West, S. G. (2022). Beyond
 experiments. \emph{Perspectives on Psychological Science}, \emph{17},
 1101--1119. \url{https://doi.org/10.1177/17456916211037670}
+
+\bibitem[\citeproctext]{ref-DiezRoux2002}
+Diez Roux, A. V. (2002). {A glossary for multilevel analysis}.
+\emph{Journal of Epidemiology and Community Health}, \emph{56}(8), 588
+LP--594. \url{https://doi.org/10.1136/jech.56.8.588}
 
 \bibitem[\citeproctext]{ref-Dove1999}
 Dove, R. (1999). The first book. In \emph{On the bus with {R}osa
