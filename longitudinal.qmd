@@ -249,7 +249,7 @@ separation in time".
 
 Most software programs for multilevel modeling allow one to incorporate measures of autocorrelation so that, e.g., $e_{i,t=3}$ is allowed to be correlated with $e_{i,t=2}$, which in turn can be correlated with $e_{i,t=1}$. More complex autocorrelation structures are usually also possible [@StataCorp2021:1]. 
 
-## Causality {#sec-causality}
+## Causal Inference {#sec-causality}
 
 ### The Importance of Causal Reasoning
 
