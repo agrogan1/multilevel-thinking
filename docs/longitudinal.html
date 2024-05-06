@@ -434,7 +434,7 @@ window.Quarto = {
   <li><a href="#interactions-with-time" id="toc-interactions-with-time" class="nav-link" data-scroll-target="#interactions-with-time"><span class="header-section-number">6.5.1</span> Interactions With Time</a></li>
   </ul></li>
   <li><a href="#autocorrelation" id="toc-autocorrelation" class="nav-link" data-scroll-target="#autocorrelation"><span class="header-section-number">6.6</span> Autocorrelation</a></li>
-  <li><a href="#sec-causality" id="toc-sec-causality" class="nav-link" data-scroll-target="#sec-causality"><span class="header-section-number">6.7</span> Causality</a>
+  <li><a href="#sec-causality" id="toc-sec-causality" class="nav-link" data-scroll-target="#sec-causality"><span class="header-section-number">6.7</span> Causal Inference</a>
   <ul class="collapse">
   <li><a href="#the-importance-of-causal-reasoning" id="toc-the-importance-of-causal-reasoning" class="nav-link" data-scroll-target="#the-importance-of-causal-reasoning"><span class="header-section-number">6.7.1</span> The Importance of Causal Reasoning</a></li>
   <li><a href="#randomized-controlled-trials" id="toc-randomized-controlled-trials" class="nav-link" data-scroll-target="#randomized-controlled-trials"><span class="header-section-number">6.7.2</span> Randomized Controlled Trials</a></li>
@@ -814,7 +814,7 @@ Table&nbsp;6.6: Simulated Longitudinal Multilevel Data
 <div id="fig-data2" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-data2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="longitudinal_files/figure-html/fig-data2-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="longitudinal_files/figure-html/fig-data2-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="longitudinal_files/figure-html/fig-data2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="longitudinal_files/figure-html/fig-data2-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.1: Graph of Simulated Longitudinal Data
@@ -881,7 +881,7 @@ Table&nbsp;6.7: Slope and Intercept for Each Group
 <div id="fig-trajectory" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-trajectory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="longitudinal_files/figure-html/fig-trajectory-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="longitudinal_files/figure-html/fig-trajectory-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="longitudinal_files/figure-html/fig-trajectory-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2"><img src="longitudinal_files/figure-html/fig-trajectory-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-trajectory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.2: Hypothetical Growth Trajectory
@@ -1122,7 +1122,7 @@ Figure&nbsp;6.2: Hypothetical Growth Trajectory
 <p>Most software programs for multilevel modeling allow one to incorporate measures of autocorrelation so that, e.g., <span class="math inline">\(e_{i,t=3}\)</span> is allowed to be correlated with <span class="math inline">\(e_{i,t=2}\)</span>, which in turn can be correlated with <span class="math inline">\(e_{i,t=1}\)</span>. More complex autocorrelation structures are usually also possible <span class="citation" data-cites="StataCorp2021:1">(<a href="references.html#ref-StataCorp2021:1" role="doc-biblioref">StataCorp, 2021a</a>)</span>.</p>
 </section>
 <section id="sec-causality" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="sec-causality"><span class="header-section-number">6.7</span> Causality</h2>
+<h2 data-number="6.7" class="anchored" data-anchor-id="sec-causality"><span class="header-section-number">6.7</span> Causal Inference</h2>
 <section id="the-importance-of-causal-reasoning" class="level3" data-number="6.7.1">
 <h3 data-number="6.7.1" class="anchored" data-anchor-id="the-importance-of-causal-reasoning"><span class="header-section-number">6.7.1</span> The Importance of Causal Reasoning</h3>
 <p>Causal reasoning is sometimes considered to be a statistical–or even overly technical–concern. Arguably, however, whenever one is using research to make recommendations about <em>interventions</em>, or <em>treatments</em>, or <em>policies</em>, one is engaging in some form of causal reasoning <span class="citation" data-cites="Duncan2006">(<a href="references.html#ref-Duncan2006" role="doc-biblioref">Duncan &amp; Gibson-Davis, 2006</a>)</span>. </p>
@@ -1160,7 +1160,7 @@ Figure&nbsp;6.2: Hypothetical Growth Trajectory
 <div id="fig-causality" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-causality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="fig-causality.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3"><img src="fig-causality.png" class="img-fluid figure-img" width="519"></a>
+<a href="fig-causality.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3"><img src="fig-causality.png" class="img-fluid figure-img" width="519"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-causality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.3: Formal Criteria of Causality
@@ -1184,7 +1184,7 @@ Figure&nbsp;6.3: Formal Criteria of Causality
 <div id="fig-causalitysubstantive" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-causalitysubstantive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="fig-causalitysubstantive.png" class="lightbox" data-glightbox="description: .lightbox-desc-4" data-gallery="quarto-lightbox-gallery-4"><img src="fig-causalitysubstantive.png" class="img-fluid figure-img" width="519"></a>
+<a href="fig-causalitysubstantive.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-glightbox="description: .lightbox-desc-4"><img src="fig-causalitysubstantive.png" class="img-fluid figure-img" width="519"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-causalitysubstantive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.4: Formal Criteria of Causality: A Substantive Example
@@ -1207,7 +1207,7 @@ Figure&nbsp;6.4: Formal Criteria of Causality: A Substantive Example
 <div id="fig-Simpson" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Simpson-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="longitudinal_files/figure-html/fig-Simpson-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="quarto-lightbox-gallery-5"><img src="longitudinal_files/figure-html/fig-Simpson-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="longitudinal_files/figure-html/fig-Simpson-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" data-glightbox="description: .lightbox-desc-5"><img src="longitudinal_files/figure-html/fig-Simpson-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Simpson-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.5: An Illustration of Simpson’s Paradox
@@ -2132,7 +2132,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","loop":false,"closeEffect":"zoom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
