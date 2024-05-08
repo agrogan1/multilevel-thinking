@@ -56,7 +56,7 @@ generate mean_physicalpunishment = runiformint(2, 5) // different levels of mean
 
 generate identity = runiformint(1, 2) // randomly distributed identity group
 
-generate intervention = runiformint(1, 2) // randomly distributed intervention
+generate intervention = runiformint(0, 1) // randomly distributed intervention
 
 * event level
 

@@ -6,16 +6,16 @@
 | identity                |        |    |
 |   2                     | -0.239 |    |
 | intervention            |        |    |
-|   2                     | 0.661  | *  |
+|   1                     | 0.661  | *  |
 | HDI                     | 0.001  |    |
 | t # warmth              | 0.048  |    |
 | t # physical_punishment | 0.001  |    |
 | identity # t            |        |    |
 |   2                     | 0.055  |    |
 | intervention # t        |        |    |
-|   2                     | 0.099  |    |
+|   1                     | 0.099  |    |
 | t # HDI                 | -0.001 |    |
-| _cons                   | 51.836 | ** |
+| _cons                   | 50.836 | ** |
 | var(warmth)             | 0.011  |    |
 | var(_cons)              | 3.170  |    |
 | var(_cons)              | 8.392  |    |

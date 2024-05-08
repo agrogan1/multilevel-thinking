@@ -5,9 +5,9 @@
 | identity               |        |    |
 |   2                    | -0.298 |    |
 | intervention           |        |    |
-|   2                    | 0.644  | ** |
+|   1                    | 0.644  | ** |
 | HDI                    | -0.008 |    |
-| _cons                  | 53.292 | ** |
+| _cons                  | 52.292 | ** |
 | var(warmth)            | 0.010  |    |
 | var(_cons)             | 2.257  |    |
 | cov(warmth,_cons)      | 0.147  |    |
