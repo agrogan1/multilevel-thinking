@@ -28,7 +28,7 @@ Second, when we have samples of a hundred, several hundred, several thousand, or
 
 Additionally, it is difficult to imagine a methodology other than a *quantitative multilevel* methodology that could accomplish the above 3 goals, and could additionally: 
 
-4. Explore the *diversity and variation in these relationships* across social contexts. 
+4. Explore the *diversity and variation and commonalities in these relationships* across social contexts. \index{diversity}
 
 Therefore, I consider multilevel modeling to be a principled quantitative method for listening to the voices of large numbers of study participants across social contexts. In @sec-pvalues, where I consider the estimation of p values, and @sec-multilevelstructure, where I consider the signs of regression coefficients, I explore the ways that *multilevel data* can contribute substantially to the complexity of the analysis of data. I thus argue that advanced quantitative methods, like multilevel modeling, can play an important role in contributing to liberatory ideas. 
 
