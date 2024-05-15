@@ -54,7 +54,7 @@ generate mean_warmth = runiformint(2, 7) // different levels of mean warmth
 
 generate mean_physicalpunishment = runiformint(2, 5) // different levels of mean physical_punishment
 
-generate identity = runiformint(1, 2) // randomly distributed identity group
+generate identity = runiformint(0, 1) // randomly distributed identity group
 
 generate intervention = runiformint(0, 1) // randomly distributed intervention
 

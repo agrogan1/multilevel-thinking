@@ -4,7 +4,7 @@
 | cdev_warmth            | 1.196  |    |
 | physical_punishment    | -0.992 | ** |
 | identity               |        |    |
-|   2                    | -0.300 |    |
+|   1                    | -0.300 |    |
 | intervention           |        |    |
 |   1                    | 0.640  | ** |
 | HDI                    | -0.004 |    |

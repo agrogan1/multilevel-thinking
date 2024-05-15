@@ -4,14 +4,14 @@
 | warmth                  | 0.817  | ** |
 | physical_punishment     | -1.009 | ** |
 | identity                |        |    |
-|   2                     | -0.239 |    |
+|   1                     | -0.239 |    |
 | intervention            |        |    |
 |   1                     | 0.661  | *  |
 | HDI                     | 0.001  |    |
 | t # warmth              | 0.048  |    |
 | t # physical_punishment | 0.001  |    |
 | identity # t            |        |    |
-|   2                     | 0.055  |    |
+|   1                     | 0.055  |    |
 | intervention # t        |        |    |
 |   1                     | 0.099  |    |
 | t # HDI                 | -0.001 |    |
