@@ -242,7 +242,7 @@
 \subtitle{Discovering Diversity, Universals, and Particulars in
 Cross-Cultural Research}
 \author{Andrew Grogan-Kaylor}
-\date{2024-05-15}
+\date{2024-05-17}
 
 \begin{document}
 \maketitle
@@ -538,7 +538,11 @@ that could accomplish the following:
   within the data are more than \emph{statistical noise}.
 \item
   Adjudicate the \emph{complex multivariate relationships} of risk
-  factors, protective factors and outcomes.
+  factors, protective factors and outcomes. \footnote{In
+    Section~\ref{sec-Simpsons}, I consider the way issues of omitted
+    variables--an often underappreciated issue--contribute to the
+    complexity of estimating multivariate relationships in all
+    quantitative work.}
 \end{enumerate}
 
 Additionally, it is difficult to imagine a methodology other than a
@@ -921,7 +925,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, leftrule=.75mm, breakable, colbacktitle=quarto-callout-note-color!10!white, coltitle=black, opacityback=0, colback=white, bottomtitle=1mm, rightrule=.15mm, toprule=.15mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, arc=.35mm, toptitle=1mm, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, coltitle=black, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, left=2mm, colback=white, toptitle=1mm, opacitybacktitle=0.6, titlerule=0mm, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, bottomrule=.15mm, toprule=.15mm]
 
 Data are presented in Stata format. The Appendix considers the analysis
 of multilevel models using multiple software packages: Stata, R \&
@@ -2905,7 +2909,7 @@ over-estimate of the effect, and statistical significance of
 \(\beta_{\text{parenting} \rightarrow \text{child outcome}}\) may
 represent a false positive.
 
-\subsection{Simpson's Paradox}\label{simpsons-paradox}
+\subsection{Simpson's Paradox}\label{sec-Simpsons}
 
 Earlier, in Section~\ref{sec-multilevelstructure}, I referred to the
 idea of \emph{multilevel structure} wherein failure to account for the
@@ -2914,7 +2918,9 @@ estimated--may lead to incorrect conclusions. A closely related
 phenomenon is that of \emph{Simpson's Paradox} (Simpson, 1951) wherein
 omission of a relevant \emph{covariate} (e.g.~\(z_{it}\) such as SES,
 community characteristics, country level characteristics) may also lead
-to dramatically incorrect results.
+to dramatically incorrect results. The issue of omitted variables is a
+crucially important--and sometimes underappreciated--issue that pervades
+all statistical work.
 
 Statistically, we imagine a situation where the true model is:
 
