@@ -345,7 +345,7 @@ knitr::include_graphics("fig-causalitysubstantive.png")
 
 If *other factors* are omitted from the regression model, then the estimates for $\text{parenting} \rightarrow \text{child outcome}$ (i.e. $\beta_{\text{parenting} \rightarrow \text{child outcome}}$) will be biased. In a common scenario, $\beta_{\text{parenting} \rightarrow \text{child outcome}}$ may be an over-estimate of the effect, and statistical significance of $\beta_{\text{parenting} \rightarrow \text{child outcome}}$ may represent a false positive. 
 
-### Simpson's Paradox
+### Simpson's Paradox {#sec-Simpsons}
 
 Earlier, in @sec-multilevelstructure, I referred to the idea of *multilevel structure* wherein failure to account for the clustering of data--omission of $u_0$ from the equation being estimated--may lead to incorrect conclusions. A closely related phenomenon is that of *Simpson's Paradox* [@Simpson1951] wherein omission of a relevant *covariate* (e.g. $z_{it}$ such as SES, community characteristics, country level characteristics) may also lead to dramatically incorrect results. The issue of omitted variables is a crucially important--and sometimes underappreciated--issue that pervades all statistical work.
 
