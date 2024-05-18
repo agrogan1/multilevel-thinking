@@ -108,7 +108,17 @@ pander::pander(conceptualframework)
 
 * $\overline{\text{mental health}_{.j}}$ or $\overline{\text{parenting}_{.j}}$ would be variables that *conceptually* come from Level 1 responses, but are *statistically* aggregated to Level 2.
 
-> Such aggregated variables represent the *average* level of a response across each Level 2 unit, and are sometimes called "contextual variables" [@DiezRoux2002; @Snijders2012; @Hox2018]. These aggregated variables could be included in the model alongside the individual level, or Level 1, predictors. Discussion of ways to create variables that are the average of a predictor is contained in the Appendix.
+::: {.callout-tip}
+## Contextual Variables
+
+Such aggregated variables represent the *average* level of a response across each Level 2 unit, and are sometimes called "contextual variables" [@DiezRoux2002; @Snijders2012; @Hox2018]. \index{contextual variables} These aggregated variables could be included in the model alongside the individual level, or Level 1, predictors. Consider: 
+
+$$y_{ij} = \beta_0 + \beta_1 \text{parenting}_{ij} + \beta2 \overline{\text{parenting}_{.j}} + u_{0j} + e_{ij}$$ {#eq-contextual}
+
+@eq-contextual is be a model that includes parenting as a predictor of the outcome at two different levels. $\text{parenting}_{ij}$ is a parenting behavior--whether discipline or warmth--at an *individual* level, while $\overline{\text{parenting}_{.j}}$ is a *contextual variable* representing the average level of parenting--whether discipline or warmth--at the *country* level. @eq-contextual is thus testing whether parenting at the country level--a so-called country-level effect--has an association with the outcome over and above individual level parenting behavior.
+
+Discussion of ways to create variables that are the average of a predictor is contained in the Appendix.
+:::
 
 * Using my terminology, $\text{community collective efficacy}_{ij}$ or $\text{community safety}_{ij}$ would be considered to be a variable that was *conceptually* at Level 2, but *statistically* at Level 1.
 
