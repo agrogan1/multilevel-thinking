@@ -242,7 +242,7 @@
 \subtitle{Discovering Diversity, Universals, and Particulars in
 Cross-Cultural Research}
 \author{Andrew Grogan-Kaylor}
-\date{2024-05-17}
+\date{2024-05-18}
 
 \begin{document}
 \maketitle
@@ -319,7 +319,8 @@ unique to me. There are thorough--and often much more mathematically
 rigorous--presentations of many of the ideas contained in this book in
 some of the excellent foundational texts on multilevel modeling such as
 the early book by Raudenbush \& Bryk (2002), the excellent book on
-longitudinal models by Singer \& Willett (2003), and Rabe-Hesketh \&
+longitudinal models by Singer \& Willett (2003), excellent books by
+Snijders \& Bosker (2012) and Hox et al. (2018), and Rabe-Hesketh \&
 Skrondal (2022)'s more recent and extremely comprehensive two volume
 text. Luke (2004), and Kreft \& de Leeuw (1998), offer shorter, less
 mathematically rigorous, but still excellent introductions to the topic
@@ -860,13 +861,14 @@ cultural contexts. Thus it is necessary to employ statistical methods
 that are able to adequately and accurately analyze data across
 countries.
 
-As I will outline below--and is evident in the literature (Kreft \& de
-Leeuw, 1998; Luke, 2004; Rabe-Hesketh \& Skrondal, 2022; Raudenbush \&
-Bryk, 2002; Singer \& Willett, 2003)--multilevel models are eminently
-suited for cross-cultural research in that they are not only able to
-\emph{control for} the clustering of study participants within
-countries, but are also able to \emph{explore the variation}--or
-\emph{consistency}--of patterns of social life across countries.
+As I will outline below--and is evident in the literature (Hox et al.,
+2018; Kreft \& de Leeuw, 1998; Luke, 2004; Rabe-Hesketh \& Skrondal,
+2022; Raudenbush \& Bryk, 2002; Singer \& Willett, 2003; Snijders \&
+Bosker, 2012)--multilevel models are eminently suited for cross-cultural
+research in that they are not only able to \emph{control for} the
+clustering of study participants within countries, but are also able to
+\emph{explore the variation}--or \emph{consistency}--of patterns of
+social life across countries.
 
 \bookmarksetup{startatroot}
 
@@ -925,7 +927,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, coltitle=black, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, left=2mm, colback=white, toptitle=1mm, opacitybacktitle=0.6, titlerule=0mm, rightrule=.15mm, arc=.35mm, colframe=quarto-callout-note-color-frame, breakable, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, bottomrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, breakable, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, coltitle=black, bottomrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, left=2mm, opacitybacktitle=0.6, arc=.35mm, titlerule=0mm, rightrule=.15mm, toptitle=1mm, leftrule=.75mm, opacityback=0, colback=white, colbacktitle=quarto-callout-note-color!10!white]
 
 Data are presented in Stata format. The Appendix considers the analysis
 of multilevel models using multiple software packages: Stata, R \&
@@ -1069,9 +1071,9 @@ analysis; or, one could consider the larger social units to be the units
 of analyses. With multilevel analytic methods, one is able to avoid this
 false dichotomy, and to conceptualize the data from a multilevel
 perspective, wherein both individuals and social units are different
-levels of the same analysis. I discuss some of the statistical
-implications of different ideas about the units of analysis in
-Section~\ref{sec-wrongapproaches}. \index{units of analysis}
+levels of the same analysis Raudenbush \& Bryk (2002). I discuss some of
+the statistical implications of different ideas about the units of
+analysis in Section~\ref{sec-wrongapproaches}. \index{units of analysis}
 
 Further, with multilevel models, we are not only able to consider the
 idea of units of analysis at multiple levels of the data, but to
@@ -1145,14 +1147,32 @@ conceptual level 2 & N/A & Administrative indicator of social unit \\
   \emph{statistically} aggregated to Level 2.
 \end{itemize}
 
-\begin{quote}
+\begin{tcolorbox}[enhanced jigsaw, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, coltitle=black, bottomrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, left=2mm, opacitybacktitle=0.6, arc=.35mm, titlerule=0mm, rightrule=.15mm, toptitle=1mm, leftrule=.75mm, opacityback=0, colback=white, colbacktitle=quarto-callout-tip-color!10!white]
+
 Such aggregated variables represent the \emph{average} level of a
 response across each Level 2 unit, and are sometimes called ``contextual
-variables'' (Diez Roux, 2002). These aggreagated variables could be
+variables'' (Diez Roux, 2002; Hox et al., 2018; Snijders \& Bosker,
+2012). \index{contextual variables} These aggregated variables could be
 included in the model alongside the individual level, or Level 1,
-predictors. Discussion of ways to create variables that are the average
-of a predictor is contained in the Appendix.
-\end{quote}
+predictors. Consider:
+
+\begin{equation}\phantomsection\label{eq-contextual}{y_{ij} = \beta_0 + \beta_1 \text{parenting}_{ij} + \beta2 \overline{\text{parenting}_{.j}} + u_{0j} + e_{ij}}\end{equation}
+
+Equation~\ref{eq-contextual} is be a model that includes parenting as a
+predictor of the outcome at two different levels.
+\(\text{parenting}_{ij}\) is a parenting behavior--whether discipline or
+warmth--at an \emph{individual} level, while
+\(\overline{\text{parenting}_{.j}}\) is a \emph{contextual variable}
+representing the average level of parenting--whether discipline or
+warmth--at the \emph{country} level. Equation~\ref{eq-contextual} is
+thus testing whether parenting at the country level--a so-called
+country-level effect--has an association with the outcome over and above
+individual level parenting behavior.
+
+Discussion of ways to create variables that are the average of a
+predictor is contained in the Appendix.
+
+\end{tcolorbox}
 
 \begin{itemize}
 \item
@@ -1187,9 +1207,10 @@ indeed an important and crucial aspect of multilevel models.
 However, my argument here is that multilevel models are better seen as a
 method to \emph{explore} the variation and diversity inherent within
 nested or clustered data. Again, while these issues are well understood
-within the statistical literature (Kreft \& de Leeuw, 1998; Luke, 2004;
-Rabe-Hesketh \& Skrondal, 2012; Raudenbush \& Bryk, 2002; Singer \&
-Willett, 2003), they are less often noted in applied research.
+within the statistical literature (Hox et al., 2018; Kreft \& de Leeuw,
+1998; Luke, 2004; Rabe-Hesketh \& Skrondal, 2012; Raudenbush \& Bryk,
+2002; Singer \& Willett, 2003; Snijders \& Bosker, 2012), they are less
+often noted in applied research.
 
 \subsection{A First Example: A Study Of Parenting And Child
 Development}\label{a-first-example-a-study-of-parenting-and-child-development}
@@ -1307,11 +1328,12 @@ Section~\ref{sec-studyvariation2}.
 
 Again, statistically sophisticated treatments of all of the ideas are
 available in one form or another across the excellent textbooks on
-multilevel modeling (Kreft \& de Leeuw, 1998; Luke, 2004; Rabe-Hesketh
-\& Skrondal, 2012; Raudenbush \& Bryk, 2002; Singer \& Willett, 2003).
-However, some of these ideas appear less often in applied research, and
-my intention here is to make the application of these ideas to applied
-research, and to concerns of variation and diversity, more clear.
+multilevel modeling (Hox et al., 2018; Kreft \& de Leeuw, 1998; Luke,
+2004; Rabe-Hesketh \& Skrondal, 2012; Raudenbush \& Bryk, 2002; Singer
+\& Willett, 2003; Snijders \& Bosker, 2012). However, some of these
+ideas appear less often in applied research, and my intention here is to
+make the application of these ideas to applied research, and to concerns
+of variation and diversity, more clear.
 
 \bookmarksetup{startatroot}
 
@@ -1530,8 +1552,8 @@ intervention was harmful, when it was in fact helpful.
 \end{figure}%
 
 The idea that group level and individual level relationships must be the
-same (Firebaugh, 2001) has been termed the ``ecological fallacy''.
-\index{ecological fallacy}
+same has been termed the ``ecological fallacy'' (Firebaugh, 2001; Hox et
+al., 2018; Snijders \& Bosker, 2012). \index{ecological fallacy}
 
 These data are constructed to provide this kind of extreme example, but
 it easy to see how multilevel thinking, and multilevel analysis may
@@ -3415,6 +3437,12 @@ of the American Statistical Association}, \emph{81}(396), 945--960.
 Hooper, R. (2022). {Designing Stepped Wedge Trials with Continuous
 Recruitment}. \emph{Methods: Mind the Gap (Webinar Series)}.
 
+\bibitem[\citeproctext]{ref-Hox2018}
+Hox, J. J., Moerbeek, M., \& Schoot, R. van de. (2018). Multilevel
+analysis: Techniques and applications. In \emph{Multilevel analysis:
+techniques and applications} (Third edition.). Routledge, Taylor \&
+Francis Group,.
+
 \bibitem[\citeproctext]{ref-Hurston1942}
 Hurston, Z. N. (1942). \emph{Dust tracks on a road}. HarperPerennial.
 
@@ -3595,6 +3623,12 @@ Singer, J. D., \& Willett, J. B. (2003). Applied longitudinal data
 analysis : Modeling change and event occurrence. In \emph{Applied
 longitudinal data analysis : modeling change and event occurrence}.
 Oxford University Press.
+
+\bibitem[\citeproctext]{ref-Snijders2012}
+Snijders, T. A. B., \& Bosker, R. J. (2012). Multilevel analysis: An
+introduction to basic and advanced multilevel modeling. In
+\emph{Multilevel analysis: an introduction to basic and advanced
+multilevel modeling} (2nd ed.). Sage.
 
 \bibitem[\citeproctext]{ref-Sontag2007}
 Sontag, S. (2007). At the same time: The novelist and moral reasoning.
