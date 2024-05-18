@@ -188,7 +188,7 @@ p0 +
 
 ```
 
-The idea that group level and individual level relationships must be the same [@FIREBAUGH20014023] has been termed the "ecological fallacy". \index{ecological fallacy}
+The idea that group level and individual level relationships must be the same has been termed the "ecological fallacy" [@FIREBAUGH20014023; @Hox2018; @Snijders2012]. \index{ecological fallacy}
 
 These data are constructed to provide this kind of extreme example, but it easy to see how multilevel thinking, and multilevel analysis may provide better answers than one would get if one ignored the grouped nature of the data.
 
