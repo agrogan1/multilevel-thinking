@@ -16,7 +16,7 @@ library(tidyr) # data tidying
 
 ```
 
-## Quantitative Methods and Social Justice
+## Quantitative Methods and Social Justice {#sec-socialjustice}
 
 There is clearly need for both qualitative and quantitative methods. \index{quantitative and qualitative methods} Central to the argument of this book is the idea that advanced quantitative methods can be core contributors to the agenda of understanding issues of diversity and social justice more fully and thoroughly [@Cokley2013; @GroganKaylor2018]. Quantitative methods, particularly in discussions comparing qualitative and quantitative methodologies, are sometimes labelled as inherently *positivist* methods. \index{positivist} My argument regarding this point is twofold. First, there is nothing within the mathematics of quantitative methods that requires a positivist epistemology. Quantitative methodologies could as easily be conducted using a critical epistemology--that is aware of dynamics of power and privilege--as any other methodology [@Stage2014; @Scharrer2021]. \index{quantitative literacy} \index{quantitative criticalism} I note that one of the pioneers of liberation psychology, Martin-Baró [@Aron1994], used both qualitative and quantitative methods [@Martin-Baro1994], including in the latter case, relatively sophisticated arguments about patterns of missing data across a survey data set [@Aron1994]. \index{liberation psychology}
 
@@ -32,7 +32,7 @@ Additionally, it is difficult to imagine a methodology other than a *quantitativ
 
 4. Explore the *diversity and variation and commonalities in these relationships* across social contexts. \index{diversity}
 
-Therefore, I consider multilevel modeling to be a principled quantitative method for listening to the voices of large numbers of study participants across social contexts. In @sec-pvalues, where I consider the estimation of p values, and @sec-multilevelstructure, where I consider the signs of regression coefficients, I explore the ways that *multilevel data* can contribute substantially to the complexity of the analysis of data. I thus argue that advanced quantitative methods, like multilevel modeling, can play an important role in contributing to liberatory ideas. 
+Therefore, I consider multilevel modeling to be a principled quantitative method for *listening* to the voices of large numbers of study participants across social contexts. In @sec-pvalues, where I consider the estimation of p values, and @sec-multilevelstructure, where I consider the signs of regression coefficients, I explore the ways that *multilevel data* can contribute substantially to the complexity of the analysis of data. This complexity of *multilevel data* means that unless one employs appropriately sophisticated *multilevel analysis* methods with *multilevel data*, one runs a relatively high risk of making incorrect substantive conclusions. I thus argue that advanced quantitative methods, like multilevel modeling, can play an important role in contributing to liberatory ideas. 
 
 There is thus an ethical argument that is embedded in this book. Many of us do research with the hope of better understanding the relationship of risk and protective factors with outcomes in diverse, and often disadvantaged or marginalized, populations. Many of us further hope that our work might be part of conversations about appropriate polices, programs, treatments or interventions. Given the frequent vulnerability and marginalization of the people with whom we work, when using quantitative methods, it is incumbent upon us to employ methods that adequately address the complexities of the data, that offer an appreciation of the variability and diversity within the data, that provide the most accurate and unbiased estimates possible, and that increase the probability of obtaining correct answers to important substantive questions.
 
@@ -40,7 +40,7 @@ There is thus an ethical argument that is embedded in this book. Many of us do r
 
 The idea of this book is that a deeper study of multilevel modeling can result in an advanced "quantitative literacy" [@Wiest2007], \index{quantitative literacy} "quantitative criticalism" [@Scharrer2021], \index{quantitative criticalism} or "principled argument" [@Abelson1995], \index{principled argument} that is appropriate for drawing accurate conclusions from multilevel data. 
 
-## Some Philosophy of Science
+## Some Philosophy of Science {#sec-science}
 
 I am not much of a philosopher of science. However, I am very persuaded by Strevens' [-@Strevens2020] minimalist criterion of the "iron rule". In essence, this rule specifies that to count as "science", investigations must engage in "performing an experiment or making an observation that generates relevant empirical evidence" against which competing hypotheses can be tested. A similar perspective is offered by @Goldacre2011 who argues that ideas about interventions should be scrutinized with a "fair test". That is to say, they should be tested against evidence that can support or refute those ideas. I would argue all ideas about promoting human well-being should be able to be subjected to such a "fair test". \index{philosophy of science}
 
@@ -58,9 +58,9 @@ Following from this pragmatic and advocacy oriented emphasis, the book is largel
 
 The book moves quickly into detailed statistical arguments. Some of these statistical discussions may seem very technical, or even overly technical. However, an overarching theme of the book is that multilevel data contains hidden complexities. A lack of awareness of the complexities of multilevel data—e.g. complexities of multi-country data—might lead to statistical analyses that point in the wrong direction: yielding false positives; false negatives; or substantively wrong conclusions. 
 
-## Are Answers from Social Science "Obvious"?
+## Are Answers from Social Science "Obvious"? {#sec-obvious}
 
-Closely related, I think to the the idea that quantitative research can advance issues of social justice, is the question of whether answers from social science are "obvious". If social science answers are obvious, then social science has limited abilities to make new discoveries, and to build scientific foundations for evidence. 
+Closely related, I think to the the idea that quantitative research can advance issues of social justice, is the question of whether answers from social science are "obvious". If social science answers are obvious, then social science has limited abilities to make new discoveries, and to build scientific foundations for evidence. In contrast, if answers from social science are sometimes not obvious, then social science has a greater ability to make new discoveries and build new foundations for evidence. 
 
 I have been thinking a lot about the idea that *Everything Is Obvious, Once You Know The Answer*, as detailed in the book with this title by Duncan @Watts2011. \index{everything is obvious} 
 
