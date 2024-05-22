@@ -24,9 +24,9 @@ Second, when we have samples of a hundred, several hundred, several thousand, or
 
 1. Sift through thousands of responses, and determine the *overall, or average, pattern of relationships* between risk factors, protective factors, and outcomes.
 2. Determine whether there is evidence that the relationships observed within the data are more than *statistical noise*.
-3. Adjudicate the *complex multivariate relationships* of risk factors, protective factors and outcomes. [^multivariate]
+3. Adjudicate the *complex multivariate relationships* of risk factors, protective factors and outcomes, while controlling for possible confounding variables, contextual variables, or background variables. [^multivariate]
 
-[^multivariate]: In @sec-Simpsons, I consider the way issues of omitted variables--an often underappreciated issue--contribute to the complexity of estimating multivariate relationships in all quantitative work.
+[^multivariate]: In @sec-Simpsons, I consider the way issues of omitted variables--an often under-appreciated issue--contribute to the complexity of estimating multivariate relationships in all quantitative work.
 
 Additionally, it is difficult to imagine a methodology other than a *quantitative multilevel* methodology that could accomplish the above 3 goals, and could additionally: 
 
