@@ -241,7 +241,7 @@ Lastly, in Panel C, we note an overall association of the intervention with psyc
 
 ### Exploring Variation
 
-Thus, I emphasize an approach to multilevel modeling that sees multilevel modeling as the *study of variation*, not simply *accounting for variation*, or *controlling for variation*. \index{variation and diversity} \index{universalism}
+Thus, I emphasize an approach to multilevel modeling that sees multilevel modeling as the *study of variation* or an *exploration of variation*, not simply *accounting for variation*, or *controlling for variation*. \index{variation and diversity} \index{universalism}
 
 >  "... universal theorizing requires adequately sampled (i.e., diverse) data and better appreciation of issues of comparability and the most powerful theories ought to predict and explain variation, not sweep variation under the rug." [@Blasi2022]
 
