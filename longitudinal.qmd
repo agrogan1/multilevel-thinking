@@ -379,7 +379,7 @@ ggplot(multilevelstructure,
   geom_point(aes(color = country)) + # points with country color
   geom_smooth(aes(color = country), # smoothers with country color
               method = "lm") + 
-  labs(title = "Desirable Outcome as a Function of Intervention or Treatment",
+  labs(title = "Desirable Outcome as a Function of Parenting",
        x = "intervention or treatment or parenting (x)",
        y = "desirable outcome (y)",
        caption = "Slope not accounting for covariate(s) slopes downward. \nSlope accounting for covariate(s) slopes upward.") +
