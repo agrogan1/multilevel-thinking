@@ -36,7 +36,7 @@ There is an ethical argument that is embedded in this book. Many of us do resear
 
 > "It is hard to imagine that anyone with a humanitarian worldview would argue against the need for a more quantitatively literate citizenry. Informed political decision-making, retirement planning, active parenting, and the vast majority of choices we make in our personal, occupational, and civic lives can be better served by improved quantitative understanding and reasoning, as well as accompanying action-oriented dispositions." [@Wiest2007]
 
-The idea of this book is that a deeper study of multilevel modeling can result in an advanced "quantitative literacy" [@Wiest2007], \index{quantitative literacy} "quantitative criticalism" [@Scharrer2021], \index{quantitative criticalism} or "principled argument" [@Abelson1995], \index{principled argument} that is appropriate for drawing accurate conclusions from multilevel data. 
+The idea of this book is that a deeper study of multilevel modeling can result in an advanced "quantitative literacy" [@Wiest2007], \index{quantitative literacy} "quantitative criticalism" [@Scharrer2021], \index{quantitative criticalism} "critical quantitative inquiry" [@Stage2014], \index{critical quantitative inquiry} or "principled argument" [@Abelson1995], \index{principled argument} that is appropriate for drawing accurate conclusions from multilevel data. 
 
 ## Some Philosophy of Science {#sec-science}
 
