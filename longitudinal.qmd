@@ -434,7 +434,7 @@ However, a disadvantage of the fixed effects approach is that this approach can 
 
 In comparing the multilevel model and the fixed effects regression, we note a few salient difference. First, the fixed effects are similar to the multilevel model coefficients. (Most often, the fixed effect regression coefficients are attenuated versions of the multilevel model coefficients, but not always.) The fixed effects regression coefficients for variables that have some variation over time, provide estimates that control for all time invariant variables in the model.
 
-Second, estimates for any quantities that do not vary over time, in this case, `group` membership, and `HDI`, are not available from the fixed effects regression. 
+Second, estimates for any quantities that do not vary over time, in this case, `identity` group membership, participation in the `intervention`, and `HDI`, are not available from the fixed effects regression. 
 
 ### The Correlated Random Effects Model
 
@@ -459,7 +459,7 @@ By including these parameters, I  obtain estimates for the time varying variable
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table4.md')}
 ```
 
-Note a couple of things from this table. First, results from the correlated random effects model, and the fixed effects regression model are exactly the same for *time varying* variables, `t`, `warmth`, and `physical_punishment`. Again, these coefficients for *time varying* variables are estimated with statistical control for all time invariant characteristics of study subjects, whether those characteristics are observed, or unobserved. Secondly, unlike the fixed effects regression, coefficients for *time invariant* variables, e.g. `group`, `HDI`, mean levels of `warmth`, and mean levels of `physical_punishment` are provided, while they are not provided in the fixed effects model. 
+Note a couple of things from this table. First, results from the correlated random effects model, and the fixed effects regression model are exactly the same for *time varying* variables, `t`, `warmth`, and `physical_punishment`. Again, these coefficients for *time varying* variables are estimated with statistical control for all time invariant characteristics of study subjects, whether those characteristics are observed, or unobserved. Secondly, unlike the fixed effects regression, coefficients for *time invariant* variables, e.g. `identity` group, participation in the `intervention`, `HDI`, mean levels of `warmth`, and mean levels of `physical_punishment`, are provided, while they would not not provided in the fixed effects model. 
 
 
 
