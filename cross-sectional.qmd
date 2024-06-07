@@ -314,9 +314,94 @@ There is--in contrast--no discernible variation in the *slope* associated with p
 
 `HDI`, the *Human Development Index*, our only country level, or Level 2, variable in this model is not associated with the outcome.
 
+## Indicator Variables, Random Intercepts and Random Slopes, and Identities
+
+Now that we have had some discussion of some of the basics of the multilevel model, more discussion of some particular issues is warranted. \index{race and ethnicity}
+
+Statistically, there is often a concern about whether a particular qualitative or categorical variable is most appropriately modeled as an indicator variable, or as a level (random intercept). Substantively, this question intersects with how one should statistically include and model various measures of identity. Many identities are often measured as categorical variables. \index{indicator variables} 
+
+### The Example of U.S. Census Data
+
+The United States Census [@Census2022] asks about race using several different categories: White; Black or African American; American Indian or Alaska Native; Asian; Native Hawaiian and Pacific Islander; Some Other Race. Followup questions are asked for some identities, and a separate question is asked about Latino / Hispanic identity. Thus one might imagine a questionnaire with two measures.
+
+| Race                                 | Latino                 |
+|--------------------------------------|------------------------|
+| White                                | Latino or Hispanic     |
+| Black or African American            | Not Latino or Hispanic |
+| American Indian or Alaska Native     |                        |
+| Asian                                |                        |
+| Native Hawaiian and Pacific Islander |                        |
+| Some Other Race                      |                        |
+
+: Hypothetical Questions Measuring Race {#tbl-race-ethnicity-questions}
+
+A table of data might then look something like the following.
+
+```{r}
+#| label: tbl-race-ethnicity-data
+#| tbl-cap: Simulated Data on Race and Ethnicity
+#| echo: false
+
+race_ethnicity <- read_dta("race_ethnicity.dta")
+
+pander(head(race_ethnicity))
+
+```
+
+More recently, the Census has allowed respondents to select multiple racial identities. Such a table of data might look like this.
+
+```{r}
+#| label: tbl-race-ethnicity-2-data
+#| tbl-cap: Simulated Data on Race and Ethnicity With Multiple Identities
+#| echo: false
+
+race_ethnicity2 <- read_dta("race_ethnicity2.dta")
+
+pander(head(race_ethnicity2))
+
+```
+
+### Identities As Indicator Variables
+
+Identities can be modeled as indicator variables. Importantly, whether only a single identity is selected (e.g. @tbl-race-ethnicity-data), or multiple identities are selected (@tbl-race-ethnicity-2-data), if identities are modeled as indicator variables, they should be modeled as a *set* of indicator variables with an omitted reference category. If there are $k$ categories of a variable, there should be $k-1$  indicator variables., e.g.
+
+$$y_{ij} = \beta_0 + \beta_2 \text{race2} + \beta_3 \text{race3} + \beta_4 \text{race4} + \beta_5 \text{race5} + \beta_6 \text{race6} + $$  {#eq-indicator-variables} 
+
+$$\beta_7 \text{latinx} + u_{0j} + e_{ij}$$ 
+
+In @eq-indicator-variables the first group of race, `race1` is treated as the reference category, and is therefore omitted from the model, and all comparisons are made to individuals with identity `race1`.
+
+::: {.callout-tip}
+#### Reference Categories Need To Be Chosen Carefully
+
+Reference categories need to be chosen carefully. This is especially true in studies that hope to be attentive to diversity and social change. The default in many software programs is to exclude the first category of an identity, as is evident in @eq-indicator-variables. However, in the example given in @tbl-race-ethnicity-questions, this would mean that all comparisons would be made to individuals who identified as *white*. It often makes sense to choose a different reference category than the default, and investigators are encouraged to be thoughtful about the choice of reference category for indicator variables. In most software, the choice of reference categories can be manually specified.
+:::
+
+::: {.callout-warning}
+#### Indicator Variables Should Not Be Treated As A Continuous Variable
+
+Identities that are measured in the data with a single categorical variable with values like `1`, `2`, `3`, `4`, `5`, `6` should *not* be modeled as a single continuous variable. For example, if the data are similar to those presented in @tbl-race-ethnicity-data--where identity is measured as a single column of data--it is important that the multiple identities *not* be modeled as a single variable, which would end up *de facto* treating this multi-category *categorical* variable as a single *continuous* variable. Instead, multiple indicator variables ($k-1$)for the multiple ($k$) identities should be clearly specified in one's equation (as in @eq-indicator-variables) and in the statistical syntax. Details of how to accomplish this for different software packages are included in the Appendix.
+:::
+
+### Identities as Random Intercepts or Slopes
+
+If there are many values of an identity it may be difficult to model those multiple identities as indicator variables. For example, if there were 10 possible values of a particular identity, and one was modeling those identities with indicator variables, one would need to include 9 ($k-1$) indicator variables. Those 9 indicator variables could potentially use a large fraction of the available degrees of freedom, and interpreting the $\beta$ regression coefficients for 9 indicator variables might also be challenging. The problem is even greater when one considers a larger number of identities (e.g. 25, 30, 50, 100), as is possible in some data sets. In a global or cross cultural data set, such as the simulated data that is used as an example throughout this book, one might easily conceive of data with 20, 30 or 50 different identities, especially since racial and ethnic identity categories may differ substantially across countries, around the world [@Rocha2020].
+
+An alternative would be to model large numbers of possible identities as a random intercept, rather than as a set of indicator variables. Such an equation might appear as follows:
+
+$$y_{ij} = \beta_0 + \Sigma \beta_m \text{covariates} + v_{0k} + u_{0j} + e_{ij}$$ {#eq-identity-random-intercept}
+
+Here, the inclusion of $v_{0k}$, a random intercept for identity, would be a way to model the presence of many possible values of an identity variable. 
+
+An *advantage* of the approach outlined in @eq-identity-random-intercept is that we could model multiple identities without including a large--potentially enormous--number of indicator variables.
+
+A potential *disadvantage* of the approach outlined in @eq-identity-random-intercept is that this is multi-country data that already employs a random slope, $u_{0j}$. Adding $v_{0k}$ means that we now have a model with *two* random slopes, a topic which is discussed in **Chapter XXXXXXX**.
+
+A *caveat* of the approach outlined in @eq-identity-random-intercept is that random intercepts (e.g. $v_{0k}$ and $u_{0j}$)--which are essentially error terms at level 2--are assumed to follow a normal distribution. Ten identities, to follow the example above, is generally considered to be too few groups to satisfy this assumption of a normal distribution. @Maas2004 suggest that at least 50 level 2 units are necessary to ensure satisfaction of this normality assumption. Importantly, if one has fewer than 50 units, the bias introduced only appears to affect the estimation of the level 2 random intercepts and slopes, not the estimation of the independent variables [@Maas2004; @Maas2005]. If one has fewer than this number one possible procedure is to model the groups both as a *random intercept* and as *a set of indicator variables*, and to see if the different approaches lead to different substantive conclusions [@Gershoff2010]. 
+
 ## Correlation of Random Intercept and Random Slope(s)
 
-One could also consider a situation in which a random slope or slopes were correlated with each other, and with the random intercept. In the equation that we are considering, this would entail estimation of whether or not, the random intercept, $u_{0j}$, was correlated with the random slope for warmth, $u_{1j}$. 
+To further elaborate the cross-sectional multilevel model that we have been considering, we could also consider a situation in which a random slope or slopes were *correlated* with each other, and with the random intercept. In the equation that we are considering, this would entail estimation of whether or not, the random intercept, $u_{0j}$, was correlated with the random slope for warmth, $u_{1j}$. 
 
 Substantively, this question would be asking whether the association of warmth and the outcome, was correlated with the initial level or average level of the outcome. From @fig-data, it appears that there is some slight evidence that the country specific regression slopes are more steep in countries where the initial level of the outcome is higher. However, we may wish to investigate this question more rigorously.
 
