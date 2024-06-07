@@ -4,6 +4,7 @@
 
 > "I’m often asked if there is something I think writers ought to do, and recently in an interview I heard myself say: 'Several things. Love words, agonize over sentences. And pay attention to the world.'" [@Sontag2007]
 
+
 ```{r}
 
 library(haven) # read Stata
@@ -23,6 +24,7 @@ library(pander) # nice tables
 # library(gt) # beautiful tables
 
 ```
+
 
 ## Introduction
 
@@ -55,6 +57,7 @@ If the data are grouped, nested, or clustered, then this aspect of the structure
 
 > "The data were generated from random numbers, and there is no relation between X and Y at all. Firstly, values of X and Y were generated for each 'subject,' then a further random number was added to make the individual observation." [@Bland1994]
 
+
 ```{r}
 
 simulated_clustered_data <-
@@ -62,7 +65,9 @@ simulated_clustered_data <-
 
 ```
 
+
 The graph below illustrates the process of simulating the data.
+
 
 ```{r}
 #| fig-cap: "Simulated Clustered Data"
@@ -98,14 +103,17 @@ ggplot(simulated_clustered_data,
 
 ```
 
+
 #### Compare OLS and MLM
 
 An analysis that is not aware of the grouped nature of the data will give biased results, will mis-estimate standard errors, and importantly, will often attribute statistical significance to some of the independent variables when this is not appropriate [@Raudenbush2002; @Bland1994]. \index{p values}
 
 In the example below, we compare a simple ordinary least squares analysis of the data with a multilevel model that accounts for the clustered nature of the data.
 
+
 ```{r, child=c('./simulate-and-analyze-multilevel-data/tableA.md')}
 ```
+
 
 We see that in the ordinary least squares analysis, the independent variable is judged to have a statistically significant association with the dependent variable. The more appropriate multilevel model finds that in fact the independent variable $x$ is *not* associated with $y$. Thus, the multilevel model provides more accurate results than OLS in the presence of clustered data.
 
@@ -119,6 +127,7 @@ A model that is "aware" of the clustered nature of the data may provide very dif
 
 I use some data simulated for this particular example.
 
+
 ```{r}
 
 multilevelstructure <-
@@ -128,11 +137,13 @@ multilevelstructure$country <- factor(multilevelstructure$country)
 
 ```
 
+
 #### Graphs
 
 ##### A "Naive" Graph 
 
 This "naive" graph is unaware of the grouped nature of the data. Notice that the overall regression line slopes downward, even though there is some suggestion that *within each group* the regression lines may slope upward.
+
 
 ```{r}
 #| fig-cap: "A 'Naive' Graph"
@@ -151,9 +162,11 @@ p0  # replay
 
 ```
 
+
 ##### An "Aware" Graph 
 
 This "aware" graph is aware of the grouped nature of the data. The graph is "aware" of the grouped or clustered nature of the data, and provides indication that the regression lines *when accounting for group* slope upward.
+
 
 ```{r}
 #| fig-cap: "An 'Aware' Graph"
@@ -171,14 +184,17 @@ ggplot(multilevelstructure,
 
 ```
 
+
 #### Regressions: A "Naive" OLS Analysis vs. An "Aware" MLM Analysis
 
 The OLS model with only *x* as a covariate is not aware of the grouped structure of the data, and the coefficient for *x* in the OLS model reflects this. The coefficient for *x* in the OLS model is *negative*, and statistically significant.
 
 The multilevel model is aware of the grouped structure of the data, and the coefficient for *x* in the multilevel model reflects this. The coefficient for *x* in the multilevel model is *positive*, and statistically significant.
 
+
 ```{r, child=c('./simulate-and-analyze-multilevel-data/tableB.md')}
 ```
+
 
 #### A Thought Experiment
 
@@ -189,6 +205,7 @@ Imagine that *x* is a protective factor, or an intervention or treatment. Imagin
 Now imagine that residents of countries provide more of the protective factor or more of the intervention in situations where there are lower levels of the desirable outcome. If one thinks about it, this is a very plausible situation. 
 
 > A naive analysis that was unaware of the grouped nature of the data would therefore misconstrue the results, suggesting that the intervention was harmful, when it was in fact helpful.
+
 
 ```{r}
 #| fig-cap: "A Heuristic Example"
@@ -204,6 +221,7 @@ p0 +
   scale_color_viridis_d()
 
 ```
+
 
 The idea that group level and individual level relationships must be the same has been termed the "ecological fallacy" [@FIREBAUGH20014023; @Hox2018; @Snijders2012]. \index{ecological fallacy}
 
@@ -292,8 +310,10 @@ $$= 100\% - (100\% \times \text{ICC})$$
 
 Thus, in some broader sense, the ICC might be thought of as a measure of diversity: the higher the ICC, the higher the clustering of the data in groups, and the lower the diversity within the groups; the lower the ICC, the lower the clustering of the data in groups, and the higher the diversity within groups between individuals.
 
+
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table0.md')}
 ```
+
 
 From using procedures to estimate the ICC, as detailed in the Appendix, or calculating by hand, we see that the ICC for this data is .076 or 7.6%.
 
@@ -303,8 +323,10 @@ As we add covariates, $x$'s, to the model the ICC will most often decrease.
 
 We next estimate a *conditional* model, *with* independent variables.
 
+
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table1.md')}
 ```
+
 
 The data suggest that parental warmth is positively associated with the desirable outcome, and that this result is statistically significant. Parental use of physical punishment is associated with statistically significant decreases in the desirable outcome. The identity variable is not associated here with the outcome. In contrast, the application of the intervention is associated with increases in the outcome. 
 
@@ -337,6 +359,7 @@ The United States Census [@Census2022] asks about race using several different c
 
 A table of data might then look something like the following.
 
+
 ```{r}
 #| label: tbl-race-ethnicity-data
 #| tbl-cap: Simulated Data on Race and Ethnicity
@@ -348,7 +371,9 @@ pander(head(race_ethnicity))
 
 ```
 
+
 More recently, the Census has allowed respondents to select multiple racial identities. Such a table of data might look like this.
+
 
 ```{r}
 #| label: tbl-race-ethnicity-2-data
@@ -360,6 +385,7 @@ race_ethnicity2 <- read_dta("simulate-and-analyze-multilevel-data/race_ethnicity
 pander(head(race_ethnicity2))
 
 ```
+
 
 ### Identities As Indicator Variables
 
@@ -421,12 +447,15 @@ cov(u_{0j}, u_{1j}) & var(u_{1j})
 
 When we estimate such a model, we get the following information.
 
+
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table1A.md')}
 ```
+
 
 Results are mostly similar to those above. However, here, we are asking additionally for information about the possible *correlation* of country specific initial levels of the outcome and the slope of the country specific regression line for parental warmth. Results indicate that there is no reason to be believe that these two parameters are correlated. Put more intuitively, it does not appear that parental warmth is any more or less correlated with the outcome in countries where initial levels of the outcome are higher. Again, had this correlation been statistically significant and positive, it would have indicated that higher initial, or average levels of the outcome were associated with a greater association of warmth with the outcome.
 
 ## Within and Between {#sec-withinbetween}
+
 
 ```{r}
 
@@ -434,7 +463,9 @@ simulated_multilevel_data <- read_dta("simulate-and-analyze-multilevel-data/simu
 
 ```
 
+
 Coefficients in models can be divided into within and between. A substantive example may be helpful here. When we consider the variable of parental `warmth`, we can imagine the parental warmth expressed in each family, $\text{warmth}_{ij}$, representing family *i* in country *j*. We can also think about the *grand mean* of warmth across the entire sample, $\overline{\text{warmth}}_{..}$. We can then also think about the mean expression of parental warmth in each country, $\overline{\text{warmth}}_{.j}$, i.e. the mean level of parental warmth in country *j*.
+
 
 ```{r}
 #| fig-cap: "Distribution of Parental Warmth Across Countries"
@@ -461,6 +492,7 @@ ggplot(simulated_multilevel_data,
 
 ```
 
+
 Bearing this in mind, one can then think about the *difference* between each individual expression of parental warmth and the overall, or grand mean: $\text{warmth}_{ij} - \overline{\text{warmth}}_{..}$. This value can then be decomposed into two values:
 
 $$\text{warmth}_{ij} - \overline{\text{warmth}}_{..} = \text{warmth}_{ij} - \overline{\text{warmth}}_{.j} + \overline{\text{warmth}}_{.j} - \overline{\text{warmth}}_{..}$$
@@ -470,6 +502,7 @@ Put into words, this equation says that the difference in parental warmth displa
 * *Between Country Component*: How is the *mean* level of warmth in country *j* different from the overall or *grand mean* level of warmth in the sample as a whole? To what degree is country *j* different from *all countries* in the sample? Is this country a country where parents tend to be higher, or lower, in parental warmth?
 
 Theoretically, or conceptually, one might imagine that it would be useful to decompose a particular behavior into within country and between country components. The within country component could be theorized as *how an individual family differs from their context*, and the between country component could be theorized as *how a particular context differs from the average context*. \index{variation and diversity}
+
 
 ```{r}
 #| fig-cap: "Decomposing a Variable into Within and Between Differences"
@@ -527,6 +560,7 @@ ggplot(aes(x = x,
 
 ```
 
+
 In terms of using statistical software, we need to follow a few steps.
 
 1. Calculate the *grand mean* of the variable.
@@ -539,10 +573,13 @@ In terms of using statistical software, we need to follow a few steps.
     
 4. Estimate the model with within and between.
 
+
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table1B.md')}
 ```
 
+
 Estimates suggest that both the difference in an individual family's expression of parental warmth from the country level mean, *but not* the difference in the country level mean from the grand mean are statistically significant predictors of the outcome. 
+
 
 ```{comment, eval=FALSE, echo=FALSE}
 
@@ -552,6 +589,7 @@ Estimates suggest that both the difference in an individual family's expression 
 
 ```
 
+
 ## Summary of Advantages Of The Multilevel Model
 
 The discussion so far gives an idea of the advantages of the multilevel model for studying intrinsically multilevel data: children in classrooms or schools; individuals or families in neighborhoods; individuals or families in countries. These advantages can be summarized below: \index{advantages of the multilevel model}
@@ -559,11 +597,13 @@ The discussion so far gives an idea of the advantages of the multilevel model fo
 1. Standard errors are estimated correctly as is statistical significance. This means that p values are correctly estimated accounting for the clustered or nested nature of the data. More colloquially, this most often means that we do not make the mistake of attributing statistical significance to a given risk or protective factor, when such a statistical significance is not warranted. Put even more straightforwardly correct estimation of standard errors and statistical significance prevents us from seeing results that are simply not present in the data, whether those concern risk factors or protective factors. \index{p values}
 2. Regression coefficients are estimated correctly accounting for the clustered or nested structure of the data. If one does not account for the clustered or nested structure of the data, regression slopes can be estimated as negative when they are more correctly estimated as positive, or as null, or conversely estimated as positive when there are more correctly seen as negative (or null). Again, to phrase things in a more colloquial fashion, this means that we do not judge something to be a risk factor when it is in fact a protective factor or a null effect; or a protective factor when it is in fact a risk factor, or a null effect. \index{sign of coefficients}
 
+
 ```{comment, eval=FALSE, echo=FALSE}
 
 3. An increasing focus of statistical estimation is not to focus on particular regression parameters, but instead to predict outcomes for particular combinations of independent variables. Predictions from a multilevel model could be said to be best predictions in that groups are weighted by their precision, contributing to an estimate which makes better predictions than would a simple average. More colloquially, multilevel models allow us to predict outcomes better and more accurately than would be possible with simple or more naïve models.
 
 ```
+
 
 ## Some Wrong (or Partially Wrong) Approaches {#sec-wrongapproaches}
 
@@ -592,6 +632,7 @@ $$\underbrace{y_{ij}}_\text{outcome} = \underbrace{\beta_0}_\text{intercept} + \
 $$\underbrace{u_{0j}}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in intercept}}} + \underbrace{u_{1j} \times x}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in slope of x}}} + \underbrace{e_{ij}}_{\substack{\text{unmeasured} \\ \text{individual} \\ \text{error}}}$$
 
 I have already introduced the idea of an unconditional model (@sec-unconditional), in which there are no independent variables, and all of the variation is unmeasured. The unconditional intraclcass correlation coefficient (ICC) (@sec-ICC) is a measure of the amount of variation that could potentially be attributable to the Level 2 units, in this case, different countries.
+
 
 ```{r}
 #| label: fig-variationsources
@@ -677,6 +718,7 @@ tribble(
   theme_minimal() 
 
 ```
+
  
 ### Variation In Intercepts or Outcomes
 
@@ -743,4 +785,5 @@ Hypothetically, one might imagine that there could be group level unobserved fac
 Models with all possible random effects are termed *maximal models* [@Barr2013; @Frank2018]. Such models include a large number of random slopes, e.g. $u_1 \times x_1, u_2 \times x_2, u_3 \times x_3, ..., \text{etc.}$ even when some of those estimated slopes are close to 0. Such models may be more easily estimable when using Bayesian estimation [@Frank2018], a topic which I do not cover in detail in this book. 
 
 It should be noted that @Matuschek2017 argue that such a *maximal* approach may lead to a loss of statistical power and further argue that one should adhere to "a random effect structure that is supported by the data." In contrast, @nalborczyk_batailler_loevenbruck_vilain_burkner_2019 argue that maximal models are supported under the Bayesian approach. @Oberauer2022 also argues for including multiple random slopes. @Schielzeth2009 make a similar argument from a frequentist perspective.
+
 
