@@ -24,13 +24,32 @@ library(pander) # nice tables
 
 ```
 
-I begin this chapter by introducing two key concepts: multilevel models can improve our estimation of p values; multilevel models can improve our estimation of $\beta$ coefficients. \index{cross sectional models}
+## Introduction
+
+I begin this chapter by first briefly discussing a foundational concept for any statistical analysis: the distinction between numeric or continuous variables; and categorical variables. 
+
+I then move into some introductory thinking about multilevel modeling, by starting with two key ideas: multilevel models can improve our estimation of p values; multilevel models can improve our estimation of $\beta$ coefficients. \index{cross sectional models}
 
 After introducing these two key concepts of multilevel modeling, I then begin a more in depth exploration of the equations and concepts and statistical syntax of the cross sectional multilevel model.
 
-## Estimating Standard Errors And p Values {#sec-pvalues}
+## Variable Types
 
-### Introduction
+In thinking about any statistical analysis, it is important to think about different types of variables. Thinking about different types of variables may seem to be an arcane or obscure topic. Statisticians can make very fine distinctions between different types of variables, and it sometimes seems that there are as many typologies of variables as there are statisticians. Nonetheless some broad distinctions may be useful. \index{types of variables}
+
+In a classic text, @Freedman1991 offer a short definition of variable types that provides some useful crucial distinctions:
+
+> "Some questions are answered by giving a number: the corresponding variables are *quantitative*. Age, family size, and family income are examples of quantitative variables. Some questions are answered with adjectives, and the corresponding variables are *qualitative*: examples are marital status (single, married, widowed, divorced, separated) and employment status (employed, unemployed, not in the labor force)." 
+
+When teaching and learning about statistical software, I find it easiest to re-label *quantitative* variables as *continuous* or *numeric* variables, and *qualitative* variables as *categorical* variables.[^finer_distinctions]
+
+[^finer_distinctions]: I recognize that there are finer distinctions to be made here, many of which @Freedman1991--as well as other introductory texts--go on to make. However, for the purposes of explication in this book, I find the *continuous/numeric* versus *categorical* variable distinction to be the most useful and the one that most readily facilitates communication with faculty colleagues and with students. 
+
+## Some First Ideas About Multilevel Modeling
+
+### Estimating Standard Errors And p Values {#sec-pvalues}
+
+
+#### Introducing the Idea
 
 If the data are grouped, nested, or clustered, then this aspect of the structure of the data needs to be accounted for. @Bland1994 describe a simulation in which grouped data are artificially generated according to the following procedure. \index{p values} \index{advantages of the multilevel model}
 
@@ -79,7 +98,7 @@ ggplot(simulated_clustered_data,
 
 ```
 
-### Compare OLS and MLM
+#### Compare OLS and MLM
 
 An analysis that is not aware of the grouped nature of the data will give biased results, will mis-estimate standard errors, and importantly, will often attribute statistical significance to some of the independent variables when this is not appropriate [@Raudenbush2002; @Bland1994]. \index{p values}
 
@@ -90,7 +109,7 @@ In the example below, we compare a simple ordinary least squares analysis of the
 
 We see that in the ordinary least squares analysis, the independent variable is judged to have a statistically significant association with the dependent variable. The more appropriate multilevel model finds that in fact the independent variable $x$ is *not* associated with $y$. Thus, the multilevel model provides more accurate results than OLS in the presence of clustered data.
 
-## Multilevel Structure {#sec-multilevelstructure}
+### Multilevel Structure {#sec-multilevelstructure}
 
 Associations between two variables can be *very different* (or even *reversed*) depending upon whether or not the analysis is "aware" of the grouped, nested, or clustered nature of the data [@Gelman2007]. In the example presented here, the groups are countries, but could as easily be neighborhoods, communities, or schools. 
 
@@ -109,9 +128,9 @@ multilevelstructure$country <- factor(multilevelstructure$country)
 
 ```
 
-### Graphs
+#### Graphs
 
-#### A "Naive" Graph 
+##### A "Naive" Graph 
 
 This "naive" graph is unaware of the grouped nature of the data. Notice that the overall regression line slopes downward, even though there is some suggestion that *within each group* the regression lines may slope upward.
 
@@ -132,7 +151,7 @@ p0  # replay
 
 ```
 
-#### An "Aware" Graph 
+##### An "Aware" Graph 
 
 This "aware" graph is aware of the grouped nature of the data. The graph is "aware" of the grouped or clustered nature of the data, and provides indication that the regression lines *when accounting for group* slope upward.
 
@@ -152,9 +171,7 @@ ggplot(multilevelstructure,
 
 ```
 
-### Regressions
-
-#### A "Naive" OLS Analysis vs. An "Aware" MLM Analysis
+#### Regressions: A "Naive" OLS Analysis vs. An "Aware" MLM Analysis
 
 The OLS model with only *x* as a covariate is not aware of the grouped structure of the data, and the coefficient for *x* in the OLS model reflects this. The coefficient for *x* in the OLS model is *negative*, and statistically significant.
 
@@ -163,7 +180,7 @@ The multilevel model is aware of the grouped structure of the data, and the coef
 ```{r, child=c('./simulate-and-analyze-multilevel-data/tableB.md')}
 ```
 
-### A Thought Experiment
+#### A Thought Experiment
 
 When might a situation like this arise in practice? This is surprisingly difficult to think through. 
 
