@@ -71,7 +71,7 @@
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
 \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
@@ -81,7 +81,7 @@
 \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
 \newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
@@ -242,7 +242,7 @@
 \subtitle{Discovering Diversity, Universals, and Particulars in
 Cross-Cultural Research}
 \author{Andrew Grogan-Kaylor}
-\date{2024-06-04}
+\date{2024-06-07}
 
 \begin{document}
 \maketitle
@@ -941,7 +941,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, breakable, coltitle=black, toprule=.15mm, bottomrule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, leftrule=.75mm, left=2mm, colback=white, arc=.35mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, opacityback=0, titlerule=0mm, breakable, colback=white, coltitle=black, rightrule=.15mm, left=2mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, opacitybacktitle=0.6]
 
 Data are presented in Stata format. The Appendix considers the analysis
 of multilevel models using multiple software packages: Stata, R \&
@@ -1161,7 +1161,7 @@ conceptual level 2 & N/A & Administrative indicator of social unit \\
   \emph{statistically} aggregated to Level 2.
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, breakable, coltitle=black, toprule=.15mm, bottomrule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, leftrule=.75mm, left=2mm, colback=white, arc=.35mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, opacityback=0, titlerule=0mm, breakable, colback=white, coltitle=black, rightrule=.15mm, left=2mm, toptitle=1mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, opacitybacktitle=0.6]
 
 Such aggregated variables represent the \emph{average} level of a
 response across each Level 2 unit, and are sometimes called ``contextual
@@ -1370,17 +1370,61 @@ words, agonize over sentences. And pay attention to the world.'\,''
 (Sontag, 2007)
 \end{quote}
 
-I begin this chapter by introducing two key concepts: multilevel models
-can improve our estimation of p values; multilevel models can improve
-our estimation of \(\beta\) coefficients. \index{cross sectional models}
+\section{Introduction}\label{introduction-1}
+
+I begin this chapter by first briefly discussing a foundational concept
+for any statistical analysis: the distinction between numeric or
+continuous variables; and categorical variables.
+
+I then move into some introductory thinking about multilevel modeling,
+by starting with two key ideas: multilevel models can improve our
+estimation of p values; multilevel models can improve our estimation of
+\(\beta\) coefficients. \index{cross sectional models}
 
 After introducing these two key concepts of multilevel modeling, I then
 begin a more in depth exploration of the equations and concepts and
 statistical syntax of the cross sectional multilevel model.
 
-\section{Estimating Standard Errors And p Values}\label{sec-pvalues}
+\section{Variable Types}\label{variable-types}
 
-\subsection{Introduction}\label{introduction-1}
+In thinking about any statistical analysis, it is important to think
+about different types of variables. Thinking about different types of
+variables may seem to be an arcane or obscure topic. Statisticians can
+make very fine distinctions between different types of variables, and it
+sometimes seems that there are as many typologies of variables as there
+are statisticians. Nonetheless some broad distinctions may be useful.
+\index{types of variables}
+
+In a classic text, Freedman et al. (1991) offer a short definition of
+variable types that provides some useful crucial distinctions:
+
+\begin{quote}
+``Some questions are answered by giving a number: the corresponding
+variables are \emph{quantitative}. Age, family size, and family income
+are examples of quantitative variables. Some questions are answered with
+adjectives, and the corresponding variables are \emph{qualitative}:
+examples are marital status (single, married, widowed, divorced,
+separated) and employment status (employed, unemployed, not in the labor
+force).''
+\end{quote}
+
+When teaching and learning about statistical software, I find it easiest
+to re-label \emph{quantitative} variables as \emph{continuous} or
+\emph{numeric} variables, and \emph{qualitative} variables as
+\emph{categorical} variables.\footnote{I recognize that there are finer
+  distinctions to be made here, many of which Freedman et al. (1991)--as
+  well as other introductory texts--go on to make. However, for the
+  purposes of explication in this book, I find the
+  \emph{continuous/numeric} versus \emph{categorical} variable
+  distinction to be the most useful and the one that most readily
+  facilitates communication with faculty colleagues and with students.}
+
+\section{Some First Ideas About Multilevel
+Modeling}\label{some-first-ideas-about-multilevel-modeling}
+
+\subsection{Estimating Standard Errors And p Values}\label{sec-pvalues}
+
+\subsubsection{Introducing the Idea}\label{introducing-the-idea}
 
 If the data are grouped, nested, or clustered, then this aspect of the
 structure of the data needs to be accounted for. Bland \& Altman (1994)
@@ -1409,7 +1453,7 @@ The graph below illustrates the process of simulating the data.
 
 \end{figure}%
 
-\subsection{Compare OLS and MLM}\label{compare-ols-and-mlm}
+\subsubsection{Compare OLS and MLM}\label{compare-ols-and-mlm}
 
 An analysis that is not aware of the grouped nature of the data will
 give biased results, will mis-estimate standard errors, and importantly,
@@ -1444,7 +1488,7 @@ in fact the independent variable \(x\) is \emph{not} associated with
 \(y\). Thus, the multilevel model provides more accurate results than
 OLS in the presence of clustered data.
 
-\section{Multilevel Structure}\label{sec-multilevelstructure}
+\subsection{Multilevel Structure}\label{sec-multilevelstructure}
 
 Associations between two variables can be \emph{very different} (or even
 \emph{reversed}) depending upon whether or not the analysis is ``aware''
@@ -1465,9 +1509,9 @@ model that is not aware of the clustered nature of the data.
 
 I use some data simulated for this particular example.
 
-\subsection{Graphs}\label{graphs}
+\subsubsection{Graphs}\label{graphs}
 
-\subsubsection{A ``Naive'' Graph}\label{a-naive-graph}
+\paragraph{A ``Naive'' Graph}\label{a-naive-graph}
 
 This ``naive'' graph is unaware of the grouped nature of the data.
 Notice that the overall regression line slopes downward, even though
@@ -1486,7 +1530,7 @@ lines may slope upward.
 
 \end{figure}%
 
-\subsubsection{An ``Aware'' Graph}\label{an-aware-graph}
+\paragraph{An ``Aware'' Graph}\label{an-aware-graph}
 
 This ``aware'' graph is aware of the grouped nature of the data. The
 graph is ``aware'' of the grouped or clustered nature of the data, and
@@ -1505,10 +1549,9 @@ group} slope upward.
 
 \end{figure}%
 
-\subsection{Regressions}\label{regressions}
-
-\subsubsection{A ``Naive'' OLS Analysis vs.~An ``Aware'' MLM
-Analysis}\label{a-naive-ols-analysis-vs.-an-aware-mlm-analysis}
+\subsubsection{Regressions: A ``Naive'' OLS Analysis vs.~An ``Aware''
+MLM
+Analysis}\label{regressions-a-naive-ols-analysis-vs.-an-aware-mlm-analysis}
 
 The OLS model with only \emph{x} as a covariate is not aware of the
 grouped structure of the data, and the coefficient for \emph{x} in the
@@ -1536,7 +1579,7 @@ Number of observations & 30 & & & \\
 
 ** p\textless.01, * p\textless.05
 
-\subsection{A Thought Experiment}\label{a-thought-experiment}
+\subsubsection{A Thought Experiment}\label{a-thought-experiment}
 
 When might a situation like this arise in practice? This is surprisingly
 difficult to think through.
@@ -3102,8 +3145,9 @@ for variables that have some variation over time, provide estimates that
 control for all time invariant variables in the model.
 
 Second, estimates for any quantities that do not vary over time, in this
-case, \texttt{group} membership, and \texttt{HDI}, are not available
-from the fixed effects regression.
+case, \texttt{identity} group membership, participation in the
+\texttt{intervention}, and \texttt{HDI}, are not available from the
+fixed effects regression.
 
 \subsection{The Correlated Random Effects
 Model}\label{the-correlated-random-effects-model}
@@ -3174,10 +3218,10 @@ coefficients for \emph{time varying} variables are estimated with
 statistical control for all time invariant characteristics of study
 subjects, whether those characteristics are observed, or unobserved.
 Secondly, unlike the fixed effects regression, coefficients for
-\emph{time invariant} variables, e.g.~\texttt{group}, \texttt{HDI}, mean
-levels of \texttt{warmth}, and mean levels of
-\texttt{physical\_punishment} are provided, while they are not provided
-in the fixed effects model.
+\emph{time invariant} variables, e.g.~\texttt{identity} group,
+participation in the \texttt{intervention}, \texttt{HDI}, mean levels of
+\texttt{warmth}, and mean levels of \texttt{physical\_punishment}, are
+provided, while they would not not provided in the fixed effects model.
 
 \bookmarksetup{startatroot}
 
@@ -3383,6 +3427,10 @@ social \& behavioral sciences} (pp. 4023--4026). Pergamon.
 Frank, M. (2018). \emph{Mixed effects models: Is it time to go
 {B}ayesian by default?}
 \url{http://babieslearninglanguage.blogspot.com/2018/02/mixed-effects-models-is-it-time-to-go.html}
+
+\bibitem[\citeproctext]{ref-Freedman1991}
+Freedman, D., Pisani, R., Purves, R., \& Adhikari, A. (1991).
+\emph{Statistics} (2nd ed.). W.W. Norton \& Co.
 
 \bibitem[\citeproctext]{ref-Gelman2007}
 Gelman, A., Shor, B., Bafumi, J., \& Park, D. (2007). Rich state, poor
