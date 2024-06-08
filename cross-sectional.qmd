@@ -397,7 +397,7 @@ A potential *disadvantage* of the approach outlined in @eq-identity-random-inter
 
 A *caveat* of the approach outlined in @eq-identity-random-intercept is that random intercepts (e.g. $v_{0k}$ and $u_{0j}$)--which are essentially error terms at level 2--are assumed to follow a normal distribution. Ten identities, to follow the example above, is generally considered to be too few groups to satisfy this assumption of a normal distribution. @Maas2004 suggest that at least 50 level 2 units are necessary to ensure satisfaction of this normality assumption. Importantly, if one has fewer than 50 units, the bias introduced only appears to affect the estimation of the level 2 random intercepts and slopes, not the estimation of the independent variables [@Maas2004; @Maas2005]. If one has fewer than this number one possible procedure is to model the groups both as a *random intercept* and as *a set of indicator variables*, and to see if the different approaches lead to different substantive conclusions [@Gershoff2010]. 
 
-A second *caveat* of modeling identities as indicator variables is that these identities would need to be mutually exclusive. For example, black, white and identifies as both black and white, would all need to be separately coded identities under this approach.
+A second *caveat* of modeling identities as indicator variables is that these identities would need to be mutually exclusive. For example, "black", "white" and "identifies as both black and white", would all need to be separately coded identities under this approach.
 
 ## Correlation of Random Intercept and Random Slope(s)
 

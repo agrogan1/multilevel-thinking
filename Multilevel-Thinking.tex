@@ -242,7 +242,7 @@
 \subtitle{Discovering Diversity, Universals, and Particulars in
 Cross-Cultural Research}
 \author{Andrew Grogan-Kaylor}
-\date{2024-06-07}
+\date{2024-06-08}
 
 \begin{document}
 \maketitle
@@ -941,7 +941,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, opacitybacktitle=0.6, breakable, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, colback=white, bottomtitle=1mm, opacityback=0, coltitle=black, rightrule=.15mm, arc=.35mm, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, colback=white, left=2mm, toprule=.15mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, coltitle=black, opacityback=0, bottomrule=.15mm, breakable]
 
 Data are presented in Stata format. The Appendix considers the analysis
 of multilevel models using multiple software packages: Stata, R \&
@@ -1161,7 +1161,7 @@ conceptual level 2 & N/A & Administrative indicator of social unit \\
   \emph{statistically} aggregated to Level 2.
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, opacitybacktitle=0.6, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, colback=white, bottomtitle=1mm, opacityback=0, coltitle=black, rightrule=.15mm, arc=.35mm, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, colback=white, left=2mm, toprule=.15mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, opacitybacktitle=0.6, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, rightrule=.15mm, coltitle=black, opacityback=0, bottomrule=.15mm, breakable]
 
 Such aggregated variables represent the \emph{average} level of a
 response across each Level 2 unit, and are sometimes called ``contextual
@@ -1372,52 +1372,14 @@ words, agonize over sentences. And pay attention to the world.'\,''
 
 \section{Introduction}\label{introduction-1}
 
-I begin this chapter by first briefly discussing a foundational concept
-for any statistical analysis: the distinction between numeric or
-continuous variables; and categorical variables.
-
-I then move into some introductory thinking about multilevel modeling,
-by starting with two key ideas: multilevel models can improve our
-estimation of p values; multilevel models can improve our estimation of
-\(\beta\) coefficients. \index{cross sectional models}
+I begin this chapter with some introductory thinking about multilevel
+modeling, by starting with two key ideas: multilevel models can improve
+our estimation of p values; multilevel models can improve our estimation
+of \(\beta\) coefficients. \index{cross sectional models}
 
 After introducing these two key concepts of multilevel modeling, I then
 begin a more in depth exploration of the equations and concepts and
 statistical syntax of the cross sectional multilevel model.
-
-\section{Variable Types}\label{variable-types}
-
-In thinking about any statistical analysis, it is important to think
-about different types of variables. Thinking about different types of
-variables may seem to be an arcane or obscure topic. Statisticians can
-make very fine distinctions between different types of variables, and it
-sometimes seems that there are as many typologies of variables as there
-are statisticians. Nonetheless some broad distinctions may be useful.
-\index{types of variables}
-
-In a classic text, Freedman et al. (1991) offer a short definition of
-variable types that provides some useful crucial distinctions:
-
-\begin{quote}
-``Some questions are answered by giving a number: the corresponding
-variables are \emph{quantitative}. Age, family size, and family income
-are examples of quantitative variables. Some questions are answered with
-adjectives, and the corresponding variables are \emph{qualitative}:
-examples are marital status (single, married, widowed, divorced,
-separated) and employment status (employed, unemployed, not in the labor
-force).''
-\end{quote}
-
-When teaching and learning about statistical software, I find it easiest
-to re-label \emph{quantitative} variables as \emph{continuous} or
-\emph{numeric} variables, and \emph{qualitative} variables as
-\emph{categorical} variables.\footnote{I recognize that there are finer
-  distinctions to be made here, many of which Freedman et al. (1991)--as
-  well as other introductory texts--go on to make. However, for the
-  purposes of explication in this book, I find the
-  \emph{continuous/numeric} versus \emph{categorical} variable
-  distinction to be the most useful and the one that most readily
-  facilitates communication with faculty colleagues and with students.}
 
 \section{Some First Ideas About Multilevel
 Modeling}\label{some-first-ideas-about-multilevel-modeling}
@@ -1863,9 +1825,42 @@ outcome.
 \section{Indicator Variables, Random Intercepts and Random Slopes, and
 Identities}\label{indicator-variables-random-intercepts-and-random-slopes-and-identities}
 
-Now that we have had some discussion of some of the basics of the
-multilevel model, more discussion of some particular issues is
-warranted. \index{race and ethnicity}
+\subsection{Variable Types}\label{variable-types}
+
+In thinking about any statistical analysis, it is important to think
+about different types of variables. Thinking about different types of
+variables may seem to be an arcane or obscure topic. Statisticians can
+make very fine distinctions between different types of variables, and it
+sometimes seems that there are as many typologies of variables as there
+are statisticians. Nonetheless some broad distinctions are useful.
+\index{types of variables}
+
+In a classic text, Freedman et al. (1991) offer a short definition of
+variable types that provides some useful crucial distinctions:
+
+\begin{quote}
+``Some questions are answered by giving a number: the corresponding
+variables are \emph{quantitative}. Age, family size, and family income
+are examples of quantitative variables. Some questions are answered with
+adjectives, and the corresponding variables are \emph{qualitative}:
+examples are marital status (single, married, widowed, divorced,
+separated) and employment status (employed, unemployed, not in the labor
+force).''
+\end{quote}
+
+When teaching and learning about statistical software, I find it easiest
+to re-label \emph{quantitative} variables as \emph{continuous} or
+\emph{numeric} variables, and \emph{qualitative} variables as
+\emph{categorical} variables.\footnote{I recognize that there are finer
+  distinctions to be made here, many of which Freedman et al. (1991)--as
+  well as other introductory texts--go on to make. However, for the
+  purposes of explication in this book, I find the
+  \emph{continuous/numeric} versus \emph{categorical} variable
+  distinction to be the most useful and the one that most readily
+  facilitates communication with faculty colleagues and with students.}
+
+\subsection{Categorical Variables as Indicators or Random
+Intercepts}\label{categorical-variables-as-indicators-or-random-intercepts}
 
 Statistically, there is often a concern about whether a particular
 qualitative or categorical variable is most appropriately modeled as an
@@ -2022,7 +2017,7 @@ In Equation~\ref{eq-indicator-variables} the first group of race,
 omitted from the model, and all comparisons are made to individuals with
 identity \texttt{race1}.
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, opacitybacktitle=0.6, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reference Categories Need To Be Chosen Carefully}, colback=white, bottomtitle=1mm, opacityback=0, coltitle=black, rightrule=.15mm, arc=.35mm, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, colback=white, left=2mm, toprule=.15mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reference Categories Need To Be Chosen Carefully}, opacitybacktitle=0.6, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, rightrule=.15mm, coltitle=black, opacityback=0, bottomrule=.15mm, breakable]
 
 Reference categories need to be chosen carefully. This is especially
 true in studies that hope to be attentive to diversity and social
@@ -2038,7 +2033,7 @@ the choice of reference categories can be manually specified.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, leftrule=.75mm, colbacktitle=quarto-callout-warning-color!10!white, colframe=quarto-callout-warning-color-frame, opacitybacktitle=0.6, breakable, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Indicator Variables Should Not Be Treated As A Continuous Variable}, colback=white, bottomtitle=1mm, opacityback=0, coltitle=black, rightrule=.15mm, arc=.35mm, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, colback=white, left=2mm, toprule=.15mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Indicator Variables Should Not Be Treated As A Continuous Variable}, opacitybacktitle=0.6, colframe=quarto-callout-warning-color-frame, bottomtitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, rightrule=.15mm, coltitle=black, opacityback=0, bottomrule=.15mm, breakable]
 
 Identities that are measured in the data with a single categorical
 variable with values like \texttt{1}, \texttt{2}, \texttt{3},
@@ -2089,7 +2084,13 @@ identity variable.
 An \emph{advantage} of the approach outlined in
 Equation~\ref{eq-identity-random-intercept} is that we could model
 multiple identities without including a large--potentially
-enormous--number of indicator variables.
+enormous--number of indicator variables. We would thus avoid using up a
+large number of degrees of freedom in our data set. We would also avoid
+the conceptual difficulties that might come from including a large
+number of indicator variables in our data set. For example, if we had 30
+categories of a particular categorical variable, it might be difficult
+to interpret the resultant 29 regression coefficients for the 29
+indicator variables.
 
 A potential \emph{disadvantage} of the approach outlined in
 Equation~\ref{eq-identity-random-intercept} is that this is
@@ -2113,6 +2114,11 @@ procedure is to model the groups both as a \emph{random intercept} and
 as \emph{a set of indicator variables}, and to see if the different
 approaches lead to different substantive conclusions (Gershoff et al.,
 2010).
+
+A second \emph{caveat} of modeling identities as indicator variables is
+that these identities would need to be mutually exclusive. For example,
+``black'', ``white'' and ``identifies as both black and white'', would
+all need to be separately coded identities under this approach.
 
 \section{Correlation of Random Intercept and Random
 Slope(s)}\label{correlation-of-random-intercept-and-random-slopes}
