@@ -26,23 +26,9 @@ library(pander) # nice tables
 
 ## Introduction
 
-I begin this chapter by first briefly discussing a foundational concept for any statistical analysis: the distinction between numeric or continuous variables; and categorical variables. 
-
-I then move into some introductory thinking about multilevel modeling, by starting with two key ideas: multilevel models can improve our estimation of p values; multilevel models can improve our estimation of $\beta$ coefficients. \index{cross sectional models}
+I begin this chapter with some introductory thinking about multilevel modeling, by starting with two key ideas: multilevel models can improve our estimation of p values; multilevel models can improve our estimation of $\beta$ coefficients. \index{cross sectional models}
 
 After introducing these two key concepts of multilevel modeling, I then begin a more in depth exploration of the equations and concepts and statistical syntax of the cross sectional multilevel model.
-
-## Variable Types
-
-In thinking about any statistical analysis, it is important to think about different types of variables. Thinking about different types of variables may seem to be an arcane or obscure topic. Statisticians can make very fine distinctions between different types of variables, and it sometimes seems that there are as many typologies of variables as there are statisticians. Nonetheless some broad distinctions may be useful. \index{types of variables}
-
-In a classic text, @Freedman1991 offer a short definition of variable types that provides some useful crucial distinctions:
-
-> "Some questions are answered by giving a number: the corresponding variables are *quantitative*. Age, family size, and family income are examples of quantitative variables. Some questions are answered with adjectives, and the corresponding variables are *qualitative*: examples are marital status (single, married, widowed, divorced, separated) and employment status (employed, unemployed, not in the labor force)." 
-
-When teaching and learning about statistical software, I find it easiest to re-label *quantitative* variables as *continuous* or *numeric* variables, and *qualitative* variables as *categorical* variables.[^finer_distinctions]
-
-[^finer_distinctions]: I recognize that there are finer distinctions to be made here, many of which @Freedman1991--as well as other introductory texts--go on to make. However, for the purposes of explication in this book, I find the *continuous/numeric* versus *categorical* variable distinction to be the most useful and the one that most readily facilitates communication with faculty colleagues and with students. 
 
 ## Some First Ideas About Multilevel Modeling
 
@@ -316,7 +302,19 @@ There is--in contrast--no discernible variation in the *slope* associated with p
 
 ## Indicator Variables, Random Intercepts and Random Slopes, and Identities
 
-Now that we have had some discussion of some of the basics of the multilevel model, more discussion of some particular issues is warranted. \index{race and ethnicity}
+### Variable Types
+
+In thinking about any statistical analysis, it is important to think about different types of variables. Thinking about different types of variables may seem to be an arcane or obscure topic. Statisticians can make very fine distinctions between different types of variables, and it sometimes seems that there are as many typologies of variables as there are statisticians. Nonetheless some broad distinctions are useful. \index{types of variables}
+
+In a classic text, @Freedman1991 offer a short definition of variable types that provides some useful crucial distinctions:
+
+> "Some questions are answered by giving a number: the corresponding variables are *quantitative*. Age, family size, and family income are examples of quantitative variables. Some questions are answered with adjectives, and the corresponding variables are *qualitative*: examples are marital status (single, married, widowed, divorced, separated) and employment status (employed, unemployed, not in the labor force)." 
+
+When teaching and learning about statistical software, I find it easiest to re-label *quantitative* variables as *continuous* or *numeric* variables, and *qualitative* variables as *categorical* variables.[^finer_distinctions]
+
+[^finer_distinctions]: I recognize that there are finer distinctions to be made here, many of which @Freedman1991--as well as other introductory texts--go on to make. However, for the purposes of explication in this book, I find the *continuous/numeric* versus *categorical* variable distinction to be the most useful and the one that most readily facilitates communication with faculty colleagues and with students. 
+
+### Categorical Variables as Indicators or Random Intercepts
 
 Statistically, there is often a concern about whether a particular qualitative or categorical variable is most appropriately modeled as an indicator variable, or as a level (random intercept). Substantively, this question intersects with how one should statistically include and model various measures of identity. Many identities are often measured as categorical variables. \index{indicator variables} \index{random intercept}
 
@@ -393,11 +391,13 @@ $$y_{ij} = \beta_0 + \Sigma \beta_m \text{covariates} + v_{0k} + u_{0j} + e_{ij}
 
 Here, the inclusion of $v_{0k}$, a random intercept for identity, would be a way to model the presence of many possible values of an identity variable. 
 
-An *advantage* of the approach outlined in @eq-identity-random-intercept is that we could model multiple identities without including a large--potentially enormous--number of indicator variables.
+An *advantage* of the approach outlined in @eq-identity-random-intercept is that we could model multiple identities without including a large--potentially enormous--number of indicator variables. We would thus avoid using up a large number of degrees of freedom in our data set. We would also avoid the conceptual difficulties that might come from including a large number of indicator variables in our data set. For example, if we had 30 categories of a particular categorical variable, it might be difficult to interpret the resultant 29 regression coefficients for the 29 indicator variables. 
 
 A potential *disadvantage* of the approach outlined in @eq-identity-random-intercept is that this is multi-country data that already employs a random slope, $u_{0j}$. Adding $v_{0k}$ means that we now have a model with *two* random slopes, a topic which is discussed in **Chapter XXXXXXX**.
 
 A *caveat* of the approach outlined in @eq-identity-random-intercept is that random intercepts (e.g. $v_{0k}$ and $u_{0j}$)--which are essentially error terms at level 2--are assumed to follow a normal distribution. Ten identities, to follow the example above, is generally considered to be too few groups to satisfy this assumption of a normal distribution. @Maas2004 suggest that at least 50 level 2 units are necessary to ensure satisfaction of this normality assumption. Importantly, if one has fewer than 50 units, the bias introduced only appears to affect the estimation of the level 2 random intercepts and slopes, not the estimation of the independent variables [@Maas2004; @Maas2005]. If one has fewer than this number one possible procedure is to model the groups both as a *random intercept* and as *a set of indicator variables*, and to see if the different approaches lead to different substantive conclusions [@Gershoff2010]. 
+
+A second *caveat* of modeling identities as indicator variables is that these identities would need to be mutually exclusive. For example, black, white and identifies as both black and white, would all need to be separately coded identities under this approach.
 
 ## Correlation of Random Intercept and Random Slope(s)
 
