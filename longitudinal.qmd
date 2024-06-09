@@ -219,7 +219,7 @@ ggplot(data = NULL) +
 
 Examining the regression results, the results of the model suggest that child outcomes improve over time. Better child outcomes are again associated with parental `warmth`, and parental use of `physical_punishment` is associated with reduced child outcomes. `identity` is not associated with the outcome. However, the `intervention` is associated with increases in the outcome. `HDI` is again not associated with outcomes.
 
-### Interactions With Time
+### Interactions With Time {#sec-interactions-with-time}
 
 As discussed in @sec-growthtrajectories, we will likely wish to model not only associations of other independent variables with the intercept of the time trajectory, but also associations of other independent variables with the slope of the time trajectory. Accordingly, we modify @eq-MLM-longitudinal so that it includes these interactions. Below, I add the letter $B$ to some $\beta$ coefficients to denote that they are a second coefficient estimating the *interaction* of that variable with time.
 
@@ -241,6 +241,13 @@ $$v_{0i} + v_{1i} \times \text{time}_{itj} + e_{itj}$$
 Examining the regression results, the results of the model again suggest that child outcomes improve over time. Better child outcomes are again associated with parental `warmth`, and parental use of `physical_punishment` is associated with reduced child outcomes. `identity` is again not associated with outcomes, while participation in the `intervention` is associated with improvements in outcomes. `HDI` is again not associated with outcomes.
 
 Examining the interaction terms, we find that none of these variables modify the time trajectory of the outcome. 
+
+::: {.callout-tip}
+## Interactions And Random Slopes in Longitudinal Models
+
+Having now discussed both *random slopes* (@sec-conditional-model), and *interaction terms* (@sec-interactions-with-time) in longitudinal models--and having seen that both *random slopes* and *interaction terms* involve changes in slope--one might again ask what is the difference between including a variable as a random slope or as an interaction term. When a variable is included as an *interaction term*, it indicates that we are attempting to estimate the change in slope associated with a *measured* variable. When we include a variable as a *random slope*, it indicates that we are attempting to estimate the change in slope associated with *unmeasured* variables. See in this regard @sec-measured-unmeasured-variation 
+:::
+
 
 ## Autocorrelation
 

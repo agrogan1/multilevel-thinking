@@ -285,7 +285,7 @@ From using procedures to estimate the ICC, as detailed in the Appendix, or calcu
 
 As we add covariates, $x$'s, to the model the ICC will most often decrease.
 
-### Conditional Model
+### Conditional Model {#sec-conditional-model}
 
 We next estimate a *conditional* model, *with* independent variables.
 
@@ -583,7 +583,7 @@ $$\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta
 $$\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \text{HDI}_{ij} + $$
 $$u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}$$ {#eq-MLMsubstantive2}
 
-### Measured and Unmeasured Variation
+### Measured and Unmeasured Variation {#sec-measured-unmeasured-variation}
 
 An equation for a multilevel model can be divided into measured and unmeasured variation. Below I use a simplified form of @eq-MLMsubstantive2, focusing in particular--for sake of illustration--on the identity variable.
 

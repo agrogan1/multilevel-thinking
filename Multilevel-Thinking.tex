@@ -242,7 +242,7 @@
 \subtitle{Discovering Diversity, Universals, and Particulars in
 Cross-Cultural Research}
 \author{Andrew Grogan-Kaylor}
-\date{2024-06-08}
+\date{2024-06-09}
 
 \begin{document}
 \maketitle
@@ -357,26 +357,27 @@ mentors, Professor Sandra Danziger, who has taught me so much about the
 research. My colleagues Professor Karen Staller, and Professor Julie
 Ribaudo have also helped me clarify my thinking about the \emph{what}
 and the \emph{why} of research and teaching, and have encouraged me
-along the way. I'd like to thank Ross Grogan-Kaylor for continued
-interest in the progress of this book, and probing thoughtful questions.
-Shari Grogan-Kaylor had many important and challenging questions about
-the \emph{what} and the \emph{why} of this book, and most importantly to
-me, \emph{has believed} in it. Don Deutsch showed ongoing interest in
-the development of this book, and has asked some hard questions that
-have improved its logic. Thank you to Professor Jim Allen for our
-discussions about how quantitative methods can better listen to lived
-experience. Importantly, I'd like to express gratitude to the many
-students in my class on \emph{Multilevel and Longitudinal Modeling} who
-over the years have helped me think more deeply about statistical and
-substantive issues, including Dr.~Kaitlin Ward, Professor Garrett Pace,
-Professor Julie Ma, Professor Yoonsun Han, Professor Berenice Castillo,
-Professor Maria Galano, Dr.~Sara Stein, Madhur Singh, and Tong Suo.
-Thank you for the many valuable discussions during class breaks, and
-after class. These discussions have also greatly extended my
-understanding of multilevel models. Lastly, I'd like to thank Marty
-Betts and Greg Knollmeyer for their help and support. While I'm thankful
-for the inspiration and colleagueship provided by others, any remaining
-errors and omissions in this book are of course my responsibility.
+along the way. Don Deutsch showed ongoing interest in the development of
+this book, and has asked some hard questions that have improved its
+logic. Thank you to Professor Jim Allen for our discussions about how
+quantitative methods can better listen to lived experience. Importantly,
+I'd like to express gratitude to the many students in my class on
+\emph{Multilevel and Longitudinal Modeling} who over the years have
+helped me think more deeply about statistical and substantive issues,
+including Dr.~Kaitlin Ward, Professor Garrett Pace, Professor Julie Ma,
+Professor Yoonsun Han, Professor Berenice Castillo, Professor Maria
+Galano, Dr.~Sara Stein, Madhur Singh, and Tong Suo. Thank you for the
+many valuable discussions during class breaks, and after class. These
+discussions have also greatly extended my understanding of multilevel
+models. I'd like to thank Marty Betts and Greg Knollmeyer for their help
+and support. Most importantly, I have two last people to thank: I'd like
+to thank Ross Grogan-Kaylor for continued interest in the progress of
+this book, and probing thoughtful questions. Shari Grogan-Kaylor had
+many important and challenging questions about the \emph{what} and the
+\emph{why} of this book, and most importantly to me, \emph{has believed}
+in it. While I'm thankful for the inspiration and support provided by
+others, any remaining errors and omissions in this book are of course my
+responsibility.
 
 \bookmarksetup{startatroot}
 
@@ -941,7 +942,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, colback=white, left=2mm, toprule=.15mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, coltitle=black, opacityback=0, bottomrule=.15mm, breakable]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, opacityback=0, arc=.35mm, opacitybacktitle=0.6, left=2mm, coltitle=black, leftrule=.75mm, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, colback=white, breakable, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm]
 
 Data are presented in Stata format. The Appendix considers the analysis
 of multilevel models using multiple software packages: Stata, R \&
@@ -1161,7 +1162,7 @@ conceptual level 2 & N/A & Administrative indicator of social unit \\
   \emph{statistically} aggregated to Level 2.
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, colback=white, left=2mm, toprule=.15mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, opacitybacktitle=0.6, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, rightrule=.15mm, coltitle=black, opacityback=0, bottomrule=.15mm, breakable]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, opacityback=0, arc=.35mm, opacitybacktitle=0.6, left=2mm, coltitle=black, leftrule=.75mm, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, colback=white, breakable, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm]
 
 Such aggregated variables represent the \emph{average} level of a
 response across each Level 2 unit, and are sometimes called ``contextual
@@ -1770,7 +1771,7 @@ or calculating by hand, we see that the ICC for this data is .076 or
 As we add covariates, \(x\)'s, to the model the ICC will most often
 decrease.
 
-\subsection{Conditional Model}\label{conditional-model}
+\subsection{Conditional Model}\label{sec-conditional-model}
 
 We next estimate a \emph{conditional} model, \emph{with} independent
 variables.
@@ -2017,7 +2018,7 @@ In Equation~\ref{eq-indicator-variables} the first group of race,
 omitted from the model, and all comparisons are made to individuals with
 identity \texttt{race1}.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, colback=white, left=2mm, toprule=.15mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reference Categories Need To Be Chosen Carefully}, opacitybacktitle=0.6, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, rightrule=.15mm, coltitle=black, opacityback=0, bottomrule=.15mm, breakable]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, opacityback=0, arc=.35mm, opacitybacktitle=0.6, left=2mm, coltitle=black, leftrule=.75mm, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reference Categories Need To Be Chosen Carefully}, colback=white, breakable, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm]
 
 Reference categories need to be chosen carefully. This is especially
 true in studies that hope to be attentive to diversity and social
@@ -2033,7 +2034,7 @@ the choice of reference categories can be manually specified.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, leftrule=.75mm, colback=white, left=2mm, toprule=.15mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Indicator Variables Should Not Be Treated As A Continuous Variable}, opacitybacktitle=0.6, colframe=quarto-callout-warning-color-frame, bottomtitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, rightrule=.15mm, coltitle=black, opacityback=0, bottomrule=.15mm, breakable]
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, opacityback=0, arc=.35mm, opacitybacktitle=0.6, left=2mm, coltitle=black, leftrule=.75mm, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Indicator Variables Should Not Be Treated As A Continuous Variable}, colback=white, breakable, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm]
 
 Identities that are measured in the data with a single categorical
 variable with values like \texttt{1}, \texttt{2}, \texttt{3},
@@ -2421,7 +2422,7 @@ this book.
 \begin{equation}\phantomsection\label{eq-MLMsubstantive2}{u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}}\end{equation}
 
 \subsection{Measured and Unmeasured
-Variation}\label{measured-and-unmeasured-variation}
+Variation}\label{sec-measured-unmeasured-variation}
 
 An equation for a multilevel model can be divided into measured and
 unmeasured variation. Below I use a simplified form of
@@ -2979,7 +2980,7 @@ associated with parental \texttt{warmth}, and parental use of
 \texttt{intervention} is associated with increases in the outcome.
 \texttt{HDI} is again not associated with outcomes.
 
-\subsection{Interactions With Time}\label{interactions-with-time}
+\subsection{Interactions With Time}\label{sec-interactions-with-time}
 
 As discussed in Section~\ref{sec-growthtrajectories}, we will likely
 wish to model not only associations of other independent variables with
@@ -3046,6 +3047,24 @@ outcomes.
 
 Examining the interaction terms, we find that none of these variables
 modify the time trajectory of the outcome.
+
+\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, opacityback=0, arc=.35mm, opacitybacktitle=0.6, left=2mm, coltitle=black, leftrule=.75mm, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Interactions And Random Slopes in Longitudinal Models}, colback=white, breakable, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm]
+
+Having now discussed both \emph{random slopes}
+(Section~\ref{sec-conditional-model}), and \emph{interaction terms}
+(Section~\ref{sec-interactions-with-time}) in longitudinal models--and
+having seen that both \emph{random slopes} and \emph{interaction terms}
+involve changes in slope--one might again ask what is the difference
+between including a variable as a random slope or as an interaction
+term. When a variable is included as an \emph{interaction term}, it
+indicates that we are attempting to estimate the change in slope
+associated with a \emph{measured} variable. When we include a variable
+as a \emph{random slope}, it indicates that we are attempting to
+estimate the change in slope associated with \emph{unmeasured}
+variables. See in this regard
+Section~\ref{sec-measured-unmeasured-variation}
+
+\end{tcolorbox}
 
 \section{Autocorrelation}\label{autocorrelation}
 
@@ -3696,7 +3715,7 @@ Freedman, D., Pisani, R., Purves, R., \& Adhikari, A. (1991).
 
 \bibitem[\citeproctext]{ref-Gelman2007}
 Gelman, A., Shor, B., Bafumi, J., \& Park, D. (2007). Rich state, poor
-state, red state, blue state: What's the matter with connecticut?
+state, red state, blue state: What's the matter with {C}onnecticut?
 \emph{Quarterly Journal of Political Science}, \emph{2}, 345--367.
 \url{https://doi.org/10.2139/ssrn.1010426}
 
