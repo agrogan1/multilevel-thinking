@@ -25,7 +25,9 @@ knitr::include_graphics("world.png")
 
 > "... the particular and the universal are not to be seen as opposites, ... the universal is not the negation of the particular but is reached by a deeper exploration of the particular." (Cesaire in @UNESCO1997) \index{universalism}
 
-I use simulated data in this example. Data come from 30 hypothetical countries. Data contain measures of a few key aspects of parenting[^parenting] or caregiving that have proven salient in the empirical literature on parenting to date: parental `warmth`, and `physical punishment`. Both parenting measures are normally distributed variables, and are considered to be *Level 1*, or *individual level* variables. 
+I use simulated data in this example. Data come from 30 hypothetical countries. `country` is a numeric variable ranging from 1 to 30.[^country] Data contain measures of a few key aspects of parenting[^parenting] or caregiving that have proven salient in the empirical literature on parenting to date: parental `warmth`, and `physical punishment`. Both parenting measures are normally distributed variables, and are considered to be *Level 1*, or *individual level* variables. 
+
+[^country]: The `country` variable demonstrates an important point. Data for a grouping, nesting, or clustering variable does *not* need to identify the actual groups by name, but only needs to distinguish the groups from one another. Put another way, the data for the grouping variable can be anonymous about the actual identities of the grouping variable.
 
 `identity` is a hypothetical designation of an identity, such as a race, ethnicity, or gender identity. In this simulated data, identity has two categories--for ease of presentation--but could easily be a more than two category variable. `identity` is also a *Level 1* variable.
 
