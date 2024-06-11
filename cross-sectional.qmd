@@ -237,9 +237,10 @@ In this formulation of the equation, the nature of the random effects is more cl
 
 To make these ideas more concrete, I rewrite this equation in terms of the main substantive ideas of this book:
 
-$$\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} +$$
+$$\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} +$$ {#eq-MLMsubstantive}
+
 $$\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \text{HDI}_{ij} + $$
-$$u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}$$ {#eq-MLMsubstantive}
+$$u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}$$ 
 
 Put substantively, this model indicates that the outcome can be conceptualized as a function of an intercept term, and contributions of parental warmth, physical punishment, identity group membership, participation in the intervention, and country level HDI. The random intercept, $u_{0j}$ indicates that there is some unexplained variation in the outcome at the country level. The random slope $u_{1j} \times \text{parental warmth}$ indicates that the model is allowing for country level variation in the association of parental warmth with the outcome. Inspection of @fig-data indicates that it might be possible that there would be variation across countries in this slope. The model could be extended to allow for country level variation in other slope terms by adding other random slopes, eg $u_{2j}$, $u_{3j}$, etc.
 
@@ -370,6 +371,10 @@ $$\beta_7 \text{latinx} + u_{0j} + e_{ij}$$
 In @eq-indicator-variables the first group of race, `race1` is treated as the reference category, and is therefore omitted from the model, and all comparisons are made to individuals with identity `race1`.
 
 ::: {.callout-tip}
+Thus, if an identity, such as race, is used as an indicator variable, it would appear in the equations (e.g. @eq-MLMsubstantive), and in the statistical syntax covered in the Appendix, in the same place as the `identity` variable. 
+:::
+
+::: {.callout-tip}
 #### Reference Categories Need To Be Chosen Carefully
 
 Reference categories need to be chosen carefully. This is especially true in studies that hope to be attentive to diversity and social change. The default in many software programs is to exclude the first category of an identity, as is evident in @eq-indicator-variables. However, in the example given in @tbl-race-ethnicity-questions, this would mean that all comparisons would be made to individuals who identified as *white*. It often makes sense to choose a different reference category than the default, and investigators are encouraged to be thoughtful about the choice of reference category for indicator variables. In most software, the choice of reference categories can be manually specified.
@@ -391,13 +396,17 @@ $$y_{ij} = \beta_0 + \Sigma \beta_m \text{covariates} + v_{0k} + u_{0j} + e_{ij}
 
 Here, the inclusion of $v_{0k}$, a random intercept for identity, would be a way to model the presence of many possible values of an identity variable. 
 
+::: {.callout-tip}
+Thus, if an identity, such as race, is used as a random intercept, it would appear in the equations (e.g. @eq-MLMsubstantive), and in the statistical syntax covered in the Appendix, in the same place as the `country` variable. 
+:::
+
 An *advantage* of the approach outlined in @eq-identity-random-intercept is that we could model multiple identities without including a large--potentially enormous--number of indicator variables. We would thus avoid using up a large number of degrees of freedom in our data set. We would also avoid the conceptual difficulties that might come from including a large number of indicator variables in our data set. For example, if we had 30 categories of a particular categorical variable, it might be difficult to interpret the resultant 29 regression coefficients for the 29 indicator variables. 
 
 A potential *disadvantage* of the approach outlined in @eq-identity-random-intercept is that this is multi-country data that already employs a random slope, $u_{0j}$. Adding $v_{0k}$ means that we now have a model with *two* random slopes, a topic which is discussed in **Chapter XXXXXXX**.
 
 A *caveat* of the approach outlined in @eq-identity-random-intercept is that random intercepts (e.g. $v_{0k}$ and $u_{0j}$)--which are essentially error terms at level 2--are assumed to follow a normal distribution. Ten identities, to follow the example above, is generally considered to be too few groups to satisfy this assumption of a normal distribution. @Maas2004 suggest that at least 50 level 2 units are necessary to ensure satisfaction of this normality assumption. Importantly, if one has fewer than 50 units, the bias introduced only appears to affect the estimation of the level 2 random intercepts and slopes, not the estimation of the independent variables [@Maas2004; @Maas2005]. If one has fewer than this number one possible procedure is to model the groups both as a *random intercept* and as *a set of indicator variables*, and to see if the different approaches lead to different substantive conclusions [@Gershoff2010]. 
 
-A second *caveat* of modeling identities as indicator variables is that these identities would need to be mutually exclusive. For example, "black", "white" and "identifies as both black and white", would all need to be separately coded identities under this approach.
+A second *caveat* of modeling identities as a random intercept is that these identities would need to be mutually exclusive. For example, "black", "white" and "identifies as both black and white", would all need to be separately coded identities under this approach.
 
 ## Correlation of Random Intercept and Random Slope(s)
 
