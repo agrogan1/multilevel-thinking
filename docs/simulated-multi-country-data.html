@@ -442,7 +442,7 @@ Figure&nbsp;3.1: Countries of the World
 <blockquote class="blockquote">
 <p>“… the particular and the universal are not to be seen as opposites, … the universal is not the negation of the particular but is reached by a deeper exploration of the particular.” (Cesaire in <span class="citation" data-cites="UNESCO1997">UNESCO (<a href="references.html#ref-UNESCO1997" role="doc-biblioref">1997</a>)</span>) </p>
 </blockquote>
-<p>I use simulated data in this example. Data come from 30 hypothetical countries. Data contain measures of a few key aspects of parenting<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> or caregiving that have proven salient in the empirical literature on parenting to date: parental <code>warmth</code>, and <code>physical punishment</code>. Both parenting measures are normally distributed variables, and are considered to be <em>Level 1</em>, or <em>individual level</em> variables.</p>
+<p>I use simulated data in this example. Data come from 30 hypothetical countries. <code>country</code> is a numeric variable ranging from 1 to 30.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Data contain measures of a few key aspects of parenting<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> or caregiving that have proven salient in the empirical literature on parenting to date: parental <code>warmth</code>, and <code>physical punishment</code>. Both parenting measures are normally distributed variables, and are considered to be <em>Level 1</em>, or <em>individual level</em> variables.</p>
 <p><code>identity</code> is a hypothetical designation of an identity, such as a race, ethnicity, or gender identity. In this simulated data, identity has two categories–for ease of presentation–but could easily be a more than two category variable. <code>identity</code> is also a <em>Level 1</em> variable.</p>
 <p>Many readers will be interested in using multilevel models to evaluate interventions. The variable <code>intervention</code> represents a program, treatment or intervention to which study participants have been assigned. <code>intervention</code> is a <em>Level 1</em> variable. Assignment to interventions may or may not be random, a topic which is considered in more detail in <a href="longitudinal.html#sec-causality" class="quarto-xref"><span>Section 6.7</span></a>.</p>
 <p><code>HDI</code> is a measure of the <em>Human Development Index</em> <span class="citation" data-cites="UNDPHDI">(<a href="references.html#ref-UNDPHDI" role="doc-biblioref">United Nations Development Program, 2022</a>)</span>, and is measured at the <em>country level</em>, or <em>Level 2</em>. (I discuss more in depth thinking about levels of the data in <a href="conceptual-framework.html" class="quarto-xref"><span>Chapter 4</span></a>.)</p>
@@ -621,7 +621,8 @@ United Nations Development Program. (2022). <em><span>Human Development Index (H
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>I use the term parenting throughout this book, but am aware that such parenting may come from biological parents, or from other caregivers.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>The <code>country</code> variable demonstrates an important point. Data for a grouping, nesting, or clustering variable does <em>not</em> need to identify the actual groups by name, but only needs to distinguish the groups from one another. Put another way, the data for the grouping variable can be anonymous about the actual identities of the grouping variable.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>I use the term parenting throughout this book, but am aware that such parenting may come from biological parents, or from other caregivers.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -1170,7 +1171,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","loop":false});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

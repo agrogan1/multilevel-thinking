@@ -242,7 +242,7 @@
 \subtitle{Discovering Diversity, Universals, and Particulars in
 Cross-Cultural Research}
 \author{Andrew Grogan-Kaylor}
-\date{2024-06-09}
+\date{2024-06-11}
 
 \begin{document}
 \maketitle
@@ -910,9 +910,15 @@ UNESCO (1997)) \index{universalism}
 \end{quote}
 
 I use simulated data in this example. Data come from 30 hypothetical
-countries. Data contain measures of a few key aspects of
-parenting\footnote{I use the term parenting throughout this book, but am
-  aware that such parenting may come from biological parents, or from
+countries. \texttt{country} is a numeric variable ranging from 1 to
+30.\footnote{The \texttt{country} variable demonstrates an important
+  point. Data for a grouping, nesting, or clustering variable does
+  \emph{not} need to identify the actual groups by name, but only needs
+  to distinguish the groups from one another. Put another way, the data
+  for the grouping variable can be anonymous about the actual identities
+  of the grouping variable.} Data contain measures of a few key aspects
+of parenting\footnote{I use the term parenting throughout this book, but
+  am aware that such parenting may come from biological parents, or from
   other caregivers.} or caregiving that have proven salient in the
 empirical literature on parenting to date: parental \texttt{warmth}, and
 \texttt{physical\ punishment}. Both parenting measures are normally
@@ -942,7 +948,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, opacityback=0, arc=.35mm, opacitybacktitle=0.6, left=2mm, coltitle=black, leftrule=.75mm, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, colback=white, breakable, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, titlerule=0mm, breakable, left=2mm, colback=white, arc=.35mm, colframe=quarto-callout-note-color-frame, opacityback=0, bottomtitle=1mm, coltitle=black, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, leftrule=.75mm, opacitybacktitle=0.6]
 
 Data are presented in Stata format. The Appendix considers the analysis
 of multilevel models using multiple software packages: Stata, R \&
@@ -1162,7 +1168,7 @@ conceptual level 2 & N/A & Administrative indicator of social unit \\
   \emph{statistically} aggregated to Level 2.
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, opacityback=0, arc=.35mm, opacitybacktitle=0.6, left=2mm, coltitle=black, leftrule=.75mm, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, colback=white, breakable, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, titlerule=0mm, breakable, left=2mm, colback=white, arc=.35mm, colframe=quarto-callout-tip-color-frame, opacityback=0, bottomtitle=1mm, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, leftrule=.75mm, opacitybacktitle=0.6]
 
 Such aggregated variables represent the \emph{average} level of a
 response across each Level 2 unit, and are sometimes called ``contextual
@@ -1675,9 +1681,10 @@ Figure~\ref{fig-data}.
 To make these ideas more concrete, I rewrite this equation in terms of
 the main substantive ideas of this book:
 
-\[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} +\]
+\begin{equation}\phantomsection\label{eq-MLMsubstantive}{\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} +}\end{equation}
+
 \[\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \text{HDI}_{ij} + \]
-\begin{equation}\phantomsection\label{eq-MLMsubstantive}{u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}}\end{equation}
+\[u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}\]
 
 Put substantively, this model indicates that the outcome can be
 conceptualized as a function of an intercept term, and contributions of
@@ -2018,7 +2025,16 @@ In Equation~\ref{eq-indicator-variables} the first group of race,
 omitted from the model, and all comparisons are made to individuals with
 identity \texttt{race1}.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, opacityback=0, arc=.35mm, opacitybacktitle=0.6, left=2mm, coltitle=black, leftrule=.75mm, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reference Categories Need To Be Chosen Carefully}, colback=white, breakable, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, titlerule=0mm, breakable, left=2mm, colback=white, arc=.35mm, colframe=quarto-callout-tip-color-frame, opacityback=0, bottomtitle=1mm, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, leftrule=.75mm, opacitybacktitle=0.6]
+
+Thus, if an identity, such as race, is used as an indicator variable, it
+would appear in the equations (e.g. Equation~\ref{eq-MLMsubstantive}),
+and in the statistical syntax covered in the Appendix, in the same place
+as the \texttt{identity} variable.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, titlerule=0mm, breakable, left=2mm, colback=white, arc=.35mm, colframe=quarto-callout-tip-color-frame, opacityback=0, bottomtitle=1mm, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reference Categories Need To Be Chosen Carefully}, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, leftrule=.75mm, opacitybacktitle=0.6]
 
 Reference categories need to be chosen carefully. This is especially
 true in studies that hope to be attentive to diversity and social
@@ -2034,7 +2050,7 @@ the choice of reference categories can be manually specified.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, opacityback=0, arc=.35mm, opacitybacktitle=0.6, left=2mm, coltitle=black, leftrule=.75mm, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Indicator Variables Should Not Be Treated As A Continuous Variable}, colback=white, breakable, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, titlerule=0mm, breakable, left=2mm, colback=white, arc=.35mm, colframe=quarto-callout-warning-color-frame, opacityback=0, bottomtitle=1mm, coltitle=black, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Indicator Variables Should Not Be Treated As A Continuous Variable}, bottomrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, toprule=.15mm, leftrule=.75mm, opacitybacktitle=0.6]
 
 Identities that are measured in the data with a single categorical
 variable with values like \texttt{1}, \texttt{2}, \texttt{3},
@@ -2082,6 +2098,15 @@ Here, the inclusion of \(v_{0k}\), a random intercept for identity,
 would be a way to model the presence of many possible values of an
 identity variable.
 
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, titlerule=0mm, breakable, left=2mm, colback=white, arc=.35mm, colframe=quarto-callout-tip-color-frame, opacityback=0, bottomtitle=1mm, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, leftrule=.75mm, opacitybacktitle=0.6]
+
+Thus, if an identity, such as race, is used as a random intercept, it
+would appear in the equations (e.g. Equation~\ref{eq-MLMsubstantive}),
+and in the statistical syntax covered in the Appendix, in the same place
+as the \texttt{country} variable.
+
+\end{tcolorbox}
+
 An \emph{advantage} of the approach outlined in
 Equation~\ref{eq-identity-random-intercept} is that we could model
 multiple identities without including a large--potentially
@@ -2116,7 +2141,7 @@ as \emph{a set of indicator variables}, and to see if the different
 approaches lead to different substantive conclusions (Gershoff et al.,
 2010).
 
-A second \emph{caveat} of modeling identities as indicator variables is
+A second \emph{caveat} of modeling identities as a random intercept is
 that these identities would need to be mutually exclusive. For example,
 ``black'', ``white'' and ``identifies as both black and white'', would
 all need to be separately coded identities under this approach.
@@ -3048,7 +3073,7 @@ outcomes.
 Examining the interaction terms, we find that none of these variables
 modify the time trajectory of the outcome.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, opacityback=0, arc=.35mm, opacitybacktitle=0.6, left=2mm, coltitle=black, leftrule=.75mm, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Interactions And Random Slopes in Longitudinal Models}, colback=white, breakable, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, titlerule=0mm, breakable, left=2mm, colback=white, arc=.35mm, colframe=quarto-callout-tip-color-frame, opacityback=0, bottomtitle=1mm, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Interactions And Random Slopes in Longitudinal Models}, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, leftrule=.75mm, opacitybacktitle=0.6]
 
 Having now discussed both \emph{random slopes}
 (Section~\ref{sec-conditional-model}), and \emph{interaction terms}
