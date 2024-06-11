@@ -371,7 +371,9 @@ $$\beta_7 \text{latinx} + u_{0j} + e_{ij}$$
 In @eq-indicator-variables the first group of race, `race1` is treated as the reference category, and is therefore omitted from the model, and all comparisons are made to individuals with identity `race1`.
 
 ::: {.callout-tip}
-Thus, if an identity, such as race, is used as an indicator variable, it would appear in the equations (e.g. @eq-MLMsubstantive), and in the statistical syntax covered in the Appendix, in the same place as the `identity` variable. 
+#### Identities As Indicator Variables in Equations And Syntax
+
+Thus, if an identity, such as race, is used as an *indicator variable*, it would appear in the equations (e.g. @eq-MLMsubstantive), and in the statistical syntax covered in the Appendix, in the same place as the `identity` variable. 
 :::
 
 ::: {.callout-tip}
@@ -397,10 +399,12 @@ $$y_{ij} = \beta_0 + \Sigma \beta_m \text{covariates} + v_{0k} + u_{0j} + e_{ij}
 Here, the inclusion of $v_{0k}$, a random intercept for identity, would be a way to model the presence of many possible values of an identity variable. 
 
 ::: {.callout-tip}
-Thus, if an identity, such as race, is used as a random intercept, it would appear in the equations (e.g. @eq-MLMsubstantive), and in the statistical syntax covered in the Appendix, in the same place as the `country` variable. 
+#### Identities As Random Intercepts in Equations And Syntax
+
+Thus, if an identity, such as race, is used as a *random intercept*, it would appear in the equations (e.g. @eq-MLMsubstantive), and in the statistical syntax covered in the Appendix, in the same place as the `country` variable. 
 :::
 
-An *advantage* of the approach outlined in @eq-identity-random-intercept is that we could model multiple identities without including a large--potentially enormous--number of indicator variables. We would thus avoid using up a large number of degrees of freedom in our data set. We would also avoid the conceptual difficulties that might come from including a large number of indicator variables in our data set. For example, if we had 30 categories of a particular categorical variable, it might be difficult to interpret the resultant 29 regression coefficients for the 29 indicator variables. 
+An *advantage* of the approach outlined in @eq-identity-random-intercept is that we could model multiple identities without including a large--potentially enormous--number of indicator variables. We would thus avoid using up a large number of degrees of freedom in our data set. We would also avoid the conceptual difficulties that might come from including a large number of indicator variables in our data set. For example, if we had 30 categories of a particular categorical variable, it might be difficult to interpret the resultant 29 regression coefficients for the 29 indicator variables. At the same time, it would be straightforward to include a random intercept that had 30, or even 50, or 100, or 1,000 possible values.
 
 A potential *disadvantage* of the approach outlined in @eq-identity-random-intercept is that this is multi-country data that already employs a random slope, $u_{0j}$. Adding $v_{0k}$ means that we now have a model with *two* random slopes, a topic which is discussed in **Chapter XXXXXXX**.
 
