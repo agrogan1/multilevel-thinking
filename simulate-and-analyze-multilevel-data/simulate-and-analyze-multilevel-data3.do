@@ -225,6 +225,17 @@ mixed outcome || country: || family:
 
 estat icc
 
+est store longitudinal0 // store estimates
+
+etable, estimates(longitudinal0) ///
+novarlabel /// variable names only
+cstat(_r_b) /// beta's only
+showstars showstarsnote ///
+column(index) ///
+export("table2_0.md", as(markdown) replace)
+
+estimates drop longitudinal0
+
 * model w covariates
 
 mixed outcome t warmth physical_punishment i.identity i.intervention HDI || country: warmth || id: t // multilevel model

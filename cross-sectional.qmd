@@ -274,10 +274,12 @@ The ICC from the *unconditional* model (@eq-unconditional) is the most informati
 
 Put another way, in a two level model, the ICC provides a quantitative measure of the amount of variation in a measure that is present at Level 2. Knowing the ICC, we can then easily calculate the percentage of variation at Level 1: 
 
-$$\text{Level 1 varation} = \text{total variation} - \text{Level 2 variation} =$$
+$$\text{Level 1 variation} = \text{total variation} - \text{Level 2 variation} =$$
 $$= 100\% - (100\% \times \text{ICC})$$
 
 Thus, in some broader sense, the ICC might be thought of as a measure of diversity: the higher the ICC, the higher the clustering of the data in groups, and more of the diversity in the sample is between countries; the lower the ICC, the lower the clustering of the data, and less of the diversity in the sample is between countries.
+
+In practice, I have often found the ICC in cross-sectional models to be relatively low: often on the order of 5%, 10% or 15%. Phrased in terms of diversity and variation, this means that in cross-sectional applications, there is often much more diversity and variation within each group indicated by the grouping variable (e.g. neighborhood, school, country) than there is between the values of the  grouping variable.
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table0.md')}
 ```
@@ -408,7 +410,7 @@ An *advantage* of the approach outlined in @eq-identity-random-intercept is that
 
 A potential *disadvantage* of the approach outlined in @eq-identity-random-intercept is that this is multi-country data that already employs a random slope, $u_{0j}$. Adding $v_{0k}$ means that we now have a model with *two* random slopes, a topic which is discussed in **Chapter XXXXXXX**.
 
-A *caveat* of the approach outlined in @eq-identity-random-intercept is that random intercepts (e.g. $v_{0k}$ and $u_{0j}$)--which are essentially error terms at level 2--are assumed to follow a normal distribution. Ten identities, to follow the example above, is generally considered to be too few groups to satisfy this assumption of a normal distribution. @Maas2004 suggest that at least 50 level 2 units are necessary to ensure satisfaction of this normality assumption. Importantly, if one has fewer than 50 units, the bias introduced only appears to affect the estimation of the level 2 random intercepts and slopes, not the estimation of the independent variables [@Maas2004; @Maas2005]. If one has fewer than this number one possible procedure is to model the groups both as a *random intercept* and as *a set of indicator variables*, and to see if the different approaches lead to different substantive conclusions [@Gershoff2010]. 
+A *caveat* of the approach outlined in @eq-identity-random-intercept is that random intercepts (e.g. $v_{0k}$ and $u_{0j}$)--which are essentially error terms at level 2--are assumed to follow a normal distribution [@StataCorp2021:2]. Ten identities, to follow the example above, is generally considered to be too few groups to satisfy this assumption of a normal distribution. @Maas2004 suggest that at least 50 level 2 units are necessary to ensure satisfaction of this normality assumption. Importantly, if one has fewer than 50 units, the bias introduced only appears to affect the estimation of the level 2 random intercepts and slopes, not the estimation of the independent variables [@Maas2004; @Maas2005]. If one has fewer than this number one possible procedure is to model the groups both as a *random intercept* and as *a set of indicator variables*, and to see if the different approaches lead to different substantive conclusions [@Gershoff2010]. 
 
 A second *caveat* of modeling identities as a random intercept is that these identities would need to be mutually exclusive. For example, "black", "white" and "identifies as both black and white", would all need to be separately coded identities under this approach.
 

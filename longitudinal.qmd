@@ -213,6 +213,14 @@ ggplot(data = NULL) +
 
 ## Regression With Simulated Multi-Country Longitudinal Data {#sec-regressionlongitudinal}
 
+### Unconditional Model
+
+As we did earlier (@sec-unconditional), we estimate an unconditional model with no independent variables.
+
+```{r, child=c('./simulate-and-analyze-multilevel-data/table2_0.md')}
+```
+
+### Main Effects Only
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table2.md')}
 ```

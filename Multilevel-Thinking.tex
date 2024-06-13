@@ -242,7 +242,7 @@
 \subtitle{Discovering Diversity, Universals, and Particulars in
 Cross-Cultural Research}
 \author{Andrew Grogan-Kaylor}
-\date{2024-06-11}
+\date{2024-06-13}
 
 \begin{document}
 \maketitle
@@ -948,7 +948,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, colframe=quarto-callout-note-color-frame, colback=white, breakable, coltitle=black, leftrule=.75mm, bottomtitle=1mm, titlerule=0mm, opacityback=0, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, arc=.35mm, left=2mm, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, left=2mm, toprule=.15mm, toptitle=1mm, rightrule=.15mm, bottomrule=.15mm, breakable, bottomtitle=1mm, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, colback=white, coltitle=black, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, arc=.35mm, opacityback=0, opacitybacktitle=0.6]
 
 Data are presented in Stata format. The Appendix considers the analysis
 of multilevel models using multiple software packages: Stata, R \&
@@ -1168,7 +1168,7 @@ conceptual level 2 & N/A & Administrative indicator of social unit \\
   \emph{statistically} aggregated to Level 2.
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, colback=white, breakable, coltitle=black, leftrule=.75mm, bottomtitle=1mm, titlerule=0mm, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, arc=.35mm, left=2mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, left=2mm, toprule=.15mm, toptitle=1mm, rightrule=.15mm, bottomrule=.15mm, breakable, bottomtitle=1mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, coltitle=black, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, arc=.35mm, opacityback=0, opacitybacktitle=0.6]
 
 Such aggregated variables represent the \emph{average} level of a
 response across each Level 2 unit, and are sometimes called ``contextual
@@ -1598,7 +1598,7 @@ However, \emph{results} from multiple levels of equations quickly become
 difficult to interpret, and thus, I will not spend a great deal of time
 on discussing empirical results of the two level formulation. Whether
 multiple levels of equations, or a single equation are employed, the
-numerical results are equivalent.s
+numerical results are equivalent.
 
 \subsection{Two Levels of Equations}\label{two-levels-of-equations}
 
@@ -1747,14 +1747,22 @@ measure of the amount of variation in a measure that is present at Level
 2. Knowing the ICC, we can then easily calculate the percentage of
 variation at Level 1:
 
-\[\text{Level 1 varation} = \text{total variation} - \text{Level 2 variation} =\]
+\[\text{Level 1 variation} = \text{total variation} - \text{Level 2 variation} =\]
 \[= 100\% - (100\% \times \text{ICC})\]
 
 Thus, in some broader sense, the ICC might be thought of as a measure of
 diversity: the higher the ICC, the higher the clustering of the data in
-groups, and the lower the diversity within the groups; the lower the
-ICC, the lower the clustering of the data in groups, and the higher the
-diversity within groups between individuals.
+groups, and more of the diversity in the sample is between countries;
+the lower the ICC, the lower the clustering of the data, and less of the
+diversity in the sample is between countries.
+
+In practice, I have often found the ICC in cross-sectional models to be
+relatively low: often on the order of 5\%, 10\% or 15\%. Phrased in
+terms of diversity and variation, this means that in cross-sectional
+applications, there is often much more diversity and variation within
+each group indicated by the grouping variable (e.g.~neighborhood,
+school, country) than there is between the values of the grouping
+variable.
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
@@ -2025,7 +2033,7 @@ In Equation~\ref{eq-indicator-variables} the first group of race,
 omitted from the model, and all comparisons are made to individuals with
 identity \texttt{race1}.
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, colback=white, breakable, coltitle=black, leftrule=.75mm, bottomtitle=1mm, titlerule=0mm, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Indicator Variables in Equations And Syntax}, arc=.35mm, left=2mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, left=2mm, toprule=.15mm, toptitle=1mm, rightrule=.15mm, bottomrule=.15mm, breakable, bottomtitle=1mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, coltitle=black, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Indicator Variables in Equations And Syntax}, arc=.35mm, opacityback=0, opacitybacktitle=0.6]
 
 Thus, if an identity, such as race, is used as an \emph{indicator
 variable}, it would appear in the equations (e.g.
@@ -2034,7 +2042,7 @@ in the Appendix, in the same place as the \texttt{identity} variable.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, colback=white, breakable, coltitle=black, leftrule=.75mm, bottomtitle=1mm, titlerule=0mm, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reference Categories Need To Be Chosen Carefully}, arc=.35mm, left=2mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, left=2mm, toprule=.15mm, toptitle=1mm, rightrule=.15mm, bottomrule=.15mm, breakable, bottomtitle=1mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, coltitle=black, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reference Categories Need To Be Chosen Carefully}, arc=.35mm, opacityback=0, opacitybacktitle=0.6]
 
 Reference categories need to be chosen carefully. This is especially
 true in studies that hope to be attentive to diversity and social
@@ -2050,7 +2058,7 @@ the choice of reference categories can be manually specified.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, colframe=quarto-callout-warning-color-frame, colback=white, breakable, coltitle=black, leftrule=.75mm, bottomtitle=1mm, titlerule=0mm, opacityback=0, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Indicator Variables Should Not Be Treated As A Continuous Variable}, arc=.35mm, left=2mm, bottomrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-warning-color-frame, left=2mm, toprule=.15mm, toptitle=1mm, rightrule=.15mm, bottomrule=.15mm, breakable, bottomtitle=1mm, leftrule=.75mm, colbacktitle=quarto-callout-warning-color!10!white, colback=white, coltitle=black, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Indicator Variables Should Not Be Treated As A Continuous Variable}, arc=.35mm, opacityback=0, opacitybacktitle=0.6]
 
 Identities that are measured in the data with a single categorical
 variable with values like \texttt{1}, \texttt{2}, \texttt{3},
@@ -2098,7 +2106,7 @@ Here, the inclusion of \(v_{0k}\), a random intercept for identity,
 would be a way to model the presence of many possible values of an
 identity variable.
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, colback=white, breakable, coltitle=black, leftrule=.75mm, bottomtitle=1mm, titlerule=0mm, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Random Intercepts in Equations And Syntax}, arc=.35mm, left=2mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, left=2mm, toprule=.15mm, toptitle=1mm, rightrule=.15mm, bottomrule=.15mm, breakable, bottomtitle=1mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, coltitle=black, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Random Intercepts in Equations And Syntax}, arc=.35mm, opacityback=0, opacitybacktitle=0.6]
 
 Thus, if an identity, such as race, is used as a \emph{random
 intercept}, it would appear in the equations (e.g.
@@ -2129,19 +2137,19 @@ slopes, a topic which is discussed in \textbf{Chapter XXXXXXX}.
 A \emph{caveat} of the approach outlined in
 Equation~\ref{eq-identity-random-intercept} is that random intercepts
 (e.g.~\(v_{0k}\) and \(u_{0j}\))--which are essentially error terms at
-level 2--are assumed to follow a normal distribution. Ten identities, to
-follow the example above, is generally considered to be too few groups
-to satisfy this assumption of a normal distribution. C. J. M. Maas \&
-Hox (2004) suggest that at least 50 level 2 units are necessary to
-ensure satisfaction of this normality assumption. Importantly, if one
-has fewer than 50 units, the bias introduced only appears to affect the
-estimation of the level 2 random intercepts and slopes, not the
-estimation of the independent variables (C. J. M. Maas \& Hox, 2004; C.
-Maas \& Hox, 2005). If one has fewer than this number one possible
-procedure is to model the groups both as a \emph{random intercept} and
-as \emph{a set of indicator variables}, and to see if the different
-approaches lead to different substantive conclusions (Gershoff et al.,
-2010).
+level 2--are assumed to follow a normal distribution (StataCorp, 2023b).
+Ten identities, to follow the example above, is generally considered to
+be too few groups to satisfy this assumption of a normal distribution.
+C. J. M. Maas \& Hox (2004) suggest that at least 50 level 2 units are
+necessary to ensure satisfaction of this normality assumption.
+Importantly, if one has fewer than 50 units, the bias introduced only
+appears to affect the estimation of the level 2 random intercepts and
+slopes, not the estimation of the independent variables (C. J. M. Maas
+\& Hox, 2004; C. Maas \& Hox, 2005). If one has fewer than this number
+one possible procedure is to model the groups both as a \emph{random
+intercept} and as \emph{a set of indicator variables}, and to see if the
+different approaches lead to different substantive conclusions (Gershoff
+et al., 2010).
 
 A second \emph{caveat} of modeling identities as a random intercept is
 that these identities would need to be mutually exclusive. For example,
@@ -2973,6 +2981,29 @@ time}, modify the \emph{slope} of the time trajectory.
 \section{Regression With Simulated Multi-Country Longitudinal
 Data}\label{sec-regressionlongitudinal}
 
+\subsection{Unconditional Model}\label{unconditional-model}
+
+As we did earlier (Section~\ref{sec-unconditional}), we estimate an
+unconditional model with no independent variables.
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+& 1 & \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\_cons & 53.378 & ** \\
+var(\_cons) & 3.232 & \\
+var(\_cons) & 11.724 & \\
+var(e) & 28.234 & \\
+Number of observations & 9000 & \\
+\end{longtable}
+
+** p\textless.01, * p\textless.05
+
+\subsection{Main Effects Only}\label{main-effects-only}
+
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
 & 1 & \\
@@ -3075,7 +3106,7 @@ outcomes.
 Examining the interaction terms, we find that none of these variables
 modify the time trajectory of the outcome.
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, colback=white, breakable, coltitle=black, leftrule=.75mm, bottomtitle=1mm, titlerule=0mm, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Interactions And Random Slopes in Longitudinal Models}, arc=.35mm, left=2mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, left=2mm, toprule=.15mm, toptitle=1mm, rightrule=.15mm, bottomrule=.15mm, breakable, bottomtitle=1mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, coltitle=black, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Interactions And Random Slopes in Longitudinal Models}, arc=.35mm, opacityback=0, opacitybacktitle=0.6]
 
 Having now discussed both \emph{random slopes}
 (Section~\ref{sec-conditional-model}), and \emph{interaction terms}
@@ -3107,7 +3138,7 @@ Most software programs for multilevel modeling allow one to incorporate
 measures of autocorrelation so that, e.g., \(e_{i,t=3}\) is allowed to
 be correlated with \(e_{i,t=2}\), which in turn can be correlated with
 \(e_{i,t=1}\). More complex autocorrelation structures are usually also
-possible (StataCorp, 2021a).
+possible (StataCorp, 2023a).
 
 \section{Causal Inference}\label{sec-causality}
 
@@ -3388,7 +3419,7 @@ variation within individuals, and not making use of the variation
 between individuals.
 
 Details are provided in Allison (2009) and Wooldridge (2010). StataCorp
-(2021b) provides an exceptionally clear explication of the core idea of
+(2023c) provides an exceptionally clear explication of the core idea of
 fixed effects regression. The essential idea is that the fixed effects
 model provides statistical control for all time invariant
 characteristics of study participants, such as--as is often the case in
@@ -4036,11 +4067,15 @@ context. \emph{New Directions for Institutional Research}, \emph{2013},
 1--7. \url{https://doi.org/10.1002/ir.20041}
 
 \bibitem[\citeproctext]{ref-StataCorp2021:1}
-StataCorp. (2021a). \emph{Stata 17 longitudinal data/panel data
+StataCorp. (2023a). \emph{Stata 18 longitudinal data/panel data
 reference manual}. Stata Press.
 
+\bibitem[\citeproctext]{ref-StataCorp2021:2}
+StataCorp. (2023b). \emph{Stata 18 multilevel mixed effects reference
+manual}. Stata Press.
+
 \bibitem[\citeproctext]{ref-StataCorp2021}
-StataCorp. (2021b). \emph{Stata statistical software: Release 17}.
+StataCorp. (2023c). \emph{Stata statistical software: Release 18}.
 StataCorp LLC.
 
 \bibitem[\citeproctext]{ref-Strevens2020}
