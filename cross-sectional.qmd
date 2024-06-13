@@ -197,7 +197,7 @@ These data are constructed to provide this kind of extreme example, but it easy 
 
 ## The Equation
 
-The equation for the multilevel model can be written in several ways: as multiple levels of equations; or as a single equation. The advantage of having multiple levels of equations is that these multiple equations make clear the multiple levels of the data, and thus conform to an initial understanding of how a multilevel model should be estimated. However, *results* from multiple levels of equations quickly become difficult to interpret, and thus, I will not spend a great deal of time on discussing empirical results of the two level formulation. Whether multiple levels of equations, or a single equation are employed, the numerical results are equivalent.s
+The equation for the multilevel model can be written in several ways: as multiple levels of equations; or as a single equation. The advantage of having multiple levels of equations is that these multiple equations make clear the multiple levels of the data, and thus conform to an initial understanding of how a multilevel model should be estimated. However, *results* from multiple levels of equations quickly become difficult to interpret, and thus, I will not spend a great deal of time on discussing empirical results of the two level formulation. Whether multiple levels of equations, or a single equation are employed, the numerical results are equivalent.
 
 ### Two Levels of Equations
 
@@ -277,7 +277,7 @@ Put another way, in a two level model, the ICC provides a quantitative measure o
 $$\text{Level 1 varation} = \text{total variation} - \text{Level 2 variation} =$$
 $$= 100\% - (100\% \times \text{ICC})$$
 
-Thus, in some broader sense, the ICC might be thought of as a measure of diversity: the higher the ICC, the higher the clustering of the data in groups, and the lower the diversity within the groups; the lower the ICC, the lower the clustering of the data in groups, and the higher the diversity within groups between individuals.
+Thus, in some broader sense, the ICC might be thought of as a measure of diversity: the higher the ICC, the higher the clustering of the data in groups, and more of the diversity in the sample is between countries; the lower the ICC, the lower the clustering of the data, and less of the diversity in the sample is between countries.
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table0.md')}
 ```
