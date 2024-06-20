@@ -399,7 +399,7 @@ Reference categories need to be chosen carefully. This is especially true in stu
 :::
 
 ::: {.callout-warning}
-#### Indicator Variables Should Not Be Treated As A Continuous Variable
+#### Indicator Variables Should Not Be Treated As Continuous Variables
 
 Identities that are measured in the data with a single categorical variable with values like `1`, `2`, `3`, `4`, `5`, `6` should *not* be modeled as a single continuous variable. For example, if the data are similar to those presented in @tbl-race-ethnicity-data--where identity is measured as a single column of data--it is important that the multiple identities *not* be modeled as a single variable, which would end up *de facto* treating this multi-category *categorical* variable as a single *continuous* variable. Instead, multiple indicator variables ($k-1$) for the multiple ($k$) identities should be clearly specified in one's equation (as in @eq-indicator-variables) and in the statistical syntax. Details of how to accomplish this for different software packages are included in the Appendix.
 :::
