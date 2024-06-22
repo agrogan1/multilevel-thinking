@@ -220,6 +220,18 @@ As we did earlier (@sec-unconditional), we estimate an unconditional model with 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table2_0.md')}
 ```
 
+In a three level model, there are two intraclass correlation coefficients [@StataCorp2023]. The formulas for the Intraclass Correlation Coefficient (ICC) are given by [@StataCorp2023]:
+
+$$\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})}$$ {#eq-ICCunconditional3A}
+
+Following @StataCorp2023, @eq-ICCunconditional3A is the correlation of responses for person-timepoints from the same country but different persons.
+
+$$\text{ICC} = \frac{var(u_{0j}) + var(v_{0i})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})}$$ {#eq-ICCunconditional3B}
+
+Again, closely following @StataCorp2023, @eq-ICCunconditional3B is the correlation of responses for person-timepoints from the same country and same person.
+
+The ICCs suggest that almost 8% of the variation in the outcome is within time points for different individuals within the same country, while almost 35% of the variation in the outcome is within time points for the same individual within the same country.
+
 ### Main Effects Only
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table2.md')}
