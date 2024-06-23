@@ -71,7 +71,7 @@
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
 \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
@@ -81,7 +81,7 @@
 \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
 \newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
 \newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
@@ -242,7 +242,7 @@
 \subtitle{Discovering Diversity, Universals, and Particulars in
 Cross-Cultural Research}
 \author{Andrew Grogan-Kaylor}
-\date{2024-06-22}
+\date{2024-06-23}
 
 \begin{document}
 \maketitle
@@ -370,13 +370,14 @@ Galano, Dr.~Sara Stein, Madhur Singh, and Tong Suo. Thank you for the
 many valuable discussions during class breaks, and after class. These
 discussions have also greatly extended my understanding of multilevel
 models. I'd like to thank Marty Betts and Greg Knollmeyer for their help
-and support. Most importantly, I have two last people to thank: I'd like
-to thank Ross Grogan-Kaylor for continued interest in the progress of
-this book, and probing thoughtful questions. Shari Grogan-Kaylor had
-many important and challenging questions about the \emph{what} and the
-\emph{why} of this book, and most importantly to me, \emph{has believed}
-in it. While I'm thankful for the inspiration and support provided by
-others, any remaining errors and omissions in this book are of course my
+and support. Most importantly, I have two final people to thank: I'd
+like to thank Ross Grogan-Kaylor for continued interest in the progress
+of this book, and many probing thoughtful questions that helped the
+logic of the presentation. Shari Grogan-Kaylor had many important and
+challenging questions about the \emph{what} and the \emph{why} of this
+book, and most importantly to me, \emph{has believed} in it. While I'm
+thankful for the inspiration and support provided by others, any
+remaining errors and omissions in this book are of course my
 responsibility.
 
 \bookmarksetup{startatroot}
@@ -948,7 +949,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, left=2mm, toprule=.15mm, opacityback=0, breakable, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, titlerule=0mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, colback=white, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, colback=white, titlerule=0mm, toprule=.15mm, bottomrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, breakable, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, arc=.35mm, rightrule=.15mm, leftrule=.75mm, coltitle=black]
 
 Data are presented in Stata format. The Appendix considers the analysis
 of multilevel models using multiple software packages: Stata, R \&
@@ -1168,7 +1169,7 @@ conceptual level 2 & N/A & Administrative indicator of social unit \\
   \emph{statistically} aggregated to Level 2.
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, left=2mm, toprule=.15mm, opacityback=0, breakable, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, colback=white, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, titlerule=0mm, toprule=.15mm, bottomrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, arc=.35mm, rightrule=.15mm, leftrule=.75mm, coltitle=black]
 
 Such aggregated variables represent the \emph{average} level of a
 response across each Level 2 unit, and are sometimes called ``contextual
@@ -1712,7 +1713,7 @@ improved psychological wellbeing.
 \subsection{Unconditional Model}\label{sec-unconditional}
 
 The unconditional model is a model with no \(x\)'s or covariates
-(Raudenbush \& Bryk, 2002).
+(Raudenbush \& Bryk, 2002). \index{unconditional model}
 
 \begin{equation}\phantomsection\label{eq-unconditional}{\text{outcome}_{ij} = \beta_0 + u_{0j} + e_{ij}}\end{equation}
 
@@ -1728,7 +1729,7 @@ variation at the country and individual level.
 
 I now introduce a measure known as the Intra-Class Correlation
 Coefficient, (ICC) that can be computed from this unconditional model
-(Raudenbush \& Bryk, 2002). \index{variation and diversity}
+(Raudenbush \& Bryk, 2002). \index{variation and diversity} \index{ICC}
 
 \begin{equation}\phantomsection\label{eq-ICC}{\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}}\end{equation}
 
@@ -1839,7 +1840,7 @@ outcome varied across countries.
 level, or Level 2, variable in this model is not associated with the
 outcome.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, left=2mm, toprule=.15mm, opacityback=0, breakable, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Intuitions}, colback=white, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, titlerule=0mm, toprule=.15mm, bottomrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Intuitions}, arc=.35mm, rightrule=.15mm, leftrule=.75mm, coltitle=black]
 
 \emph{Random intercepts} and \emph{random slopes} are statistically
 closely related concepts. In my experience of over 10 years of teaching
@@ -2072,7 +2073,7 @@ In Equation~\ref{eq-indicator-variables} the first group of race,
 omitted from the model, and all comparisons are made to individuals with
 identity \texttt{race1}.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, left=2mm, toprule=.15mm, opacityback=0, breakable, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Indicator Variables in Equations And Syntax}, colback=white, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, titlerule=0mm, toprule=.15mm, bottomrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Indicator Variables in Equations And Syntax}, arc=.35mm, rightrule=.15mm, leftrule=.75mm, coltitle=black]
 
 Thus, if an identity, such as race, is used as an \emph{indicator
 variable}, it would appear in the equations (e.g.
@@ -2081,7 +2082,7 @@ in the Appendix, in the same place as the \texttt{identity} variable.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, left=2mm, toprule=.15mm, opacityback=0, breakable, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reference Categories Need To Be Chosen Carefully}, colback=white, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, titlerule=0mm, toprule=.15mm, bottomrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reference Categories Need To Be Chosen Carefully}, arc=.35mm, rightrule=.15mm, leftrule=.75mm, coltitle=black]
 
 Reference categories need to be chosen carefully. This is especially
 true in studies that hope to be attentive to diversity and social
@@ -2097,7 +2098,7 @@ the choice of reference categories can be manually specified.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-warning-color-frame, left=2mm, toprule=.15mm, opacityback=0, breakable, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, titlerule=0mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Indicator Variables Should Not Be Treated As Continuous Variables}, colback=white, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, colframe=quarto-callout-warning-color-frame, bottomtitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, colback=white, titlerule=0mm, toprule=.15mm, bottomrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, breakable, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Indicator Variables Should Not Be Treated As Continuous Variables}, arc=.35mm, rightrule=.15mm, leftrule=.75mm, coltitle=black]
 
 Identities that are measured in the data with a single categorical
 variable with values like \texttt{1}, \texttt{2}, \texttt{3},
@@ -2145,7 +2146,7 @@ Here, the inclusion of \(v_{0k}\), a random intercept for identity,
 would be a way to model the presence of many possible values of an
 identity variable.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, left=2mm, toprule=.15mm, opacityback=0, breakable, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Random Intercepts in Equations And Syntax}, colback=white, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, titlerule=0mm, toprule=.15mm, bottomrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Random Intercepts in Equations And Syntax}, arc=.35mm, rightrule=.15mm, leftrule=.75mm, coltitle=black]
 
 Thus, if an identity, such as race, is used as a \emph{random
 intercept}, it would appear in the equations (e.g.
@@ -3024,6 +3025,7 @@ Data}\label{sec-regressionlongitudinal}
 
 As we did earlier (Section~\ref{sec-unconditional}), we estimate an
 unconditional model with no independent variables.
+\index{unconditional model}
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
@@ -3042,8 +3044,9 @@ Number of observations & 9000 & \\
 ** p\textless.01, * p\textless.05
 
 In a three level model, there are two intraclass correlation
-coefficients (StataCorp, 2023b). The formulas for the Intraclass
-Correlation Coefficient (ICC) are given by (StataCorp, 2023b):
+coefficients (StataCorp, 2023b). \index{ICC} The formulas for the
+Intraclass Correlation Coefficient (ICC) are given by (StataCorp,
+2023b):
 
 \begin{equation}\phantomsection\label{eq-ICCunconditional3A}{\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})}}\end{equation}
 
@@ -3166,7 +3169,7 @@ outcomes.
 Examining the interaction terms, we find that none of these variables
 modify the time trajectory of the outcome.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, left=2mm, toprule=.15mm, opacityback=0, breakable, bottomrule=.15mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, leftrule=.75mm, toptitle=1mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Interactions And Random Slopes in Longitudinal Models}, colback=white, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, titlerule=0mm, toprule=.15mm, bottomrule=.15mm, opacitybacktitle=0.6, toptitle=1mm, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Interactions And Random Slopes in Longitudinal Models}, arc=.35mm, rightrule=.15mm, leftrule=.75mm, coltitle=black]
 
 Having now discussed both \emph{random slopes}
 (Section~\ref{sec-conditional-model}), and \emph{interaction terms}

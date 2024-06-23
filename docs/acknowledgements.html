@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.5.29">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Multilevel Thinking - Acknowledgements</title>
+<title>Multilevel Thinking – Acknowledgements</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -255,19 +255,19 @@ ul.task-list li input[type="checkbox"] {
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
-              <i class="bi bi-bi-twitter pe-1"></i>
+              <i class="bi bi-twitter pe-1"></i>
             Twitter
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
-              <i class="bi bi-bi-facebook pe-1"></i>
+              <i class="bi bi-facebook pe-1"></i>
             Facebook
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
-              <i class="bi bi-bi-linkedin pe-1"></i>
+              <i class="bi bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
@@ -378,7 +378,7 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
@@ -403,7 +403,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>No good learning happens without community. At least, that has always been true for me. I am grateful for many creative and energizing discussions with the other members of the MICS (UNICEF data) research team: Professor Julie Ma, Dr.&nbsp;Kaitlin Ward, Professor Garrett Pace and Professor Shawna Lee. I’m thankful for their collegiality, their friendship, their patience with me, and their dedication to good science. Working with these colleagues has greatly deepened my understanding of multilevel models. I’m also very grateful to one of my mentors, Professor Sandra Danziger, who has taught me so much about the <em>what</em> and the <em>why</em> of mentoring, teaching, and doing research. My colleagues Professor Karen Staller, and Professor Julie Ribaudo have also helped me clarify my thinking about the <em>what</em> and the <em>why</em> of research and teaching, and have encouraged me along the way. Don Deutsch showed ongoing interest in the development of this book, and has asked some hard questions that have improved its logic. Thank you to Professor Jim Allen for our discussions about how quantitative methods can better listen to lived experience. Importantly, I’d like to express gratitude to the many students in my class on <em>Multilevel and Longitudinal Modeling</em> who over the years have helped me think more deeply about statistical and substantive issues, including Dr.&nbsp;Kaitlin Ward, Professor Garrett Pace, Professor Julie Ma, Professor Yoonsun Han, Professor Berenice Castillo, Professor Maria Galano, Dr.&nbsp;Sara Stein, Madhur Singh, and Tong Suo. Thank you for the many valuable discussions during class breaks, and after class. These discussions have also greatly extended my understanding of multilevel models. I’d like to thank Marty Betts and Greg Knollmeyer for their help and support. Most importantly, I have two last people to thank: I’d like to thank Ross Grogan-Kaylor for continued interest in the progress of this book, and probing thoughtful questions. Shari Grogan-Kaylor had many important and challenging questions about the <em>what</em> and the <em>why</em> of this book, and most importantly to me, <em>has believed</em> in it. While I’m thankful for the inspiration and support provided by others, any remaining errors and omissions in this book are of course my responsibility.</p>
+<p>No good learning happens without community. At least, that has always been true for me. I am grateful for many creative and energizing discussions with the other members of the MICS (UNICEF data) research team: Professor Julie Ma, Dr.&nbsp;Kaitlin Ward, Professor Garrett Pace and Professor Shawna Lee. I’m thankful for their collegiality, their friendship, their patience with me, and their dedication to good science. Working with these colleagues has greatly deepened my understanding of multilevel models. I’m also very grateful to one of my mentors, Professor Sandra Danziger, who has taught me so much about the <em>what</em> and the <em>why</em> of mentoring, teaching, and doing research. My colleagues Professor Karen Staller, and Professor Julie Ribaudo have also helped me clarify my thinking about the <em>what</em> and the <em>why</em> of research and teaching, and have encouraged me along the way. Don Deutsch showed ongoing interest in the development of this book, and has asked some hard questions that have improved its logic. Thank you to Professor Jim Allen for our discussions about how quantitative methods can better listen to lived experience. Importantly, I’d like to express gratitude to the many students in my class on <em>Multilevel and Longitudinal Modeling</em> who over the years have helped me think more deeply about statistical and substantive issues, including Dr.&nbsp;Kaitlin Ward, Professor Garrett Pace, Professor Julie Ma, Professor Yoonsun Han, Professor Berenice Castillo, Professor Maria Galano, Dr.&nbsp;Sara Stein, Madhur Singh, and Tong Suo. Thank you for the many valuable discussions during class breaks, and after class. These discussions have also greatly extended my understanding of multilevel models. I’d like to thank Marty Betts and Greg Knollmeyer for their help and support. Most importantly, I have two final people to thank: I’d like to thank Ross Grogan-Kaylor for continued interest in the progress of this book, and many probing thoughtful questions that helped the logic of the presentation. Shari Grogan-Kaylor had many important and challenging questions about the <em>what</em> and the <em>why</em> of this book, and most importantly to me, <em>has believed</em> in it. While I’m thankful for the inspiration and support provided by others, any remaining errors and omissions in this book are of course my responsibility.</p>
 
 
 
@@ -587,18 +587,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -630,7 +619,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/agrogan1\.github\.io\/multilevel-thinking\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -665,7 +694,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -941,7 +974,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link  aria-label=" &lt;span="" usefulness="" of="" multilevel="" modeling="" and="" thinking&lt;="" span&gt;"="">
+      <a href="./index.html" class="pagination-link" aria-label="The Usefulness of Multilevel Modeling and Multilevel Thinking">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Usefulness of Multilevel Modeling and Multilevel Thinking</span></span>
       </a>          
   </div>
