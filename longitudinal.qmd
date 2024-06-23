@@ -215,12 +215,12 @@ ggplot(data = NULL) +
 
 ### Unconditional Model
 
-As we did earlier (@sec-unconditional), we estimate an unconditional model with no independent variables.
+As we did earlier (@sec-unconditional), we estimate an unconditional model with no independent variables. \index{unconditional model}
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/table2_0.md')}
 ```
 
-In a three level model, there are two intraclass correlation coefficients [@StataCorp2023]. The formulas for the Intraclass Correlation Coefficient (ICC) are given by [@StataCorp2023]:
+In a three level model, there are two intraclass correlation coefficients [@StataCorp2023]. \index{ICC} The formulas for the Intraclass Correlation Coefficient (ICC) are given by [@StataCorp2023]:
 
 $$\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})}$$ {#eq-ICCunconditional3A}
 

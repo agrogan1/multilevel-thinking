@@ -250,7 +250,7 @@ After considering some of these broader issues, let's now examine the results of
 
 ### Unconditional Model {#sec-unconditional}
 
-The unconditional model is a model with no $x$'s or covariates [@Raudenbush2002]. 
+The unconditional model is a model with no $x$'s or covariates [@Raudenbush2002]. \index{unconditional model}
 
 $$\text{outcome}_{ij} = \beta_0 + u_{0j} + e_{ij}$$ {#eq-unconditional}
 
@@ -260,7 +260,7 @@ Thus, all of the variation in $\text{outcome}_{ij}$ is--given the *unconditional
 
 ### Intra-Class Correlation Coefficient {#sec-ICC}
 
-I now introduce a measure known as the Intra-Class Correlation Coefficient, (ICC) that can be computed from this unconditional model [@Raudenbush2002]. \index{variation and diversity}
+I now introduce a measure known as the Intra-Class Correlation Coefficient, (ICC) that can be computed from this unconditional model [@Raudenbush2002]. \index{variation and diversity} \index{ICC}
 
 $$\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}$$ {#eq-ICC}
 
