@@ -92,6 +92,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="multilevel-thinking.css">
 <meta property="og:title" content="Multilevel Thinking - 2&nbsp; Introduction">
@@ -445,7 +474,7 @@ div.csl-indent {
 </blockquote>
 <section id="sec-socialjustice" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="sec-socialjustice"><span class="header-section-number">2.1</span> Quantitative Methods and Social Justice</h2>
-<p>There is clearly need for both qualitative and quantitative methods. Central to the argument of this book is the idea that advanced quantitative methods can be core contributors to the agenda of understanding issues of diversity and social justice more fully and thoroughly <span class="citation" data-cites="Cokley2013 GroganKaylor2018">(<a href="references.html#ref-Cokley2013" role="doc-biblioref">Cokley &amp; Awad, 2013</a>; <a href="references.html#ref-GroganKaylor2018" role="doc-biblioref">Grogan-Kaylor et al., 2018</a>)</span>. Quantitative methods, particularly in discussions comparing qualitative and quantitative methodologies, are sometimes labelled as inherently <em>positivist</em> methods. My argument regarding this point is twofold. First, there is nothing within the mathematics of quantitative methods that requires a positivist epistemology. Quantitative methodologies could as easily be conducted using a critical epistemology–that is aware of dynamics of power and privilege–as any other methodology <span class="citation" data-cites="Stage2014 Scharrer2021">(<a href="references.html#ref-Scharrer2021" role="doc-biblioref">Scharrer &amp; Ramasubramanian, 2021</a>; <a href="references.html#ref-Stage2014" role="doc-biblioref">Stage &amp; Wells, 2014</a>)</span>. I note that one of the pioneers of liberation psychology, Martin-Baró <span class="citation" data-cites="Aron1994">(<a href="references.html#ref-Aron1994" role="doc-biblioref">Aron &amp; Corne, 1994</a>)</span>, used both qualitative and quantitative methods <span class="citation" data-cites="Martin-Baro1994">(<a href="references.html#ref-Martin-Baro1994" role="doc-biblioref">Martin-Baro, 1994</a>)</span>, including in the latter case, relatively sophisticated arguments about patterns of missing data across a survey data set <span class="citation" data-cites="Aron1994">(<a href="references.html#ref-Aron1994" role="doc-biblioref">Aron &amp; Corne, 1994</a>)</span>. </p>
+<p>There is clearly need for both qualitative and quantitative methods. Central to the argument of this book is the idea that advanced quantitative methods can be core contributors to the agenda of understanding issues of diversity and social justice more fully and thoroughly <span class="citation" data-cites="Cokley2013 GroganKaylor2018">(<a href="references.html#ref-Cokley2013" role="doc-biblioref">Cokley &amp; Awad, 2013</a>; <a href="references.html#ref-GroganKaylor2018" role="doc-biblioref">Grogan-Kaylor et al., 2018</a>)</span>. Quantitative methods, particularly in discussions comparing qualitative and quantitative methodologies, are sometimes labelled as inherently <em>positivist</em> methods. My argument regarding this point is twofold. First, there is nothing within the mathematics of quantitative methods that requires a positivist epistemology. Quantitative methodologies could as easily be conducted using a critical epistemology–that is aware of dynamics of power and privilege–as any other methodology <span class="citation" data-cites="Stage2014 Scharrer2021">(<a href="references.html#ref-Scharrer2021" role="doc-biblioref">Scharrer &amp; Ramasubramanian, 2021</a>; <a href="references.html#ref-Stage2014" role="doc-biblioref">Stage &amp; Wells, 2014</a>)</span>. I note that one of the pioneers of liberation psychology, Martin-Baró <span class="citation" data-cites="Aron1994">(<a href="references.html#ref-Aron1994" role="doc-biblioref">Aron &amp; Corne, 1994</a>)</span>, used both qualitative and quantitative methods <span class="citation" data-cites="Martin-Baro1994">(<a href="references.html#ref-Martin-Baro1994" role="doc-biblioref">Martin-Baro, 1994a</a>)</span>, including in the latter case, relatively sophisticated arguments about patterns of missing data across a survey data set <span class="citation" data-cites="Aron1994">(<a href="references.html#ref-Aron1994" role="doc-biblioref">Aron &amp; Corne, 1994</a>)</span>. </p>
 <p>Second, when we have samples of a hundred, several hundred, several thousand, or even hundreds of thousands of study participants distributed across multiple and diverse social contexts, it is difficult to imagine a methodology other than a <em>quantitative</em> methodology that could accomplish the following:</p>
 <ol type="1">
 <li>Sift through thousands of responses, and determine the <em>overall, or average, pattern of relationships</em> between risk factors, protective factors, and outcomes.</li>
@@ -467,6 +496,21 @@ div.csl-indent {
 <h2 data-number="2.2" class="anchored" data-anchor-id="sec-science"><span class="header-section-number">2.2</span> Some Philosophy of Science</h2>
 <p>I am not much of a philosopher of science. However, I am very persuaded by Strevens’ <span class="citation" data-cites="Strevens2020">(<a href="references.html#ref-Strevens2020" role="doc-biblioref">2020</a>)</span> minimalist criterion of the “iron rule”. In essence, this rule specifies that to count as “science”, investigations must engage in “performing an experiment or making an observation that generates relevant empirical evidence” against which competing hypotheses can be tested. A similar perspective is offered by <span class="citation" data-cites="Goldacre2011">Goldacre (<a href="references.html#ref-Goldacre2011" role="doc-biblioref">2011</a>)</span> who argues that ideas about interventions should be scrutinized with a “fair test”. That is to say, they should be tested against evidence that can support or refute those ideas. I would argue all ideas about promoting human well-being should be able to be subjected to such a “fair test”. </p>
 <p>I believe that our work—whether qualitative, or quantitative—should strive to be both critical <em>and</em> scientific, in the sense that: our research should gather evidence; that evidence should be assessed in order to support, refute, or modify our initial beliefs; and that evidence should be used to think critically about human wellbeing, including dynamics of power and privilege and disparities. With regard to this idea, <span class="citation" data-cites="ShraderFrechette2014">Shrader-Frechette (<a href="references.html#ref-ShraderFrechette2014" role="doc-biblioref">2014</a>)</span> suggests that a “practical philosophy of science” can contribute both to “speaking truth to power” and to “seeking justice”.</p>
+<p>In the approach that I am taking in this book, I believe that there are definite <em>realities</em> of suffering, exploitation, violence, discrimination, and other associated problems that we are trying to understand.</p>
+<blockquote class="blockquote">
+<p>“What we see and how we see is of course determined by our perspective, by the place from which we begin our examination of history; but it is determined also by reality itself.” <span class="citation" data-cites="Martin-Baro1994B">(<a href="references.html#ref-Martin-Baro1994B" role="doc-biblioref">Martin-Baro, 1994b</a>)</span></p>
+</blockquote>
+<p>We hope that our understandings will inform efforts for social change. Yet, at the same time we must recognize that our understandings are at best <em>iterative</em> and <em>contingent.</em> While we will never have a perfect understanding of social reality, we can always improve our understandings, and move in the direction of being <em>less wrong</em>.</p>
+<blockquote class="blockquote">
+<p>“… there is no way to know when our observations about complex events in nature are complete. Our knowledge is finite, Karl Popper emphasised, but our ignorance is infinite. … [W]e can never be certain about the consequences of our interventions, we can only narrow the area of uncertainty. This admission is not as pessimistic as it sounds: claims that resist repeated energetic challenges often turn out to be quite reliable. Such ‘working truths’ are the building blocks for the reasonably solid structures that support our everyday actions…” <span class="citation" data-cites="Silverman1998">(<a href="references.html#ref-Silverman1998" role="doc-biblioref">Silverman, 1998</a>)</span></p>
+</blockquote>
+<p>This recalls the famous saying by the statistician George Box about statistical models, reported in many places, and well captured in the passage below by <span class="citation" data-cites="Hand2014">Hand (<a href="references.html#ref-Hand2014" role="doc-biblioref">2014</a>)</span>:</p>
+<blockquote class="blockquote">
+<p>“In general, when building statistical models, we must not forget that the aim is to understand something about the real world. Or predict, choose an action, make a decision, summarize evidence, and so on, but always about the real world, not an abstract mathematical world: our models are not the reality—a point well made by George Box in his oft-cited remark that ‘all models are wrong, but some are useful’ (Box, 1979 in <span class="citation" data-cites="MR0554183">Launer &amp; Wilkinson (<a href="references.html#ref-MR0554183" role="doc-biblioref">1979</a>)</span>).” <span class="citation" data-cites="Hand2014">(<a href="references.html#ref-Hand2014" role="doc-biblioref">Hand, 2014</a>)</span></p>
+</blockquote>
+<p>A key task then, of using advanced quantitative methods such as multilevel modeling is to use them to try to be progressively <em>less wrong</em> about the answers we are finding to important questions about improving human wellbeing.</p>
+<p>To reiterate a point made earlier in this chapter, there are many potential complications in data analysis. Omitted variables are an issue that trouble all quantitative research (<a href="longitudinal.html#sec-Simpsons" class="quarto-xref"><span>Section 6.7.5</span></a>). Multilevel data provides additional complications in that statistical significance (p values) becomes more difficult to estimate correctly (making false positives more likely) (<a href="cross-sectional.html#sec-pvalues" class="quarto-xref"><span>Section 5.2.1</span></a>), and without use of appropriate methods, the signs and magnitudes of regression coefficients (<span class="math inline">\(\beta\)</span>’s) may be wrong (<a href="cross-sectional.html#sec-multilevelstructure" class="quarto-xref"><span>Section 5.2.2</span></a>).</p>
+<p>Correct application of multilevel models can help us to be <em>less wrong</em> about all of these issues, and to come closer to providing helpful answers to the people we are working with.</p>
 </section>
 <section id="a-pragmatic-approach" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="a-pragmatic-approach"><span class="header-section-number">2.3</span> A Pragmatic Approach</h2>
@@ -576,6 +620,9 @@ Grogan-Kaylor, A., Castillo, B., Pace, G. T., Ward, K. P., Ma, J., Lee, S. J., &
 <div id="ref-GroganKaylor2018" class="csl-entry" role="listitem">
 Grogan-Kaylor, A., Ma, J., Lee, S. J., Castillo, B., Ward, K. P., &amp; Klein, S. (2018). Using <span>B</span>ayesian analysis to examine associations between spanking and child externalizing behavior across race and ethnic groups. <em>Child Abuse and Neglect</em>, <em>86</em>, 257–266. <a href="https://doi.org/10.1016/j.chiabu.2018.10.009">https://doi.org/10.1016/j.chiabu.2018.10.009</a>
 </div>
+<div id="ref-Hand2014" class="csl-entry" role="listitem">
+Hand, D. J. (2014). <span class="nocase">Wonderful Examples, but Let’s not Close Our Eyes</span>. <em>Statistical Science</em>, <em>29</em>(1), 98–100. <a href="https://doi.org/10.1214/13-STS446">https://doi.org/10.1214/13-STS446</a>
+</div>
 <div id="ref-Henrich2010" class="csl-entry" role="listitem">
 Henrich, J., Heine, S. J., &amp; Norenzayan, A. (2010). <span class="nocase">The weirdest people in the world?</span> <em>Behavioral and Brain Sciences</em>. <a href="https://doi.org/10.1017/S0140525X0999152X">https://doi.org/10.1017/S0140525X0999152X</a>
 </div>
@@ -594,6 +641,9 @@ Kottak, C. (2021). <em>Anthropology: Appreciating human diversity</em> (19th ed.
 <div id="ref-Kreft1998" class="csl-entry" role="listitem">
 Kreft, I., &amp; de Leeuw, J. (1998). <em>Introducing multilevel modeling</em>. SAGE Publications. <a href="https://doi.org/10.4135/9781849209366">https://doi.org/10.4135/9781849209366</a>
 </div>
+<div id="ref-MR0554183" class="csl-entry" role="listitem">
+Launer, R. L., &amp; Wilkinson, G. N. (1979). Robustness in statistics. In R. L. Launer &amp; G. N. Wilkinson (Eds.), <em>Proceedings of a <span>W</span>orkshop held at the <span>A</span>rmy <span>R</span>esearch <span>O</span>ffice, <span>R</span>esearch <span>T</span>riangle <span>P</span>ark, <span>N</span>.<span>C</span>., <span>A</span>pril 11–12, 1978</em> (p. xvi+296). Academic Press, Inc. [Harcourt Brace Jovanovich, Publishers], New York-London.
+</div>
 <div id="ref-Lee2022" class="csl-entry" role="listitem">
 Lee, S. J., Ward, K. P., Grogan-Kaylor, A., &amp; Singh, V. (2022). Anxiety and depression during <span>COVID-19</span>: Are adults in households with children faring worse? <em>Journal of General Internal Medicine</em>, <em>37</em>, 1328–1330. <a href="https://doi.org/10.1007/s11606-021-07256-9">https://doi.org/10.1007/s11606-021-07256-9</a>
 </div>
@@ -604,7 +654,10 @@ Luke, D. (2004). <em>Multilevel modeling</em>. SAGE Publications, Inc. <a href="
 Ma, J., Grogan-Kaylor, A. C., Pace, G. T., Ward, K. P., &amp; Lee, S. J. (2022). <span class="nocase">The association between spanking and physical abuse of young children in 56 low- and middle-income countries</span>. <em>Child Abuse &amp; Neglect</em>, <em>129</em>, 105662. <a href="https://doi.org/10.1016/j.chiabu.2022.105662">https://doi.org/10.1016/j.chiabu.2022.105662</a>
 </div>
 <div id="ref-Martin-Baro1994" class="csl-entry" role="listitem">
-Martin-Baro, I. (1994). Public opinion research. In A. Aron &amp; S. Corne (Eds.), <em>Writings for a liberation psychology</em>. Harvard University Press.
+Martin-Baro, I. (1994a). Public opinion research. In A. Aron &amp; S. Corne (Eds.), <em>Writings for a liberation psychology</em>. Harvard University Press.
+</div>
+<div id="ref-Martin-Baro1994B" class="csl-entry" role="listitem">
+Martin-Baro, I. (1994b). Toward a liberation psychology. In A. Aron &amp; S. Corne (Eds.), <em>Writings for a liberation psychology</em>. Harvard University Press.
 </div>
 <div id="ref-Martin-Baro1998" class="csl-entry" role="listitem">
 Martin-Baro, I. (1998). <span class="nocase">Retos y perspectivas de la psicología latinoamericana</span>. In A. Blanco (Ed.), <em>Psicología de la liberación</em>. Trotta.
@@ -632,6 +685,9 @@ Scharrer, E., &amp; Ramasubramanian, S. (2021). <em>Quantitative research method
 </div>
 <div id="ref-ShraderFrechette2014" class="csl-entry" role="listitem">
 Shrader-Frechette, K. (2014). <em>Tainted : How philosophy of science can expose bad science</em>. Oxford University Press.
+</div>
+<div id="ref-Silverman1998" class="csl-entry" role="listitem">
+Silverman, W. (1998). <em>Where’s the evidence</em>. Oxford University Press.
 </div>
 <div id="ref-Singer2003" class="csl-entry" role="listitem">
 Singer, J. D., &amp; Willett, J. B. (2003). Applied longitudinal data analysis : Modeling change and event occurrence. In <em>Applied longitudinal data analysis : modeling change and event occurrence</em>. Oxford University Press.

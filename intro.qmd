@@ -44,6 +44,24 @@ I am not much of a philosopher of science. However, I am very persuaded by Strev
 
 I believe that our work—whether qualitative, or quantitative—should strive to be both critical *and* scientific, in the sense that: our research should gather evidence; that evidence should be assessed in order to support, refute, or modify our initial beliefs; and that evidence should be used to think critically about human wellbeing, including dynamics of power and privilege and disparities. With regard to this idea, @ShraderFrechette2014 suggests that a "practical philosophy of science" can contribute both to "speaking truth to power" and to "seeking justice".
 
+In the approach that I am taking in this book, I believe that there are definite *realities* of suffering, exploitation, violence, discrimination, and other associated problems that we are trying to understand. 
+
+> "What we see and how we see is of course determined by our perspective, by the place from which we begin our examination of history; but it is determined also by reality itself." [@Martin-Baro1994B]
+
+We hope that our understandings will inform efforts for social change. Yet, at the same time we must recognize that our understandings are at best *iterative* and *contingent.* While we will never have a perfect understanding of social reality, we can always improve our understandings, and move in the direction of being *less wrong*.
+
+> "... there is no way to know when our observations about complex events in nature are complete. Our knowledge is finite, Karl Popper emphasised, but our ignorance is infinite. ... [W]e can never be certain about the consequences of our interventions, we can only narrow the area of uncertainty. This admission is not as pessimistic as it sounds: claims that resist repeated energetic challenges often turn out to be quite reliable. Such 'working truths' are the building blocks for the reasonably solid structures that support our everyday actions..." [@Silverman1998]
+
+This recalls the famous saying by the statistician George Box about statistical models, reported in many places, and well captured in the passage below by @Hand2014:
+
+> "In general, when building statistical models, we must not forget that the aim is to understand something about the real world. Or predict, choose an action, make a decision, summarize evidence, and so on, but always about the real world, not an abstract mathematical world: our models are not the reality—a point well made by George Box in his oft-cited remark that 'all models are wrong, but some are useful' (Box, 1979 in @MR0554183)." [@Hand2014]
+
+A key task then, of using advanced quantitative methods such as multilevel modeling, is to use them to try to be progressively *less wrong* about the answers we are finding to important questions about improving human wellbeing. 
+
+To reiterate a point made earlier in this chapter, there are many potential complications in data analysis. Omitted variables are an issue that trouble all quantitative research (@sec-Simpsons). Multilevel data provides additional complications in that statistical significance (p values) becomes more difficult to estimate correctly (making false positives more likely) (@sec-pvalues), and without use of appropriate methods, the signs and magnitudes of regression coefficients ($\beta$'s) may be wrong (@sec-multilevelstructure). 
+
+Correct application of multilevel models can help us to be *less wrong* about all of these issues, and to come closer to providing helpful answers to the people we are working with. 
+
 ## A Pragmatic Approach
 
 This book will discuss the ways in which a multilevel statistical perspective not only allows one to appropriately analyze cross cultural or international data, but also the ways in which a multilevel perspective affords the opportunity for more precise quantitative thinking about cross cultural phenomena. The book takes a very pragmatic and very advocacy oriented approach to improving research. \index{pragmatic approach} \index{theory}
