@@ -638,6 +638,68 @@ to this idea, Shrader-Frechette (2014) suggests that a ``practical
 philosophy of science'' can contribute both to ``speaking truth to
 power'' and to ``seeking justice''.
 
+In the approach that I am taking in this book, I believe that there are
+definite \emph{realities} of suffering, exploitation, violence,
+discrimination, and other associated problems that we are trying to
+understand.
+
+\begin{quote}
+``What we see and how we see is of course determined by our perspective,
+by the place from which we begin our examination of history; but it is
+determined also by reality itself.'' (Martin-Baro, 1994b)
+\end{quote}
+
+We hope that our understandings will inform efforts for social change.
+Yet, at the same time we must recognize that our understandings are at
+best \emph{iterative} and \emph{contingent.} While we will never have a
+perfect understanding of social reality, we can always improve our
+understandings, and move in the direction of being \emph{less wrong}.
+
+\begin{quote}
+``\ldots{} there is no way to know when our observations about complex
+events in nature are complete. Our knowledge is finite, Karl Popper
+emphasised, but our ignorance is infinite. \ldots{} {[}W{]}e can never
+be certain about the consequences of our interventions, we can only
+narrow the area of uncertainty. This admission is not as pessimistic as
+it sounds: claims that resist repeated energetic challenges often turn
+out to be quite reliable. Such `working truths' are the building blocks
+for the reasonably solid structures that support our everyday
+actions\ldots{}'' (Silverman, 1998)
+\end{quote}
+
+This recalls the famous saying by the statistician George Box about
+statistical models, reported in many places, and well captured in the
+passage below by Hand (2014):
+
+\begin{quote}
+``In general, when building statistical models, we must not forget that
+the aim is to understand something about the real world. Or predict,
+choose an action, make a decision, summarize evidence, and so on, but
+always about the real world, not an abstract mathematical world: our
+models are not the reality---a point well made by George Box in his
+oft-cited remark that `all models are wrong, but some are useful' (Box,
+1979 in Launer \& Wilkinson (1979)).'' (Hand, 2014)
+\end{quote}
+
+A key task then, of using advanced quantitative methods such as
+multilevel modeling, is to use them to try to be progressively
+\emph{less wrong} about the answers we are finding to important
+questions about improving human wellbeing.
+
+To reiterate a point made earlier in this chapter, there are many
+potential complications in data analysis. Omitted variables are an issue
+that trouble all quantitative research (Section~\ref{sec-Simpsons}).
+Multilevel data provides additional complications in that statistical
+significance (p values) becomes more difficult to estimate correctly
+(making false positives more likely) (Section~\ref{sec-pvalues}), and
+without use of appropriate methods, the signs and magnitudes of
+regression coefficients (\(\beta\)'s) may be wrong
+(Section~\ref{sec-multilevelstructure}).
+
+Correct application of multilevel models can help us to be \emph{less
+wrong} about all of these issues, and to come closer to providing
+helpful answers to the people we are working with.
+
 \section{A Pragmatic Approach}\label{a-pragmatic-approach}
 
 This book will discuss the ways in which a multilevel statistical
@@ -950,7 +1012,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, left=2mm, leftrule=.75mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, breakable, toprule=.15mm, bottomrule=.15mm, rightrule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, colback=white, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, colback=white, bottomtitle=1mm, toprule=.15mm, colframe=quarto-callout-note-color-frame, left=2mm, coltitle=black, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, toptitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, breakable, titlerule=0mm, bottomrule=.15mm, leftrule=.75mm, opacityback=0]
 
 Data are presented in Stata format. The Appendix considers the analysis
 of multilevel models using multiple software packages: Stata, R \&
@@ -1170,7 +1232,7 @@ conceptual level 2 & N/A & Administrative indicator of social unit \\
   \emph{statistically} aggregated to Level 2.
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, left=2mm, leftrule=.75mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, toprule=.15mm, bottomrule=.15mm, rightrule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, colback=white, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, colback=white, bottomtitle=1mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, toptitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, breakable, titlerule=0mm, bottomrule=.15mm, leftrule=.75mm, opacityback=0]
 
 Such aggregated variables represent the \emph{average} level of a
 response across each Level 2 unit, and are sometimes called ``contextual
@@ -1841,7 +1903,7 @@ outcome varied across countries.
 level, or Level 2, variable in this model is not associated with the
 outcome.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, left=2mm, leftrule=.75mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Intuitions}, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, toprule=.15mm, bottomrule=.15mm, rightrule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, colback=white, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, colback=white, bottomtitle=1mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Intuitions}, toptitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, breakable, titlerule=0mm, bottomrule=.15mm, leftrule=.75mm, opacityback=0]
 
 \emph{Random intercepts} and \emph{random slopes} are statistically
 closely related concepts. In my experience of over 10 years of teaching
@@ -2074,7 +2136,7 @@ In Equation~\ref{eq-indicator-variables} the first group of race,
 omitted from the model, and all comparisons are made to individuals with
 identity \texttt{race1}.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, left=2mm, leftrule=.75mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Indicator Variables in Equations And Syntax}, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, toprule=.15mm, bottomrule=.15mm, rightrule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, colback=white, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, colback=white, bottomtitle=1mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Indicator Variables in Equations And Syntax}, toptitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, breakable, titlerule=0mm, bottomrule=.15mm, leftrule=.75mm, opacityback=0]
 
 Thus, if an identity, such as race, is used as an \emph{indicator
 variable}, it would appear in the equations (e.g.
@@ -2083,7 +2145,7 @@ in the Appendix, in the same place as the \texttt{identity} variable.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, left=2mm, leftrule=.75mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reference Categories Need To Be Chosen Carefully}, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, toprule=.15mm, bottomrule=.15mm, rightrule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, colback=white, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, colback=white, bottomtitle=1mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reference Categories Need To Be Chosen Carefully}, toptitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, breakable, titlerule=0mm, bottomrule=.15mm, leftrule=.75mm, opacityback=0]
 
 Reference categories need to be chosen carefully. This is especially
 true in studies that hope to be attentive to diversity and social
@@ -2099,7 +2161,7 @@ the choice of reference categories can be manually specified.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-warning-color-frame, left=2mm, leftrule=.75mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Indicator Variables Should Not Be Treated As Continuous Variables}, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, breakable, toprule=.15mm, bottomrule=.15mm, rightrule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, colback=white, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, colback=white, bottomtitle=1mm, toprule=.15mm, colframe=quarto-callout-warning-color-frame, left=2mm, coltitle=black, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Indicator Variables Should Not Be Treated As Continuous Variables}, toptitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, breakable, titlerule=0mm, bottomrule=.15mm, leftrule=.75mm, opacityback=0]
 
 Identities that are measured in the data with a single categorical
 variable with values like \texttt{1}, \texttt{2}, \texttt{3},
@@ -2147,7 +2209,7 @@ Here, the inclusion of \(v_{0k}\), a random intercept for identity,
 would be a way to model the presence of many possible values of an
 identity variable.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, left=2mm, leftrule=.75mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Random Intercepts in Equations And Syntax}, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, toprule=.15mm, bottomrule=.15mm, rightrule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, colback=white, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, colback=white, bottomtitle=1mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Random Intercepts in Equations And Syntax}, toptitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, breakable, titlerule=0mm, bottomrule=.15mm, leftrule=.75mm, opacityback=0]
 
 Thus, if an identity, such as race, is used as a \emph{random
 intercept}, it would appear in the equations (e.g.
@@ -3170,7 +3232,7 @@ outcomes.
 Examining the interaction terms, we find that none of these variables
 modify the time trajectory of the outcome.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, left=2mm, leftrule=.75mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Interactions And Random Slopes in Longitudinal Models}, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, toprule=.15mm, bottomrule=.15mm, rightrule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, colback=white, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, colback=white, bottomtitle=1mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Interactions And Random Slopes in Longitudinal Models}, toptitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, breakable, titlerule=0mm, bottomrule=.15mm, leftrule=.75mm, opacityback=0]
 
 Having now discussed both \emph{random slopes}
 (Section~\ref{sec-conditional-model}), and \emph{interaction terms}
@@ -3887,6 +3949,11 @@ between spanking and child externalizing behavior across race and ethnic
 groups. \emph{Child Abuse and Neglect}, \emph{86}, 257--266.
 \url{https://doi.org/10.1016/j.chiabu.2018.10.009}
 
+\bibitem[\citeproctext]{ref-Hand2014}
+Hand, D. J. (2014). {Wonderful Examples, but Let's not Close Our Eyes}.
+\emph{Statistical Science}, \emph{29}(1), 98--100.
+\url{https://doi.org/10.1214/13-STS446}
+
 \bibitem[\citeproctext]{ref-Heilmann2021}
 Heilmann, A., Mehay, A., Watt, R. G., Kelly, Y., Durrant, J. E., van
 Turnhout, J., \& Gershoff, E. T. (2021). Physical punishment and child
@@ -3937,6 +4004,13 @@ Kottak, C. (2021). \emph{Anthropology: Appreciating human diversity}
 Kreft, I., \& de Leeuw, J. (1998). \emph{Introducing multilevel
 modeling}. SAGE Publications.
 \url{https://doi.org/10.4135/9781849209366}
+
+\bibitem[\citeproctext]{ref-MR0554183}
+Launer, R. L., \& Wilkinson, G. N. (1979). Robustness in statistics. In
+R. L. Launer \& G. N. Wilkinson (Eds.), \emph{Proceedings of a
+{W}orkshop held at the {A}rmy {R}esearch {O}ffice, {R}esearch {T}riangle
+{P}ark, {N}.{C}., {A}pril 11--12, 1978} (p. xvi+296). Academic Press,
+Inc. {[}Harcourt Brace Jovanovich, Publishers{]}, New York-London.
 
 \bibitem[\citeproctext]{ref-Lee2022}
 Lee, S. J., Ward, K. P., Grogan-Kaylor, A., \& Singh, V. (2022). Anxiety
@@ -4105,6 +4179,10 @@ models. \emph{The Stata Journal}, \emph{13}, 65--76.
 \bibitem[\citeproctext]{ref-ShraderFrechette2014}
 Shrader-Frechette, K. (2014). \emph{Tainted : How philosophy of science
 can expose bad science}. Oxford University Press.
+
+\bibitem[\citeproctext]{ref-Silverman1998}
+Silverman, W. (1998). \emph{Where's the evidence}. Oxford University
+Press.
 
 \bibitem[\citeproctext]{ref-Simpson1951}
 Simpson, E. H. (1951). The interpretation of interaction in contingency
