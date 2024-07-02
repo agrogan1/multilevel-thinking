@@ -115,7 +115,7 @@ Such aggregated variables represent the *average* level of a response across eac
 
 $$y_{ij} = \beta_0 + \beta_1 \text{parenting}_{ij} + \beta_2 \overline{\text{parenting}_{.j}} + u_{0j} + e_{ij}$$ {#eq-contextual}
 
-@eq-contextual is be a model that includes parenting as a predictor of the outcome at two different levels. $\text{parenting}_{ij}$ is a parenting behavior--whether discipline or warmth--at an *individual* level, while $\overline{\text{parenting}_{.j}}$ is a *contextual variable* representing the average level of parenting--whether discipline or warmth--at the *country* level. @eq-contextual is thus testing whether parenting at the country level--a so-called country-level effect--has an association with the outcome over and above individual level parenting behavior.
+@eq-contextual is be a model that includes parenting as a predictor of the outcome at two different levels. $\text{parenting}_{ij}$ is a parenting behavior--whether discipline or warmth--at an *individual* or *family* level, while $\overline{\text{parenting}_{.j}}$ is a *contextual variable* representing the average level of parenting--whether discipline or warmth--at the *country* level. @eq-contextual is thus testing whether parenting at the country level--sometimes called a country-level effect--has an association with the outcome over and above individual level parenting behavior.
 
 Discussion of ways to create variables that are the average of a predictor is contained in the Appendix.
 :::
