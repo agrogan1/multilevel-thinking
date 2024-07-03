@@ -30,8 +30,6 @@ book:
     - conclusion.qmd
     - references.qmd
     - about.qmd
-  appendices:
-    - reshape.qmd
 
 citation:
   url: https://agrogan1.github.io/multilevel-thinking/
