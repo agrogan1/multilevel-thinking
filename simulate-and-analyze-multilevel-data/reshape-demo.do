@@ -10,7 +10,7 @@ reshape wide physical_punishment warmth outcome, i(id) j(t)
 
 save "simulated_multilevel_longitudinal_data_WIDE.dta", replace
 
-reshape long physical_punishment warmth outcome, i(id) j(t)
+* reshape long physical_punishment warmth outcome, i(id) j(t)
 
 
 
