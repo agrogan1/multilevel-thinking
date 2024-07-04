@@ -1,6 +1,59 @@
 # Logistic Regression
 
-New forms of the multi-level model are required when we have outcomes that are not continuous. Let us imagine, for example, that we have a situation in which our continuous outcome is now categorized into two groups. For example, we might imagine that there is some sort of diagnostic cutoff. scores greater than this cutoff are assigned to one group (`1'), while scores lower than the cutoff are assigned to another group (`0'). No doubt this scenario is more likely when we consider an *undesirable* outcome like depression or anxiety. Higher levels of depression or anxiety might be greater than some diagnostic cutoff, meriting a score of `1', meets criteria for a diagnosis, while scores lower than that diagnostic cutoff might receive a score of `0', does not meet diagnostic criteria. However, in keeping with our characterization of the outcome in the simulated data employed in this book as desirable or beneficial, we may also imagine a situation in which `1'd is assigned to sufficiently high levels of some desirable or beneficial outcome that exceed some threshold value, while scores below that value are assigned to be `0'. 
+New forms of the multilevel model are required when we have outcomes that are not continuous. Let us imagine, for example, that we have a situation in which our continuous outcome is now categorized into two groups. For example, we might imagine that there is some sort of diagnostic cutoff. scores greater than this cutoff are assigned to one group (`1`), while scores lower than the cutoff are assigned to another group (`0`). 
+
+No doubt this scenario is more likely when we consider an *undesirable* outcome like depression or anxiety. Higher levels of depression or anxiety might be greater than some diagnostic cutoff, meriting a score of `1`, *meets criteria for a diagnosis*, while scores lower than that diagnostic cutoff might receive a score of `0`, *does not meet diagnostic criteria*. However, in keeping with our characterization of the outcome in the simulated data employed in this book as desirable or beneficial, we may also imagine a situation in which `1` is assigned to sufficiently high levels of some desirable or beneficial outcome that exceed some threshold value, while scores below that value are assigned to be `0`. 
+
+```{r}
+#| fig-cap: "A Continuous Outcome Dichotomized"
+#| fig-height: 3
+#| label: fig-dichotomized
+#| echo: false
+
+library(ggplot2)
+
+library(ggrepel)
+
+N <- 100
+
+outcome <-runif(N, 0, 100)
+
+outcome_dichotomous <- ifelse(outcome > 50, 75, 25)
+
+mydata <- data.frame(outcome, outcome_dichotomous)
+
+ggplot(mydata) +
+  geom_segment(aes(x = 0,
+                   xend = 1,
+                   y = outcome,
+                   yend = outcome_dichotomous),
+               color = "grey") +
+  geom_point(aes(x = 0, y = outcome,
+                 color = outcome)) +
+  geom_point(aes(x = 1, 
+                 y = outcome_dichotomous,
+                 color = outcome_dichotomous),
+             size = 7) +
+  annotate("text", x = 1, 
+           y = 25, 
+           label = "0",
+           color = "white") +
+  annotate("text", x = 1, 
+           y = 75, 
+           label = "1",
+           color = "white") +
+  annotate("text", x = 1, 
+           y = 85, 
+           label = "dichotomous \noutcome",
+           color = "black") +
+  labs(title = "Continous Outcome Converted To Dichotomous Outcome",
+       y = "continuous outcome") +
+  xlim(0, 1.1) +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+```
+
 
 **[Slope graph of turning continuous into categorical variables]**
 
