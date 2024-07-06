@@ -246,7 +246,7 @@ Put substantively, this model indicates that the outcome can be conceptualized a
 
 ## Regression With Simulated Multi-Country Data {#sec-regression}
 
-After considering some of these broader issues, let's now examine the results of a multilevel regression with the simulated multicountry data. I will again imagine that the desirable outcome is an outcome such as improved psychological wellbeing. 
+After considering some of these broader issues, let's now examine the results of a multilevel regression with the simulated multi-country data. I will again imagine that the desirable outcome is an outcome such as improved psychological wellbeing. 
 
 ### Unconditional Model {#sec-unconditional}
 

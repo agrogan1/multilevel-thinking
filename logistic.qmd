@@ -125,9 +125,11 @@ In each model, the equivalent pattern of dots represents some dichotomous outcom
 
 ## Probabilities and Odds
 
-To being to develop a *multilevel logistic regression* model, it is useful to think about ideas of *probabilities* and *odds*. One possible definition of a probability is that it is the long run fraction of times that an event occurs in series of events **CITATION**.  
+To being to develop a *multilevel logistic regression* model, it is useful to think about ideas of *probabilities* and *odds*. One possible definition of a probability is that it is the long run fraction of times that an event occurs in series of events **CITATION**. \index{probability}
 
-For example, if there are 100 possible occasions for an event--for example, experiencing happiness--to occur, and happiness only occurs 10 times out of a possible 100, then we might say that the *probability* or *risk* of happiness is .10. If happiness occurs 90 times out of a possible 100 occurrences, then we would say that the *probability* or *risk* of happiness is .90. In contrast, if happiness occurs 10 times out of a possible 100, then the odds of happiness occurring are `10/90 = 1/9 = .11`. Similarly if happiness occurs 90 times, then the odds of happiness occurring are `90/10 = 9/1 = 9` [@Viera2008]. 
+For example, if there are 100 possible occasions for an event--for example, experiencing happiness--to occur, and happiness only occurs 10 times out of a possible 100, then we might say that the *probability* or *risk* of happiness is .10. If happiness occurs 90 times out of a possible 100 occurrences, then we would say that the *probability* or *risk* of happiness is .90. \index{risk}
+
+In contrast, if happiness occurs 10 times out of a possible 100, then the *odds* of happiness occurring are `10/90 = 1/9 = .11`. Similarly if happiness occurs 90 times, then the *odds* of happiness occurring are `90/10 = 9/1 = 9` [@Viera2008]. \index{odds}
 
 ```{r}
 #| tbl-cap: "Probabilities and Odds"
@@ -158,6 +160,73 @@ pander::pander(mydata)
 
 ```
 
+A few things are worth noting about risks and odds. First, one might think of the risks and the odds of simply different ways of estimating the chances that something will happen.
+
+A classic diagram to illustrate these ideas appears in many sources. [e.g. @Viera2008]
+
+$$\begin{matrix}
+a & b \\
+c & d 
+\end{matrix}$$ #eq-event-matrix
+
+* Then a *risk* is defined as $a/(a + b)$.
+* $c/(c + d)$ is also a *risk*.
+* $\frac{a/(a + b)}{c/(c + d)}$ is then a ratio of risks or *risk ratio*.
+
+* $a/b$ is the *odds* of an event in the first row, while $c/d$ is the *odds* of an event in the second row. 
+* $\frac{a/b}{c/d}$ is then a ratio of odds, or *odds ratio*.
+
+## Logistic Regression
+
+Logistic regression begins with the idea that we are predicting the odds of an event. A common way to write the odds is $\frac{p(y)}{1-p(y)}$, where $p(y)$ is the probability of an outcome of interest, while $1-p(y)$ is the probability that the outcome will not occur.  
+
+We are estimating a function of these odds as a linear function of a set of predictors, $\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}$. Here $u_{0j}$ is the usual level 2 random intercept that I have been including all along in multilevel models (@eq-MLM). \index{logistic regression}
+
+The expression $\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}$ is a linear function of the independent variables. In order make a linear prediction appropriate, we take the logarithm of the odds, which provides the equation for logistic regression. 
+
+$$\ln\Big(\frac{p(y)}{1-p(y)}\Big) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}$$ #eq-logistic-MLM
+
+Notice that while there is a level 2 error term, or random intercept $u_{0j}$, there is no level 1 error term ($e_{ij}$) as we saw in @eq-MLM. This is because the use of probabilities $p(y)$ encompasses the idea of error in the logistic regression model.
+
+Through a bit of algebra, we can manipulate this equation to provide more intuitive results. 
+
+## Predicted Probabilities
+
+To make the algebra easier, I first substitute $Z$ for $\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}$:
+
+$$\ln\Big(\frac{p(y)}{1-p(y)}\Big) = Z$$
+Then 
+
+$$\Big(\frac{p(y)}{1-p(y)}\Big) = e^Z$$
+$$p(y) = e^Z(1-p(y))$$
+$$p(y) + e^Z(p(y)) = e^Z$$
+$$p(y) = \frac{e^Z}{1+e^Z}$$
+Finally, substituting back in the original expression for $Z$:
+
+$$p(y) = \frac{e^Z}{1+e^Z}$$
+
+
+
+# $\beta$ Coefficients and Odds Ratios
+
+--------------------------------------------------
+Substantively    $\beta$     OR
+--------------   ---------- ----------
+x is              $>0.0$        $>1.0$
+associated
+with an 
+increase
+in y
+
+no                $0.0$         $1.0$
+association
+
+x is              $<0.0$        $<1.0$
+associated
+with a
+decrease
+in y
+--------------------------------------------------
 
 [^povertyline]: For example the World Bank [@WorldBankPovertyLine] considers $2.15 per person per day to be a globally relevant indicator of extreme poverty.
 
