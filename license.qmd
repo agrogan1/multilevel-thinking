@@ -15,7 +15,7 @@ knitr::include_graphics("88x31.png")
 
 For attribution, please cite as:
 
-Grogan-Kaylor (2023). *Multilevel Thinking*. Retrieved from [https://agrogan1.github.io/multilevel-thinking](https://agrogan1.github.io/multilevel-thinking)
+Grogan-Kaylor (2024). *Multilevel Thinking*. Retrieved from [https://agrogan1.github.io/multilevel-thinking](https://agrogan1.github.io/multilevel-thinking)
 
 ## BibTeX Citation
 
@@ -28,7 +28,7 @@ Grogan-Kaylor (2023). *Multilevel Thinking*. Retrieved from [https://agrogan1.gi
    city = {Ann Arbor, MI},
    title = {Multilevel Thinking},
    url = {https://agrogan1.github.io/multilevel-thinking/},
-   year = {2023},
+   year = {2024},
 }
 
 ```
