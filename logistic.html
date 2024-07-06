@@ -64,22 +64,136 @@ Figure&nbsp;1: A Continuous Outcome Dichotomized
 </div>
 </div>
 </div>
-<p><strong>[Slope graph of turning continuous into categorical variables]</strong></p>
-<p>Pedagogically, this new categorical outcome satisfies our need to have a dichotomous outcome to explain a new group of models–logistic regression models–that are suitable for such outcomes. It is sometimes considered to be a statistical rule of thumb that we should never dichotomize a continuous outcome. Certainly, it is true that when we dichotomize an outcome we lose a certain amount of information in the data about the variation, heterogeneity, or diversity in the outcome. Such a loss of information may reduce our ability to obtain statistically significant results. At the same time, certain numerical cutoffs may have important substantive meanings, clinical meanings, or policy meanings. For example I have already considered higher levels of anxiety or depression that may exceed clinically important cutoffs implying a diagnosis <code>1' versus</code>0’ of depression or anxiety. Levels of income below a certain threshold–whether a country specific threshold or some globally relevant threshold–are considered to be in poverty<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, while individuals above that income threshold are considered to be not in poverty (<code>1' versus</code>0’). In the example considered in detail in this chapter, families with a child having a beneficial outcome at a certain level might be considered to have a child satisfing a certain minimal level of psychological well-being.</p>
+<p>Pedagogically, this new categorical outcome satisfies our need to have a dichotomous outcome to explain a new group of models–logistic regression models–that are suitable for such outcomes. It is sometimes considered to be a statistical rule of thumb that we should never dichotomize a continuous outcome. Certainly, it is true that when we dichotomize an outcome we lose a certain amount of information in the data about the variation, heterogeneity, or diversity in the outcome. Such a loss of information may reduce our ability to obtain statistically significant results. At the same time, certain numerical cutoffs may have important substantive meanings, clinical meanings, or policy meanings. For example I have already considered higher levels of anxiety or depression that may exceed clinically important cutoffs implying a diagnosis <code>1</code> versus <code>0</code> of depression or anxiety. Levels of income below a certain threshold–whether a country specific threshold or some globally relevant threshold–are considered to be in poverty<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, while individuals above that income threshold are considered to be not in poverty (<code>1</code> versus <code>0</code>). In the example considered in detail in this chapter, families with a child having a beneficial outcome at a certain level might be considered to have a child satisfying a certain minimal level of psychological well-being.</p>
 <p>In contrast, some outcomes are naturally dichotomous and do not arise from dichotomizing a continuous variable: born versus not born; married or partnered versus single; alive versus dead; entered a program; exited a program; conflict or protest occurred versus conflict or protest did not occur.</p>
-<p>I now consider two possible strategies from modeling dichotomous outcomes: the linear multi-level model that we have been considering so far in this book; and a <em>logistic regression</em> model designed specifically for dichotomous outcomes. The easiest way to consider and compare these models is through presentation.</p>
-<p>[graph of linear vs.&nbsp;logistic]</p>
-<p>In each model, the equivalent pattern of dots represents some dichotomous outcome (e.g.&nbsp;birth, death, satisfies diagnostic criterion) that becomes more likely as some independent variable increases in value. At higher levels of the independent variable, the outcome is almost exclusively <code>1'. at lower levels of the independent variable, the outcome is almost exclusively</code>0’. One could try to estimate this dichotomous outcome with a straight line, or linear model, as depicted in the left hand panel of figure XXX. This might be roughly plausible, and this procedure is termed a <em>linear probability model</em> which I will not discuss in more detail here. Suffice it to say that several problems emerge for a lineard probability model: the model predicts values of the outcome greater than one and less than 0; standard errors of the model are clearly not homoscedastic but change in value (heteroscedasticity); and lastly a linear model estimates a constant association between changes in x when this is not appropriate.</p>
+<p>I now consider two possible strategies from modeling dichotomous outcomes: the linear multilevel model that we have been considering so far in this book; and a <em>logistic regression</em> model designed specifically for dichotomous outcomes. The easiest way to consider and compare these models is through presentation.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-linear-logistic" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-linear-logistic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="logistic_files/figure-html/fig-linear-logistic-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-linear-logistic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Linear and Logistic Regression
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In each model, the equivalent pattern of dots represents some dichotomous outcome (e.g.&nbsp;birth, death, satisfies diagnostic criterion) that becomes more likely as some independent variable increases in value. At higher levels of the independent variable, the outcome is almost exclusively <code>1</code>. at lower levels of the independent variable, the outcome is almost exclusively <code>0</code>. One could try to estimate this dichotomous outcome with a straight line, or linear model, as depicted in the left hand panel of figure XXX. This might be roughly plausible, and this procedure is termed a <em>linear probability model</em> which I will not discuss in more detail here. Suffice it to say that several problems emerge for a linear probability model: the model predicts values of the outcome greater than one and less than 0; standard errors of the model are clearly not homoscedastic but change in value (heteroscedasticity); and lastly a linear model estimates a constant association between changes in x when this is not appropriate.</p>
 <p>[graph of marginal changes for each model]</p>
-<p>Probability vs.&nbsp;odds table.</p>
-<p><span class="citation" data-cites="Online">@Online</span>{WorldBankPovertyLine, author = {World Bank}, journal = {Poverty and Inequality}, title = {Poverty and Inequality}, url = {https://datatopics.worldbank.org/world-development-indicators/themes/poverty-and-inequality.html}, year = {2024}, }</p>
+<p>[Probability vs.&nbsp;odds table]</p>
+<div class="cell">
+<div id="tbl-probabilities-odds" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-probabilities-odds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Probabilities and Odds
+</figcaption>
+<div aria-describedby="tbl-probabilities-odds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell table table-sm table-striped small">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 23%">
+<col style="width: 30%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">total events</th>
+<th style="text-align: center;">event occurred</th>
+<th style="text-align: center;">event did not occur</th>
+<th style="text-align: center;">risk</th>
+<th style="text-align: center;">odds</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">90</td>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">0.11</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">0.2</td>
+<td style="text-align: center;">0.25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">0.3</td>
+<td style="text-align: center;">0.43</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">0.4</td>
+<td style="text-align: center;">0.67</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">0.6</td>
+<td style="text-align: center;">1.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">0.7</td>
+<td style="text-align: center;">2.33</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">0.8</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">90</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">0.9</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Inf</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
 </section>
 
 
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>For example the World Bank <span class="citation" data-cites="WorldBankPovertyLine">[@WorldBankPovertyLine]</span> considers $2.15 per person per day to be a global indicator of extreme poverty.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>For example the World Bank <span class="citation" data-cites="WorldBankPovertyLine">[@WorldBankPovertyLine]</span> considers $2.15 per person per day to be a globally relevant indicator of extreme poverty.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main>
 <!-- /main column -->

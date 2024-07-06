@@ -43,7 +43,7 @@ ggplot(mydata) +
            label = "1",
            color = "white") +
   annotate("text", x = 1, 
-           y = 85, 
+           y = 50, 
            label = "dichotomous \noutcome",
            color = "black") +
   labs(title = "Continous Outcome Converted To Dichotomous Outcome",
@@ -55,28 +55,99 @@ ggplot(mydata) +
 ```
 
 
-**[Slope graph of turning continuous into categorical variables]**
-
 Pedagogically, this new categorical outcome satisfies our need to have a dichotomous outcome to explain a new group of models--logistic regression models--that are suitable for such outcomes. It is sometimes considered to be a statistical rule of thumb that we should never dichotomize a continuous outcome. Certainly, it is true that when we dichotomize an outcome we lose a certain amount of information in the data about the variation, heterogeneity, or diversity in the outcome. Such a loss of information may reduce our ability to obtain statistically significant results. At the same time, certain numerical cutoffs may have important substantive meanings, clinical meanings, or policy meanings. For example I have already considered higher levels of anxiety or depression that may exceed clinically important cutoffs implying a diagnosis `1` versus `0` of depression or anxiety. Levels of income below a certain threshold--whether a country specific threshold or some globally relevant threshold--are considered to be in poverty[^povertyline], while individuals above that income threshold are considered to be not in poverty (`1` versus `0`). In the example considered in detail in this chapter, families with a child having a beneficial outcome at a certain level might be considered to have a child satisfying a certain minimal level of psychological well-being. 
 
 In contrast, some outcomes are naturally dichotomous and do not arise from dichotomizing a continuous variable: born versus not born; married or partnered versus single; alive versus dead; entered a program; exited a program; conflict or protest occurred versus conflict or protest did not occur. 
 
-I now consider two possible strategies from modeling dichotomous outcomes: the linear multi-level model that we have been considering so far in this book; and a *logistic regression* model designed specifically for dichotomous outcomes. The easiest way to consider and compare these models is through presentation.
+I now consider two possible strategies from modeling dichotomous outcomes: the linear multilevel model that we have been considering so far in this book; and a *logistic regression* model designed specifically for dichotomous outcomes. The easiest way to consider and compare these models is through presentation.
 
-[graph of linear vs. logistic]
+```{r}
+#| fig-cap: "Linear and Logistic Regression"
+#| fig-height: 3
+#| label: fig-linear-logistic
+#| echo: false
+#| message: false
+#| warning: false
 
-In each model, the equivalent pattern of dots represents some dichotomous outcome (e.g. birth, death, satisfies diagnostic criterion) that becomes more likely as some independent variable increases in value. At higher levels of the independent variable, the outcome is almost exclusively `1'. at lower levels of the independent variable, the outcome is almost exclusively `0'. One could try to estimate this dichotomous outcome with a straight line, or linear model, as depicted in the left hand panel of figure XXX. This might be roughly plausible, and this procedure is termed a *linear probability model* which I will not discuss in more detail here. Suffice it to say that several problems emerge for a lineard probability model: the model predicts values of the outcome greater than one and less than 0; standard errors of the model are clearly not homoscedastic but change in value (heteroscedasticity); and lastly a linear model estimates a constant association between changes in x when this is not appropriate. 
+library(ggplot2)
 
-[graph of marginal changes for each model]
+library(patchwork)
 
-Probability vs. odds table.
+N <- 100
 
-[^povertyline]: For example the World Bank [@WorldBankPovertyLine] considers $2.15 per person per day to be a global indicator of extreme poverty.
+x1 <- runif(N, -10, 10)
 
-@Online{WorldBankPovertyLine,
-   author = {World Bank},
-   journal = {Poverty and Inequality},
-   title = {Poverty and Inequality},
-   url = {https://datatopics.worldbank.org/world-development-indicators/themes/poverty-and-inequality.html},
-   year = {2024},
-}
+x2 <- runif(N, -10, 10)
+
+beta1 <- 5
+
+beta2 <- 1
+
+z <- (beta1 * x1) + (beta2 * x2)
+
+myprobability <- exp(z)/(1 + exp(z))
+
+y <- ifelse(myprobability >= .5, 1, 0)
+
+mydata <- data.frame(x1, myprobability, y)
+
+p0 <- ggplot(mydata, 
+             aes(x = x1, 
+                 y = y)) +
+  geom_point() +
+  ylim(-.25, 1.25) +
+  theme_minimal()
+ 
+# p0 # replay
+
+plinear <- p0 + 
+  geom_smooth(method = "lm") +
+  labs(title = "Linear Model")
+
+plogistic <- p0 + 
+  geom_smooth(method = "glm", 
+              method.args = list(family = "binomial"),
+              se = TRUE) +
+  labs(title = "Logistic Model")
+
+plinear + plogistic
+
+```
+
+
+In each model, the equivalent pattern of dots represents some dichotomous outcome (e.g. birth, death, satisfies diagnostic criterion) that becomes more likely as some independent variable increases in value. At higher levels of the independent variable, the outcome is almost exclusively `1`. at lower levels of the independent variable, the outcome is almost exclusively `0`. One could try to estimate this dichotomous outcome with a straight line, or linear model, as depicted in the left hand panel of figure XXX. This might be roughly plausible, and this procedure is termed a *linear probability model* which I will not discuss in more detail here. Suffice it to say that several problems emerge for a linear probability model: the model predicts values of the outcome greater than `1` and less than `0`; standard errors of the model are clearly not homoscedastic but change in value (heteroscedasticity); and lastly a linear model estimates a constant association between changes in *x* and changes in *y* when this is not appropriate. 
+
+
+```{r}
+#| tbl-cap: "Probabilities and Odds"
+#| fig-height: 3
+#| label: tbl-probabilities-odds
+#| echo: false
+
+`total events` <- rep(100, 10)
+
+`event occurred` <- seq(10, 100, 10)
+
+`event did not occur` <- `total events` - `event occurred`
+
+risk <- `event occurred` / `total events`
+
+odds <- `event occurred` / `event did not occur`
+
+mydata <- data.frame(`total events`,
+                     `event occurred`,
+                     `event did not occur`,
+                     risk,
+                     odds,
+                     check.names = FALSE)
+
+pander::panderOptions('round',2)
+
+pander::pander(mydata)
+
+```
+
+
+[^povertyline]: For example the World Bank [@WorldBankPovertyLine] considers $2.15 per person per day to be a globally relevant indicator of extreme poverty.
+
+
