@@ -27,6 +27,7 @@ book:
     - conceptual-framework.qmd
     - cross-sectional.qmd
     - longitudinal.qmd
+    - logistic.qmd
     - conclusion.qmd
     - references.qmd
     - about.qmd
