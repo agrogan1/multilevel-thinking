@@ -1,4 +1,8 @@
-# Logistic Regression
+# Multilevel Logistic Regression
+
+> "We have peered into a new world and have seen that it is more mysterious and more complex than we had imagined." [@Rubin1997]
+
+## Introduction
 
 New forms of the multilevel model are required when we have outcomes that are not continuous. Let us imagine, for example, that we have a situation in which our continuous outcome is now categorized into two groups. For example, we might imagine that there is some sort of diagnostic cutoff. scores greater than this cutoff are assigned to one group (`1`), while scores lower than the cutoff are assigned to another group (`0`). 
 
@@ -59,7 +63,9 @@ Pedagogically, this new categorical outcome satisfies our need to have a dichoto
 
 In contrast, some outcomes are naturally dichotomous and do not arise from dichotomizing a continuous variable: born versus not born; married or partnered versus single; alive versus dead; entered a program; exited a program; conflict or protest occurred versus conflict or protest did not occur. 
 
-I now consider two possible strategies from modeling dichotomous outcomes: the linear multilevel model that we have been considering so far in this book; and a *logistic regression* model designed specifically for dichotomous outcomes. The easiest way to consider and compare these models is through presentation.
+## Two Strategies
+
+I now consider two possible strategies from modeling dichotomous outcomes: the *linear multilevel model* that we have been considering so far in this book; and a *multilevel logistic regression* model designed specifically for dichotomous outcomes. The easiest way to consider and compare these models is through presentation.
 
 ```{r}
 #| fig-cap: "Linear and Logistic Regression"
@@ -117,6 +123,11 @@ plinear + plogistic
 
 In each model, the equivalent pattern of dots represents some dichotomous outcome (e.g. birth, death, satisfies diagnostic criterion) that becomes more likely as some independent variable increases in value. At higher levels of the independent variable, the outcome is almost exclusively `1`. at lower levels of the independent variable, the outcome is almost exclusively `0`. One could try to estimate this dichotomous outcome with a straight line, or linear model, as depicted in the left hand panel of figure XXX. This might be roughly plausible, and this procedure is termed a *linear probability model* which I will not discuss in more detail here. Suffice it to say that several problems emerge for a linear probability model: the model predicts values of the outcome greater than `1` and less than `0`; standard errors of the model are clearly not homoscedastic but change in value (heteroscedasticity); and lastly a linear model estimates a constant association between changes in *x* and changes in *y* when this is not appropriate. 
 
+## Probabilities and Odds
+
+To being to develop a *multilevel logistic regression* model, it is useful to think about ideas of *probabilities* and *odds*. One possible definition of a probability is that it is the long run fraction of times that an event occurs in series of events **CITATION**.  
+
+For example, if there are 100 possible occasions for an event--for example, experiencing happiness--to occur, and happiness only occurs 10 times out of a possible 100, then we might say that the *probability* or *risk* of happiness is .10. If happiness occurs 90 times out of a possible 100 occurrences, then we would say that the *probability* or *risk* of happiness is .90. In contrast, if happiness occurs 10 times out of a possible 100, then the odds of happiness occurring are `10/90 = 1/9 = .11`. Similarly if happiness occurs 90 times, then the odds of happiness occurring are `90/10 = 9/1 = 9` [@Viera2008]. 
 
 ```{r}
 #| tbl-cap: "Probabilities and Odds"
@@ -124,17 +135,17 @@ In each model, the equivalent pattern of dots represents some dichotomous outcom
 #| label: tbl-probabilities-odds
 #| echo: false
 
-`total events` <- rep(100, 10)
+`total occasions` <- rep(100, 10)
 
 `event occurred` <- seq(10, 100, 10)
 
-`event did not occur` <- `total events` - `event occurred`
+`event did not occur` <- `total occasions` - `event occurred`
 
-risk <- `event occurred` / `total events`
+risk <- `event occurred` / `total occasions`
 
 odds <- `event occurred` / `event did not occur`
 
-mydata <- data.frame(`total events`,
+mydata <- data.frame(`total occasions`,
                      `event occurred`,
                      `event did not occur`,
                      risk,
