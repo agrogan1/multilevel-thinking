@@ -182,15 +182,52 @@ Logistic regression begins with the idea that we are predicting the odds of an e
 
 We are estimating a function of these odds as a linear function of a set of predictors, $\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}$. Here $u_{0j}$ is the usual level 2 random intercept that I have been including all along in multilevel models (@eq-MLM). \index{logistic regression}
 
-The expression $\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}$ is a linear function of the independent variables. In order make a linear prediction appropriate, we take the logarithm of the odds, which provides the equation for logistic regression. 
+The expression $\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}$ is a linear function of the independent variables. In order make a linear prediction appropriate, we take the logarithm of the odds, which provides the equation for multilevel logistic regression. 
 
-$$\ln\Big(\frac{p(y)}{1-p(y)}\Big) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}$$ #eq-logistic-MLM
+$$\ln\Big(\frac{p(y)}{1-p(y)}\Big) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}$$ {#eq-logistic-MLM}
 
 Notice that while there is a level 2 error term, or random intercept $u_{0j}$, there is no level 1 error term ($e_{ij}$) as we saw in @eq-MLM. This is because the use of probabilities $p(y)$ encompasses the idea of error in the logistic regression model.
 
-Through a bit of algebra, we can manipulate this equation to provide more intuitive results. 
+## Odds Ratios
+
+In a logistic regression the dependent variable is the *log-odds* of the results (@eq-logistic-MLM). The log-odds is likely to be a less than intuitive metric. We can obtain more intuitive results if we *exponentiate* both sides of @eq-logistic-MLM (i.e. raise both sides to the power of $e$).
+
+$$\frac{p(y)}{1-p(y)} = e^{\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}}$$ #eq-logistic-MLM-exponentiated
+
+Through simple algebraic rules around exponents, this then becomes:
+
+$$\frac{p(y)}{1-p(y)}= e^{\beta_0} e^{\beta_1 x_1} e^{\beta_2 x_2} e^{u_{0j}}$$ #eq-logistic-MLM-exponentiated-multiplied
+
+The quantity $e^{\beta}$ is termed an *odds ratio* and represents the association of a 1 unit change in the independent variable with the *odds* of the outcome.
+
+
+## $\beta$ Coefficients and Odds Ratios
+
+--------------------------------------------------
+Substantively    $\beta$     OR
+--------------   ---------- ----------
+x is              $>0.0$        $>1.0$
+associated
+with an 
+increase
+in y
+
+no                $0.0$         $1.0$
+association
+of x with
+y
+
+x is              $<0.0$        $<1.0$
+associated
+with a
+decrease
+in y
+--------------------------------------------------
+
 
 ## Predicted Probabilities
+
+The odds provide a convenient way to understand the relationship of independent variables of interest with a dichotomous outcome. At the same time, it is often forgotten that the odds are not the same as probabilities, and changes in odds are not the same as changes in probabilities (@tbl-probabilities-odds). 
 
 To make the algebra easier, I first substitute $Z$ for $\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}$:
 
@@ -207,26 +244,6 @@ $$p(y) = \frac{e^Z}{1+e^Z}$$
 
 
 
-# $\beta$ Coefficients and Odds Ratios
-
---------------------------------------------------
-Substantively    $\beta$     OR
---------------   ---------- ----------
-x is              $>0.0$        $>1.0$
-associated
-with an 
-increase
-in y
-
-no                $0.0$         $1.0$
-association
-
-x is              $<0.0$        $<1.0$
-associated
-with a
-decrease
-in y
---------------------------------------------------
 
 [^povertyline]: For example the World Bank [@WorldBankPovertyLine] considers $2.15 per person per day to be a globally relevant indicator of extreme poverty.
 
