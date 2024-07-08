@@ -200,6 +200,11 @@ $$\frac{p(y)}{1-p(y)}= e^{\beta_0} e^{\beta_1 x_1} e^{\beta_2 x_2} e^{u_{0j}}$$ 
 
 The quantity $e^{\beta}$ is termed an *odds ratio* and represents the association of a 1 unit change in the independent variable with the *odds* of the outcome.
 
+```{r, child=c('./simulate-and-analyze-multilevel-data/tableL0.md')}
+```
+
+```{r, child=c('./simulate-and-analyze-multilevel-data/tableL1.md')}
+```
 
 ## $\beta$ Coefficients and Odds Ratios
 
