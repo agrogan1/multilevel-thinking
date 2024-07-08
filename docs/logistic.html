@@ -631,7 +631,7 @@ c &amp; d
 <h2 data-number="7.4" class="anchored" data-anchor-id="logistic-regression"><span class="header-section-number">7.4</span> Logistic Regression</h2>
 <p>Logistic regression begins with the idea that we are predicting the odds of an event. A common way to write the odds is <span class="math inline">\(\frac{p(y)}{1-p(y)}\)</span>, where <span class="math inline">\(p(y)\)</span> is the probability of an outcome of interest, while <span class="math inline">\(1-p(y)\)</span> is the probability that the outcome will not occur.</p>
 <p>We are estimating a function of these odds as a linear function of a set of predictors, <span class="math inline">\(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}\)</span>. Here <span class="math inline">\(u_{0j}\)</span> is the usual level 2 random intercept that I have been including all along in multilevel models (<a href="cross-sectional.html#eq-MLM" class="quarto-xref">Equation&nbsp;<span>5.3</span></a>). </p>
-<p>The expression <span class="math inline">\(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}\)</span> is a linear function of the independent variables. In order make a linear prediction appropriate, we take the logarithm of the odds, which provides the equation for logistic regression.</p>
+<p>The expression <span class="math inline">\(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}\)</span> is a linear function of the independent variables. In order make a linear prediction appropriate, we take the logarithm of the odds, which provides the equation for multilevel logistic regression.</p>
 <p><span id="eq-logistic-MLM"><span class="math display">\[\ln\Big(\frac{p(y)}{1-p(y)}\Big) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j} \tag{7.1}\]</span></span></p>
 <p>Notice that while there is a level 2 error term, or random intercept <span class="math inline">\(u_{0j}\)</span>, there is no level 1 error term (<span class="math inline">\(e_{ij}\)</span>) as we saw in <a href="cross-sectional.html#eq-MLM" class="quarto-xref">Equation&nbsp;<span>5.3</span></a>. This is because the use of probabilities <span class="math inline">\(p(y)\)</span> encompasses the idea of error in the logistic regression model.</p>
 </section>
@@ -1283,7 +1283,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":false,"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
