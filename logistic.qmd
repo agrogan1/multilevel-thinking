@@ -121,7 +121,27 @@ plinear + plogistic
 ```
 
 
-In each model, the equivalent pattern of dots represents some dichotomous outcome (e.g. birth, death, satisfies diagnostic criterion) that becomes more likely as some independent variable increases in value. At higher levels of the independent variable, the outcome is almost exclusively `1`. at lower levels of the independent variable, the outcome is almost exclusively `0`. One could try to estimate this dichotomous outcome with a straight line, or linear model, as depicted in the left hand panel of figure XXX. This might be roughly plausible, and this procedure is termed a *linear probability model* which I will not discuss in more detail here. Suffice it to say that several problems emerge for a linear probability model: the model predicts values of the outcome greater than `1` and less than `0`; standard errors of the model are clearly not homoscedastic but change in value (heteroscedasticity); and lastly a linear model estimates a constant association between changes in *x* and changes in *y* when this is not appropriate. 
+In each model, the equivalent pattern of dots represents some dichotomous outcome (e.g. birth, death, satisfies diagnostic criterion) that becomes more likely as some independent variable increases in value. At higher levels of the independent variable, the outcome is almost exclusively `1`. at lower levels of the independent variable, the outcome is almost exclusively `0`. One could try to estimate this dichotomous outcome with a straight line, or linear model, as depicted in the left hand panel of figure XXX. This might be roughly plausible, and this procedure is termed a *linear probability model* which I will not discuss in more detail here. Suffice it to say that several problems emerge for a linear probability model: the model predicts values of the outcome greater than `1` and less than `0`; standard errors of the model are clearly not homoscedastic but change in value (heteroscedasticity); and lastly a linear model estimates a constant association between changes in *x* and changes in *y* when this is not appropriate (@fig-marginal-changes). 
+
+```{r}
+#| fig-cap: "Marginal Changes in *y* in Logistic Regression"
+#| fig-height: 6
+#| label: fig-marginal-changes
+#| echo: false
+#| message: false
+#| warning: false
+
+smootherdata <- ggplot_build(plogistic)$data[[2]]
+
+plogistic + 
+  geom_step(data = smootherdata,
+                      aes(x = x,
+                          y = y),
+                      color = "red") +
+  labs(subtitle = "Marginal Changes in y Are Different At Every Value of x")
+
+```
+
 
 ## Probabilities and Odds
 
@@ -200,12 +220,6 @@ $$\frac{p(y)}{1-p(y)}= e^{\beta_0} e^{\beta_1 x_1} e^{\beta_2 x_2} e^{u_{0j}}$$ 
 
 The quantity $e^{\beta}$ is termed an *odds ratio* and represents the association of a 1 unit change in the independent variable with the *odds* of the outcome.
 
-```{r, child=c('./simulate-and-analyze-multilevel-data/tableL0.md')}
-```
-
-```{r, child=c('./simulate-and-analyze-multilevel-data/tableL1.md')}
-```
-
 ## $\beta$ Coefficients and Odds Ratios
 
 --------------------------------------------------
@@ -229,10 +243,44 @@ decrease
 in y
 --------------------------------------------------
 
+## Regression With Simulated Multi-Country Data {#sec-logistic-regression}
+
+### Unconditional Model
+
+As I have done earlier (@sec-unconditional), I first estimate an unconditional model:
+
+```{r, child=c('./simulate-and-analyze-multilevel-data/tableL0.md')}
+```
+
+This unconditional model provides us with the variance of the random intercept ($\u_{0j}$) which I use below to calculate the intra-class correlation coefficient. 
+
+### Intra-Class Correlation Coefficient
+
+In logistic regression, as noted in @eq-logistic-MLM, there is no $e_{ij}$ error term. In order to calculate the intra-class correlation coefficient, we use the fact that a standard logistic distribution has a variance of $\frac{\pi^2}{3}$, or roughly 3.29 **CITATION**.
+
+Hence, in a logistic regression, the equation for the intra-class correlation coefficient becomes: 
+
+$$\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + \frac{\pi^2}{3}}$$ {#eq-ICC-logistic}
+
+Substituting in the appropriate quantities suggests that approximately 6.6% of the variation in the dichotomous outcome is potentially explainable by the clustering of observations in countries. 
+
+### Conditional Model
+
+I now estimate a *conditional* multilevel logistic regression model *with* independent variables.
+
+```{r, child=c('./simulate-and-analyze-multilevel-data/tableL1.md')}
+```
+
+The model demonstrates a number of results that are substantively similar to those in @sec-conditional-model. Increased levels of parental warmth area associated with increased odds of being in the higher outcome category, while increased levels of physical punishment are associated with decreased odds of being in the higher outcome category. The identity category in these data is not associated with higher or lower odds of being in the higher outcome category. Participation in the intervention is associated with higher odds of being in the higher outcome category. The Human Development Index is not associated with different odds of being in the higher outcome category. 
 
 ## Predicted Probabilities
 
-The odds provide a convenient way to understand the relationship of independent variables of interest with a dichotomous outcome. At the same time, it is often forgotten that the odds are not the same as probabilities, and changes in odds are not the same as changes in probabilities (@tbl-probabilities-odds). 
+I have above discussed the ideas of estimating the association of independent variables with the odds of an outcome. However, while odds ratios are perhaps the most common way of reporting the results of logistic regressions in the empirical literature, there are at least several issues with odds ratios:
+
+1. Odds ratios provide a convenient way of talking about the association of independent variables with categorical outcomes. At the same time, as shown in @tbl-probabilities-odds the odds will overstate the risk, especially as the odds become larger. 
+2. Odds ratios provide one metric of association for the entire range of an independent variable $x$. In contrast, as shown in @fig-marginal-changes, marginal changes may be very small for very small values of the independent variable and very large values of the independent variable, while larger for intermediate ranges of the independent variable. Thus, odds ratios, while characterizing the overall logistic regression curve likely do not provide a finer grained picture of changes in the dependent variable at different values of the independent variable. 
+
+For these reasons it is often convenient to calulcate predicted probabilities. \index{predicted probabilities}
 
 To make the algebra easier, I first substitute $Z$ for $\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}$:
 
