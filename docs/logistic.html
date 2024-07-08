@@ -436,7 +436,13 @@ window.Quarto = {
   <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression"><span class="header-section-number">7.4</span> Logistic Regression</a></li>
   <li><a href="#odds-ratios" id="toc-odds-ratios" class="nav-link" data-scroll-target="#odds-ratios"><span class="header-section-number">7.5</span> Odds Ratios</a></li>
   <li><a href="#beta-coefficients-and-odds-ratios" id="toc-beta-coefficients-and-odds-ratios" class="nav-link" data-scroll-target="#beta-coefficients-and-odds-ratios"><span class="header-section-number">7.6</span> <span class="math inline">\(\beta\)</span> Coefficients and Odds Ratios</a></li>
-  <li><a href="#predicted-probabilities" id="toc-predicted-probabilities" class="nav-link" data-scroll-target="#predicted-probabilities"><span class="header-section-number">7.7</span> Predicted Probabilities</a></li>
+  <li><a href="#sec-logistic-regression" id="toc-sec-logistic-regression" class="nav-link" data-scroll-target="#sec-logistic-regression"><span class="header-section-number">7.7</span> Regression With Simulated Multi-Country Data</a>
+  <ul class="collapse">
+  <li><a href="#unconditional-model" id="toc-unconditional-model" class="nav-link" data-scroll-target="#unconditional-model"><span class="header-section-number">7.7.1</span> Unconditional Model</a></li>
+  <li><a href="#intra-class-correlation-coefficient" id="toc-intra-class-correlation-coefficient" class="nav-link" data-scroll-target="#intra-class-correlation-coefficient"><span class="header-section-number">7.7.2</span> Intra-Class Correlation Coefficient</a></li>
+  <li><a href="#conditional-model" id="toc-conditional-model" class="nav-link" data-scroll-target="#conditional-model"><span class="header-section-number">7.7.3</span> Conditional Model</a></li>
+  </ul></li>
+  <li><a href="#predicted-probabilities" id="toc-predicted-probabilities" class="nav-link" data-scroll-target="#predicted-probabilities"><span class="header-section-number">7.8</span> Predicted Probabilities</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -474,7 +480,7 @@ window.Quarto = {
 <div id="fig-dichotomized" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dichotomized-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="logistic_files/figure-html/fig-dichotomized-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="logistic_files/figure-html/fig-dichotomized-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="logistic_files/figure-html/fig-dichotomized-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="logistic_files/figure-html/fig-dichotomized-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dichotomized-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.1: A Continuous Outcome Dichotomized
@@ -494,7 +500,7 @@ Figure&nbsp;7.1: A Continuous Outcome Dichotomized
 <div id="fig-linear-logistic" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-linear-logistic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="logistic_files/figure-html/fig-linear-logistic-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2"><img src="logistic_files/figure-html/fig-linear-logistic-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="logistic_files/figure-html/fig-linear-logistic-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="logistic_files/figure-html/fig-linear-logistic-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-linear-logistic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.2: Linear and Logistic Regression
@@ -503,7 +509,21 @@ Figure&nbsp;7.2: Linear and Logistic Regression
 </div>
 </div>
 </div>
-<p>In each model, the equivalent pattern of dots represents some dichotomous outcome (e.g.&nbsp;birth, death, satisfies diagnostic criterion) that becomes more likely as some independent variable increases in value. At higher levels of the independent variable, the outcome is almost exclusively <code>1</code>. at lower levels of the independent variable, the outcome is almost exclusively <code>0</code>. One could try to estimate this dichotomous outcome with a straight line, or linear model, as depicted in the left hand panel of figure XXX. This might be roughly plausible, and this procedure is termed a <em>linear probability model</em> which I will not discuss in more detail here. Suffice it to say that several problems emerge for a linear probability model: the model predicts values of the outcome greater than <code>1</code> and less than <code>0</code>; standard errors of the model are clearly not homoscedastic but change in value (heteroscedasticity); and lastly a linear model estimates a constant association between changes in <em>x</em> and changes in <em>y</em> when this is not appropriate.</p>
+<p>In each model, the equivalent pattern of dots represents some dichotomous outcome (e.g.&nbsp;birth, death, satisfies diagnostic criterion) that becomes more likely as some independent variable increases in value. At higher levels of the independent variable, the outcome is almost exclusively <code>1</code>. at lower levels of the independent variable, the outcome is almost exclusively <code>0</code>. One could try to estimate this dichotomous outcome with a straight line, or linear model, as depicted in the left hand panel of figure XXX. This might be roughly plausible, and this procedure is termed a <em>linear probability model</em> which I will not discuss in more detail here. Suffice it to say that several problems emerge for a linear probability model: the model predicts values of the outcome greater than <code>1</code> and less than <code>0</code>; standard errors of the model are clearly not homoscedastic but change in value (heteroscedasticity); and lastly a linear model estimates a constant association between changes in <em>x</em> and changes in <em>y</em> when this is not appropriate (<a href="#fig-marginal-changes" class="quarto-xref">Figure&nbsp;<span>7.3</span></a>).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-marginal-changes" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-marginal-changes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="logistic_files/figure-html/fig-marginal-changes-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3"><img src="logistic_files/figure-html/fig-marginal-changes-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-marginal-changes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.3: Marginal Changes in <em>y</em> in Logistic Regression
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="probabilities-and-odds" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="probabilities-and-odds"><span class="header-section-number">7.3</span> Probabilities and Odds</h2>
@@ -677,9 +697,119 @@ c &amp; d
 </tbody>
 </table>
 </section>
-<section id="predicted-probabilities" class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="predicted-probabilities"><span class="header-section-number">7.7</span> Predicted Probabilities</h2>
-<p>The odds provide a convenient way to understand the relationship of independent variables of interest with a dichotomous outcome. At the same time, it is often forgotten that the odds are not the same as probabilities, and changes in odds are not the same as changes in probabilities (<a href="#tbl-probabilities-odds" class="quarto-xref">Table&nbsp;<span>7.1</span></a>).</p>
+<section id="sec-logistic-regression" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="sec-logistic-regression"><span class="header-section-number">7.7</span> Regression With Simulated Multi-Country Data</h2>
+<section id="unconditional-model" class="level3" data-number="7.7.1">
+<h3 data-number="7.7.1" class="anchored" data-anchor-id="unconditional-model"><span class="header-section-number">7.7.1</span> Unconditional Model</h3>
+<p>As I have done earlier (<a href="cross-sectional.html#sec-unconditional" class="quarto-xref"><span>Section 5.4.1</span></a>), I first estimate an unconditional model:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th>1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>_cons</td>
+<td>1.101</td>
+</tr>
+<tr class="even">
+<td>var(_cons[country])</td>
+<td>0.231</td>
+</tr>
+<tr class="odd">
+<td>Number of observations</td>
+<td>3000</td>
+</tr>
+</tbody>
+</table>
+<p>** p&lt;.01, * p&lt;.05</p>
+<p>This unconditional model provides us with the variance of the random intercept (<span class="math inline">\(\u_{0j}\)</span>) which I use below to calculate the intra-class correlation coefficient.</p>
+</section>
+<section id="intra-class-correlation-coefficient" class="level3" data-number="7.7.2">
+<h3 data-number="7.7.2" class="anchored" data-anchor-id="intra-class-correlation-coefficient"><span class="header-section-number">7.7.2</span> Intra-Class Correlation Coefficient</h3>
+<p>In logistic regression, as noted in <a href="#eq-logistic-MLM" class="quarto-xref">Equation&nbsp;<span>7.1</span></a>, there is no <span class="math inline">\(e_{ij}\)</span> error term. In order to calculate the intra-class correlation coefficient, we use the fact that a standard logistic distribution has a variance of <span class="math inline">\(\frac{\pi^2}{3}\)</span>, or roughly 3.29 <strong>CITATION</strong>.</p>
+<p>Hence, in a logistic regression, the equation for the intra-class correlation coefficient becomes:</p>
+<p><span id="eq-ICC-logistic"><span class="math display">\[\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + \frac{\pi^2}{3}} \tag{7.2}\]</span></span></p>
+<p>Substituting in the appropriate quantities suggests that approximately 6.6% of the variation in the dichotomous outcome is potentially explainable by the clustering of observations in countries.</p>
+</section>
+<section id="conditional-model" class="level3" data-number="7.7.3">
+<h3 data-number="7.7.3" class="anchored" data-anchor-id="conditional-model"><span class="header-section-number">7.7.3</span> Conditional Model</h3>
+<p>I now estimate a <em>conditional</em> multilevel logistic regression model <em>with</em> independent variables.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th>1</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>warmth</td>
+<td>1.293</td>
+<td>**</td>
+</tr>
+<tr class="even">
+<td>physical_punishment</td>
+<td>0.752</td>
+<td>**</td>
+</tr>
+<tr class="odd">
+<td>identity</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.952</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>intervention</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1.192</td>
+<td>*</td>
+</tr>
+<tr class="odd">
+<td>HDI</td>
+<td>0.999</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>_cons</td>
+<td>0.912</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>var(_cons[country])</td>
+<td>0.290</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Number of observations</td>
+<td>3000</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>** p&lt;.01, * p&lt;.05</p>
+<p>The model demonstrates a number of results that are substantively similar to those in <a href="cross-sectional.html#sec-conditional-model" class="quarto-xref"><span>Section 5.4.3</span></a>. Increased levels of parental warmth area associated with increased odds of being in the higher outcome category, while increased levels of physical punishment are associated with decreased odds of being in the higher outcome category. The identity category in these data is not associated with higher or lower odds of being in the higher outcome category. Participation in the intervention is associated with higher odds of being in the higher outcome category. The Human Development Index is not associated with different odds of being in the higher outcome category.</p>
+</section>
+</section>
+<section id="predicted-probabilities" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="predicted-probabilities"><span class="header-section-number">7.8</span> Predicted Probabilities</h2>
+<p>I have above discussed the ideas of estimating the association of independent variables with the odds of an outcome. However, while odds ratios are perhaps the most common way of reporting the results of logistic regressions in the empirical literature, there are at least several issues with odds ratios:</p>
+<ol type="1">
+<li>Odds ratios provide a convenient way of talking about the association of independent variables with categorical outcomes. At the same time, as shown in <a href="#tbl-probabilities-odds" class="quarto-xref">Table&nbsp;<span>7.1</span></a> the odds will overstate the risk, especially as the odds become larger.</li>
+<li>Odds ratios provide one metric of association for the entire range of an independent variable <span class="math inline">\(x\)</span>. In contrast, as shown in <a href="#fig-marginal-changes" class="quarto-xref">Figure&nbsp;<span>7.3</span></a>, marginal changes may be very small for very small values of the independent variable and very large values of the independent variable, while larger for intermediate ranges of the independent variable. Thus, odds ratios, while characterizing the overall logistic regression curve likely do not provide a finer grained picture of changes in the dependent variable at different values of the independent variable.</li>
+</ol>
+<p>For these reasons it is often convenient to calulcate predicted probabilities. </p>
 <p>To make the algebra easier, I first substitute <span class="math inline">\(Z\)</span> for <span class="math inline">\(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}\)</span>:</p>
 <p><span class="math display">\[\ln\Big(\frac{p(y)}{1-p(y)}\Big) = Z\]</span> Then</p>
 <p><span class="math display">\[\Big(\frac{p(y)}{1-p(y)}\Big) = e^Z\]</span> <span class="math display">\[p(y) = e^Z(1-p(y))\]</span> <span class="math display">\[p(y) + e^Z(p(y)) = e^Z\]</span> <span class="math display">\[p(y) = \frac{e^Z}{1+e^Z}\]</span> Finally, substituting back in the original expression for <span class="math inline">\(Z\)</span>:</p>
@@ -689,6 +819,7 @@ c &amp; d
 <div class="hidden" aria-hidden="true">
 <span class="glightbox-desc lightbox-desc-1">Figure&nbsp;7.1: A Continuous Outcome Dichotomized</span>
 <span class="glightbox-desc lightbox-desc-2">Figure&nbsp;7.2: Linear and Logistic Regression</span>
+<span class="glightbox-desc lightbox-desc-3">Figure&nbsp;7.3: Marginal Changes in <em>y</em> in Logistic Regression</span>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
 <div id="ref-Rubin1997" class="csl-entry" role="listitem">
@@ -1254,7 +1385,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"openEffect":"zoom","descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
