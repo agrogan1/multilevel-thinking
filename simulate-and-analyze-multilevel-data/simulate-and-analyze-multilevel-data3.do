@@ -311,4 +311,63 @@ export("table4.md", as(markdown) replace)
 
 estimates drop MLM FE CRE
 
-	
+********************
+* logistic
+********************
+
+* NB logistic tables are numbered tableL*
+
+use simulated_multilevel_data.dta, clear
+
+generate outcome_category = outcome > 52 // dichotomous outcome
+
+* unconditional model
+
+melogit outcome_category || country:, or
+
+estat icc
+
+* estat sd, variance post // post results as variance scale rather than log scale
+
+est store logistic0 // store estimates
+
+etable, estimates(logistic0) ///
+novarlabel /// variable names only
+cstat(_r_b) /// beta's only
+showstars showstarsnote ///
+column(index) ///
+export("tableL0.md", as(markdown) replace)
+
+estimates drop logistic0
+
+* model w covariates
+
+melogit outcome_category warmth physical_punishment i.identity i.intervention HDI || country:, or // multilevel model
+
+* estat sd, variance post // post results as variance scale rather than log scale
+
+est store logistic // store estimates
+
+etable, estimates(logistic) ///
+novarlabel /// variable names only
+cstat(_r_b) /// beta's only
+showstars showstarsnote ///
+column(index) ///
+export("tableL1.md", as(markdown) replace)
+
+estimates drop logistic
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
