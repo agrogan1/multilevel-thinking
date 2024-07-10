@@ -348,6 +348,8 @@ melogit outcome_category warmth physical_punishment i.identity i.intervention HD
 
 est store logistic // store estimates
 
+margins, over(intervention) saving(mymargins.dta, replace) // margins
+
 etable, estimates(logistic) ///
 novarlabel /// variable names only
 cstat(_r_b) /// beta's only
