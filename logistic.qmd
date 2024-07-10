@@ -4,7 +4,7 @@
 
 ## Introduction
 
-New forms of the multilevel model are required when we have outcomes that are not continuous. Let us imagine, for example, that we have a situation in which our continuous outcome is now categorized into two groups. For example, we might imagine that there is some sort of diagnostic cutoff. scores greater than this cutoff are assigned to one group (`1`), while scores lower than the cutoff are assigned to another group (`0`). 
+New forms of the multilevel model are required when we have outcomes that are not continuous. Let us imagine, for example, that we have a situation in which our continuous outcome is now categorized into two groups. For example, we might imagine that there is some sort of diagnostic cutoff. Scores greater than this cutoff are assigned to one group (`1`), while scores lower than the cutoff are assigned to another group (`0`). 
 
 No doubt this scenario is more likely when we consider an *undesirable* outcome like depression or anxiety. Higher levels of depression or anxiety might be greater than some diagnostic cutoff, meriting a score of `1`, *meets criteria for a diagnosis*, while scores lower than that diagnostic cutoff might receive a score of `0`, *does not meet diagnostic criteria*. However, in keeping with our characterization of the outcome in the simulated data employed in this book as desirable or beneficial, we may also imagine a situation in which `1` is assigned to sufficiently high levels of some desirable or beneficial outcome that exceed some threshold value, while scores below that value are assigned to be `0`. 
 
@@ -59,13 +59,15 @@ ggplot(mydata) +
 ```
 
 
-Pedagogically, this new categorical outcome satisfies our need to have a dichotomous outcome to explain a new group of models--logistic regression models--that are suitable for such outcomes. It is sometimes considered to be a statistical rule of thumb that we should never dichotomize a continuous outcome. Certainly, it is true that when we dichotomize an outcome we lose a certain amount of information in the data about the variation, heterogeneity, or diversity in the outcome. Such a loss of information may reduce our ability to obtain statistically significant results. At the same time, certain numerical cutoffs may have important substantive meanings, clinical meanings, or policy meanings. For example I have already considered higher levels of anxiety or depression that may exceed clinically important cutoffs implying a diagnosis `1` versus `0` of depression or anxiety. Levels of income below a certain threshold--whether a country specific threshold or some globally relevant threshold--are considered to be in poverty[^povertyline], while individuals above that income threshold are considered to be not in poverty (`1` versus `0`). In the example considered in detail in this chapter, families with a child having a beneficial outcome at a certain level might be considered to have a child satisfying a certain minimal level of psychological well-being. 
+Pedagogically, this new categorical outcome satisfies our need to have a dichotomous outcome to explain a new group of models--logistic regression models--that are suitable for such outcomes. It is sometimes considered to be a statistical rule of thumb that we should never dichotomize a continuous outcome. Certainly, it is true that when we dichotomize an outcome we lose a certain amount of information in the data about the variation, heterogeneity, or diversity in the outcome. Such a loss of information may reduce our ability to obtain statistically significant results. At the same time, certain numerical cutoffs may have important substantive meanings, clinical meanings, or policy meanings, and dichotomous outcomes may prove more intuitive for readers of our work to understand.
+
+For example, I have already considered higher levels of anxiety or depression that may exceed clinically important cutoffs implying a diagnosis `1` versus `0` of depression or anxiety. Levels of income below a certain threshold--whether a country specific threshold or some globally relevant threshold--are considered to be in poverty[^povertyline], while individuals above that income threshold are considered to be not in poverty (`1` versus `0`). In the example considered in detail in this chapter, families with a child having a beneficial outcome at a certain level might be considered to have a child satisfying a certain minimal level of psychological well-being. 
 
 In contrast, some outcomes are naturally dichotomous and do not arise from dichotomizing a continuous variable: born versus not born; married or partnered versus single; alive versus dead; entered a program; exited a program; conflict or protest occurred versus conflict or protest did not occur. 
 
 ## Two Strategies
 
-I now consider two possible strategies from modeling dichotomous outcomes: the *linear multilevel model* that we have been considering so far in this book; and a *multilevel logistic regression* model designed specifically for dichotomous outcomes. The easiest way to consider and compare these models is through presentation.
+I now consider two possible strategies from modeling dichotomous outcomes: the *linear multilevel model* that we have been considering so far in this book; and a *multilevel logistic regression* model designed specifically for dichotomous outcomes. The easiest way to consider and compare these models is to begin with visual presentation.
 
 ```{r}
 #| fig-cap: "Linear and Logistic Regression"
@@ -102,6 +104,7 @@ p0 <- ggplot(mydata,
                  y = y)) +
   geom_point() +
   ylim(-.25, 1.25) +
+  labs(y = "probability of y") +
   theme_minimal()
  
 # p0 # replay
@@ -121,11 +124,11 @@ plinear + plogistic
 ```
 
 
-In each model, the equivalent pattern of dots represents some dichotomous outcome (e.g. birth, death, satisfies diagnostic criterion) that becomes more likely as some independent variable increases in value. At higher levels of the independent variable, the outcome is almost exclusively `1`. at lower levels of the independent variable, the outcome is almost exclusively `0`. One could try to estimate this dichotomous outcome with a straight line, or linear model, as depicted in the left hand panel of figure XXX. This might be roughly plausible, and this procedure is termed a *linear probability model* which I will not discuss in more detail here. Suffice it to say that several problems emerge for a linear probability model: the model predicts values of the outcome greater than `1` and less than `0`; standard errors of the model are clearly not homoscedastic but change in value (heteroscedasticity); and lastly a linear model estimates a constant association between changes in *x* and changes in *y* when this is not appropriate (@fig-marginal-changes). 
+In each model, the equivalent pattern of dots represents some dichotomous outcome (e.g. birth, death, satisfies diagnostic criteria) that becomes more likely as some independent variable increases in value. At higher levels of the independent variable, the outcome is almost exclusively `1`. At lower levels of the independent variable, the outcome is almost exclusively `0`. In the middle range of the independent variable, there is a mixture of `1` and `0`. One could try to estimate this dichotomous outcome with a straight line, or linear model, as depicted in the left hand panel of @fig-linear-logistic. This might be roughly plausible, and this procedure is termed a *linear probability model* (**CITATION**) which I will not discuss in more detail here. Suffice it to say that several problems emerge for a linear probability model: the model predicts values of the outcome greater than `1` and less than `0`; and a linear model estimates a constant association between changes in *x* and changes in *y* when this is not appropriate (@fig-marginal-changes). 
 
 ```{r}
 #| fig-cap: "Marginal Changes in *y* in Logistic Regression"
-#| fig-height: 6
+#| fig-height: 5
 #| label: fig-marginal-changes
 #| echo: false
 #| message: false
@@ -147,13 +150,12 @@ plogistic +
 
 To being to develop a *multilevel logistic regression* model, it is useful to think about ideas of *probabilities* and *odds*. One possible definition of a probability is that it is the long run fraction of times that an event occurs in series of events **CITATION**. \index{probability}
 
-For example, if there are 100 possible occasions for an event--for example, experiencing happiness--to occur, and happiness only occurs 10 times out of a possible 100, then we might say that the *probability* or *risk* of happiness is .10. If happiness occurs 90 times out of a possible 100 occurrences, then we would say that the *probability* or *risk* of happiness is .90. \index{risk}
+For example, if there are 100 possible occasions for an event--such as experiencing happiness--to occur, and happiness only occurs 10 times out of a possible 100, then we might say that the *probability* or *risk* of happiness is .10. If happiness occurs 90 times out of a possible 100 occurrences, then we would say that the *probability* or *risk* of happiness is .90. \index{risk}
 
 In contrast, if happiness occurs 10 times out of a possible 100, then the *odds* of happiness occurring are `10/90 = 1/9 = .11`. Similarly if happiness occurs 90 times, then the *odds* of happiness occurring are `90/10 = 9/1 = 9` [@Viera2008]. \index{odds}
 
 ```{r}
 #| tbl-cap: "Probabilities and Odds"
-#| fig-height: 3
 #| label: tbl-probabilities-odds
 #| echo: false
 
@@ -180,9 +182,9 @@ pander::pander(mydata)
 
 ```
 
-A few things are worth noting about risks and odds. First, one might think of the risks and the odds of simply different ways of estimating the chances that something will happen.
+A few things are worth noting about risks and odds. First, one might think of the risks and the odds as simply different ways of thinking about and talking about the chances that something will happen.
 
-A classic diagram to illustrate these ideas appears in many sources. [e.g. @Viera2008]
+A classic diagram to more fully explicate some of these ideas appears in many sources. [e.g. @Viera2008]
 
 $$\begin{matrix}
 a & b \\
@@ -198,7 +200,7 @@ c & d
 
 ## Logistic Regression
 
-Logistic regression begins with the idea that we are predicting the odds of an event. A common way to write the odds is $\frac{p(y)}{1-p(y)}$, where $p(y)$ is the probability of an outcome of interest, while $1-p(y)$ is the probability that the outcome will not occur.  
+Logistic regression begins with the idea that we are predicting the odds of an event. A common way to write the odds is $\frac{p(y)}{1-p(y)}$, where $p(y)$ is the probability of an outcome of interest, while $1-p(y)$ is the probability that the outcome did not occur.  
 
 We are estimating a function of these odds as a linear function of a set of predictors, $\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}$. Here $u_{0j}$ is the usual level 2 random intercept that I have been including all along in multilevel models (@eq-MLM). \index{logistic regression}
 
@@ -222,8 +224,10 @@ The quantity $e^{\beta}$ is termed an *odds ratio* and represents the associatio
 
 ## $\beta$ Coefficients and Odds Ratios
 
+It is worth thinking about the relationship between $\beta$ coefficients in a logistic regression, and the associated odds ratio. Many times software only reports the odds ratios.
+
 --------------------------------------------------
-Substantively    $\beta$     OR
+Substantively    $\beta$     Odds Ratio
 --------------   ---------- ----------
 x is              $>0.0$        $>1.0$
 associated
@@ -252,7 +256,7 @@ As I have done earlier (@sec-unconditional), I first estimate an unconditional m
 ```{r, child=c('./simulate-and-analyze-multilevel-data/tableL0.md')}
 ```
 
-This unconditional model provides us with the variance of the random intercept ($\u_{0j}$) which I use below to calculate the intra-class correlation coefficient. 
+This unconditional model provides us with the variance of the random intercept ($u_{0j}$) which I use below to calculate the intra-class correlation coefficient. 
 
 ### Intra-Class Correlation Coefficient
 
@@ -264,23 +268,66 @@ $$\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + \frac{\pi^2}{3}}$$ {#eq-ICC-logi
 
 Substituting in the appropriate quantities suggests that approximately 6.6% of the variation in the dichotomous outcome is potentially explainable by the clustering of observations in countries. 
 
-### Conditional Model
+### Conditional Model {#sec-conditional-logistic}
 
 I now estimate a *conditional* multilevel logistic regression model *with* independent variables.
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/tableL1.md')}
 ```
 
-The model demonstrates a number of results that are substantively similar to those in @sec-conditional-model. Increased levels of parental warmth area associated with increased odds of being in the higher outcome category, while increased levels of physical punishment are associated with decreased odds of being in the higher outcome category. The identity category in these data is not associated with higher or lower odds of being in the higher outcome category. Participation in the intervention is associated with higher odds of being in the higher outcome category. The Human Development Index is not associated with different odds of being in the higher outcome category. 
+The model demonstrates a number of results that are substantively similar to those in @sec-conditional-model. Increased levels of parental warmth are associated with increased odds of being in the higher outcome category, while increased levels of physical punishment are associated with decreased odds of being in the higher outcome category. The identity category in these data is not associated with higher or lower odds of being in the higher outcome category. Participation in the intervention is associated with higher odds of being in the higher outcome category. The Human Development Index is not associated with different odds of being in the higher outcome category. 
 
 ## Predicted Probabilities
 
 I have above discussed the ideas of estimating the association of independent variables with the odds of an outcome. However, while odds ratios are perhaps the most common way of reporting the results of logistic regressions in the empirical literature, there are at least several issues with odds ratios:
 
 1. Odds ratios provide a convenient way of talking about the association of independent variables with categorical outcomes. At the same time, as shown in @tbl-probabilities-odds the odds will overstate the risk, especially as the odds become larger. 
-2. Odds ratios provide one metric of association for the entire range of an independent variable $x$. In contrast, as shown in @fig-marginal-changes, marginal changes may be very small for very small values of the independent variable and very large values of the independent variable, while larger for intermediate ranges of the independent variable. Thus, odds ratios, while characterizing the overall logistic regression curve likely do not provide a finer grained picture of changes in the dependent variable at different values of the independent variable. 
+2. Odds ratios provide one metric of association for the entire range of an independent variable $x$. In contrast, as shown in @fig-marginal-changes, marginal changes in the outcome may be very small for very small values of the independent variable, and very large values of the independent variable, while marginal changes in the outcome are larger for intermediate ranges of the independent variable. Thus, odds ratios, while characterizing the overall logistic regression curve, do not provide a finer grained picture of changes in the dependent variable at different values of the independent variable. 
 
-For these reasons it is often convenient to calulcate predicted probabilities. \index{predicted probabilities}
+```{r}
+#| fig-cap: "Constant Odds Ratio But Different Changes in Predicted Probability"
+#| fig-height: 3
+#| label: fig-marginal-changes-2
+#| echo: false
+#| message: false
+#| warning: false
+
+x <- seq(-10, 10)
+
+y <- exp(x)/(1 + exp(x))
+
+logisticdata <- data.frame(x,y)
+
+library(ggplot2)
+
+subtitle <- paste("A 1 Unit Change In the Independent Variable",
+                  "\nIs Associated With Different Changes In",
+                  "\nThe Predicted Probability Of y",
+                  "\nAt Different Values Of x")
+
+ggplot(logisticdata,
+       aes(x = x,
+           y = y)) +
+  geom_point() +
+  geom_line() +
+  geom_step(color = "red") +
+  theme_minimal() +
+  labs(title = "For a Constant Odds Ratio",
+       subtitle = subtitle,
+       y = "probability of y")
+
+```
+
+
+For these reasons it is often convenient to calculate predicted probabilities at different values of the independent variables. \index{predicted probabilities}
+
+::: {.callout-tip}
+### The Algebra May Be Helpful
+
+Below, I provide algebra for calculating predicted probabilities. This algebra sometimes proves difficult for readers to follow but is provided for the sake of completeness. Note that software often automates the process of calculating these predicted probabilities.
+:::
+
+### Calculating Predicted Probabilities
 
 To make the algebra easier, I first substitute $Z$ for $\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}$:
 
@@ -295,7 +342,37 @@ Finally, substituting back in the original expression for $Z$:
 
 $$p(y) = \frac{e^Z}{1+e^Z}$$
 
+### A Substantive Example
 
+I now provide a substantive example. Recall the model estimated in @sec-conditional-logistic. This model suggests, as an example, that participation in the intervention is associated with an odds ratio of 1.192. Put another way, participation in the intervention is associated with a .19 or 19% increase in the odds of a beneficial outcome. Bearing in mind the ideas presented in @fig-marginal-changes-2, it is worth thinking about the values of the predicted probability of a beneficial outcome at different levels participation in the intervention.
+
+According to the formulas presented above, which are again, usually automatically calculated by statistical software, I obtain @tbl-predicted-probabilities. 
+
+```{r}
+#| tbl-cap: "Predicted Probabilities Of A Beneficial Outcome"
+#| label: tbl-predicted-probabilities
+#| echo: false
+
+library(haven)
+
+library(dplyr)
+
+mymargins <- read_dta("./simulate-and-analyze-multilevel-data/mymargins.dta")
+
+mymargins <- mymargins %>% 
+  select(c("_by1", "_margin")) %>% 
+  rename(intervention = "_by1",
+         `predicted probability` = "_margin") %>%
+    mutate(`absolute change` = `predicted probability` - 
+             lag(`predicted probability`),
+           `relative change` = `predicted probability` / 
+             lag(`predicted probability`))
+
+pander::pander(mymargins)
+
+```
+
+Calculations in @tbl-predicted-probabilities suggest that when considered in terms of the predicted probability of a beneficial outcome, participation in the intervention is associated with a 3.2% *absolute* increase in the probability of a beneficial outcome, and 6.5% *relative* increase in the probability of a beneficial outcome. Whether one considers *absolute* or *relative* changes, these differences are far smaller than those suggested by the odds ratios.
 
 
 [^povertyline]: For example the World Bank [@WorldBankPovertyLine] considers $2.15 per person per day to be a globally relevant indicator of extreme poverty.
