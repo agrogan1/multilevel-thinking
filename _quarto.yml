@@ -55,6 +55,7 @@ format:
       warning: false
   docx:
     reference-doc: markstat.docx
+    fig-dpi: 600
     execute:
       echo: false
       warning: false
