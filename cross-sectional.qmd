@@ -152,6 +152,7 @@ ggplot(multilevelstructure,
                  color = country)) + # color is country
   geom_point() + 
   geom_smooth(method = "lm") + 
+  labs(title = "y as a function of x") +
   scale_color_viridis_d() +
   theme_minimal()
 
