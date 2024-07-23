@@ -109,7 +109,7 @@ pander::pander(conceptualframework)
 * $\overline{\text{mental health}_{.j}}$ or $\overline{\text{parenting}_{.j}}$ would be variables that *conceptually* come from Level 1 responses, but are *statistically* aggregated to Level 2.
 
 ::: {.callout-tip}
-## Contextual Variables
+## Contextual Variables 
 
 Such aggregated variables represent the *average* level of a response across each Level 2 unit, and are sometimes called "contextual variables" [@DiezRoux2002; @Snijders2012; @Hox2018]. \index{contextual variables} These aggregated variables could be included in the model alongside the individual level, or Level 1, predictors. Consider: 
 
