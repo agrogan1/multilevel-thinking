@@ -18,9 +18,9 @@
 > 
 > Love, little things,
 > 
-> Landscape and bread, the poetry of everyone."
+> Landscape and bread, the poetry of everyone." \index{universalism} \index{variation and diversity}
 
-— [@Dalton2000] (translated By Jack Hirschman) \index{universalism} \index{variation and diversity}
+— [@Dalton2000] (translated By Jack Hirschman) 
 
 $~$
 
@@ -28,7 +28,7 @@ $~$
 > 
 > No one ever told us we had to study our lives, make of our lives a study, as if learning natural history or music, that we should begin with the simple exercises first and slowly go on trying  the hard ones, practicing till strength and accuracy became one with the daring ...
 > 
-> But there come times—perhaps this is one of them—when we have to take ourselves more seriously or die, when we have to pull back from the incantations, rhythms we've moved to thoughtlessly, and disenthrall ourselves, bestow ourselves to silence, or a severer listening ..."
+> But there come times—perhaps this is one of them—when we have to take ourselves more seriously or die, when we have to pull back from the incantations, rhythms we've moved to thoughtlessly, and disenthrall ourselves, bestow ourselves to silence, or a severer listening ..." \index{listening}
 
 — [@Rich1984]
 
