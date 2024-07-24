@@ -50,7 +50,7 @@ ggplot(mydata) +
            y = 50, 
            label = "dichotomous \noutcome",
            color = "black") +
-  labs(title = "Continous Outcome Converted To Dichotomous Outcome",
+  labs(title = "Continuous Outcome Converted To \nDichotomous Outcome",
        y = "continuous outcome") +
   xlim(0, 1.1) +
   theme_minimal() +
@@ -59,7 +59,7 @@ ggplot(mydata) +
 ```
 
 
-Pedagogically, this new categorical outcome satisfies our need to have a dichotomous outcome to explain a new group of models--logistic regression models--that are suitable for such outcomes. It is sometimes considered to be a statistical rule of thumb that we should never dichotomize a continuous outcome. Certainly, it is true that when we dichotomize an outcome we lose a certain amount of information in the data about the variation, heterogeneity, or diversity in the outcome. Such a loss of information may reduce our ability to obtain statistically significant results. At the same time, certain numerical cutoffs may have important substantive meanings, clinical meanings, or policy meanings, and dichotomous outcomes may prove more intuitive for readers of our work to understand.
+Pedagogically, this new categorical outcome satisfies our need to have a dichotomous outcome to explain a new group of models--logistic regression models--that are suitable for such outcomes. It is sometimes considered to be a statistical rule of thumb that we should never dichotomize a continuous outcome. It is definitely true that when we dichotomize an outcome we lose a certain amount of information in the data about the variation, heterogeneity, or diversity in the outcome. Such a loss of information may reduce our ability to obtain statistically significant results. At the same time, certain numerical cutoffs may have important substantive meanings, clinical meanings, or policy meanings.  Additionally dichotomous outcomes may prove more intuitive for readers of our work to understand than are continuous outcomes. While there are sometimes quite strongly held statistical opinions that continuous variables should never be dichotomized [@Senn2005], my own personal belief is that sometimes variables dichotomized into categories are more easily communicated to practitioners, clinicians and community members, and in these cases, the importance of clear communication outweighs the statistical arguments against dichotomization. 
 
 For example, I have already considered higher levels of anxiety or depression that may exceed clinically important cutoffs implying a diagnosis `1` versus `0` of depression or anxiety. Levels of income below a certain threshold--whether a country specific threshold or some globally relevant threshold--are considered to be in poverty[^povertyline], while individuals above that income threshold are considered to be not in poverty (`1` versus `0`). In the example considered in detail in this chapter, families with a child having a beneficial outcome at a certain level might be considered to have a child satisfying a certain minimal level of psychological well-being. 
 
@@ -148,11 +148,17 @@ plogistic +
 
 ## Probabilities and Odds
 
-To being to develop a *multilevel logistic regression* model, it is useful to think about ideas of *probabilities* and *odds*. One possible definition of a probability is that it is the long run fraction of times that an event occurs in series of events **CITATION**. \index{probability}
+To being to develop a *multilevel logistic regression* model, it is useful to think about ideas of *probabilities* and *odds*. One possible definition of a probability is that a probability is the long run fraction of times that an event occurs in series of events **CITATION**. \index{probability}
 
-For example, if there are 100 possible occasions for an event--such as experiencing happiness--to occur, and happiness only occurs 10 times out of a possible 100, then we might say that the *probability* or *risk* of happiness is .10. If happiness occurs 90 times out of a possible 100 occurrences, then we would say that the *probability* or *risk* of happiness is .90. \index{risk}
+For example, if there are 100 possible occasions to experience an event--such as to experience happiness--and happiness only occurs 10 times out of a possible 100, then we might say that the *probability* or *risk* of happiness is .10. If happiness occurs 90 times out of a possible 100 occurrences, then we would say that the *probability* or *risk* of happiness is .90. \index{risk}
 
-In contrast, if happiness occurs 10 times out of a possible 100, then the *odds* of happiness occurring are `10/90 = 1/9 = .11`. Similarly if happiness occurs 90 times, then the *odds* of happiness occurring are `90/10 = 9/1 = 9` [@Viera2008]. \index{odds}
+In contrast, the *odds* of an event are equivalently the *count* of times that an event occurs weighed against the *count* of times that the event does not occur, or the *probability* that an event occurs weighed against the *probability* that an event does not occur. 
+
+$$\text{odds} = \frac{\text{count of occurrences}}{\text{count of occurrences}} = \frac{p(\text{occurrence})}{p(\text{non-occurrence})} =$$ {#eq-odds-definition}
+
+$$\frac{p(\text{occurrence})}{1-p(\text{occurrence})}$$
+
+Thus, if happiness occurs 10 times out of a possible 100, then the *odds* of happiness occurring are `10/90 = 1/9 = .11`. Similarly if happiness occurs 90 times, then the *odds* of happiness occurring are `90/10 = 9/1 = 9` [@Viera2008]. \index{odds}
 
 ```{r}
 #| tbl-cap: "Probabilities and Odds"
@@ -189,7 +195,7 @@ A classic diagram to more fully explicate some of these ideas appears in many so
 $$\begin{matrix}
 a & b \\
 c & d 
-\end{matrix}$$ #eq-event-matrix
+\end{matrix}$$ {#eq-event-matrix}
 
 * Then a *risk* is defined as $a/(a + b)$.
 * $c/(c + d)$ is also a *risk*.
@@ -214,17 +220,17 @@ Notice that while there is a level 2 error term, or random intercept $u_{0j}$, t
 
 In a logistic regression the dependent variable is the *log-odds* of the results (@eq-logistic-MLM). The log-odds is likely to be a less than intuitive metric. We can obtain more intuitive results if we *exponentiate* both sides of @eq-logistic-MLM (i.e. raise both sides to the power of $e$).
 
-$$\frac{p(y)}{1-p(y)} = e^{\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}}$$ #eq-logistic-MLM-exponentiated
+$$\frac{p(y)}{1-p(y)} = e^{\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}}$$ {#eq-logistic-MLM-exponentiated}
 
 Through simple algebraic rules around exponents, this then becomes:
 
-$$\frac{p(y)}{1-p(y)}= e^{\beta_0} e^{\beta_1 x_1} e^{\beta_2 x_2} e^{u_{0j}}$$ #eq-logistic-MLM-exponentiated-multiplied
+$$\frac{p(y)}{1-p(y)}= e^{\beta_0} e^{\beta_1 x_1} e^{\beta_2 x_2} e^{u_{0j}}$$ {#eq-logistic-MLM-exponentiated-multiplied}
 
 The quantity $e^{\beta}$ is termed an *odds ratio* and represents the association of a 1 unit change in the independent variable with the *odds* of the outcome.
 
 ## $\beta$ Coefficients and Odds Ratios
 
-It is worth thinking about the relationship between $\beta$ coefficients in a logistic regression, and the associated odds ratio. Many times software only reports the odds ratios.
+It is worth thinking about the relationship between $\beta$ coefficients in a logistic regression, and the associated odds ratio. Many times software only reports the odds ratios. There are simple rules connecting $\beta$ coefficients from regressions with the odds ratio.
 
 --------------------------------------------------
 Substantively    $\beta$     Odds Ratio
@@ -246,6 +252,54 @@ with a
 decrease
 in y
 --------------------------------------------------
+
+: Logistic Regression Coefficients and Odds Ratios {#tbl-coefficients-odds-ratios}
+
+In turn, thinking about odds ratios of different magnitudes can become complicated. 
+
+-------------------------------------------------------------
+Odds Ratio for Group A   Interpretations
+Compared to 
+Group B
+------------------------ ------------------------------------
+.25                       The odds of the outcome for Group A
+                          were 25% of the odds of Group B.
+                          
+                          The odds of the outcome for Group A
+                          were 75% lower than for the Group B. 
+
+1.0                       The odds of the outcome for Group A
+                          were equivalent to (the same as)
+                          the odds for Group B. 
+                          
+                          There was no difference between Group A
+                          and Group B.
+                          
+1.5                       The odds of the outcome for Group A
+                          were 1.5 times those for Group B. 
+
+                          The odds of the outcome for Group A
+                          were 50% higher than for Group B. 
+
+2.0                       The odds of the outcome for Group A 
+                          were 100% higher than those for the
+                          Group B. (technically correct,
+                          but at the very least confusing.)
+                          
+                          The odds of the outcome for Group A
+                          were 2.0 (twice) those for Group B.
+
+2.5                       The odds of the outcome for Group A
+                          were 2.5 times those for the Group B. 
+
+                          The odds of the outcome for Group A
+                          were 150% higher than for Group B.
+                          (technically correct,
+                          but at the very least confusing.)
+                          
+-------------------------------------------------------------
+
+: Describing Odds Ratios of Different Magnitudes {#tbl-odds-ratios-different-magnitudes}
 
 ## Regression With Simulated Multi-Country Data {#sec-logistic-regression}
 
@@ -275,14 +329,16 @@ I now estimate a *conditional* multilevel logistic regression model *with* indep
 ```{r, child=c('./simulate-and-analyze-multilevel-data/tableL1.md')}
 ```
 
-The model demonstrates a number of results that are substantively similar to those in @sec-conditional-model. Increased levels of parental warmth are associated with increased odds of being in the higher outcome category, while increased levels of physical punishment are associated with decreased odds of being in the higher outcome category. The identity category in these data is not associated with higher or lower odds of being in the higher outcome category. Participation in the intervention is associated with higher odds of being in the higher outcome category. The Human Development Index is not associated with different odds of being in the higher outcome category. 
+The model demonstrates a number of results that are substantively similar to those in @sec-conditional-model. Here I use the rubric described in @tbl-odds-ratios-different-magnitudes to first describe each result more generally, and then more precisely[^odds-are-not-risks]. Increased levels of parental warmth are associated with increased odds of being in the higher outcome category. Specifically, the odds of the outcome increase 29% with each 1 unit increase in parental warmth. In contrast, increased levels of physical punishment are associated with decreased odds of being in the higher outcome category. Specifically, a 1 unit increase in the use of physical punishment is associated with a 25% decrease in the odds of the outcome. The identity category in these data is not associated with higher or lower odds of being in the higher outcome category. Participation in the intervention is associated with higher odds of being in the higher outcome category. Specifically, participation in the intervention is associated with a 19% increase in the odds of the outcome. The Human Development Index is not associated with different odds of being in the higher outcome category. 
+
+[^odds-are-not-risks]: In describing these odds ratios, it is miportnt to use the words odds, because, as demonstrated in @tbl-probabilities-odds, odds are not the same thing as risks or probabilities!
 
 ## Predicted Probabilities
 
 I have above discussed the ideas of estimating the association of independent variables with the odds of an outcome. However, while odds ratios are perhaps the most common way of reporting the results of logistic regressions in the empirical literature, there are at least several issues with odds ratios:
 
-1. Odds ratios provide a convenient way of talking about the association of independent variables with categorical outcomes. At the same time, as shown in @tbl-probabilities-odds the odds will overstate the risk, especially as the odds become larger. 
-2. Odds ratios provide one metric of association for the entire range of an independent variable $x$. In contrast, as shown in @fig-marginal-changes, marginal changes in the outcome may be very small for very small values of the independent variable, and very large values of the independent variable, while marginal changes in the outcome are larger for intermediate ranges of the independent variable. Thus, odds ratios, while characterizing the overall logistic regression curve, do not provide a finer grained picture of changes in the dependent variable at different values of the independent variable. 
+1. Odds ratios provide a *convenient* way of talking about the association of independent variables with categorical outcomes. At the same time, as shown in @tbl-probabilities-odds the odds will overstate the risk, especially as the odds become larger. 
+2. Odds ratios provide one metric of association for the entire range of an independent variable $x$. In contrast, as shown in @fig-marginal-changes-2, marginal changes in the outcome may be very small for very small values of the independent variable, and very large values of the independent variable, while marginal changes in the outcome are larger for intermediate ranges of the independent variable. Thus, odds ratios, while characterizing the overall logistic regression curve, do not provide a finer grained picture of changes in the dependent variable at different values of the independent variable. 
 
 ```{r}
 #| fig-cap: "Constant Odds Ratio But Different Changes in Predicted Probability"
@@ -372,7 +428,7 @@ pander::pander(mymargins)
 
 ```
 
-Calculations in @tbl-predicted-probabilities suggest that when considered in terms of the predicted probability of a beneficial outcome, participation in the intervention is associated with a 3.2% *absolute* increase in the probability of a beneficial outcome, and 6.5% *relative* increase in the probability of a beneficial outcome. Whether one considers *absolute* or *relative* changes, these differences are far smaller than those suggested by the odds ratios.
+Calculations in @tbl-predicted-probabilities suggest that when considered in terms of the predicted probability of a beneficial outcome, participation in the intervention is associated with a 3.2% *absolute* increase in the probability of a beneficial outcome, and 6.5% *relative* increase in the probability of a beneficial outcome. Whether one considers *absolute* or *relative* changes, these differences are far smaller than those suggested by the odds ratios. Bear in mind that odds ratios often overstate the changes in risk (@tbl-probabilities-odds).
 
 
 [^povertyline]: For example the World Bank [@WorldBankPovertyLine] considers $2.15 per person per day to be a globally relevant indicator of extreme poverty.
