@@ -71,7 +71,7 @@
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
 \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
@@ -81,7 +81,7 @@
 \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
 \newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
@@ -242,7 +242,7 @@
 \subtitle{Discovering Diversity, Universals, and Particulars in
 Cross-Cultural Research}
 \author{Andrew Grogan-Kaylor}
-\date{2024-07-23}
+\date{2024-07-25}
 
 \begin{document}
 \maketitle
@@ -336,6 +336,57 @@ mentioned texts, and written with the intent of providing a clear and
 practically focused guide for the applied researcher who is attempting
 to carry out better research with diverse populations, particularly
 research directed toward advocacy or social change.
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Complex Answers Hidden Inside Simple Questions}, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, colback=white, toprule=.15mm, bottomrule=.15mm]
+
+My history of teaching statistical methods has over time convinced me
+that statistical questions are often seemingly simple questions, that
+contain complex answers, or answers that have complex
+operationalizations.
+
+One thing that I often say in teaching is that because so many of the
+outcomes we study are so important--and are often so unequally
+allocated--we want to make sure our answers are as precise, and as close
+to correct, as we can make them. As I detail elsewhere in this book, it
+turns out that failing to understand some of the hidden complexities of
+statistical thinking may lead to providing very wrong answers to
+important questions. I explore these complexities of multilevel thinking
+in this book.
+
+Two images that I carry with me, and that help me convey this idea are
+the Nautilus Shell, and the Mandelbrot Set.
+
+\begin{figure}[H]
+
+\begin{minipage}{0.50\linewidth}
+
+\includegraphics[width=\textwidth,height=3in]{nautilus-new.png}
+
+\subcaption{\label{}The Nautilus Shell, image courtesy Microsoft (2024)}
+\end{minipage}%
+%
+\begin{minipage}{0.50\linewidth}
+
+\includegraphics[width=\textwidth,height=3in]{mandelbrot.png}
+
+\subcaption{\label{}Image of the Mandelbrot Set, produced with
+\texttt{mandelbrot} by Moore \& dos Reis (2017)}
+\end{minipage}%
+\newline
+\begin{minipage}{0.50\linewidth}
+Complex structures produced with simple rules\end{minipage}%
+
+\end{figure}%
+
+Each of these images derive from a simple set of rules that produces
+complex outcomes, thus seeming analogous to the process of learning
+statistics. The nautilus shell is based upon a logistic spiral, a spiral
+that as it grows outward maintains a constant angle with the center
+(Livio, 2002). The Mandelbrot set is created by a simple set of
+iterations through a function of complex numbers that ends up generating
+extremely complex outcomes (Moore \& dos Reis, 2017).
+
+\end{tcolorbox}
 
 \bookmarksetup{startatroot}
 
@@ -453,11 +504,11 @@ Of those who struggle for life,
 
 Love, little things,
 
-Landscape and bread, the poetry of everyone.''
+Landscape and bread, the poetry of everyone.'' \index{universalism}
+\index{variation and diversity}
 \end{quote}
 
---- (Dalton, 2000) (translated By Jack Hirschman) \index{universalism}
-\index{variation and diversity}
+--- (Dalton, 2000) (translated By Jack Hirschman)
 
 \(~\)
 
@@ -475,6 +526,7 @@ But there come times---perhaps this is one of them---when we have to
 take ourselves more seriously or die, when we have to pull back from the
 incantations, rhythms we've moved to thoughtlessly, and disenthrall
 ourselves, bestow ourselves to silence, or a severer listening \ldots''
+\index{listening}
 \end{quote}
 
 --- (Rich, 1984)
@@ -500,7 +552,7 @@ the world--just the world as you think you know it.'' (Dove, 1999)
 
 \begin{quote}
 ``Listening to the world. Well, I did that, and I still do it. I still
-do it.'' (Mary Oliver in Oliver \& Tippett, 2015)
+do it.'' (Mary Oliver in Oliver \& Tippett, 2015) \index{listening}
 \end{quote}
 
 \section{Quantitative Methods and Social
@@ -566,7 +618,7 @@ above 3 goals, and could additionally:
 
 Therefore, I consider multilevel modeling to be a principled
 quantitative method for \emph{listening} to the voices of large numbers
-of study participants across social contexts. In
+of study participants across social contexts. \index{listening} In
 Section~\ref{sec-Simpsons}, I consider the way that issues of omitted
 variables--an often under-appreciated issue--contribute to the
 difficulty of obtaining \emph{correct} answers in all quantitative work.
@@ -1054,7 +1106,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, colback=white, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, coltitle=black, bottomrule=.15mm, toprule=.15mm, opacityback=0, breakable, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, colback=white, toprule=.15mm, bottomrule=.15mm]
 
 Data are presented in Stata format. The Appendix considers the analysis
 of multilevel models using multiple software packages: Stata, R \&
@@ -1274,7 +1326,7 @@ conceptual level 2 & N/A & Administrative indicator of social unit \\
   \emph{statistically} aggregated to Level 2.
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, left=2mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, colback=white, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, coltitle=black, bottomrule=.15mm, toprule=.15mm, opacityback=0, breakable, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, colback=white, toprule=.15mm, bottomrule=.15mm]
 
 Such aggregated variables represent the \emph{average} level of a
 response across each Level 2 unit, and are sometimes called ``contextual
@@ -1945,7 +1997,7 @@ outcome varied across countries.
 level, or Level 2, variable in this model is not associated with the
 outcome.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, left=2mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Intuitions}, colback=white, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, coltitle=black, bottomrule=.15mm, toprule=.15mm, opacityback=0, breakable, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Intuitions}, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, colback=white, toprule=.15mm, bottomrule=.15mm]
 
 \emph{Random intercepts} and \emph{random slopes} are statistically
 closely related concepts. In my experience of over 10 years of teaching
@@ -2178,7 +2230,7 @@ In Equation~\ref{eq-indicator-variables} the first group of race,
 omitted from the model, and all comparisons are made to individuals with
 identity \texttt{race1}.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, left=2mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Indicator Variables in Equations And Syntax}, colback=white, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, coltitle=black, bottomrule=.15mm, toprule=.15mm, opacityback=0, breakable, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Indicator Variables in Equations And Syntax}, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, colback=white, toprule=.15mm, bottomrule=.15mm]
 
 Thus, if an identity, such as race, is used as an \emph{indicator
 variable}, it would appear in the equations (e.g.
@@ -2187,7 +2239,7 @@ in the Appendix, in the same place as the \texttt{identity} variable.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, left=2mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reference Categories Need To Be Chosen Carefully}, colback=white, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, coltitle=black, bottomrule=.15mm, toprule=.15mm, opacityback=0, breakable, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reference Categories Need To Be Chosen Carefully}, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, colback=white, toprule=.15mm, bottomrule=.15mm]
 
 Reference categories need to be chosen carefully. This is especially
 true in studies that hope to be attentive to diversity and social
@@ -2203,7 +2255,7 @@ the choice of reference categories can be manually specified.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-warning-color-frame, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, left=2mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Indicator Variables Should Not Be Treated As Continuous Variables}, colback=white, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, coltitle=black, bottomrule=.15mm, toprule=.15mm, opacityback=0, breakable, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colframe=quarto-callout-warning-color-frame, bottomtitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Indicator Variables Should Not Be Treated As Continuous Variables}, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, colback=white, toprule=.15mm, bottomrule=.15mm]
 
 Identities that are measured in the data with a single categorical
 variable with values like \texttt{1}, \texttt{2}, \texttt{3},
@@ -2251,7 +2303,7 @@ Here, the inclusion of \(v_{0k}\), a random intercept for identity,
 would be a way to model the presence of many possible values of an
 identity variable.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, left=2mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Random Intercepts in Equations And Syntax}, colback=white, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, coltitle=black, bottomrule=.15mm, toprule=.15mm, opacityback=0, breakable, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Random Intercepts in Equations And Syntax}, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, colback=white, toprule=.15mm, bottomrule=.15mm]
 
 Thus, if an identity, such as race, is used as a \emph{random
 intercept}, it would appear in the equations (e.g.
@@ -3275,7 +3327,7 @@ outcomes.
 Examining the interaction terms, we find that none of these variables
 modify the time trajectory of the outcome.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, left=2mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Interactions And Random Slopes in Longitudinal Models}, colback=white, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, coltitle=black, bottomrule=.15mm, toprule=.15mm, opacityback=0, breakable, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Interactions And Random Slopes in Longitudinal Models}, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, colback=white, toprule=.15mm, bottomrule=.15mm]
 
 Having now discussed both \emph{random slopes}
 (Section~\ref{sec-conditional-model}), and \emph{interaction terms}
@@ -3778,14 +3830,21 @@ Pedagogically, this new categorical outcome satisfies our need to have a
 dichotomous outcome to explain a new group of models--logistic
 regression models--that are suitable for such outcomes. It is sometimes
 considered to be a statistical rule of thumb that we should never
-dichotomize a continuous outcome. Certainly, it is true that when we
+dichotomize a continuous outcome. It is definitely true that when we
 dichotomize an outcome we lose a certain amount of information in the
 data about the variation, heterogeneity, or diversity in the outcome.
 Such a loss of information may reduce our ability to obtain
 statistically significant results. At the same time, certain numerical
 cutoffs may have important substantive meanings, clinical meanings, or
-policy meanings, and dichotomous outcomes may prove more intuitive for
-readers of our work to understand.
+policy meanings. Additionally dichotomous outcomes may prove more
+intuitive for readers of our work to understand than are continuous
+outcomes. While there are sometimes quite strongly held statistical
+opinions that continuous variables should never be dichotomized (Senn,
+2005), my own personal belief is that sometimes variables dichotomized
+into categories are more easily communicated to practitioners,
+clinicians and community members, and in these cases, the importance of
+clear communication outweighs the statistical arguments against
+dichotomization.
 
 For example, I have already considered higher levels of anxiety or
 depression that may exceed clinically important cutoffs implying a
@@ -3863,22 +3922,33 @@ Logistic Regression}
 
 To being to develop a \emph{multilevel logistic regression} model, it is
 useful to think about ideas of \emph{probabilities} and \emph{odds}. One
-possible definition of a probability is that it is the long run fraction
-of times that an event occurs in series of events \textbf{CITATION}.
-\index{probability}
+possible definition of a probability is that a probability is the long
+run fraction of times that an event occurs in series of events
+\textbf{CITATION}. \index{probability}
 
-For example, if there are 100 possible occasions for an event--such as
-experiencing happiness--to occur, and happiness only occurs 10 times out
-of a possible 100, then we might say that the \emph{probability} or
-\emph{risk} of happiness is .10. If happiness occurs 90 times out of a
-possible 100 occurrences, then we would say that the \emph{probability}
-or \emph{risk} of happiness is .90. \index{risk}
+For example, if there are 100 possible occasions to experience an
+event--such as to experience happiness--and happiness only occurs 10
+times out of a possible 100, then we might say that the
+\emph{probability} or \emph{risk} of happiness is .10. If happiness
+occurs 90 times out of a possible 100 occurrences, then we would say
+that the \emph{probability} or \emph{risk} of happiness is .90.
+\index{risk}
 
-In contrast, if happiness occurs 10 times out of a possible 100, then
-the \emph{odds} of happiness occurring are
-\texttt{10/90\ =\ 1/9\ =\ .11}. Similarly if happiness occurs 90 times,
-then the \emph{odds} of happiness occurring are
-\texttt{90/10\ =\ 9/1\ =\ 9} (Viera, 2008). \index{odds}
+In contrast, the \emph{odds} of an event are equivalently the
+\emph{count} of times that an event occurs weighed against the
+\emph{count} of times that the event does not occur, or the
+\emph{probability} that an event occurs weighed against the
+\emph{probability} that an event does not occur.
+
+\begin{equation}\phantomsection\label{eq-odds-definition}{\text{odds} = \frac{\text{count of occurrences}}{\text{count of occurrences}} = \frac{p(\text{occurrence})}{p(\text{non-occurrence})} =}\end{equation}
+
+\[\frac{p(\text{occurrence})}{1-p(\text{occurrence})}\]
+
+Thus, if happiness occurs 10 times out of a possible 100, then the
+\emph{odds} of happiness occurring are \texttt{10/90\ =\ 1/9\ =\ .11}.
+Similarly if happiness occurs 90 times, then the \emph{odds} of
+happiness occurring are \texttt{90/10\ =\ 9/1\ =\ 9} (Viera, 2008).
+\index{odds}
 
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2500}}
@@ -3927,10 +3997,10 @@ about and talking about the chances that something will happen.
 A classic diagram to more fully explicate some of these ideas appears in
 many sources. (e.g. Viera, 2008)
 
-\[\begin{matrix}
+\begin{equation}\phantomsection\label{eq-event-matrix}{\begin{matrix}
 a & b \\
 c & d 
-\end{matrix}\] \#eq-event-matrix
+\end{matrix}}\end{equation}
 
 \begin{itemize}
 \item
@@ -3980,13 +4050,11 @@ to be a less than intuitive metric. We can obtain more intuitive results
 if we \emph{exponentiate} both sides of Equation~\ref{eq-logistic-MLM}
 (i.e.~raise both sides to the power of \(e\)).
 
-\[\frac{p(y)}{1-p(y)} = e^{\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}}\]
-\#eq-logistic-MLM-exponentiated
+\begin{equation}\phantomsection\label{eq-logistic-MLM-exponentiated}{\frac{p(y)}{1-p(y)} = e^{\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}}}\end{equation}
 
 Through simple algebraic rules around exponents, this then becomes:
 
-\[\frac{p(y)}{1-p(y)}= e^{\beta_0} e^{\beta_1 x_1} e^{\beta_2 x_2} e^{u_{0j}}\]
-\#eq-logistic-MLM-exponentiated-multiplied
+\begin{equation}\phantomsection\label{eq-logistic-MLM-exponentiated-multiplied}{\frac{p(y)}{1-p(y)}= e^{\beta_0} e^{\beta_1 x_1} e^{\beta_2 x_2} e^{u_{0j}}}\end{equation}
 
 The quantity \(e^{\beta}\) is termed an \emph{odds ratio} and represents
 the association of a 1 unit change in the independent variable with the
@@ -3997,12 +4065,25 @@ Ratios}{\textbackslash beta Coefficients and Odds Ratios}}\label{beta-coefficien
 
 It is worth thinking about the relationship between \(\beta\)
 coefficients in a logistic regression, and the associated odds ratio.
-Many times software only reports the odds ratios.
+Many times software only reports the odds ratios. There are simple rules
+connecting \(\beta\) coefficients from regressions with the odds ratio.
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2361}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1528}}
   >{\raggedleft\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1528}}@{}}
+\caption{Logistic Regression Coefficients and Odds
+Ratios}\label{tbl-coefficients-odds-ratios}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Substantively
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\beta\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Odds Ratio
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Substantively
@@ -4018,6 +4099,54 @@ Odds Ratio
 x is associated with an increase in y & \(>0.0\) & \(>1.0\) \\
 no association of x with y & \(0.0\) & \(1.0\) \\
 x is associated with a decrease in y & \(<0.0\) & \(<1.0\) \\
+\end{longtable}
+
+In turn, thinking about odds ratios of different magnitudes can become
+complicated.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3472}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5139}}@{}}
+\caption{Describing Odds Ratios of Different
+Magnitudes}\label{tbl-odds-ratios-different-magnitudes}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Odds Ratio for Group A Compared to Group B
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Interpretations
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Odds Ratio for Group A Compared to Group B
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Interpretations
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+.25 & The odds of the outcome for Group A were 25\% of the odds of Group
+B. \\
+& The odds of the outcome for Group A were 75\% lower than for the Group
+B. \\
+1.0 & The odds of the outcome for Group A were equivalent to (the same
+as) the odds for Group B. \\
+& There was no difference between Group A and Group B. \\
+1.5 & The odds of the outcome for Group A were 1.5 times those for Group
+B. \\
+& The odds of the outcome for Group A were 50\% higher than for Group
+B. \\
+2.0 & The odds of the outcome for Group A were 100\% higher than those
+for the Group B. (technically correct, but at the very least
+confusing.) \\
+& The odds of the outcome for Group A were 2.0 (twice) those for Group
+B. \\
+2.5 & The odds of the outcome for Group A were 2.5 times those for the
+Group B. \\
+& The odds of the outcome for Group A were 150\% higher than for Group
+B. (technically correct, but at the very least confusing.) \\
 \end{longtable}
 
 \section{Regression With Simulated Multi-Country
@@ -4091,15 +4220,26 @@ Number of observations & 3000 & \\
 ** p\textless.01, * p\textless.05
 
 The model demonstrates a number of results that are substantively
-similar to those in Section~\ref{sec-conditional-model}. Increased
-levels of parental warmth are associated with increased odds of being in
-the higher outcome category, while increased levels of physical
+similar to those in Section~\ref{sec-conditional-model}. Here I use the
+rubric described in Table~\ref{tbl-odds-ratios-different-magnitudes} to
+first describe each result more generally, and then more
+precisely\footnote{In describing these odds ratios, it is miportnt to
+  use the words odds, because, as demonstrated in
+  Table~\ref{tbl-probabilities-odds}, odds are not the same thing as
+  risks or probabilities!}. Increased levels of parental warmth are
+associated with increased odds of being in the higher outcome category.
+Specifically, the odds of the outcome increase 29\% with each 1 unit
+increase in parental warmth. In contrast, increased levels of physical
 punishment are associated with decreased odds of being in the higher
-outcome category. The identity category in these data is not associated
-with higher or lower odds of being in the higher outcome category.
+outcome category. Specifically, a 1 unit increase in the use of physical
+punishment is associated with a 25\% decrease in the odds of the
+outcome. The identity category in these data is not associated with
+higher or lower odds of being in the higher outcome category.
 Participation in the intervention is associated with higher odds of
-being in the higher outcome category. The Human Development Index is not
-associated with different odds of being in the higher outcome category.
+being in the higher outcome category. Specifically, participation in the
+intervention is associated with a 19\% increase in the odds of the
+outcome. The Human Development Index is not associated with different
+odds of being in the higher outcome category.
 
 \section{Predicted Probabilities}\label{predicted-probabilities}
 
@@ -4113,21 +4253,21 @@ several issues with odds ratios:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Odds ratios provide a convenient way of talking about the association
-  of independent variables with categorical outcomes. At the same time,
-  as shown in Table~\ref{tbl-probabilities-odds} the odds will overstate
-  the risk, especially as the odds become larger.
+  Odds ratios provide a \emph{convenient} way of talking about the
+  association of independent variables with categorical outcomes. At the
+  same time, as shown in Table~\ref{tbl-probabilities-odds} the odds
+  will overstate the risk, especially as the odds become larger.
 \item
   Odds ratios provide one metric of association for the entire range of
   an independent variable \(x\). In contrast, as shown in
-  Figure~\ref{fig-marginal-changes}, marginal changes in the outcome may
-  be very small for very small values of the independent variable, and
-  very large values of the independent variable, while marginal changes
-  in the outcome are larger for intermediate ranges of the independent
-  variable. Thus, odds ratios, while characterizing the overall logistic
-  regression curve, do not provide a finer grained picture of changes in
-  the dependent variable at different values of the independent
-  variable.
+  Figure~\ref{fig-marginal-changes-2}, marginal changes in the outcome
+  may be very small for very small values of the independent variable,
+  and very large values of the independent variable, while marginal
+  changes in the outcome are larger for intermediate ranges of the
+  independent variable. Thus, odds ratios, while characterizing the
+  overall logistic regression curve, do not provide a finer grained
+  picture of changes in the dependent variable at different values of
+  the independent variable.
 \end{enumerate}
 
 \begin{figure}
@@ -4147,7 +4287,7 @@ For these reasons it is often convenient to calculate predicted
 probabilities at different values of the independent variables.
 \index{predicted probabilities}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, left=2mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{The Algebra May Be Helpful}, colback=white, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, coltitle=black, bottomrule=.15mm, toprule=.15mm, opacityback=0, breakable, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, leftrule=.75mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{The Algebra May Be Helpful}, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, colback=white, toprule=.15mm, bottomrule=.15mm]
 
 Below, I provide algebra for calculating predicted probabilities. This
 algebra sometimes proves difficult for readers to follow but is provided
@@ -4223,7 +4363,8 @@ outcome, participation in the intervention is associated with a 3.2\%
 6.5\% \emph{relative} increase in the probability of a beneficial
 outcome. Whether one considers \emph{absolute} or \emph{relative}
 changes, these differences are far smaller than those suggested by the
-odds ratios.
+odds ratios. Bear in mind that odds ratios often overstate the changes
+in risk (Table~\ref{tbl-probabilities-odds}).
 
 \bookmarksetup{startatroot}
 
@@ -4555,6 +4696,11 @@ and depression during {COVID-19}: Are adults in households with children
 faring worse? \emph{Journal of General Internal Medicine}, \emph{37},
 1328--1330. \url{https://doi.org/10.1007/s11606-021-07256-9}
 
+\bibitem[\citeproctext]{ref-Livio2002}
+Livio, M. (2002). The golden ratio: The story of phi, the world's most
+astonishing number. In \emph{The golden ratio: the story of phi, the
+world's most astonishing number} (1st ed.). Broadway Books.
+
 \bibitem[\citeproctext]{ref-Lovelace1992}
 Lovelace, A. K. (1992). Ada: The enchantress of numbers: A selection
 from the letters of {L}ord {B}yron's daughter and her description of the
@@ -4621,6 +4767,13 @@ Matuschek, H., Kliegl, R., Vasishth, S., Baayen, H., \& Bates, D.
 \bibitem[\citeproctext]{ref-Mbiti1970}
 Mbiti, J. S. (1970). \emph{African religions and philosophy}. Anchor
 Books.
+
+\bibitem[\citeproctext]{ref-PowerPoint2024}
+Microsoft. (2024). \emph{PowerPoint 16.87}. Microsoft.
+
+\bibitem[\citeproctext]{ref-Mandelbrot}
+Moore, B., \& dos Reis, M. (2017). \emph{Mandelbrot: Generates views on
+the mandelbrot set}. \url{https://CRAN.R-project.org/package=mandelbrot}
 
 \bibitem[\citeproctext]{ref-Mundlak1978}
 Mundlak, Y. (1978). On the pooling of time series and cross section
@@ -4716,6 +4869,11 @@ Schunck, R. (2013). Within and between estimates in random-effects
 models: Advantages and drawbacks of correlated random effects and hybrid
 models. \emph{The Stata Journal}, \emph{13}, 65--76.
 \url{https://doi.org/10.1177/1536867X1301300105}
+
+\bibitem[\citeproctext]{ref-Senn2005}
+Senn, S. (2005). Dichotomania: An obsessive compulsive disorder that is
+badly affecting the quality of analysis of pharmaceutical trials.
+\emph{International Statistical Institute 55th Session}, 13.
 
 \bibitem[\citeproctext]{ref-ShraderFrechette2014}
 Shrader-Frechette, K. (2014). \emph{Tainted : How philosophy of science
