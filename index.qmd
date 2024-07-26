@@ -65,7 +65,7 @@ Two images that I carry with me, and that help me convey this idea are the Nauti
 Complex structures produced with simple rules
 :::
 
-Each of these images derive from a simple set of rules that produces complex outcomes, thus seeming analogous to the process of learning statistics. The nautilus shell is based upon a logistic spiral, a spiral that as it grows outward maintains a constant angle with the center [@Livio2002]. The Mandelbrot set is created by a simple set of iterations through a function of complex numbers that ends up generating extremely complex outcomes [@Mandelbrot]. 
+Just as each of these images is a complex outcome that derives from a simple set of rules, complex situations emerge from applying statistical ideas, that are initially simple in principle. The nautilus shell is based upon a logarithmic spiral, a spiral that as it grows outward maintains a constant angle with the center [@Livio2002]. The Mandlebrot set is a complex outcome that results from iterating a simple rule over and over [@Mandelbrot]. 
 :::
 
 
