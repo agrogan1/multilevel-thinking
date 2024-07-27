@@ -6,7 +6,7 @@ In my experience, teaching about multilevel models, conducting research, using m
 
 It is worth noting that in practice, many longitudal models are estimated as two level models with the time points nested inside individuals. Indeed, had there been no statistically, significant geographic clustering by country in equation **XXX**, this model could have been estimated with a two level model. 
 
-Let us consider a scenario in which it is appropriate to estimate a model with four levels. Both the World Bank, and the United Nations divide the countries of the world into a number of regions, we can imagine adding a regional to our data. 
+Let us consider a scenario in which it is appropriate to estimate a model with four levels. Both the World Bank (**CITATION**), and the United Nations (**CITATION**) divide the countries of the world into a number of regions (**COUNTRYCODE CITATION**). Thus, we can imagine adding a few regional groupings to our data. 
 
 ## Unconditional Model
 
