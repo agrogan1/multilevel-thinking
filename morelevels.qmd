@@ -1,0 +1,9 @@
+ In my experience, teaching about multilevel models, conducting research, using multiple models, and reading and reviewing research articles by others using multilevel models, the vast majority of multilevel modeling is done with two level models. In this chapter, I discussed models with more than two levels as well as models were the multiple levels are not hierarchically nested, but instead cross classified. In chapter blank, I have already begun discussion of models with more than two levels. In that chapter, I discussed a longitudinal model with three levels time points nested inside individuals inside countries.
+
+It is worth noting that impact, many longitude models are estimated as two level models with the time points nested inside individuals. Indeed, had there been no statistically, significant geographic, clustering, but country in equation, blank, blank, blank this model could’ve been estimated with the two level model. Let us consider a scenario in which it is appropriate to estimate a model with four levels. Both the world bank, and the United Nations divide the countries of the world into a number of regions, we can imagine adding a regional to our data. Unconditional model
+
+ICC
+
+More general formula according to state of corporation
+
+Conditional model.
