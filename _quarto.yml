@@ -28,6 +28,7 @@ book:
     - cross-sectional.qmd
     - longitudinal.qmd
     - logistic.qmd
+    - morelevels.qmd
     - conclusion.qmd
     - references.qmd
     - about.qmd
