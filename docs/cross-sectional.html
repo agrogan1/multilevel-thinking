@@ -409,8 +409,14 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./morelevels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Models With More Complicated Structures</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./conclusion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -422,7 +428,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./about.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">About the Author</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">About the Author</span></span></a>
   </div>
 </li>
     </ul>
@@ -1229,7 +1235,7 @@ Identities As Random Intercepts in Equations And Syntax
 </div>
 </div>
 <p>An <em>advantage</em> of the approach outlined in <a href="#eq-identity-random-intercept" class="quarto-xref">Equation&nbsp;<span>5.9</span></a> is that we could model multiple identities without including a large–potentially enormous–number of indicator variables. We would thus avoid using up a large number of degrees of freedom in our data set. We would also avoid the conceptual difficulties that might come from including a large number of indicator variables in our data set. For example, if we had 30 categories of a particular categorical variable, it might be difficult to interpret the resultant 29 regression coefficients for the 29 indicator variables. At the same time, it would be straightforward to include a random intercept that had 30, or even 50, or 100, or 1,000 possible values.</p>
-<p>A potential <em>disadvantage</em> of the approach outlined in <a href="#eq-identity-random-intercept" class="quarto-xref">Equation&nbsp;<span>5.9</span></a> is that this is multi-country data that already employs a random slope, <span class="math inline">\(u_{0j}\)</span>. Adding <span class="math inline">\(v_{0k}\)</span> means that we now have a model with <em>two</em> random slopes, a topic which is discussed in <strong>Chapter XXXXXXX</strong>.</p>
+<p>A potential <em>disadvantage</em> of the approach outlined in <a href="#eq-identity-random-intercept" class="quarto-xref">Equation&nbsp;<span>5.9</span></a> is that this is multi-country data that already employs a random slope, <span class="math inline">\(u_{0j}\)</span>. Adding <span class="math inline">\(v_{0k}\)</span> means that we now have a model with <em>two</em> random intercepts, a topic which is discussed more extensively in <a href="morelevels.html" class="quarto-xref"><span>Chapter 8</span></a>.</p>
 <p>A <em>caveat</em> of the approach outlined in <a href="#eq-identity-random-intercept" class="quarto-xref">Equation&nbsp;<span>5.9</span></a> is that random intercepts (e.g.&nbsp;<span class="math inline">\(v_{0k}\)</span> and <span class="math inline">\(u_{0j}\)</span>)–which are essentially error terms at level 2–are assumed to follow a normal distribution <span class="citation" data-cites="StataCorp2021:2">(<a href="references.html#ref-StataCorp2021:2" role="doc-biblioref">StataCorp, 2023</a>)</span>. Ten identities, to follow the example above, is generally considered to be too few groups to satisfy this assumption of a normal distribution. <span class="citation" data-cites="Maas2004">C. J. M. Maas &amp; Hox (<a href="references.html#ref-Maas2004" role="doc-biblioref">2004</a>)</span> suggest that at least 50 level 2 units are necessary to ensure satisfaction of this normality assumption. Importantly, if one has fewer than 50 units, the bias introduced only appears to affect the estimation of the level 2 random intercepts and slopes, not the estimation of the independent variables <span class="citation" data-cites="Maas2004 Maas2005">(<a href="references.html#ref-Maas2004" role="doc-biblioref">C. J. M. Maas &amp; Hox, 2004</a>; <a href="references.html#ref-Maas2005" role="doc-biblioref">C. Maas &amp; Hox, 2005</a>)</span>. If one has fewer than this number one possible procedure is to model the groups both as a <em>random intercept</em> and as <em>a set of indicator variables</em>, and to see if the different approaches lead to different substantive conclusions <span class="citation" data-cites="Gershoff2010">(<a href="references.html#ref-Gershoff2010" role="doc-biblioref">Gershoff et al., 2010</a>)</span>.</p>
 <p>A second <em>caveat</em> of modeling identities as a random intercept is that these identities would need to be mutually exclusive. For example, “black”, “white” and “identifies as both black and white”, would all need to be separately coded identities under this approach.</p>
 </section>
@@ -2243,7 +2249,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","loop":false});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
