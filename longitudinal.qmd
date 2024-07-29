@@ -1,4 +1,4 @@
-# The Longitudinal Multilevel Model
+# The Longitudinal Multilevel Model {#sec-longitudinal}
 
 > "Mathematics is the art of giving the same name to different things." [@Poincare1908]
 

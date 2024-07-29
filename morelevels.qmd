@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In my experience, teaching about multilevel models, conducting research, using multilevel models, and reading and reviewing research articles by others using multilevel models, the vast majority of multilevel modeling is done with two level models. In this chapter, I discuss models with more than two levels as well as models where the multiple levels are not hierarchically nested, but are instead *cross classified*. In chapter **XXX**, I have already begun a discussion of models with more than two levels. In that chapter, I discussed a longitudinal model with three levels time points nested inside individuals inside countries.
+In my experience, teaching about multilevel models, conducting research, using multilevel models, and reading and reviewing research articles by others using multilevel models, the vast majority of multilevel modeling is done with two level models. In this chapter, I discuss models with more than two levels as well as models where the multiple levels are not hierarchically nested, but are instead *cross classified*. In @sec-longitudinal, I have already begun a discussion of models with more than two levels. In that chapter, I discussed a longitudinal model with three levels time points nested inside individuals inside countries.
 
-It is worth noting that in practice, many longitudal models are estimated as two level models with the time points nested inside individuals. Indeed, had there been no statistically, significant geographic clustering by country in equation **XXX**, this model could have been estimated with a two level model. 
+It is worth noting that in practice, many longitudinal models are estimated as two level models with the time points nested inside individuals. Indeed, had there been no statistically, significant geographic clustering by country in @eq-MLM-longitudinal, this model could have been estimated with a two level model. 
 
 Let us consider a scenario in which it is appropriate to estimate a model with four levels. Both the World Bank (**CITATION**), and the United Nations (**CITATION**) divide the countries of the world into a number of regions (**COUNTRYCODE CITATION**). Thus, we can imagine adding a few regional groupings to our data. 
 
