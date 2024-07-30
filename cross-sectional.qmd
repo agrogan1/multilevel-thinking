@@ -328,9 +328,9 @@ In a classic text, @Freedman1991 offer a short definition of variable types that
 
 > "Some questions are answered by giving a number: the corresponding variables are *quantitative*. Age, family size, and family income are examples of quantitative variables. Some questions are answered with adjectives, and the corresponding variables are *qualitative*: examples are marital status (single, married, widowed, divorced, separated) and employment status (employed, unemployed, not in the labor force)." 
 
-When teaching and learning about statistical software, I find it easiest to re-label *quantitative* variables as *continuous* or *numeric* variables, and *qualitative* variables as *categorical* variables.[^finer_distinctions]
+When teaching and learning about statistical software, I find it easiest to talk about *quantitative* variables as *continuous* or *numeric* variables, and *qualitative* variables as *categorical* variables.[^finer_distinctions]
 
-[^finer_distinctions]: I recognize that there are finer distinctions to be made here, many of which @Freedman1991--as well as other introductory texts--go on to make. However, for the purposes of explication in this book, I find the *continuous/numeric* versus *categorical* variable distinction to be the most useful and the one that most readily facilitates communication with faculty colleagues and with students. 
+[^finer_distinctions]: I recognize that there are much finer distinctions to be made here, many of which @Freedman1991--as well as other introductory texts--go on to make. However, for the purposes of explication in this book, I find the *continuous/numeric* versus *categorical* variable distinction to be the most useful and the one that most readily facilitates communication with faculty colleagues and with students. 
 
 ### Categorical Variables as Indicators or Random Intercepts
 
@@ -404,6 +404,21 @@ Reference categories need to be chosen carefully. This is especially true in stu
 
 Identities that are measured in the data with a single categorical variable with values like `1`, `2`, `3`, `4`, `5`, `6` should *not* be modeled as a single continuous variable. For example, if the data are similar to those presented in @tbl-race-ethnicity-data--where identity is measured as a single column of data--it is important that the multiple identities *not* be modeled as a single variable, which would end up *de facto* treating this multi-category *categorical* variable as a single *continuous* variable. Instead, multiple indicator variables ($k-1$) for the multiple ($k$) identities should be clearly specified in one's equation (as in @eq-indicator-variables) and in the statistical syntax. Details of how to accomplish this for different software packages are included in the Appendix.
 :::
+
+```{r}
+#| eval: false
+#| echo: false
+#| output: false
+
+# ::: {.callout-warning}
+# #### Contextual Variables As Indicator Variables
+# 
+# If a variable is actually a variable that is aggregated to Level 2, sometimes called a contextual variable (@sec-levels), it may be difficult to estimate multiple categorical contextual variables at the same time. \index{contextual variables}
+# 
+# This problem does not occur 
+# :::
+
+```
 
 ### Identities as Random Intercepts or Slopes
 
