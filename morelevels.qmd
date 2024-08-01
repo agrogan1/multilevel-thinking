@@ -8,7 +8,7 @@ It is worth noting that in practice, many longitudinal models are estimated as t
 
 ## Data
 
-Let us consider scenarios in which it is appropriate to estimate models with four levels, or with levels that are cross-classified. Both the World Bank (**CITATION**), and the United Nations (**CITATION**) divide the countries of the world into a number of regions (**COUNTRYCODE CITATION**). Thus, we can imagine adding a few regional groupings to our data. 
+Let us consider scenarios in which it is appropriate to estimate models with four levels, or with levels that are cross-classified. Both the World Bank, and the United Nations divide the countries of the world into a number of regions [@ArelBundock2018]. Thus, we can imagine adding a few of these regional groupings to our data in order to illustrate these ideas.
 
 ## Three Or More Levels
 
@@ -18,6 +18,13 @@ Let us consider scenarios in which it is appropriate to estimate models with fou
 ### Unconditional Model
 
 ## ICC
+
+Calculation of the ICC becomes conceptually and statistically more complicated as we increase the number of levels.
+
+In order to think about this issue, it is useful to think first about the conceptual issue. With a three level model, as noted in section XXX we have two possible ICC’s to consider. One measures the amount of clustering for observations within the same level unit but different level two units, well the second measures the amount of cluster for observations within the same level three unit same level two unit. 
+
+The choices are illustrated in the left panel of XXX. Thinking this through, if it becomes more clear that the choices of ICC for a four level model, are therefore more complicated. One can consider observations that are only clustered within the same level 40 unit but different level three units and different level two units the same level four unit unit the same level three unit and different level two units, and so on and so forth.
+
 
 **More general formula according to Stata Corporation** (**Do ICC's proliferate???**)
 
