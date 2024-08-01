@@ -97,7 +97,7 @@ We see that in the ordinary least squares analysis, the independent variable is 
 
 ### Multilevel Structure {#sec-multilevelstructure}
 
-Associations between two variables can be *very different* (or even *reversed*) depending upon whether or not the analysis is "aware" of the grouped, nested, or clustered nature of the data [@Gelman2007]. In the example presented here, the groups are countries, but could as easily be neighborhoods, communities, or schools. 
+Associations between two variables can be *very different* (or even *reversed*) depending upon whether or not the analysis is "aware" of the grouped, nested, or clustered nature of the data [@Gelman2007; @Nieuwenhuis2015]. In the example presented here, the groups are countries, but could as easily be neighborhoods, communities, or schools. 
 
 > For teaching purposes, I use an example with very few clusters, although it would be more appropriate to apply multilevel analysis to an example with many more clusters e.g. ($N_\text{clusters} >= 30$)
 
