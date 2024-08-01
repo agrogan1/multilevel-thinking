@@ -1,0 +1,21 @@
+graph LR
+
+subgraph 4 Level Model
+
+L4[same level 4 unit]-->L3DA[different level 3 unit]
+
+L4[same level 4 unit]-->L3SA[same level 3 unit]
+
+L3SA-->L2DA[different level 2 unit]
+
+L3SA-->L2SA[same level 2 unit]
+
+end
+
+subgraph 3 Level Model
+
+L3SB[same level 3 unit]-->L2DB[different level 2 unit]
+
+L3SB-->L2SB[same level 2 unit]
+
+end

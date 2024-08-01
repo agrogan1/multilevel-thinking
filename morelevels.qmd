@@ -25,8 +25,9 @@ In order to think about this issue, it is useful to think first about the concep
 
 The choices are illustrated in the left panel of XXX. Thinking this through, if it becomes more clear that the choices of ICC for a four level model, are therefore more complicated. One can consider observations that are only clustered within the same level 40 unit but different level three units and different level two units the same level four unit unit the same level three unit and different level two units, and so on and so forth.
 
+![ICCs in 3 Level And 4 Level Models](ICC.png){width=50%} 
 
-**More general formula according to Stata Corporation** (**Do ICC's proliferate???**)
+More generally formula Stata Corporation provides the following format for ICC's in multilevel models.
 
 ### Conditional Model
 
@@ -35,8 +36,6 @@ The choices are illustrated in the left panel of XXX. Thinking this through, if 
 ### Unconditional Model
 
 ## ICC
-
-**More general formula according to Stata Corporation** (**Do ICC's proliferate???**)
 
 ### Conditional Model
 
