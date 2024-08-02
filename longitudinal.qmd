@@ -282,7 +282,11 @@ Most software programs for multilevel modeling allow one to incorporate measures
 
 Causal reasoning is sometimes considered to be a statistical--or even overly technical--concern. Arguably, however, whenever one is using research to make recommendations about *interventions*, or *treatments*, or *policies*, one is engaging in some form of causal reasoning [@Duncan2006]. \index{causality}
 
-> If one is saying that implementing *x* would result in beneficial changes in *y*, one is arguing--at least implicitly--that *x* is one of the causes of *y*. 
+::: {.callout-tip}
+#### The Ubiquity of Causal Reasoning
+
+If one is saying that implementing *x* would result in beneficial changes in *y*, one is arguing--at least implicitly--that *x* is one of the *causes* of *y*. 
+:::
 
 It then behooves one to be explicit about this chain of causal reasoning. For example, to continue one of the substantive examples of this book, if one is going to argue for programs, interventions, or treatments that promote *parental warmth*, or that discourage parental use of *physical punishment* with the aim of improving children's *mental health*, one must be at least reasonably sure that *parental warmth* and *physical punishment* are *causes* of children's mental health.
 
