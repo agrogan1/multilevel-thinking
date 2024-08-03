@@ -106,6 +106,7 @@ div.csl-indent {
 <meta name="citation_title" content="[[8]{.chapter-number}&nbsp; [Models With More Complicated Structures]{.chapter-title}]{#sec-morelevels .quarto-section-identifier}">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-thinking/">
 <meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=Triumph of the sparrow : Zen poems;,citation_abstract=“You need know nothing of Zen to become immersed in his work. You will inevitably know something of Zen when you emerge” (Jim Harrison, American Poetry Review). Shinkichi Takahashi is one of the truly great figures in world poetry. In the classic Zen tradition of economy, disciplined attention, and subtlety, Takahashi lucidly captures that which is contemporary in its problems and experiences, yet classic in its quest for unity with the Absolute. Lucien Stryk, Takahashi’s fellow poet and close friend, here presents Takahashi’s complete body of Zen poems in an English translation that conveys the grace and power of Takahashi’s superb art. “A first-rate poet... [Takahashi] springs out of some crack between ordinary worlds: that is, there is some genuine madness of the sort striven for in Zen.” —Robert Bly;,citation_author=Shinkichi Takahashi;,citation_publication_date=2000;,citation_cover_date=2000;,citation_year=2000;,citation_isbn=9780802137364;,citation_volume=First Grove Press edition;">
 <meta name="citation_reference" content="citation_title=Statistics as principled argument.;,citation_abstract=Abelson delves into the . . . problems of interpreting quantitative data and then presenting them in the context of a coherent story about one’s research. [This book is] filled with . . . real-life (and real-research) examples rather than . . . recipes for analysis. [It is intended for] beginning graduate students and researchers alike. (PsycINFO Database Record (c) 2016 APA, all rights reserved);,citation_author=Robert P Abelson;,citation_publication_date=1995;,citation_cover_date=1995;,citation_year=1995;,citation_isbn=0-8058-0527-3 (Hardcover); 0-8058-0528-1 (Paperback);,citation_book_title=Statistics as principled argument.;">
 <meta name="citation_reference" content="citation_title=The optics of Ibn al-Haytham books IV-V: On reflection and images seen by reflection;,citation_author=Alhazen;,citation_editor=J. P. Hogendijk;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_series_title=Warburg institute studies and texts; 8;">
 <meta name="citation_reference" content="citation_title=Fixed effects regression models;,citation_author=Paul Allison;,citation_publication_date=2009;,citation_cover_date=2009;,citation_year=2009;">
@@ -459,6 +460,9 @@ div.csl-indent {
 </header>
 
 
+<blockquote class="blockquote">
+<p>“The language we have in that world is not large enough for the territory that we’ve already entered.” <span class="citation" data-cites="Whyte2016">(<a href="references.html#ref-Whyte2016" role="doc-biblioref">Whyte &amp; Tippett, 2016</a>)</span></p>
+</blockquote>
 <section id="introduction" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">8.1</span> Introduction</h2>
 <p>In my experience, teaching about multilevel models, conducting research, using multilevel models, and reading and reviewing research articles by others using multilevel models, the vast majority of multilevel modeling is done with two level models. In this chapter, I discuss models with more than two levels as well as models where the multiple levels are not hierarchically nested, but are instead <em>cross classified</em>. In <a href="longitudinal.html" class="quarto-xref"><span>Chapter 6</span></a>, I have already begun a discussion of models with more than two levels. In that chapter, I discussed a longitudinal model with three levels time points nested inside individuals inside countries.</p>
@@ -484,7 +488,7 @@ div.csl-indent {
 <p>The choices are illustrated in the left panel of XXX. Thinking this through, if it becomes more clear that the choices of ICC for a four level model, are therefore more complicated. One can consider observations that are only clustered within the same level 40 unit but different level three units and different level two units the same level four unit unit the same level three unit and different level two units, and so on and so forth.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="ICC.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="ICCs in 3 Level And 4 Level Models"><img src="ICC.png" class="img-fluid figure-img" style="width:50.0%" alt="ICCs in 3 Level And 4 Level Models"></a></p>
+<p><a href="ICC.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="ICCs in 3 Level And 4 Level Models"><img src="ICC.png" class="img-fluid figure-img" style="width:50.0%" alt="ICCs in 3 Level And 4 Level Models"></a></p>
 <figcaption>ICCs in 3 Level And 4 Level Models</figcaption>
 </figure>
 </div>
@@ -511,6 +515,9 @@ div.csl-indent {
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
 <div id="ref-ArelBundock2018" class="csl-entry" role="listitem">
 Arel-Bundock, V., Enevoldsen, N., &amp; Yetman, C. (2018). Countrycode: An r package to convert country names and country codes. <em>Journal of Open Source Software</em>, <em>3</em>(28), 848. <a href="https://doi.org/10.21105/joss.00848">https://doi.org/10.21105/joss.00848</a>
+</div>
+<div id="ref-Whyte2016" class="csl-entry" role="listitem">
+Whyte, D., &amp; Tippett, K. (2016). <em><span>D</span>avid <span>W</span>hyte: Seeking language large enough</em>. The On Being Project. <a href="https://onbeing.org/programs/david-whyte-seeking-language-large-enough/">https://onbeing.org/programs/david-whyte-seeking-language-large-enough/</a>
 </div>
 </div>
 </section>
@@ -1061,7 +1068,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":false});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","loop":false,"selector":".lightbox"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

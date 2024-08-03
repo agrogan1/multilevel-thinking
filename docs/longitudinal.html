@@ -135,6 +135,7 @@ window.Quarto = {
 <meta name="citation_title" content="[[6]{.chapter-number}&nbsp; [The Longitudinal Multilevel Model]{.chapter-title}]{#sec-longitudinal .quarto-section-identifier}">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/multilevel-thinking/">
 <meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=Triumph of the sparrow : Zen poems;,citation_abstract=“You need know nothing of Zen to become immersed in his work. You will inevitably know something of Zen when you emerge” (Jim Harrison, American Poetry Review). Shinkichi Takahashi is one of the truly great figures in world poetry. In the classic Zen tradition of economy, disciplined attention, and subtlety, Takahashi lucidly captures that which is contemporary in its problems and experiences, yet classic in its quest for unity with the Absolute. Lucien Stryk, Takahashi’s fellow poet and close friend, here presents Takahashi’s complete body of Zen poems in an English translation that conveys the grace and power of Takahashi’s superb art. “A first-rate poet... [Takahashi] springs out of some crack between ordinary worlds: that is, there is some genuine madness of the sort striven for in Zen.” —Robert Bly;,citation_author=Shinkichi Takahashi;,citation_publication_date=2000;,citation_cover_date=2000;,citation_year=2000;,citation_isbn=9780802137364;,citation_volume=First Grove Press edition;">
 <meta name="citation_reference" content="citation_title=Statistics as principled argument.;,citation_abstract=Abelson delves into the . . . problems of interpreting quantitative data and then presenting them in the context of a coherent story about one’s research. [This book is] filled with . . . real-life (and real-research) examples rather than . . . recipes for analysis. [It is intended for] beginning graduate students and researchers alike. (PsycINFO Database Record (c) 2016 APA, all rights reserved);,citation_author=Robert P Abelson;,citation_publication_date=1995;,citation_cover_date=1995;,citation_year=1995;,citation_isbn=0-8058-0527-3 (Hardcover); 0-8058-0528-1 (Paperback);,citation_book_title=Statistics as principled argument.;">
 <meta name="citation_reference" content="citation_title=The optics of Ibn al-Haytham books IV-V: On reflection and images seen by reflection;,citation_author=Alhazen;,citation_editor=J. P. Hogendijk;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_series_title=Warburg institute studies and texts; 8;">
 <meta name="citation_reference" content="citation_title=Fixed effects regression models;,citation_author=Paul Allison;,citation_publication_date=2009;,citation_cover_date=2009;,citation_year=2009;">
@@ -835,7 +836,7 @@ Table&nbsp;6.6: Simulated Longitudinal Multilevel Data
 <div id="fig-data2" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-data2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="longitudinal_files/figure-html/fig-data2-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="longitudinal_files/figure-html/fig-data2-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="longitudinal_files/figure-html/fig-data2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="longitudinal_files/figure-html/fig-data2-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.1: Graph of Simulated Longitudinal Data
@@ -902,7 +903,7 @@ Table&nbsp;6.7: Slope and Intercept for Each Group
 <div id="fig-trajectory" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-trajectory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="longitudinal_files/figure-html/fig-trajectory-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="longitudinal_files/figure-html/fig-trajectory-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="longitudinal_files/figure-html/fig-trajectory-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2"><img src="longitudinal_files/figure-html/fig-trajectory-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-trajectory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.2: Hypothetical Growth Trajectory
@@ -1210,9 +1211,19 @@ Interactions And Random Slopes in Longitudinal Models
 <section id="the-importance-of-causal-reasoning" class="level3" data-number="6.7.1">
 <h3 data-number="6.7.1" class="anchored" data-anchor-id="the-importance-of-causal-reasoning"><span class="header-section-number">6.7.1</span> The Importance of Causal Reasoning</h3>
 <p>Causal reasoning is sometimes considered to be a statistical–or even overly technical–concern. Arguably, however, whenever one is using research to make recommendations about <em>interventions</em>, or <em>treatments</em>, or <em>policies</em>, one is engaging in some form of causal reasoning <span class="citation" data-cites="Duncan2006">(<a href="references.html#ref-Duncan2006" role="doc-biblioref">Duncan &amp; Gibson-Davis, 2006</a>)</span>. </p>
-<blockquote class="blockquote">
-<p>If one is saying that implementing <em>x</em> would result in beneficial changes in <em>y</em>, one is arguing–at least implicitly–that <em>x</em> is one of the causes of <em>y</em>.</p>
-</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Ubiquity of Causal Reasoning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If one is saying that implementing <em>x</em> would result in beneficial changes in <em>y</em>, one is arguing–at least implicitly–that <em>x</em> is one of the <em>causes</em> of <em>y</em>.</p>
+</div>
+</div>
 <p>It then behooves one to be explicit about this chain of causal reasoning. For example, to continue one of the substantive examples of this book, if one is going to argue for programs, interventions, or treatments that promote <em>parental warmth</em>, or that discourage parental use of <em>physical punishment</em> with the aim of improving children’s <em>mental health</em>, one must be at least reasonably sure that <em>parental warmth</em> and <em>physical punishment</em> are <em>causes</em> of children’s mental health.</p>
 <p>In a statement salient for social research, <span class="citation" data-cites="Duncan2006">Duncan &amp; Gibson-Davis (<a href="references.html#ref-Duncan2006" role="doc-biblioref">2006</a>)</span> point out the logical inconsistency of writing that does not rigorously address causal processes, but then goes on to suggest interventions or treatment or policies:</p>
 <blockquote class="blockquote">
@@ -1244,7 +1255,7 @@ Interactions And Random Slopes in Longitudinal Models
 <div id="fig-causality" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-causality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="fig-causality.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3"><img src="fig-causality.png" class="img-fluid figure-img" width="519"></a>
+<a href="fig-causality.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3"><img src="fig-causality.png" class="img-fluid figure-img" width="519"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-causality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.3: Formal Criteria of Causality
@@ -1268,7 +1279,7 @@ Figure&nbsp;6.3: Formal Criteria of Causality
 <div id="fig-causalitysubstantive" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-causalitysubstantive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="fig-causalitysubstantive.png" class="lightbox" data-glightbox="description: .lightbox-desc-4" data-gallery="quarto-lightbox-gallery-4"><img src="fig-causalitysubstantive.png" class="img-fluid figure-img" width="519"></a>
+<a href="fig-causalitysubstantive.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-glightbox="description: .lightbox-desc-4"><img src="fig-causalitysubstantive.png" class="img-fluid figure-img" width="519"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-causalitysubstantive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.4: Formal Criteria of Causality: A Substantive Example
@@ -1291,7 +1302,7 @@ Figure&nbsp;6.4: Formal Criteria of Causality: A Substantive Example
 <div id="fig-Simpson" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Simpson-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="longitudinal_files/figure-html/fig-Simpson-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="quarto-lightbox-gallery-5"><img src="longitudinal_files/figure-html/fig-Simpson-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="longitudinal_files/figure-html/fig-Simpson-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" data-glightbox="description: .lightbox-desc-5"><img src="longitudinal_files/figure-html/fig-Simpson-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Simpson-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6.5: An Illustration of Simpson’s Paradox
@@ -2222,7 +2233,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":false,"closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
