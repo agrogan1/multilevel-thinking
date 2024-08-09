@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.5.29">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Multilevel Thinking - 8&nbsp; Models With More Complicated Structures</title>
+<title>Multilevel Thinking – 8&nbsp; Models With More Complicated Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -95,6 +95,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="multilevel-thinking.css">
 <meta property="og:title" content="Multilevel Thinking - 8&nbsp; Models With More Complicated Structures">
@@ -131,7 +160,7 @@ div.csl-indent {
 <meta name="citation_reference" content="citation_title=Beyond experiments;,citation_abstract=It is often claimed that only experiments can support strong causal inferences and therefore they should be privileged in the behavioral sciences. We disagree. Overvaluing experiments results in their overuse both by researchers and decision makers and in an underappreciation of their shortcomings. Neglect of other methods often follows. Experiments can suggest whether X causes Y in a specific experimental setting; however, they often fail to elucidate either the mechanisms responsible for an effect or the strength of an effect in everyday natural settings. In this article, we consider two overarching issues. First, experiments have important limitations. We highlight problems with external, construct, statistical-conclusion, and internal validity; replicability; and conceptual issues associated with simple X causes Y thinking. Second, quasi-experimental and nonexperimental methods are absolutely essential. As well as themselves estimating causal effects, these other methods can provide information and understanding that goes beyond that provided by experiments. A research program progresses best when experiments are not treated as privileged but instead are combined with these other methods.;,citation_author=Ed Diener;,citation_author=Robert Northcott;,citation_author=Michael J Zyphur;,citation_author=Stephen G West;,citation_publication_date=2022-02;,citation_cover_date=2022-02;,citation_year=2022;,citation_fulltext_html_url=https://doi.org/10.1177/17456916211037670;,citation_doi=10.1177/17456916211037670;,citation_issn=1745-6916;,citation_volume=17;,citation_journal_title=Perspectives on Psychological Science;,citation_publisher=SAGE Publications Inc;">
 <meta name="citation_reference" content="citation_title=A glossary for multilevel analysis;,citation_abstract=Multilevel analysis has recently emerged as a useful analytical technique in several fields, including public health and epidemiology. This glossary defines key concepts and terms used in multilevel analysis.;,citation_author=A V Diez Roux;,citation_publication_date=2002-08;,citation_cover_date=2002-08;,citation_year=2002;,citation_fulltext_html_url=http://jech.bmj.com/content/56/8/588.abstract;,citation_issue=8;,citation_doi=10.1136/jech.56.8.588;,citation_volume=56;,citation_journal_title=Journal of Epidemiology and Community Health;">
 <meta name="citation_reference" content="citation_title=The first book;,citation_author=Rita Dove;,citation_publication_date=1999;,citation_cover_date=1999;,citation_year=1999;,citation_inbook_title=On the bus with Rosa Parks;">
-<meta name="citation_reference" content="citation_title=Publishing child development research from around the world: An unfair playing field resulting in most of the world’s child population under-represented in research;,citation_abstract=Abstract It has become increasingly apparent that publishing research on child development from certain countries is especially challenging. These countries have been referred to collectively as the Majority World, the Global South, non-WEIRD (Western, Educated, Industrial, Rich, and Democratic), or low- and middle-income countries. The aim of this paper is to draw attention to these persistent challenges, and provide constructive recommendations to contribute to better representation of children from these countries in child development research. In this paper, we outline the history of publication bias in developmental science, and issues of generalization of research from these countries and hence where it ?fits? in terms of publishing. The importance of explaining context is highlighted, including for research on measurement child development outcomes, and attention is drawn to the vicious publication-funding cycle that further exacerbates the challenges of publishing this research. Specific recommendations are made to assist child development journals achieve their stated goals of creating a more inclusive, equitable, diverse, and global field of child development.;,citation_author=Catherine E Draper;,citation_author=Lisa M Barnett;,citation_author=Caylee J Cook;,citation_author=Jorge A Cuartas;,citation_author=Steven J Howard;,citation_author=Dana C McCoy;,citation_author=Rebecca Merkley;,citation_author=Andres Molano;,citation_author=Carolina Maldonado-Carreño;,citation_author=Jelena Obradovic;,citation_author=Gaia Scerif;,citation_author=Nadia C Valentini;,citation_author=Fotini Venetsanou;,citation_author=Aisha K Yousafzai;,citation_publication_date=2022-10;,citation_cover_date=2022-10;,citation_year=2022;,citation_fulltext_html_url=https://doi.org/10.1002/icd.2375;,citation_doi=10.1002/icd.2375;,citation_issn=1522-7227;,citation_volume=n/a;,citation_journal_title=Infant and Child Development;,citation_publisher=John Wiley &amp;amp;amp; Sons, Ltd;">
+<meta name="citation_reference" content="citation_title=Publishing child development research from around the world: An unfair playing field resulting in most of the world’s child population under-represented in research;,citation_abstract=Abstract It has become increasingly apparent that publishing research on child development from certain countries is especially challenging. These countries have been referred to collectively as the Majority World, the Global South, non-WEIRD (Western, Educated, Industrial, Rich, and Democratic), or low- and middle-income countries. The aim of this paper is to draw attention to these persistent challenges, and provide constructive recommendations to contribute to better representation of children from these countries in child development research. In this paper, we outline the history of publication bias in developmental science, and issues of generalization of research from these countries and hence where it ?fits? in terms of publishing. The importance of explaining context is highlighted, including for research on measurement child development outcomes, and attention is drawn to the vicious publication-funding cycle that further exacerbates the challenges of publishing this research. Specific recommendations are made to assist child development journals achieve their stated goals of creating a more inclusive, equitable, diverse, and global field of child development.;,citation_author=Catherine E Draper;,citation_author=Lisa M Barnett;,citation_author=Caylee J Cook;,citation_author=Jorge A Cuartas;,citation_author=Steven J Howard;,citation_author=Dana C McCoy;,citation_author=Rebecca Merkley;,citation_author=Andres Molano;,citation_author=Carolina Maldonado-Carre no;,citation_author=Jelena Obradovic;,citation_author=Gaia Scerif;,citation_author=Nadia C Valentini;,citation_author=Fotini Venetsanou;,citation_author=Aisha K Yousafzai;,citation_publication_date=2022-10;,citation_cover_date=2022-10;,citation_year=2022;,citation_fulltext_html_url=https://doi.org/10.1002/icd.2375;,citation_doi=10.1002/icd.2375;,citation_issn=1522-7227;,citation_volume=n/a;,citation_journal_title=Infant and Child Development;,citation_publisher=John Wiley &amp;amp;amp; Sons, Ltd;">
 <meta name="citation_reference" content="citation_title=Connecting Child Care Quality to Child Outcomes: Drawing Policy Lessons from Nonexperimental Data;,citation_abstract=Effective early childhood intervention and child care policies should be based on an understanding of the effects of child care quality and type on child well-being. This article describes methods for securing unbiased estimates of these effects from nonexperimental data. It focuses on longitudinal studies like the one developed by the National Institute of Child Health and Human Development’s Early Child Care Research Network. This article first describes bias problems that arise in analyses of nonexperimental data and then explains strategies for controlling for biases arising from parental selection of child care. Next, it comments on attrition in longitudinal studies and outlines some strategies for addressing possible attrition bias. Finally, it discusses the need to translate ?effect sizes? derived from these studies into the kinds of cost and benefit information needed by policy makers.;,citation_author=Greg J Duncan;,citation_author=Christina M Gibson-Davis;,citation_publication_date=2006-10;,citation_cover_date=2006-10;,citation_year=2006;,citation_fulltext_html_url=https://doi.org/10.1177/0193841X06291530;,citation_issue=5;,citation_doi=10.1177/0193841X06291530;,citation_issn=0193-841X;,citation_volume=30;,citation_journal_title=Evaluation Review;,citation_publisher=SAGE Publications Inc;">
 <meta name="citation_reference" content="citation_title=Poverty, Parenting, Peer, and Neighborhood Influences on Young Adolescent Antisocial Behavior;,citation_abstract=AbstractData from a sample of 963, 10- to 12-year-old children from the National Longitudinal Survey of Youth were used to evaluate the parenting practices and environmental influences that explain the relation between poverty and antisocial behavior two years later. Results indicate that deviant peer pressure and neighborhood problems partially mediate the relation between poverty and young adolescent antisocial behavior. The parenting practices and environmental influences that predict antisocial behavior do not vary by the child’s gender or race/ethnicity, and vary little by the child’s age. Findings suggest that when environmental risk is high, authoritarian parenting strategies result in lower levels of antisocial behavior.;,citation_author=Mary Keegan Eamon;,citation_publication_date=2001-12;,citation_cover_date=2001-12;,citation_year=2001;,citation_fulltext_html_url=https://doi.org/10.1300/J079v28n01_01;,citation_issue=1;,citation_doi=10.1300/J079v28n01_01;,citation_issn=0148-8376;,citation_volume=28;,citation_journal_title=Journal of Social Service Research;,citation_publisher=Routledge;">
 <meta name="citation_reference" content="citation_title=Ignacio Ellacuria: Essays on history, liberation, and salvation;,citation_author=Ignacio Ellacuria;,citation_editor=Michael L. Lee;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;">
@@ -173,6 +202,7 @@ div.csl-indent {
 <meta name="citation_reference" content="citation_title=The golden ratio: The story of phi, the world’s most astonishing number;,citation_abstract=Includes bibliographical references (p. [269]-277) and index.;,citation_author=Mario Livio;,citation_publication_date=2002;,citation_cover_date=2002;,citation_year=2002;,citation_isbn=0767908155;,citation_book_title=The golden ratio: the story of phi, the world’s most astonishing number;">
 <meta name="citation_reference" content="citation_title=Ada: The enchantress of numbers: A selection from the letters of Lord Byron’s daughter and her description of the first computer;,citation_abstract=Includes bibliographical references (p. 427-432) and index.;,citation_author=Ada King Lovelace;,citation_publication_date=1992;,citation_cover_date=1992;,citation_year=1992;,citation_isbn=0912647094;,citation_book_title=Ada: the enchantress of numbers: a selection from the letters of Lord Byron’s daughter and her description of the first computer;">
 <meta name="citation_reference" content="citation_title=Ada: The enchantress of numbers: A selection from the letters of Lord Byron’s daughter and her description of the first computer;,citation_author=Ada King Lovelace;,citation_editor=Betty A. Toole;,citation_publication_date=1992;,citation_cover_date=1992;,citation_year=1992;">
+<meta name="citation_reference" content="citation_title=sjPlot: Data visualization for statistics in social science;,citation_author=Daniel Lüdecke;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_fulltext_html_url=https://CRAN.R-project.org/package=sjPlot;">
 <meta name="citation_reference" content="citation_title=Multilevel modeling;,citation_author=Douglas Luke;,citation_publication_date=2004;,citation_cover_date=2004;,citation_year=2004;,citation_doi=10.4135/9781412985147;,citation_isbn=9780761928799;">
 <meta name="citation_reference" content="citation_title=The association between spanking and physical abuse of young children in 56 low- and middle-income countries;,citation_abstract=Background: Nearly one third of children under five in low- and middle-income countries (LMICs) experience spanking. Studies from North America suggest that spanking is associated with heightened risk of physical abuse. However, the link between spanking and physical abuse in the international context remains understudied. Objective: To examine the association between caregivers’ spanking and physical abuse of young children in LMICs, and to estimate the extent to which physical abuse might be reduced if spanking were eliminated. Participants: We used nationally representative data from 156,166 1- to 4-year-old children in 56 LMICs from the fourth and fifth rounds of UNICEF Multiple Indicator Cluster Surveys. Methods: A nationally weighted multilevel logistic regression model examined the association between spanking and physical abuse. We calculated predicted probabilities of physical abuse, which we present using natural frequencies. Results: Spanking was associated with higher odds of physical abuse (OR = 5.74, p &amp;amp;amp;lt; .001). The predicted probability of physical abuse decreased by 14;,citation_author=Julie Ma;,citation_author=Andrew C. Grogan-Kaylor;,citation_author=Garrett T. Pace;,citation_author=Kaitlin P. Ward;,citation_author=Shawna J. Lee;,citation_publication_date=2022-07;,citation_cover_date=2022-07;,citation_year=2022;,citation_doi=10.1016/j.chiabu.2022.105662;,citation_issn=01452134;,citation_volume=129;,citation_journal_title=Child Abuse &amp;amp; Neglect;,citation_publisher=Elsevier BV;">
 <meta name="citation_reference" content="citation_title=Associations of neighborhood disorganization and maternal spanking with children’s aggression: A fixed-effects regression analysis;,citation_abstract=This study employed fixed effects regression that controls for selection bias, omitted variables bias, and all time-invariant aspects of parent and child characteristics to examine the simultaneous associations between neighborhood disorganization, maternal spanking, and aggressive behavior in early childhood using data from the Fragile Families and Child Wellbeing Study (FFCWS). Analysis was based on 2,472 children and their mothers who participated in Wave 3 (2001–2003; child age 3) and Wave 4 (2003–2006; child age 5) of the FFCWS. Results indicated that higher rates of neighborhood crime and violence predicted higher levels of child aggression. Maternal spanking in the past year, whether frequent or infrequent, was also associated with increases in aggressive behavior. This study contributes statistically rigorous evidence that exposure to violence in the neighborhood as well as the family context are predictors of child aggression. We conclude with a discussion for the need for multilevel prevention and intervention approaches that target both community and parenting factors.;,citation_author=Julie Ma;,citation_author=Andrew Grogan-Kaylor;,citation_author=Shawna J. Lee;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_fulltext_html_url=https://www.sciencedirect.com/science/article/pii/S0145213417304076;,citation_doi=10.1016/j.chiabu.2017.10.013;,citation_issn=0145-2134;,citation_volume=76;,citation_journal_title=Child Abuse &amp;amp;amp; Neglect;">
@@ -211,7 +241,7 @@ div.csl-indent {
 <meta name="citation_reference" content="citation_title=Reporting Bayesian Results;,citation_abstract=Because of the different philosophy of Bayesian statistics, where parameters are random variables and data are considered fixed, the analysis and presentation of results will differ from that of frequentist statistics. Most importantly, the probabilities that a parameter is in certain regions of the parameter space are crucial quantities in Bayesian statistics that are not calculable (or considered important) in the frequentist approach that is the basis of much of traditional statistics. In this article, I discuss the implications of these differences for presentation of the results of Bayesian analyses. In doing so, I present more detailed guidelines than are usually provided and explain the rationale for my suggestions.;,citation_author=David Rindskopf;,citation_publication_date=2020-12;,citation_cover_date=2020-12;,citation_year=2020;,citation_fulltext_html_url=https://doi.org/10.1177/0193841X20977619;,citation_doi=10.1177/0193841X20977619;,citation_issn=0193-841X;,citation_journal_title=Evaluation Review;,citation_publisher=SAGE Publications Inc;">
 <meta name="citation_reference" content="citation_title=The palgrave international handbook of mixed racial and ethnic classification;,citation_author=Zarine L. Rocha;,citation_author=Peter J. Aspinall;,citation_editor=Zarine L. Rocha;,citation_editor=Peter J. Aspinall;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_isbn=3-030-22874-6;,citation_book_title=The Palgrave international handbook of mixed racial and ethnic classification;">
 <meta name="citation_reference" content="citation_title=Editorial perspective: Bayesian statistical methods are useful for researchers in child and adolescent mental health;,citation_abstract=Bayesian statistical approaches offer nuanced, detailed, and intuitive analyses, even with small sample sizes. Although these qualities are highly relevant for researchers in child and adolescent mental health, Bayesian methods are still quite rarely employed. This editorial perspective will briefly describe what is different about Bayesian statistical methods, discuss some of the ways they may benefit research in our field, and provide an introduction to how Bayesian statistics are employed in practical research.;,citation_author=Erling W Rognli;,citation_author=Rune Zahl-Olsen;,citation_author=Sondre Sverd Rekdal;,citation_author=Asle Hoffart;,citation_author=Thomas Bjerregaard Bertelsen;,citation_publication_date=2022-07;,citation_cover_date=2022-07;,citation_year=2022;,citation_fulltext_html_url=https://doi.org/10.1111/jcpp.13662;,citation_issue=n/a;,citation_doi=10.1111/jcpp.13662;,citation_issn=0021-9630;,citation_volume=n/a;,citation_journal_title=Journal of Child Psychology and Psychiatry;,citation_publisher=John Wiley &amp;amp;amp; Sons, Ltd;">
-<meta name="citation_reference" content="citation_title=Effects of parental acceptance-rejection on children’s internalizing and externalizing behaviors: A longitudinal, multicultural study;,citation_abstract=Grounded in Interpersonal Acceptance-Rejection Theory, this study assessed children’s (N=1315) perceptions of maternal and paternal acceptance-rejection in nine countries (China, Colombia, Italy, Jordan, Kenya, the Philippines, Sweden, Thailand, and the United States) as predictors of children’s externalizing and internalizing behaviors across ages 7–14 years. Parenting behaviors were measured using children’s reports on the Parental Acceptance-Rejection Questionnaire. Child externalizing and internalizing behaviors were measured using mother, father, and child reports on the Achenbach System of Empirically-Based Assessment. Using a multilevel modeling framework, we found that in cultures where both maternal and paternal indifference/neglect scores were higher than average–compared to other cultures–children’s internalizing problems were more persistent. At the within-culture level, all four forms of maternal and paternal rejection (i.e., coldness/lack of affection, hostility/aggression, indifference/neglect, and undifferentiated rejection) were independently associated with either externalizing and internalizing problems across ages 7–14 even after controlling for child gender, parent education, and each of the four forms of parental rejection. Results demonstrate that the effects of perceived parental acceptance-rejection are panculturally similar.;,citation_author=W Andrew Rothenberg;,citation_author=Sumbleen Ali;,citation_author=Ronald P Rohner;,citation_author=Jennifer E Lansford;,citation_author=Preston A Britner;,citation_author=Laura Di Giunta;,citation_author=Kenneth A Dodge;,citation_author=Patrick S Malone;,citation_author=Paul Oburu;,citation_author=Concetta Pastorelli;,citation_author=Ann T Skinner;,citation_author=Emma Sorbring;,citation_author=Laurence Steinberg;,citation_author=Sombat Tapanya;,citation_author=Liliana Maria Uribe Tirado;,citation_author=Saengduean Yotanyamaneewong;,citation_author=Liane Peña Alampay;,citation_author=Suha M Al-Hassan;,citation_author=Dario Bacchini;,citation_author=Marc H Bornstein;,citation_author=Lei Chang;,citation_author=Kirby Deater-Deckard;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_fulltext_html_url=https://doi.org/10.1007/s10826-021-02072-5;,citation_doi=10.1007/s10826-021-02072-5;,citation_issn=1573-2843;,citation_volume=31;,citation_journal_title=Journal of Child and Family Studies;">
+<meta name="citation_reference" content="citation_title=Effects of parental acceptance-rejection on children’s internalizing and externalizing behaviors: A longitudinal, multicultural study;,citation_abstract=Grounded in Interpersonal Acceptance-Rejection Theory, this study assessed children’s (N=1315) perceptions of maternal and paternal acceptance-rejection in nine countries (China, Colombia, Italy, Jordan, Kenya, the Philippines, Sweden, Thailand, and the United States) as predictors of children’s externalizing and internalizing behaviors across ages 7–14 years. Parenting behaviors were measured using children’s reports on the Parental Acceptance-Rejection Questionnaire. Child externalizing and internalizing behaviors were measured using mother, father, and child reports on the Achenbach System of Empirically-Based Assessment. Using a multilevel modeling framework, we found that in cultures where both maternal and paternal indifference/neglect scores were higher than average–compared to other cultures–children’s internalizing problems were more persistent. At the within-culture level, all four forms of maternal and paternal rejection (i.e., coldness/lack of affection, hostility/aggression, indifference/neglect, and undifferentiated rejection) were independently associated with either externalizing and internalizing problems across ages 7–14 even after controlling for child gender, parent education, and each of the four forms of parental rejection. Results demonstrate that the effects of perceived parental acceptance-rejection are panculturally similar.;,citation_author=W Andrew Rothenberg;,citation_author=Sumbleen Ali;,citation_author=Ronald P Rohner;,citation_author=Jennifer E Lansford;,citation_author=Preston A Britner;,citation_author=Laura Di Giunta;,citation_author=Kenneth A Dodge;,citation_author=Patrick S Malone;,citation_author=Paul Oburu;,citation_author=Concetta Pastorelli;,citation_author=Ann T Skinner;,citation_author=Emma Sorbring;,citation_author=Laurence Steinberg;,citation_author=Sombat Tapanya;,citation_author=Liliana Maria Uribe Tirado;,citation_author=Saengduean Yotanyamaneewong;,citation_author=Liane Pe Alampay;,citation_author=Suha M Al-Hassan;,citation_author=Dario Bacchini;,citation_author=Marc H Bornstein;,citation_author=Lei Chang;,citation_author=Kirby Deater-Deckard;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_fulltext_html_url=https://doi.org/10.1007/s10826-021-02072-5;,citation_doi=10.1007/s10826-021-02072-5;,citation_issn=1573-2843;,citation_volume=31;,citation_journal_title=Journal of Child and Family Studies;">
 <meta name="citation_reference" content="citation_title=Bright galaxies, dark matters;,citation_abstract=Includes bibliographical references (p. [221]-234) and index.;,citation_author=Vera C Rubin;,citation_publication_date=1997;,citation_cover_date=1997;,citation_year=1997;,citation_isbn=1563962314;,citation_book_title=Bright galaxies, dark matters;">
 <meta name="citation_reference" content="citation_title=The demon haunted world: Science as a candle in the dark;,citation_author=Carl Sagan;,citation_publication_date=1995;,citation_cover_date=1995;,citation_year=1995;">
 <meta name="citation_reference" content="citation_title=Quantitative research methods in communication: The power of numbers for social justice;,citation_author=Erica Scharrer;,citation_author=Srividya Ramasubramanian;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_doi=10.4324/9781003091653;,citation_isbn=9781003091653;">
@@ -293,19 +323,19 @@ div.csl-indent {
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
-              <i class="bi bi-bi-twitter pe-1"></i>
+              <i class="bi bi-twitter pe-1"></i>
             Twitter
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
-              <i class="bi bi-bi-facebook pe-1"></i>
+              <i class="bi bi-facebook pe-1"></i>
             Facebook
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
-              <i class="bi bi-bi-linkedin pe-1"></i>
+              <i class="bi bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
@@ -488,11 +518,89 @@ div.csl-indent {
 <p>The choices are illustrated in the left panel of XXX. Thinking this through, if it becomes more clear that the choices of ICC for a four level model, are therefore more complicated. One can consider observations that are only clustered within the same level 40 unit but different level three units and different level two units the same level four unit unit the same level three unit and different level two units, and so on and so forth.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="ICC.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="ICCs in 3 Level And 4 Level Models"><img src="ICC.png" class="img-fluid figure-img" style="width:50.0%" alt="ICCs in 3 Level And 4 Level Models"></a></p>
+<p><a href="ICC.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="ICCs in 3 Level And 4 Level Models"><img src="ICC.png" class="img-fluid figure-img" style="width:50.0%" alt="ICCs in 3 Level And 4 Level Models"></a></p>
 <figcaption>ICCs in 3 Level And 4 Level Models</figcaption>
 </figure>
 </div>
-<p>More generally formula Stata Corporation provides the following format for ICC’s in multilevel models.</p>
+<p>In <a href="cross-sectional.html#sec-ICC" class="quarto-xref"><span>Section 5.4.2</span></a> and <a href="longitudinal.html#sec-unconditional-longitudinal" class="quarto-xref"><span>Section 6.5.1</span></a>, I used the notation <span class="math inline">\(\text{var}()\)</span> to describe the variances of the different random effects, which at that point in the discussion, I found to be pedagogically useful. For the discussion below, I will use the more compact notation <span class="math inline">\(\tau\)</span> for the variance components at level 2 and higher (e.g.&nbsp;for the discussion in <a href="longitudinal.html#sec-unconditional-longitudinal" class="quarto-xref"><span>Section 6.5.1</span></a>, <span class="math inline">\(\tau_3 = \text{var}(u_0)\)</span> <span class="math inline">\(\tau_2 = \text{var}(v_0)\)</span>) <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 12%">
+<col style="width: 19%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Levels in Model</th>
+<th style="text-align: center;">ICC at Level</th>
+<th style="text-align: center;">Description</th>
+<th style="text-align: center;">Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">Same level 3 unit; different level 2 unit</td>
+<td style="text-align: center;"><span class="math display">\[\frac{\tau_3}{\tau_3
++
+\tau_2 +
+e_{ij}}\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Same level 3 unit; same level 2 unit</td>
+<td style="text-align: center;"><span class="math display">\[\frac{\tau_3
++
+\tau_2}{\tau_3
++
+\tau_2 +
+e_{ij}}\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">Same level 4 unit; different level 3 and 2 unit</td>
+<td style="text-align: center;"><span class="math display">\[\frac{\tau_4}{\tau_4
++
+\tau_3 +
+\tau_2 +
+e_{ijk}}\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">Same level 4 unit; same level 3 unit; different level 2 unit</td>
+<td style="text-align: center;"><span class="math display">\[\frac{\tau_4
++
+\tau_3}{\tau_4
++
+\tau_3 +
+\tau_2 +
+e_{ijk}}\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Same level 4 unit; same level 3 unit; same level 2 unit</td>
+<td style="text-align: center;"><span class="math display">\[\frac{\tau_4
++
+\tau_3 +
+\tau_2}{\tau_4
++\tau_3 +
+\tau_2 +
+e_{ijk}}\]</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>More generally Stata Corporation <span class="citation" data-cites="StataCorp2023">(<a href="references.html#ref-StataCorp2023" role="doc-biblioref">StataCorp, 2023</a>)</span> provides the following formula for ICC’s in multilevel models. I adapt the notation of a formula originally provided in the excellent Stata documentation on the intraclass correlation. For a model with <em>Q</em> total levels, the ICC for level <em>q</em> is defined as:</p>
+<p><span id="eq-ICC-morelevels"><span class="math display">\[\text{ICC}_q = \frac{\sum^Q_{q} \tau_q}{\text{var}(e) + \Sigma^Q_2 \tau_q} \tag{8.1}\]</span></span></p>
 <section id="conditional-model" class="level3" data-number="8.4.1">
 <h3 data-number="8.4.1" class="anchored" data-anchor-id="conditional-model"><span class="header-section-number">8.4.1</span> Conditional Model</h3>
 </section>
@@ -509,18 +617,30 @@ div.csl-indent {
 <h3 data-number="8.6.1" class="anchored" data-anchor-id="conditional-model-1"><span class="header-section-number">8.6.1</span> Conditional Model</h3>
 
 
-<div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1">ICCs in 3 Level And 4 Level Models</span>
-</div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
 <div id="ref-ArelBundock2018" class="csl-entry" role="listitem">
 Arel-Bundock, V., Enevoldsen, N., &amp; Yetman, C. (2018). Countrycode: An r package to convert country names and country codes. <em>Journal of Open Source Software</em>, <em>3</em>(28), 848. <a href="https://doi.org/10.21105/joss.00848">https://doi.org/10.21105/joss.00848</a>
+</div>
+<div id="ref-Ludecke2023" class="csl-entry" role="listitem">
+Lüdecke, D. (2023). <em>sjPlot: Data visualization for statistics in social science</em>. <a href="https://CRAN.R-project.org/package=sjPlot">https://CRAN.R-project.org/package=sjPlot</a>
+</div>
+<div id="ref-Raudenbush2002" class="csl-entry" role="listitem">
+Raudenbush, S. W., &amp; Bryk, A. S. (2002). <em>Hierarchical linear models: Applications and data analysis methods</em>. Sage Publications.
+</div>
+<div id="ref-StataCorp2023" class="csl-entry" role="listitem">
+StataCorp. (2023). <em>Stata 18 mixed effects reference manual</em>. Stata Press.
 </div>
 <div id="ref-Whyte2016" class="csl-entry" role="listitem">
 Whyte, D., &amp; Tippett, K. (2016). <em><span>D</span>avid <span>W</span>hyte: Seeking language large enough</em>. The On Being Project. <a href="https://onbeing.org/programs/david-whyte-seeking-language-large-enough/">https://onbeing.org/programs/david-whyte-seeking-language-large-enough/</a>
 </div>
 </div>
 </section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>The <span class="math inline">\(\tau\)</span> notation for variance components is used in <span class="citation" data-cites="Ludecke2023">Lüdecke (<a href="references.html#ref-Ludecke2023" role="doc-biblioref">2023</a>)</span> and <span class="citation" data-cites="Raudenbush2002">Raudenbush &amp; Bryk (<a href="references.html#ref-Raudenbush2002" role="doc-biblioref">2002</a>)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -703,18 +823,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -746,7 +855,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/agrogan1\.github\.io\/multilevel-thinking\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -781,7 +930,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1057,18 +1210,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./logistic.html" class="pagination-link  aria-label=" &lt;span="" logistic="" regression&lt;="" span&gt;"="">
+      <a href="./logistic.html" class="pagination-link" aria-label="Multilevel Logistic Regression">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Multilevel Logistic Regression</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./conclusion.html" class="pagination-link" aria-label="<span class='chapter-number'>9</span>&nbsp; <span class='chapter-title'>Conclusion</span>">
+      <a href="./conclusion.html" class="pagination-link" aria-label="Conclusion">
         <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Conclusion</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","loop":false,"selector":".lightbox","closeEffect":"zoom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

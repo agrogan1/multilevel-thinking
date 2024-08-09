@@ -14,7 +14,6 @@ Let us consider scenarios in which it is appropriate to estimate models with fou
 
 ## Three Or More Levels
 
-
 ### Equation
 
 ### Unconditional Model
@@ -29,7 +28,42 @@ The choices are illustrated in the left panel of XXX. Thinking this through, if 
 
 ![ICCs in 3 Level And 4 Level Models](ICC.png){width=50%} 
 
-More generally formula Stata Corporation provides the following format for ICC's in multilevel models.
+In @sec-ICC and @sec-unconditional-longitudinal, I used the notation $\text{var}()$ to describe the variances of the different random effects, which at that point in the discussion, I found to be pedagogically useful. For the discussion below, I will use the more compact notation $\tau$ for the variance components at level 2 and higher (e.g. for the discussion in @sec-unconditional-longitudinal, $\tau_3 = \text{var}(u_0)$ $\tau_2 = \text{var}(v_0)$) [^tau].
+
+[^tau]: The $\tau$ notation for variance components is used in @Ludecke2023 and @Raudenbush2002.
+
+```{r}
+
+`Levels in Model` <- c(3,3,4,4,4)
+
+`ICC at Level` <- c(3, 2, 4, 3, 2)
+
+Description <- c("Same level 3 unit; different level 2 unit",
+                 "Same level 3 unit; same level 2 unit",
+                 "Same level 4 unit; different level 3 and 2 unit",
+                 "Same level 4 unit; same level 3 unit; different level 2 unit",
+                 "Same level 4 unit; same level 3 unit; same level 2 unit")
+
+Formula <- c("$$\\frac{\\tau_3}{\\tau_3 + \\tau_2 + e_{ij}}$$",
+             "$$\\frac{\\tau_3 + \\tau_2}{\\tau_3 + \\tau_2 + e_{ij}}$$",
+             "$$\\frac{\\tau_4}{\\tau_4 + \\tau_3 + \\tau_2 + e_{ijk}}$$",
+             "$$\\frac{\\tau_4 + \\tau_3}{\\tau_4 + \\tau_3 + \\tau_2 + e_{ijk}}$$",
+             "$$\\frac{\\tau_4 + \\tau_3 + \\tau_2}{\\tau_4 +\\tau_3 + \\tau_2 + e_{ijk}}$$")
+
+ICCdata <- data.frame(`Levels in Model`,
+                      `ICC at Level`,
+                      Description, 
+                      Formula,
+                      check.names = FALSE)
+
+pander::pander(ICCdata, split.cells = 10) # replay
+
+```
+
+
+More generally Stata Corporation [@StataCorp2023] provides the following formula for ICC's in multilevel models. I adapt the notation of a formula originally provided in the excellent Stata documentation on the intraclass correlation. For a model with *Q* total levels, the ICC for level *q* is defined as:
+
+$$\text{ICC}_q = \frac{\sum^Q_{q} \tau_q}{\text{var}(e) + \Sigma^Q_2 \tau_q}$$ {#eq-ICC-morelevels}
 
 ### Conditional Model
 

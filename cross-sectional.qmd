@@ -263,7 +263,7 @@ Thus, all of the variation in $\text{outcome}_{ij}$ is--given the *unconditional
 
 I now introduce a measure known as the Intra-Class Correlation Coefficient, (ICC) that can be computed from this unconditional model [@Raudenbush2002]. \index{variation and diversity} \index{ICC}
 
-$$\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(e_{ij})}$$ {#eq-ICC}
+$$\text{ICC} = \frac{\text{var}(u_{0j})}{\text{var}(u_{0j}) + \text{var}(e_{ij})}$$ {#eq-ICC}
 
 Heuristically:
 

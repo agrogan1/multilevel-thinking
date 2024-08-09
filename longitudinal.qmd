@@ -213,7 +213,7 @@ ggplot(data = NULL) +
 
 ## Regression With Simulated Multi-Country Longitudinal Data {#sec-regressionlongitudinal}
 
-### Unconditional Model
+### Unconditional Model {#sec-unconditional-longitudinal}
 
 As we did earlier (@sec-unconditional), we estimate an unconditional model with no independent variables. \index{unconditional model}
 
@@ -222,11 +222,11 @@ As we did earlier (@sec-unconditional), we estimate an unconditional model with 
 
 In a three level model, there are two intraclass correlation coefficients [@StataCorp2023]. \index{ICC} The formulas for the Intraclass Correlation Coefficient (ICC) are given by [@StataCorp2023]:
 
-$$\text{ICC} = \frac{var(u_{0j})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})}$$ {#eq-ICCunconditional3A}
+$$\text{ICC} = \frac{\text{var}(u_{0j})}{\text{var}(u_{0j}) + \text{var}(v_{0i}) + \text{var}(e_{ij})}$$ {#eq-ICCunconditional3A}
 
 Following @StataCorp2023, @eq-ICCunconditional3A is the correlation of responses for person-timepoints from the same country but different persons.
 
-$$\text{ICC} = \frac{var(u_{0j}) + var(v_{0i})}{var(u_{0j}) + var(v_{0i}) + var(e_{ij})}$$ {#eq-ICCunconditional3B}
+$$\text{ICC} = \frac{\text{var}(u_{0j}) + \text{var}(v_{0i})}{\text{var}(u_{0j}) + \text{var}(v_{0i}) + \text{var}(e_{ij})}$$ {#eq-ICCunconditional3B}
 
 Again, closely following @StataCorp2023, @eq-ICCunconditional3B is the correlation of responses for person-timepoints from the same country and same person.
 
