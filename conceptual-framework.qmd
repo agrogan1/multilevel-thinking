@@ -1,20 +1,8 @@
 # Conceptual Framework {#sec-conceptualframework}
 
-> "Ubuntu" defined as: "A person is a person through other people." e.g. in [@Mangharam2017]
+> "Sure, it’s hard to get started; remember learning to use knife and fork? Dig in: you’ll never reach bottom. It’s not like it’s the end of the world--just the world as you think you know it." [@Dove1999]
 
-> I don't take your words
->
-> Merely as words.
->
-> Far from it.
->
-> I listen 
->
-> to what makes you talk--
->
-> Whatever that is--
->
-> And me listen. [@Takahashi2000]
+> "Ubuntu" defined as: "A person is a person through other people." e.g. in [@Mangharam2017]
 
 ```{r}
 

@@ -4,31 +4,44 @@
 
 ## Introduction
 
-In my experience, teaching about multilevel models, conducting research, using multilevel models, and reading and reviewing research articles by others using multilevel models, the vast majority of multilevel modeling is done with two level models. In this chapter, I discuss models with more than two levels as well as models where the multiple levels are not hierarchically nested, but are instead *cross classified*. In @sec-longitudinal, I have already begun a discussion of models with more than two levels. In that chapter, I discussed a longitudinal model with three levels time points nested inside individuals inside countries.
+In my experience, teaching about multilevel models, conducting research using multilevel models, and reading and reviewing research articles by others using multilevel models, the vast majority of multilevel modeling is done with two level models. In this chapter, I discuss models with more than two levels as well as models where the multiple levels are not hierarchically nested, but are instead *cross classified*. 
 
-It is worth noting that in practice, many longitudinal models are estimated as two level models with the time points nested inside individuals. Indeed, had there been no statistically, significant geographic clustering by country in @eq-MLM-longitudinal, this model could have been estimated with a two level model. 
+In @sec-longitudinal, I have already begun a discussion of models with more than two levels. In that chapter, I discussed a longitudinal model with three levels time points nested inside individuals inside countries. It is worth noting that in practice, many longitudinal models are estimated as two level models with the time points nested inside individuals. Indeed, had there been no statistically, significant geographic clustering by country in @eq-MLM-longitudinal, this model could have been estimated with a two level model. 
 
-## Data
-
-Let us consider scenarios in which it is appropriate to estimate models with four levels, or with levels that are cross-classified. Both the World Bank, and the United Nations divide the countries of the world into a number of regions [@ArelBundock2018]. Thus, we can imagine adding a few of these regional groupings to our data in order to illustrate these ideas.
+Let us consider scenarios in which it is appropriate to estimate models with four levels, or with levels that are cross-classified. 
 
 ## Three Or More Levels
 
+### Data
+
+Both the World Bank, and the United Nations divide the countries of the world into a number of regions or sub-regions [@ArelBundock2018]. Thus, I add five simulated regional United Nations groupings to the *longitudinal* data in order to illustrate the idea of a 4 level model. 
+
 ### Equation
+
+$$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + $$ {#eq-MLM-fourlevel} 
+
+$$\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +$$
+
+$$w_{0k} + u_{0j} + v_{0i} + e_{itjk}$$
+
+All of the terms of this model are similar to those in @eq-MLM-longitudinal, except that I now add a random effect $w_{0k}$ for United Nations sub-region.
 
 ### Unconditional Model
 
-## ICC
+```{r, child=c('./simulate-and-analyze-multilevel-data/tableML0.md')}
+```
+
+### ICC
 
 Calculation of the ICC becomes conceptually and statistically more complicated as we increase the number of levels.
 
-In order to think about this issue, it is useful to think first about the conceptual issue. With a three level model, as noted in section XXX we have two possible ICC’s to consider. One measures the amount of clustering for observations within the same level unit but different level two units, well the second measures the amount of cluster for observations within the same level three unit same level two unit. 
+In order to think about this issue, it is useful to think first about the conceptual issue. With a three level model, as noted in @sec-unconditional-longitudinal, we have two possible ICC’s to consider. One measures the amount of clustering for observations within the same level unit but different level two units, well the second measures the amount of cluster for observations within the same level three unit same level two unit. 
 
-The choices are illustrated in the left panel of XXX. Thinking this through, if it becomes more clear that the choices of ICC for a four level model, are therefore more complicated. One can consider observations that are only clustered within the same level 40 unit but different level three units and different level two units the same level four unit unit the same level three unit and different level two units, and so on and so forth.
+The choices are illustrated in the left panel of @fig-ICC. Thinking this through, if it becomes more clear that the choices of ICC for a four level model are therefore more complicated. One can consider: observations that are only clustered within the same level 4 unit but different level 3 units and different level 2 units; observations clustered within the same level 4 unit, the same level 3 unit and different level 2 units; and observations that are clustered within the same level 4, 3 and 2 units.
 
-![ICCs in 3 Level And 4 Level Models](ICC.png){width=50%} 
+![ICCs in 3 Level And 4 Level Models](ICC.png){width=75% #fig-ICC} 
 
-In @sec-ICC and @sec-unconditional-longitudinal, I used the notation $\text{var}()$ to describe the variances of the different random effects, which at that point in the discussion, I found to be pedagogically useful. For the discussion below, I will use the more compact notation $\tau$ for the variance components at level 2 and higher (e.g. for the discussion in @sec-unconditional-longitudinal, $\tau_3 = \text{var}(u_0)$ $\tau_2 = \text{var}(v_0)$) [^tau].
+In @sec-ICC and @sec-unconditional-longitudinal, I used the notation $\text{var}$ to describe the variances of the different random effects, which at that point in the discussion, I found to be intuitive and therefore pedagogically useful. For the discussion below, I will use the more compact but less intuitive notation $\tau$ for the variance components at level 2 and higher (e.g. for the discussion in @sec-unconditional-longitudinal, $\tau_3 = \text{var}(u_0)$ $\tau_2 = \text{var}(v_0)$) [^tau].
 
 [^tau]: The $\tau$ notation for variance components is used in @Ludecke2023 and @Raudenbush2002.
 
@@ -71,11 +84,18 @@ $$\text{ICC}_q = \frac{\sum^Q_{q} \tau_q}{\text{var}(e) + \Sigma^Q_2 \tau_q}$$ {
 
 ### Conditional Model
 
+```{r, child=c('./simulate-and-analyze-multilevel-data/tableML1.md')}
+```
+
 ## Cross-Classified Models
+
+### Data
+
+The United Nations employs six official languages in its operations [@UNLanguages2024]. So I add 6 hypothetical languages to the *cross-sectional* data.
 
 ### Unconditional Model
 
-## ICC
+### ICC
 
 ### Conditional Model
 
