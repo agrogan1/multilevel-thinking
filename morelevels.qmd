@@ -33,6 +33,10 @@ In @sec-ICC and @sec-unconditional-longitudinal, I used the notation $\text{var}
 [^tau]: The $\tau$ notation for variance components is used in @Ludecke2023 and @Raudenbush2002.
 
 ```{r}
+#| label: tbl-ICC-morelevels
+#| tbl-cap: ICCs in Models With More Than Two Levels
+#| echo: false
+
 
 `Levels in Model` <- c(3,3,4,4,4)
 
