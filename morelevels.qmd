@@ -22,7 +22,7 @@ $$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_
 
 $$\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +$$
 
-$$w_{0k} + u_{0j} + v_{0i} + e_{itjk}$$
+$$w_{0k} + u_{0j} + v_{0i} + e_{itjk}$$ {#eq-fourlevel}
 
 All of the terms of this model are similar to those in @eq-MLM-longitudinal, except that I now add a random effect $w_{0k}$ for United Nations sub-region.
 
@@ -87,17 +87,33 @@ $$\text{ICC}_q = \frac{\sum^Q_{q} \tau_q}{\text{var}(e) + \Sigma^Q_2 \tau_q}$$ {
 ```{r, child=c('./simulate-and-analyze-multilevel-data/tableML1.md')}
 ```
 
+### Interpretation
+
 ## Cross-Classified Models
 
 ### Data
 
 The United Nations employs six official languages in its operations [@UNLanguages2024]. So I add 6 hypothetical languages to the *cross-sectional* data.
 
+### Equation
+
+The terms in the equation below are similar to those in @eq-fourlevel. Note, however, that here, for purposes of exposition, I am working with the cross sectional data. `country`, and the new variable, `language` are *cross-classified* levels in the data in that neither is hierarchically nested inside the others: residents of the same country will not all speak the same language, and speakers of the same language will not all live in the same country. I would use a random effect $l$ for language, except for the fact that it would create confusion because of the similarity of $l$ and the number $1$. Therefore, I use the next available letter of the alphabet for language, $m$.
+
+$$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + $$ {#eq-crossclassified}
+
+$$\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +$$ 
+
+$u_{0j} + m_{0i} + e_{ijm}$$ 
+
+Again, terms are similar to the terms used in @eq-MLM-longitudinal and @eq-fourlevel, with the exception that in @eq-crossclassified, we are talking about family *i* in country *j*, speaking language *m*.
+
 ### Unconditional Model
 
 ### ICC
 
 ### Conditional Model
+
+### Interpretation
 
 
 
