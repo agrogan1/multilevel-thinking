@@ -1,4 +1,4 @@
-# The Cross Sectional Multilevel Model
+# The Cross Sectional Multilevel Model {#sec-crosssectional}
 
 > "Mathematical Science shows us what is. It is the language of unseen relations between things. But to use & apply that language we must be able fully to appreciate, to feel, to seize, the unseen, the unconscious. Imagination too shows us what is, the is that is beyond the senses.” [@Lovelace1992]
 
@@ -318,7 +318,7 @@ In contrast, *random slopes* refer to group level (e.g. neighborhood level, scho
 3. Does the *relationship of an intervention with an outcome* differ systematically by neighborhoods, or schools, or countries? 
 :::
 
-## Indicator Variables, Random Intercepts and Random Slopes, and Identities
+## Indicator Variables, Random Intercepts and Random Slopes, and Identities {#sec-indicator-variables-random-effects}
 
 ### Variable Types
 
@@ -420,7 +420,7 @@ Identities that are measured in the data with a single categorical variable with
 
 ```
 
-### Identities as Random Intercepts or Slopes
+### Identities as Random Intercepts or Slopes 
 
 If there are many values of an identity it may be difficult to model those multiple identities as indicator variables. For example, if there were 10 possible values of a particular identity, and one was modeling those identities with indicator variables, one would need to include 9 ($k-1$) indicator variables. Those 9 indicator variables could potentially use a large fraction of the available degrees of freedom, and interpreting the $\beta$ regression coefficients for 9 indicator variables might also be challenging. The problem is even greater when one considers a larger number of identities (e.g. 25, 30, 50, 100), as is possible in some data sets. In a global or cross cultural data set, such as the simulated data that is used as an example throughout this book, one might easily conceive of data with 20, 30 or 50 different identities, especially since racial and ethnic identity categories may differ substantially across countries, around the world [@Rocha2020].
 
