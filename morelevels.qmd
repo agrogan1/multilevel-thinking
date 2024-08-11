@@ -4,13 +4,13 @@
 
 ## Introduction
 
-In my experience, teaching about multilevel models, conducting research using multilevel models, and reading and reviewing research articles by others using multilevel models, the vast majority of multilevel modeling is done with two level models. In this chapter, I discuss models with more than two levels as well as models where the multiple levels are not hierarchically nested, but are instead *cross classified*. 
+In my experience, teaching about multilevel models, conducting research using multilevel models, and reading and reviewing research articles by others using multilevel models, the vast majority of multilevel modeling is done with two level models. In this chapter, I discuss models with more than two levels as well as models where the multiple levels are not hierarchically nested, but are instead *cross classified*. \index{cross classified models}
 
-In @sec-longitudinal, I have already begun a discussion of models with more than two levels. In that chapter, I discussed a longitudinal model with three levels time points nested inside individuals inside countries. It is worth noting that in practice, many longitudinal models are estimated as two level models with the time points nested inside individuals. Indeed, had there been no statistically, significant geographic clustering by country in @eq-MLM-longitudinal, this model could have been estimated with a two level model. 
+In @sec-longitudinal, I have already begun a discussion of models with more than two levels. In that chapter, I discussed a longitudinal model with three levels:  time points nested inside individuals inside countries. It is worth noting that in practice, many longitudinal models are estimated as two level models with the time points nested inside individuals. Indeed, had there been no statistically significant geographic clustering by country in @eq-MLM-longitudinal, this model could have been estimated with a two level model. 
 
 Let us consider scenarios in which it is appropriate to estimate models with four levels, or with levels that are cross-classified. 
 
-## Three Or More Levels
+## Three Or More Levels {#sec-fourlevel}
 
 ### Data
 
@@ -26,7 +26,7 @@ $$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_
 
 $$\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +$$
 
-$$w_{0k} + u_{0j} + v_{0i} + e_{itjk}$$ {#eq-fourlevel}
+$$w_{0k} + u_{0j} + v_{0i} + e_{itjk}$$ 
 
 All of the terms of this model are similar to those in @eq-MLM-longitudinal, except that I now add a random effect $w_{0k}$ for United Nations sub-region.
 
@@ -37,15 +37,15 @@ All of the terms of this model are similar to those in @eq-MLM-longitudinal, exc
 
 ### ICC
 
-Calculation of the ICC becomes conceptually and statistically more complicated as we increase the number of levels.
+Calculation of the ICC becomes conceptually and statistically more complicated as we increase the number of levels. \index{ICC}
 
-In order to think about this issue, it is useful to think first about the conceptual issue. With a three level model, as noted in @sec-unconditional-longitudinal, we have two possible ICC’s to consider. One measures the amount of clustering for observations within the same level unit but different level two units, well the second measures the amount of cluster for observations within the same level three unit same level two unit. 
+In order to think about this issue, it is useful to think first about the conceptual issue. With a three level model, as noted in @sec-unconditional-longitudinal, we have two possible ICC’s to consider. One ICC measures the amount of clustering for observations within the *same* level unit but *different* level two units, while the second ICC measures the amount of clustering for observations within the *same* level three unit and the *same* level two unit. 
 
-The choices are illustrated in the left panel of @fig-ICC. Thinking this through, if it becomes more clear that the choices of ICC for a four level model are therefore more complicated. One can consider: observations that are only clustered within the same level 4 unit but different level 3 units and different level 2 units; observations clustered within the same level 4 unit, the same level 3 unit and different level 2 units; and observations that are clustered within the same level 4, 3 and 2 units.
+The choices are illustrated in the first panel of @fig-ICC. Extending this thinking, it then becomes more clear that the choices of ICC for a four level model are therefore more complicated. One can consider: observations that are only clustered within the same level 4 unit but different level 3 units and different level 2 units; observations clustered within the same level 4 unit, the same level 3 unit and different level 2 units; and observations that are clustered within the same level 4, 3 and 2 units.
 
 ![ICCs in 3 Level And 4 Level Models](ICC.png){width=75% #fig-ICC} 
 
-In @sec-ICC and @sec-unconditional-longitudinal, I used the notation $\text{var}$ to describe the variances of the different random effects, which at that point in the discussion, I found to be intuitive and therefore pedagogically useful. For the discussion below, I will use the more compact but less intuitive notation $\tau$ for the variance components at level 2 and higher (e.g. for the discussion in @sec-unconditional-longitudinal, $\tau_3 = \text{var}(u_0)$ $\tau_2 = \text{var}(v_0)$) [^tau].
+In @sec-ICC and @sec-unconditional-longitudinal, I used the notation $\text{var}$ to describe the variances of the different random effects, which at that point in the discussion, I found to be intuitive and therefore pedagogically useful. For the discussion below, I will use the more compact but less intuitive notation $\tau$ for the variance components at level 2 and higher (e.g. from the discussion in @sec-unconditional-longitudinal, $\tau_3 = \text{var}(u_0)$ $\tau_2 = \text{var}(v_0)$) [^tau].
 
 [^tau]: The $\tau$ notation for variance components is used in @Ludecke2023 and @Raudenbush2002.
 
@@ -82,7 +82,7 @@ pander::pander(ICCdata, split.cells = 10) # replay
 ```
 
 
-More generally Stata Corporation [@StataCorp2023] provides the following formula for ICC's in multilevel models. I adapt the notation of a formula originally provided in the excellent Stata documentation on the intraclass correlation. For a model with *Q* total levels, the ICC for level *q* is defined as:
+More generally Stata Corporation [@StataCorp2023] provides the following formula for ICC's in multilevel models. \index{ICC} I adapt the notation of this formula originally provided in the excellent Stata documentation, for the intraclass correlation for models with many levels. For a model with *Q* total levels, the ICC for level *q* is defined as:
 
 $$\text{ICC}_q = \frac{\sum^Q_{q} \tau_q}{\text{var}(e) + \Sigma^Q_2 \tau_q}$$ {#eq-ICC-morelevels}
 
@@ -97,29 +97,60 @@ $$\text{ICC}_q = \frac{\sum^Q_{q} \tau_q}{\text{var}(e) + \Sigma^Q_2 \tau_q}$$ {
 
 ### Data
 
-The United Nations employs six official languages in its operations [@UNLanguages2024]. So I add 6 hypothetical languages to the *cross-sectional* data. 
+@Ethnologue2024 estimates that there are over 7,000 languages spoken worldwide. For the sake of illustration, I add 100 hypothetical languages to the *cross-sectional* data.
 
-::: {.callout-caution collapse="false"}
-Similar to my caution above, note that, to keep the example somewhat realistic with regard to the official languages of the United Nations, I am adding 6 languages to the data. Remember, however, that 6 groupings may be too few categories to use as an additional random effect (@sec-indicator-variables-random-effects), and that it is worth exploring whether it might be more appropriate to model these languages as indicator variables, rather than as random effects (@sec-indicator-variables-random-effects).
+::: {.callout-tip}
+In contrast to my addition of simulated UN Regions to the *longitudinal* data earlier in @sec-fourlevel, these 100 hypothetical languages are a large enough number of languages to include as a random effect (@sec-indicator-variables-random-effects).
 :::
 
 ### Equation
 
-The terms in the equation below are similar to those in @eq-fourlevel. Note, however, that here, for purposes of exposition, I am working with the cross sectional data. `country`, and the new variable, `language` are *cross-classified* levels in the data in that neither is hierarchically nested inside the others: residents of the same country will not all speak the same language, and speakers of the same language will not all live in the same country. I would use a random effect $l$ for language, except for the fact that it would create confusion because of the similarity of $l$ and the number $1$. Therefore, I use the next available letter of the alphabet for language, $m$.
+The terms in the equation below are similar to those in @eq-MLM-fourlevel. Note, however, that here, for purposes of exposition, I am working with the cross sectional data.
+
+`country`, and the new variable, `language` are *cross-classified* levels in the data in that neither is hierarchically nested inside the other: residents of the same country will not all speak the same language, and speakers of the same language will not all live in the same country. I would use a random effect $l$ for language, except for the fact that it would create confusion because of the similarity of $l$ and the number *1*. Therefore, I use the next available letter of the alphabet for language, $m$. \index{cross classified models}
 
 $$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + $$ {#eq-crossclassified}
 
 $$\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +$$ 
+$$u_{0j} + m_{0m} + e_{ijm}$$ 
 
-$u_{0j} + m_{0i} + e_{ijm}$$ 
-
-Again, terms are similar to the terms used in @eq-MLM-longitudinal and @eq-fourlevel, with the exception that in @eq-crossclassified, we are talking about family *i* in country *j*, speaking language *m*.
+Again, terms are similar to the terms used in @eq-MLM-longitudinal and @eq-MLM-fourlevel, with the exception that in @eq-crossclassified, we are talking about family *i* in country *j*, speaking language *m*.
 
 ### Unconditional Model
 
+```{r, child=c('./simulate-and-analyze-multilevel-data/tableCC0.md')}
+```
+
 ### ICC
 
+Definitions for ICC's for cross classified models are provided in @RabeHesketh2022. Following my procedure above, I adapt this notation by using $\tau$ for variance components. Because these variance components do not refer to hierarchically nested levels, instead of numbers, I refer to variance components $\tau_A$ and $\tau_B$. \index{ICC}
+
+```{r}
+#| label: tbl-ICC-crossclassified
+#| tbl-cap: ICCs in Cross Classified Models
+#| echo: false
+
+`Groupings in Model` <- c("A", "B")
+
+Description <- c("Same unit A",
+                 "Same unit B")
+
+Formula <- c("$$\\frac{\\tau_A}{\\tau_A + \\tau_B + e_{ijm}}$$",
+             "$$\\frac{\\tau_B}{\\tau_A + \\tau_B + e_{ijm}}$$")
+
+ICCdataCC <- data.frame(`Groupings in Model`,
+                      Description, 
+                      Formula,
+                      check.names = FALSE)
+
+pander::pander(ICCdataCC, split.cells = 10) # replay
+
+```
+
 ### Conditional Model
+
+```{r, child=c('./simulate-and-analyze-multilevel-data/tableCC1.md')}
+```
 
 ### Interpretation
 

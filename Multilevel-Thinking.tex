@@ -71,7 +71,7 @@
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
 \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
@@ -81,7 +81,7 @@
 \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
 \newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
@@ -242,7 +242,7 @@
 \subtitle{Discovering Diversity, Universals, and Particulars in
 Cross-Cultural Research}
 \author{Andrew Grogan-Kaylor}
-\date{2024-08-09}
+\date{2024-08-10}
 
 \begin{document}
 \maketitle
@@ -337,7 +337,7 @@ practically focused guide for the applied researcher who is attempting
 to carry out better research with diverse populations, particularly
 research directed toward advocacy or social change.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, bottomtitle=1mm, coltitle=black, opacitybacktitle=0.6, opacityback=0, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, bottomrule=.15mm, colback=white, left=2mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Complex Answers Hidden Inside Simple Questions}, arc=.35mm, rightrule=.15mm, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, bottomrule=.15mm, rightrule=.15mm, left=2mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, breakable, toptitle=1mm, leftrule=.75mm, arc=.35mm, titlerule=0mm, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Complex Answers Hidden Inside Simple Questions}, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacitybacktitle=0.6]
 
 My history of teaching statistical methods has over time convinced me
 that statistical questions are often seemingly simple questions, that
@@ -360,31 +360,17 @@ the Nautilus shell, and the Mandelbrot set.
 
 \begin{minipage}{0.50\linewidth}
 
-\begin{figure}[H]
+\includegraphics[width=\textwidth,height=3in]{nautilus-new.png}
 
-{\centering \includegraphics[width=\textwidth,height=3in]{nautilus-new.png}
-
-}
-
-\subcaption{The Nautilus Shell, image courtesy Microsoft (2024)}
-
-\end{figure}%
-
+\subcaption{\label{}The Nautilus Shell, image courtesy Microsoft (2024)}
 \end{minipage}%
 %
 \begin{minipage}{0.50\linewidth}
 
-\begin{figure}[H]
+\includegraphics[width=\textwidth,height=3in]{mandelbrot.png}
 
-{\centering \includegraphics[width=\textwidth,height=3in]{mandelbrot.png}
-
-}
-
-\subcaption{Image of the Mandelbrot Set, produced with
+\subcaption{\label{}Image of the Mandelbrot Set, produced with
 \texttt{mandelbrot} by Moore \& dos Reis (2017)}
-
-\end{figure}%
-
 \end{minipage}%
 \newline
 \begin{minipage}{0.50\linewidth}
@@ -1147,7 +1133,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, bottomtitle=1mm, coltitle=black, opacitybacktitle=0.6, opacityback=0, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, bottomrule=.15mm, colback=white, left=2mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, arc=.35mm, rightrule=.15mm, colframe=quarto-callout-note-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, bottomrule=.15mm, rightrule=.15mm, left=2mm, colframe=quarto-callout-note-color-frame, toprule=.15mm, breakable, toptitle=1mm, leftrule=.75mm, arc=.35mm, titlerule=0mm, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, colbacktitle=quarto-callout-note-color!10!white, colback=white, opacitybacktitle=0.6]
 
 Data are presented in Stata format. The Appendix considers the analysis
 of multilevel models using multiple software packages: Stata, R \&
@@ -1368,7 +1354,7 @@ conceptual level 2 & N/A & Administrative indicator of social unit \\
   \emph{statistically} aggregated to Level 2.
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, bottomtitle=1mm, coltitle=black, opacitybacktitle=0.6, opacityback=0, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, bottomrule=.15mm, colback=white, left=2mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, arc=.35mm, rightrule=.15mm, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, bottomrule=.15mm, rightrule=.15mm, left=2mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, breakable, toptitle=1mm, leftrule=.75mm, arc=.35mm, titlerule=0mm, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacitybacktitle=0.6]
 
 Such aggregated variables represent the \emph{average} level of a
 response across each Level 2 unit, and are sometimes called ``contextual
@@ -1559,8 +1545,7 @@ of variation and diversity, more clear.
 
 \bookmarksetup{startatroot}
 
-\chapter{The Cross Sectional Multilevel
-Model}\label{the-cross-sectional-multilevel-model}
+\chapter{The Cross Sectional Multilevel Model}\label{sec-crosssectional}
 
 \begin{quote}
 ``Mathematical Science shows us what is. It is the language of unseen
@@ -2040,7 +2025,7 @@ outcome varied across countries.
 level, or Level 2, variable in this model is not associated with the
 outcome.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, bottomtitle=1mm, coltitle=black, opacitybacktitle=0.6, opacityback=0, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, bottomrule=.15mm, colback=white, left=2mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Intuitions}, arc=.35mm, rightrule=.15mm, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, bottomrule=.15mm, rightrule=.15mm, left=2mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, breakable, toptitle=1mm, leftrule=.75mm, arc=.35mm, titlerule=0mm, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Intuitions}, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacitybacktitle=0.6]
 
 \emph{Random intercepts} and \emph{random slopes} are statistically
 closely related concepts. In my experience of over 10 years of teaching
@@ -2079,7 +2064,7 @@ concretely, for example:
 \end{tcolorbox}
 
 \section{Indicator Variables, Random Intercepts and Random Slopes, and
-Identities}\label{indicator-variables-random-intercepts-and-random-slopes-and-identities}
+Identities}\label{sec-indicator-variables-random-effects}
 
 \subsection{Variable Types}\label{variable-types}
 
@@ -2273,7 +2258,7 @@ In Equation~\ref{eq-indicator-variables} the first group of race,
 omitted from the model, and all comparisons are made to individuals with
 identity \texttt{race1}.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, bottomtitle=1mm, coltitle=black, opacitybacktitle=0.6, opacityback=0, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, bottomrule=.15mm, colback=white, left=2mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Indicator Variables in Equations And Syntax}, arc=.35mm, rightrule=.15mm, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, bottomrule=.15mm, rightrule=.15mm, left=2mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, breakable, toptitle=1mm, leftrule=.75mm, arc=.35mm, titlerule=0mm, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Indicator Variables in Equations And Syntax}, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacitybacktitle=0.6]
 
 Thus, if an identity, such as race, is used as an \emph{indicator
 variable}, it would appear in the equations (e.g.
@@ -2282,7 +2267,7 @@ in the Appendix, in the same place as the \texttt{identity} variable.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, bottomtitle=1mm, coltitle=black, opacitybacktitle=0.6, opacityback=0, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, bottomrule=.15mm, colback=white, left=2mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reference Categories Need To Be Chosen Carefully}, arc=.35mm, rightrule=.15mm, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, bottomrule=.15mm, rightrule=.15mm, left=2mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, breakable, toptitle=1mm, leftrule=.75mm, arc=.35mm, titlerule=0mm, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reference Categories Need To Be Chosen Carefully}, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacitybacktitle=0.6]
 
 Reference categories need to be chosen carefully. This is especially
 true in studies that hope to be attentive to diversity and social
@@ -2298,7 +2283,7 @@ the choice of reference categories can be manually specified.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, bottomtitle=1mm, coltitle=black, opacitybacktitle=0.6, opacityback=0, leftrule=.75mm, colbacktitle=quarto-callout-warning-color!10!white, toprule=.15mm, bottomrule=.15mm, colback=white, left=2mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Indicator Variables Should Not Be Treated As Continuous Variables}, arc=.35mm, rightrule=.15mm, colframe=quarto-callout-warning-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, bottomrule=.15mm, rightrule=.15mm, left=2mm, colframe=quarto-callout-warning-color-frame, toprule=.15mm, breakable, toptitle=1mm, leftrule=.75mm, arc=.35mm, titlerule=0mm, bottomtitle=1mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Indicator Variables Should Not Be Treated As Continuous Variables}, colbacktitle=quarto-callout-warning-color!10!white, colback=white, opacitybacktitle=0.6]
 
 Identities that are measured in the data with a single categorical
 variable with values like \texttt{1}, \texttt{2}, \texttt{3},
@@ -2346,7 +2331,7 @@ Here, the inclusion of \(v_{0k}\), a random intercept for identity,
 would be a way to model the presence of many possible values of an
 identity variable.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, bottomtitle=1mm, coltitle=black, opacitybacktitle=0.6, opacityback=0, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, bottomrule=.15mm, colback=white, left=2mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Random Intercepts in Equations And Syntax}, arc=.35mm, rightrule=.15mm, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, bottomrule=.15mm, rightrule=.15mm, left=2mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, breakable, toptitle=1mm, leftrule=.75mm, arc=.35mm, titlerule=0mm, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Random Intercepts in Equations And Syntax}, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacitybacktitle=0.6]
 
 Thus, if an identity, such as race, is used as a \emph{random
 intercept}, it would appear in the equations (e.g.
@@ -3370,7 +3355,7 @@ outcomes.
 Examining the interaction terms, we find that none of these variables
 modify the time trajectory of the outcome.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, bottomtitle=1mm, coltitle=black, opacitybacktitle=0.6, opacityback=0, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, bottomrule=.15mm, colback=white, left=2mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Interactions And Random Slopes in Longitudinal Models}, arc=.35mm, rightrule=.15mm, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, bottomrule=.15mm, rightrule=.15mm, left=2mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, breakable, toptitle=1mm, leftrule=.75mm, arc=.35mm, titlerule=0mm, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Interactions And Random Slopes in Longitudinal Models}, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacitybacktitle=0.6]
 
 Having now discussed both \emph{random slopes}
 (Section~\ref{sec-conditional-model}), and \emph{interaction terms}
@@ -3415,7 +3400,7 @@ research to make recommendations about \emph{interventions}, or
 \emph{treatments}, or \emph{policies}, one is engaging in some form of
 causal reasoning (Duncan \& Gibson-Davis, 2006). \index{causality}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, bottomtitle=1mm, coltitle=black, opacitybacktitle=0.6, opacityback=0, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, bottomrule=.15mm, colback=white, left=2mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{The Ubiquity of Causal Reasoning}, arc=.35mm, rightrule=.15mm, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, bottomrule=.15mm, rightrule=.15mm, left=2mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, breakable, toptitle=1mm, leftrule=.75mm, arc=.35mm, titlerule=0mm, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{The Ubiquity of Causal Reasoning}, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacitybacktitle=0.6]
 
 If one is saying that implementing \emph{x} would result in beneficial
 changes in \emph{y}, one is arguing--at least implicitly--that \emph{x}
@@ -4332,7 +4317,7 @@ For these reasons it is often convenient to calculate predicted
 probabilities at different values of the independent variables.
 \index{predicted probabilities}
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, bottomtitle=1mm, coltitle=black, opacitybacktitle=0.6, opacityback=0, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, bottomrule=.15mm, colback=white, left=2mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{The Algebra May Be Helpful}, arc=.35mm, rightrule=.15mm, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, bottomrule=.15mm, rightrule=.15mm, left=2mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, breakable, toptitle=1mm, leftrule=.75mm, arc=.35mm, titlerule=0mm, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{The Algebra May Be Helpful}, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacitybacktitle=0.6]
 
 Below, I provide algebra for calculating predicted probabilities. This
 algebra sometimes proves difficult for readers to follow but is provided
@@ -4428,21 +4413,22 @@ others using multilevel models, the vast majority of multilevel modeling
 is done with two level models. In this chapter, I discuss models with
 more than two levels as well as models where the multiple levels are not
 hierarchically nested, but are instead \emph{cross classified}.
+\index{cross classified models}
 
 In Chapter~\ref{sec-longitudinal}, I have already begun a discussion of
 models with more than two levels. In that chapter, I discussed a
-longitudinal model with three levels time points nested inside
+longitudinal model with three levels: time points nested inside
 individuals inside countries. It is worth noting that in practice, many
 longitudinal models are estimated as two level models with the time
 points nested inside individuals. Indeed, had there been no
-statistically, significant geographic clustering by country in
+statistically significant geographic clustering by country in
 Equation~\ref{eq-MLM-longitudinal}, this model could have been estimated
 with a two level model.
 
 Let us consider scenarios in which it is appropriate to estimate models
 with four levels, or with levels that are cross-classified.
 
-\section{Three Or More Levels}\label{three-or-more-levels}
+\section{Three Or More Levels}\label{sec-fourlevel}
 
 \subsection{Data}\label{data}
 
@@ -4451,6 +4437,19 @@ world into a number of regions or sub-regions (Arel-Bundock et al.,
 2018). Thus, I add five simulated regional United Nations groupings to
 the \emph{longitudinal} data in order to illustrate the idea of a 4
 level model.
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, bottomrule=.15mm, rightrule=.15mm, left=2mm, colframe=quarto-callout-caution-color-frame, toprule=.15mm, breakable, toptitle=1mm, leftrule=.75mm, arc=.35mm, titlerule=0mm, bottomtitle=1mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, colbacktitle=quarto-callout-caution-color!10!white, colback=white, opacitybacktitle=0.6]
+
+Note that, to keep the example somewhat realistic with regard to the
+regional groupings defined by the United Nations, I am adding 5
+simulated regions to the data. Remember, however, that 5 groupings may
+be too few categories to use as an additional random effect
+(Section~\ref{sec-indicator-variables-random-effects}), and that it is
+worth exploring whether it might be more appropriate to model these
+regions as indicator variables, rather than as random effects
+(Section~\ref{sec-indicator-variables-random-effects}).
+
+\end{tcolorbox}
 
 \subsection{Equation}\label{equation}
 
@@ -4486,24 +4485,25 @@ Number of observations & 9000 & \\
 \subsection{ICC}\label{icc}
 
 Calculation of the ICC becomes conceptually and statistically more
-complicated as we increase the number of levels.
+complicated as we increase the number of levels. \index{ICC}
 
 In order to think about this issue, it is useful to think first about
 the conceptual issue. With a three level model, as noted in
 Section~\ref{sec-unconditional-longitudinal}, we have two possible ICC's
-to consider. One measures the amount of clustering for observations
-within the same level unit but different level two units, well the
-second measures the amount of cluster for observations within the same
-level three unit same level two unit.
+to consider. One ICC measures the amount of clustering for observations
+within the \emph{same} level unit but \emph{different} level two units,
+while the second ICC measures the amount of clustering for observations
+within the \emph{same} level three unit and the \emph{same} level two
+unit.
 
-The choices are illustrated in the left panel of Figure~\ref{fig-ICC}.
-Thinking this through, if it becomes more clear that the choices of ICC
-for a four level model are therefore more complicated. One can consider:
-observations that are only clustered within the same level 4 unit but
-different level 3 units and different level 2 units; observations
-clustered within the same level 4 unit, the same level 3 unit and
-different level 2 units; and observations that are clustered within the
-same level 4, 3 and 2 units.
+The choices are illustrated in the first panel of Figure~\ref{fig-ICC}.
+Extending this thinking, it then becomes more clear that the choices of
+ICC for a four level model are therefore more complicated. One can
+consider: observations that are only clustered within the same level 4
+unit but different level 3 units and different level 2 units;
+observations clustered within the same level 4 unit, the same level 3
+unit and different level 2 units; and observations that are clustered
+within the same level 4, 3 and 2 units.
 
 \begin{figure}
 
@@ -4523,7 +4523,7 @@ Section~\ref{sec-unconditional-longitudinal}, I used the notation
 effects, which at that point in the discussion, I found to be intuitive
 and therefore pedagogically useful. For the discussion below, I will use
 the more compact but less intuitive notation \(\tau\) for the variance
-components at level 2 and higher (e.g.~for the discussion in
+components at level 2 and higher (e.g.~from the discussion in
 Section~\ref{sec-unconditional-longitudinal},
 \(\tau_3 = \text{var}(u_0)\) \(\tau_2 = \text{var}(v_0)\)) \footnote{The
   \(\tau\) notation for variance components is used in Lüdecke (2023)
@@ -4591,10 +4591,11 @@ e_{ijk}}\) \\
 \end{longtable}
 
 More generally Stata Corporation (StataCorp, 2023b) provides the
-following formula for ICC's in multilevel models. I adapt the notation
-of a formula originally provided in the excellent Stata documentation on
-the intraclass correlation. For a model with \emph{Q} total levels, the
-ICC for level \emph{q} is defined as:
+following formula for ICC's in multilevel models. \index{ICC} I adapt
+the notation of this formula originally provided in the excellent Stata
+documentation, for the intraclass correlation for models with many
+levels. For a model with \emph{Q} total levels, the ICC for level
+\emph{q} is defined as:
 
 \begin{equation}\phantomsection\label{eq-ICC-morelevels}{\text{ICC}_q = \frac{\sum^Q_{q} \tau_q}{\text{var}(e) + \Sigma^Q_2 \tau_q}}\end{equation}
 
@@ -4625,19 +4626,138 @@ Number of observations & 9000 & \\
 
 ** p\textless.01, * p\textless.05
 
+\subsection{Interpretation}\label{interpretation}
+
 \section{Cross-Classified Models}\label{cross-classified-models}
 
 \subsection{Data}\label{data-1}
 
-The United Nations employs six official languages in its operations
-(United Nations, 2024). So I add 6 hypothetical languages to the
-\emph{cross-sectional} data.
+Ethnologue (2024) estimates that there are over 7,000 languages spoken
+worldwide. For the sake of illustration, I add 100 hypothetical
+languages to the \emph{cross-sectional} data.
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacityback=0, bottomrule=.15mm, rightrule=.15mm, left=2mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, breakable, toptitle=1mm, leftrule=.75mm, arc=.35mm, titlerule=0mm, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colbacktitle=quarto-callout-tip-color!10!white, colback=white, opacitybacktitle=0.6]
+
+In contrast to my addition of simulated UN Regions to the
+\emph{longitudinal} data earlier in Section~\ref{sec-fourlevel}, these
+100 hypothetical languages are a large enough number of languages to
+include as a random effect
+(Section~\ref{sec-indicator-variables-random-effects}).
+
+\end{tcolorbox}
+
+\subsection{Equation}\label{equation-1}
+
+The terms in the equation below are similar to those in
+Equation~\ref{eq-MLM-fourlevel}. Note, however, that here, for purposes
+of exposition, I am working with the cross sectional data.
+
+\texttt{country}, and the new variable, \texttt{language} are
+\emph{cross-classified} levels in the data in that neither is
+hierarchically nested inside the other: residents of the same country
+will not all speak the same language, and speakers of the same language
+will not all live in the same country. I would use a random effect \(l\)
+for language, except for the fact that it would create confusion because
+of the similarity of \(l\) and the number \emph{1}. Therefore, I use the
+next available letter of the alphabet for language, \(m\).
+\index{cross classified models}
+
+\begin{equation}\phantomsection\label{eq-crossclassified}{\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + }\end{equation}
+
+\[\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +\]
+\[u_{0j} + m_{0m} + e_{ijm}\]
+
+Again, terms are similar to the terms used in
+Equation~\ref{eq-MLM-longitudinal} and Equation~\ref{eq-MLM-fourlevel},
+with the exception that in Equation~\ref{eq-crossclassified}, we are
+talking about family \emph{i} in country \emph{j}, speaking language
+\emph{m}.
 
 \subsection{Unconditional Model}\label{unconditional-model-2}
 
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+& 1 & \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\_cons & 52.435 & ** \\
+var(R\_country) & 3.122 & \\
+var(R\_language) & 1.426 & \\
+var(e) & 39.438 & \\
+Number of observations & 3000 & \\
+\end{longtable}
+
+** p\textless.01, * p\textless.05
+
 \subsection{ICC}\label{icc-1}
 
+Definitions for ICC's for cross classified models are provided in
+Rabe-Hesketh \& Skrondal (2022). Following my procedure above, I adapt
+this notation by using \(\tau\) for variance components. Because these
+variance components do not refer to hierarchically nested levels,
+instead of numbers, I refer to variance components \(\tau_A\) and
+\(\tau_B\). \index{ICC}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1944}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3472}}@{}}
+
+\caption{\label{tbl-ICC-crossclassified}ICCs in Cross Classified Models}
+
+\tabularnewline
+
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+Groupings in Model
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Description
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Formula
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+A & Same unit A & \(\frac{\tau_A}{\tau_A
++
+\tau_B +
+e_{ijm}}\) \\
+B & Same unit B & \(\frac{\tau_B}{\tau_A
++
+\tau_B +
+e_{ijm}}\) \\
+
+\end{longtable}
+
 \subsection{Conditional Model}\label{conditional-model-1}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+& 1 & \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+warmth & 0.822 & ** \\
+physical\_punishment & -1.000 & ** \\
+identity & & \\
+1 & -0.288 & \\
+intervention & & \\
+1 & 0.611 & ** \\
+HDI & 0.001 & \\
+\_cons & 51.824 & ** \\
+var(R\_country) & 3.332 & \\
+var(R\_language) & 1.411 & \\
+var(e) & 35.093 & \\
+Number of observations & 3000 & \\
+\end{longtable}
+
+** p\textless.01, * p\textless.05
+
+\subsection{Interpretation}\label{interpretation-1}
 
 \bookmarksetup{startatroot}
 
@@ -4833,6 +4953,10 @@ Social Service Research}, \emph{28}(1), 1--23.
 \bibitem[\citeproctext]{ref-Ellacuria2013}
 Ellacuria, I. (2013). \emph{{I}gnacio {E}llacuria: Essays on history,
 liberation, and salvation} (M. L. Lee, Ed.). Orbis Books.
+
+\bibitem[\citeproctext]{ref-Ethnologue2024}
+Ethnologue. (2024). \emph{Languages of the world}.
+\url{https://www.ethnologue.com/}
 
 \bibitem[\citeproctext]{ref-Felitti1998}
 Felitti, V. J., Anda, R. F., Nordenberg, D., Williamson, D. F., Spitz,
@@ -5247,10 +5371,6 @@ UNICEF. \url{https://mics.unicef.org/}
 
 \bibitem[\citeproctext]{ref-UN2022}
 United Nations. (2022). \emph{Sustainable development goals}.
-
-\bibitem[\citeproctext]{ref-UNLanguages2024}
-United Nations. (2024). \emph{Official languages}.
-\url{https://www.un.org/en/our-work/official-languages}
 
 \bibitem[\citeproctext]{ref-UNDPHDI}
 United Nations Development Program. (2022). \emph{{Human Development
