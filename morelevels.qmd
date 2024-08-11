@@ -16,6 +16,10 @@ Let us consider scenarios in which it is appropriate to estimate models with fou
 
 Both the World Bank, and the United Nations divide the countries of the world into a number of regions or sub-regions [@ArelBundock2018]. Thus, I add five simulated regional United Nations groupings to the *longitudinal* data in order to illustrate the idea of a 4 level model. 
 
+::: {.callout-caution collapse="false"}
+Note that, to keep the example somewhat realistic with regard to the regional groupings defined by the United Nations, I am adding 5 simulated regions to the data. Remember, however, that 5 groupings may be too few categories to use as an additional random effect (@sec-indicator-variables-random-effects), and that it is worth exploring whether it might be more appropriate to model these regions as indicator variables, rather than as random effects (@sec-indicator-variables-random-effects).
+:::
+
 ### Equation
 
 $$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + $$ {#eq-MLM-fourlevel} 
@@ -93,7 +97,11 @@ $$\text{ICC}_q = \frac{\sum^Q_{q} \tau_q}{\text{var}(e) + \Sigma^Q_2 \tau_q}$$ {
 
 ### Data
 
-The United Nations employs six official languages in its operations [@UNLanguages2024]. So I add 6 hypothetical languages to the *cross-sectional* data.
+The United Nations employs six official languages in its operations [@UNLanguages2024]. So I add 6 hypothetical languages to the *cross-sectional* data. 
+
+::: {.callout-caution collapse="false"}
+Similar to my caution above, note that, to keep the example somewhat realistic with regard to the official languages of the United Nations, I am adding 6 languages to the data. Remember, however, that 6 groupings may be too few categories to use as an additional random effect (@sec-indicator-variables-random-effects), and that it is worth exploring whether it might be more appropriate to model these languages as indicator variables, rather than as random effects (@sec-indicator-variables-random-effects).
+:::
 
 ### Equation
 
