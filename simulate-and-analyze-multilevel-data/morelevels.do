@@ -7,7 +7,7 @@
 
 clear
 
-cd "C:\Users\agrogan\Desktop\GitHub\multilevel-thinking\simulate-and-analyze-multilevel-data\"
+cd "/Users/agrogan/Desktop/GitHub/multilevel-thinking/simulate-and-analyze-multilevel-data"
 
 use simulated_multilevel_longitudinal_data.dta, clear // LONGITUDINAL DATA
 
@@ -67,9 +67,13 @@ use "simulated_multilevel_data.dta", clear // CROSS SECTIONAL DATA
 * simulate language group
 ***********************************
 
-generate language = runiformint(1,6) // 6 random UN languages
+* generate language = runiformint(1,6) // 6 random UN languages
 
-replace outcome = outcome + (language - 3) // add a little bit of a "random effect"
+* replace outcome = outcome + (language - 3) // add a little bit of a "random effect"
+
+generate language = runiformint(1,100) // 100 random languages
+
+replace outcome = outcome + (language - 50)/25 // add a little bit of a "random effect"
 
 *************************
 * unconditional model
