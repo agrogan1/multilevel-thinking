@@ -2,12 +2,16 @@
 * ML stands for more levels; CC stands for cross classified
 
 *************************
-* 4 level model
+* setup
 *************************
 
 clear
 
 cd "/Users/agrogan/Desktop/GitHub/multilevel-thinking/simulate-and-analyze-multilevel-data"
+
+*************************
+* 4 level model
+*************************
 
 use simulated_multilevel_longitudinal_data.dta, clear // LONGITUDINAL DATA
 
