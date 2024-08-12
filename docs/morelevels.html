@@ -583,7 +583,7 @@ Caution
 <div id="fig-ICC" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ICC-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="ICC.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="ICC.png" class="img-fluid figure-img" style="width:75.0%"></a>
+<a href="ICC.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="ICC.png" class="img-fluid figure-img" style="width:75.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ICC-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8.1: ICCs in 3 Level And 4 Level Models
@@ -678,6 +678,9 @@ e_{ijk}}\]</span></td>
 </div>
 <p>More generally Stata Corporation <span class="citation" data-cites="StataCorp2023">(<a href="references.html#ref-StataCorp2023" role="doc-biblioref">StataCorp, 2023</a>)</span> provides the following formula for ICC’s in multilevel models. I adapt the notation of this formula originally provided in the excellent Stata documentation, for the intraclass correlation for models with many levels. For a model with <em>Q</em> total levels, the ICC for level <em>q</em> is defined as:</p>
 <p><span id="eq-ICC-morelevels"><span class="math display">\[\text{ICC}_q = \frac{\sum^Q_{q} \tau_q}{\text{var}(e) + \Sigma^Q_2 \tau_q} \tag{8.2}\]</span></span></p>
+<p>As a substantive example, the ICC for observations in the same level 4 unit, but different level 3 and level 2 units is:</p>
+<p><span id="eq-ICC-morelevels-substantive"><span class="math display">\[\text{ICC} = \frac{4.173}{4.173 + 2.849 + 11.724 + 28.234} \approx 0.089 \tag{8.3}\]</span></span></p>
+<p>These results suggest that approximately 8.9% of the variation in the outcome is accounted for by the clustering of units in the same level 4 unit, but different level 3 and different level 2 units.</p>
 </section>
 <section id="conditional-model" class="level3" data-number="8.2.5">
 <h3 data-number="8.2.5" class="anchored" data-anchor-id="conditional-model"><span class="header-section-number">8.2.5</span> Conditional Model</h3>
@@ -766,6 +769,7 @@ e_{ijk}}\]</span></td>
 </section>
 <section id="interpretation" class="level3" data-number="8.2.6">
 <h3 data-number="8.2.6" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">8.2.6</span> Interpretation</h3>
+<p>Similar to the results in other chapters, the results suggest that time is associated with an increase in the outcome. Parental warmth is associated with an increase in the outcome, while physical punishment is associated with a decrease in the outcome. Participation in the intervention is associated with higher levels of the outcome, while the identity group and HDI are not associated with the outcome.</p>
 </section>
 </section>
 <section id="cross-classified-models" class="level2" data-number="8.3">
@@ -791,9 +795,9 @@ Tip
 <h3 data-number="8.3.2" class="anchored" data-anchor-id="equation-1"><span class="header-section-number">8.3.2</span> Equation</h3>
 <p>The terms in the equation below are similar to those in <a href="#eq-MLM-fourlevel" class="quarto-xref">Equation&nbsp;<span>8.1</span></a>. Note, however, that here, for purposes of exposition, I am working with the cross sectional data.</p>
 <p><code>country</code>, and the new variable, <code>language</code> are <em>cross-classified</em> levels in the data in that neither is hierarchically nested inside the other: residents of the same country will not all speak the same language, and speakers of the same language will not all live in the same country. I would use a random effect <span class="math inline">\(l\)</span> for language, except for the fact that it would create confusion because of the similarity of <span class="math inline">\(l\)</span> and the number <em>1</em>. Therefore, I use the next available letter of the alphabet for language, <span class="math inline">\(m\)</span>. </p>
-<p><span id="eq-crossclassified"><span class="math display">\[\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ +  \tag{8.3}\]</span></span></p>
+<p><span id="eq-crossclassified"><span class="math display">\[\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ +  \tag{8.4}\]</span></span></p>
 <p><span class="math display">\[\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +\]</span> <span class="math display">\[u_{0j} + m_{0m} + e_{ijm}\]</span></p>
-<p>Again, terms are similar to the terms used in <a href="longitudinal.html#eq-MLM-longitudinal" class="quarto-xref">Equation&nbsp;<span>6.4</span></a> and <a href="#eq-MLM-fourlevel" class="quarto-xref">Equation&nbsp;<span>8.1</span></a>, with the exception that in <a href="#eq-crossclassified" class="quarto-xref">Equation&nbsp;<span>8.3</span></a>, we are talking about family <em>i</em> in country <em>j</em>, speaking language <em>m</em>.</p>
+<p>Again, terms are similar to the terms used in <a href="longitudinal.html#eq-MLM-longitudinal" class="quarto-xref">Equation&nbsp;<span>6.4</span></a> and <a href="#eq-MLM-fourlevel" class="quarto-xref">Equation&nbsp;<span>8.1</span></a>, with the exception that in <a href="#eq-crossclassified" class="quarto-xref">Equation&nbsp;<span>8.4</span></a>, we are talking about family <em>i</em> in country <em>j</em>, speaking language <em>m</em>.</p>
 </section>
 <section id="unconditional-model-1" class="level3" data-number="8.3.3">
 <h3 data-number="8.3.3" class="anchored" data-anchor-id="unconditional-model-1"><span class="header-section-number">8.3.3</span> Unconditional Model</h3>
@@ -883,6 +887,9 @@ e_{ijm}}\]</span></td>
 </figure>
 </div>
 </div>
+<p>As a substantive example, the ICC for language is calculated as:</p>
+<p><span id="eq-ICC-crossclassified-substantive"><span class="math display">\[\text{ICC} = \frac{1.426}{3.122 + 1.426 + 39.438} \approx .032 \tag{8.5}\]</span></span></p>
+<p>Results of <a href="#eq-ICC-crossclassified-substantive" class="quarto-xref">Equation&nbsp;<span>8.5</span></a> suggest that approximately 3.2% of the variation in the outcome is attributable to language spoken.</p>
 </section>
 <section id="conditional-model-1" class="level3" data-number="8.3.5">
 <h3 data-number="8.3.5" class="anchored" data-anchor-id="conditional-model-1"><span class="header-section-number">8.3.5</span> Conditional Model</h3>
@@ -961,6 +968,7 @@ e_{ijm}}\]</span></td>
 </section>
 <section id="interpretation-1" class="level3" data-number="8.3.6">
 <h3 data-number="8.3.6" class="anchored" data-anchor-id="interpretation-1"><span class="header-section-number">8.3.6</span> Interpretation</h3>
+<p>Again, similar to the results above, the results indicate that parental warmth is associated with an increase in the outcome, while physical punishment is associated with a decrease in the outcome. Participation in the intervention is associated with higher levels of the outcome, while the identity group and HDI are not associated with the outcome.</p>
 
 
 <div class="hidden" aria-hidden="true">
@@ -1543,7 +1551,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

@@ -86,12 +86,29 @@ More generally Stata Corporation [@StataCorp2023] provides the following formula
 
 $$\text{ICC}_q = \frac{\sum^Q_{q} \tau_q}{\text{var}(e) + \Sigma^Q_2 \tau_q}$$ {#eq-ICC-morelevels}
 
+As a substantive example, the ICC for observations in the same level 4 unit, but different level 3 and level 2 units is:
+
+$$\text{ICC} = \frac{4.173}{4.173 + 2.849 + 11.724 + 28.234} \approx 0.089$$ {#eq-ICC-morelevels-substantive}
+
+These results suggest that approximately 8.9% of the variation in the outcome is accounted for by the clustering of units in the same level 4 unit, but different level 3 and different level 2 units.
+
+```{r}
+#| eval: false
+#| echo: false
+
+4.173 / (4.173 + 2.849 + 11.724 + 28.234)
+
+```
+
+
 ### Conditional Model
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/tableML1.md')}
 ```
 
 ### Interpretation
+
+Similar to the results in other chapters, the results suggest that time is associated with an increase in the outcome. Parental warmth is associated with an increase in the outcome, while physical punishment is associated with a decrease in the outcome. Participation in the intervention is associated with higher levels of the outcome, while the identity group and HDI are not associated with the outcome. 
 
 ## Cross-Classified Models
 
@@ -147,6 +164,21 @@ pander::pander(ICCdataCC, split.cells = 10) # replay
 
 ```
 
+As a substantive example, the ICC for language is calculated as:
+
+$$\text{ICC} = \frac{1.426}{3.122 + 1.426 + 39.438} \approx .032$$ {#eq-ICC-crossclassified-substantive}
+
+Results of @eq-ICC-crossclassified-substantive suggest that approximately 3.2% of the variation in the outcome is attributable to language spoken.
+
+```{r}
+#| eval: false
+#| echo: false
+
+1.426 / (3.122 + 1.426 + 39.438)
+
+```
+
+
 ### Conditional Model
 
 ```{r, child=c('./simulate-and-analyze-multilevel-data/tableCC1.md')}
@@ -154,6 +186,7 @@ pander::pander(ICCdataCC, split.cells = 10) # replay
 
 ### Interpretation
 
+Again, similar to the results above, the results indicate that parental warmth is associated with an increase in the outcome, while physical punishment is associated with a decrease in the outcome. Participation in the intervention is associated with higher levels of the outcome, while the identity group and HDI are not associated with the outcome. 
 
 
 
