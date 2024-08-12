@@ -34,7 +34,7 @@ set.seed(3846) # random seed
 
 For decades now, multilevel models have been an important quantitative tool for social research. While multilevel models have become very common in social research, there are aspects of these models that are explored less frequently in published articles that appear in academic journals. This book arises from my experiences of teaching a course entitled *Multilevel and Longitudinal Modeling* that I have taught for over a decade in the *Joint Doctoral Program in Social Work and Social Science* at the University of Michigan.
 
-The book started out as a set of notes on *things I only get to discuss during breaks, or after class, or during office hours* in my class on *Multilevel and Longitudinal Modeling*, and has grown from that set of notes into an introduction to multilevel modeling.
+The book started out as a set of notes on *things I only get to discuss during breaks, or after class, or during office hours* in my class on *Multilevel and Longitudinal Modeling*, and grew from that set of notes into a more general introduction to multilevel modeling. My aim is to provide an intuitive introduction to multilevel modeling. 
 
 My contention is that *multilevel modeling* offers powerful tools for understanding the *multilevel data* that social researchers often confront. For example, researchers are often interested in studying outcomes for diverse groups of children in different schools, residents of diverse and different neighborhoods, or individuals or families living in diverse and different countries. Such inherently multilevel data lead to analytic complexities, some of which appear to me to be well understood, while others seem to be much less often appreciated. 
 
