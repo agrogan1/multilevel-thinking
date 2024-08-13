@@ -124,7 +124,7 @@ plinear + plogistic
 ```
 
 
-In each model, the equivalent pattern of dots represents some dichotomous outcome (e.g. birth, death, satisfies diagnostic criteria) that becomes more likely as some independent variable increases in value. At higher levels of the independent variable, the outcome is almost exclusively `1`. At lower levels of the independent variable, the outcome is almost exclusively `0`. In the middle range of the independent variable, there is a mixture of `1` and `0`. One could try to estimate this dichotomous outcome with a straight line, or linear model, as depicted in the left hand panel of @fig-linear-logistic. This might be roughly plausible, and this procedure is termed a *linear probability model* (**CITATION**) which I will not discuss in more detail here. Suffice it to say that several problems emerge for a linear probability model: the model predicts values of the outcome greater than `1` and less than `0`; and a linear model estimates a constant association between changes in *x* and changes in *y* when this is not appropriate (@fig-marginal-changes). 
+In each model, the equivalent pattern of dots represents some dichotomous outcome (e.g. birth, death, satisfies diagnostic criteria) that becomes more likely as some independent variable increases in value. At higher levels of the independent variable, the outcome is almost exclusively `1`. At lower levels of the independent variable, the outcome is almost exclusively `0`. In the middle range of the independent variable, there is a mixture of `1` and `0`. One could try to estimate this dichotomous outcome with a straight line, or linear model, as depicted in the left hand panel of @fig-linear-logistic. This might be roughly plausible, and this procedure is termed a *linear probability model* [@Agresti1997; @Long2014] which I will not discuss in more detail here. Suffice it to say that several problems emerge for a linear probability model: the model predicts values of the outcome greater than `1` and less than `0`; and a linear model estimates a constant association between changes in *x* and changes in *y* when this is not appropriate (@fig-marginal-changes). 
 
 ```{r}
 #| fig-cap: "Marginal Changes in *y* in Logistic Regression"
@@ -148,11 +148,11 @@ plogistic +
 
 ## Probabilities and Odds
 
-To being to develop a *multilevel logistic regression* model, it is useful to think about ideas of *probabilities* and *odds*. One possible definition of a probability is that a probability is the long run fraction of times that an event occurs in series of events **CITATION**. \index{probability}
+To being to develop a *multilevel logistic regression* model, it is useful to think about ideas of *probabilities* and *odds*. One possible definition of a probability is that a probability is the long run fraction of times that an event occurs in series of events [@Freedman1991]. \index{probability}
 
 For example, if there are 100 possible occasions to experience an event--such as to experience happiness--and happiness only occurs 10 times out of a possible 100, then we might say that the *probability* or *risk* of happiness is .10. If happiness occurs 90 times out of a possible 100 occurrences, then we would say that the *probability* or *risk* of happiness is .90. \index{risk}
 
-In contrast, the *odds* of an event are equivalently the *count* of times that an event occurs weighed against the *count* of times that the event does not occur, or the *probability* that an event occurs weighed against the *probability* that an event does not occur. 
+In contrast, the *odds* of an event are equivalently the *count* of times that an event occurs weighed against the *count* of times that the event does not occur, or the *probability* that an event occurs weighed against the *probability* that an event does not occur [@Viera2008]. 
 
 $$\text{odds} = \frac{\text{count of occurrences}}{\text{count of occurrences}} = \frac{p(\text{occurrence})}{p(\text{non-occurrence})} =$$ {#eq-odds-definition}
 
@@ -210,7 +210,7 @@ Logistic regression begins with the idea that we are predicting the odds of an e
 
 We are estimating a function of these odds as a linear function of a set of predictors, $\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}$. Here $u_{0j}$ is the usual level 2 random intercept that I have been including all along in multilevel models (@eq-MLM). \index{logistic regression}
 
-The expression $\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}$ is a linear function of the independent variables. In order make a linear prediction appropriate, we take the logarithm of the odds, which provides the equation for multilevel logistic regression. 
+The expression $\beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}$ is a linear function of the independent variables. In order make a linear prediction appropriate, we take the logarithm of the odds, which provides the equation for multilevel logistic regression [@Stock2003; @RabeHesketh2022; @Long2014]. 
 
 $$\ln\Big(\frac{p(y)}{1-p(y)}\Big) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + u_{0j}$$ {#eq-logistic-MLM}
 
@@ -314,7 +314,7 @@ This unconditional model provides us with the variance of the random intercept (
 
 ### Intra-Class Correlation Coefficient
 
-In logistic regression, as noted in @eq-logistic-MLM, there is no $e_{ij}$ error term. In order to calculate the intra-class correlation coefficient, we use the fact that a standard logistic distribution has a variance of $\frac{\pi^2}{3}$, or roughly 3.29 **CITATION**.
+In logistic regression, as noted in @eq-logistic-MLM, there is no $e_{ij}$ error term. In order to calculate the intra-class correlation coefficient, we use the fact that a standard logistic distribution has a variance of $\frac{\pi^2}{3}$, or roughly 3.29 [@Long2014].
 
 Hence, in a logistic regression, the equation for the intra-class correlation coefficient becomes: 
 
@@ -375,7 +375,7 @@ ggplot(logisticdata,
 ```
 
 
-For these reasons it is often convenient to calculate predicted probabilities at different values of the independent variables. \index{predicted probabilities}
+For these reasons it is often convenient to calculate predicted probabilities at different values of the independent variables [CF @Long2014]. \index{predicted probabilities}
 
 ::: {.callout-tip}
 ### The Algebra May Be Helpful
