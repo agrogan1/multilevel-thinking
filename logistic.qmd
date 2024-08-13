@@ -331,7 +331,7 @@ I now estimate a *conditional* multilevel logistic regression model *with* indep
 
 The model demonstrates a number of results that are substantively similar to those in @sec-conditional-model. Here I use the rubric described in @tbl-odds-ratios-different-magnitudes to first describe each result more generally, and then more precisely[^odds-are-not-risks]. Increased levels of parental warmth are associated with increased odds of being in the higher outcome category. Specifically, the odds of the outcome increase 29% with each 1 unit increase in parental warmth. In contrast, increased levels of physical punishment are associated with decreased odds of being in the higher outcome category. Specifically, a 1 unit increase in the use of physical punishment is associated with a 25% decrease in the odds of the outcome. The identity category in these data is not associated with higher or lower odds of being in the higher outcome category. Participation in the intervention is associated with higher odds of being in the higher outcome category. Specifically, participation in the intervention is associated with a 19% increase in the odds of the outcome. The Human Development Index is not associated with different odds of being in the higher outcome category. 
 
-[^odds-are-not-risks]: In describing these odds ratios, it is miportnt to use the words odds, because, as demonstrated in @tbl-probabilities-odds, odds are not the same thing as risks or probabilities!
+[^odds-are-not-risks]: In describing these odds ratios, it is important to use the words odds, because, as demonstrated in @tbl-probabilities-odds, odds are not the same thing as risks or probabilities!
 
 ## Predicted Probabilities
 
