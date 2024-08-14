@@ -265,7 +265,7 @@ Examining the interaction terms, we find that none of these variables modify the
 ::: {.callout-tip}
 ## Interactions And Random Slopes in Longitudinal Models
 
-Having now discussed both *random slopes* (@sec-conditional-model), and *interaction terms* (@sec-interactions-with-time) in longitudinal models--and having seen that both *random slopes* and *interaction terms* involve changes in slope--one might again ask what is the difference between including a variable as a random slope or as an interaction term. When a variable is included as an *interaction term*, it indicates that we are attempting to estimate the change in slope associated with a *measured* variable. When we include a variable as a *random slope*, it indicates that we are attempting to estimate the change in slope associated with *unmeasured* variables. See in this regard @sec-measured-unmeasured-variation 
+Having now discussed both *random slopes* (@sec-conditional-model), and *interaction terms* (@sec-interactions-with-time) in longitudinal models--and having seen that both *random slopes* and *interaction terms* involve changes in slope--one might again ask what is the difference between including a variable as a random slope or as an interaction term. When a variable is included as an *interaction term*, it indicates that we are attempting to estimate the change in slope associated with a *measured* variable. When we include a variable as a *random slope*, it indicates that we are attempting to estimate the change in slope associated with *unmeasured* variables. See in this regard @sec-measured-and-unmeasured-variation 
 :::
 
 
