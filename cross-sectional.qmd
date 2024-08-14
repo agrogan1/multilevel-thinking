@@ -624,9 +624,11 @@ Above, in @sec-studyvariation, I have referred to multilevel models as the study
 
 I provide again, for pedagogical purposes, the example substantive equation (@eq-MLMsubstantive) that I have been using in this book.
 
-$$\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} +$$
+$$\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} +$$ {#eq-MLMsubstantive2}
+
 $$\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \text{HDI}_{ij} + $$
-$$u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}$$ {#eq-MLMsubstantive2}
+
+$$u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}$$ 
 
 ### Measured and Unmeasured Variation {#sec-measured-unmeasured-variation}
 
