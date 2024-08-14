@@ -482,7 +482,7 @@ window.Quarto = {
   <li><a href="#sec-wrongapproaches" id="toc-sec-wrongapproaches" class="nav-link" data-scroll-target="#sec-wrongapproaches"><span class="header-section-number">5.9</span> Some Wrong (or Partially Wrong) Approaches</a></li>
   <li><a href="#sec-studyvariation2" id="toc-sec-studyvariation2" class="nav-link" data-scroll-target="#sec-studyvariation2"><span class="header-section-number">5.10</span> Variation</a>
   <ul class="collapse">
-  <li><a href="#sec-measured-unmeasured-variation" id="toc-sec-measured-unmeasured-variation" class="nav-link" data-scroll-target="#sec-measured-unmeasured-variation"><span class="header-section-number">5.10.1</span> Measured and Unmeasured Variation</a></li>
+  <li><a href="#sec-measured-and-unmeasured-variation" id="toc-sec-measured-and-unmeasured-variation" class="nav-link" data-scroll-target="#sec-measured-and-unmeasured-variation"><span class="header-section-number">5.10.1</span> Measured and Unmeasured Variation</a></li>
   <li><a href="#variation-in-intercepts-or-outcomes" id="toc-variation-in-intercepts-or-outcomes" class="nav-link" data-scroll-target="#variation-in-intercepts-or-outcomes"><span class="header-section-number">5.10.2</span> Variation In Intercepts or Outcomes</a></li>
   <li><a href="#variation-in-predictors" id="toc-variation-in-predictors" class="nav-link" data-scroll-target="#variation-in-predictors"><span class="header-section-number">5.10.3</span> Variation In Predictors</a></li>
   <li><a href="#variation-in-slopes" id="toc-variation-in-slopes" class="nav-link" data-scroll-target="#variation-in-slopes"><span class="header-section-number">5.10.4</span> Variation in Slopes</a></li>
@@ -762,7 +762,7 @@ Figure&nbsp;5.3: An ‘Aware’ Graph
 </blockquote>
 <p>In this formulation of the equation, the nature of the random effects is more clear, and merits discussion. Notice that we have included a <em>random intercept</em>, <span class="math inline">\(u_{0j}\)</span> as well as a <em>random slope</em>, <span class="math inline">\(u_{1j} \times x\)</span>. The <em>random intercept</em>, <span class="math inline">\(u_{0j}\)</span>, indicates that there is variation in the <em>intercept</em> of the country specific regression lines, as is true in <a href="simulated-multi-country-data.html#fig-data" class="quarto-xref">Figure&nbsp;<span>3.2</span></a>. The <em>random slope</em> term associated with <span class="math inline">\(x\)</span>, <span class="math inline">\(u_{1j} \times x\)</span>, indicates that we are allowing for the possibility of variation in the <em>slope</em> of the regression lines that is associated with <span class="math inline">\(x\)</span>, in this case, the slope of parental warmth, as is possibly suggested in <a href="simulated-multi-country-data.html#fig-data" class="quarto-xref">Figure&nbsp;<span>3.2</span></a>.</p>
 <p>To make these ideas more concrete, I rewrite this equation in terms of the main substantive ideas of this book:</p>
-<p><span id="eq-MLMsubstantive"><span class="math display">\[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} + \tag{5.4}\]</span></span></p>
+<p><span id="eq-MLMsubstantive"><span class="math display">\[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \tag{5.4}\]</span></span></p>
 <p><span class="math display">\[\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \text{HDI}_{ij} + \]</span> <span class="math display">\[u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}\]</span></p>
 <p>Put substantively, this model indicates that the outcome can be conceptualized as a function of an intercept term, and contributions of parental warmth, physical punishment, identity group membership, participation in the intervention, and country level HDI. The <em>random intercept</em>, <span class="math inline">\(u_{0j}\)</span> indicates that there is some unexplained variation in the outcome at the country level. The <em>random slope</em>, <span class="math inline">\(u_{1j} \times \text{parental warmth}\)</span> indicates that the model is allowing for country level variation in the association of parental warmth with the outcome. Inspection of <a href="simulated-multi-country-data.html#fig-data" class="quarto-xref">Figure&nbsp;<span>3.2</span></a> indicates that it might be possible that there would be variation across countries in this slope. The model could be extended to allow for country level variation in other slope terms by adding other random slopes, eg <span class="math inline">\(u_{2j}\)</span>, <span class="math inline">\(u_{3j}\)</span>, etc.</p>
 </section>
@@ -1493,19 +1493,26 @@ Figure&nbsp;5.5: Decomposing a Variable into Within and Between Differences
 <h2 data-number="5.10" class="anchored" data-anchor-id="sec-studyvariation2"><span class="header-section-number">5.10</span> Variation</h2>
 <p>Above, in <a href="conceptual-framework.html#sec-studyvariation" class="quarto-xref"><span>Section 4.3</span></a>, I have referred to multilevel models as the study and exploration of variation. Now that I have provided some discussion of the multilevel model, more statistical “unpacking” of ideas about variation is warranted. </p>
 <p>I provide again, for pedagogical purposes, the example substantive equation (<a href="#eq-MLMsubstantive" class="quarto-xref">Equation&nbsp;<span>5.4</span></a>) that I have been using in this book.</p>
-<p><span class="math display">\[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} +\]</span> <span class="math display">\[\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \text{HDI}_{ij} + \]</span> <span id="eq-MLMsubstantive2"><span class="math display">\[u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij} \tag{5.12}\]</span></span></p>
-<section id="sec-measured-unmeasured-variation" class="level3" data-number="5.10.1">
-<h3 data-number="5.10.1" class="anchored" data-anchor-id="sec-measured-unmeasured-variation"><span class="header-section-number">5.10.1</span> Measured and Unmeasured Variation</h3>
+<p><span id="eq-MLMsubstantive2"><span class="math display">\[\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} + \tag{5.12}\]</span></span></p>
+<p><span class="math display">\[\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \text{HDI}_{ij} + \]</span></p>
+<p><span class="math display">\[u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}\]</span></p>
+<section id="sec-measured-and-unmeasured-variation" class="level3" data-number="5.10.1">
+<h3 data-number="5.10.1" class="anchored" data-anchor-id="sec-measured-and-unmeasured-variation"><span class="header-section-number">5.10.1</span> Measured and Unmeasured Variation</h3>
 <p>An equation for a multilevel model can be divided into measured and unmeasured variation. Below I use a simplified form of <a href="#eq-MLMsubstantive2" class="quarto-xref">Equation&nbsp;<span>5.12</span></a>, focusing in particular–for sake of illustration–on the identity variable.</p>
-<p><span class="math display">\[\underbrace{y_{ij}}_\text{outcome} = \underbrace{\beta_0}_\text{intercept} + \underbrace{\beta_1 x}_{\text{slope of} \\ \text{measured x}} + \underbrace{\beta_2 \text{identity}}_{\substack{\text{association of} \\ \text{measured identity} \\ \text{with intercept}}} + \underbrace{\beta_3 x \times \text{identity}}_{\substack{\text{association of} \\ \text{measured identity} \\ \text{with slope of} \\  \text{measured x}}} + \]</span></p>
-<p><span class="math display">\[\underbrace{u_{0j}}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in intercept}}} + \underbrace{u_{1j} \times x}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in slope of x}}} + \underbrace{e_{ij}}_{\substack{\text{unmeasured} \\ \text{individual} \\ \text{error}}}\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="measured-and-unmeasured-variation.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" data-glightbox="description: .lightbox-desc-7" title="Measured and Unmeasured Variation"><img src="measured-and-unmeasured-variation.png" class="img-fluid figure-img" style="width:75.0%" alt="Measured and Unmeasured Variation"></a></p>
+<figcaption>Measured and Unmeasured Variation</figcaption>
+</figure>
+</div>
+<p><span id="eq-measured-and-unmeasured-variation"><span class="math display">\[\! \tag{5.13}\]</span></span></p>
 <p>I have already introduced the idea of an unconditional model (<a href="#sec-unconditional" class="quarto-xref"><span>Section 5.4.1</span></a>), in which there are no independent variables, and all of the variation is unmeasured. The unconditional intraclcass correlation coefficient (ICC) (<a href="#sec-ICC" class="quarto-xref"><span>Section 5.4.2</span></a>) is a measure of the amount of variation that could potentially be attributable to the Level 2 units, in this case, different countries.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-variationsources" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-variationsources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="cross-sectional_files/figure-html/fig-variationsources-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" data-glightbox="description: .lightbox-desc-7"><img src="cross-sectional_files/figure-html/fig-variationsources-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="cross-sectional_files/figure-html/fig-variationsources-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" data-glightbox="description: .lightbox-desc-8"><img src="cross-sectional_files/figure-html/fig-variationsources-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-variationsources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.6: Sources of Variation in a Multilevel Model
@@ -1524,9 +1531,9 @@ Figure&nbsp;5.6: Sources of Variation in a Multilevel Model
 <h3 data-number="5.10.3" class="anchored" data-anchor-id="variation-in-predictors"><span class="header-section-number">5.10.3</span> Variation In Predictors</h3>
 <p>Equally important, I think, but much less frequently explored than variation in <em>outcomes</em>, is the possibility of variation in <em>predictors</em>, <span class="math inline">\(var(x_{ij})\)</span>. In the substantive example that we have employed so far, the <em>predictors</em> are different <em>parenting behaviors</em>, so considering variation in <em>predictors</em> allows us to consider variation in <em>parenting behaviors</em>, as well as variation in the <em>outcomes</em> of those behaviors. </p>
 <p>We would estimate variation in behaviors attributable to country in much the same way that we would estimate variation in outcomes, estimating an unconditional model, but substituting <span class="math inline">\(x\)</span> for <span class="math inline">\(y\)</span>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<p><span id="eq-unconditionalx"><span class="math display">\[x_{ij} = \beta_0 + w_{0j} + e_{ij} \tag{5.13}\]</span></span></p>
+<p><span id="eq-unconditionalx"><span class="math display">\[x_{ij} = \beta_0 + w_{0j} + e_{ij} \tag{5.14}\]</span></span></p>
 <p>Then, similarly, the variation in a predictor attributable to the clustered nature of the data–in this case the clustering of individuals in countries–is given by:</p>
-<p><span id="eq-ICCx"><span class="math display">\[\text{ICC}_x = \frac{var(w_{0j})}{var(w_{0j}) + var(e_{ij})} \tag{5.14}\]</span></span></p>
+<p><span id="eq-ICCx"><span class="math display">\[\text{ICC}_x = \frac{var(w_{0j})}{var(w_{0j}) + var(e_{ij})} \tag{5.15}\]</span></span></p>
 </section>
 <section id="variation-in-slopes" class="level3" data-number="5.10.4">
 <h3 data-number="5.10.4" class="anchored" data-anchor-id="variation-in-slopes"><span class="header-section-number">5.10.4</span> Variation in Slopes</h3>
@@ -1603,7 +1610,7 @@ Table&nbsp;5.4: Some Possible Sources of Variation To Consider in A Multilevel M
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(cov(u_{0j}, u_{1j})\)</span></td>
-<td>What is the covariance of the country specific intercept and and country specific slope. Is the country specific intercept related to the country specific slope?</td>
+<td>What is the covariance of the country specific intercept and country specific slope. Is the country specific intercept related to the country specific slope?</td>
 </tr>
 </tbody>
 </table>
@@ -1614,8 +1621,8 @@ Table&nbsp;5.4: Some Possible Sources of Variation To Consider in A Multilevel M
 <section id="variation-as-an-outcome" class="level3" data-number="5.10.6">
 <h3 data-number="5.10.6" class="anchored" data-anchor-id="variation-as-an-outcome"><span class="header-section-number">5.10.6</span> Variation As An Outcome</h3>
 <p>Even less common is to examine <em>variation</em> itself as an outcome <span class="citation" data-cites="Burkner2018">(<a href="references.html#ref-Burkner2018" role="doc-biblioref">Burkner, 2018</a>)</span>. </p>
-<p><span id="eq-distributional"><span class="math display">\[\sigma_{yij} = \beta_0 + \beta_1 x_1 + u_{0j} + e_{ij} \tag{5.15}\]</span></span></p>
-<p>Here, the variation in the outcome, <span class="math inline">\(\sigma_{yij}\)</span>, rather than the mean level of the outcome, <span class="math inline">\(y_{ij}\)</span>, is the focus of interest. My notation for <a href="#eq-distributional" class="quarto-xref">Equation&nbsp;<span>5.15</span></a> draws upon <span class="citation" data-cites="Burkner2018">Burkner (<a href="references.html#ref-Burkner2018" role="doc-biblioref">2018</a>)</span>’s notation, but is modified in order to be consistent with the rest of this book.</p>
+<p><span id="eq-distributional"><span class="math display">\[\sigma_{yij} = \beta_0 + \beta_1 x_1 + u_{0j} + e_{ij} \tag{5.16}\]</span></span></p>
+<p>Here, the variation in the outcome, <span class="math inline">\(\sigma_{yij}\)</span>, rather than the mean level of the outcome, <span class="math inline">\(y_{ij}\)</span>, is the focus of interest. My notation for <a href="#eq-distributional" class="quarto-xref">Equation&nbsp;<span>5.16</span></a> draws upon <span class="citation" data-cites="Burkner2018">Burkner (<a href="references.html#ref-Burkner2018" role="doc-biblioref">2018</a>)</span>’s notation, but is modified in order to be consistent with the rest of this book.</p>
 <p>Why might such models be of conceptual interest? Imagine for example, that the <em>variation</em> in psychological well-being is higher in countries with higher levels of poverty, or higher levels of income inequality. The use of such models as this, discussed in more detail by <span class="citation" data-cites="Burkner2018">Burkner (<a href="references.html#ref-Burkner2018" role="doc-biblioref">2018</a>)</span>, would allow us to explore such a question.</p>
 <p>Of note, while I do not explore in detail differences between Bayesian and frequentist approaches to multilevel modeling in this book, these models are likely to be only estimable with Bayesian software rather than with frequentist software <span class="citation" data-cites="Burkner2018">(<a href="references.html#ref-Burkner2018" role="doc-biblioref">Burkner, 2018</a>)</span>.</p>
 </section>
@@ -1633,7 +1640,8 @@ Table&nbsp;5.4: Some Possible Sources of Variation To Consider in A Multilevel M
 <span class="glightbox-desc lightbox-desc-4">A Heuristic Example</span>
 <span class="glightbox-desc lightbox-desc-5">Figure&nbsp;5.4: Distribution of Parental Warmth Across Countries</span>
 <span class="glightbox-desc lightbox-desc-6">Figure&nbsp;5.5: Decomposing a Variable into Within and Between Differences</span>
-<span class="glightbox-desc lightbox-desc-7">Figure&nbsp;5.6: Sources of Variation in a Multilevel Model</span>
+<span class="glightbox-desc lightbox-desc-7">Measured and Unmeasured Variation</span>
+<span class="glightbox-desc lightbox-desc-8">Figure&nbsp;5.6: Sources of Variation in a Multilevel Model</span>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
 <div id="ref-Barr2013" class="csl-entry" role="listitem">
@@ -2262,7 +2270,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
