@@ -238,7 +238,7 @@ In this formulation of the equation, the nature of the random effects is more cl
 
 To make these ideas more concrete, I rewrite this equation in terms of the main substantive ideas of this book:
 
-$$\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \\ \beta_2 \text{physical punishment}_{ij} +$$ {#eq-MLMsubstantive}
+$$\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} +$$ {#eq-MLMsubstantive}
 
 $$\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \text{HDI}_{ij} + $$
 $$u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}$$ 
@@ -630,13 +630,22 @@ $$\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \tex
 
 $$u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}$$ 
 
-### Measured and Unmeasured Variation {#sec-measured-unmeasured-variation}
+### Measured and Unmeasured Variation {#sec-measured-and-unmeasured-variation}
 
 An equation for a multilevel model can be divided into measured and unmeasured variation. Below I use a simplified form of @eq-MLMsubstantive2, focusing in particular--for sake of illustration--on the identity variable.
 
-$$\underbrace{y_{ij}}_\text{outcome} = \underbrace{\beta_0}_\text{intercept} + \underbrace{\beta_1 x}_{\text{slope of} \\ \text{measured x}} + \underbrace{\beta_2 \text{identity}}_{\substack{\text{association of} \\ \text{measured identity} \\ \text{with intercept}}} + \underbrace{\beta_3 x \times \text{identity}}_{\substack{\text{association of} \\ \text{measured identity} \\ \text{with slope of} \\  \text{measured x}}} + $$ 
+![Measured and Unmeasured Variation](measured-and-unmeasured-variation.png){width=75%}
 
-$$\underbrace{u_{0j}}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in intercept}}} + \underbrace{u_{1j} \times x}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in slope of x}}} + \underbrace{e_{ij}}_{\substack{\text{unmeasured} \\ \text{individual} \\ \text{error}}}$$
+$$\!$$ {#eq-measured-and-unmeasured-variation}
+
+```{r}
+#| echo: false
+#| eval: false
+
+# $$\underbrace{y_{ij}}_\text{outcome} = \underbrace{\beta_0}_\text{intercept} + \underbrace{\beta_1 x}_{\text{slope of} \\ \text{measured x}} + \underbrace{\beta_2 \text{identity}}_{\substack{\text{association of} \\ \text{measured identity} \\ \text{with intercept}}} + \underbrace{\beta_3 x \times \text{identity}}_{\substack{\text{association of} \\ \text{measured identity} \\ \text{with slope of} \\  \text{measured x}}} + $$ 
+
+# $$\underbrace{u_{0j}}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in intercept}}} + \underbrace{u_{1j} \times x}_{\substack{\text{unmeasured} \\ \text{Level 2} \\ \text{variation} \\ \text{in slope of x}}} + \underbrace{e_{ij}}_{\substack{\text{unmeasured} \\ \text{individual} \\ \text{error}}}$$
+```
 
 I have already introduced the idea of an unconditional model (@sec-unconditional), in which there are no independent variables, and all of the variation is unmeasured. The unconditional intraclcass correlation coefficient (ICC) (@sec-ICC) is a measure of the amount of variation that could potentially be attributable to the Level 2 units, in this case, different countries.
 
@@ -767,7 +776,7 @@ Thus, we can consider a number of sources of possible variation.
 | $\beta_{x} x$ | What is the relationship of x and y? |
 | $\beta_{xz} z \times x$ | What is the effect of z on the relationship of x and y? |
 | $var(u_{1j}) \text{ from } u_{1j} \times x$  | What is the country specific variation in the relationship of x and y? |     
-| $cov(u_{0j}, u_{1j})$ | What is the covariance of the country specific intercept and and country specific slope. Is the country specific intercept related to the country specific slope? |   
+| $cov(u_{0j}, u_{1j})$ | What is the covariance of the country specific intercept and country specific slope. Is the country specific intercept related to the country specific slope? |   
 
 :  Some Possible Sources of Variation To Consider in A Multilevel Model {#tbl-sourcesvariation}
 
