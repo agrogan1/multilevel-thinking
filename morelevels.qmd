@@ -129,6 +129,7 @@ The terms in the equation below are similar to those in @eq-MLM-fourlevel. Note,
 $$\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ + $$ {#eq-crossclassified}
 
 $$\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +$$ 
+
 $$u_{0j} + m_{0m} + e_{ijm}$$ 
 
 Again, terms are similar to the terms used in @eq-MLM-longitudinal and @eq-MLM-fourlevel, with the exception that in @eq-crossclassified, we are talking about family *i* in country *j*, speaking language *m*.
