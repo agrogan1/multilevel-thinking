@@ -26,6 +26,12 @@ bysort country: replace UNregion = UNregion[1] // all obs in country same UNregi
 replace outcome = outcome + UNregion - 2.5 // add a little bit of a "random effect"
 
 *************************
+* save data
+*************************
+
+save fourlevel.dta, replace
+
+*************************
 * unconditional model
 *************************
 
@@ -78,6 +84,12 @@ use "simulated_multilevel_data.dta", clear // CROSS SECTIONAL DATA
 generate language = runiformint(1,100) // 100 random languages
 
 replace outcome = outcome + (language - 50)/25 // add a little bit of a "random effect"
+
+*************************
+* save data
+*************************
+
+save crossclassified.dta, replace
 
 *************************
 * unconditional model
