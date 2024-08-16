@@ -2,11 +2,13 @@
 title: "Analyses"
 author: "Andy Grogan-Kaylor"
 editor: source
+toc: true
 ---
 
 # Setup
 
 ```{r}
+#| output: false
 
 library(Statamarkdown)
 
@@ -54,13 +56,14 @@ df4 <- read_dta("./simulate-and-analyze-multilevel-data/fourlevel.dta")
 
 ```{r}
 
-dfL$identity <- factor(dfL$identity)
+df4$identity <- factor(df4$identity)
 
-dfL$intervention <- factor(dfL$intervention)
+df4$intervention <- factor(df4$intervention)
 
 ```
 
-: {.callout-caution collapse="false"}
+
+::: {.callout-caution collapse="false"}
 `lme4` does not directly provide p values in results, because of some disagreement over exactly how these p values should be calculated. Therefore, in this Appendix, I also call library `lmerTest` to provide p values for `lme4` results.
 :::
 
@@ -95,7 +98,134 @@ summary(fit4B)
 
 ```
 
+## Julia
 
+```{julia}
+#| output: false
+#| label: Julia-getdata
+#| eval: false
+
+using Tables, MixedModels, StatFiles, DataFrames, CategoricalArrays, DataFramesMeta
+
+df4 = DataFrame(load("./simulate-and-analyze-multilevel-data/fourlevel.dta"))
+
+```
+
+```{julia}
+#| output: false
+#| eval: false
+
+@transform!(df4, :country = categorical(:country))
+
+@transform!(df4, :UNregion = categorical(:UNregion))
+
+@transform!(df4, :identity = categorical(:identity))
+
+@transform!(df4, :intervention = categorical(:intervention))
+
+```
+
+```{julia}
+#| label: Julia-fourlevelA
+#| eval: false
+
+m4A = fit(MixedModel, @formula(outcome ~ t + warmth + 
+                                  physical_punishment + 
+                                  identity + intervention + 
+                                  HDI +
+                                  (1 | UNregion) + 
+                                  (1 | country) + 
+                                  (1 | id)), df4)
+
+```
+
+
+```{julia}
+#| label: Julia-fourlevelB
+#| eval: false
+
+m4B = fit(MixedModel, @formula(outcome ~ t + warmth + 
+                                  physical_punishment + 
+                                  identity + intervention + 
+                                  HDI +
+                                  (1 | UNregion) + 
+                                  (1 | country) + 
+                                  (1 | id)), df4)
+
+```
 
 # Cross Classified Model
+
+## Stata
+
+```{stata, collectcode=TRUE}
+
+use "./simulate-and-analyze-multilevel-data/crossclassified.dta", clear
+
+```
+
+```{stata}
+
+mixed outcome || _all: R.country || _all: R.language
+
+```
+
+```{stata}
+
+mixed outcome warmth physical_punishment i.identity i.intervention HDI || _all: R.country || _all: R.language
+
+```
+
+## R
+
+```{r}
+
+library(haven)
+
+dfCC <- read_dta("./simulate-and-analyze-multilevel-data/crossclassified.dta")
+
+```
+
+```{r}
+
+dfCC$identity <- factor(dfCC$identity)
+
+dfCC$intervention <- factor(dfCC$intervention)
+
+```
+
+```{r}
+
+library(lme4) 
+
+library(lmerTest)
+
+options(scipen = 999) 
+
+fitCC_A <- lmer(outcome ~  
+                 (1 | country) +
+                 (1 | language),
+             data = dfCC)
+
+summary(fitCC_A)
+
+```
+
+```{r}
+
+fitCC_B <- lmer(outcome ~ t + warmth + physical_punishment + 
+                identity + intervention + HDI + 
+                (1 | country) +
+                (1 | language),
+              data = dfCC)
+
+summary(fitCC_B)
+
+```
+
+## Julia
+
+
+
+
 
