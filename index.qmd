@@ -55,10 +55,10 @@ My history of teaching statistical methods has over time convinced me that stati
 
 One thing that I often say in teaching is that because so many of the outcomes we study are so important–and are often so unequally allocated–we want to make sure our answers are as precise, and as close to correct, as we can make them. As I detail elsewhere in this book, it turns out that failing to understand some of the hidden complexities of statistical thinking may lead to providing very wrong answers to important questions. I explore these complexities of multilevel thinking in this book.
 
-Two images that I carry with me, and that help me convey this idea are the Nautilus shell, and the Mandelbrot set.
+Two images that I carry with me, and that help me convey this idea are the nautilus shell, and the Mandelbrot set. \index{nautilus shell} \index{Mandelbrot set}
 
 ::: {layout-ncol=2}
-![The Nautilus Shell, image courtesy @PowerPoint2024](nautilus-new.png){height=3in}
+![The Nautilus Shell](nautilus-OUP.jpg){height=3in}
 
 ![Image of the Mandelbrot Set, produced with `mandelbrot` by @Mandelbrot](mandelbrot.png){height=3in}
 

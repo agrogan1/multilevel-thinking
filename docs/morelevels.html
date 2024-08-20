@@ -586,7 +586,7 @@ Caution
 <div id="fig-ICC" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ICC-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="ICC.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="ICC.png" class="img-fluid figure-img" style="width:75.0%"></a>
+<a href="ICC.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="ICC.png" class="img-fluid figure-img" style="width:75.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ICC-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8.1: ICCs in 3 Level And 4 Level Models
@@ -799,7 +799,8 @@ Tip
 <p>The terms in the equation below are similar to those in <a href="#eq-MLM-fourlevel" class="quarto-xref">Equation&nbsp;<span>8.1</span></a>. Note, however, that here, for purposes of exposition, I am working with the cross sectional data.</p>
 <p><code>country</code>, and the new variable, <code>language</code> are <em>cross-classified</em> levels in the data in that neither is hierarchically nested inside the other: residents of the same country will not all speak the same language, and speakers of the same language will not all live in the same country. I would use a random effect <span class="math inline">\(l\)</span> for language, except for the fact that it would create confusion because of the similarity of <span class="math inline">\(l\)</span> and the number <em>1</em>. Therefore, I use the next available letter of the alphabet for language, <span class="math inline">\(m\)</span>. </p>
 <p><span id="eq-crossclassified"><span class="math display">\[\text{outcome}_{itj} = \beta_0 + \beta_1 \text{parental warmth}_{itj} + \beta_2 \text{physical punishment}_{itj} + \beta_3 \text{time}_{itj} \ +  \tag{8.4}\]</span></span></p>
-<p><span class="math display">\[\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +\]</span> <span class="math display">\[u_{0j} + m_{0m} + e_{ijm}\]</span></p>
+<p><span class="math display">\[\beta_4 \text{identity}_{itj} + \beta_5 \text{intervention}_{itj} + \beta_6 \text{HDI}_{itj} +\]</span></p>
+<p><span class="math display">\[u_{0j} + m_{0m} + e_{ijm}\]</span></p>
 <p>Again, terms are similar to the terms used in <a href="longitudinal.html#eq-MLM-longitudinal" class="quarto-xref">Equation&nbsp;<span>6.4</span></a> and <a href="#eq-MLM-fourlevel" class="quarto-xref">Equation&nbsp;<span>8.1</span></a>, with the exception that in <a href="#eq-crossclassified" class="quarto-xref">Equation&nbsp;<span>8.4</span></a>, we are talking about family <em>i</em> in country <em>j</em>, speaking language <em>m</em>.</p>
 </section>
 <section id="unconditional-model-1" class="level3" data-number="8.3.3">
@@ -1554,7 +1555,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom","selector":".lightbox"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
