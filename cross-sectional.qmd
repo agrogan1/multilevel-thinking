@@ -180,6 +180,7 @@ Now imagine that residents of countries provide more of the protective factor or
 ```{r}
 #| fig-cap: "A Heuristic Example"
 #| fig-height: 3
+#| label: fig-heuristic-example
 
 p0 + 
   geom_point(aes(color = country)) + # points with country color
