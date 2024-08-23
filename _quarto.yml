@@ -51,6 +51,7 @@ format:
       dark: vapor
     css: multilevel-thinking.css
     lightbox: true
+    embed-resources: false
     execute:
       echo: false
       warning: false
