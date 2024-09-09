@@ -12,9 +12,9 @@
 >
 > Whatever that is--
 >
-> And me listen. [@Takahashi2000]
+> And me listen. [@Takahashi2000] \index{Shinkichi Takahashi}
 
-> "Listening to the world. Well, I did that, and I still do it. I still do it." [Mary Oliver in @Oliver2015] \index{listening}
+> "Listening to the world. Well, I did that, and I still do it. I still do it." [Mary Oliver in @Oliver2015] \index{listening} \index{Mary Oliver}
 
 ```{r}
 
@@ -30,7 +30,7 @@ library(tidyr) # data tidying
 
 ## Quantitative Methods and Social Justice {#sec-socialjustice}
 
-There is clearly need for both qualitative and quantitative methods. \index{quantitative and qualitative methods} Central to the argument of this book is the idea that advanced quantitative methods can be core contributors to the agenda of understanding issues of diversity and social justice more fully and thoroughly [@Cokley2013; @GroganKaylor2018]. Quantitative methods, particularly in discussions comparing qualitative and quantitative methodologies, are sometimes labelled as inherently *positivist* methods. \index{positivist} My argument regarding this point is twofold. First, there is nothing within the mathematics of quantitative methods that requires a positivist epistemology. Quantitative methodologies could as easily be conducted using a critical epistemology--that is aware of dynamics of power and privilege--as any other methodology [@Stage2014; @Scharrer2021]. \index{quantitative literacy} \index{quantitative criticalism} I note that one of the pioneers of liberation psychology, Martín-Baró [@Aron1994], used both qualitative and quantitative methods [@Martin-Baro1994], including in the latter case, relatively sophisticated arguments about patterns of missing data across a survey data set [@Aron1994]. \index{liberation psychology} \index{Martín-Baró}
+There is clearly need for both qualitative and quantitative methods. \index{quantitative and qualitative methods} Central to the argument of this book is the idea that advanced quantitative methods can be core contributors to the agenda of understanding issues of diversity and social justice more fully and thoroughly [@Cokley2013; @GroganKaylor2018]. Quantitative methods, particularly in discussions comparing qualitative and quantitative methodologies, are sometimes labelled as inherently *positivist* methods. \index{positivist} My argument regarding this point is twofold. First, there is nothing within the mathematics of quantitative methods that requires a positivist epistemology. Quantitative methodologies could as easily be conducted using a critical epistemology--that is aware of dynamics of power and privilege--as any other methodology [@Stage2014; @Scharrer2021]. \index{quantitative literacy} \index{quantitative criticalism} I note that one of the pioneers of liberation psychology, Martín-Baró [@Aron1994], used both qualitative and quantitative methods [@Martin-Baro1994], including in the latter case, relatively sophisticated arguments about patterns of missing data across a survey data set [@Aron1994]. \index{liberation psychology} \index{Ignacio Martín-Baró}
 
 Second, when we have samples of a hundred, several hundred, several thousand, or even hundreds of thousands of study participants distributed across multiple and diverse social contexts, it is difficult to imagine a methodology other than a *quantitative* methodology that could accomplish the following: 
 
@@ -70,7 +70,7 @@ Similarly, the Islamic scientist @Alhazen_2023, often seen as one of the first e
 
 In the approach that I am taking in this book, I believe that there are definite *material realities* of suffering, exploitation, violence, discrimination, and other associated problems that we are trying to understand. 
 
-> "What we see and how we see is of course determined by our perspective, by the place from which we begin our examination of history; but it is determined also by reality itself." [@Martin-Baro1994B] \index{Martín-Baró}
+> "What we see and how we see is of course determined by our perspective, by the place from which we begin our examination of history; but it is determined also by reality itself." [@Martin-Baro1994B] \index{Ignacio Martín-Baró}
 
 We hope that our understandings will inform efforts for social change. Yet, at the same time we must recognize that our understandings are at best *iterative* and *contingent.* While we will never have a perfect understanding of social reality, we can always improve our understandings, and move in the direction of being *less wrong*. \index{less wrong}
 
@@ -92,7 +92,7 @@ This book will discuss the ways in which a multilevel statistical perspective no
 
 > "It shouldn’t be theories that define the problems of our situation, but rather the problems that demand, and so to speak, select, their own theorisation." (@Martin-Baro1998 in @Burton2005).
 
-> "... philosophy can only carry out its critical and creative function in favor of an effective praxis of liberation if it is adequately situated within that liberating praxis, which is independent of philosophy." [@Ellacuria2013]
+> "... philosophy can only carry out its critical and creative function in favor of an effective praxis of liberation if it is adequately situated within that liberating praxis, which is independent of philosophy." [@Ellacuria2013] \index{Ignacio Ellacuría}
 
 Following from this pragmatic and advocacy oriented emphasis, the book is largely oriented to the *doing* of quantitative social research with multilevel (or multi-country) data, and is therefore mostly statistical in nature. 
 
@@ -136,7 +136,7 @@ Research on parenting and child development has identified robust associations b
 
 ## Universalism And Particularity
 
-> "My conception of the universal is that of a universal enriched by all that is particular, a universal enriched by every particular: the deepening and coexistence of all particulars." [@Cesaire1956]
+> "My conception of the universal is that of a universal enriched by all that is particular, a universal enriched by every particular: the deepening and coexistence of all particulars." [@Cesaire1956] \index{Aimé Césaire}
 
 > "Despite the incredible diversity existing among and within human cultures, there are many phenomena that occur regularly in all known societies. These commonalities, or universals, while deriving in part from human nature, may also have specific social, cultural, and systemic sources. We need to develop a working understanding of these universals so that we might advance legitimate, empirically based human science set on creating knowledge that is politically relevant to fostering real solutions to the problems that complicate human co-existence in the Age of the Anthropocene." [@Antweiler2016]
 

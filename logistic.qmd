@@ -1,6 +1,6 @@
 # Multilevel Logistic Regression {#sec-logistic}
 
-> "We have peered into a new world and have seen that it is more mysterious and more complex than we had imagined." [@Rubin1997]
+> "We have peered into a new world and have seen that it is more mysterious and more complex than we had imagined." [@Rubin1997] \index{Vera Rubin}
 
 ## Introduction
 

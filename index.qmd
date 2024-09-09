@@ -48,6 +48,8 @@ Certainly, none of the statistical ideas contained in this book are unique to me
 
 My intent in this book is to offer a kind of accessible tutorial for applied researchers, including especially those who see their research having some advocacy based component. My approach, while offering up some equations, is less mathematically rigorous than some of the above mentioned texts, and written with the intent of providing a clear and practically focused guide for the applied researcher who is attempting to carry out better research with diverse populations, particularly research directed toward advocacy or social change.
 
+> "– And so, why can’t my numbers be beautiful to me? Why the scorn, the doubt in your face? Do you think I am brittle and dusty as old paper? Look again. See the numbers shine in my eyes." [@Pye2011] \index{Eveline Pye}
+
 ::: {.callout-tip}
 ## Complex Answers Hidden Inside Simple Questions
 
@@ -55,7 +57,7 @@ My history of teaching statistical methods has over time convinced me that stati
 
 One thing that I often say in teaching is that because so many of the outcomes we study are so important–and are often so unequally allocated–we want to make sure our answers are as precise, and as close to correct, as we can make them. As I detail elsewhere in this book, it turns out that failing to understand some of the hidden complexities of statistical thinking may lead to providing very wrong answers to important questions. I explore these complexities of multilevel thinking in this book.
 
-Two images that I carry with me, and that help me convey this idea are the nautilus shell, and the Mandelbrot set. \index{nautilus shell} \index{Mandelbrot set}
+Two images that I carry with me, and that help me convey this idea are the nautilus shell, and the Mandelbrot set. \index{nautilus shell} \index{Mandelbrot set} \index{complex answers to simple questions}
 
 ::: {layout-ncol=2}
 ![The Nautilus Shell](nautilus-OUP.jpg){height=3in}

@@ -1,6 +1,6 @@
 # The Longitudinal Multilevel Model {#sec-longitudinal}
 
-> "Mathematics is the art of giving the same name to different things." [@Poincare1908]
+> "Mathematics is the art of giving the same name to different things." [@Poincare1908] \index{Henri Poincaré}
 
 ```{r}
 

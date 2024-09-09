@@ -1,6 +1,6 @@
 # Models With More Complicated Structures {#sec-morelevels}
 
-> "The language we have in that world is not large enough for the territory that we’ve already entered." [@Whyte2016]
+> "The language we have in that world is not large enough for the territory that we’ve already entered." [@Whyte2016] \index{David Whyte}
 
 ## Introduction
 
