@@ -169,7 +169,7 @@ tribble(
                   color = "red",
                   size = 2) +
   facet_wrap(~panel) +
-  labs(title = "Plausible Alternative Patterns of Between Country Variation",
+  labs(title = "Plausible Alternative Patterns of \nBetween Country Variation",
        subtitle = "In The Relationship of Physical Punishment \nWith Psychological Wellbeing",
        x = "physical punishment",
        y = "psychological wellbeing") +
@@ -220,7 +220,7 @@ tribble(
                    color = "red",
                    size = 2) +
   facet_wrap(~panel) +
-  labs(title = "Considering an Intervention or Treatment Across Countries",
+  labs(title = "Considering an Intervention or Treatment \nAcross Countries",
        x = "hypothetical intervention",
        y = "psychological wellbeing") +
   xlim(0,10) +

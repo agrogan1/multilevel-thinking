@@ -186,7 +186,7 @@ p0 +
   geom_point(aes(color = country)) + # points with country color
   geom_smooth(aes(color = country), # smoothers with country color
               method = "lm") + 
-  labs(title = "Desirable Outcome as a Function of Intervention or Treatment",
+  labs(title = "Desirable Outcome as a Function of \nIntervention or Treatment",
        x = "intervention or treatment",
        y = "desirable outcome") +
   scale_color_viridis_d()
