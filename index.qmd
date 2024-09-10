@@ -50,9 +50,7 @@ My intent in this book is to offer a kind of accessible tutorial for applied res
 
 > "– And so, why can’t my numbers be beautiful to me? Why the scorn, the doubt in your face? Do you think I am brittle and dusty as old paper? Look again. See the numbers shine in my eyes." [@Pye2011] \index{Eveline Pye}
 
-{{< pagebreak >}}
 
-::: {.callout-tip}
 ## Complex Answers Hidden Inside Simple Questions
 
 My history of teaching statistical methods has over time convinced me that statistical questions are often seemingly simple questions, that contain complex answers, or answers that have complex operationalizations.
@@ -70,7 +68,9 @@ Complex structures produced with simple rules
 :::
 
 Just as each of these images is a complex outcome that derives from a simple set of rules, complex situations emerge from applying statistical ideas, that are initially simple in principle. The nautilus shell is based upon a logarithmic spiral, a spiral that as it grows outward maintains a constant angle with the center [@Livio2002]. The Mandlebrot set is a complex outcome that results from iterating a simple rule over and over [@Mandelbrot]. 
-:::
+
+
+
 
 
 
