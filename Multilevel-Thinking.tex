@@ -71,7 +71,7 @@
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
 \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
@@ -81,7 +81,7 @@
 \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
 \newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
@@ -242,7 +242,7 @@
 \subtitle{Discovering Diversity, Universals, and Particulars in
 Cross-Cultural Research}
 \author{Andrew Grogan-Kaylor}
-\date{2024-09-10}
+\date{2024-09-20}
 
 \begin{document}
 \maketitle
@@ -346,9 +346,8 @@ Look again. See the numbers shine in my eyes.'' (Pye, 2011)
 \index{Eveline Pye}
 \end{quote}
 
-\newpage{}
-
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, toprule=.15mm, toptitle=1mm, colback=white, breakable, coltitle=black, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Complex Answers Hidden Inside Simple Questions}, arc=.35mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6]
+\section{Complex Answers Hidden Inside Simple
+Questions}\label{complex-answers-hidden-inside-simple-questions}
 
 My history of teaching statistical methods has over time convinced me
 that statistical questions are often seemingly simple questions, that
@@ -368,35 +367,21 @@ Two images that I carry with me, and that help me convey this idea are
 the nautilus shell, and the Mandelbrot set. \index{nautilus shell}
 \index{Mandelbrot set} \index{complex answers to simple questions}
 
-\begin{figure}[H]
+\begin{figure}
 
 \begin{minipage}{0.50\linewidth}
 
-\begin{figure}[H]
+\includegraphics[width=\textwidth,height=3in]{nautilus-OUP.jpg}
 
-{\centering \includegraphics[width=\textwidth,height=3in]{nautilus-OUP.jpg}
-
-}
-
-\subcaption{The Nautilus Shell}
-
-\end{figure}%
-
+\subcaption{\label{}The Nautilus Shell}
 \end{minipage}%
 %
 \begin{minipage}{0.50\linewidth}
 
-\begin{figure}[H]
+\includegraphics[width=\textwidth,height=3in]{mandelbrot.png}
 
-{\centering \includegraphics[width=\textwidth,height=3in]{mandelbrot.png}
-
-}
-
-\subcaption{Image of the Mandelbrot Set, produced with
+\subcaption{\label{}Image of the Mandelbrot Set, produced with
 \texttt{mandelbrot} by Moore \& dos Reis (2017)}
-
-\end{figure}%
-
 \end{minipage}%
 \newline
 \begin{minipage}{0.50\linewidth}
@@ -411,8 +396,6 @@ based upon a logarithmic spiral, a spiral that as it grows outward
 maintains a constant angle with the center (Livio, 2002). The Mandlebrot
 set is a complex outcome that results from iterating a simple rule over
 and over (Moore \& dos Reis, 2017).
-
-\end{tcolorbox}
 
 \bookmarksetup{startatroot}
 
@@ -1174,7 +1157,7 @@ outcome or behavioral outcome, and higher levels of \texttt{outcome} are
 considered to be better. Statistically, the data are clustered within
 countries.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, toprule=.15mm, toptitle=1mm, colback=white, breakable, coltitle=black, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, arc=.35mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, left=2mm, coltitle=black, breakable, opacitybacktitle=0.6, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Download The Data}, colback=white, colframe=quarto-callout-note-color-frame, opacityback=0, rightrule=.15mm, titlerule=0mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, bottomrule=.15mm, toprule=.15mm, arc=.35mm]
 
 Data are presented in Stata format. The Appendix considers the analysis
 of multilevel models using multiple software packages: Stata, R \&
@@ -1395,7 +1378,7 @@ conceptual level 2 & N/A & Administrative indicator of social unit \\
   \emph{statistically} aggregated to Level 2.
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, toprule=.15mm, toptitle=1mm, colback=white, breakable, coltitle=black, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, arc=.35mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, left=2mm, coltitle=black, breakable, opacitybacktitle=0.6, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Contextual Variables}, colback=white, colframe=quarto-callout-tip-color-frame, opacityback=0, rightrule=.15mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, bottomrule=.15mm, toprule=.15mm, arc=.35mm]
 
 Such aggregated variables represent the \emph{average} level of a
 response across each Level 2 unit, and are sometimes called ``contextual
@@ -1884,7 +1867,7 @@ By simply substituting the values of the Level 2 equations into the
 Level 1 equations--and rewriting the \(\gamma\)'s as \(\beta\)'s--we
 obtain:
 
-\begin{equation}\phantomsection\label{eq-MLM}{y_{ij} = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + \beta_3 w_{j} + u_{0j} + u_{1j} \times x + e_{ij}}\end{equation}
+\begin{equation}\phantomsection\label{eq-MLM}{y_{ij} = \beta_0 + \beta_1 x_{ij} + \beta_2 z_{ij} + \beta_3 w_{j} + u_{0j} + u_{1j} \times x_{ij} + e_{ij}}\end{equation}
 
 Here again \(y_{ij}\) is the dependent variable, or outcome for the
 model. \(\beta_0\) is a regression intercept, and the \(\beta\)'s are
@@ -1914,7 +1897,7 @@ the main substantive ideas of this book:
 \begin{equation}\phantomsection\label{eq-MLMsubstantive}{\text{outcome}_{ij} = \beta_0 + \beta_1 \text{parental warmth}_{ij} + \beta_2 \text{physical punishment}_{ij} +}\end{equation}
 
 \[\beta_3 \text{identity}_{ij} + \beta_4 \text{intervention}_{ij} + \beta_5 \text{HDI}_{ij} + \]
-\[u_{0j} + u_{1j} \times \text{parental warmth} + e_{ij}\]
+\[u_{0j} + u_{1j} \times \text{parental warmth}_{ij} + e_{ij}\]
 
 Put substantively, this model indicates that the outcome can be
 conceptualized as a function of an intercept term, and contributions of
@@ -2068,7 +2051,7 @@ outcome varied across countries.
 level, or Level 2, variable in this model is not associated with the
 outcome.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, toprule=.15mm, toptitle=1mm, colback=white, breakable, coltitle=black, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Intuitions}, arc=.35mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, left=2mm, coltitle=black, breakable, opacitybacktitle=0.6, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Intuitions}, colback=white, colframe=quarto-callout-tip-color-frame, opacityback=0, rightrule=.15mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, bottomrule=.15mm, toprule=.15mm, arc=.35mm]
 
 \emph{Random intercepts} and \emph{random slopes} are statistically
 closely related concepts. In my experience of over 10 years of teaching
@@ -2301,7 +2284,7 @@ In Equation~\ref{eq-indicator-variables} the first group of race,
 omitted from the model, and all comparisons are made to individuals with
 identity \texttt{race1}.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, toprule=.15mm, toptitle=1mm, colback=white, breakable, coltitle=black, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Indicator Variables in Equations And Syntax}, arc=.35mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, left=2mm, coltitle=black, breakable, opacitybacktitle=0.6, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Indicator Variables in Equations And Syntax}, colback=white, colframe=quarto-callout-tip-color-frame, opacityback=0, rightrule=.15mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, bottomrule=.15mm, toprule=.15mm, arc=.35mm]
 
 Thus, if an identity, such as race, is used as an \emph{indicator
 variable}, it would appear in the equations (e.g.
@@ -2310,7 +2293,7 @@ in the Appendix, in the same place as the \texttt{identity} variable.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, toprule=.15mm, toptitle=1mm, colback=white, breakable, coltitle=black, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reference Categories Need To Be Chosen Carefully}, arc=.35mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, left=2mm, coltitle=black, breakable, opacitybacktitle=0.6, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Reference Categories Need To Be Chosen Carefully}, colback=white, colframe=quarto-callout-tip-color-frame, opacityback=0, rightrule=.15mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, bottomrule=.15mm, toprule=.15mm, arc=.35mm]
 
 Reference categories need to be chosen carefully. This is especially
 true in studies that hope to be attentive to diversity and social
@@ -2326,7 +2309,7 @@ the choice of reference categories can be manually specified.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-warning-color-frame, bottomrule=.15mm, toprule=.15mm, toptitle=1mm, colback=white, breakable, coltitle=black, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Indicator Variables Should Not Be Treated As Continuous Variables}, arc=.35mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, left=2mm, coltitle=black, breakable, opacitybacktitle=0.6, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Indicator Variables Should Not Be Treated As Continuous Variables}, colback=white, colframe=quarto-callout-warning-color-frame, opacityback=0, rightrule=.15mm, titlerule=0mm, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, bottomrule=.15mm, toprule=.15mm, arc=.35mm]
 
 Identities that are measured in the data with a single categorical
 variable with values like \texttt{1}, \texttt{2}, \texttt{3},
@@ -2374,7 +2357,7 @@ Here, the inclusion of \(v_{0k}\), a random intercept for identity,
 would be a way to model the presence of many possible values of an
 identity variable.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, toprule=.15mm, toptitle=1mm, colback=white, breakable, coltitle=black, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Random Intercepts in Equations And Syntax}, arc=.35mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, left=2mm, coltitle=black, breakable, opacitybacktitle=0.6, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Identities As Random Intercepts in Equations And Syntax}, colback=white, colframe=quarto-callout-tip-color-frame, opacityback=0, rightrule=.15mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, bottomrule=.15mm, toprule=.15mm, arc=.35mm]
 
 Thus, if an identity, such as race, is used as a \emph{random
 intercept}, it would appear in the equations (e.g.
@@ -3408,7 +3391,7 @@ outcomes.
 Examining the interaction terms, we find that none of these variables
 modify the time trajectory of the outcome.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, toprule=.15mm, toptitle=1mm, colback=white, breakable, coltitle=black, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Interactions And Random Slopes in Longitudinal Models}, arc=.35mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, left=2mm, coltitle=black, breakable, opacitybacktitle=0.6, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Interactions And Random Slopes in Longitudinal Models}, colback=white, colframe=quarto-callout-tip-color-frame, opacityback=0, rightrule=.15mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, bottomrule=.15mm, toprule=.15mm, arc=.35mm]
 
 Having now discussed both \emph{random slopes}
 (Section~\ref{sec-conditional-model}), and \emph{interaction terms}
@@ -3453,7 +3436,7 @@ research to make recommendations about \emph{interventions}, or
 \emph{treatments}, or \emph{policies}, one is engaging in some form of
 causal reasoning (Duncan \& Gibson-Davis, 2006). \index{causality}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, toprule=.15mm, toptitle=1mm, colback=white, breakable, coltitle=black, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{The Ubiquity of Causal Reasoning}, arc=.35mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, left=2mm, coltitle=black, breakable, opacitybacktitle=0.6, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{The Ubiquity of Causal Reasoning}, colback=white, colframe=quarto-callout-tip-color-frame, opacityback=0, rightrule=.15mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, bottomrule=.15mm, toprule=.15mm, arc=.35mm]
 
 If one is saying that implementing \emph{x} would result in beneficial
 changes in \emph{y}, one is arguing--at least implicitly--that \emph{x}
@@ -4372,7 +4355,7 @@ For these reasons it is often convenient to calculate predicted
 probabilities at different values of the independent variables (CF Long
 \& Freese, 2014). \index{predicted probabilities}
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, toprule=.15mm, toptitle=1mm, colback=white, breakable, coltitle=black, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{The Algebra May Be Helpful}, arc=.35mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, left=2mm, coltitle=black, breakable, opacitybacktitle=0.6, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{The Algebra May Be Helpful}, colback=white, colframe=quarto-callout-tip-color-frame, opacityback=0, rightrule=.15mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, bottomrule=.15mm, toprule=.15mm, arc=.35mm]
 
 Below, I provide algebra for calculating predicted probabilities. This
 algebra sometimes proves difficult for readers to follow but is provided
@@ -4494,7 +4477,7 @@ world into a number of regions or sub-regions (Arel-Bundock et al.,
 the \emph{longitudinal} data in order to illustrate the idea of a 4
 level model.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-caution-color-frame, bottomrule=.15mm, toprule=.15mm, toptitle=1mm, colback=white, breakable, coltitle=black, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{}, arc=.35mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, left=2mm, coltitle=black, breakable, opacitybacktitle=0.6, leftrule=.75mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, colback=white, colframe=quarto-callout-caution-color-frame, opacityback=0, rightrule=.15mm, titlerule=0mm, colbacktitle=quarto-callout-caution-color!10!white, toptitle=1mm, bottomrule=.15mm, toprule=.15mm, arc=.35mm]
 
 Note that, to keep the example somewhat realistic with regard to the
 regional groupings defined by the United Nations, I am adding 5
@@ -4708,7 +4691,7 @@ Ethnologue (2024) estimates that there are over 7,000 languages spoken
 worldwide. For the sake of illustration, I add 100 hypothetical
 languages to the \emph{cross-sectional} data.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, toprule=.15mm, toptitle=1mm, colback=white, breakable, coltitle=black, titlerule=0mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{}, arc=.35mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, left=2mm, coltitle=black, breakable, opacitybacktitle=0.6, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colback=white, colframe=quarto-callout-tip-color-frame, opacityback=0, rightrule=.15mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, bottomrule=.15mm, toprule=.15mm, arc=.35mm]
 
 In contrast to my addition of simulated UN Regions to the
 \emph{longitudinal} data earlier in Section~\ref{sec-fourlevel}, these
