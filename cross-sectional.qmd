@@ -333,9 +333,11 @@ When teaching and learning about statistical software, I find it easiest to talk
 
 [^finer_distinctions]: I recognize that there are much finer distinctions to be made here, many of which @Freedman1991--as well as other introductory texts--go on to make. However, for the purposes of explication in this book, I find the *continuous/numeric* versus *categorical* variable distinction to be the most useful and the one that most readily facilitates communication with faculty colleagues and with students. 
 
+::: {.callout-tip}
 ### Categorical Variables as Indicators or Random Intercepts
 
-Statistically, there is often a concern about whether a particular qualitative or categorical variable is most appropriately modeled as an indicator variable, or as a level (random intercept). Substantively, this question intersects with how one should statistically include and model various measures of identity. Many identities are often measured as categorical variables. \index{indicator variables} \index{random intercept}
+Statistically, there is often a concern about whether a particular qualitative or categorical variable is most appropriately modeled as an *indicator variable*, or as a *level* (random intercept). Substantively, this question intersects with how one should statistically include and model various measures of identity. Many identities are often measured as categorical variables. \index{indicator variables} \index{random intercept}
+:::
 
 ### The Example of U.S. Census Data
 
