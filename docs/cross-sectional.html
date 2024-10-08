@@ -472,10 +472,9 @@ window.Quarto = {
   <li><a href="#sec-indicator-variables-random-effects" id="toc-sec-indicator-variables-random-effects" class="nav-link" data-scroll-target="#sec-indicator-variables-random-effects"><span class="header-section-number">5.5</span> Indicator Variables, Random Intercepts and Random Slopes, and Identities</a>
   <ul class="collapse">
   <li><a href="#variable-types" id="toc-variable-types" class="nav-link" data-scroll-target="#variable-types"><span class="header-section-number">5.5.1</span> Variable Types</a></li>
-  <li><a href="#categorical-variables-as-indicators-or-random-intercepts" id="toc-categorical-variables-as-indicators-or-random-intercepts" class="nav-link" data-scroll-target="#categorical-variables-as-indicators-or-random-intercepts"><span class="header-section-number">5.5.2</span> Categorical Variables as Indicators or Random Intercepts</a></li>
-  <li><a href="#the-example-of-u.s.-census-data" id="toc-the-example-of-u.s.-census-data" class="nav-link" data-scroll-target="#the-example-of-u.s.-census-data"><span class="header-section-number">5.5.3</span> The Example of U.S. Census Data</a></li>
-  <li><a href="#identities-as-indicator-variables" id="toc-identities-as-indicator-variables" class="nav-link" data-scroll-target="#identities-as-indicator-variables"><span class="header-section-number">5.5.4</span> Identities As Indicator Variables</a></li>
-  <li><a href="#identities-as-random-intercepts-or-slopes" id="toc-identities-as-random-intercepts-or-slopes" class="nav-link" data-scroll-target="#identities-as-random-intercepts-or-slopes"><span class="header-section-number">5.5.5</span> Identities as Random Intercepts or Slopes</a></li>
+  <li><a href="#the-example-of-u.s.-census-data" id="toc-the-example-of-u.s.-census-data" class="nav-link" data-scroll-target="#the-example-of-u.s.-census-data"><span class="header-section-number">5.5.2</span> The Example of U.S. Census Data</a></li>
+  <li><a href="#identities-as-indicator-variables" id="toc-identities-as-indicator-variables" class="nav-link" data-scroll-target="#identities-as-indicator-variables"><span class="header-section-number">5.5.3</span> Identities As Indicator Variables</a></li>
+  <li><a href="#identities-as-random-intercepts-or-slopes" id="toc-identities-as-random-intercepts-or-slopes" class="nav-link" data-scroll-target="#identities-as-random-intercepts-or-slopes"><span class="header-section-number">5.5.4</span> Identities as Random Intercepts or Slopes</a></li>
   </ul></li>
   <li><a href="#correlation-of-random-intercept-and-random-slopes" id="toc-correlation-of-random-intercept-and-random-slopes" class="nav-link" data-scroll-target="#correlation-of-random-intercept-and-random-slopes"><span class="header-section-number">5.6</span> Correlation of Random Intercept and Random Slope(s)</a></li>
   <li><a href="#sec-withinbetween" id="toc-sec-withinbetween" class="nav-link" data-scroll-target="#sec-withinbetween"><span class="header-section-number">5.7</span> Within and Between</a></li>
@@ -940,13 +939,22 @@ Intuitions
 <p>“Some questions are answered by giving a number: the corresponding variables are <em>quantitative</em>. Age, family size, and family income are examples of quantitative variables. Some questions are answered with adjectives, and the corresponding variables are <em>qualitative</em>: examples are marital status (single, married, widowed, divorced, separated) and employment status (employed, unemployed, not in the labor force).”</p>
 </blockquote>
 <p>When teaching and learning about statistical software, I find it easiest to talk about <em>quantitative</em> variables as <em>continuous</em> or <em>numeric</em> variables, and <em>qualitative</em> variables as <em>categorical</em> variables.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Categorical Variables as Indicators or Random Intercepts
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Statistically, there is often a concern about whether a particular qualitative or categorical variable is most appropriately modeled as an <em>indicator variable</em>, or as a <em>level</em> (random intercept). Substantively, this question intersects with how one should statistically include and model various measures of identity. Many identities are often measured as categorical variables. </p>
+</div>
+</div>
 </section>
-<section id="categorical-variables-as-indicators-or-random-intercepts" class="level3" data-number="5.5.2">
-<h3 data-number="5.5.2" class="anchored" data-anchor-id="categorical-variables-as-indicators-or-random-intercepts"><span class="header-section-number">5.5.2</span> Categorical Variables as Indicators or Random Intercepts</h3>
-<p>Statistically, there is often a concern about whether a particular qualitative or categorical variable is most appropriately modeled as an indicator variable, or as a level (random intercept). Substantively, this question intersects with how one should statistically include and model various measures of identity. Many identities are often measured as categorical variables. </p>
-</section>
-<section id="the-example-of-u.s.-census-data" class="level3" data-number="5.5.3">
-<h3 data-number="5.5.3" class="anchored" data-anchor-id="the-example-of-u.s.-census-data"><span class="header-section-number">5.5.3</span> The Example of U.S. Census Data</h3>
+<section id="the-example-of-u.s.-census-data" class="level3" data-number="5.5.2">
+<h3 data-number="5.5.2" class="anchored" data-anchor-id="the-example-of-u.s.-census-data"><span class="header-section-number">5.5.2</span> The Example of U.S. Census Data</h3>
 <p>The United States Census <span class="citation" data-cites="Census2022">(<a href="references.html#ref-Census2022" role="doc-biblioref">United States Census Bureau, 2022</a>)</span> asks about race using several different categories: White; Black or African American; American Indian or Alaska Native; Asian; Native Hawaiian and Pacific Islander; Some Other Race. Followup questions are asked for some identities, and a separate question is asked about Latino / Hispanic identity. Thus one might imagine a questionnaire with two measures. </p>
 <div id="tbl-race-ethnicity-questions" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1184,8 +1192,8 @@ Table&nbsp;5.3: Simulated Data on Race and Ethnicity With Multiple Identities
 </div>
 </div>
 </section>
-<section id="identities-as-indicator-variables" class="level3" data-number="5.5.4">
-<h3 data-number="5.5.4" class="anchored" data-anchor-id="identities-as-indicator-variables"><span class="header-section-number">5.5.4</span> Identities As Indicator Variables</h3>
+<section id="identities-as-indicator-variables" class="level3" data-number="5.5.3">
+<h3 data-number="5.5.3" class="anchored" data-anchor-id="identities-as-indicator-variables"><span class="header-section-number">5.5.3</span> Identities As Indicator Variables</h3>
 <p>Identities can be modeled as indicator variables. Importantly, whether only a single identity is selected (e.g. <a href="#tbl-race-ethnicity-data" class="quarto-xref">Table&nbsp;<span>5.2</span></a>), or multiple identities are selected (<a href="#tbl-race-ethnicity-2-data" class="quarto-xref">Table&nbsp;<span>5.3</span></a>), if identities are modeled as indicator variables, they should be modeled as a <em>set</em> of indicator variables with an omitted reference category. If there are <span class="math inline">\(k\)</span> categories of a variable, there should be <span class="math inline">\(k-1\)</span> indicator variables., e.g.</p>
 <p><span id="eq-indicator-variables"><span class="math display">\[y_{ij} = \beta_0 + \beta_2 \text{race2} + \beta_3 \text{race3} + \beta_4 \text{race4} + \beta_5 \text{race5} + \beta_6 \text{race6} +  \tag{5.8}\]</span></span></p>
 <p><span class="math display">\[\beta_7 \text{latinx} + u_{0j} + e_{ij}\]</span></p>
@@ -1230,8 +1238,8 @@ Indicator Variables Should Not Be Treated As Continuous Variables
 </div>
 </div>
 </section>
-<section id="identities-as-random-intercepts-or-slopes" class="level3" data-number="5.5.5">
-<h3 data-number="5.5.5" class="anchored" data-anchor-id="identities-as-random-intercepts-or-slopes"><span class="header-section-number">5.5.5</span> Identities as Random Intercepts or Slopes</h3>
+<section id="identities-as-random-intercepts-or-slopes" class="level3" data-number="5.5.4">
+<h3 data-number="5.5.4" class="anchored" data-anchor-id="identities-as-random-intercepts-or-slopes"><span class="header-section-number">5.5.4</span> Identities as Random Intercepts or Slopes</h3>
 <p>If there are many values of an identity it may be difficult to model those multiple identities as indicator variables. For example, if there were 10 possible values of a particular identity, and one was modeling those identities with indicator variables, one would need to include 9 (<span class="math inline">\(k-1\)</span>) indicator variables. Those 9 indicator variables could potentially use a large fraction of the available degrees of freedom, and interpreting the <span class="math inline">\(\beta\)</span> regression coefficients for 9 indicator variables might also be challenging. The problem is even greater when one considers a larger number of identities (e.g.&nbsp;25, 30, 50, 100), as is possible in some data sets. In a global or cross cultural data set, such as the simulated data that is used as an example throughout this book, one might easily conceive of data with 20, 30 or 50 different identities, especially since racial and ethnic identity categories may differ substantially across countries, around the world <span class="citation" data-cites="Rocha2020">(<a href="references.html#ref-Rocha2020" role="doc-biblioref">Rocha &amp; Aspinall, 2020</a>)</span>.</p>
 <p>An alternative would be to model large numbers of possible identities as a random intercept, rather than as a set of indicator variables. Such an equation might appear as follows:</p>
 <p><span id="eq-identity-random-intercept"><span class="math display">\[y_{ij} = \beta_0 + \Sigma \beta_m \text{covariates} + v_{0k} + u_{0j} + e_{ij} \tag{5.9}\]</span></span></p>
@@ -2298,7 +2306,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/multilevel-thinking/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","loop":false});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
